@@ -16,25 +16,6 @@ Explanation of status:
 ## Database structure
 
 Infections table: see https://covid19db.github.io/data.html
-- source: code describing the source of information. See table above.
-- date: day of the statistics.
-- country: English name for the country.
-- countrycode: ISO ALpha-3 code of the country.
-- adm_area_1: First-level administrative country subdivision; for example a "state" within United States, a
-	"province" within China or Canada.
-- adm_area_2: Second-level administrative country subdivision; for example an Italian "region", a UK "county".
-- adm_area_3: Third-level administrative country subdivision; for example a city, a urban area or an Italian "province".
-- tested: number of people tested.
-- confirmed (cumulative): number of confirmed infections.
-- recovered (cumulative): number of people who has been confirmed and has
-	healed.
-- hospitalised (cumulative): number of people who has been confirmed and has
-	been hospitalised.
-- hospitalised_icu (cumulative): number of people who has been confirmed and has
-	been hospitalised and had to be put in intensive care.
-- quarantined (cumulative): number of people who has been confirmed and has
-	been quarantined in their home.
-
 
 ## Develop and test
 
