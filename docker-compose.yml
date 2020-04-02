@@ -2,7 +2,8 @@ version: '2.0'
 services:
   fetcher-python:
     build: .
-    image: "fetcher-python:1.0"
+    image: "fetcher-python-${STAGE}:1.0"
+    container_name: fetcher-python-${STAGE}
     environment:
       DB_ADDRESS: ${DB_ADDRESS}
       DB_PORT: ${DB_PORT}
