@@ -15,7 +15,7 @@ Explanation of status:
 
 ## Database structure
 
-Infections table:
+Infections table: see https://covid19db.github.io/data.html
 - source: code describing the source of information. See table above.
 - date: day of the statistics.
 - country: English name for the country.
