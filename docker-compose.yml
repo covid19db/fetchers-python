@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  fetcher-python:
+    build: .
+    image: "fetcher-python:1.0"
+    environment:
+      DB_ADDRESS: ${DB_ADDRESS}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}

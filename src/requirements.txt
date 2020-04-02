@@ -1,0 +1,8 @@
+requests==2.23.0
+bs4==0.0.1
+html5lib==1.0.1
+lxml==4.5.0
+pandas==1.0.3
+psycopg2-binary==2.8.4
+psycopg2==2.8.4
+schedule==0.6.0
