@@ -20,23 +20,20 @@ Infections table:
 - date: day of the statistics.
 - country: English name for the country.
 - countrycode: ISO ALpha-3 code of the country.
-- adm_area_1: (optional) wide-area administrative or geographical region
-	within the country, for example a "state" within United States, a
+- adm_area_1: First-level administrative country subdivision; for example a "state" within United States, a
 	"province" within China or Canada.
-- adm_area_2: (optional) mid-area region within a country or a adm_area_1, for
-	example an Italian "region", a UK "county".
-- adm_area_3: (optional) a small-area region within the country or the adm_area_2,
-	for example a city, a urban area or an Italian "province".
-- tested: (optional) number of people tested. Cumulative.
-- confirmed: (optional) number of confirmed infections. Cumulative.
-- recovered: (optional) number of people who has been confirmed and has
-	healed. Cumulative.
-- hospitalised: (optional) number of people who has been confirmed and has
-	been hospitalised. Cumulative.
-- hospitalised_icu: (optional) number of people who has been confirmed and has
-	been hospitalised and had to be put in intensive care. Cumulative.
-- quarantined: (optional) number of people who has been confirmed and has
-	been quarantined in their home. Cumulative.
+- adm_area_2: Second-level administrative country subdivision; for example an Italian "region", a UK "county".
+- adm_area_3: Third-level administrative country subdivision; for example a city, a urban area or an Italian "province".
+- tested: number of people tested.
+- confirmed (cumulative): number of confirmed infections.
+- recovered (cumulative): number of people who has been confirmed and has
+	healed.
+- hospitalised (cumulative): number of people who has been confirmed and has
+	been hospitalised.
+- hospitalised_icu (cumulative): number of people who has been confirmed and has
+	been hospitalised and had to be put in intensive care.
+- quarantined (cumulative): number of people who has been confirmed and has
+	been quarantined in their home.
 
 
 ## Develop and test
