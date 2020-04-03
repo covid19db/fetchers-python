@@ -28,7 +28,6 @@ def main():
             host=os.getenv('DB_ADDRESS'),
             port=int(os.getenv('DB_PORT', 5432)),
             database_name=os.getenv('DB_NAME'))
-
     available_plugins = search_for_plugins()
 
     # run once
