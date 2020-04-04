@@ -36,7 +36,7 @@ class SpainWikiFetcher(AbstractFetcher):
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'ES-MSW',
+                'source': 'ESP_MSVP',
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English
