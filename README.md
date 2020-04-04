@@ -6,6 +6,7 @@ Currently implemented fetchers:
 | Name     | Country | [Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Source | Status | Regional levels mapping |
 |----------|---------|------|--------|--------|-------------------------|
 | POL_WIKI | Poland | POL  | [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland) | candidate | adm_area_1: NA or Voivodeship, adm_area_2: NA |
+| WRD_ECDC | World | several  | [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) | candidate | NA |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
