@@ -37,42 +37,50 @@ class PolandWikiFetcher(AbstractFetcher):
     def update_confirmed_cases(self, data: DataFrame):
         logger.info("Processing new confirmed cases in Poland per voivodeship")
 
+        total_per_voivodeship = {}
         for index, row in data.iterrows():
             item = OrderedDict(row)
 
-            for (voivodeship_name, voivodeship_confirmed) in row.iteritems():
+            for (voivodeship_name, confirmed) in row.iteritems():
                 if voivodeship_name in ['Date', 'Poland daily', 'Poland total']:
                     continue
-                if to_number(voivodeship_confirmed) == 0:
+                if to_number(confirmed) == 0:
                     continue
+
+                total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
+                    confirmed)
 
                 self.db.upsert_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=voivodeship_name,
-                    confirmed=to_number(voivodeship_confirmed),
+                    confirmed=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
 
     def update_deaths_by_voivodeship(self, data: DataFrame):
         logger.info("Processing deaths in Poland by voivodeship")
 
+        total_per_voivodeship = {}
         for index, row in data.iterrows():
             item = OrderedDict(row)
 
-            for (voivodeship_name, voivodeship_deaths) in row.iteritems():
+            for (voivodeship_name, deaths) in row.iteritems():
                 if voivodeship_name in ['Date', 'Poland daily', 'Poland total']:
                     continue
-                if to_number(voivodeship_deaths) == 0:
+                if to_number(deaths) == 0:
                     continue
+
+                total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
+                    deaths)
 
                 self.db.upsert_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=voivodeship_name,
-                    dead=to_number(voivodeship_deaths),
+                    dead=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
 
