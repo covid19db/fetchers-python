@@ -25,4 +25,7 @@ def parser(api_data):
 
     govtrack_data = pd.DataFrame(records)
     govtrack_data.fillna(0, inplace=True)
-    return govtrack_data
+
+    # Adding country name based on country code
+    country_codes_data = get_country_codes()
+    return govtrack_data.merge(country_codes_data, right_on='Alpha-3 code', left_on='country_code', how='left')

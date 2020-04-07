@@ -1,6 +1,6 @@
 import logging
 import requests
-from .utils import get_country_codes, parser
+from .utils import parser
 
 from utils.fetcher_abstract import AbstractFetcher
 
@@ -20,10 +20,7 @@ class StringencyFetcher(AbstractFetcher):
         return parser(api_data)
 
     def run(self):
-        data = self.fetch()
-        country_codes_data = get_country_codes()
-        govtrack_data = data.merge(country_codes_data, right_on='Alpha-3 code', left_on='country_code', how='left')
-
+        govtrack_data = self.fetch()
         for index, record in govtrack_data.iterrows():
             upsert_obj = {
                 'source': 'GOVTRACK',
