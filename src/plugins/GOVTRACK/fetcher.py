@@ -2,6 +2,7 @@ import json
 import logging
 import requests
 from .utils import parser
+from datetime import datetime, timedelta
 
 from utils.fetcher_abstract import AbstractFetcher
 
@@ -14,8 +15,8 @@ class StringencyFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
     def fetch(self):
-        date_from = '2020-01-01'
-        date_to = '2021-01-01'
+        date_from = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+        date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/stringency/date-range/{date_from}/{date_to}').json()
         return parser(api_data)
