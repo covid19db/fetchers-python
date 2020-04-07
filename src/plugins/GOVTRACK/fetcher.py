@@ -1,22 +1,30 @@
 import logging
+import requests
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+# from utils.fetcher_abstract import AbstractFetcher
 
-__all__ = ('ExampleFetcher',)
+__all__ = ('StringencyFetcher',)
 
 logger = logging.getLogger(__name__)
 
 
-class ExampleFetcher(AbstractFetcher):
+# class StringencyFetcher(AbstractFetcher):
+class StringencyFetcher():
     LOAD_PLUGIN = False
 
     def fetch(self):
         # a csv file to be downloaded
-        url = 'https://someserver.com/path/source.csv'
+        date_from = '{2020-01-01}'
+        date_to = '{2021-01-01}'
+        url = f'https://covidtrackerapi.bsg.ox.ac.uk/api/stringency/date-range/{date_from}/{date_to}'
+        api_data = requests.get(url).json()
+        data = api_data['data']
         return pd.read_csv(url)
 
     def run(self):
         data = self.fetch()
+
+        return False
 
         for index, record in data.iterrows():
             # assumption is that the CSV file has the following columns:
@@ -56,7 +64,12 @@ class ExampleFetcher(AbstractFetcher):
             # semantics
 
             # the db object comes with a helper method that does the upsert for you:
-            self.db.upsert_infections_data(**upsert_obj)
+            self.db.upsert_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
             # but use it with care!
+
+
+if __name__ == '__main__':
+    fetcher = StringencyFetcher()
+    fetcher.run()

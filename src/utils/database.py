@@ -68,7 +68,29 @@ class DB:
             raise error
         return self.cur.fetchone()
 
-    def upsert_data(self, **kwargs):
+    def upsert_govtrack_data(self, **kwargs):
+        data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
+
+        sql_query = sql.SQL("""INSERT INTO govtrack ({insert_keys}) VALUES ({insert_data})
+                                    ON CONFLICT
+                                        (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
+                                         COALESCE(adm_area_3, ''), source)
+                                    DO
+                                        UPDATE SET {update_data}
+                                    RETURNING *
+                                    """).format(
+            insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
+            insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
+            update_data=sql.SQL(",").join(
+                sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
+                k in data_keys)
+        )
+
+        self.execute(sql_query, kwargs)
+        logger.debug(
+            "Updating govtrack table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
+
+    def upsert_infections_data(self, **kwargs):
         data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
 
         sql_query = sql.SQL("""INSERT INTO infections ({insert_keys}) VALUES ({insert_data})
@@ -87,7 +109,8 @@ class DB:
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug("Update database with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
+        logger.debug(
+            "Updating infections table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
 
     def close_connection(self):
         if self.conn:

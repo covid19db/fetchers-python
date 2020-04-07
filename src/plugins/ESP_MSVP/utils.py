@@ -1,6 +1,4 @@
-
 import pandas as pd
-
 
 
 def parser(data):
@@ -12,7 +10,7 @@ def parser(data):
     """
 
     data = data.rename(columns={"CCAA": "adm_area_1", "fecha": "date", "casos": "confirmed", "UCI": "hospitalised_icu",
-                         "Hospitalizados": "hospitalised", "curados": "recovered", "muertes": "dead"})
+                                "Hospitalizados": "hospitalised", "curados": "recovered", "muertes": "dead"})
 
     data = data[['date', 'adm_area_1', 'confirmed', 'recovered', 'dead', 'hospitalised', 'hospitalised_icu']]
 

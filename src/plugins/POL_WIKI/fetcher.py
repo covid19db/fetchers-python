@@ -75,7 +75,7 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     deaths)
 
-                self.db.upsert_data(
+                self.db.upsert_infections_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
