@@ -36,8 +36,3 @@ class StringencyFetcher(AbstractFetcher):
                 'stringency_actual': int(record['stringency_actual'])
             }
             self.db.upsert_govtrack_data(**upsert_obj)
-
-
-if __name__ == '__main__':
-    fetcher = StringencyFetcher()
-    fetcher.run()
