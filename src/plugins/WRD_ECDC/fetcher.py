@@ -57,4 +57,4 @@ class WorldECDCFetcher(AbstractFetcher):
                 'dead': last_country_total_deaths
             }
 
-            self.db.upsert_infections_data(**upsert_obj)
+            self.db.upsert_epidemiology_data(**upsert_obj)

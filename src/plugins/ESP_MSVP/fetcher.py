@@ -43,4 +43,4 @@ class SpainWikiFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu
             }
 
-            self.db.upsert_infections_data(**upsert_obj)
+            self.db.upsert_epidemiology_data(**upsert_obj)

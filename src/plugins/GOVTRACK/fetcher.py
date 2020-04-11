@@ -43,4 +43,4 @@ class StringencyFetcher(AbstractFetcher):
                 'stringency_actual': int(record['stringency_actual']),
                 'actions': json.dumps(govtrack_actions)
             }
-            self.db.upsert_govtrack_data(**upsert_obj)
+            self.db.upsert_government_response_data(**upsert_obj)

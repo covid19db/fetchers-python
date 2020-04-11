@@ -56,7 +56,7 @@ class ExampleFetcher(AbstractFetcher):
             # semantics
 
             # the db object comes with a helper method that does the upsert for you:
-            self.db.upsert_infections_data(**upsert_obj)
+            self.db.upsert_epidemiology_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
             # but use it with care!
