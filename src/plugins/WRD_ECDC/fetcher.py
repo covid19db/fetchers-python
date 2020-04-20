@@ -27,8 +27,8 @@ class WorldECDCFetcher(AbstractFetcher):
         last_country_total_deaths = 0
 
         for index, record in data[::-1].iterrows():
-            # CSV file has format: dateRep,day,month,year,cases,deaths,countriesAndTerritories,geoId,
-            # countryterritoryCode,popData2018
+            # CSV file has format: dateRep,day,month,year,cases,deaths,geoId,continentExp,countryterritoryCode,
+            # popData2018,countriesAndTerritories
 
             # Date has format 'DD/MM/YYYY'; need to convert it to 'YYYY-MM-DD' format before adding to database
             date_ddmmyyyy = record[0]
