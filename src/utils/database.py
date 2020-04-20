@@ -66,7 +66,7 @@ class DB:
                 raise error
         except (Exception, psycopg2.Error) as error:
             raise error
-        return self.cur.fetchone()
+        return self.cur.fetchall()
 
     def upsert_government_response_data(self, **kwargs):
         data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
