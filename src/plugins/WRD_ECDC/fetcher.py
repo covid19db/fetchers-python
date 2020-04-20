@@ -34,10 +34,10 @@ class WorldECDCFetcher(AbstractFetcher):
             date_ddmmyyyy = record[0]
             date = datetime.strptime(date_ddmmyyyy, '%d/%m/%Y').strftime('%Y-%m-%d')
 
-            country = record[10]
-            country_code = record[8]
-            confirmed = int(record[4])
-            dead = int(record[5])
+            country = record['countriesAndTerritories']
+            country_code = record['countryterritoryCode']
+            confirmed = int(record['cases'])
+            dead = int(record['deaths'])
 
             if last_country_code is None or last_country_code != country_code:
                 # New country so reset counters
