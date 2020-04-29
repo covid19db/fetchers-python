@@ -4,7 +4,7 @@ import pandas as pd
 
 __all__ = ('SqliteHelper',)
 
-from src.utils.adapter_abstract import AbstractAdapter
+from utils.adapter_abstract import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 

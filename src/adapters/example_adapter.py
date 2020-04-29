@@ -2,7 +2,7 @@ import logging
 
 __all__ = ('ExampleHelper',)
 
-from src.utils.adapter_abstract import AbstractAdapter
+from utils.adapter_abstract import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 

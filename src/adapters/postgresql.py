@@ -4,7 +4,7 @@ import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-from src.utils.adapter_abstract import AbstractAdapter
+from utils.adapter_abstract import AbstractAdapter
 
 MAX_ATTEMPT_FAIL = 10
 

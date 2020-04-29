@@ -6,7 +6,7 @@ from typing import List
 from utils.plugins import search_for_plugins
 from utils.adapters import DataAdapter
 
-from src.utils.adapter_abstract import AbstractAdapter
+from utils.adapter_abstract import AbstractAdapter
 
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
