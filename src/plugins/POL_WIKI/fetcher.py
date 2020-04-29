@@ -21,7 +21,7 @@ class PolandWikiFetcher(AbstractFetcher):
             item = OrderedDict(row)
             total_deaths = total_deaths + to_number(item['Official deaths daily'])
 
-            self.db.upsert_data(
+            self.db.upsert_epidemiology_data(
                 date=item['Date'],
                 country='Poland',
                 countrycode='POL',
@@ -50,7 +50,7 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     confirmed)
 
-                self.db.upsert_data(
+                self.db.upsert_epidemiology_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
