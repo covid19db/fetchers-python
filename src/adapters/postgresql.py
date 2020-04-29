@@ -4,14 +4,16 @@ import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
+from utils.adapter_abstract import AbstractAdapter
+
 MAX_ATTEMPT_FAIL = 10
 
-__all__ = ('DB',)
+__all__ = ('PostgresqlHelper',)
 
 logger = logging.getLogger(__name__)
 
 
-class DB:
+class PostgresqlHelper(AbstractAdapter):
     def __init__(self, user: str, password: str, host: str, port: str, database_name: str):
         self.user = user
         self.password = password
