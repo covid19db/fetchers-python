@@ -160,7 +160,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
             
                 upsert_obj_province = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'ZAF_DSFSI',
+                'source': 'ZAF_DSFSI_province',
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 'country': "South Africa",
