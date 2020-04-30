@@ -110,6 +110,12 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # countrycode is mandatory and it's the ISO Alpha-3 code of the country
                 # an exception is ships, which has "---" as country code
                 'countrycode': 'ZAF',
+                # adm_area_1, when available, is a wide-area administrative region
+                # In this case, adm_area_1, adm_area_2 (subadministrative region) and 
+                #  adm_area_3 (subsubadministrative region) are not available.
+                'adm_area_1': 'Null', 
+                'adm_area_2': 'Null', 
+                'adm_area_3': 'Null', 
                 # tested number by each date, cumulative
                 'tested': cumulative_tests,
                 # confirmed is the number of confirmed cases of infection, this is cumulative                    
@@ -160,14 +166,17 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
             
                 upsert_obj_province = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'ZAF_DSFSI_province',
+                'source': 'ZAF_DSFSI',
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 'country': "South Africa",
                 # countrycode is mandatory and it's the ISO Alpha-3 code of the country
                 'countrycode': 'ZAF',
                 # adm_area_1, when available, is a wide-area administrative region
-                'adm_area_1': province,               
+                # adm_area_2 (subadministrative region) and adm_area_3 (subsubadministrative region) , are not available.
+                'adm_area_1': province,         
+                'adm_area_2': 'Null', 
+                'adm_area_3': 'Null', 
                 # confirmed is the number of confirmed cases of infection, this is cumulative                    
                 'confirmed': confirmed,
                 # dead is the number of people who have died because of covid19, this is cumulative
