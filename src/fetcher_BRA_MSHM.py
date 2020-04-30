@@ -35,7 +35,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
     def province_dead_fetch():
                         
         """
-                        This url mainly provide individual cases of death data on the province-level.
+                        This url mainly provide cumulative data of death data on the province-level.
         """
 
         url = 'https://raw.githubusercontent.com/elhenrico/covid19-Brazil-timeseries/master/deaths.csv'
