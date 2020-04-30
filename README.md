@@ -10,7 +10,7 @@ Currently implemented fetchers:
 | WRD_ECDC | World | several  | [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) | candidate | NA |
 | ZAF_DSFSI | South Africa | fetcher_ZAF.py  | [Data Science for Social Impact research group, the University of Pretoria](https://github.com/dsfsi/covid19za) | candidate | adm_area_1: EC |
 | BRA_MSHM | Brazil | fetcher_BRA_MSHM.py  | [github: elhenrico](https://github.com/elhenrico/covid19-Brazil-timeseries) | candidate | adm_area_1: AC|
-
+| SWE_GM | Sweden | fetcher_SWE_GM.py  | [github: elinlutz](https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series) | candidate | adm_area_1: Blekinge|
 Explanation of status:
 - Draft: being developed, should not be tested yet
 - Candidate: development complete, being tested on a private test database
