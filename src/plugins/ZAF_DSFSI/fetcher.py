@@ -84,16 +84,43 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 for index1, record1 in temp.iterrows():
                     confirmed = record1[-2]
             else:
-                confirmed = "nan"
-
+                confirmed = None
+            try:
+                    confirmed=int(confirmed)
+            except:
+                    confirmed=None
             ### Fetch tested, recovered, hopistalised, icu, ventilated and dead nums                    
             cumulative_tests = record[2]
+            try:
+                    cumulative_tests=int(cumulative_tests)
+            except:
+                    cumulative_tests=None
+                    
             recovered = record[3]
+            try:
+                    recovered=int(recovered)
+            except:
+                    recovered=None
+                    
             hospitalisation = record[4]
+            try:
+                    hospitalisation=int(hospitalisation)
+            except:
+                    hospitalisation=None
+            
             critical_icu = record[5]
-            ventilation = record[6]
-            dead = record[7]
+            try:
+                    critical_icu=int(critical_icu)
+            except:
+                    critical_icu=None
 
+
+            dead = record[7]
+            try:
+                    dead=int(dead)
+            except:
+                    dead=None
+                    
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source
@@ -150,6 +177,10 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
                 # Get confirmed number from current csv (province_confirmed_data) for current province
                 confirmed = record_province[k + 2]
+                try:
+                    confirmed=int(confirmed)
+                except:
+                    confirmed=None
 
                 # To get cumulative dead number in current province at some date, by counting the individual cases in
                 # the same province up to the date ('YYYYMMDD' numeric format) from csv province_dead_data
@@ -171,10 +202,11 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     'adm_area_2': None,
                     'adm_area_3': None,
                     # confirmed is the number of confirmed cases of infection, this is cumulative
-                    'confirmed': int(confirmed),
+                    'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': int(dead)
 
                 }
 
                 self.db.upsert_epidemiology_data(**upsert_obj_province)
+
