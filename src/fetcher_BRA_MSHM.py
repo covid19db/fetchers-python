@@ -95,7 +95,8 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
                     'adm_area_1': province,
-
+                    'adm_area_2': None,
+                    'adm_area_3': None,
                     'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': dead
