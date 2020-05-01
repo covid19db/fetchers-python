@@ -1,6 +1,7 @@
 import logging
 import sqlite3
 import pandas as pd
+from datetime import datetime
 
 __all__ = ('SqliteHelper',)
 
@@ -25,7 +26,7 @@ sql_create_epidemiology_table = """
         hospitalised_icu integer DEFAULT NULL,
         quarantined integer DEFAULT NULL,
         UNIQUE (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3) ON CONFLICT REPLACE,
-        PRIMARY KEY (source, date, country, countrycode)
+        PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
 
 sql_create_government_response_table = """ 
@@ -43,7 +44,7 @@ sql_create_government_response_table = """
         stringency_actual integer DEFAULT NULL,
         actions json DEFAULT NULL,
         UNIQUE (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3) ON CONFLICT REPLACE,
-        PRIMARY KEY (source, date, country, countrycode)
+        PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
 
 
@@ -90,7 +91,11 @@ class SqliteHelper(AbstractAdapter):
 
         return self.cur.fetchall()
 
+    def format_data(self, data):
+        return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
+
     def upsert_government_response_data(self, **kwargs):
+        kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO government_response ({insert_keys}) VALUES ({insert_data})""".format(
             insert_keys=",".join([key for key in kwargs.keys()]),
             insert_data=",".join('?' * len(kwargs)),
@@ -100,6 +105,7 @@ class SqliteHelper(AbstractAdapter):
             "Updating govtrack table with data: {}".format([kwargs[k] for k in kwargs.keys()]))
 
     def upsert_epidemiology_data(self, **kwargs):
+        kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO epidemiology ({insert_keys}) VALUES ({insert_data})""".format(
             insert_keys=",".join([key for key in kwargs.keys()]),
             insert_data=",".join('?' * len(kwargs)),

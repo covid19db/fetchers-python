@@ -25,7 +25,9 @@ class PolandWikiFetcher(AbstractFetcher):
                 date=item['Date'],
                 country='Poland',
                 countrycode='POL',
-                adm_area_1='',
+                adm_area_1=None,
+                adm_area_2=None,
+                adm_area_3=None,
                 tested=to_number(item['Quarantined']),
                 quarantined=to_number(item['Tested (total)']),
                 confirmed=to_number(item['Confirmed']),
@@ -55,6 +57,8 @@ class PolandWikiFetcher(AbstractFetcher):
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=voivodeship_name,
+                    adm_area_2=None,
+                    adm_area_3=None,
                     confirmed=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
@@ -80,6 +84,8 @@ class PolandWikiFetcher(AbstractFetcher):
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=voivodeship_name,
+                    adm_area_2=None,
+                    adm_area_3=None,
                     dead=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )

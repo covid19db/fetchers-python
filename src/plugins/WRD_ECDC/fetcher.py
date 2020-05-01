@@ -53,6 +53,9 @@ class WorldECDCFetcher(AbstractFetcher):
                 'date': date,
                 'country': country,
                 'countrycode': country_code,
+                'adm_area_1': None,
+                'adm_area_2': None,
+                'adm_area_3': None,
                 'confirmed': last_country_total_confirmed_cases,
                 'dead': last_country_total_deaths
             }

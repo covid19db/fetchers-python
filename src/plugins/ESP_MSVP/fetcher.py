@@ -36,6 +36,8 @@ class SpainWikiFetcher(AbstractFetcher):
                 'country': 'Spain',
                 'countrycode': 'ESP',
                 'adm_area_1': adm_area_1,
+                'adm_area_2': None,
+                'adm_area_3': None,
                 'confirmed': confirmed,
                 'dead': dead,
                 'recovered': recovered,
