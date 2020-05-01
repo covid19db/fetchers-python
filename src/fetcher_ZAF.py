@@ -113,9 +113,9 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # adm_area_1, when available, is a wide-area administrative region
                 # In this case, adm_area_1, adm_area_2 (subadministrative region) and 
                 #  adm_area_3 (subsubadministrative region) are not available.
-                'adm_area_1': 'Null', 
-                'adm_area_2': 'Null', 
-                'adm_area_3': 'Null', 
+                'adm_area_1': None, 
+                'adm_area_2': None, 
+                'adm_area_3': None, 
                 # tested number by each date, cumulative
                 'tested': cumulative_tests,
                 # confirmed is the number of confirmed cases of infection, this is cumulative                    
@@ -175,8 +175,8 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # adm_area_1, when available, is a wide-area administrative region
                 # adm_area_2 (subadministrative region) and adm_area_3 (subsubadministrative region) , are not available.
                 'adm_area_1': province,         
-                'adm_area_2': 'Null', 
-                'adm_area_3': 'Null', 
+                'adm_area_2': None, 
+                'adm_area_3': None, 
                 # confirmed is the number of confirmed cases of infection, this is cumulative                    
                 'confirmed': confirmed,
                 # dead is the number of people who have died because of covid19, this is cumulative
