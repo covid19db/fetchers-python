@@ -130,3 +130,7 @@ dmypy.json
 
 # PyCharm
 .idea/
+
+./src/data/database.sql
+./src/data/database.sqlite
+
