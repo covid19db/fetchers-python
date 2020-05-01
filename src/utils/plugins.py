@@ -30,3 +30,10 @@ def search_for_plugins() -> List:
             logger.error(f'Unable to load plugin: {module_name}, error: {ex}')
 
     return available_plugins
+
+
+def get_only_selected_plugins() -> List:
+    run_only_plugins = os.environ.get("RUN_ONLY_PLUGINS")
+    if run_only_plugins:
+        return run_only_plugins.split(",")
+    return None

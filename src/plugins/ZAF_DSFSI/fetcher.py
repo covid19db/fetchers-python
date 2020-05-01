@@ -171,9 +171,9 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     'adm_area_2': None,
                     'adm_area_3': None,
                     # confirmed is the number of confirmed cases of infection, this is cumulative
-                    'confirmed': confirmed,
+                    'confirmed': int(confirmed),
                     # dead is the number of people who have died because of covid19, this is cumulative
-                    'dead': dead
+                    'dead': int(dead)
 
                 }
 

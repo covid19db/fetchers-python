@@ -17,7 +17,7 @@ __all__ = ('BRA_MSHMFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class ZAF_DSFSIFetcher(AbstractFetcher):
+class BRA_MSHMFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
     def province_confirmed_fetch(self):
@@ -91,9 +91,9 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     'adm_area_1': province,
                     'adm_area_2': None,
                     'adm_area_3': None,
-                    'confirmed': confirmed,
+                    'confirmed': int(confirmed),
                     # dead is the number of people who have died because of covid19, this is cumulative
-                    'dead': dead
+                    'dead': int(dead)
 
                 }
 
