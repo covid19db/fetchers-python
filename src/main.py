@@ -3,15 +3,17 @@ import time
 import logging
 import schedule
 from typing import List
-from utils.database import DB
 from utils.plugins import search_for_plugins
+from utils.adapters import DataAdapter
+
+from utils.adapter_abstract import AbstractAdapter
 
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 logging.getLogger().setLevel(logging.DEBUG)
 
 
-def run_plugins_job(db: DB, available_plugins: List):
+def run_plugins_job(db: AbstractAdapter, available_plugins: List):
     for plugin in available_plugins:
         try:
             logger.info(f'Running plugin {plugin.__name__} ')
@@ -23,11 +25,7 @@ def run_plugins_job(db: DB, available_plugins: List):
 
 
 def main():
-    db = DB(user=os.getenv('DB_USERNAME'),
-            password=os.getenv('DB_PASSWORD'),
-            host=os.getenv('DB_ADDRESS'),
-            port=int(os.getenv('DB_PORT', 5432)),
-            database_name=os.getenv('DB_NAME'))
+    db = DataAdapter.get_adapter()
     available_plugins = search_for_plugins()
 
     # run once

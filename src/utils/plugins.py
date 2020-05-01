@@ -11,13 +11,13 @@ logger = logging.getLogger(__name__)
 
 
 def search_for_plugins() -> List:
-    plugins_path = os.path.join(os.path.dirname(__file__), "../plugins")
+    plugins_path = os.path.join(os.path.dirname(__file__), "..", "plugins")
     sys.path.append(plugins_path)
     available_plugins = []
 
     for path in Path(plugins_path).rglob('*.py'):
         module_path = path.relative_to(plugins_path).with_suffix('')
-        module_name = str(module_path).replace('/', '.')
+        module_name = str(module_path).replace('/', '.').replace('\\', '.')
         try:
             module = importlib.import_module(module_name)
             for item_name in dir(module):

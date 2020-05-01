@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 
-from utils.database import DB
+from utils.adapter_abstract import AbstractAdapter
 
 __all__ = ('AbstractFetcher',)
 
 
 class AbstractFetcher(ABC):
 
-    def __init__(self, db: DB):
+    def __init__(self, db: AbstractAdapter):
         self.db = db
 
     @abstractmethod
