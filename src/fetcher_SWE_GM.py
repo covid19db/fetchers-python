@@ -101,7 +101,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
                     # date is also mandatory, the format must be YYYY-MM-DD
-                    'date': date_,
+                    'date': date,
                     # country is mandatory and should be in English
                     # the exception is "Ships"
                     'country': 'Sweden',
@@ -147,7 +147,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
                     # date is also mandatory, the format must be YYYY-MM-DD
-                    'date': date_,
+                    'date': date,
                     # country is mandatory and should be in English
                     # the exception is "Ships"
                     'country': 'Sweden',
