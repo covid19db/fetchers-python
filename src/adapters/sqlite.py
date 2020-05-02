@@ -105,8 +105,7 @@ class SqliteHelper(AbstractAdapter):
             insert_data=",".join('?' * len(kwargs)),
         )
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug(
-            "Updating govtrack table with data: {}".format([kwargs[k] for k in kwargs.keys()]))
+        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
 
     def upsert_epidemiology_data(self, **kwargs):
         kwargs = self.format_data(kwargs)
@@ -116,8 +115,7 @@ class SqliteHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug(
-            "Updating infections table with data: {}".format([kwargs[k] for k in kwargs.keys()]))
+        logger.debug("Updating infections table with data: {}".format(list(kwargs.values())))
 
     def close_connection(self):
         if self.conn:
