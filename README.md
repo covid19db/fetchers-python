@@ -12,6 +12,7 @@ Currently implemented fetchers:
 | BRA_MSHM | Brazil | fetcher_BRA_MSHM.py  | [github: elhenrico](https://github.com/elhenrico/covid19-Brazil-timeseries) | candidate | adm_area_1: AC|
 | SWE_GM | Sweden | fetcher_SWE_GM.py  | [github: elinlutz](https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series) | candidate | adm_area_1: Blekinge|
 | KOR_DS4C | South Korea | KOR | [Data Science for COVID-19 in South Korea](https://github.com/jihoo-kim/Data-Science-for-COVID-19) | candidate | adm_area_1: NA or Province |
+| AUS_C1A | Australia | AUS | [The Real-time COVID-19 Status in Australia](https://github.com/covid-19-au/covid-19-au.github.io) | candidate | adm_area_1: NA or State |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
