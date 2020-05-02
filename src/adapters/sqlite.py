@@ -92,6 +92,10 @@ class SqliteHelper(AbstractAdapter):
         return self.cur.fetchall()
 
     def format_data(self, data):
+        # Add adm_area values if don't exist
+        data['adm_area_1'] = data.get('adm_area_1')
+        data['adm_area_2'] = data.get('adm_area_2')
+        data['adm_area_3'] = data.get('adm_area_3')
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
 
     def upsert_government_response_data(self, **kwargs):
