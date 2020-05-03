@@ -89,8 +89,7 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug(
-            "Updating govtrack table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
+        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
 
     def upsert_epidemiology_data(self, **kwargs):
         data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
@@ -111,8 +110,7 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug(
-            "Updating infections table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
+        logger.debug("Updating epidemiology table with data: {}".format(list(kwargs.values())))
 
     def close_connection(self):
         if self.conn:

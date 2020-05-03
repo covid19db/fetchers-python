@@ -91,7 +91,7 @@ class POR_MSDSFetcher(AbstractFetcher):
                      'dead': dead,
                      'recovered': recovered,
                      'hospitalised': admitted,
-                     'hospitalised_ICU': icu
+                     'hospitalised_icu': icu
 
                  }
 
