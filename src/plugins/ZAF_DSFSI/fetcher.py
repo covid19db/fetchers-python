@@ -149,7 +149,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # hospitalised is the number of people who have been admitted to hospital, this is cumulative                
                 'hospitalised': hospitalisation,
                 # ICU is the number of people who have been admitted to ICU, this is cumulative                                
-                # 'hospitalised_ICU': critical_icu,
+                'hospitalised_icu': critical_icu,
                 # ventilation is the number of people who have been treated using ventilator equipment, this is cumulative
                 # 'hospitalised_ventilation': ventilation
 
