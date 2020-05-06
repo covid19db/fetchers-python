@@ -16,7 +16,7 @@ class SpainWikiFetcher(AbstractFetcher):
         url = 'https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv'
         return pd.read_csv(url)
 
-    def run(self):
+    def run(self,flag: int):
         data = self.fetch()
 
         # Parse data into the scheme of our database
@@ -44,5 +44,8 @@ class SpainWikiFetcher(AbstractFetcher):
                 'hospitalised': hospitalised,
                 'hospitalised_icu': hospitalised_icu
             }
-
-            self.db.upsert_epidemiology_data(**upsert_obj)
+			if flag ==1:
+                self.db.upsert_epidemiology_data(**upsert_obj)
+            else:
+                self.db.upsert_staging_epidemiology_data(**upsert_obj)
+            
