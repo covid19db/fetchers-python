@@ -11,5 +11,8 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       SQLITE: ${SQLITE}
+      SYS_EMAIL: $(SYS_EMAIL)
+      SYS_EMAIL_PASS: $(SYS_EMAIL_PASS)
+      
     volumes:
       - ./data:/data
