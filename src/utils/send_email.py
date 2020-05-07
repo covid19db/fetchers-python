@@ -10,7 +10,7 @@ def send_email(source: str, message: str):
         
         s = smtplib.SMTP('smtp.gmail.com', 587) 
         s.starttls() 
-        s.login("??????@gmail.com", "????????") 
+        s.login("ahmadandreem@gmail.com", "adamluna2009") 
         s.sendmail("covid19server", destination, message) 
         s.quit()
 

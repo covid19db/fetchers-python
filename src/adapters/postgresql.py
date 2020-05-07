@@ -115,17 +115,16 @@ class PostgresqlHelper(AbstractAdapter):
     def select_data(self, tname: str):
         sql_query = sql.SQL("select * from %s" %tname)   
         
-        data=self.execute(sql_query,"None")
+        data=self.execute(sql_query)
         logger.debug(
             "selecting data from %s ", tname)
         return data
         
-    def delete_data(self, tname: str):
+    def delete_data(self, tname: str, source_code: str):
         
-        sql_query = sql.SQL("delete from %s returning source" %tname)
-        # sql_query = sql.SQL("delete from %s where source='USA_NYT' and confirmed < 2 and adm_area_1 ='Nebraska' returning source" %tname)
-        
-        self.execute(sql_query,"None")
+        sql_query = sql.SQL("delete from %s where source = '%s' RETURNING *" %(tname, source_code))
+           
+        self.execute(sql_query)
         # print(data)
         logger.debug(
             "Deleting data from %s ", tname)

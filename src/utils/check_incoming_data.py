@@ -37,7 +37,7 @@ class check_incoming_data():
                            
             # clean up the staging_epidemiology table
             table_name="staging_epidemiology"
-            db.delete_data(table_name)
+            db.delete_data(table_name,source_code)
             
             module_name=getattr(sys.modules[__name__], plugin_name)
             # run fetcher with 0 parameter to insert into the statging epidemiology table                
@@ -52,7 +52,7 @@ class check_incoming_data():
                 #update teh table with status
                 fetcher.run(1) 
             else:
-                message="source {} header has changed".format(plugin_name)
+                message="source {} has changed".format(plugin_name)
                 send_email(source_code,message)             
                 
                              
