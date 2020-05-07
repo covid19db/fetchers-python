@@ -89,8 +89,7 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug(
-            "Updating govtrack table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
+        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
 
     def upsert_epidemiology_data(self, **kwargs):
         data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
@@ -111,9 +110,8 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug(
-            "Updating infections table with data: {}".format([kwargs[k] for k in kwargs.keys() if k not in data_keys]))
-			
+        logger.debug("Updating epidemiology table with data: {}".format(list(kwargs.values())))
+        
     def select_data(self, tname: str):
         sql_query = sql.SQL("select * from %s" %tname)   
         
@@ -167,8 +165,7 @@ class PostgresqlHelper(AbstractAdapter):
         
     def select_email(self, fsource: str):
         sql_query = sql.SQL("SELECT email from email_info WHERE fetcher_source = '%s'" %fsource) 
-        # sql_query += "fetcher_source = '{}';".format( fsource )
-        
+                
         
         data=self.execute(sql_query)
         print(data)
@@ -196,8 +193,7 @@ class PostgresqlHelper(AbstractAdapter):
     def call_db_function(self, source_code: str):
         compare_result= self.cur.callproc('covid19_compare_tables',[source_code])
         return compare_result
-        
-        
+
     def close_connection(self):
         if self.conn:
             if self.cur:
