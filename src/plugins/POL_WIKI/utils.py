@@ -1,20 +1,21 @@
 import re
 import requests
 import pandas as pd
+from pandas import DataFrame
 from typing import List
 from bs4 import Tag
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 
 
-def correct_cell_value(value: str):
+def correct_cell_value(value: str) -> str:
     # Remove new lines characters and square bracket
     value = value.text.strip().replace('\n', '')
     value = re.sub(r'\[.*?\]', '', value)
     return value
 
 
-def validate_row(row: str):
+def validate_row(row: str) -> bool:
     # Skip rows with small amount of columns and with text
     if not row or len(row) < 2:
         return False
@@ -23,20 +24,43 @@ def validate_row(row: str):
     return True
 
 
-def to_number(item: str):
+def translate_adm_area_1(data: str) -> str:
+    # Mapping from input naming convention to Covid19db adminstrative division convention
+    adm_area_1_mapping = {
+        'Lower Silesia (DS)': 'Dolnośląskie',
+        'Kuyavia-Pomerania (KP)': 'Kujawsko-Pomorskie',
+        'Łódź (LD)': 'Łódzkie',
+        'Lublin (LU)': 'Lubelskie',
+        'Lubusz (LB)': 'Lubuskie',
+        'Lesser Poland (MA)': 'Małopolskie',
+        'Masovia (MZ; Warsaw)': 'Mazowieckie',
+        'Opole (OP)': 'Opolskie',
+        'Subcarpathian (PK)': 'Podkarpackie',
+        'Podlaskie (PD)': 'Podlaskie',
+        'Pomerania (PM)': 'Pomorskie',
+        'Silesia (SL)': 'Śląskie',
+        'Warmia–Masuria (WN)': 'Warmińsko-Mazurskie',
+        'Greater Poland (WP)': 'Wielkopolskie',
+        'West Pomerania (ZP)': 'Zachodniopomorskie',
+        'Holy Cross (SK)': 'Świętokrzyskie'
+    }
+    return adm_area_1_mapping.get(data, data)
+
+
+def to_number(item: str) -> int:
     # Remove coma from numbers and convert to int
     if isinstance(item, str):
         item = item.replace(',', '')
     return int(item or 0)
 
 
-def fetch_html_tables_from_wiki(url: str):
+def fetch_html_tables_from_wiki(url: str) -> List[str]:
     website_content = requests.get(url)
     soup = BeautifulSoup(website_content.text, 'lxml')
     return soup.find_all("table", {"class": "wikitable"})
 
 
-def html_table_to_df(table: Tag):
+def html_table_to_df(table: Tag) -> DataFrame:
     header = []
     for th in table.findAll('th'):
         key = th.get_text().replace('\n', '')
@@ -61,7 +85,7 @@ def html_table_to_df(table: Tag):
     return df
 
 
-def extract_data_table(data_tables: List[str], text: str):
+def extract_data_table(data_tables: List[str], text: str) -> DataFrame:
     for data_table in data_tables:
         if data_table.find(text=re.compile(text)):
             return html_table_to_df(data_table)

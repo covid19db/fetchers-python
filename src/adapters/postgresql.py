@@ -70,10 +70,10 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def upsert_government_response_data(self, **kwargs):
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
 
-        sql_query = sql.SQL("""INSERT INTO government_response ({insert_keys}) VALUES ({insert_data})
+        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                     ON CONFLICT
                                         (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
                                          COALESCE(adm_area_3, ''), source)
@@ -81,6 +81,7 @@ class PostgresqlHelper(AbstractAdapter):
                                         UPDATE SET {update_data}
                                     RETURNING *
                                     """).format(
+            table_name=table_name,
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
             update_data=sql.SQL(",").join(
@@ -89,12 +90,12 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def upsert_epidemiology_data(self, **kwargs):
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
 
-        sql_query = sql.SQL("""INSERT INTO epidemiology ({insert_keys}) VALUES ({insert_data})
+        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
                                     (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
                                      COALESCE(adm_area_3, ''), source)
@@ -102,6 +103,7 @@ class PostgresqlHelper(AbstractAdapter):
                                     UPDATE SET {update_data}
                                 RETURNING *
                                 """).format(
+            table_name=table_name,
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
             update_data=sql.SQL(",").join(
@@ -110,7 +112,7 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug("Updating epidemiology table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def close_connection(self):
         if self.conn:

@@ -3,7 +3,7 @@ from pandas import DataFrame
 from collections import OrderedDict
 
 from utils.fetcher_abstract import AbstractFetcher
-from .utils import to_number, extract_data_table, fetch_html_tables_from_wiki
+from .utils import to_number, extract_data_table, fetch_html_tables_from_wiki, translate_adm_area_1
 
 __all__ = ('PolandWikiFetcher',)
 
@@ -56,7 +56,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=voivodeship_name,
+                    adm_area_1=translate_adm_area_1(voivodeship_name),
                     adm_area_2=None,
                     adm_area_3=None,
                     confirmed=total_per_voivodeship[voivodeship_name],
@@ -83,7 +83,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=voivodeship_name,
+                    adm_area_1=translate_adm_area_1(voivodeship_name),
                     adm_area_2=None,
                     adm_area_3=None,
                     dead=total_per_voivodeship[voivodeship_name],

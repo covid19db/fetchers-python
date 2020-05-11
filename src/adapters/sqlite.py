@@ -98,24 +98,26 @@ class SqliteHelper(AbstractAdapter):
         data['adm_area_3'] = data.get('adm_area_3')
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
 
-    def upsert_government_response_data(self, **kwargs):
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         kwargs = self.format_data(kwargs)
-        sql_query = """INSERT OR REPLACE INTO government_response ({insert_keys}) VALUES ({insert_data})""".format(
+        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
+            table_name=table_name,
             insert_keys=",".join([key for key in kwargs.keys()]),
             insert_data=",".join('?' * len(kwargs)),
         )
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def upsert_epidemiology_data(self, **kwargs):
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         kwargs = self.format_data(kwargs)
-        sql_query = """INSERT OR REPLACE INTO epidemiology ({insert_keys}) VALUES ({insert_data})""".format(
+        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
+            table_name=table_name,
             insert_keys=",".join([key for key in kwargs.keys()]),
             insert_data=",".join('?' * len(kwargs)),
         )
 
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug("Updating infections table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def close_connection(self):
         if self.conn:
