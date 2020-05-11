@@ -29,6 +29,7 @@ class PolandWikiFetcher(AbstractFetcher):
                 adm_area_1=None,
                 adm_area_2=None,
                 adm_area_3=None,
+                gid=['POL'],
                 tested=to_number(item['Quarantined']),
                 quarantined=to_number(item['Tested (total)']),
                 confirmed=to_number(item['Confirmed']),
@@ -55,6 +56,8 @@ class PolandWikiFetcher(AbstractFetcher):
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     adm_area_1=voivodeship_name,
+                    adm_area_2=None,
+                    adm_area_3=None,
                     return_original_if_failure=True
                 )
 
@@ -63,8 +66,9 @@ class PolandWikiFetcher(AbstractFetcher):
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=adm_area_1,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    adm_area_2=adm_area_2,
+                    adm_area_3=adm_area_3,
+                    gid=[gid],
                     confirmed=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
@@ -87,6 +91,8 @@ class PolandWikiFetcher(AbstractFetcher):
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     adm_area_1=voivodeship_name,
+                    adm_area_2=None,
+                    adm_area_3=None,
                     return_original_if_failure=True
                 )
 
@@ -95,8 +101,9 @@ class PolandWikiFetcher(AbstractFetcher):
                     country='Poland',
                     countrycode='POL',
                     adm_area_1=adm_area_1,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    adm_area_2=adm_area_2,
+                    adm_area_3=adm_area_3,
+                    gid=[gid],
                     dead=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )

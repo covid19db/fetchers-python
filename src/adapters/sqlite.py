@@ -18,6 +18,7 @@ sql_create_epidemiology_table = """
         adm_area_1 text DEFAULT NULL,
         adm_area_2 text DEFAULT NULL,
         adm_area_3 text DEFAULT NULL,
+        gid text DEFAULT NULL,
         tested integer DEFAULT NULL,
         confirmed integer DEFAULT NULL,
         recovered integer DEFAULT NULL,
@@ -38,6 +39,7 @@ sql_create_government_response_table = """
         adm_area_1 text DEFAULT NULL,
         adm_area_2 text DEFAULT NULL,
         adm_area_3 text DEFAULT NULL,
+        gid text DEFAULT NULL,
         confirmed integer DEFAULT NULL,
         dead integer DEFAULT NULL,
         stringency integer DEFAULT NULL,
@@ -96,6 +98,7 @@ class SqliteHelper(AbstractAdapter):
         data['adm_area_1'] = data.get('adm_area_1')
         data['adm_area_2'] = data.get('adm_area_2')
         data['adm_area_3'] = data.get('adm_area_3')
+        data['gid'] = ",".join(data.get('gid'))
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
