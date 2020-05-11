@@ -1,9 +1,10 @@
+from os import path
 import logging
 from pandas import DataFrame
 from collections import OrderedDict
 
 from utils.fetcher_abstract import AbstractFetcher
-from .utils import to_number, extract_data_table, fetch_html_tables_from_wiki, translate_adm_area_1
+from .utils import to_number, extract_data_table, fetch_html_tables_from_wiki
 
 __all__ = ('PolandWikiFetcher',)
 
@@ -52,11 +53,16 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     confirmed)
 
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    adm_area_1=voivodeship_name,
+                    return_original_if_failure=True
+                )
+
                 self.db.upsert_epidemiology_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=translate_adm_area_1(voivodeship_name),
+                    adm_area_1=adm_area_1,
                     adm_area_2=None,
                     adm_area_3=None,
                     confirmed=total_per_voivodeship[voivodeship_name],
@@ -79,11 +85,16 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     deaths)
 
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    adm_area_1=voivodeship_name,
+                    return_original_if_failure=True
+                )
+
                 self.db.upsert_epidemiology_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=translate_adm_area_1(voivodeship_name),
+                    adm_area_1=adm_area_1,
                     adm_area_2=None,
                     adm_area_3=None,
                     dead=total_per_voivodeship[voivodeship_name],

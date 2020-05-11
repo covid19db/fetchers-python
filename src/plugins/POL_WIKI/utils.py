@@ -24,29 +24,6 @@ def validate_row(row: str) -> bool:
     return True
 
 
-def translate_adm_area_1(data: str) -> str:
-    # Mapping from input naming convention to Covid19db adminstrative division convention
-    adm_area_1_mapping = {
-        'Lower Silesia (DS)': 'Dolnośląskie',
-        'Kuyavia-Pomerania (KP)': 'Kujawsko-Pomorskie',
-        'Łódź (LD)': 'Łódzkie',
-        'Lublin (LU)': 'Lubelskie',
-        'Lubusz (LB)': 'Lubuskie',
-        'Lesser Poland (MA)': 'Małopolskie',
-        'Masovia (MZ; Warsaw)': 'Mazowieckie',
-        'Opole (OP)': 'Opolskie',
-        'Subcarpathian (PK)': 'Podkarpackie',
-        'Podlaskie (PD)': 'Podlaskie',
-        'Pomerania (PM)': 'Pomorskie',
-        'Silesia (SL)': 'Śląskie',
-        'Warmia–Masuria (WN)': 'Warmińsko-Mazurskie',
-        'Greater Poland (WP)': 'Wielkopolskie',
-        'West Pomerania (ZP)': 'Zachodniopomorskie',
-        'Holy Cross (SK)': 'Świętokrzyskie'
-    }
-    return adm_area_1_mapping.get(data, data)
-
-
 def to_number(item: str) -> int:
     # Remove coma from numbers and convert to int
     if isinstance(item, str):
