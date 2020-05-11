@@ -70,7 +70,8 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+    def upsert_government_response_data(self, **kwargs):
+        table_name = 'government_response'
         data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
 
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
@@ -92,7 +93,8 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+    def upsert_epidemiology_data(self, **kwargs):
+        table_name = 'epidemiology'
         data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
 
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
