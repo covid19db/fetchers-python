@@ -17,6 +17,7 @@ Currently implemented fetchers:
 | GBR_PHTW | United Kingdom | GBR | [Coronavirus (COVID-19) UK Historical Data](https://github.com/tomwhite/covid-19-uk-data) | candidate | adm_area_1: NA or country, adm_area_2: NA or upper tier/health boards |
 | CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | candidate | adm_area_1: canton or Liechtenstein
 | TUR_XXX | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | candidate | adm_area_1: NA
+| BEL_ZH | Belgium | BEL | [github:eschnou](https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv) | candidate | adm_area_1: NA
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
