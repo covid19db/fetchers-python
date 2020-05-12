@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 from pandas import DataFrame
-from typing import Tuple
+from typing import Tuple, List
 
 
 class AdmTranslator:
@@ -17,14 +17,14 @@ class AdmTranslator:
         translation_pd = translation_pd.where((pd.notnull(translation_pd)), None)
         return translation_pd
 
-    def tr(self, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None,
-           return_original_if_failure: bool = False) -> Tuple[bool, str, str, str, str]:
+    def tr(self, input_adm_area_1: str = None, input_adm_area_2: str = None, input_adm_area_3: str = None,
+           return_original_if_failure: bool = False) -> Tuple[bool, str, str, str, List]:
         for index, row in self.translation_pd.iterrows():
-            if row.input_adm_area_1 == adm_area_1 \
-                    and row.input_adm_area_2 == adm_area_2 \
-                    and row.input_adm_area_3 == adm_area_3:
-                return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid
+            if row.input_adm_area_1 == input_adm_area_1 \
+                    and row.input_adm_area_2 == input_adm_area_2 \
+                    and row.input_adm_area_3 == input_adm_area_3:
+                return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid.split(':')
         if return_original_if_failure:
-            return False, adm_area_1, adm_area_2, adm_area_3, None
+            return False, input_adm_area_1, input_adm_area_2, input_adm_area_3, None
         else:
             return False, None, None, None, None

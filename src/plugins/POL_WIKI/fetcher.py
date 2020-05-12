@@ -55,9 +55,9 @@ class PolandWikiFetcher(AbstractFetcher):
                     confirmed)
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                    adm_area_1=voivodeship_name,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    input_adm_area_1=voivodeship_name,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
                     return_original_if_failure=True
                 )
 
@@ -68,7 +68,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     adm_area_1=adm_area_1,
                     adm_area_2=adm_area_2,
                     adm_area_3=adm_area_3,
-                    gid=[gid],
+                    gid=gid,
                     confirmed=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
@@ -90,9 +90,9 @@ class PolandWikiFetcher(AbstractFetcher):
                     deaths)
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                    adm_area_1=voivodeship_name,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    input_adm_area_1=voivodeship_name,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
                     return_original_if_failure=True
                 )
 
@@ -103,7 +103,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     adm_area_1=adm_area_1,
                     adm_area_2=adm_area_2,
                     adm_area_3=adm_area_3,
-                    gid=[gid],
+                    gid=gid,
                     dead=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
