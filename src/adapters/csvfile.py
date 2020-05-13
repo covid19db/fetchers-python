@@ -49,7 +49,7 @@ class CSVFileHelper(AbstractAdapter):
             for key, value in data.items():
                 series[key] = value
         else:
-            self.temp_df.append(data, ignore_index=True)
+            self.temp_df = self.temp_df.append(data, ignore_index=True)
 
     def format_data(self, data):
         if isinstance(data.get('date'), pd.Timestamp):
