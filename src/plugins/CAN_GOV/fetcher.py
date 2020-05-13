@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class CanadaFetcher(AbstractFetcher):
-    LOAD_PLUGIN = False
+    LOAD_PLUGIN = True
 
     def fetch(self):
         # a csv file to be downloaded
@@ -27,8 +27,7 @@ class CanadaFetcher(AbstractFetcher):
             olddate = str(record[3])  # date is in dd-mm-yyyy format
 
             province = record[1]
-            if province == 'Canada':
-                province = None
+
             confirmed = int(record[4])
 
             if not math.isnan(record[6]):
@@ -51,6 +50,19 @@ class CanadaFetcher(AbstractFetcher):
             datetimeobject = datetime.strptime(olddate,'%d-%m-%Y')
             date = datetimeobject.strftime('%Y-%m-%d')
 
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=province,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
+
+            if province == 'Canada':
+                province = None
+                #adm_area_1 = None
+                gid = ['CAN']
+
+
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
@@ -65,9 +77,12 @@ class CanadaFetcher(AbstractFetcher):
                 'countrycode': 'CAN',
                 # adm_area_1, when available, is a wide-area administrative region, like a
                 # Canadian province in this case. This is left blank for the national figures.
-		            # Canada also lists 'Repatriated Travelers' which is a province for these figures.
+		# Canada also lists 'Repatriated Travelers' which is a province for these figures.
                 # This row is simply not added to the database
-                'adm_area_1': province,
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': adm_area_3,
+                'gid': gid,
                 'tested': tested,
                 # confirmed is the number of confirmed cases of infection, this is cumulative
                 'confirmed': confirmed,
@@ -75,6 +90,7 @@ class CanadaFetcher(AbstractFetcher):
                 'dead': dead,
                 # recovered is the number of people who have healed, this is cumulative
                 'recovered': recovered
+
             }
 
             # see the main webpage or the README for all the available fields and their
