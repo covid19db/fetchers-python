@@ -17,31 +17,37 @@ class CanadaFetcher(AbstractFetcher):
         url = 'https://health-infobase.canada.ca/src/data/covidLive/covid19.csv'
         return pd.read_csv(url)
 
-    def run(self):
+    def run(self):	
         data = self.fetch()
 
         for index, record in data.iterrows():
+                        
+            print(record.index)
+            
             olddate = str(record[3])  # date is in dd-mm-yyyy format
+
             province = record[1]
+
             confirmed = int(record[4])
 
             if not math.isnan(record[6]):
                 dead = int(record[6])
             else:
                 dead = None
-
+            
             if not math.isnan(record[8]):
                 tested = int(record[8])
             else:
                 tested = None
-
+                        
             if not math.isnan(record[9]):
                 recovered = int(record[9])
             else:
                 recovered = None
 
-            # convert the date format to be in YYYY-MM-DD format as expected
-            datetimeobject = datetime.strptime(olddate, '%d-%m-%Y')
+            
+            #convert the date format to be in YYYY-MM-DD format as expected
+            datetimeobject = datetime.strptime(olddate,'%d-%m-%Y')
             date = datetimeobject.strftime('%Y-%m-%d')
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
@@ -52,8 +58,10 @@ class CanadaFetcher(AbstractFetcher):
             )
 
             if province == 'Canada':
-                adm_area_1 = None
+                province = None
+                #adm_area_1 = None
                 gid = ['CAN']
+
 
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
@@ -69,7 +77,7 @@ class CanadaFetcher(AbstractFetcher):
                 'countrycode': 'CAN',
                 # adm_area_1, when available, is a wide-area administrative region, like a
                 # Canadian province in this case. This is left blank for the national figures.
-                # Canada also lists 'Repatriated Travelers' which is a province for these figures.
+		# Canada also lists 'Repatriated Travelers' which is a province for these figures.
                 # This row is simply not added to the database
                 'adm_area_1': adm_area_1,
                 'adm_area_2': adm_area_2,
@@ -89,7 +97,7 @@ class CanadaFetcher(AbstractFetcher):
             # semantics
 
             # the db object comes with a helper method that does the upsert for you:
-            if province != 'Repatriated travellers':
+            if (province != 'Repatriated travellers'):
                 self.db.upsert_epidemiology_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
