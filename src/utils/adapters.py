@@ -1,6 +1,7 @@
 import os
 from adapters.postgresql import PostgresqlHelper
 from adapters.sqlite import SqliteHelper
+from adapters.csvfile import CSVFileHelper
 
 
 class DataAdapter:
@@ -15,5 +16,7 @@ class DataAdapter:
                                     database_name=os.getenv('DB_NAME'))
         elif os.getenv('SQLITE'):
             return SqliteHelper(sqlite_file_path=os.getenv('SQLITE'))
+        elif os.getenv('CSV'):
+            return CSVFileHelper(csv_path=os.getenv('CSV'))
         else:
             raise ValueError('Unable to select serializer')

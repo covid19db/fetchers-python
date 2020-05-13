@@ -15,3 +15,6 @@ class AbstractAdapter(ABC):
     @abstractmethod
     def upsert_epidemiology_data(self, **kwargs):
         pass
+
+    def flush(self):
+        pass
