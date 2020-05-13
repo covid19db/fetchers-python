@@ -93,4 +93,4 @@ class CanadaFetcher(AbstractFetcher):
                 self.db.upsert_epidemiology_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
-            # but use it with care!#
+            # but use it with care!
