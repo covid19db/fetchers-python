@@ -52,7 +52,7 @@ class CanadaFetcher(AbstractFetcher):
             )
 
             if province == 'Canada':
-                province = None
+                adm_area_1 = None
                 gid = ['CAN']
 
             # we need to build an object containing the data we want to add or update
