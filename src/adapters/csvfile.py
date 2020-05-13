@@ -29,7 +29,7 @@ class CSVFileHelper(AbstractAdapter):
         self.csv_file_name = None
         self.temp_df = None
 
-    def write_to_csv(self, csv_file_name: str, data_type: str, data: dict):
+    def upsert_temp_df(self, csv_file_name: str, data_type: str, data: dict):
         if self.csv_file_name != csv_file_name:
             self.flush()
             self.csv_file_name = csv_file_name
@@ -63,13 +63,13 @@ class CSVFileHelper(AbstractAdapter):
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
-        self.write_to_csv(csv_file_name, table_name, kwargs)
+        self.upsert_temp_df(csv_file_name, table_name, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
-        self.write_to_csv(csv_file_name, table_name, kwargs)
+        self.upsert_temp_df(csv_file_name, table_name, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def flush(self):
