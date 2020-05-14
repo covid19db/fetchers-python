@@ -2,6 +2,8 @@
 # COVID19-India API
 # https://api.covid19india.org/
 #
+# Note: Ladakh is not in the GADM database
+#
 
 import logging
 import pandas as pd
@@ -83,6 +85,7 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                 'date': date,
                 'country': 'India',
                 'countrycode': 'IND',
+                'gid': ['IND'],
                 'tested': samples_tested,
                 'confirmed': confirmed,
                 'dead': deceased,
@@ -104,12 +107,22 @@ class IndiaCOVINDFetcher(AbstractFetcher):
             recovered = int(record[4]) if pd.notna(record[4]) else None
             tested = int(record[5]) if pd.notna(record[5]) else None
 
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=state,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
+
             upsert_obj = {
                 'source': 'IND_COVIND',
                 'date': date,
                 'country': 'India',
                 'countrycode': 'IND',
-                'adm_area_1': state,
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': adm_area_3,
+                'gid': gid if success else [],
                 'tested': tested,
                 'confirmed': confirmed,
                 'dead': deceased,

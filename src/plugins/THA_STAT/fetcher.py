@@ -36,6 +36,7 @@ class ThailandSTATFetcher(AbstractFetcher):
                                 .strftime('%Y-%m-%d'),
                 'country': 'Thailand',
                 'countrycode': 'THA',
+                'gid': ['THA'],
                 'confirmed': int(record['Confirmed']),
                 'dead': int(record['Deaths']),
                 'recovered': int(record['Recovered']),
@@ -55,12 +56,23 @@ class ThailandSTATFetcher(AbstractFetcher):
 
         for confirmdate, row in crosstabsum.iterrows():
             for provinceen, confirmed in row.items():
+
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=provinceen,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True
+                )
+
                 upsert_obj = {
                     'source': 'THA_STAT',
                     'date': confirmdate,
                     'country': 'Thailand',
                     'countrycode': 'THA',
-                    'adm_area_1': provinceen,
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': adm_area_2,
+                    'adm_area_3': adm_area_3,
+                    'gid': gid,
                     'confirmed': int(confirmed)
                 }
                 self.db.upsert_epidemiology_data(**upsert_obj)
