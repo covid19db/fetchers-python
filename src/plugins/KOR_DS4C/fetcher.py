@@ -40,6 +40,7 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
                 'date': date,
                 'country': 'South Korea',
                 'countrycode': 'KOR',
+                'gid': ['KOR'],
                 'tested': test,
                 'confirmed': confirmed,
                 'dead': deceased,
@@ -58,12 +59,22 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
             released = int(record[4])
             deceased = int(record[5])
 
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=province,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
+
             upsert_obj = {
                 'source': 'KOR_DS4C',
                 'date': date,
                 'country': 'South Korea',
                 'countrycode': 'KOR',
-                'adm_area_1': province,
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': adm_area_3,
+                'gid': gid,
                 'confirmed': confirmed,
                 'dead': deceased,
                 'recovered': released
