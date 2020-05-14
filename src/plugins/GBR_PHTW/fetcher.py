@@ -40,20 +40,29 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
         for index, record in data.iterrows():
             # date, country, confirmedcases, deaths, tests
             date = record[0]
-            country = record[1] if record[1] != 'UK' else None
+            country = record[1]
             confirmedcases = int(record[2]) if pd.notna(record[2]) else None
             deaths = int(record[3]) if pd.notna(record[3]) else None
             tests = int(record[4]) if pd.notna(record[4]) else None
+
+
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=country,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
 
             upsert_obj = {
                 'source': 'GBR_PHTW',
                 'date': date,
                 'country': 'United Kingdom',
                 'countrycode': 'GBR',
-                'adm_area_1': country,
+                'adm_area_1': adm_area_1,
                 'tested': tests,
                 'confirmed': confirmedcases,
-                'dead': deaths
+                'dead': deaths,
+                'gid': gid
             }
             self.db.upsert_epidemiology_data(**upsert_obj)
 
@@ -68,13 +77,21 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
                 area = record[3]
                 totalcases = int(record[4]) if pd.notna(record[4]) else None
 
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=country,
+                    input_adm_area_2=area,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True
+                )
+
                 upsert_obj = {
                     'source': 'GBR_PHTW',
                     'date': date,
                     'country': 'United Kingdom',
                     'countrycode': 'GBR',
-                    'adm_area_1': country,
-                    'adm_area_2': area,
-                    'confirmed': totalcases
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': adm_area_2,
+                    'confirmed': totalcases,
+                    'gid': gid
                 }
                 self.db.upsert_epidemiology_data(**upsert_obj)

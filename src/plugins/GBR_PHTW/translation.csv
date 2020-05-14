@@ -1,0 +1,191 @@
+input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+UK,,,,,,GBR
+England,,,England,,,GBR.1_1
+Northern Ireland,,,Northern Ireland,,,GBR.2_1
+Scotland,,,Scotland,,,GBR.3_1
+Wales,,,Wales,,,GBR.4_1
+England,County Durham,,England,County Durham,,GBR.1.30_1
+England,Darlington,,England,Darlington,,GBR.1.23_1
+England,Hartlepool,,England,Hartlepool,,GBR.1.39_1
+England,Middlesbrough,,England,Middlesbrough,,GBR.1.56_1
+England,Redcar and Cleveland,,England,Redcar and Cleveland,,GBR.1.75_1
+England,Stockton-on-Tees,,England,Stockton-on-Tees,,GBR.1.94_1
+England,Gateshead,,England,Gateshead,,GBR.1.34_1
+England,Newcastle upon Tyne,,England,Newcastle upon Tyne,,GBR.1.58_1
+England,North Tyneside,,England,North Tyneside,,GBR.1.62_1
+England,Northumberland,,England,Northumberland,,GBR.1.65_1
+England,South Tyneside,,England,South Tyneside,,GBR.1.89_1
+England,Sunderland,,England,Sunderland,,GBR.1.97_1
+England,Cumbria,,England,Cumbria,,GBR.1.22_1
+England,Cheshire East,,England,Cheshire East,,GBR.1.18_1
+England,Cheshire West and Chester,,England,Cheshire West and Chester,,GBR.1.19_1
+England,Halton,,England,Halton,,GBR.1.37_1
+England,Warrington,,England,Warrington,,GBR.1.107_1
+England,Bolton,,England,Bolton,,GBR.1.7_1
+England,Bury,,England,Bury,,GBR.1.14_1
+England,Manchester,,England,Manchester,,GBR.1.54_1
+England,Oldham,,England,Oldham,,GBR.1.68_1
+England,Rochdale,,England,Rochdale,,GBR.1.76_1
+England,Salford,,England,Salford,,GBR.1.80_1
+England,Stockport,,England,Stockport,,GBR.1.93_1
+England,Tameside,,England,Tameside,,GBR.1.100_1
+England,Trafford,,England,Trafford,,GBR.1.104_1
+England,Wigan,,England,Wigan,,GBR.1.111_1
+England,Blackburn with Darwen,,England,Blackburn with Darwen,,GBR.1.5_1
+England,Blackpool,,England,Blackpool,,GBR.1.6_1
+England,Lancashire,,England,Lancashire,,GBR.1.48_1
+England,Knowsley,,England,Knowsley,,GBR.1.47_1
+England,Liverpool,,England,Liverpool,,GBR.1.82.1_1
+England,Sefton,,England,Sefton,,GBR.1.82.2_1
+England,St. Helens,,England,St. Helens,,GBR.1.79_1
+England,Wirral,,England,Wirral,,GBR.1.114_1
+England,East Riding of Yorkshire,,England,East Riding of Yorkshire,,GBR.1.31_1
+England,"Kingston upon Hull, City of",,England,"Kingston upon Hull, City of",,GBR.1.45_1
+England,North East Lincolnshire,,England,North East Lincolnshire,,GBR.1.52.4_1
+England,North Lincolnshire,,England,North Lincolnshire,,GBR.1.60_1
+England,North Yorkshire,,England,North Yorkshire,,GBR.1.63_1
+England,York,,England,York,,GBR.1.118_1
+England,Barnsley,,England,Barnsley,,GBR.1.1_1
+England,Doncaster,,England,Doncaster,,GBR.1.27_1
+England,Rotherham,,England,Rotherham,,GBR.1.77_1
+England,Sheffield,,England,Sheffield,,GBR.1.83_1
+England,Bradford,,England,Bradford,,GBR.1.10_1
+England,Calderdale,,England,Calderdale,,GBR.1.15_1
+England,Kirklees,,England,Kirklees,,GBR.1.46_1
+England,Leeds,,England,Leeds,,GBR.1.49_1
+England,Wakefield,,England,Wakefield,,GBR.1.105_1
+England,Derby,,England,Derby,,GBR.1.24_1
+England,Derbyshire,,England,Derbyshire,,GBR.1.25_1
+England,Nottingham,,England,Nottingham,,GBR.1.66_1
+England,Nottinghamshire,,England,Nottinghamshire,,GBR.1.67_1
+England,Leicester,,England,Leicester,,GBR.1.50_1
+England,Leicestershire,,England,Leicestershire,,GBR.1.51_1
+England,Northamptonshire,,England,Northamptonshire,,GBR.1.64_1
+England,Rutland,,England,Rutland,,GBR.1.78_1
+England,Lincolnshire,,England,Lincolnshire,,GBR.1.52.1_1:GBR.1.52.2_1:GBR.1.52.3_1:GBR.1.52.5_1:GBR.1.52.6_1:GBR.1.52.7_1:GBR.1.52.8_1
+England,"Herefordshire, County of",,England,"Herefordshire, County of",,GBR.1.40_1
+England,Warwickshire,,England,Warwickshire,,GBR.1.108_1
+England,Worcestershire,,England,Worcestershire,,GBR.1.117_1
+England,Shropshire,,England,Shropshire,,GBR.1.84_1
+England,Staffordshire,,England,Staffordshire,,GBR.1.92_1
+England,Stoke-on-Trent,,England,Stoke-on-Trent,,GBR.1.95_1
+England,Telford and Wrekin,,England,Telford and Wrekin,,GBR.1.101_1
+England,Birmingham,,England,Birmingham,,GBR.1.4_1
+England,Coventry,,England,Coventry,,GBR.1.21_1
+England,Dudley,,England,Dudley,,GBR.1.29_1
+England,Sandwell,,England,Sandwell,,GBR.1.81_1
+England,Solihull,,England,Solihull,,GBR.1.86_1
+England,Walsall,,England,Walsall,,GBR.1.106_1
+England,Wolverhampton,,England,Wolverhampton,,GBR.1.116_1
+England,Cambridgeshire,,England,Cambridgeshire,,GBR.1.16_1
+England,Norfolk,,England,Norfolk,,GBR.1.59_1
+England,Peterborough,,England,Peterborough,,GBR.1.70_1
+England,Suffolk,,England,Suffolk,,GBR.1.96_1
+England,Bedford,,England,Bedford,,GBR.1.3.1_1
+England,Central Bedfordshire,,England,Central Bedfordshire,,GBR.1.17_1
+England,Hertfordshire,,England,Hertfordshire,,GBR.1.41_1
+England,Luton,,England,Luton,,GBR.1.53_1
+England,Essex,,England,Essex,,GBR.1.33_1
+England,Southend-on-Sea,,England,Southend-on-Sea,,GBR.1.91_1
+England,Thurrock,,England,Thurrock,,GBR.1.102_1
+England,Camden,,England,Camden,,GBR.1.36.6_1
+England,City of London,,England,City of London,,GBR.1.36.23_1
+England,Hackney,,England,Hackney,,GBR.1.36.11_1
+England,Hammersmith and Fulham,,England,Hammersmith and Fulham,,GBR.1.36.12_1
+England,Haringey,,England,Haringey,,GBR.1.36.13_1
+England,Islington,,England,Islington,,GBR.1.36.18_1
+England,Kensington and Chelsea,,England,Kensington and Chelsea,,GBR.1.36.19_1
+England,Lambeth,,England,Lambeth,,GBR.1.36.21_1
+England,Lewisham,,England,Lewisham,,GBR.1.36.22_1
+England,Newham,,England,Newham,,GBR.1.36.25_1
+England,Southwark,,England,Southwark,,GBR.1.36.28_1
+England,Tower Hamlets,,England,Tower Hamlets,,GBR.1.36.30_1
+England,Wandsworth,,England,Wandsworth,,GBR.1.36.32_1
+England,Westminster,,England,Westminster,,GBR.1.36.33_1
+England,Barking and Dagenham,,England,Barking and Dagenham,,GBR.1.36.1_1
+England,Barnet,,England,Barnet,,GBR.1.36.2_1
+England,Bexley,,England,Bexley,,GBR.1.36.3_1
+England,Brent,,England,Brent,,GBR.1.36.4_1
+England,Bromley,,England,Bromley,,GBR.1.36.5_1
+England,Croydon,,England,Croydon,,GBR.1.36.7_1
+England,Ealing,,England,Ealing,,GBR.1.36.8_1
+England,Enfield,,England,Enfield,,GBR.1.36.9_1
+England,Greenwich,,England,Greenwich,,GBR.1.36.10_1
+England,Harrow,,England,Harrow,,GBR.1.36.14_1
+England,Havering,,England,Havering,,GBR.1.36.15_1
+England,Hillingdon,,England,Hillingdon,,GBR.1.36.16_1
+England,Hounslow,,England,Hounslow,,GBR.1.36.17_1
+England,Kingston upon Thames,,England,Kingston upon Thames,,GBR.1.36.20_1
+England,Merton,,England,Merton,,GBR.1.36.24_1
+England,Redbridge,,England,Redbridge,,GBR.1.36.26_1
+England,Richmond upon Thames,,England,Richmond upon Thames,,GBR.1.36.27_1
+England,Sutton,,England,Sutton,,GBR.1.36.29_1
+England,Waltham Forest,,England,Waltham Forest,,GBR.1.36.31_1
+England,Bracknell Forest,,England,Bracknell Forest,,GBR.1.9_1
+England,Buckinghamshire,,England,Buckinghamshire,,GBR.1.13_1
+England,Milton Keynes,,England,Milton Keynes,,GBR.1.57_1
+England,Oxfordshire,,England,Oxfordshire,,GBR.1.69_1
+England,Reading,,England,Reading,,GBR.1.74_1
+England,Slough,,England,Slough,,GBR.1.85_1
+England,West Berkshire,,England,West Berkshire,,GBR.1.109_1
+England,Windsor and Maidenhead,,England,Windsor and Maidenhead,,GBR.1.113_1
+England,Wokingham,,England,Wokingham,,GBR.1.115_1
+England,Brighton and Hove,,England,Brighton and Hove,,GBR.1.11_1
+England,East Sussex,,England,East Sussex,,GBR.1.32_1
+England,Surrey,,England,Surrey,,GBR.1.98_1
+England,West Sussex,,England,West Sussex,,GBR.1.110_1
+England,Hampshire,,England,Hampshire,,GBR.1.38_1
+England,Isle of Wight,,England,Isle of Wight,,GBR.1.42_1
+England,Portsmouth,,England,Portsmouth,,GBR.1.73_1
+England,Southampton,,England,Southampton,,GBR.1.90_1
+England,Kent,,England,Kent,,GBR.1.44_1
+England,Medway,,England,Medway,,GBR.1.55_1
+England,Bath and North East Somerset,,England,Bath and North East Somerset,,GBR.1.2_1
+England,"Bristol, City of",,England,"Bristol, City of",,GBR.1.12_1
+England,Gloucestershire,,England,Gloucestershire,,GBR.1.35_1
+England,North Somerset,,England,North Somerset,,GBR.1.61_1
+England,South Gloucestershire,,England,South Gloucestershire,,GBR.1.88_1
+England,Swindon,,England,Swindon,,GBR.1.99_1
+England,Wiltshire,,England,Wiltshire,,GBR.1.112_1
+England,"Bournemouth, Christchurch and Poole",,England,"Bournemouth, Christchurch and Poole",,GBR.1.28.1_1:GBR.1.72_1:GBR.1.8_1
+England,Dorset,,England,Dorset,,GBR.1.28.2_1:GBR.1.28.3_1:GBR.1.28.4_1:GBR.1.28.5_1:GBR.1.28.6_1
+England,Somerset,,England,Somerset,,GBR.1.87_1
+England,Cornwall and Isles of Scilly,,England,Cornwall and Isles of Scilly,,GBR.1.20_1:GBR.1.43_1
+England,Devon,,England,Devon,,GBR.1.26_1
+England,Plymouth,,England,Plymouth,,GBR.1.71_1
+England,Torbay,,England,Torbay,,GBR.1.103_1
+Northern Ireland,Antrim and Newtownabbey,,Northern Ireland,Antrim and Newtownabbey,,GBR.2.1_1
+Northern Ireland,"Armagh, Banbridge and Craigavon",,Northern Ireland,"Armagh City, Banbridge and Craigavon",,GBR.2.2_1
+Northern Ireland,"Armagh City, Banbridge and Craigavon",,Northern Ireland,"Armagh City, Banbridge and Craigavon",,GBR.2.2_1
+Northern Ireland,Belfast,,Northern Ireland,Belfast,,GBR.2.3_1
+Northern Ireland,Causeway Coast and Glens,,Northern Ireland,Causeway Coast and Glens,,GBR.2.4_1
+Northern Ireland,Derry and Strabane,,Northern Ireland,Derry City and Strabane,,GBR.2.5_1
+Northern Ireland,Derry City and Strabane,,Northern Ireland,Derry City and Strabane,,GBR.2.5_1
+Northern Ireland,Fermanagh and Omagh,,Northern Ireland,Fermanagh and Omagh,,GBR.2.6_1
+Northern Ireland,Lisburn and Castlereagh,,Northern Ireland,Lisburn and Castlereagh,,GBR.2.7_1
+Northern Ireland,Mid and East Antrim,,Northern Ireland,Mid and East Antrim,,GBR.2.8_1
+Northern Ireland,Mid Ulster,,Northern Ireland,Mid Ulster,,GBR.2.9_1
+Northern Ireland,"Newry, Mourne and Down",,Northern Ireland,"Newry, Mourne and Down",,GBR.2.10_1
+Northern Ireland,North Down and Ards,,Northern Ireland,Ards and North Down,,GBR.2.11_1
+Northern Ireland,Ards and North Down,,Northern Ireland,Ards and North Down,,GBR.2.11_1
+Scotland,Grampian,,Scotland,NHS Grampian,,GBR.3.1_1:GBR.3.2_1:GBR.3.20_1
+Scotland,Lothian,,Scotland,NHS Lothian,,GBR.3.10_1:GBR.3.12_1:GBR.3.19_1:GBR.3.32_1
+Scotland,Western Isles,,Scotland,NHS Western Isles,,GBR.3.13_1
+Scotland,Fife,,Scotland,NHS Fife,,GBR.3.15_1
+Scotland,Lanarkshire,,Scotland,NHS Lanarkshire,,GBR.3.22_1:GBR.3.29_1
+Scotland,Orkney,,Scotland,NHS Orkney,,GBR.3.23_1
+Scotland,Borders,,Scotland,NHS Borders,,GBR.3.26_1
+Scotland,Shetland,,Scotland,NHS Shetland,,GBR.3.27_1
+Scotland,Tayside,,Scotland,NHS Tayside,,GBR.3.3_1:GBR.3.7_1:GBR.3.24_1
+Scotland,Highland,,Scotland,NHS Highland,,GBR.3.4_1:GBR.3.17_1
+Scotland,Forth Valley,,Scotland,NHS Forth Valley,,GBR.3.5_1:GBR.3.14_1:GBR.3.30_1
+Scotland,Dumfries and Galloway,,Scotland,NHS Dumfries and Galloway,,GBR.3.6_1
+Scotland,Ayrshire and Arran,,Scotland,NHS Ayrshire and Arran,,GBR.3.8_1:GBR.3.21_1:GBR.3.28_1
+Scotland,Greater Glasgow and Clyde,,Scotland,NHS Greater Glasgow and Clyde,,GBR.3.9_1:GBR.3.11_1:GBR.3.16_1:GBR.3.18_1:GBR.3.25_1:GBR.3.31_1:GBR.3.4_1
+Wales,Betsi Cadwaladr,,Wales,Betsi Cadwaladr University Health Board,,GBR.4.1_1:GBR.4.11_1:GBR.4.8_1:GBR.4.9_1:GBR.4.10_1:GBR.4.22_1
+Wales,Cwm Taf,,Wales,Cwm Taf Health Board,,GBR.4.12_1:GBR.4.18_1
+Wales,Powys,,Wales,Powys Teaching Health Board,,GBR.4.17_1
+Wales,Aneurin Bevan,,Wales,Aneurin Bevan Health Board,,GBR.4.2_1:GBR.4.4_1:GBR.4.20_1:GBR.4.13_1:GBR.4.15_1
+Wales,Swansea Bay,,Wales,Abertawe Bro Morgannwg University Health Board,,GBR.4.3_1:GBR.4.14_1:GBR.4.19_1
+Wales,Cardiff and Vale,,Wales,Cardiff and Vale University Health Board,,GBR.4.5_1:GBR.4.21_1
+Wales,Hywel Dda,,Wales,Hywel Dda Health Board,,GBR.4.6_1:GBR.4.7_1:GBR.4.16_1
