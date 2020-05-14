@@ -1,7 +1,7 @@
 import logging
 import sqlite3
+from typing import Dict
 import pandas as pd
-from datetime import datetime
 
 __all__ = ('SqliteHelper',)
 
@@ -93,13 +93,17 @@ class SqliteHelper(AbstractAdapter):
 
         return self.cur.fetchall()
 
-    def format_data(self, data):
+    def format_data(self, data: Dict):
         # Add adm_area values if don't exist
         data['adm_area_1'] = data.get('adm_area_1')
         data['adm_area_2'] = data.get('adm_area_2')
         data['adm_area_3'] = data.get('adm_area_3')
         data['gid'] = ",".join(data.get('gid'))
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
+
+    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
+        # TODO: Implement get gid
+        raise NotImplementedError("To be implemented")
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         kwargs = self.format_data(kwargs)

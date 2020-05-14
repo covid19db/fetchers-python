@@ -16,5 +16,9 @@ class AbstractAdapter(ABC):
     def upsert_epidemiology_data(self, **kwargs):
         pass
 
+    @abstractmethod
+    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
+        pass
+
     def flush(self):
         pass

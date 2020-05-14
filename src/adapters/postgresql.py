@@ -1,5 +1,7 @@
 import time
 import logging
+import functools
+import operator
 import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -31,7 +33,7 @@ class PostgresqlHelper(AbstractAdapter):
         self.open_connection()
         self.cursor()
 
-    def open_connection(self, attempt=MAX_ATTEMPT_FAIL):
+    def open_connection(self, attempt: int = MAX_ATTEMPT_FAIL):
         if not self.conn:
             try:
                 self.conn = psycopg2.connect(user=self.user, password=self.password, host=self.host,
@@ -54,7 +56,7 @@ class PostgresqlHelper(AbstractAdapter):
             self.cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
             return self.cur
 
-    def execute(self, query: str, data: str = None, attempt=MAX_ATTEMPT_FAIL):
+    def execute(self, query: str, data: str = None, attempt: int = MAX_ATTEMPT_FAIL):
         try:
             self.cur.execute(query, data)
             self.conn.commit()
@@ -70,8 +72,21 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def upsert_government_response_data(self, table_name='government_response', **kwargs):
-        data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
+    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
+        sql_query = sql.SQL("""SELECT gid from administrative_division
+                                WHERE countrycode = %s 
+                                AND COALESCE(adm_area_1, '') = COALESCE(%s, '')
+                                AND COALESCE(adm_area_2, '') = COALESCE(%s, '') 
+                                AND COALESCE(adm_area_3, '') = COALESCE(%s, '') """)
+
+        result = self.execute(sql_query, (countrycode, adm_area_1, adm_area_2, adm_area_3))
+        gid = functools.reduce(operator.iconcat, result, [])
+        if not gid:
+            raise Exception(f'Unable to find GID for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
+        return gid
+
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
 
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                     ON CONFLICT
@@ -92,8 +107,8 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def upsert_epidemiology_data(self, table_name='epidemiology', **kwargs):
-        data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+        data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
 
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT

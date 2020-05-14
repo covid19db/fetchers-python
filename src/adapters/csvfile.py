@@ -60,6 +60,10 @@ class CSVFileHelper(AbstractAdapter):
         data['gid'] = ":".join(data.get('gid', ''))
         return data
 
+    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
+        # TODO: Implement get gid
+        raise NotImplementedError("To be implemented")
+
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
