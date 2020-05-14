@@ -37,6 +37,7 @@ class StringencyFetcher(AbstractFetcher):
                 'date': record['date_value'],
                 'country': record['English short name lower case'],
                 'countrycode': record['country_code'],
+                'gid': [record['country_code']],
                 'confirmed': int(record['confirmed']),
                 'dead': int(record['deaths']),
                 'stringency': int(record['stringency']),
