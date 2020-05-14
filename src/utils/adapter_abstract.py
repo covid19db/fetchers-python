@@ -9,11 +9,17 @@ class AbstractAdapter(ABC):
         pass
 
     @abstractmethod
-    def upsert_government_response_data(self, **kwargs):
+    def upsert_government_response_data(self, table_name: str, **kwargs):
         pass
 
     @abstractmethod
-    def upsert_epidemiology_data(self, **kwargs):
+    def upsert_epidemiology_data(self, table_name: str, **kwargs):
+        pass
+
+    def upsert_mobility_data(self, table_name: str, **kwargs):
+        pass
+
+    def upsert_mobility_data(self, table_name: str, **kwargs):
         pass
 
     @abstractmethod

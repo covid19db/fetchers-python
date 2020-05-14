@@ -15,10 +15,14 @@ class ExampleHelper(AbstractAdapter):
         # TODO: Implement get gid
         raise NotImplementedError("To be implemented")
 
-    def upsert_government_response_data(self, **kwargs):
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         # TODO: Implement Update govtrack data
         raise NotImplementedError("To be implemented")
 
-    def upsert_epidemiology_data(self, **kwargs):
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         # TODO Implement Update infections data
+        raise NotImplementedError("To be implemented")
+
+    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        # TODO Implement Update mobility data
         raise NotImplementedError("To be implemented")

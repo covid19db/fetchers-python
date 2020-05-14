@@ -126,6 +126,16 @@ class SqliteHelper(AbstractAdapter):
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
+    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
+            table_name=table_name,
+            insert_keys=",".join([key for key in kwargs.keys()]),
+            insert_data=",".join('?' * len(kwargs)),
+        )
+
+        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
     def close_connection(self):
         if self.conn:
             if self.cur:
