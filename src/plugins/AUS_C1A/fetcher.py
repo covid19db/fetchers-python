@@ -67,14 +67,12 @@ class AustraliaC1AFetcher(AbstractFetcher):
                 in_hospital = int(record[4]) if length > 4 else None
                 in_icu = int(record[5]) if length > 5 else None
 
-
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=state,
                     input_adm_area_2=None,
                     input_adm_area_3=None,
                     return_original_if_failure=True
                 )
-
 
                 upsert_obj = {
                     'source': 'AUS_C1A',
