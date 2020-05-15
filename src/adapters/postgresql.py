@@ -71,6 +71,26 @@ class PostgresqlHelper(AbstractAdapter):
         except (Exception, psycopg2.Error) as error:
             raise error
         return self.cur.fetchall()
+    ###########Ahmad Changes 
+    def call_db_function_compare(self, source_code: str):
+        sql_query =sql.SQL("SELECT covid19_compare_tables('source_code')") 
+        compare_result = self.execute(sql_query)
+        logger.debug(
+            "validating incoming data")
+        return compare_result
+    
+    def call_db_function_send_data(self, source_code: str):
+        self.cur.callproc('send_validated_data',[source_code])
+        logger.debug(
+            "moving data to epidemiology")
+        
+    def get_souce_code(self, pname: str):
+        sql_query = sql.SQL("SELECT source_code from url_info where plugin_name='%s' limit 1" %pname)         
+        data=self.execute(sql_query)     
+        logger.debug(
+            "selecting data from email info")
+        return data
+     ###########Ahmad Changes 
 
     def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
         sql_query = sql.SQL("""SELECT gid from administrative_division
@@ -114,8 +134,9 @@ class PostgresqlHelper(AbstractAdapter):
 
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
-
-    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+        
+    ## Ahmad Changes : changed table name to staging_epidemiology
+    def upsert_epidemiology_data(self, table_name: str = 'staging_epidemiology', **kwargs):
         data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
                      'recovered']
 
