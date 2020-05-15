@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class GoogleMobilityFetcher(AbstractFetcher):
-    LOAD_PLUGIN = False
+    LOAD_PLUGIN = True
 
     def fetch(self):
         # Google covid19 mobility data
@@ -39,7 +39,6 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 adm_area_2 = input_adm_area_2
             except Exception as ex:
                 gid = None
-                print(ex)
 
             if not gid:
                 # check in translate.csv for translation
@@ -51,7 +50,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
             if not gid:
                 # Unable to find translation, please add correct translation in CSV file
                 raise Exception(
-                    'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}"')
+                    f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}"')
 
             # Upsert to mobility
             upsert_obj = {
