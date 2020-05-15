@@ -2,12 +2,13 @@ import os
 from adapters.postgresql import PostgresqlHelper
 from adapters.sqlite import SqliteHelper
 from adapters.csvfile import CSVFileHelper
+from utils.adapter_abstract import AbstractAdapter
 
 
 class DataAdapter:
 
     @staticmethod
-    def get_adapter():
+    def get_adapter() -> AbstractAdapter:
         if os.getenv('DB_USERNAME') and os.getenv('DB_PASSWORD') and os.getenv('DB_ADDRESS') and os.getenv('DB_NAME'):
             return PostgresqlHelper(user=os.getenv('DB_USERNAME'),
                                     password=os.getenv('DB_PASSWORD'),
