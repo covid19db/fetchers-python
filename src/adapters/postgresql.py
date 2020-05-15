@@ -85,18 +85,13 @@ class PostgresqlHelper(AbstractAdapter):
             raise Exception(f'Unable to find GID for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
         return gid
 
-    def get_fuzzy_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
-        sql_query = sql.SQL("""SELECT gid from administrative_division
-                                WHERE countrycode = %s 
-                                AND COALESCE(adm_area_1, '') = COALESCE(%s, '')
-                                AND COALESCE(adm_area_2, '') = COALESCE(%s, '') 
-                                AND COALESCE(adm_area_3, '') = COALESCE(%s, '') """)
+    def get_administrative_division_for_country(self, countrycode: str, adm_level: str):
+        sql_query = sql.SQL("""SELECT country, countrycode, countrycode_alpha2, adm_level,
+         adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+                              WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
 
-        result = self.execute(sql_query, (countrycode, adm_area_1, adm_area_2, adm_area_3))
-        gid = functools.reduce(operator.iconcat, result, [])
-        if not gid:
-            raise Exception(f'Unable to find GID for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
-        return gid
+        result = self.execute(sql_query, (countrycode, adm_level))
+        return result
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']

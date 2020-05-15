@@ -76,13 +76,13 @@ class CSVFileHelper(AbstractAdapter):
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
-        self.upsert_data(table_name, kwargs)
+        self.upsert_data(table_name, **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        self.upsert_data(table_name, kwargs)
+        self.upsert_data(table_name, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
-        self.upsert_data(table_name, kwargs)
+        self.upsert_data(table_name, **kwargs)
 
     def flush(self):
         if self.csv_file_name and self.temp_df is not None:
