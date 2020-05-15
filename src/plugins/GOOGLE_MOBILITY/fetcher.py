@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class GoogleMobilityFetcher(AbstractFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
 
     def fetch(self):
         # Google covid19 mobility data
@@ -27,7 +27,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
 
             country_info = country_codes[country_codes['Alpha-2 code'] == country_a2_code].to_dict('records')[0]
             countrycode = country_info["Alpha-3 code"]
-            country_name = country_info["English short name lower case"]
+            country = country_info["English short name lower case"]
 
             input_adm_area_1 = record['sub_region_1'] if pd.notna(record['sub_region_1']) else None
             input_adm_area_2 = record['sub_region_2'] if pd.notna(record['sub_region_2']) else None
@@ -48,15 +48,15 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 )
 
             if not gid:
-                # Unable to find translation, please add correct translation in CSV file
                 raise Exception(
-                    f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}"')
+                    f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}" '
+                    f'add correct translation in CSV file')
 
             # Upsert to mobility
             upsert_obj = {
                 'source': 'GOOGLE_MOBILITY',
                 'date': date,
-                'country': country_name,
+                'country': country,
                 'countrycode': countrycode,
                 'adm_area_1': adm_area_1,
                 'adm_area_2': adm_area_2,
