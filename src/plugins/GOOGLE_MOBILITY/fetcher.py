@@ -26,22 +26,39 @@ class GoogleMobilityFetcher(AbstractFetcher):
             country_a2_code = record['country_region_code']
 
             country_info = country_codes[country_codes['Alpha-2 code'] == country_a2_code].to_dict('records')[0]
-            country_a3_code = country_info["Alpha-3 code"]
+            countrycode = country_info["Alpha-3 code"]
             country_name = country_info["English short name lower case"]
 
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1=record['sub_region_1'],
-                input_adm_area_2=record['sub_region_2'],
-                input_adm_area_3=None,
-                return_original_if_failure=True
-            )
+            input_adm_area_1 = record['sub_region_1'] if pd.notna(record['sub_region_1']) else None
+            input_adm_area_2 = record['sub_region_2'] if pd.notna(record['sub_region_2']) else None
+
+            try:
+                # Check if input data can be matched directly into administrative division table
+                gid = self.db.get_gid(countrycode, input_adm_area_1, input_adm_area_2)
+                adm_area_1 = input_adm_area_1
+                adm_area_2 = input_adm_area_2
+            except Exception as ex:
+                gid = None
+                print(ex)
+
+            if not gid:
+                # check in translate.csv for translation
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=input_adm_area_1,
+                    input_adm_area_2=input_adm_area_2
+                )
+
+            if not gid:
+                # Unable to find translation, please add correct translation in CSV file
+                raise Exception(
+                    'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}"')
 
             # Upsert to mobility
             upsert_obj = {
                 'source': 'GOOGLE_MOBILITY',
                 'date': date,
                 'country': country_name,
-                'countrycode': country_a3_code,
+                'countrycode': countrycode,
                 'adm_area_1': adm_area_1,
                 'adm_area_2': adm_area_2,
                 'gid': gid,
