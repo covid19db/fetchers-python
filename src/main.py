@@ -22,7 +22,6 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
             logger.info(f'Running plugin {plugin.__name__} ')
             instance = plugin(db=db)
             instance.run()
-            #Ahmad changes -----------------------------
             result=validate_incoming_data(plugin.__name__)
             if result ==1:
                 logger.info(f"Plugin {plugin.__name__} finished successfully")
