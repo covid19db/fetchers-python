@@ -65,6 +65,11 @@ class GoogleMobilityFetcher(AbstractFetcher):
                     .replace('State of', '').strip()
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
+
+            # FOR DEBUGGING PURPOSE ONLY
+            # if key in region_cache:
+            #     continue
+
             if key in region_cache:
                 adm_area_1, adm_area_2, adm_area_3, gid = region_cache.get(key)
             else:
@@ -98,7 +103,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
             if gid:
                 self.db.upsert_mobility_data(**upsert_obj)
 
-        # DEBUG ONLY - save unknown regions into CSV file
+        # FOR DEBUGGING PURPOSE ONLY - save unknown regions into CSV file
         logger.warning('Unknown regions total: {}'.format(len(unknown_regions)))
         unknown_regions_list = sorted(list(unknown_regions), key=lambda x: (x[0] or '', x[1] or '', x[2] or ''))
         with open(os.path.join(os.path.dirname(__file__), 'unknown_regions.csv'), 'w') as unknown_regions_file:
