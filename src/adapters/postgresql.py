@@ -1,5 +1,6 @@
 import time
 import logging
+from typing import Tuple
 import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -71,7 +72,7 @@ class PostgresqlHelper(AbstractAdapter):
         return self.cur.fetchall()
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
-                         adm_area_3: str = None):
+                         adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""
             SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
             WHERE countrycode = %s 

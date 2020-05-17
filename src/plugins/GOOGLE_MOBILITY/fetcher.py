@@ -18,7 +18,8 @@ class GoogleMobilityFetcher(AbstractFetcher):
         url = 'https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv'
         return pd.read_csv(url, low_memory=False)
 
-    def get_region(self, countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3):
+    def get_region(self, countrycode: str, input_adm_area_1: str = None, input_adm_area_2: str = None,
+                   input_adm_area_3: str = None):
         try:
             # Check if input data can be matched directly into administrative division table
             adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division(
@@ -38,7 +39,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
         country_codes = get_country_codes()
 
         unknown_regions = set()
-        region_cache = {}
+        region_cache = dict()
 
         for index, record in data.iterrows():
             date = record['date']
@@ -106,7 +107,8 @@ class GoogleMobilityFetcher(AbstractFetcher):
         # FOR DEBUGGING PURPOSE ONLY - save unknown regions into CSV file
         logger.warning('Unknown regions total: {}'.format(len(unknown_regions)))
         unknown_regions_list = sorted(list(unknown_regions), key=lambda x: (x[0] or '', x[1] or '', x[2] or ''))
-        with open(os.path.join(os.path.dirname(__file__), 'unknown_regions.csv'), 'w') as unknown_regions_file:
+        with open(os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'unknown_regions.csv'),
+                  'w') as unknown_regions_file:
             csv_writer = csv.writer(unknown_regions_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             for region in unknown_regions_list:
                 csv_writer.writerow(list(region))

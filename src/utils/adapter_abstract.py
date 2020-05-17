@@ -16,9 +16,7 @@ class AbstractAdapter(ABC):
     def upsert_epidemiology_data(self, table_name: str, **kwargs):
         pass
 
-    def upsert_mobility_data(self, table_name: str, **kwargs):
-        pass
-
+    @abstractmethod
     def upsert_mobility_data(self, table_name: str, **kwargs):
         pass
 
