@@ -23,7 +23,8 @@ class AbstractAdapter(ABC):
         pass
 
     @abstractmethod
-    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
         pass
 
     def flush(self):
