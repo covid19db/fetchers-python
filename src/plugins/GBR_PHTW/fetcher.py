@@ -45,7 +45,6 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
             deaths = int(record[3]) if pd.notna(record[3]) else None
             tests = int(record[4]) if pd.notna(record[4]) else None
 
-
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=country,
                 input_adm_area_2=None,
