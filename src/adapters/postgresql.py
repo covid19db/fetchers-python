@@ -1,7 +1,5 @@
 import time
 import logging
-import functools
-import operator
 import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -72,23 +70,31 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
-        sql_query = sql.SQL("""SELECT gid from administrative_division
-                                WHERE countrycode = %s 
-                                AND COALESCE(adm_area_1, '') = COALESCE(%s, '')
-                                AND COALESCE(adm_area_2, '') = COALESCE(%s, '') 
-                                AND COALESCE(adm_area_3, '') = COALESCE(%s, '') """)
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
+        sql_query = sql.SQL("""
+            SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+            WHERE countrycode = %s 
+                AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_2, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
 
-        result = self.execute(sql_query, (countrycode, adm_area_1, adm_area_2, adm_area_3))
-        gid = functools.reduce(operator.iconcat, result, [])
-        if not gid:
-            raise Exception(f'Unable to find GID for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
-        return gid
+        results = self.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
+        if not results:
+            raise Exception(f'Unable to find adm division for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
+        if len(results) > 1:
+            raise Exception(f'Ambiguous result: {results}')
+        result = results[0]
+        return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
     def get_administrative_division_for_country(self, countrycode: str, adm_level: str):
-        sql_query = sql.SQL("""SELECT country, countrycode, countrycode_alpha2, adm_level,
-         adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
-                              WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
+        sql_query = sql.SQL("""
+            SELECT country, countrycode, countrycode_alpha2, adm_level,
+                adm_area_1, adm_area_2, adm_area_3, gid FROM administrative_division
+            WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
 
         result = self.execute(sql_query, (countrycode, adm_level))
         return result

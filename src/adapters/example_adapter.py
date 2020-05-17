@@ -11,8 +11,9 @@ class ExampleHelper(AbstractAdapter):
     def __init__(self):
         pass
 
-    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
-        # TODO: Implement get gid
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
+        # TODO: Implement get adm division
         raise NotImplementedError("To be implemented")
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):

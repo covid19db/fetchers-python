@@ -101,8 +101,9 @@ class SqliteHelper(AbstractAdapter):
         data['gid'] = ",".join(data.get('gid'))
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
 
-    def get_gid(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None, adm_area_3: str = None):
-        # TODO: Implement get gid
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
+        # TODO: Implement get division
         raise NotImplementedError("To be implemented")
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
