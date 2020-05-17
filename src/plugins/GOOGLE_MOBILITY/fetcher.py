@@ -71,10 +71,8 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 adm_area_1, adm_area_2, adm_area_3, gid = self.get_region(
                     countrycode, input_adm_area_1, input_adm_area_2, None)
                 region_cache[key] = (adm_area_1, adm_area_2, adm_area_3, gid)
+
             if not gid:
-                # raise Exception(
-                #    f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}" '
-                #    f'add correct translation in CSV file')
                 if key not in unknown_regions:
                     logger.warning(
                         f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}" '
@@ -100,6 +98,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
             if gid:
                 self.db.upsert_mobility_data(**upsert_obj)
 
+        # DEBUG ONLY - save unknown regions into CSV file
         logger.warning('Unknown regions total: {}'.format(len(unknown_regions)))
         unknown_regions_list = sorted(list(unknown_regions), key=lambda x: (x[0] or '', x[1] or '', x[2] or ''))
         with open(os.path.join(os.path.dirname(__file__), 'unknown_regions.csv'), 'w') as unknown_regions_file:
