@@ -23,7 +23,7 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
             db.flush()
             logger.info(f"Plugin {plugin.__name__} finished successfully")
         except Exception as ex:
-            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}')
+            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
 
 
 def main():

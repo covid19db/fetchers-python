@@ -43,9 +43,14 @@ class GoogleMobilityFetcher(AbstractFetcher):
 
         for index, record in data.iterrows():
             date = record['date']
-            country_a2_code = record['country_region_code']
 
-            country, countrycode = get_country_info(country_codes, country_a2_code)
+            country, countrycode = get_country_info(country_codes,
+                                                    country_a2_code=record['country_region_code'],
+                                                    country_name=record['country_region'])
+
+            if pd.isna(countrycode):
+                logger.warning(f'Unable to process: {record}')
+                continue
 
             input_adm_area_1 = record['sub_region_1'].strip() if pd.notna(record['sub_region_1']) else None
             input_adm_area_2 = record['sub_region_2'].strip() if pd.notna(record['sub_region_2']) else None

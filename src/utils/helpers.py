@@ -33,6 +33,9 @@ class AdmTranslator:
                 if hasattr(row, 'countrycode') and country_code and row.countrycode != country_code:
                     continue
 
+                if row.gid is None:
+                    raise Exception(f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}')
+
                 return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid.split(':')
         if return_original_if_failure:
             return False, input_adm_area_1, input_adm_area_2, input_adm_area_3, None
