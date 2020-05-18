@@ -47,6 +47,9 @@ class CzechiaFetcher(AbstractFetcher):
                     return_original_if_failure=True
                 )
 
+            if not gid:
+                raise Exception('Missing translation')
+
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 'source': 'COVID19-EU-ZH',

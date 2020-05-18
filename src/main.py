@@ -16,14 +16,14 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
     for plugin in available_plugins:
         if run_only_plugins and plugin.__name__ not in run_only_plugins:
             continue
-        try:
-            logger.info(f'Running plugin {plugin.__name__} ')
-            instance = plugin(db=db)
-            instance.run()
-            db.flush()
-            logger.info(f"Plugin {plugin.__name__} finished successfully")
-        except Exception as ex:
-            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}')
+        #try:
+        logger.info(f'Running plugin {plugin.__name__} ')
+        instance = plugin(db=db)
+        instance.run()
+        db.flush()
+        logger.info(f"Plugin {plugin.__name__} finished successfully")
+        #except Exception as ex:
+        #    logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}')
 
 
 def main():
