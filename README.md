@@ -23,6 +23,7 @@ Currently implemented fetchers:
 | CAN_GOV | Canada | CAN | [Government of Canada](https://health-infobase.canada.ca/covid-19/) | candidate | adm_area_1: Province
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | candidate | adm_area_1: Province
 | NLD_ZH | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | candidate | adm_area_1: NA
+| IRL_ZH | Ireland | IRL| [European Novel Coronavirus Outbreak - Chinese Channel (COVID19-EU-ZH)](https://github.com/covid19-eu-zh) | candidate | adm_area_1: County
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
