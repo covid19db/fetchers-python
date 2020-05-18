@@ -4,7 +4,7 @@ import logging
 import pandas as pd
 import numpy as np
 
-__all__ = ('BEL_ZHFetcher',)
+__all__ = ('BEL_WYFetcher',)
 
 """ 
     site-location: https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv
@@ -21,7 +21,7 @@ __all__ = ('BEL_ZHFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class BEL_ZHFetcher(AbstractFetcher):
+class BEL_WYFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
     def country_fetch(self):
@@ -31,7 +31,7 @@ class BEL_ZHFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/eschnou/covid19-be/master/covid19-belgium.csv'
-        logger.debug('Fetching Belgium country-level data from BEL_ZH')
+        logger.debug('Fetching Belgium country-level data from BEL_WY')
         return pd.read_csv(url)
 
     def run(self):
@@ -97,7 +97,7 @@ class BEL_ZHFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'BEL_ZH',
+                'source': 'BEL_WY',
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English

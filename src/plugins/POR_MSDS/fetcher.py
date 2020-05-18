@@ -83,6 +83,7 @@ class POR_MSDSFetcher(AbstractFetcher):
                      # adm_area_1, when available, is a wide-area administrative region, like a
                      # Canadian province in this case. There are also subareas adm_area_2 and
                      # adm_area_3
+                     'gid':['POR'],
                      'adm_area_1': None,
                      'adm_area_2': None,
                      'adm_area_3': None,
@@ -145,7 +146,7 @@ class POR_MSDSFetcher(AbstractFetcher):
                 dead=int(dead_collections[h][k])
                 if dead<0:
                     dead=None
-
+                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('POR', province, None, None)
                 upsert_obj = {
                      # source is mandatory and is a code that identifies the  source
                      'source': 'POR_MSDS',
