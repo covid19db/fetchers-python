@@ -53,7 +53,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
         province_dead_data = self.province_dead_fetch()
         
         ### Get province names list
-        province_list = list(province_confirmed_data["Unnamed: 1"])[1:]
+        province_list = list(province_confirmed_data["Unnamed: 0"])[1:]
 
         ### Get dates list
         time_list = list(province_confirmed_data.columns)[2:]
@@ -86,7 +86,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
-                    # 'gid'=['BRA'],
+                    'gid'=['BRA'],
                     'adm_area_1': None,
                     'adm_area_2': None,
                     'adm_area_3': None,
@@ -118,7 +118,8 @@ class BRA_MSHMFetcher(AbstractFetcher):
                 province = province_list[i]
                 confirmed = current_confirm_list[1 + i]
                 dead = current_dead_list[1 + i]
-
+                
+                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('BRA', province, None, None)
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'BRA_MSHM',
