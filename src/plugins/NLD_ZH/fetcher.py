@@ -95,9 +95,11 @@ class NLD_ZHFetcher(AbstractFetcher):
                     # countrycode is mandatory and it's the ISO Alpha-3 code of the country
                     # an exception is ships, which has "---" as country code
                     'countrycode': 'NLD',
+                    gid=['NLD']
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
+                    
                     'adm_area_1': None,
                     'adm_area_2': None,
                     'adm_area_3': None,
