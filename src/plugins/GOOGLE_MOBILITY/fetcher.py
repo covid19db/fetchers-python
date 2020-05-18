@@ -30,7 +30,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
         if not gid:
             # Check translate.csv for translation
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1, input_adm_area_2, input_adm_area_3)
+                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
 
         return adm_area_1, adm_area_2, adm_area_3, gid
 
