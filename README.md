@@ -18,6 +18,10 @@ Currently implemented fetchers:
 | CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | candidate | adm_area_1: canton or Liechtenstein
 | TUR_XXX | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | candidate | adm_area_1: NA
 | BEL_ZH | Belgium | BEL | [github:eschnou](https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv) | candidate | adm_area_1: NA
+| IND_COVIND | India | IND | [COVID19-India API](https://api.covid19india.org/) | candidate | adm_area_1: NA or State |
+| THA_STAT | Thailand | THA | [Covid-19 Infected Situation Reports](https://covid19.th-stat.com/en/api) | candidate | adm_area_1: NA or Province |
+| CAN_GOV | Canada | CAN | [Government of Canada](https://health-infobase.canada.ca/covid-19/) | candidate | adm_area_1: Province
+| IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | candidate | adm_area_1: Province
 
 Explanation of status:
 - Draft: being developed, should not be tested yet

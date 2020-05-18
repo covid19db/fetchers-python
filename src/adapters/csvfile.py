@@ -19,6 +19,11 @@ colnames = {
         'source', 'date', 'country', 'countrycode', 'adm_area_1',
         'adm_area_2', 'adm_area_3', 'gid', 'tested', 'confirmed',
         'recovered', 'dead', 'hospitalised', 'hospitalised_icu', 'quarantined'
+    ],
+    'mobility': [
+        'source', 'date', 'country', 'countrycode', 'adm_area_1',
+        'adm_area_2', 'adm_area_3', 'gid', 'transit_stations', 'residential',
+        'workplace', 'parks', 'retail_recreation', 'grocery_pharmacy'
     ]
 }
 
@@ -60,17 +65,25 @@ class CSVFileHelper(AbstractAdapter):
         data['gid'] = ":".join(data.get('gid', ''))
         return data
 
-    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
+        # TODO: Implement get adm division
+        raise NotImplementedError("To be implemented")
+
+    def upsert_data(self, table_name: str, **kwargs):
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
         self.upsert_temp_df(csv_file_name, table_name, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        self.upsert_data(table_name, **kwargs)
+
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
-        kwargs = self.format_data(kwargs)
-        self.upsert_temp_df(csv_file_name, table_name, kwargs)
-        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+        self.upsert_data(table_name, **kwargs)
+
+    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        self.upsert_data(table_name, **kwargs)
 
     def flush(self):
         if self.csv_file_name and self.temp_df is not None:

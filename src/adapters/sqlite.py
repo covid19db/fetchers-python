@@ -1,7 +1,7 @@
 import logging
 import sqlite3
+from typing import Dict
 import pandas as pd
-from datetime import datetime
 
 __all__ = ('SqliteHelper',)
 
@@ -93,13 +93,18 @@ class SqliteHelper(AbstractAdapter):
 
         return self.cur.fetchall()
 
-    def format_data(self, data):
+    def format_data(self, data: Dict):
         # Add adm_area values if don't exist
         data['adm_area_1'] = data.get('adm_area_1')
         data['adm_area_2'] = data.get('adm_area_2')
         data['adm_area_3'] = data.get('adm_area_3')
         data['gid'] = ",".join(data.get('gid'))
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
+
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None):
+        # TODO: Implement get division
+        raise NotImplementedError("To be implemented")
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         kwargs = self.format_data(kwargs)
@@ -113,6 +118,16 @@ class SqliteHelper(AbstractAdapter):
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         kwargs = self.format_data(kwargs)
+        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
+            table_name=table_name,
+            insert_keys=",".join([key for key in kwargs.keys()]),
+            insert_data=",".join('?' * len(kwargs)),
+        )
+
+        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
             table_name=table_name,
             insert_keys=",".join([key for key in kwargs.keys()]),
