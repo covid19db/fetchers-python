@@ -38,7 +38,7 @@ class CzechiaFetcher(AbstractFetcher):
             confirmed = int(record['cases']) if pd.notna(record['cases']) else None
 
             if pd.isna(record['nuts_3']):
-                adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, ['AUT']
+                adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, ['CZE']
             else:
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=record['nuts_3'],
