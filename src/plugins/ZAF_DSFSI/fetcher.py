@@ -135,6 +135,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # adm_area_1, when available, is a wide-area administrative region
                 # In this case, adm_area_1, adm_area_2 (subadministrative region) and 
                 #  adm_area_3 (subsubadministrative region) are not available.
+                'gid'=['ZAF'],
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
@@ -187,7 +188,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 dead = len(np.where(np.array(
                     list(province_dead_data[province_dead_data['province'] == province]['YYYYMMDD'])) <= date_yyyymmdd)[
                                0])
-
+                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('ZAF', province, None, None)
                 upsert_obj_province = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'ZAF_DSFSI',
