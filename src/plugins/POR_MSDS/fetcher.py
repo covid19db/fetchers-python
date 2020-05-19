@@ -132,6 +132,7 @@ class POR_MSDSFetcher(AbstractFetcher):
 
         ### For each date, we collect daily cumulative confirmed & dead numbers one by one province
         for k in range(len(date_list)):
+
             date = datetime.strptime(date_list[k], '%d-%m-%Y').strftime('%Y-%m-%d')
 
             for h in range(len(province_list)):
