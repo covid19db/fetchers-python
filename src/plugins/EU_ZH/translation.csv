@@ -1,0 +1,112 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+AUT,Burgenland,,,Burgenland,,,AUT.1_1
+AUT,Kärnten,,,Kärnten,,,AUT.2_1
+AUT,Niederösterreich,,,Niederösterreich,,,AUT.3_1
+AUT,Oberösterreich,,,Oberösterreich,,,AUT.4_1
+AUT,Salzburg,,,Salzburg,,,AUT.5_1
+AUT,Steiermark,,,Steiermark,,,AUT.6_1
+AUT,Tirol,,,Tirol,,,AUT.7_1
+AUT,Vorarlberg,,,Vorarlberg,,,AUT.8_1
+AUT,Wien,,,Wien,,,AUT.9_1
+CZE,Jihočeský kraj,,,Jihočeský,,,CZE.1_1
+CZE,Jihomoravský kraj,,,Jihomoravský,,,CZE.2_1
+CZE,Karlovarský kraj,,,Karlovarský,,,CZE.3_1
+CZE,Kraj Vysočina,,,Kraj Vysočina,,,CZE.4_1
+CZE,Královéhradecký kraj,,,Královéhradecký,,,CZE.5_1
+CZE,Liberecký kraj,,,Liberecký,,,CZE.6_1
+CZE,Moravskoslezský kraj,,,Moravskoslezský,,,CZE.7_1
+CZE,Olomoucký kraj,,,Olomoucký,,,CZE.8_1
+CZE,Pardubický kraj,,,Pardubický,,,CZE.9_1
+CZE,Plzeňský kraj,,,Plzeňský,,,CZE.10_1
+CZE,Hlavní město Praha,,,Prague,,,CZE.11_1
+CZE,Středočeský kraj,,,Středočeský,,,CZE.12_1
+CZE,Ústecký kraj,,,Ústecký,,,CZE.13_1
+CZE,Zlínský kraj,,,Zlínský,,,CZE.14_1
+CZE,Nezjištěno,,,Unknown,,,None
+DEU,Baden-Württemberg,,,Baden-Württemberg,,,DEU.1_1
+DEU,Bayern,,,Bayern,,,DEU.2_1
+DEU,Berlin,,,Berlin,,,DEU.3_1
+DEU,Brandenburg,,,Brandenburg,,,DEU.4_1
+DEU,Bremen,,,Bremen,,,DEU.5_1
+DEU,Hamburg,,,Hamburg,,,DEU.6_1
+DEU,Hessen,,,Hessen,,,DEU.7_1
+DEU,Mecklenburg-Vorpommern,,,Mecklenburg-Vorpommern,,,DEU.8_1
+DEU,Niedersachsen,,,Niedersachsen,,,DEU.9_1
+DEU,Nordrhein-Westfalen,,,Nordrhein-Westfalen,,,DEU.10_1
+DEU,Rheinland-Pfalz,,,Rheinland-Pfalz,,,DEU.11_1
+DEU,Saarland,,,Saarland,,,DEU.12_1
+DEU,Sachsen,,,Sachsen,,,DEU.14_1
+DEU,Sachsen-Anhalt,,,Sachsen-Anhalt,,,DEU.13_1
+DEU,Schleswig-Holstein,,,Schleswig-Holstein,,,DEU.15_1
+DEU,Thüringen,,,Thüringen,,,DEU.16_1
+DEU,Repatriierte,,,Repatriated,,,None
+IRL,Carlow,,,Carlow,,,IRL.1_1
+IRL,Cavan,,,Cavan,,,IRL.2_1
+IRL,Clare,,,Clare,,,IRL.3_1
+IRL,Cork,,,Cork,,,IRL.4_1
+IRL,Donegal,,,Donegal,,,IRL.5_1
+IRL,Dublin,,,Dublin,,,IRL.6_1
+IRL,Galway,,,Galway,,,IRL.7_1
+IRL,Kerry,,,Kerry,,,IRL.8_1
+IRL,Kildare,,,Kildare,,,IRL.9_1
+IRL,Kilkenny,,,Kilkenny,,,IRL.10_1
+IRL,Laois,,,Laoighis,,,IRL.11_1
+IRL,Leitrim,,,Leitrim,,,IRL.12_1
+IRL,Limerick,,,Limerick,,,IRL.13_1
+IRL,Longford,,,Longford,,,IRL.14_1
+IRL,Louth,,,Louth,,,IRL.15_1
+IRL,Mayo,,,Mayo,,,IRL.16_1
+IRL,Meath,,,Meath,,,IRL.17_1
+IRL,Monaghan,,,Monaghan,,,IRL.18_1
+IRL,Offaly,,,Offaly,,,IRL.19_1
+IRL,Roscommon,,,Roscommon,,,IRL.20_1
+IRL,Sligo,,,Sligo,,,IRL.21_1
+IRL,Tipperary,,,Tipperary,,,IRL.22_1
+IRL,Waterford,,,Waterford,,,IRL.23_1
+IRL,Westmeath,,,Westmeath,,,IRL.24_1
+IRL,Wexford,,,Wexford,,,IRL.25_1
+IRL,Wicklow,,,Wicklow,,,IRL.26_1
+NOR,Troms og Finnmark,,,Troms og Finnmark,,,NOR.5_1:NOR.17_1
+NOR,Vestfold og Telemark,,,Vestfold og Telemark,,,NOR.19_1:NOR.16_1
+NOR,Agder,,,Agder,,,NOR.3_1:NOR.18_1
+NOR,Møre og Romsdal,,,Møre og Romsdal,,,NOR.8_1
+NOR,Nordland,,,Nordland,,,NOR.10_1
+NOR,Trøndelag,,,Trøndelag,,,NOR.9_1:NOR.15_1
+NOR,Innlandet,,,Innlandet,,,NOR.6_1:NOR.11_1
+NOR,Oslo,,,Oslo,,,NOR.12_1
+NOR,Rogaland,,,Rogaland,,,NOR.13_1
+NOR,Vestland,,,Vestland,,,NOR.7_1:NOR.14_1
+NOR,Viken,,,Viken,,,NOR.1_1:NOR.2_1:NOR.4_1
+NOR,Unknown county,,,Unknown,,,None
+NOR,Unknown,,,Unknown,,,None
+NOR,Outside mainland Norway,,,Outside mainland Norway,,,None
+NOR,troms og finnmark,,,Troms og Finnmark,,,NOR.5_1:NOR.17_1
+NOR,vestfold og telemark,,,Vestfold og Telemark,,,NOR.19_1:NOR.16_1
+NOR,agder,,,Agder,,,NOR.3_1:NOR.18_1
+NOR,møre og romsdal,,,Møre og Romsdal,,,NOR.8_1
+NOR,nordland,,,Nordland,,,NOR.10_1
+NOR,trøndelag,,,Trøndelag,,,NOR.9_1:NOR.15_1
+NOR,innlandet,,,Innlandet,,,NOR.6_1:NOR.11_1
+NOR,oslo,,,Oslo,,,NOR.12_1
+NOR,rogaland,,,Rogaland,,,NOR.13_1
+NOR,vestland,,,Vestland,,,NOR.7_1:NOR.14_1
+NOR,viken,,,Viken,,,NOR.1_1:NOR.2_1:NOR.4_1
+POL,dolnośląskie,,,Dolnośląskie,,,POL.1_1
+POL,kujawsko-pomorskie,,,Kujawsko-Pomorskie,,,POL.2_1
+POL,łódzkie,,,Łódzkie,,,POL.3_1
+POL,lubelskie,,,Lubelskie,,,POL.4_1
+POL,lubuskie,,,Lubuskie,,,POL.5_1
+POL,małopolskie,,,Małopolskie,,,POL.6_1
+POL,mazowieckie,,,Mazowieckie,,,POL.7_1
+POL,opolskie,,,Opolskie,,,POL.8_1
+POL,podkarpackie,,,Podkarpackie,,,POL.9_1
+POL,podlaskie,,,Podlaskie,,,POL.10_1
+POL,pomorskie,,,Pomorskie,,,POL.11_1
+POL,śląskie,,,Śląskie,,,POL.12_1
+POL,świętokrzyskie,,,Świętokrzyskie,,,POL.13_1
+POL,warmińsko-mazurskie,,,Warmińsko-Mazurskie,,,POL.14_1
+POL,wielkopolskie,,,Wielkopolskie,,,POL.15_1
+POL,zachodniopomorskie,,,Zachodniopomorskie,,,POL.16_1
+
+
+

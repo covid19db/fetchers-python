@@ -1,0 +1,8 @@
+country,code_3,code_2,region
+Poland,POL,pl,nuts_2
+Norway,NOR,no,nuts_3
+Ireland,IRL,ie,lau
+Hungary,HUN,hu,none
+Germany,DEU,de,nuts_1
+Austria,AUT,at,nuts_2
+Czechia,CZE,cz,nuts_3
