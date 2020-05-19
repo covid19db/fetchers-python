@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from datetime import date
 
-__all__ = ('SWE_GMFetcher',)
+__all__ = ('SWE_GMFFetcher',)
 
 """ 
     site-location: https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series
@@ -83,7 +83,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                     current_confirmed = 0
 
                 # cumulative data by adding confirmed case of the date to the cumulative confirmed cases before this date
-                confirmed = previous_confirmed + current_confirmed
+                confirmed = int(previous_confirmed + current_confirmed)
 
                 # current dead cases for current' date
                 current_dead = np.array(province_dead_data[date_])[j]
@@ -124,14 +124,14 @@ class SWE_GMFFetcher(AbstractFetcher):
 
             ###The original csv does not use date format for today's date (which is the last date to collect), but use 'Today', so we should find the current date format first
             today = date.today()
-            date_ = today.strftime("%y-%m-%d")
+            date_ = today.strftime("%Y-%m-%d")
 
             ### all the following procedure is exactly the same as before, but only for Today's data
             current_confirmed = np.array(province_confirmed_data["Today"])[j]
 
             if pd.isnull(current_confirmed):
                 current_confirmed = 0
-            confirmed = previous_confirmed + current_confirmed
+            confirmed = int(previous_confirmed + current_confirmed)
 
             current_dead = np.array(province_dead_data["Today"])[j]
 

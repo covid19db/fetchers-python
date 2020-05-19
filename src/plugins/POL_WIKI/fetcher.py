@@ -1,3 +1,4 @@
+from os import path
 import logging
 from pandas import DataFrame
 from collections import OrderedDict
@@ -28,6 +29,7 @@ class PolandWikiFetcher(AbstractFetcher):
                 adm_area_1=None,
                 adm_area_2=None,
                 adm_area_3=None,
+                gid=['POL'],
                 tested=to_number(item['Quarantined']),
                 quarantined=to_number(item['Tested (total)']),
                 confirmed=to_number(item['Confirmed']),
@@ -52,13 +54,21 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     confirmed)
 
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=voivodeship_name,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True
+                )
+
                 self.db.upsert_epidemiology_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=voivodeship_name,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    adm_area_1=adm_area_1,
+                    adm_area_2=adm_area_2,
+                    adm_area_3=adm_area_3,
+                    gid=gid,
                     confirmed=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )
@@ -79,13 +89,21 @@ class PolandWikiFetcher(AbstractFetcher):
                 total_per_voivodeship[voivodeship_name] = total_per_voivodeship.get(voivodeship_name, 0) + to_number(
                     deaths)
 
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=voivodeship_name,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True
+                )
+
                 self.db.upsert_epidemiology_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
-                    adm_area_1=voivodeship_name,
-                    adm_area_2=None,
-                    adm_area_3=None,
+                    adm_area_1=adm_area_1,
+                    adm_area_2=adm_area_2,
+                    adm_area_3=adm_area_3,
+                    gid=gid,
                     dead=total_per_voivodeship[voivodeship_name],
                     source='POL_WIKI'
                 )

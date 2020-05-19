@@ -86,41 +86,40 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
             else:
                 confirmed = None
             try:
-                    confirmed=int(confirmed)
+                confirmed = int(confirmed)
             except:
-                    confirmed=None
+                confirmed = None
             ### Fetch tested, recovered, hopistalised, icu, ventilated and dead nums                    
             cumulative_tests = record[2]
             try:
-                    cumulative_tests=int(cumulative_tests)
+                cumulative_tests = int(cumulative_tests)
             except:
-                    cumulative_tests=None
-                    
+                cumulative_tests = None
+
             recovered = record[3]
             try:
-                    recovered=int(recovered)
+                recovered = int(recovered)
             except:
-                    recovered=None
-                    
+                recovered = None
+
             hospitalisation = record[4]
             try:
-                    hospitalisation=int(hospitalisation)
+                hospitalisation = int(hospitalisation)
             except:
-                    hospitalisation=None
-            
+                hospitalisation = None
+
             critical_icu = record[5]
             try:
-                    critical_icu=int(critical_icu)
+                critical_icu = int(critical_icu)
             except:
-                    critical_icu=None
-
+                critical_icu = None
 
             dead = record[7]
             try:
-                    dead=int(dead)
+                dead = int(dead)
             except:
-                    dead=None
-                    
+                dead = None
+
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source
@@ -135,6 +134,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # adm_area_1, when available, is a wide-area administrative region
                 # In this case, adm_area_1, adm_area_2 (subadministrative region) and 
                 #  adm_area_3 (subsubadministrative region) are not available.
+                'gid': ['ZAF'],
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
@@ -178,16 +178,16 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 # Get confirmed number from current csv (province_confirmed_data) for current province
                 confirmed = record_province[k + 2]
                 try:
-                    confirmed=int(confirmed)
+                    confirmed = int(confirmed)
                 except:
-                    confirmed=None
+                    confirmed = None
 
                 # To get cumulative dead number in current province at some date, by counting the individual cases in
                 # the same province up to the date ('YYYYMMDD' numeric format) from csv province_dead_data
                 dead = len(np.where(np.array(
                     list(province_dead_data[province_dead_data['province'] == province]['YYYYMMDD'])) <= date_yyyymmdd)[
                                0])
-
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('ZAF', province, None, None)
                 upsert_obj_province = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'ZAF_DSFSI',
@@ -198,9 +198,10 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     'countrycode': 'ZAF',
                     # adm_area_1, when available, is a wide-area administrative region
                     # adm_area_2 (subadministrative region) and adm_area_3 (subsubadministrative region) , are not available.
-                    'adm_area_1': province,
+                    'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
+                    'gid': gid,
                     # confirmed is the number of confirmed cases of infection, this is cumulative
                     'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
@@ -209,4 +210,3 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 }
 
                 self.db.upsert_epidemiology_data(**upsert_obj_province)
-

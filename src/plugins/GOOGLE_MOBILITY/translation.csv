@@ -1,0 +1,83 @@
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
+# Argentina
+ARG,Cordoba,,,Córdoba,,,ARG.6_1
+ARG,Entre Rios,,,Entre Ríos,,,ARG.8_1
+ARG,Neuquen,,,Neuquén,,,ARG.15_1
+# Canada
+CAN,Quebec,,,Québec,,,CAN.11_1
+# ESP
+ESP,Andalusia,,,Andalucía,,,ESP.1_1
+ESP,Aragon,,,Aragón,,,ESP.2_1
+ESP,Asturias,,,Principado de Asturias,,,ESP.17_1
+ESP,Castile and León,,,Castilla y León,,,ESP.5_1
+ESP,Castile-La Mancha,,,Castilla-La Mancha,,,ESP.4_1
+ESP,Catalonia,,,Cataluña,,,ESP.6_1
+ESP,Ceuta,,,Ceuta y Melilla,Ceuta,,ESP.7.1_1
+ESP,Community of Madrid,,,Comunidad de Madrid,,,ESP.8_1
+ESP,Melilla,,,Ceuta y Melilla,Melilla,,ESP.7.2_1
+ESP,Navarre,,,Comunidad Foral de Navarra,,,ESP.9_1
+ESP,Valencian Community,,,Comunidad Valenciana,,,ESP.10_1
+ESP,of Murcia,,,Región de Murcia,,,ESP.18_1
+# France
+FRA,Brittany,,,Bretagne,,,FRA.3_1
+FRA,Corsica,,,Corse,,,FRA.5_1
+FRA,Normandy,,,Normandie,,,FRA.9_1
+# Greece
+GRC,Decentralized Administration of Attica,,,Attica,,,GRC.3_1
+GRC,Decentralized Administration of Epirus and Western Macedonia,,,Epirus and Western Macedonia,,,GRC.5_1
+GRC,Decentralized Administration of Macedonia and Thrace,,,Macedonia and Thrace,,,GRC.6_1
+GRC,"Decentralized Administration of Peloponnese, Western Greece and the Ionian",,,"Peloponnese, Western Greece and the Ionian Islands",,,GRC.7_1
+GRC,Decentralized Administration of Thessaly and Central Greece,,,Thessaly and Central Greece,,,GRC.8_1
+GRC,Decentralized Administration of the Aegean,,,Aegean,,,GRC.1_1
+# Deutschland
+DEU,Bavaria,,,Bayern,,,DEU.2_1
+DEU,Hesse,,,Hessen,,,DEU.7_1
+DEU,Lower Saxony,,,Niedersachsen,,,DEU.9_1
+DEU,North Rhine-Westphalia,,,Nordrhein-Westfalen,,,DEU.10_1
+DEU,Rhineland-Palatinate,,,Rheinland-Pfalz,,,DEU.11_1
+DEU,Saxony,,,Sachsen,,,DEU.14_1
+DEU,Saxony-Anhalt,,,Sachsen-Anhalt,,,DEU.13_1
+DEU,Thuringia,,,Thüringen,,,DEU.16_1
+# United Arab Emirates
+ARE,Ras al Khaimah,,,Ras Al-Khaimah,,,ARE.5_1
+ARE,Umm Al Quawain,,,Umm al-Qaywayn,,,ARE.7_1
+# Ireland
+IRL,Laois,,,Laoighis,,,IRL.11_1
+# Italy
+ITA,Aosta,,,Valle d'Aosta,,,ITA.19_1
+ITA,Lombardy,,,Lombardia,,,ITA.10_1
+ITA,Piedmont,,,Piemonte,,,ITA.13_1
+ITA,Sardinia,,,Sardegna,,,ITA.14_1
+ITA,Trentino-South Tyrol,,,Trentino-Alto Adige,,,ITA.17_1
+ITA,Tuscany,,,Toscana,,,ITA.16_1
+# Japan
+JPN,Hyogo,,,Hyōgo,Fukusaki,,JPN.13.8_1
+JPN,Nagasaki,,,Naoasaki,Nagasaki,,JPN.27.11_1
+# Poland
+POL,Lower Silesian Voivodeship,,,Dolnośląskie,,,POL.1_1
+POL,Kuyavian-Pomeranian Voivodeship,,,Kujawsko-Pomorskie,,,POL.2_1
+POL,Łódź Voivodeship,,,Łódzkie,,,POL.3_1
+POL,Lublin Voivodeship,,,Lubelskie,,,POL.4_1
+POL,Lubusz Voivodeship,,,Lubuskie,,,POL.5_1
+POL,Lesser Poland Voivodeship,,,Małopolskie,,,POL.6_1
+POL,Masovian Voivodeship,,,Mazowieckie,,,POL.7_1
+POL,Opole Voivodeship,,,Opolskie,,,POL.8_1
+POL,Podkarpackie Voivodeship,,,Podkarpackie,,,POL.9_1
+POL,Podlaskie Voivodeship,,,Podlaskie,,,POL.10_1
+POL,Pomeranian Voivodeship,,,Pomorskie,,,POL.11_1
+POL,Silesian Voivodeship,,,Śląskie,,,POL.12_1
+POL,Swietokrzyskie,,,Świętokrzyskie,,,POL.13_1
+POL,Warmian-Masurian Voivodeship,,,Warmińsko-Mazurskie,,,POL.14_1
+POL,Greater Poland Voivodeship,,,Wielkopolskie,,,POL.15_1
+POL,West Pomeranian Voivodeship,,,Zachodniopomorskie,,,POL.16_1
+# SWE
+SWE,Gavleborg,,,Gävleborg,,,SWE.3_1
+SWE,Jamtland,,,Jämtland,,,SWE.6_1
+SWE,Jonkoping,,,Jönköping,,,SWE.7_1
+SWE,Varmland,,,Värmland,,,SWE.17_1
+SWE,Örebro,,,Orebro,,,SWE.11_1
+# USA
+USA,Missouri,Ste. Genevieve,,Missouri,Sainte Genevieve,,USA.26.96_1
+USA,New Mexico,Doña Ana,,New Mexico,Dona Ana,,USA.32.8_1
+USA,Alaska,Kenai Peninsula Borough,,Alaska,Kenai Peninsula,,USA.2.11_1
+

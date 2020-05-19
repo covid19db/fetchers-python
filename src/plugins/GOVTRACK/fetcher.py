@@ -18,12 +18,12 @@ class StringencyFetcher(AbstractFetcher):
         date_from = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
         date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
-            f'https://covidtrackerapi.bsg.ox.ac.uk/api/stringency/date-range/{date_from}/{date_to}').json()
+            f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/{date_from}/{date_to}').json()
         return parser(api_data)
 
     def fetch_details(self, country_code, date_value):
         api_details = requests.get(
-            f'https://covidtrackerapi.bsg.ox.ac.uk/api/stringency/actions/{country_code}/{date_value}'
+            f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions/{country_code}/{date_value}'
         ).json()
         api_details.pop("stringencyData")
         return api_details
@@ -37,6 +37,7 @@ class StringencyFetcher(AbstractFetcher):
                 'date': record['date_value'],
                 'country': record['English short name lower case'],
                 'countrycode': record['country_code'],
+                'gid': [record['country_code']],
                 'confirmed': int(record['confirmed']),
                 'dead': int(record['deaths']),
                 'stringency': int(record['stringency']),

@@ -1,5 +1,6 @@
 import time
 import logging
+from typing import Tuple
 import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -31,7 +32,7 @@ class PostgresqlHelper(AbstractAdapter):
         self.open_connection()
         self.cursor()
 
-    def open_connection(self, attempt=MAX_ATTEMPT_FAIL):
+    def open_connection(self, attempt: int = MAX_ATTEMPT_FAIL):
         if not self.conn:
             try:
                 self.conn = psycopg2.connect(user=self.user, password=self.password, host=self.host,
@@ -54,7 +55,7 @@ class PostgresqlHelper(AbstractAdapter):
             self.cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
             return self.cur
 
-    def execute(self, query: str, data: str = None, attempt=MAX_ATTEMPT_FAIL):
+    def execute(self, query: str, data: str = None, attempt: int = MAX_ATTEMPT_FAIL):
         try:
             self.cur.execute(query, data)
             self.conn.commit()
@@ -70,10 +71,39 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def upsert_government_response_data(self, **kwargs):
-        data_keys = ['confirmed', 'dead', 'stringency', 'stringency_actual']
+    def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
+                         adm_area_3: str = None) -> Tuple:
+        sql_query = sql.SQL("""
+            SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+            WHERE countrycode = %s 
+                AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_2, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g') 
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
 
-        sql_query = sql.SQL("""INSERT INTO government_response ({insert_keys}) VALUES ({insert_data})
+        results = self.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
+        if not results:
+            raise Exception(f'Unable to find adm division for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
+        if len(results) > 1:
+            raise Exception(f'Ambiguous result: {results}')
+        result = results[0]
+        return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
+
+    def get_administrative_division_for_country(self, countrycode: str, adm_level: str):
+        sql_query = sql.SQL("""
+            SELECT country, countrycode, countrycode_alpha2, adm_level,
+                adm_area_1, adm_area_2, adm_area_3, gid FROM administrative_division
+            WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
+
+        result = self.execute(sql_query, (countrycode, adm_level))
+        return result
+
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
+
+        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                     ON CONFLICT
                                         (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
                                          COALESCE(adm_area_3, ''), source)
@@ -81,6 +111,7 @@ class PostgresqlHelper(AbstractAdapter):
                                         UPDATE SET {update_data}
                                     RETURNING *
                                     """).format(
+            table_name=sql.Identifier(table_name),
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
             update_data=sql.SQL(",").join(
@@ -89,12 +120,13 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug("Updating govtrack table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def upsert_epidemiology_data(self, **kwargs):
-        data_keys = ['tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead', 'recovered']
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+        data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
+                     'recovered']
 
-        sql_query = sql.SQL("""INSERT INTO epidemiology ({insert_keys}) VALUES ({insert_data})
+        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
                                     (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
                                      COALESCE(adm_area_3, ''), source)
@@ -102,6 +134,7 @@ class PostgresqlHelper(AbstractAdapter):
                                     UPDATE SET {update_data}
                                 RETURNING *
                                 """).format(
+            table_name=sql.Identifier(table_name),
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
             update_data=sql.SQL(",").join(
@@ -110,7 +143,31 @@ class PostgresqlHelper(AbstractAdapter):
         )
 
         self.execute(sql_query, kwargs)
-        logger.debug("Updating epidemiology table with data: {}".format(list(kwargs.values())))
+        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        data_keys = ['gid', 'transit_stations', 'residential', 'workplace', 'parks', 'retail_recreation',
+                     'grocery_pharmacy']
+
+        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
+                                    ON CONFLICT
+                                        (source, date, country, countrycode, COALESCE(adm_area_1, ''), 
+                                         COALESCE(adm_area_2, ''), COALESCE(adm_area_3, ''))
+                                    DO
+                                        UPDATE SET {update_data}
+                                    RETURNING *
+                                    """).format(
+            table_name=sql.Identifier(table_name),
+            insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
+            insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
+            update_data=sql.SQL(",").join(
+                sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
+                k in data_keys)
+        )
+
+        self.execute(sql_query, kwargs)
+        logger.debug(
+            "Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def close_connection(self):
         if self.conn:
