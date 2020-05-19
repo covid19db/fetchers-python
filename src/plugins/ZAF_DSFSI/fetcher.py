@@ -159,18 +159,18 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
         ### Get the 10 province names    
         province_lists = list(province_confirmed_data.columns)[2:12]
-        
-        trans_dict={'EC': 'Eastern Cape',\
-            'FS': 'Free State',\
-            'GP': 'Gauteng',\
-            'KZN':'KwaZulu-Natal',\
-            'LP': 'Limpopo',\
-            'MP': 'Mpumalanga',\
-            'NC':'Northern Cape',\
-            'NW':'North West',\
-            'WC': 'Western Cape',\
-            'UNKNOWN': 'UNKNOWN'}
-        
+
+        trans_dict = {'EC': 'Eastern Cape', \
+                      'FS': 'Free State', \
+                      'GP': 'Gauteng', \
+                      'KZN': 'KwaZulu-Natal', \
+                      'LP': 'Limpopo', \
+                      'MP': 'Mpumalanga', \
+                      'NC': 'Northern Cape', \
+                      'NW': 'North West', \
+                      'WC': 'Western Cape', \
+                      'UNKNOWN': 'UNKNOWN'}
+
         ### Basically using province_confirmed_data csv
         for index_province, record_province in province_confirmed_data.iterrows():
 
@@ -185,7 +185,6 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
             for k in range(len(province_lists)):
                 # current province
                 province = trans_dict[province_lists[k]]
-                
 
                 # Get confirmed number from current csv (province_confirmed_data) for current province
                 confirmed = record_province[k + 2]
@@ -199,13 +198,16 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
                 dead = len(np.where(np.array(
                     list(province_dead_data[province_dead_data['province'] == province]['YYYYMMDD'])) <= date_yyyymmdd)[
-                               0])  
-                
-                if province!='UNKNOWN':
-                    adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('ZAF', province, None, None)
+                               0])
+
+                if province != 'UNKNOWN':
+                    adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('ZAF', province)
+
+                    if not gid:
+                        raise Exception(f'Unable to obtain GID for: {province}')
                 else:
                     adm_area_1, adm_area_2, adm_area_3, gid = province, None, None, None
-                    
+
                 upsert_obj_province = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'ZAF_DSFSI',
@@ -225,6 +227,6 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': int(dead)
 
-                    }
+                }
 
                 self.db.upsert_epidemiology_data(**upsert_obj_province)
