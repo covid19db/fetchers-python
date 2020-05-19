@@ -1,10 +1,8 @@
 import os
 import pandas as pd
-import logging
 from pandas import DataFrame
 from typing import Tuple, List
 
-logger = logging.getLogger(__name__)
 
 class AdmTranslator:
     def __init__(self, csv_fname: str):
@@ -36,8 +34,7 @@ class AdmTranslator:
                     continue
 
                 if row.gid is None:
-                    logger.warning(f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}')
-                    return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, None
+                    raise Exception(f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}')
 
                 return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid.split(':')
         if return_original_if_failure:
