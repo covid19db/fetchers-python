@@ -33,6 +33,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
     def fetch(self,url):
         return pd.read_csv(url)
 
+    # Certain regions have excess characters in some source files
     def clean_string(self,input):
         if isinstance(input,str):
             return input.replace('­','')
@@ -41,16 +42,12 @@ class EU_ZH_Fetcher(AbstractFetcher):
 
     def country_fetcher(self,region,country,code_3,code_2):
 
-
-
-
-
         logger.info("Processing number of cases in " + country)
+
         if code_3 == 'NOR':
-            logger.info("These GIDs not entirely accurate due to change in Norway's county boundaries, 2020.")
+            logger.warning("These GIDs not entirely accurate due to change in Norway's county boundaries, 2020.")
 
         url = 'https://github.com/covid19-eu-zh/covid19-eu-data/raw/master/dataset/covid-19-' + code_2 + '.csv'
-
         df = self.fetch(url)
 
         for index, record in df.iterrows():
@@ -73,6 +70,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
             elif pd.isna(record[region]) and code_3=='AUT':
                 adm_area_1 = None
                 gid = [code_3]
+            # If the region appears cleanly, then we can translate to obtain GID
             else:
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=self.clean_string(record[region]),
@@ -122,6 +120,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
 
             self.db.upsert_epidemiology_data(**upsert_obj)
 
+    # read the list of countries from a csv file in order to fetch each one
     def load_countries_to_fetch(self):
         input_csv_fname = getattr(self.__class__, 'INPUT_CSV', "input.csv")
         path = os.path.dirname(sys.modules[self.__class__.__module__].__file__)
@@ -137,6 +136,5 @@ class EU_ZH_Fetcher(AbstractFetcher):
     def run(self):
 
         countries = self.load_countries_to_fetch()
-
         for index, record in countries.iterrows():
             self.country_fetcher(record['region'],record['country'],record['code_3'],record['code_2'])

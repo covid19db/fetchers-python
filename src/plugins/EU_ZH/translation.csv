@@ -22,7 +22,7 @@ CZE,Hlavní město Praha,,,Prague,,,CZE.11_1
 CZE,Středočeský kraj,,,Středočeský,,,CZE.12_1
 CZE,Ústecký kraj,,,Ústecký,,,CZE.13_1
 CZE,Zlínský kraj,,,Zlínský,,,CZE.14_1
-CZE,Nezjištěno,,,Unknown,,,None
+CZE,Nezjištěno,,,Unknown,,,
 DEU,Baden-Württemberg,,,Baden-Württemberg,,,DEU.1_1
 DEU,Bayern,,,Bayern,,,DEU.2_1
 DEU,Berlin,,,Berlin,,,DEU.3_1
@@ -39,7 +39,7 @@ DEU,Sachsen,,,Sachsen,,,DEU.14_1
 DEU,Sachsen-Anhalt,,,Sachsen-Anhalt,,,DEU.13_1
 DEU,Schleswig-Holstein,,,Schleswig-Holstein,,,DEU.15_1
 DEU,Thüringen,,,Thüringen,,,DEU.16_1
-DEU,Repatriierte,,,Repatriated,,,None
+DEU,Repatriierte,,,Repatriated,,,
 IRL,Carlow,,,Carlow,,,IRL.1_1
 IRL,Cavan,,,Cavan,,,IRL.2_1
 IRL,Clare,,,Clare,,,IRL.3_1
@@ -77,9 +77,9 @@ NOR,Oslo,,,Oslo,,,NOR.12_1
 NOR,Rogaland,,,Rogaland,,,NOR.13_1
 NOR,Vestland,,,Vestland,,,NOR.7_1:NOR.14_1
 NOR,Viken,,,Viken,,,NOR.1_1:NOR.2_1:NOR.4_1
-NOR,Unknown county,,,Unknown,,,None
-NOR,Unknown,,,Unknown,,,None
-NOR,Outside mainland Norway,,,Outside mainland Norway,,,None
+NOR,Unknown county,,,Unknown,,,
+NOR,Unknown,,,Unknown,,,
+NOR,Outside mainland Norway,,,Outside mainland Norway,,,
 NOR,troms og finnmark,,,Troms og Finnmark,,,NOR.5_1:NOR.17_1
 NOR,vestfold og telemark,,,Vestfold og Telemark,,,NOR.19_1:NOR.16_1
 NOR,agder,,,Agder,,,NOR.3_1:NOR.18_1
