@@ -1,5 +1,4 @@
 from utils.fetcher_abstract import AbstractFetcher
-from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
@@ -28,12 +27,10 @@ class NLD_WYFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/J535D165/CoronaWatchNL/master/data/rivm_NL_covid19_national.csv'
-        
+
         logger.debug('Fetching Netherland country-level confirmed-dead-hospitalised data from NLD_WY')
-        
+
         return pd.read_csv(url)
-
-
 
     def run(self):
 
@@ -46,43 +43,31 @@ class NLD_WYFetcher(AbstractFetcher):
         country_data = self.country_fetch()
 
         ### Get dates & cumulative recorded lists
-        time_list=list(country_data.Datum)
-        lists=np.asarray(country_data.Aantal,dtype='int')
-        
+        time_list = list(country_data.Datum)
+        lists = np.asarray(country_data.Aantal, dtype='int')
+
         for k in range(len(time_list)):
-              
-            
+
             ### Translating data format from DD/MM/YYYY to YYYY-MM-DD
-
-            if k%3==0:         
-                confirmed=lists[k]
-                if confirmed<0:
-                    confirmed=None
+            if k % 3 == 0:
+                confirmed = lists[k]
+                if confirmed < 0:
+                    confirmed = None
                 else:
-                    confirmed=int(confirmed)
-                    
-                    
-            elif k%3==1:
-
-                HOSPITALISED=lists[k]
-                if HOSPITALISED<0:
-                    HOSPITALISED=None 
+                    confirmed = int(confirmed)
+            elif k % 3 == 1:
+                HOSPITALISED = lists[k]
+                if HOSPITALISED < 0:
+                    HOSPITALISED = None
                 else:
-                    HOSPITALISED=int(HOSPITALISED)
-                    
-                    
+                    HOSPITALISED = int(HOSPITALISED)
             else:
-                
                 date = time_list[k]
-
-                dead=lists[k]
-                if dead<0:
-                    dead=None
+                dead = lists[k]
+                if dead < 0:
+                    dead = None
                 else:
-                    dead=int(dead)
-                
-                
-
+                    dead = int(dead)
 
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
@@ -95,7 +80,7 @@ class NLD_WYFetcher(AbstractFetcher):
                     # countrycode is mandatory and it's the ISO Alpha-3 code of the country
                     # an exception is ships, which has "---" as country code
                     'countrycode': 'NLD',
-                    'gid'=['NLD'],
+                    'gid': ['NLD'],
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
@@ -106,10 +91,6 @@ class NLD_WYFetcher(AbstractFetcher):
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': dead,
                     'hospitalised': HOSPITALISED
-                    }
+                }
 
                 self.db.upsert_epidemiology_data(**upsert_obj)
-
-
-
-

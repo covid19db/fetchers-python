@@ -15,14 +15,16 @@ Currently implemented fetchers:
 | AUS_C1A | Australia | AUS | [The Real-time COVID-19 Status in Australia](https://github.com/covid-19-au/covid-19-au.github.io) | candidate | adm_area_1: NA or State |
 | POR_MSDS | Portugal | POR | [Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data) | candidate | adm_area_1: NA or province |
 | GBR_PHTW | United Kingdom | GBR | [Coronavirus (COVID-19) UK Historical Data](https://github.com/tomwhite/covid-19-uk-data) | candidate | adm_area_1: NA or country, adm_area_2: NA or upper tier/health boards |
-| CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | candidate | adm_area_1: canton or Liechtenstein
+| CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | candidate | adm_area_1: Canton
 | TUR_XXX | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | candidate | adm_area_1: NA
 | BEL_WY | Belgium | BEL | [github:eschnou](https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv) | candidate | adm_area_1: NA
 | IND_COVIND | India | IND | [COVID19-India API](https://api.covid19india.org/) | candidate | adm_area_1: NA or State |
 | THA_STAT | Thailand | THA | [Covid-19 Infected Situation Reports](https://covid19.th-stat.com/en/api) | candidate | adm_area_1: NA or Province |
 | CAN_GOV | Canada | CAN | [Government of Canada](https://health-infobase.canada.ca/covid-19/) | candidate | adm_area_1: Province
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | candidate | adm_area_1: Province
+| IRL_ZH | Ireland | IRL| [European Novel Coronavirus Outbreak - Chinese Channel (COVID19-EU-ZH)](https://github.com/covid19-eu-zh) | candidate | adm_area_1: County
 | NLD_WY | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | candidate | adm_area_1: NA
+
 
 Explanation of status:
 - Draft: being developed, should not be tested yet

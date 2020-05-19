@@ -107,6 +107,7 @@ class SqliteHelper(AbstractAdapter):
         raise NotImplementedError("To be implemented")
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        self.check_if_gid_exists(kwargs)
         kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
             table_name=table_name,
@@ -117,6 +118,7 @@ class SqliteHelper(AbstractAdapter):
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+        self.check_if_gid_exists(kwargs)
         kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
             table_name=table_name,
@@ -128,6 +130,8 @@ class SqliteHelper(AbstractAdapter):
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        self.check_if_gid_exists(kwargs)
+        kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
             table_name=table_name,
             insert_keys=",".join([key for key in kwargs.keys()]),

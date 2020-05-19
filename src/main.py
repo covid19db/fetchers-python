@@ -23,7 +23,7 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
             db.flush()
             logger.info(f"Plugin {plugin.__name__} finished successfully")
         except Exception as ex:
-            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}')
+            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
 
 
 def main():
@@ -32,7 +32,8 @@ def main():
     available_plugins = search_for_plugins()
 
     # run once
-    run_plugins_job(db=db, available_plugins=available_plugins,
+    run_plugins_job(db=db,
+                    available_plugins=available_plugins,
                     run_only_plugins=get_only_selected_plugins())
     # run every day at 2am
     schedule.every().day.at("02:00").do(run_plugins_job, db=db, available_plugins=available_plugins)

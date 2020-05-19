@@ -29,7 +29,7 @@ def search_for_plugins() -> List:
         except Exception as ex:
             logger.error(f'Unable to load plugin: {module_name}, error: {ex}')
 
-    return available_plugins
+    return sorted(available_plugins, key=lambda x: x.__name__)
 
 
 def get_only_selected_plugins() -> List:

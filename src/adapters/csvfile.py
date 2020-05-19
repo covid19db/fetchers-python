@@ -62,7 +62,7 @@ class CSVFileHelper(AbstractAdapter):
         if isinstance(data.get('date'), date):
             data['date'] = data.get('date').strftime("%Y-%m-%d")
 
-        data['gid'] = ":".join(data.get('gid', ''))
+        data['gid'] = ":".join(data.get('gid', [])) if data.get('gid') else None
         return data
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
@@ -71,6 +71,7 @@ class CSVFileHelper(AbstractAdapter):
         raise NotImplementedError("To be implemented")
 
     def upsert_data(self, table_name: str, **kwargs):
+        self.check_if_gid_exists(kwargs)
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
         self.upsert_temp_df(csv_file_name, table_name, kwargs)

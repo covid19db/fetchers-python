@@ -1,17 +1,17 @@
-input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
-Lower Silesia (DS),,,Dolnośląskie,,,POL.1_1
-Kuyavia-Pomerania (KP),,,Kujawsko-Pomorskie,,,POL.2_1
-Łódź (LD),,,Łódzkie,,,POL.3_1
-Lublin (LU),,,Lubelskie,,,POL.4_1
-Lubusz (LB),,,Lubuskie,,,POL.5_1
-Lesser Poland (MA),,,Małopolskie,,,POL.6_1
-Masovia (MZ; Warsaw),,,Mazowieckie,,,POL.7_1
-Opole (OP),,,Opolskie,,,POL.8_1
-Subcarpathian (PK),,,Podkarpackie,,,POL.9_1
-Podlaskie (PD),,,Podlaskie,,,POL.10_1
-Pomerania (PM),,,Pomorskie,,,POL.11_1
-Silesia (SL),,,Śląskie,,,POL.12_1
-Holy Cross (SK),,,Świętokrzyskie,,,POL.13_1
-Warmia–Masuria (WN),,,Warmińsko-Mazurskie,,,POL.14_1
-Greater Poland (WP),,,Wielkopolskie,,,POL.15_1
-West Pomerania (ZP),,,Zachodniopomorskie,,,POL.16_1
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
+POL,Lower Silesia (DS),,,Dolnośląskie,,,POL.1_1
+POL,Kuyavia-Pomerania (KP),,,Kujawsko-Pomorskie,,,POL.2_1
+POL,Łódź (LD),,,Łódzkie,,,POL.3_1
+POL,Lublin (LU),,,Lubelskie,,,POL.4_1
+POL,Lubusz (LB),,,Lubuskie,,,POL.5_1
+POL,Lesser Poland (MA),,,Małopolskie,,,POL.6_1
+POL,Masovia (MZ; Warsaw),,,Mazowieckie,,,POL.7_1
+POL,Opole (OP),,,Opolskie,,,POL.8_1
+POL,Subcarpathian (PK),,,Podkarpackie,,,POL.9_1
+POL,Podlaskie (PD),,,Podlaskie,,,POL.10_1
+POL,Pomerania (PM),,,Pomorskie,,,POL.11_1
+POL,Silesia (SL),,,Śląskie,,,POL.12_1
+POL,Holy Cross (SK),,,Świętokrzyskie,,,POL.13_1
+POL,Warmia–Masuria (WN),,,Warmińsko-Mazurskie,,,POL.14_1
+POL,Greater Poland (WP),,,Wielkopolskie,,,POL.15_1
+POL,West Pomerania (ZP),,,Zachodniopomorskie,,,POL.16_1
