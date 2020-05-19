@@ -62,7 +62,7 @@ class CSVFileHelper(AbstractAdapter):
         if isinstance(data.get('date'), date):
             data['date'] = data.get('date').strftime("%Y-%m-%d")
 
-        data['gid'] = ":".join(data.get('gid', ''))
+        data['gid'] = ":".join(data.get('gid', []))
         return data
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
