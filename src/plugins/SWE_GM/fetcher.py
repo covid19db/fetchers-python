@@ -93,7 +93,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                     current_dead = 0
                 # cumulative data by adding dead case of the date to the cumulative dead cases before this date
                 dead = int(previous_dead + current_dead)
-
+                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('SWE', province, None, None)
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
@@ -138,7 +138,8 @@ class SWE_GMFFetcher(AbstractFetcher):
             if pd.isnull(current_dead):
                 current_dead = 0
             dead = int(previous_dead + current_dead)
-
+            
+            'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('SWE', province, None, None)
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
                 'source': 'SWE_GM',
