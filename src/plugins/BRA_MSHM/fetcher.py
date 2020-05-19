@@ -86,7 +86,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
-                    'gid'=['BRA'],
+                    'gid':['BRA'],
                     'adm_area_1': None,
                     'adm_area_2': None,
                     'adm_area_3': None,
@@ -119,7 +119,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
                 confirmed = current_confirm_list[1 + i]
                 dead = current_dead_list[1 + i]
                 
-                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('BRA', province, None, None)
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('BRA',province,None, None)
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'BRA_MSHM',
@@ -134,9 +134,10 @@ class BRA_MSHMFetcher(AbstractFetcher):
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
-                    'adm_area_1': province,
+                    'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
+                    'gid':gid,
                     'confirmed': int(confirmed),
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': int(dead)
