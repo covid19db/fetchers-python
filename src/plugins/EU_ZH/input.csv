@@ -1,4 +1,6 @@
 country,code_3,code_2,region
+Slovenia,SVN,si,none
+Sweden,SWE,se,nuts_3
 Poland,POL,pl,nuts_2
 Norway,NOR,no,nuts_3
 Ireland,IRL,ie,lau

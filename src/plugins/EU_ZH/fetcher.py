@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
     Hungary's Office of the Prime Minister https://koronavirus.gov.hu/
     Ireland's Health Protection Surveillance Centre https://www.hpsc.ie/a-z/respiratory/coronavirus/novelcoronavirus/casesinireland/
     Poland - Government https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2
+    Sweden's Public Health Authority https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/aktuellt-epidemiologiskt-lage/
+    Slovenia's Government Communications Office https://www.gov.si/en/topics/coronavirus-disease-covid-19/
 """
 
 
@@ -52,16 +54,23 @@ class EU_ZH_Fetcher(AbstractFetcher):
         df = self.fetch(url)
 
         for index, record in df.iterrows():
+
             # date must be reformatted
             d = record['datetime']
             date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
 
 
-
+            # If no region is reported then all data is national
             if not hasattr(record,region):
                 adm_area_1 = None
                 gid = [code_3]
-            elif pd.isna(record[region]):
+            # Ignore two known corrupted lines in the Polish data
+            elif str(record[region])[:4]=='http':
+                continue
+            elif pd.isna(record[region]) and code_3 == 'POL':
+                continue
+            # Austria's national data is reported with a blank region
+            elif pd.isna(record[region]) and code_3=='AUT':
                 adm_area_1 = None
                 gid = [code_3]
             else:
@@ -91,6 +100,9 @@ class EU_ZH_Fetcher(AbstractFetcher):
                 upsert_obj['tested'] = tested
             if hasattr(record,'cases'):
                 confirmed = int(record['cases']) if pd.notna(record['cases']) else None
+                upsert_obj['confirmed'] = confirmed
+            if hasattr(record,'tests_positive'):
+                confirmed = int(record['tests_positive']) if pd.notna(record['tests_positive']) else None
                 upsert_obj['confirmed'] = confirmed
             if hasattr(record,'recovered') :
                 recovered = int(record['recovered']) if pd.notna(record['recovered']) else None
