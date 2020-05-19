@@ -85,7 +85,7 @@ class PostgresqlHelper(AbstractAdapter):
 
         results = self.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
         if not results:
-            raise Exception(f'Unable to find adm division for: {countrycode} {adm_area_1} {adm_area_2} {adm_area_3}')
+            raise Exception(f'Unable to find adm division for: {countrycode}, {adm_area_1}, {adm_area_2}, {adm_area_3}')
         if len(results) > 1:
             raise Exception(f'Ambiguous result: {results}')
         result = results[0]
@@ -103,6 +103,7 @@ class PostgresqlHelper(AbstractAdapter):
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
 
+        self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                     ON CONFLICT
                                         (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
@@ -126,6 +127,7 @@ class PostgresqlHelper(AbstractAdapter):
         data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
                      'recovered']
 
+        self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
                                     (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
@@ -149,6 +151,7 @@ class PostgresqlHelper(AbstractAdapter):
         data_keys = ['gid', 'transit_stations', 'residential', 'workplace', 'parks', 'retail_recreation',
                      'grocery_pharmacy']
 
+        self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                     ON CONFLICT
                                         (source, date, country, countrycode, COALESCE(adm_area_1, ''), 

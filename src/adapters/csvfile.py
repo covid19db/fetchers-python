@@ -71,6 +71,7 @@ class CSVFileHelper(AbstractAdapter):
         raise NotImplementedError("To be implemented")
 
     def upsert_data(self, table_name: str, **kwargs):
+        self.check_if_gid_exists(kwargs)
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
         self.upsert_temp_df(csv_file_name, table_name, kwargs)
