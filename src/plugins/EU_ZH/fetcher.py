@@ -14,8 +14,8 @@ logger = logging.getLogger(__name__)
 
     COVID19 data for European countries created and maintained by covid19-eu-zh
 
-    Data originally from 
-    
+    Data originally from
+
     Austria's Sozial Ministerium https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
     Czechia's Ministry of Health https://onemocneni-aktualne.mzcr.cz/covid-19
     Germany's Robert Koch Institute https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
@@ -30,17 +30,17 @@ logger = logging.getLogger(__name__)
 class EU_ZH_Fetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
-    def fetch(self,url):
+    def fetch(self, url):
         return pd.read_csv(url)
 
     # Certain regions have excess characters in some source files
-    def clean_string(self,input):
-        if isinstance(input,str):
-            return input.replace('­','')
+    def clean_string(self, input):
+        if isinstance(input, str):
+            return input.replace('­', '')
         else:
             return input
 
-    def country_fetcher(self,region,country,code_3,code_2):
+    def country_fetcher(self, region, country, code_3, code_2):
 
         logger.info("Processing number of cases in " + country)
 
@@ -56,18 +56,17 @@ class EU_ZH_Fetcher(AbstractFetcher):
             d = record['datetime']
             date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
 
-
             # If no region is reported then all data is national
-            if not hasattr(record,region):
+            if not hasattr(record, region):
                 adm_area_1 = None
                 gid = [code_3]
             # Ignore two known corrupted lines in the Polish data
-            elif str(record[region])[:4]=='http':
+            elif str(record[region])[:4] == 'http':
                 continue
             elif pd.isna(record[region]) and code_3 == 'POL':
                 continue
             # Austria's national data is reported with a blank region
-            elif pd.isna(record[region]) and code_3=='AUT':
+            elif pd.isna(record[region]) and code_3 == 'AUT':
                 adm_area_1 = None
                 gid = [code_3]
             # If the region appears cleanly, then we can translate to obtain GID
@@ -78,7 +77,6 @@ class EU_ZH_Fetcher(AbstractFetcher):
                     input_adm_area_3=None,
                     return_original_if_failure=True
                 )
-
 
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
@@ -93,25 +91,25 @@ class EU_ZH_Fetcher(AbstractFetcher):
             }
 
             # add the epidemiological properties to the object if they exist
-            if hasattr(record,'tests'):
+            if hasattr(record, 'tests'):
                 tested = int(record['tests']) if pd.notna(record['tests']) else None
                 upsert_obj['tested'] = tested
-            if hasattr(record,'cases'):
+            if hasattr(record, 'cases'):
                 confirmed = int(record['cases']) if pd.notna(record['cases']) else None
                 upsert_obj['confirmed'] = confirmed
-            if hasattr(record,'tests_positive'):
+            if hasattr(record, 'tests_positive'):
                 confirmed = int(record['tests_positive']) if pd.notna(record['tests_positive']) else None
                 upsert_obj['confirmed'] = confirmed
-            if hasattr(record,'recovered') :
+            if hasattr(record, 'recovered'):
                 recovered = int(record['recovered']) if pd.notna(record['recovered']) else None
                 upsert_obj['recovered'] = recovered
-            if hasattr(record,'deaths') :
+            if hasattr(record, 'deaths'):
                 dead = int(record['deaths']) if pd.notna(record['deaths']) else None
                 upsert_obj['dead'] = dead
-            if hasattr(record,'hospitalized'):
+            if hasattr(record, 'hospitalized'):
                 hospitalised = int(record['hospitalized']) if pd.notna(record['hospitalized']) else None
                 upsert_obj['hospitalised'] = hospitalised
-            if hasattr(record,'intensive_care'):
+            if hasattr(record, 'intensive_care'):
                 hospitalised_icu = int(record['intensive_care']) if pd.notna(record['intensive_care']) else None
                 upsert_obj['hospitalised_icu'] = hospitalised_icu
             if hasattr(record, 'quarantine'):
@@ -127,14 +125,13 @@ class EU_ZH_Fetcher(AbstractFetcher):
         csv_fname = os.path.join(path, input_csv_fname)
         if not os.path.exists(csv_fname):
             return None
-        colnames = ['country', 'code_3', 'code_2','region']
+        colnames = ['country', 'code_3', 'code_2', 'region']
         input_pd = pd.read_csv(csv_fname)
         input_pd.columns = colnames
         input_pd = input_pd.where((pd.notnull(input_pd)), None)
         return input_pd
 
     def run(self):
-
         countries = self.load_countries_to_fetch()
         for index, record in countries.iterrows():
-            self.country_fetcher(record['region'],record['country'],record['code_3'],record['code_2'])
+            self.country_fetcher(record['region'], record['country'], record['code_3'], record['code_2'])
