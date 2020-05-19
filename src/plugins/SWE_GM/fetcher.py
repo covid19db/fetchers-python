@@ -93,7 +93,8 @@ class SWE_GMFFetcher(AbstractFetcher):
                     current_dead = 0
                 # cumulative data by adding dead case of the date to the cumulative dead cases before this date
                 dead = int(previous_dead + current_dead)
-                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('SWE', province, None, None)
+                
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
@@ -108,9 +109,10 @@ class SWE_GMFFetcher(AbstractFetcher):
                     # adm_area_1, when available, is a wide-area administrative region, like a
                     # Canadian province in this case. There are also subareas adm_area_2 and
                     # adm_area_3
-                    'adm_area_1': province,
+                    'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
+                    'gid':gid,
                     'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': dead
@@ -139,7 +141,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                 current_dead = 0
             dead = int(previous_dead + current_dead)
             
-            'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('SWE', province, None, None)
+            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
                 'source': 'SWE_GM',
@@ -157,6 +159,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                 'adm_area_1': province,
                 'adm_area_2': None,
                 'adm_area_3': None,
+                'gid':gid,
                 'confirmed': confirmed,
                 # dead is the number of people who have died because of covid19, this is cumulative
                 'dead': dead
