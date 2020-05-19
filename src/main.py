@@ -32,7 +32,8 @@ def main():
     available_plugins = search_for_plugins()
 
     # run once
-    run_plugins_job(db=db, available_plugins=available_plugins,
+    run_plugins_job(db=db,
+                    available_plugins=available_plugins,
                     run_only_plugins=get_only_selected_plugins())
     # run every day at 2am
     schedule.every().day.at("02:00").do(run_plugins_job, db=db, available_plugins=available_plugins)
