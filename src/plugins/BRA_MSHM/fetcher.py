@@ -115,12 +115,15 @@ class BRA_MSHMFetcher(AbstractFetcher):
 
             ### Fetch confirmed number and dead number for each province one by one
             for i in range(len(province_list)):
-                province = province_list[i]
-                confirmed = current_confirm_list[1 + i]
-                dead = current_dead_list[1 + i]
                 
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('BRA',province,None, None)
-                upsert_obj = {
+                if i not in [7,17,22,26,len(province_list)-1]: 
+                    province = province_list[i]
+                    confirmed = current_confirm_list[1 + i]
+                    dead = current_dead_list[1 + i]
+                
+                    adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('BRA',province,None, None)
+                    
+                    upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'BRA_MSHM',
                     # date is also mandatory, the format must be YYYY-MM-DD
@@ -142,7 +145,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': int(dead)
 
-                }
+                    }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                    self.db.upsert_epidemiology_data(**upsert_obj)
 
