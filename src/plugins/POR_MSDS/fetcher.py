@@ -78,11 +78,11 @@ class POR_MSDSFetcher(AbstractFetcher):
                 'country': "Portugal",
                 # countrycode is mandatory and it's the ISO Alpha-3 code of the country
                 # an exception is ships, which has "---" as country code
-                'countrycode': 'POR',
+                'countrycode': 'PRT',
                 # adm_area_1, when available, is a wide-area administrative region, like a
                 # Canadian province in this case. There are also subareas adm_area_2 and
                 # adm_area_3
-                'gid': ['POR'],
+                'gid': ['PRT'],
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
@@ -97,78 +97,78 @@ class POR_MSDSFetcher(AbstractFetcher):
 
             self.db.upsert_epidemiology_data(**upsert_obj)
 
-        ### Manually get province names
-        province_list = ['ARS Norte', 'ARS Centro', 'ARS Lisboa e Vale do Tejo', 'ARS Alentejo', \
-                         'ARS Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira', 'estrangeiro']
+#         ### Manually get province names
+#         province_list = ['ARS Norte', 'ARS Centro', 'ARS Lisboa e Vale do Tejo', 'ARS Alentejo', \
+#                          'ARS Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira', 'estrangeiro']
 
-        ### Collect all confirmed data for each province
-        confirmed_arsnorte_list = np.array(country_data.confirmados_arsnorte, dtype='int')
-        confirmed_arscentro_list = np.array(country_data.confirmados_arscentro, dtype='int')
-        confirmed_arslvt_list = np.array(country_data.confirmados_arslvt, dtype='int')
-        confirmed_arsalentejo_list = np.array(country_data.confirmados_arsalentejo, dtype='int')
-        confirmed_arsalgarve_list = np.array(country_data.confirmados_arsalgarve, dtype='int')
-        confirmed_acores_list = np.array(country_data.confirmados_acores, dtype='int')
-        confirmed_madeira_list = np.array(country_data.confirmados_madeira, dtype='int')
-        confirmed_estrangeiro_list = np.array(country_data.confirmados_estrangeiro, dtype='int')
+#         ### Collect all confirmed data for each province
+#         confirmed_arsnorte_list = np.array(country_data.confirmados_arsnorte, dtype='int')
+#         confirmed_arscentro_list = np.array(country_data.confirmados_arscentro, dtype='int')
+#         confirmed_arslvt_list = np.array(country_data.confirmados_arslvt, dtype='int')
+#         confirmed_arsalentejo_list = np.array(country_data.confirmados_arsalentejo, dtype='int')
+#         confirmed_arsalgarve_list = np.array(country_data.confirmados_arsalgarve, dtype='int')
+#         confirmed_acores_list = np.array(country_data.confirmados_acores, dtype='int')
+#         confirmed_madeira_list = np.array(country_data.confirmados_madeira, dtype='int')
+#         confirmed_estrangeiro_list = np.array(country_data.confirmados_estrangeiro, dtype='int')
 
-        ### Make a collection of confirmed collections for each province
-        confirmed_collections = [confirmed_arsnorte_list, confirmed_arscentro_list, confirmed_arslvt_list, \
-                                 confirmed_arsalentejo_list, confirmed_arsalgarve_list, confirmed_acores_list, \
-                                 confirmed_madeira_list, confirmed_estrangeiro_list]
+#         ### Make a collection of confirmed collections for each province
+#         confirmed_collections = [confirmed_arsnorte_list, confirmed_arscentro_list, confirmed_arslvt_list, \
+#                                  confirmed_arsalentejo_list, confirmed_arsalgarve_list, confirmed_acores_list, \
+#                                  confirmed_madeira_list, confirmed_estrangeiro_list]
 
-        ### Collect all dead data for each province
-        dead_arsnorte_list = np.array(country_data.obitos_arsnorte, dtype='int')
-        dead_arscentro_list = np.array(country_data.obitos_arscentro, dtype='int')
-        dead_arslvt_list = np.array(country_data.obitos_arslvt, dtype='int')
-        dead_arsalentejo_list = np.array(country_data.obitos_arsalentejo, dtype='int')
-        dead_arsalgarve_list = np.array(country_data.obitos_arsalgarve, dtype='int')
-        dead_acores_list = np.array(country_data.obitos_acores, dtype='int')
-        dead_madeira_list = np.array(country_data.obitos_madeira, dtype='int')
-        dead_estrangeiro_list = np.array(country_data.obitos_estrangeiro, dtype='int')
+#         ### Collect all dead data for each province
+#         dead_arsnorte_list = np.array(country_data.obitos_arsnorte, dtype='int')
+#         dead_arscentro_list = np.array(country_data.obitos_arscentro, dtype='int')
+#         dead_arslvt_list = np.array(country_data.obitos_arslvt, dtype='int')
+#         dead_arsalentejo_list = np.array(country_data.obitos_arsalentejo, dtype='int')
+#         dead_arsalgarve_list = np.array(country_data.obitos_arsalgarve, dtype='int')
+#         dead_acores_list = np.array(country_data.obitos_acores, dtype='int')
+#         dead_madeira_list = np.array(country_data.obitos_madeira, dtype='int')
+#         dead_estrangeiro_list = np.array(country_data.obitos_estrangeiro, dtype='int')
 
-        ### Make a collection of dead collections for each province
-        dead_collections = [dead_arsnorte_list, dead_arscentro_list, dead_arslvt_list, dead_arsalentejo_list, \
-                            dead_arsalgarve_list, dead_acores_list, dead_madeira_list, dead_estrangeiro_list]
+#         ### Make a collection of dead collections for each province
+#         dead_collections = [dead_arsnorte_list, dead_arscentro_list, dead_arslvt_list, dead_arsalentejo_list, \
+#                             dead_arsalgarve_list, dead_acores_list, dead_madeira_list, dead_estrangeiro_list]
 
-        ### For each date, we collect daily cumulative confirmed & dead numbers one by one province
-        for k in range(len(date_list)):
+#         ### For each date, we collect daily cumulative confirmed & dead numbers one by one province
+#         for k in range(len(date_list)):
 
-            date = datetime.strptime(date_list[k], '%d-%m-%Y').strftime('%Y-%m-%d')
+#             date = datetime.strptime(date_list[k], '%d-%m-%Y').strftime('%Y-%m-%d')
 
-            for h in range(len(province_list)):
+#             for h in range(len(province_list)):
 
-                province = province_list[h]
+#                 province = province_list[h]
 
-                confirmed = int(confirmed_collections[h][k])
-                if confirmed < 0:
-                    confirmed = None
-                dead = int(dead_collections[h][k])
-                if dead < 0:
-                    dead = None
+#                 confirmed = int(confirmed_collections[h][k])
+#                 if confirmed < 0:
+#                     confirmed = None
+#                 dead = int(dead_collections[h][k])
+#                 if dead < 0:
+#                     dead = None
 
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('POR', province)
-                upsert_obj = {
-                    # source is mandatory and is a code that identifies the  source
-                    'source': 'POR_MSDS',
-                    # date is also mandatory, the format must be YYYY-MM-DD
-                    'date': date,
-                    # country is mandatory and should be in English
-                    # the exception is "Ships"
-                    'country': "Portugal",
-                    # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                    # an exception is ships, which has "---" as country code
-                    'countrycode': 'POR',
-                    # adm_area_1, when available, is a wide-area administrative region, like a
-                    # Canadian province in this case. There are also subareas adm_area_2 and
-                    # adm_area_3
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': None,
-                    'adm_area_3': None,
-                    'gid': gid,
-                    'confirmed': confirmed,
-                    # dead is the number of people who have died because of covid19, this is cumulative
-                    'dead': dead
+#                 adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('POR', province)
+#                 upsert_obj = {
+#                     # source is mandatory and is a code that identifies the  source
+#                     'source': 'POR_MSDS',
+#                     # date is also mandatory, the format must be YYYY-MM-DD
+#                     'date': date,
+#                     # country is mandatory and should be in English
+#                     # the exception is "Ships"
+#                     'country': "Portugal",
+#                     # countrycode is mandatory and it's the ISO Alpha-3 code of the country
+#                     # an exception is ships, which has "---" as country code
+#                     'countrycode': 'POR',
+#                     # adm_area_1, when available, is a wide-area administrative region, like a
+#                     # Canadian province in this case. There are also subareas adm_area_2 and
+#                     # adm_area_3
+#                     'adm_area_1': adm_area_1,
+#                     'adm_area_2': None,
+#                     'adm_area_3': None,
+#                     'gid': gid,
+#                     'confirmed': confirmed,
+#                     # dead is the number of people who have died because of covid19, this is cumulative
+#                     'dead': dead
 
-                }
+#                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+#                 self.db.upsert_epidemiology_data(**upsert_obj)
