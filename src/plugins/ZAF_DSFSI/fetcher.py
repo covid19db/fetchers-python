@@ -188,7 +188,9 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                 dead = len(np.where(np.array(
                     list(province_dead_data[province_dead_data['province'] == province]['YYYYMMDD'])) <= date_yyyymmdd)[
                                0])
-                'adm_area_1', 'adm_area_2', 'adm_area_3', 'gid' = self.db.get_adm_division('ZAF', province, None, None)
+                
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('ZAF', province, None, None)
+                
                 upsert_obj_province = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'ZAF_DSFSI',
@@ -199,9 +201,10 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                     'countrycode': 'ZAF',
                     # adm_area_1, when available, is a wide-area administrative region
                     # adm_area_2 (subadministrative region) and adm_area_3 (subsubadministrative region) , are not available.
-                    'adm_area_1': province,
+                    'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
+                    'gid':gid,
                     # confirmed is the number of confirmed cases of infection, this is cumulative
                     'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
