@@ -7,7 +7,6 @@ from datetime import date
 __all__ = ('SWE_GMFFetcher',)
 
 """ 
-    site-location: https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series
     
     COVID19-Sweden Data for Sweden created, maintained and hosted by elinlutz
     
@@ -40,6 +39,18 @@ class SWE_GMFFetcher(AbstractFetcher):
         logger.debug('Fetching Sweden province-level death cases from SWE_GM')
         return pd.read_csv(url)
 
+    def fix_naming(self, province):
+        # Fix naming
+        if province == 'Kalmar län':
+            province = 'Kalmar'
+        elif province == 'Sörmland':
+            province = 'Södermanland'
+        elif province == 'Örebro':
+            province = 'Orebro'
+        elif province == 'Okänt':
+            province = 'UNKNOWN'
+        return province
+
     def run(self):
 
         """
@@ -63,48 +74,47 @@ class SWE_GMFFetcher(AbstractFetcher):
         for j in range(len(province_list)):
 
             # current province
-            
-            
-            if j==7:
-                province='Kalmar'
-                
-            elif j==12:
-                province='Södermanland'
-            
-            else:
-                province = province_list[j]
+            province = self.fix_naming(province_list[j])
 
-                # data is not cumulative, so need to cumulate them by adding previous cumulative data
+            if province != 'UNKNOWN':
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province)
+                if not gid:
+                    raise Exception(f'Unable to obtain GID for: {province}')
+            else:
+                adm_area_1, adm_area_2, adm_area_3, gid = province, None, None, None
+
+            # data is not cumulative, so need to cumulate them by adding previous cumulative data
             previous_confirmed = 0
             previous_dead = 0
 
-                # for current province, go through data from the beginning data day to today
+            # for current province, go through data from the beginning data day to today
             for i in range(len(date_list)):
 
-                    # 'current' date
+                # 'current' date
                 date_ = date_list[i]
 
-                    # current confirmed for current' date
+                # current confirmed for current' date
                 current_confirmed = np.array(province_confirmed_data[date_])[j]
 
-                    # if current confirmed is missing, replace it by 0, as we need to cumulate the data
+                # if current confirmed is missing, replace it by 0, as we need to cumulate the data
                 if pd.isnull(current_confirmed):
-                        current_confirmed = 0
+                    current_confirmed = 0
 
-                    # cumulative data by adding confirmed case of the date to the cumulative confirmed cases before this date
+                # cumulative data by adding confirmed case of the date to the cumulative confirmed cases before this date
                 confirmed = int(previous_confirmed + current_confirmed)
 
-                    # current dead cases for current' date
+                # current dead cases for current' date
                 current_dead = np.array(province_dead_data[date_])[j]
 
-                    # if current dead is missing, replace it by 0, as we need to cumulate the data
+                # if current dead is missing, replace it by 0, as we need to cumulate the data
                 if pd.isnull(current_dead):
-                        current_dead = 0
-                    # cumulative data by adding dead case of the date to the cumulative dead cases before this date
+                    current_dead = 0
+                # cumulative data by adding dead case of the date to the cumulative dead cases before this date
                 dead = int(previous_dead + current_dead)
-                
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
-                    
+
+                if date_ == 'Today':
+                    date_ = date.today().strftime("%Y-%m-%d")
+
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
@@ -122,15 +132,15 @@ class SWE_GMFFetcher(AbstractFetcher):
                     'adm_area_1': province,
                     'adm_area_2': None,
                     'adm_area_3': None,
-                    'gid':gid,
+                    'gid': gid,
                     'confirmed': confirmed,
                     # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': dead
 
-                    }
+                }
                 self.db.upsert_epidemiology_data(**upsert_obj)
 
-                    # replace previous cumulative data by the current cumulative date for iteration
+                # replace previous cumulative data by the current cumulative date for iteration
                 previous_confirmed = confirmed
                 previous_dead = dead
 
@@ -150,8 +160,7 @@ class SWE_GMFFetcher(AbstractFetcher):
             if pd.isnull(current_dead):
                 current_dead = 0
             dead = int(previous_dead + current_dead)
-            
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
+
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
                 'source': 'SWE_GM',
@@ -169,11 +178,10 @@ class SWE_GMFFetcher(AbstractFetcher):
                 'adm_area_1': adm_area_1,
                 'adm_area_2': None,
                 'adm_area_3': None,
-                'gid':gid,
+                'gid': gid,
                 'confirmed': confirmed,
                 # dead is the number of people who have died because of covid19, this is cumulative
                 'dead': dead
 
             }
             self.db.upsert_epidemiology_data(**upsert_obj)
-
