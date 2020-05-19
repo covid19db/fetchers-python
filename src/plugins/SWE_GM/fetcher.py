@@ -70,9 +70,11 @@ class SWE_GMFFetcher(AbstractFetcher):
                 
             elif j==12:
                 province='Södermanland'
-            
+                
             else:
                 province = province_list[j]
+                
+            
 
                 # data is not cumulative, so need to cumulate them by adding previous cumulative data
             previous_confirmed = 0
@@ -82,7 +84,7 @@ class SWE_GMFFetcher(AbstractFetcher):
             for i in range(len(date_list)):
 
                     # 'current' date
-                date_ = date_list[i]
+                date__ = date_list[i]
 
                     # current confirmed for current' date
                 current_confirmed = np.array(province_confirmed_data[date_])[j]
@@ -103,13 +105,19 @@ class SWE_GMFFetcher(AbstractFetcher):
                     # cumulative data by adding dead case of the date to the cumulative dead cases before this date
                 dead = int(previous_dead + current_dead)
                 
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
+                if province!='Okänt':
+                    adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province)
+                    if not gid:
+                        raise Exception(f'Unable to obtain GID for: {province}')
+                else:
+                    adm_area_1, adm_area_2, adm_area_3, gid = 'UNKNOWN', None, None, None
+                    
                     
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
                     'source': 'SWE_GM',
                     # date is also mandatory, the format must be YYYY-MM-DD
-                    'date': date_,
+                    'date': date__,
                     # country is mandatory and should be in English
                     # the exception is "Ships"
                     'country': 'Sweden',
@@ -151,7 +159,16 @@ class SWE_GMFFetcher(AbstractFetcher):
                 current_dead = 0
             dead = int(previous_dead + current_dead)
             
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province, None, None)
+            
+            if province!='Okänt':
+                
+                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province)
+                if not gid:
+                        raise Exception(f'Unable to obtain GID for: {province}')
+            else:
+                adm_area_1, adm_area_2, adm_area_3, gid = 'UNKNOWN', None, None, None
+                    
+
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
                 'source': 'SWE_GM',
