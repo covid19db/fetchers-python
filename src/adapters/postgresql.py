@@ -74,8 +74,9 @@ class PostgresqlHelper(AbstractAdapter):
     
     
     def call_db_function_compare(self, source_code: str):
-        sql_query = sql.SQL("SELECT covid19_compare_tables('source_code')")
-        compare_result = self.execute(sql_query)
+        self.cur.callproc('covid19_compare_tables',(source_code,))
+        compare_result = self.cur.fetchone()
+        print(compare_result)
         logger.debug("validating incoming data")
         return compare_result
     
@@ -152,7 +153,7 @@ class PostgresqlHelper(AbstractAdapter):
                 sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
                 k in data_keys)
         )
-
+        
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
