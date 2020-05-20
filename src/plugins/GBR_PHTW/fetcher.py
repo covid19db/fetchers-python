@@ -66,6 +66,7 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
             self.db.upsert_epidemiology_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
+        logger.warning('Scotland and Wales report by health board - GIDs are approximations by local authorities')
         data = self.fetch_area()
 
         for index, record in data.iterrows():
