@@ -4,7 +4,7 @@ import logging
 import pandas as pd
 import numpy as np
 
-__all__ = ('POR_MSDSFetcher',)
+__all__ = ('PRT_MSDSFetcher',)
 
 """ 
     site-location: https://github.com/dssg-pt/covid19pt-data
@@ -18,7 +18,7 @@ __all__ = ('POR_MSDSFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class POR_MSDSFetcher(AbstractFetcher):
+class PRT_MSDSFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
     def country_fetch(self):
@@ -28,7 +28,7 @@ class POR_MSDSFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/dssg-pt/covid19pt-data/master/data.csv'
-        logger.debug('Fetching Portugal country&province-level data from POR_MSDS')
+        logger.debug('Fetching Portugal country&province-level data from PRT_MSDS')
 
         return pd.read_csv(url)
 
@@ -70,7 +70,7 @@ class POR_MSDSFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'POR_MSDS',
+                'source': 'PRT_MSDS',
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English
@@ -154,7 +154,7 @@ class POR_MSDSFetcher(AbstractFetcher):
                 )
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'POR_MSDS',
+                    'source': 'PRT_MSDS',
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
                     # country is mandatory and should be in English
