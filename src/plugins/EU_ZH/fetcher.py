@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
     Data originally from
 
     Austria's Sozial Ministerium https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
-    Czechia's Ministry of Health https://onemocneni-aktualne.mzcr.cz/covid-19
+    Czech Ministry of Health https://onemocneni-aktualne.mzcr.cz/covid-19
     Germany's Robert Koch Institute https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
     Hungary's Office of the Prime Minister https://koronavirus.gov.hu/
     Ireland's Health Protection Surveillance Centre https://www.hpsc.ie/a-z/respiratory/coronavirus/novelcoronavirus/casesinireland/
