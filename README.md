@@ -36,13 +36,6 @@ Currently implemented fetchers:
 | EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: region |
 
 
-
-
-
-
-
-
-
 Explanation of status:
 - Draft: being developed, should not be tested yet
 - Candidate: development complete, being tested on a private test database
