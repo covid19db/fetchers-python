@@ -1,0 +1,10 @@
+countrycode, input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+PRT,Portugal,,,,,,PRT
+PRT,ARS Norte,,,ARS Norte,,,PRT.1_1
+PRT,ARS Centro,,,ARS Centro,,,PRT.2_1
+PRT,ARS Lisboa e Vale do Tejo,,,ARS Lisboa e Vale do Tejo,,,PRT.3_1
+PRT,ARS Alentejo,,,ARS Alentejo,,,PRT.4_1
+PRT,ARS Algarve,,,ARS Algarve,,,PRT.5_1
+PRT,Região Autónoma dos Açores,,,Região Autónoma dos Açores,,,PRT.6_1
+PRT,Região Autónoma da Madeira,,,Região Autónoma da Madeira,,,PRT.7_1
+PRT,estrangeiro,,,estrangeiro,,,PRT.8_1
