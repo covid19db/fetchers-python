@@ -41,7 +41,8 @@ class AdmTranslator:
                     message = f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}'
                     raise Exception(message) if not suppress_exception else logging.warning(message)
 
-                return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid.split(':')
+                gid = row.gid.split(':') if row.gid else None
+                return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, gid
         if return_original_if_failure:
             return False, input_adm_area_1, input_adm_area_2, input_adm_area_3, None
         else:
