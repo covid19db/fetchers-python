@@ -25,6 +25,15 @@ Currently implemented fetchers:
 | IRL_ZH | Ireland | IRL| [European Novel Coronavirus Outbreak - Chinese Channel (COVID19-EU-ZH)](https://github.com/covid19-eu-zh) | candidate | adm_area_1: County
 | NLD_WY | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | candidate | adm_area_1: NA
 | LAT_DSRP | Latin America | several | [Latin America Covid-19 Data Repository by DSRP](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica) | candidate | adm_area_1: Subdivision |
+| EU_ZH | Norway | NOR | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: county |
+| EU_ZH | Slovenia | SVN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: NA |
+| EU_ZH | Sweden | SWE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: province |
+| EU_ZH | Poland | POL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: voivodeship |
+| EU_ZH | Ireland | IRL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: county |
+| EU_ZH | Hungary | HUN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: NA |
+| EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: state |
+| EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: state |
+| EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: region |
 
 
 Explanation of status:
