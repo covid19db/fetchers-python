@@ -1,0 +1,214 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+ARG,Buenos Aires,,,Buenos Aires,,,ARG.1_1
+ARG,Catamarca,,,Catamarca,,,ARG.2_1
+ARG,Chaco,,,Chaco,,,ARG.3_1
+ARG,Chubut,,,Chubut,,,ARG.4_1
+ARG,Ciudad Autonoma de Buenos Aires,,,Ciudad de Buenos Aires,,,ARG.5_1
+ARG,Cordoba,,,Córdoba,,,ARG.6_1
+ARG,Corrientes,,,Corrientes,,,ARG.7_1
+ARG,Entre Rios,,,Entre Ríos,,,ARG.8_1
+ARG,Formosa,,,Formosa,,,ARG.9_1
+ARG,Jujuy,,,Jujuy,,,ARG.10_1
+ARG,La Pampa,,,La Pampa,,,ARG.11_1
+ARG,La Rioja,,,La Rioja,,,ARG.12_1
+ARG,Mendoza,,,Mendoza,,,ARG.13_1
+ARG,Misiones,,,Misiones,,,ARG.14_1
+ARG,Neuquen,,,Neuquén,,,ARG.15_1
+ARG,Rio Negro,,,Río Negro,,,ARG.16_1
+ARG,Salta,,,Salta,,,ARG.17_1
+ARG,San Juan,,,San Juan,,,ARG.18_1
+ARG,San Luis,,,San Luis,,,ARG.19_1
+ARG,Santa Cruz,,,Santa Cruz,,,ARG.20_1
+ARG,Santa Fe,,,Santa Fe,,,ARG.21_1
+ARG,Santiago del Estero,,,Santiago del Estero,,,ARG.22_1
+ARG,Tierra del Fuego,,,Tierra del Fuego,,,ARG.23_1
+ARG,Tucuman,,,Tucumán,,,ARG.24_1
+BRA,Acre,,,Acre,,,BRA.1_1
+BRA,Alagoas,,,Alagoas,,,BRA.2_1
+BRA,Amapa,,,Amapá,,,BRA.3_1
+BRA,Amazonas,,,Amazonas,,,BRA.4_1
+BRA,Bahia,,,Bahia,,,BRA.5_1
+BRA,Ceara,,,Ceará,,,BRA.6_1
+BRA,Distrito Federal,,,Distrito Federal,,,BRA.7_1
+BRA,Espiritu Santo,,,Espírito Santo,,,BRA.8_1
+BRA,Goias,,,Goiás,,,BRA.9_1
+BRA,Maranhao,,,Maranhão,,,BRA.10_1
+BRA,Mato Grosso,,,Mato Grosso,,,BRA.12_1
+BRA,Mato Grosso do Sul,,,Mato Grosso do Sul,,,BRA.11_1
+BRA,Minas Gerais,,,Minas Gerais,,,BRA.13_1
+BRA,Para,,,Pará,,,BRA.14_1
+BRA,Paraiba,,,Paraíba,,,BRA.15_1
+BRA,Parana,,,Paraná,,,BRA.16_1
+BRA,Pernambuco,,,Pernambuco,,,BRA.17_1
+BRA,Piaui,,,Piauí,,,BRA.18_1
+BRA,Rio de Janeiro,,,Rio de Janeiro,,,BRA.19_1
+BRA,Rio Grande do Norte,,,Rio Grande do Norte,,,BRA.20_1
+BRA,Rio Grande do Sul,,,Rio Grande do Sul,,,BRA.21_1
+BRA,Rondonia,,,Rondônia,,,BRA.22_1
+BRA,Roraima,,,Roraima,,,BRA.23_1
+BRA,Santa Catarina,,,Santa Catarina,,,BRA.24_1
+BRA,Sao Paulo,,,São Paulo,,,BRA.25_1
+BRA,Sergipe,,,Sergipe,,,BRA.26_1
+BRA,Tocantins,,,Tocantins,,,BRA.27_1
+CHL,Aysen,,,Aisén del General Carlos Ibáñez del Campo,,,CHL.1_1
+CHL,Antofagasta,,,Antofagasta,,,CHL.2_1
+CHL,Araucania,,,Araucanía,,,CHL.3_1
+CHL,Arica y Parinacota,,,Arica y Parinacota,,,CHL.4_1
+CHL,Atacama,,,Atacama,,,CHL.5_1
+CHL,Biobio,,,Bío-Bío,,,CHL.6_1
+CHL,Coquimbo,,,Coquimbo,,,CHL.7_1
+CHL,O'Higgins,,,Libertador General Bernardo O'Higgins,,,CHL.8_1
+CHL,Los Lagos,,,Los Lagos,,,CHL.9_1
+CHL,Los Rios,,,Los Ríos,,,CHL.10_1
+CHL,Magallanes,,,Magallanes y Antártica Chilena,,,CHL.11_1
+CHL,Maule,,,Maule,,,CHL.12_1
+CHL,Nuble,,,Ñuble,,,CHL.13_1
+CHL,Santiago,,,Región Metropolitana de Santiago,,,CHL.14_1
+CHL,Tarapaca,,,Tarapacá,,,CHL.15_1
+CHL,Valparaiso,,,Valparaíso,,,CHL.16_1
+COL,Amazonas,,,Amazonas,,,COL.1_1
+COL,Antioquia,,,Antioquia,,,COL.2_1
+COL,Arauca,,,Arauca,,,COL.3_1
+COL,Atlantico,,,Atlántico,,,COL.4_1
+COL,Bogota,,,Cundinamarca,Santafé de Bogotá,,COL.14.79_1
+COL,Bolivar,,,Bolívar,,,COL.5_1
+COL,Boyaca,,,Boyacá,,,COL.6_1
+COL,Caldas,,,Caldas,,,COL.7_1
+COL,Caqueta,,,Caquetá,,,COL.8_1
+COL,Casanare,,,Casanare,,,COL.9_1
+COL,Cauca,,,Cauca,,,COL.10_1
+COL,Cesar,,,Cesar,,,COL.11_1
+COL,Choco,,,Chocó,,,COL.12_1
+COL,Cordoba,,,Córdoba,,,COL.13_1
+COL,Cundinamarca,,,Cundinamarca,,,COL.14_1
+COL,Guainia,,,Guainía,,,COL.15_1
+COL,Guaviare,,,Guaviare,,,COL.16_1
+COL,Huila,,,Huila,,,COL.17_1
+COL,La Guajira,,,La Guajira,,,COL.18_1
+COL,Magdalena,,,Magdalena,,,COL.19_1
+COL,Meta,,,Meta,,,COL.20_1
+COL,Narino,,,Nariño,,,COL.21_1
+COL,Norte de Santander,,,Norte de Santander,,,COL.22_1
+COL,Putumayo,,,Putumayo,,,COL.23_1
+COL,Quindio,,,Quindío,,,COL.24_1
+COL,Risaralda,,,Risaralda,,,COL.25_1
+COL,San Andres y Providencia,,,San Andrés y Providencia,,,COL.26_1
+COL,Santander,,,Santander,,,COL.27_1
+COL,Sucre,,,Sucre,,,COL.28_1
+COL,Tolima,,,Tolima,,,COL.29_1
+COL,Valle del Cauca,,,Valle del Cauca,,,COL.30_1
+COL,Vaupes,,,Vaupés,,,COL.31_1
+COL,Vichada,,,Vichada,,,COL.32_1
+DOM,Azua,,,Azua,,,DOM.1_1
+DOM,Baoruco,,,Bahoruco,,,DOM.2_1
+DOM,Barahona,,,Barahona,,,DOM.3_1
+DOM,Dajabon,,,Dajabón,,,DOM.4_1
+DOM,Distrito Nacional,,,Distrito Nacional,,,DOM.5_1
+DOM,Duarte,,,Duarte,,,DOM.6_1
+DOM,El Seibo,,,El Seybo,,,DOM.7_1
+DOM,Espaillat,,,Espaillat,,,DOM.8_1
+DOM,Hato Mayor,,,Hato Mayor,,,DOM.9_1
+DOM,Independencia,,,Independencia,,,DOM.10_1
+DOM,La Altagracia,,,La Altagracia,,,DOM.11_1
+DOM,Elias Pina,,,La Estrelleta,,,DOM.12_1
+DOM,La Romana,,,La Romana,,,DOM.13_1
+DOM,La Vega,,,La Vega,,,DOM.14_1
+DOM,Maria Trinidad Sanchez,,,María Trinidad Sánchez,,,DOM.15_1
+DOM,Monsenor Nouel,,,Monseñor Nouel,,,DOM.16_1
+DOM,Monte Cristi,,,Monte Cristi,,,DOM.17_1
+DOM,Monte Plata,,,Monte Plata,,,DOM.18_1
+DOM,Pedernales,,,Pedernales,,,DOM.19_1
+DOM,Peravia,,,Peravia,,,DOM.20_1
+DOM,Puerto Plata,,,Puerto Plata,,,DOM.21_1
+DOM,Hermanas Mirabal,,,Salcedo,,,DOM.22_1
+DOM,Samana,,,Samaná,,,DOM.23_1
+DOM,San Cristobal,,,San Cristóbal,,,DOM.24_1
+DOM,San Jose de Ocoa,,,San José de Ocoa,,,DOM.25_1
+DOM,San Juan,,,San Juan,,,DOM.26_1
+DOM,San Pedro de Macoris,,,San Pedro de Macorís,,,DOM.27_1
+DOM,Sanchez Ramirez,,,Sánchez Ramírez,,,DOM.28_1
+DOM,Santiago,,,Santiago,,,DOM.30_1
+DOM,Santiago Rodriguez,,,Santiago Rodríguez,,,DOM.29_1
+DOM,Santo Domingo,,,Santo Domingo,,,DOM.31_1
+DOM,Valverde,,,Valverde,,,DOM.32_1
+ECU,Azuay,,,Azuay,,,ECU.1_1
+ECU,Bolivar,,,Bolivar,,,ECU.2_1
+ECU,Canar,,,Cañar,,,ECU.3_1
+ECU,Carchi,,,Carchi,,,ECU.4_1
+ECU,Chimborazo,,,Chimborazo,,,ECU.5_1
+ECU,Cotopaxi,,,Cotopaxi,,,ECU.6_1
+ECU,El Oro,,,El Oro,,,ECU.7_1
+ECU,Esmeraldas,,,Esmeraldas,,,ECU.8_1
+ECU,Galapagos,,,Galápagos,,,ECU.9_1
+ECU,Guayas,,,Guayas,,,ECU.10_1
+ECU,Imbabura,,,Imbabura,,,ECU.11_1
+ECU,Loja,,,Loja,,,ECU.12_1
+ECU,Los Rios,,,Los Rios,,,ECU.13_1
+ECU,Manabi,,,Manabi,,,ECU.14_1
+ECU,Morona Santiago,,,Morona Santiago,,,ECU.15_1
+ECU,Napo,,,Napo,,,ECU.16_1
+ECU,Orellana,,,Orellana,,,ECU.17_1
+ECU,Pastaza,,,Pastaza,,,ECU.18_1
+ECU,Pichincha,,,Pichincha,,,ECU.19_1
+ECU,Santa Elena,,,Santa Elena,,,ECU.20_1
+ECU,Santo Domingo de los Tsachilas,,,Santo Domingo de los Tsachilas,,,ECU.21_1
+ECU,Sucumbios,,,Sucumbios,,,ECU.22_1
+ECU,Tungurahua,,,Tungurahua,,,ECU.23_1
+ECU,Zamora-Chinchipe,,,Zamora Chinchipe,,,ECU.24_1
+MEX,Aguascalientes,,,Aguascalientes,,,MEX.1_1
+MEX,Baja California,,,Baja California,,,MEX.3_1
+MEX,Baja California Sur,,,Baja California Sur,,,MEX.2_1
+MEX,Campeche,,,Campeche,,,MEX.4_1
+MEX,Chiapas,,,Chiapas,,,MEX.5_1
+MEX,Chihuahua,,,Chihuahua,,,MEX.6_1
+MEX,Coahuila,,,Coahuila,,,MEX.7_1
+MEX,Colima,,,Colima,,,MEX.8_1
+MEX,Ciudad de Mexico,,,Distrito Federal,,,MEX.9_1
+MEX,Durango,,,Durango,,,MEX.10_1
+MEX,Guanajuato,,,Guanajuato,,,MEX.11_1
+MEX,Guerrero,,,Guerrero,,,MEX.12_1
+MEX,Hidalgo,,,Hidalgo,,,MEX.13_1
+MEX,Jalisco,,,Jalisco,,,MEX.14_1
+MEX,Mexico,,,México,,,MEX.15_1
+MEX,Michoacan,,,Michoacán,,,MEX.16_1
+MEX,Morelos,,,Morelos,,,MEX.17_1
+MEX,Nayarit,,,Nayarit,,,MEX.18_1
+MEX,Nuevo Leon,,,Nuevo León,,,MEX.19_1
+MEX,Oaxaca,,,Oaxaca,,,MEX.20_1
+MEX,Puebla,,,Puebla,,,MEX.21_1
+MEX,Queretaro,,,Querétaro,,,MEX.22_1
+MEX,Quintana Roo,,,Quintana Roo,,,MEX.23_1
+MEX,San Luis Potosi,,,San Luis Potosí,,,MEX.24_1
+MEX,Sinaloa,,,Sinaloa,,,MEX.25_1
+MEX,Sonora,,,Sonora,,,MEX.26_1
+MEX,Tabasco,,,Tabasco,,,MEX.27_1
+MEX,Tamaulipas,,,Tamaulipas,,,MEX.28_1
+MEX,Tlaxcala,,,Tlaxcala,,,MEX.29_1
+MEX,Veracruz,,,Veracruz,,,MEX.30_1
+MEX,Yucatan,,,Yucatán,,,MEX.31_1
+MEX,Zacatecas,,,Zacatecas,,,MEX.32_1
+PER,Amazonas,,,Amazonas,,,PER.1_1
+PER,Ancash,,,Ancash,,,PER.2_1
+PER,Apurimac,,,Apurímac,,,PER.3_1
+PER,Arequipa,,,Arequipa,,,PER.4_1
+PER,Ayacucho,,,Ayacucho,,,PER.5_1
+PER,Cajamarca,,,Cajamarca,,,PER.6_1
+PER,Callao,,,Callao,,,PER.7_1
+PER,Cusco,,,Cusco,,,PER.8_1
+PER,Huancavelica,,,Huancavelica,,,PER.9_1
+PER,Huanuco,,,Huánuco,,,PER.10_1
+PER,Ica,,,Ica,,,PER.11_1
+PER,Junin,,,Junín,,,PER.12_1
+PER,La Libertad,,,La Libertad,,,PER.13_1
+PER,Lambayeque,,,Lambayeque,,,PER.14_1
+PER,Lima,,,Lima,,,PER.15_1:PER.16_1
+PER,Loreto,,,Loreto,,,PER.17_1
+PER,Madre de dios,,,Madre de Dios,,,PER.18_1
+PER,Moquegua,,,Moquegua,,,PER.19_1
+PER,Pasco,,,Pasco,,,PER.20_1
+PER,Piura,,,Piura,,,PER.21_1
+PER,Puno,,,Puno,,,PER.22_1
+PER,San Martin,,,San Martín,,,PER.23_1
+PER,Tacna,,,Tacna,,,PER.24_1
+PER,Tumbes,,,Tumbes,,,PER.25_1
+PER,Ucayali,,,Ucayali,,,PER.26_1
