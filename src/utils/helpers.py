@@ -1,7 +1,10 @@
 import os
+import logging
 import pandas as pd
 from pandas import DataFrame
 from typing import Tuple, List
+
+logger = logging.getLogger(__name__)
 
 
 class AdmTranslator:
@@ -23,7 +26,8 @@ class AdmTranslator:
         return translation_pd
 
     def tr(self, country_code: str = None, input_adm_area_1: str = None, input_adm_area_2: str = None,
-           input_adm_area_3: str = None, return_original_if_failure: bool = False) -> Tuple[bool, str, str, str, List]:
+           input_adm_area_3: str = None, return_original_if_failure: bool = False,
+           suppress_exception: bool = False) -> Tuple[bool, str, str, str, List]:
 
         for index, row in self.translation_pd.iterrows():
             if row.input_adm_area_1 == input_adm_area_1 \
@@ -34,7 +38,8 @@ class AdmTranslator:
                     continue
 
                 if row.gid is None:
-                    raise Exception(f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}')
+                    message = f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}'
+                    raise Exception(message) if not suppress_exception else logging.warning(message)
 
                 return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, row.gid.split(':')
         if return_original_if_failure:
