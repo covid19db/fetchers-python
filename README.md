@@ -33,6 +33,9 @@ Currently implemented fetchers:
 | EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: state |
 | EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: state |
 | EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: region |
+| NGA_SO | Nigeria | NGA | [Covid-19 Nigeria API](https://github.com/sink-opuba/covid-19-nigeria-api) | candidate | adm_area_1: state |
+| NGS_CDC | Nigeria | NGA | [Nigeria Centre for Disease Control](https://covid19.ncdc.gov.ng/) | candidate | adm_area_1: region |
+
 
 
 Explanation of status:
