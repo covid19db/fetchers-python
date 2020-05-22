@@ -1,11 +1,8 @@
-import re
 import io
 import requests
 import pandas as pd
 from pandas import DataFrame
-from bs4 import BeautifulSoup
 from datetime import date, timedelta
-from requests_html import HTMLSession
 from requests.exceptions import ConnectionError
 
 
@@ -23,22 +20,6 @@ def get_recent_apple_mobility_data() -> DataFrame:
         except ConnectionError:
             continue
     return None
-
-
-def get_mobility_report_urls():
-    """
-    DESCRIPTION:
-    This function gets Apple Mobility Report PDF links from:
-    https://covid19-static.cdn-apple.com
-
-    :return: [list] list of Apple Mobility Report urls
-    """
-    session = HTMLSession()
-    resp = session.get('https://www.apple.com/covid19/mobility')
-    resp.html.render()
-    soup = BeautifulSoup(resp.html.html, 'lxml')
-    return [link.get('href') for link in
-            soup.findAll('a', attrs={'href': re.compile("^https://covid19-static.cdn-apple.comm")})]
 
 
 def get_country_codes():

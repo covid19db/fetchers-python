@@ -34,6 +34,7 @@ class AppleMobilityFetcher(AbstractFetcher):
             adm_area_1 = sub_region
             countryname = country
 
+            # TODO: Cover this case in the future
             # Skip city information
             return None, None, None, None
 

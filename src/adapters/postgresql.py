@@ -175,8 +175,8 @@ class PostgresqlHelper(AbstractAdapter):
     def close_connection(self):
         if self.conn:
             if self.cur:
-                self.cur.close_connection()
-            self.conn.close_connection()
+                self.cur.close()
+            self.conn.close()
             logger.debug("Closing connection")
         self.conn = None
         self.cur = None
