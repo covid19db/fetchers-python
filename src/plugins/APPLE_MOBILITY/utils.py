@@ -13,7 +13,7 @@ def get_recent_apple_mobility_data() -> DataFrame:
         dt = date.today() - timedelta(delta)
         url = baseurl.format(dt.strftime("%Y-%m-%d"))
         try:
-            request = requests.get(url)
+            request = requests.get(url, timeout=30)
             if request.status_code != 200:
                 continue
             return pd.read_csv(io.StringIO(request.text))
