@@ -1,0 +1,20 @@
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3,gid
+ESP,Madrid,,,Comunidad de Madrid,,,ESP.8_1
+ESP,LaRioja,,,La Rioja,,,ESP.15_1
+ESP,Asturias,,,Principado de Asturias,,,ESP.17_1
+ESP,Andalucía,,,Andalucía,,, ESP.1_1
+ESP,CastillayLeón,,,Castilla y León,,,ESP.5_1
+ESP,Cataluña,,,Cataluña,,,ESP.6_1
+ESP,Extremadura,,,Extremadura,,,ESP.11_1
+ESP,Ceuta,,,Ceuta y Melilla,,,ESP.7_1
+ESP,Navarra,,,Comunidad Foral de Navarra,,,ESP.9_1
+ESP,Galicia,,,Galicia,,,ESP.12_1
+ESP,Melilla,,,Ceuta y Melilla,,,ESP.7_1
+ESP,Baleares,,,Islas Baleares,,,ESP.13_1
+ESP,CValenciana,,,Comunidad Valenciana,,,ESP.10_1
+ESP,Murcia,,,Región de Murcia,,,ESP.18_1
+ESP,CastillaLaMancha,,,Castilla-La Mancha,,,ESP.4_1
+ESP,Canarias,,,Islas Canarias,,,ESP.14_1
+ESP,Cantabria,,,Cantabria,,,ESP.3_1
+ESP,PaísVasco,,,País Vasco,,,ESP.16_1
+ESP,Aragón,,,Aragón,,,ESP.2_1

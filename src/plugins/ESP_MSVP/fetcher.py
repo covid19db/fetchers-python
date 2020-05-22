@@ -23,12 +23,19 @@ class SpainWikiFetcher(AbstractFetcher):
         data = parser(data)
         for index, record in data.iterrows():
             date = record[0]  # we expect date to be in YYYY-MM-DD format
-            adm_area_1 = record[1]
+            input_adm_area_1 = record[1]
             confirmed = int(record[2]) if record[2] != '' else None
             recovered = int(record[3]) if record[3] != '' else None
             dead = int(record[4]) if record[4] != '' else None
             hospitalised = int(record[5]) if record[5] != '' else None
             hospitalised_icu = int(record[6]) if record[6] != '' else None
+
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=input_adm_area_1,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
 
             upsert_obj = {
                 'source': 'ESP_MSVP',
@@ -38,6 +45,7 @@ class SpainWikiFetcher(AbstractFetcher):
                 'adm_area_1': adm_area_1,
                 'adm_area_2': None,
                 'adm_area_3': None,
+                'gid': gid,
                 'confirmed': confirmed,
                 'dead': dead,
                 'recovered': recovered,
