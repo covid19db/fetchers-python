@@ -1,0 +1,22 @@
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
+# Poland
+POL,Lower Silesia,,,Dolnośląskie,,,POL.1_1
+POL,Kuiavia-Pomerania,,,Kujawsko-Pomorskie,,,POL.2_1
+POL,Lodz,,,Łódzkie,,,POL.3_1
+POL,Lublin,,,Lubelskie,,,POL.4_1
+POL,Lubusz,,,Lubuskie,,,POL.5_1
+POL,Lesser Poland,,,Małopolskie,,,POL.6_1
+POL,Mazovia,,,Mazowieckie,,,POL.7_1
+POL,Opole,,,Opolskie,,,POL.8_1
+POL,Subcarpathia,,,Podkarpackie,,,POL.9_1
+POL,Podlachia,,,Podlaskie,,,POL.10_1
+POL,Pomerania,,,Pomorskie,,,POL.11_1
+POL,Silesia,,,Śląskie,,,POL.12_1
+POL,Swietokrzyskie,,,Świętokrzyskie,,,POL.13_1
+POL,Warmia-Masuria,,,Warmińsko-Mazurskie,,,POL.14_1
+POL,Greater Poland,,,Wielkopolskie,,,POL.15_1
+POL,West Pomeranian,,,Zachodniopomorskie,,,POL.16_1
+# USA
+USA,Missouri,Ste. Genevieve,,Missouri,Sainte Genevieve,,USA.26.96_1
+USA,New Mexico,Doña Ana,,New Mexico,Dona Ana,,USA.32.8_1
+USA,Alaska,Kenai Peninsula Borough,,Alaska,Kenai Peninsula,,USA.2.11_1

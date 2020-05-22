@@ -49,6 +49,29 @@ sql_create_government_response_table = """
         PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
 
+sql_create_mobility_table = """ 
+    CREATE TABLE IF NOT EXISTS government_response (
+        source text NOT NULL,
+        date date NOT NULL,
+        country text NOT NULL,
+        countrycode text NOT NULL, 
+        adm_area_1 text DEFAULT NULL,
+        adm_area_2 text DEFAULT NULL,
+        adm_area_3 text DEFAULT NULL,
+        gid text DEFAULT NULL,
+        transit_stations integer DEFAULT NULL,
+        residential integer DEFAULT NULL,
+        workplace  integer DEFAULT NULL,
+        parks  integer DEFAULT NULL,
+        retail_recreation integer DEFAULT NULL,
+        grocery_pharmacy integer DEFAULT NULL,
+        transit integer DEFAULT NULL,
+        walking integer DEFAULT NULL,
+        driving integer DEFAULT NULL,
+        UNIQUE (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3) ON CONFLICT REPLACE,
+        PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
+    ) WITHOUT ROWID"""
+
 
 def update_type(val):
     if isinstance(val, pd.Timestamp):
@@ -76,6 +99,7 @@ class SqliteHelper(AbstractAdapter):
     def create_tables(self):
         self.execute(sql_create_epidemiology_table)
         self.execute(sql_create_government_response_table)
+        self.execute(sql_create_mobility_table)
 
     def cursor(self):
         self.cur = self.conn.cursor()
