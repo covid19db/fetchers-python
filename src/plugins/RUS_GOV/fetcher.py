@@ -6,12 +6,12 @@ from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-__all__ = ('RussiaFetcher',)
+__all__ = ('RussiaGovFetcher',)
 
 logger = logging.getLogger(__name__)
 
 
-class RussiaFetcher(AbstractFetcher):
+class RussiaGovFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
 
     def fetch_regional(self, url):
