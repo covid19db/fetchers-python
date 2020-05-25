@@ -94,7 +94,8 @@ class AppleMobilityFetcher(AbstractFetcher):
                 self.country_codes_translator, geo_type, region, sub_region, country)
 
             if countrycode is None:
-                logger.warning(f'Unable to translate {geo_type}: {region}, {sub_region}, {country}')
+                logger.warning(f'Unable to translate "{geo_type}": "{region}", '
+                               f'"{sub_region}", "{country}"')
                 continue
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
@@ -113,8 +114,8 @@ class AppleMobilityFetcher(AbstractFetcher):
             if not gid:
                 if key not in unknown_regions:
                     logger.warning(
-                        f'Unable to find translation for: "{countrycode}", "{input_adm_area_1}", "{input_adm_area_2}" '
-                        f'add correct translation in CSV file')
+                        f'Unable to find translation for: "{countrycode}", '
+                        f'"{input_adm_area_1}", "{input_adm_area_2}"')
                 unknown_regions.add(key)
 
             for k in range(len(time_list)):
