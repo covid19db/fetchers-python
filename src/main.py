@@ -1,3 +1,4 @@
+import os
 import time
 import logging
 import schedule
@@ -6,7 +7,7 @@ from typing import List
 from utils.logger import setup_logger
 from utils.plugins import search_for_plugins, get_only_selected_plugins
 from utils.adapters import DataAdapter
-
+from utils.adapter_wrapper import AdapterWrapper
 from utils.adapter_abstract import AbstractAdapter
 
 logger = logging.getLogger(__name__)
@@ -28,15 +29,21 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
 
 def main():
     setup_logger()
-    db = DataAdapter.get_adapter()
     available_plugins = search_for_plugins()
 
+    # get data adapter
+    db = DataAdapter.get_adapter()
+    db_wrapper = AdapterWrapper(db, sliding_window_days=os.environ.get("SLIDING_WINDOW_DAYS"))
+
     # run once
-    run_plugins_job(db=db,
+    run_plugins_job(db=db_wrapper,
                     available_plugins=available_plugins,
                     run_only_plugins=get_only_selected_plugins())
     # run every day at 2am
-    schedule.every().day.at("02:00").do(run_plugins_job, db=db, available_plugins=available_plugins)
+    schedule.every().day.at("02:00").do(run_plugins_job,
+                                        db=db_wrapper,
+                                        available_plugins=available_plugins,
+                                        run_only_plugins=get_only_selected_plugins())
 
     logger.debug('Run schedule job every day at 02:00')
     while True:

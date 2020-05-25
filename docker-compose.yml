@@ -12,5 +12,6 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       SQLITE: ${SQLITE}
       CSV: ${CSV}
+      SLIDING_WINDOW_DAYS: ${SLIDING_WINDOW_DAYS}
     volumes:
       - ./data:/src/data

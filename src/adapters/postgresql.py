@@ -91,15 +91,6 @@ class PostgresqlHelper(AbstractAdapter):
         result = results[0]
         return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
-    def get_administrative_division_for_country(self, countrycode: str, adm_level: str):
-        sql_query = sql.SQL("""
-            SELECT country, countrycode, countrycode_alpha2, adm_level,
-                adm_area_1, adm_area_2, adm_area_3, gid FROM administrative_division
-            WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
-
-        result = self.execute(sql_query, (countrycode, adm_level))
-        return result
-
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
 
