@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 class AdmTranslator:
     def __init__(self, csv_fname: str):
         self.translation_pd = self.load_translation_csv(csv_fname)
+        self.cache = dict()
 
     def load_translation_csv(self, csv_fname) -> DataFrame:
         # CSV without countrycode column
@@ -29,6 +30,11 @@ class AdmTranslator:
            input_adm_area_3: str = None, return_original_if_failure: bool = False,
            suppress_exception: bool = False) -> Tuple[bool, str, str, str, List]:
 
+        key = (country_code, input_adm_area_1, input_adm_area_2, input_adm_area_3)
+
+        if key in self.cache:
+            return self.cache.get(key)
+
         for index, row in self.translation_pd.iterrows():
             if row.input_adm_area_1 == input_adm_area_1 \
                     and row.input_adm_area_2 == input_adm_area_2 \
@@ -45,7 +51,12 @@ class AdmTranslator:
                         logging.warning(message)
 
                 gid = row.gid.split(':') if row.gid else None
-                return True, row.adm_area_1, row.adm_area_2, row.adm_area_3, gid
+                result = True, row.adm_area_1, row.adm_area_2, row.adm_area_3, gid
+
+                # Cache result
+                self.cache[key] = result
+                return result
+
         if return_original_if_failure:
             return False, input_adm_area_1, input_adm_area_2, input_adm_area_3, None
         else:
