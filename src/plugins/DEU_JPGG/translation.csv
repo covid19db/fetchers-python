@@ -1,0 +1,17 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+DEU,DE-BW,,,Baden-Württemberg,,,DEU.1_1
+DEU,DE-BY,,,Bayern,,,DEU.2_1
+DEU,DE-BE,,,Berlin,,,DEU.3_1
+DEU,DE-BB,,,Brandenburg,,,DEU.4_1
+DEU,DE-HB,,,Bremen,,,DEU.5_1
+DEU,DE-HH,,,Hamburg,,,DEU.6_1
+DEU,DE-HE,,,Hessen,,,DEU.7_1
+DEU,DE-MV,,,Mecklenburg-Vorpommern,,,DEU.8_1
+DEU,DE-NI,,,Niedersachsen,,,DEU.9_1
+DEU,DE-NW,,,Nordrhein-Westfalen,,,DEU.10_1
+DEU,DE-RP,,,Rheinland-Pfalz,,,DEU.11_1
+DEU,DE-SL,,,Saarland,,,DEU.12_1
+DEU,DE-SN,,,Sachsen,,,DEU.14_1
+DEU,DE-ST,,,Sachsen-Anhalt,,,DEU.13_1
+DEU,DE-SH,,,Schleswig-Holstein,,,DEU.15_1
+DEU,DE-TH,,,Thüringen,,,DEU.16_1

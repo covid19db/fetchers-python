@@ -1,0 +1,80 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+DNK,Faroe Islands,,,Faroe Islands,,,FRO
+DNK,Greenland,,,Greenland,,,GRL
+FRA,French Guiana,,,French Guiana,,,GUF
+FRA,French Polynesia,,,French Polynesia,,,PYF
+FRA,Guadeloupe,,,Guadeloupe,,,GLP
+FRA,Martinique,,,Martinique,,,MTQ
+FRA,Mayotte,,,Mayotte,,,MYT
+FRA,New Caledonia,,,New Caledonia,,,NCL
+FRA,Reunion,,,Reunion,,,REU
+FRA,Saint Barthelemy,,,Saint-Barthélemy,,,BLM
+FRA,Saint Pierre and Miquelon,,,Saint Pierre and Miquelon,,,SPM
+FRA,St Martin,,,Saint-Martin,,,MAF
+NLD,Aruba,,,Aruba,,,ABW
+NLD,Curacao,,,Curaçao,,,CUW
+NLD,Sint Maarten,,,Sint Maarten,,,SXM
+NLD,"Bonaire, Sint Eustatius and Saba",,,"Bonaire, Saint Eustatius and Saba",,,BES
+GBR,Anguilla,,,Anguilla,,,AIA
+GBR,Bermuda,,,Bermuda,,,BMU
+GBR,British Virgin Islands,,,British Virgin Islands,,,VGB
+GBR,Cayman Islands,,,Cayman Islands,,,CYM
+GBR,Channel Islands,,,Channel Islands,,,GGY:JEY
+GBR,Falkland Islands (Malvinas),,,Falkland Islands,,,FLK
+GBR,Gibraltar,,,Gibraltar,,,GIB
+GBR,Isle of Man,,,Isle of Man,,,IMN
+GBR,Montserrat,,,Montserrat,,,MSR
+GBR,Turks and Caicos Islands,,,Turks and Caicos Islands,,,TCA
+AUS,Australian Capital Territory,,,Australian Capital Territory,,,AUS.2_1
+AUS,New South Wales,,,New South Wales,,,AUS.5_1
+AUS,Northern Territory,,,Northern Territory,,,AUS.6_1
+AUS,Queensland,,,Queensland,,,AUS.7_1
+AUS,South Australia,,,South Australia,,,AUS.8_1
+AUS,Tasmania,,,Tasmania,,,AUS.9_1
+AUS,Victoria,,,Victoria,,,AUS.10_1
+AUS,Western Australia,,,Western Australia,,,AUS.11_1
+CAN,Alberta,,,Alberta,,,CAN.1_1
+CAN,British Columbia,,,British Columbia,,,CAN.2_1
+CAN,Manitoba,,,Manitoba,,,CAN.3_1
+CAN,New Brunswick,,,New Brunswick,,,CAN.4_1
+CAN,Newfoundland and Labrador,,,Newfoundland and Labrador,,,CAN.5_1
+CAN,Northwest Territories,,,Northwest Territories,,,CAN.6_1
+CAN,Nova Scotia,,,Nova Scotia,,,CAN.7_1
+CAN,Ontario,,,Ontario,,,CAN.9_1
+CAN,Prince Edward Island,,,Prince Edward Island,,,CAN.10_1
+CAN,Quebec,,,Québec,,,CAN.11_1
+CAN,Saskatchewan,,,Saskatchewan,,,CAN.12_1
+CAN,Yukon,,,Yukon,,,CAN.13_1
+CHN,Anhui,,,Anhui,,,CHN.1_1
+CHN,Beijing,,,Beijing,,,CHN.2_1
+CHN,Chongqing,,,Chongqing,,,CHN.3_1
+CHN,Fujian,,,Fujian,,,CHN.4_1
+CHN,Gansu,,,Gansu,,,CHN.5_1
+CHN,Guangdong,,,Guangdong,,,CHN.6_1
+CHN,Guangxi,,,Guangxi,,,CHN.7_1
+CHN,Guizhou,,,Guizhou,,,CHN.8_1
+CHN,Hainan,,,Hainan,,,CHN.9_1
+CHN,Hebei,,,Hebei,,,CHN.10_1
+CHN,Heilongjiang,,,Heilongjiang,,,CHN.11_1
+CHN,Henan,,,Henan,,,CHN.12_1
+CHN,Hubei,,,Hubei,,,CHN.13_1
+CHN,Hunan,,,Hunan,,,CHN.14_1
+CHN,Inner Mongolia,,,Nei Mongol,,,CHN.19_1
+CHN,Jiangsu,,,Jiangsu,,,CHN.15_1
+CHN,Jiangxi,,,Jiangxi,,,CHN.16_1
+CHN,Jilin,,,Jilin,,,CHN.17_1
+CHN,Liaoning,,,Liaoning,,,CHN.18_1
+CHN,Ningxia,,,Ningxia Hui,,,CHN.20_1
+CHN,Qinghai,,,Qinghai,,,CHN.21_1
+CHN,Shaanxi,,,Shaanxi,,,CHN.22_1
+CHN,Shandong,,,Shandong,,,CHN.23_1
+CHN,Shanghai,,,Shanghai,,,CHN.24_1
+CHN,Shanxi,,,Shanxi,,,CHN.25_1
+CHN,Sichuan,,,Sichuan,,,CHN.26_1
+CHN,Tianjin,,,Tianjin,,,CHN.27_1
+CHN,Tibet,,,Xizang,,,CHN.29_1
+CHN,Xinjiang,,,Xinjiang Uygur,,,CHN.28_1
+CHN,Yunnan,,,Yunnan,,,CHN.30_1
+CHN,Zhejiang,,,Zhejiang,,,CHN.31_1
+CHN,Hong Kong,,,Hong Kong,,,HKG
+CHN,Macau,,,Macao,,,MAC
