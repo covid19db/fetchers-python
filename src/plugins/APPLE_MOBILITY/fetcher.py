@@ -2,7 +2,9 @@ import os
 import csv
 import logging
 from utils.fetcher_abstract import AbstractFetcher
-from .utils import get_country_codes, get_country_info, get_recent_apple_mobility_data
+from utils.country_codes_translator.translator import CountryCodesTranslator
+from utils.helper import remove_words
+from .utils import get_recent_apple_mobility_data
 
 __all__ = ('AppleMobilityFetcher',)
 
@@ -25,7 +27,8 @@ class AppleMobilityFetcher(AbstractFetcher):
         return countryname
 
     @staticmethod
-    def fix_adm_division(country_codes, geo_type, region, sub_region, country):
+    def fix_adm_division(country_codes_translator: CountryCodesTranslator, geo_type: str, region: str, sub_region: str,
+                         country: str):
         if geo_type == 'country/region':
             adm_area_1, adm_area_2, countryname = None, None, region
 
@@ -39,20 +42,15 @@ class AppleMobilityFetcher(AbstractFetcher):
             return None, None, None, None
 
         if geo_type == 'sub-region':
-            adm_area_1 = region.replace('County', '') \
-                .replace('Region', '') \
-                .replace('Province', '') \
-                .replace('Prefecture', '').strip()
+            adm_area_1 = remove_words(region, words=['County', 'Region', 'Province', 'Prefecture'])
             adm_area_2, countryname = None, country
 
         if geo_type == 'county':
-            adm_area_2 = region.replace('County', '') \
-                .replace('Parish', '') \
+            adm_area_2 = remove_words(region, words=['County', 'Parish']) \
                 .replace('St.', 'Saint').strip()
             adm_area_1, countryname = sub_region, country
 
-        country, countrycode = get_country_info(
-            country_codes,
+        country, countrycode = country_codes_translator.get_country_info(
             country_name=AppleMobilityFetcher.fix_countryname(countryname))
 
         return country, countrycode, adm_area_1, adm_area_2
@@ -80,7 +78,6 @@ class AppleMobilityFetcher(AbstractFetcher):
         region_cache = dict()
         unknown_regions = set()
 
-        country_codes = get_country_codes()
         data = self.fetch()
 
         time_list = list(data.columns)[6:]
@@ -94,7 +91,7 @@ class AppleMobilityFetcher(AbstractFetcher):
             country = record['country']
 
             country, countrycode, input_adm_area_1, input_adm_area_2 = self.fix_adm_division(
-                country_codes, geo_type, region, sub_region, country)
+                self.country_codes_translator, geo_type, region, sub_region, country)
 
             if countrycode is None:
                 logger.warning(f'Unable to translate {geo_type}: {region}, {sub_region}, {country}')

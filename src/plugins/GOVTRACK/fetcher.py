@@ -19,7 +19,7 @@ class StringencyFetcher(AbstractFetcher):
         date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/{date_from}/{date_to}').json()
-        return parser(api_data)
+        return parser(api_data, self.country_codes_translator)
 
     def fetch_details(self, country_code, date_value):
         api_details = requests.get(

@@ -3,9 +3,10 @@ import csv
 import logging
 import pandas as pd
 from utils.fetcher_abstract import AbstractFetcher
-from .utils import get_country_codes, get_country_info
 
 __all__ = ('GoogleMobilityFetcher',)
+
+from utils.helper import remove_words
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +37,6 @@ class GoogleMobilityFetcher(AbstractFetcher):
 
     def run(self):
         data = self.fetch()
-        country_codes = get_country_codes()
 
         unknown_regions = set()
         region_cache = dict()
@@ -44,9 +44,9 @@ class GoogleMobilityFetcher(AbstractFetcher):
         for index, record in data.iterrows():
             date = record['date']
 
-            country, countrycode = get_country_info(country_codes,
-                                                    country_a2_code=record['country_region_code'],
-                                                    country_name=record['country_region'])
+            country, countrycode = self.country_codes_translator.get_country_info(
+                country_a2_code=record['country_region_code'],
+                country_name=record['country_region'])
 
             if pd.isna(countrycode):
                 logger.warning(f'Unable to process: {record}')
@@ -57,18 +57,16 @@ class GoogleMobilityFetcher(AbstractFetcher):
 
             if countrycode == 'USA':
                 if input_adm_area_2:
-                    input_adm_area_2 = input_adm_area_2.replace('County', '') \
-                        .replace('Parish', '') \
+                    input_adm_area_2 = remove_words(input_adm_area_2, words=['County', 'Parish']) \
                         .replace('St.', 'Saint').strip()
             elif countrycode == 'GBR' and input_adm_area_1:
                 # Use adm_area_2 for Great Britain
                 input_adm_area_2 = input_adm_area_1
                 input_adm_area_1 = '%'
             elif input_adm_area_1:
-                input_adm_area_1 = input_adm_area_1.replace('Province', '') \
-                    .replace('District', '').replace('County', '') \
-                    .replace('Region', '').replace('Governorate', '') \
-                    .replace('State of', '').strip()
+                input_adm_area_1 = remove_words(
+                    input_adm_area_1,
+                    words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of'])
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
 
