@@ -32,8 +32,8 @@ def main():
     available_plugins = search_for_plugins()
 
     # get data adapter
-    db = DataAdapter.get_adapter()
-    db_wrapper = AdapterWrapper(db, sliding_window_days=os.environ.get("SLIDING_WINDOW_DAYS"))
+    data_adapter = DataAdapter.get_adapter()
+    db_wrapper = AdapterWrapper(data_adapter, sliding_window_days=os.environ.get("SLIDING_WINDOW_DAYS"))
 
     # run once
     run_plugins_job(db=db_wrapper,

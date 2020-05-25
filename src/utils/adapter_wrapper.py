@@ -6,10 +6,10 @@ from utils.adapter_abstract import AbstractAdapter
 
 class AdapterWrapper(AbstractAdapter):
 
-    def __init__(self, base_apapter: AbstractAdapter = None,
+    def __init__(self, data_adapter: AbstractAdapter = None,
                  sliding_window_days: bool = None,
                  table_name_postfix: bool = None):
-        self.base_adapter = base_apapter
+        self.data_adapter = data_adapter
         self.sliding_window_days = int(sliding_window_days) if sliding_window_days else None
         self.table_name_postfix = table_name_postfix
 
@@ -34,22 +34,22 @@ class AdapterWrapper(AbstractAdapter):
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         if not self.date_in_window(kwargs):
             return
-        self.base_adapter.upsert_government_response_data(self.correct_table_name(table_name), **kwargs)
+        self.data_adapter.upsert_government_response_data(self.correct_table_name(table_name), **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         if not self.date_in_window(kwargs):
             return
-        self.base_adapter.upsert_epidemiology_data(self.correct_table_name(table_name), **kwargs)
+        self.data_adapter.upsert_epidemiology_data(self.correct_table_name(table_name), **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         if not self.date_in_window(kwargs):
             return
-        self.base_adapter.upsert_mobility_data(self.correct_table_name(table_name), **kwargs)
+        self.data_adapter.upsert_mobility_data(self.correct_table_name(table_name), **kwargs)
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
-        self.base_adapter.get_adm_division(countrycode, adm_area_1, adm_area_2, adm_area_3)
+        self.data_adapter.get_adm_division(countrycode, adm_area_1, adm_area_2, adm_area_3)
 
     def flush(self):
-        if hasattr(self.base_adapter, 'flush'):
-            self.base_adapter.flush()
+        if hasattr(self.data_adapter, 'flush'):
+            self.data_adapter.flush()
