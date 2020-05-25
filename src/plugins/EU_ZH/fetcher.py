@@ -81,7 +81,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
 
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
-                'source': 'EU-ZH',
+                'source': 'EU_ZH',
                 'date': date,
                 'country': country,
                 'countrycode': code_3,
