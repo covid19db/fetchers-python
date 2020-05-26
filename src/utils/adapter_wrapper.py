@@ -18,10 +18,10 @@ class AdapterWrapper(AbstractAdapter):
             return True
 
         date = args.get('date')
-        if date and isinstance(date, str):
+        if isinstance(date, str):
             date = datetime.strptime(date, '%Y-%m-%d')
 
-        if date and isinstance(date, datetime):
+        if isinstance(date, datetime):
             days = (datetime.now() - date).days
             if days > self.sliding_window_days:
                 return False
