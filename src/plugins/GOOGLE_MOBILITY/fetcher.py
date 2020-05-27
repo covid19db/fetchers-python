@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class GoogleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'GOOGLE_MOBILITY'
 
     def fetch(self):
         # Google covid19 mobility data
@@ -89,7 +90,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 unknown_regions.add(key)
 
             upsert_obj = {
-                'source': 'GOOGLE_MOBILITY',
+                'source': self.SOURCE,
                 'date': date,
                 'country': country,
                 'countrycode': countrycode,

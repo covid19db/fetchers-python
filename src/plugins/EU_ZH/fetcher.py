@@ -29,6 +29,7 @@ logger = logging.getLogger(__name__)
 
 class EU_ZH_Fetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'EU_ZH'
 
     def fetch(self, url):
         return pd.read_csv(url)
@@ -81,7 +82,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
 
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
-                'source': 'EU_ZH',
+                'source': self.SOURCE,
                 'date': date,
                 'country': country,
                 'countrycode': code_3,

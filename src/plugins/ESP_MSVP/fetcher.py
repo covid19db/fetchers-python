@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 class SpainWikiFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'ESP_MSVP'
 
     def fetch(self):
         # a csv file to be downloaded
@@ -38,7 +39,7 @@ class SpainWikiFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'ESP_MSVP',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Spain',
                 'countrycode': 'ESP',

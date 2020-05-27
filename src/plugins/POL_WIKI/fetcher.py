@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class PolandWikiFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'POL_WIKI'
 
     def update_total_cases(self, data: DataFrame):
         logger.info("Processing total number of cases in Poland")
@@ -35,7 +36,7 @@ class PolandWikiFetcher(AbstractFetcher):
                 confirmed=to_number(item['Confirmed']),
                 dead=total_deaths,
                 recovered=to_number(item['Recovered']),
-                source='POL_WIKI'
+                source=self.SOURCE
             )
 
     def update_confirmed_cases(self, data: DataFrame):
@@ -70,7 +71,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     adm_area_3=adm_area_3,
                     gid=gid,
                     confirmed=total_per_voivodeship[voivodeship_name],
-                    source='POL_WIKI'
+                    source=self.SOURCE
                 )
 
     def update_deaths_by_voivodeship(self, data: DataFrame):
@@ -105,7 +106,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     adm_area_3=adm_area_3,
                     gid=gid,
                     dead=total_per_voivodeship[voivodeship_name],
-                    source='POL_WIKI'
+                    source=self.SOURCE
                 )
 
     def run(self):

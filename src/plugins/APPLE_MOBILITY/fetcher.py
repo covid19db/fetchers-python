@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class AppleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'APPLE_MOBILITY'
 
     @staticmethod
     def fix_countryname(countryname):
@@ -123,7 +124,7 @@ class AppleMobilityFetcher(AbstractFetcher):
                 value = record[date]
 
                 upsert_obj = {
-                    'source': 'APPLE_MOBILITY',
+                    'source': self.SOURCE,
                     'date': date,
                     'country': country,
                     'countrycode': countrycode,

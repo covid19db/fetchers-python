@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 class UnitedStatesNYTFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'USA_NYT'
 
     def fetch(self, category):
         return pd.read_csv(f'https://raw.githubusercontent.com/nytimes/covid-19-data/'
@@ -46,7 +47,7 @@ class UnitedStatesNYTFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'USA_NYT',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'United States',
                 'countrycode': 'USA',
@@ -78,7 +79,7 @@ class UnitedStatesNYTFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'USA_NYT',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'United States',
                 'countrycode': 'USA',

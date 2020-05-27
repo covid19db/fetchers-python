@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 class WorldECDCFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'WRD_ECDC'
 
     def fetch(self):
         url = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
@@ -47,7 +48,7 @@ class WorldECDCFetcher(AbstractFetcher):
             country_total_deaths[country_code] = total_deaths
 
             upsert_obj = {
-                'source': 'WRD_ECDC',
+                'source': self.SOURCE,
                 'date': date,
                 'country': country,
                 'countrycode': country_code,

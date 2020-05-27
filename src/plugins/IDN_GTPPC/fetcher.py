@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 class IndonesiaFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'IDN_GTPPC'
 
     def fetch(self, url):
         data = requests.get(url).json()
@@ -43,7 +44,7 @@ class IndonesiaFetcher(AbstractFetcher):
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
                 # source is Gugus Tugas Percepatan Penanganan COVID-19
-                'source': 'IDN_GTPPC',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Indonesia',
                 'countrycode': 'IDN',
@@ -93,7 +94,7 @@ class IndonesiaFetcher(AbstractFetcher):
                 # we need to build an object containing the data we want to add or update
                 upsert_obj = {
                     # source is Gugus Tugas Percepatan Penanganan COVID-19
-                    'source': 'IDN_GTPPC',
+                    'source': self.SOURCE,
                     'date': date,
                     'country': 'Indonesia',
                     'countrycode': 'IDN',

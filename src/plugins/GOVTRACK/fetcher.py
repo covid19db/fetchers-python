@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class StringencyFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'GOVTRACK'
 
     def fetch(self):
         date_from = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
@@ -33,7 +34,7 @@ class StringencyFetcher(AbstractFetcher):
         for index, record in govtrack_data.iterrows():
             govtrack_actions = self.fetch_details(record['country_code'], record['date_value'])
             upsert_obj = {
-                'source': 'GOVTRACK',
+                'source': self.SOURCE,
                 'date': record['date_value'],
                 'country': record['English short name lower case'],
                 'countrycode': record['country_code'],

@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 class ThailandSTATFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'THA_STAT'
 
     def fetch_timeline(self):
         url = 'https://covid19.th-stat.com/api/open/timeline'
@@ -31,9 +32,9 @@ class ThailandSTATFetcher(AbstractFetcher):
 
         for record in data['Data']:
             upsert_obj = {
-                'source': 'THA_STAT',
+                'source': self.SOURCE,
                 'date': datetime.strptime(record['Date'], '%m/%d/%Y') \
-                                .strftime('%Y-%m-%d'),
+                    .strftime('%Y-%m-%d'),
                 'country': 'Thailand',
                 'countrycode': 'THA',
                 'gid': ['THA'],
@@ -51,12 +52,11 @@ class ThailandSTATFetcher(AbstractFetcher):
         df = pd.DataFrame(data['Data'], columns=['ConfirmDate', 'ProvinceEn'])
         crosstabsum = pd.crosstab(df.ConfirmDate.apply(lambda d: d[:10]),
                                   df.ProvinceEn) \
-                        .sort_index() \
-                        .cumsum()
+            .sort_index() \
+            .cumsum()
 
         for confirmdate, row in crosstabsum.iterrows():
             for provinceen, confirmed in row.items():
-
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=provinceen,
                     input_adm_area_2=None,
@@ -65,7 +65,7 @@ class ThailandSTATFetcher(AbstractFetcher):
                 )
 
                 upsert_obj = {
-                    'source': 'THA_STAT',
+                    'source': self.SOURCE,
                     'date': confirmdate,
                     'country': 'Thailand',
                     'countrycode': 'THA',

@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 class ItalyPCDMFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'ITA_PCDM'
 
     def fetch(self):
         return pd.read_csv('https://raw.githubusercontent.com/DavideMagno/ItalianCovidData/'
@@ -45,7 +46,7 @@ class ItalyPCDMFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'ITA_PCDM',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Italy',
                 'countrycode': 'ITA',

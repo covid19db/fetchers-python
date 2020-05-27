@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 class SouthKoreaDS4CFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'KOR_DS4C'
 
     def fetch(self):
         url = 'https://raw.githubusercontent.com/jihoo-kim/Data-Science-for-COVID-19/master/dataset/Time/Time.csv'
@@ -36,7 +37,7 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
             deceased = int(record[6])
 
             upsert_obj = {
-                'source': 'KOR_DS4C',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'South Korea',
                 'countrycode': 'KOR',
@@ -67,7 +68,7 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'KOR_DS4C',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'South Korea',
                 'countrycode': 'KOR',

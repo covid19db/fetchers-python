@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class RussiaGovFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'RUS_GOV'
 
     def fetch_regional(self, url):
         data = requests.get(url).json()
@@ -49,7 +50,7 @@ class RussiaGovFetcher(AbstractFetcher):
             upsert_obj = {
                 # source is official government website
                 # https://xn--80aesfpebagmfblc0a.xn--p1ai/information/ (stopcoronavirus.rf)
-                'source': 'RUS_GOV',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Russia',
                 'countrycode': 'RUS',
@@ -99,7 +100,7 @@ class RussiaGovFetcher(AbstractFetcher):
                 upsert_obj = {
                     # source is official government website
                     # https://xn--80aesfpebagmfblc0a.xn--p1ai/information/ (stopcoronavirus.rf)
-                    'source': 'RUS_GOV',
+                    'source': self.SOURCE,
                     'date': date,
                     'country': 'Russia',
                     'countrycode': 'RUS',

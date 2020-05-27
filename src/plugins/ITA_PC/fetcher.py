@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 class ItalyPCFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'ITA_PC'
 
     def fetch(self, category):
         return pd.read_csv(f'https://raw.githubusercontent.com/pcm-dpc/COVID-19/'
@@ -49,7 +50,7 @@ class ItalyPCFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'ITA_PC',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Italy',
                 'countrycode': 'ITA',
@@ -91,7 +92,7 @@ class ItalyPCFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'ITA_PC',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Italy',
                 'countrycode': 'ITA',

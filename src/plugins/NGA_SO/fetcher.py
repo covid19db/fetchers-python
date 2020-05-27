@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 class NigeriaSO(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'NGA_SO'
 
     def fetch(self):
         url = 'https://covidnigeria.herokuapp.com/'
@@ -33,7 +34,7 @@ class NigeriaSO(AbstractFetcher):
         upsert_obj = {
             # source is https://github.com/sink-opuba/covid-19-nigeria-api
             # Pulls information from Nigeria Centre for Disease Control, https://covid19.ncdc.gov.ng/
-            'source': 'NGA_SO',
+            'source': self.SOURCE,
             'date': date_,
             'country': 'Nigeria',
             'countrycode': 'NGA',

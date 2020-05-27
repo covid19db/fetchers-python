@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 class FranceSPFCGFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'FRA_SPFCG'
 
     def fetch(self, category):
         logger.debug(f'Going to fetch France {category}')
@@ -34,7 +35,7 @@ class FranceSPFCGFetcher(AbstractFetcher):
             for region, record in row.items():
                 if pd.notna(record):
                     upsert_obj = {
-                        'source': 'FRA_SPFCG',
+                        'source': self.SOURCE,
                         'date': date,
                         'country': 'France',
                         'countrycode': 'FRA',

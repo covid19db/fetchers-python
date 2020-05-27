@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 class WorldWHOJHUFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'WRD_WHOJHU'
 
     def fetch(self, category):
         logger.debug(f'Going to fetch world {category}')
@@ -37,7 +38,7 @@ class WorldWHOJHUFetcher(AbstractFetcher):
 
             for col in range(4, len(record)):
                 upsert_obj = {
-                    'source': 'WRD_WHOJHU',
+                    'source': self.SOURCE,
                     'date': datetime.strptime(first_record[col], '%m/%d/%y').strftime('%Y-%m-%d'),
                     'country': country,
                     'countrycode': countrycode,

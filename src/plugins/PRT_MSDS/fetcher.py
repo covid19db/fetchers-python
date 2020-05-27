@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 
 class PRT_MSDSFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'PRT_MSDS'
 
     def country_fetch(self):
 
@@ -70,7 +71,7 @@ class PRT_MSDSFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'PRT_MSDS',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English
@@ -154,7 +155,7 @@ class PRT_MSDSFetcher(AbstractFetcher):
                 )
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'PRT_MSDS',
+                    'source': self.SOURCE,
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
                     # country is mandatory and should be in English

@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 class NigeriaCDC(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'NGA_CDC'
 
     def fetch(self):
         url = 'https://services5.arcgis.com/Y2O5QPjedp8vHACU/arcgis/rest/services/NgeriaCovid19/FeatureServer/0/query?f=json&where=ConfCases%20%3E%3D%200&returnGeometry=false&returnSpatialRel=false&outFields=*'
@@ -41,7 +42,7 @@ class NigeriaCDC(AbstractFetcher):
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # Pulling directly from Nigeria Centre for Disease Control, https://covid19.ncdc.gov.ng/
-                'source': 'NGA_CDC',
+                'source': self.SOURCE,
                 'date': date_,
                 'country': 'Nigeria',
                 'countrycode': 'NGA',

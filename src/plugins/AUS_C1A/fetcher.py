@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 
 class AustraliaC1AFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'AUS_C1A'
 
     def fetch(self):
         url = 'https://raw.githubusercontent.com/covid-19-au/covid-19-au.github.io/prod/src/data/country.json'
@@ -38,7 +39,7 @@ class AustraliaC1AFetcher(AbstractFetcher):
             in_icu = int(record[6]) if pd.notna(record[6]) else None
 
             upsert_obj = {
-                'source': 'AUS_C1A',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Australia',
                 'countrycode': 'AUS',

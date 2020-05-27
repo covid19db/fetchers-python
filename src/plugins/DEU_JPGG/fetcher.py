@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 class GermanyJPGGFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'DEU_JPGG'
 
     def fetch(self, state):
         logger.debug(f'Fetching cases for Germany region {state}')
@@ -33,7 +34,7 @@ class GermanyJPGGFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'DEU_JPGG',
+                'source': self.SOURCE,
                 'date': date[:10],
                 'country': 'Germany',
                 'countrycode': 'DEU',
@@ -60,7 +61,7 @@ class GermanyJPGGFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'DEU_JPGG',
+                'source': self.SOURCE,
                 'date': date[:10],
                 'country': 'Germany',
                 'countrycode': 'DEU',
