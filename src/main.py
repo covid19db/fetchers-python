@@ -20,6 +20,7 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
         try:
             logger.info(f'Running plugin {plugin.__name__} ')
             instance = plugin(db=db)
+            source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
             instance.run()
             db.flush()
             logger.info(f"Plugin {plugin.__name__} finished successfully")

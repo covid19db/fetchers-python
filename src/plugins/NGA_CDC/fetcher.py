@@ -1,9 +1,7 @@
 import logging
-import pandas as pd
-import json
 import requests
 from utils.fetcher_abstract import AbstractFetcher
-from datetime import datetime, date
+from datetime import date
 
 __all__ = ('NigeriaCDC',)
 

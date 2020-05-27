@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 class LatinAmericaDSRPFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
-    SOURCE = 'LAT_DSRP'≤
+    SOURCE = 'LAT_DSRP'
 
     def fetch_confirmed(self):
         url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
