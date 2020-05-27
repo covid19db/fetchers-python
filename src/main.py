@@ -9,6 +9,7 @@ from utils.plugins import search_for_plugins, get_only_selected_plugins
 from utils.adapters import DataAdapter
 from utils.adapter_wrapper import AdapterWrapper
 from utils.adapter_abstract import AbstractAdapter
+from utils.validation import validate_incoming_data
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +23,14 @@ def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugi
             instance = plugin(db=db)
             source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
             instance.run()
+            result=validate_incoming_data(plugin.__name__)
+            if result ==1:
+                logger.info(f"Plugin {plugin.__name__} finished successfully")
+            else:
+                logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+                
             db.flush()
-            logger.info(f"Plugin {plugin.__name__} finished successfully")
+            
         except Exception as ex:
             logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
 
