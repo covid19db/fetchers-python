@@ -82,6 +82,10 @@ class PostgresqlHelper(AbstractAdapter):
         self.cur.callproc('send_validated_data', [source_code])
         logger.debug("Moving data to epidemiology")
 
+    def truncate_staging(self):
+        sql_query = sql.SQL("""TRUNCATE staging_epidemiology; SELECT 1""")
+        self.execute(sql_query)
+
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""

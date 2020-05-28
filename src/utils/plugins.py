@@ -53,6 +53,7 @@ class Plugins:
                 continue
             try:
                 logger.info(f'Running plugin {plugin.__name__} ')
+                data_adapter.truncate_staging()
                 instance = plugin(db=data_adapter)
                 instance.run()
                 if self.validate_input_data:

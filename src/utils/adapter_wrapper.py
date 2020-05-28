@@ -37,6 +37,9 @@ class AdapterWrapper(AbstractAdapter):
         if hasattr(self.data_adapter, 'call_db_function_send_data'):
             self.data_adapter.call_db_function_send_data(source_code)
 
+    def truncate_staging(self):
+        self.data_adapter.truncate_staging()
+
     def correct_table_name(self, table_name: str) -> str:
         return self.table_name_postfix + table_name if self.table_name_postfix else table_name
 
