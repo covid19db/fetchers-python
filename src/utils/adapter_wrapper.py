@@ -28,8 +28,17 @@ class AdapterWrapper(AbstractAdapter):
 
         return True
 
+    def call_db_function_compare(self, source_code: str):
+        if hasattr(self.data_adapter, 'call_db_function_compare'):
+            return self.data_adapter.call_db_function_compare(source_code)
+        return False
+
+    def call_db_function_send_data(self, source_code: str):
+        if hasattr(self.data_adapter, 'call_db_function_send_data'):
+            self.data_adapter.call_db_function_send_data(source_code)
+
     def correct_table_name(self, table_name: str) -> str:
-        return table_name + self.table_name_postfix if self.table_name_postfix else table_name
+        return self.table_name_postfix + table_name if self.table_name_postfix else table_name
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         if not self.date_in_window(kwargs):

@@ -70,24 +70,17 @@ class PostgresqlHelper(AbstractAdapter):
         except (Exception, psycopg2.Error) as error:
             raise error
         return self.cur.fetchall()
-    
-    
+
     def call_db_function_compare(self, source_code: str):
-        self.cur.callproc('covid19_compare_tables',(source_code,))
+        self.cur.callproc('covid19_compare_tables', (source_code,))
         compare_result = self.cur.fetchone()
         print(compare_result)
-        logger.debug("validating incoming data")
+        logger.debug("Validating incoming data")
         return compare_result
-    
+
     def call_db_function_send_data(self, source_code: str):
-        self.cur.callproc('send_validated_data',[source_code])
-        logger.debug("moving data to epidemiology")
-        
-    def get_souce_code(self, pname: str):
-        sql_query = sql.SQL("SELECT source_code from url_info where plugin_name='%s' limit 1" %pname)         
-        data = self.execute(sql_query)     
-        logger.debug("selecting data from email info")
-        return data
+        self.cur.callproc('send_validated_data', [source_code])
+        logger.debug("Moving data to epidemiology")
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
@@ -131,9 +124,9 @@ class PostgresqlHelper(AbstractAdapter):
 
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
-        
+
     ## Ahmad Changes : changed table name to staging_epidemiology
-    def upsert_epidemiology_data(self, table_name: str = 'staging_epidemiology', **kwargs):
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
                      'recovered']
 
@@ -153,7 +146,7 @@ class PostgresqlHelper(AbstractAdapter):
                 sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
                 k in data_keys)
         )
-        
+
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
