@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 class SWE_GMFFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'SWE_GM'
 
     def province_confirmed_fetch(self):
 
@@ -117,7 +118,7 @@ class SWE_GMFFetcher(AbstractFetcher):
 
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'SWE_GM',
+                    'source': self.SOURCE,
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date_,
                     # country is mandatory and should be in English
@@ -163,7 +164,7 @@ class SWE_GMFFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'SWE_GM',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date_,
                 # country is mandatory and should be in English

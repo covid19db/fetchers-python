@@ -1,0 +1,129 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+ITA,Abruzzo,,,Abruzzo,,,ITA.1_1
+ITA,Puglia,,,Apulia,,,ITA.2_1
+ITA,Basilicata,,,Basilicata,,,ITA.3_1
+ITA,Calabria,,,Calabria,,,ITA.4_1
+ITA,Campania,,,Campania,,,ITA.5_1
+ITA,Emilia-Romagna,,,Emilia-Romagna,,,ITA.6_1
+ITA,Friuli Venezia Giulia,,,Friuli-Venezia Giulia,,,ITA.7_1
+ITA,Lazio,,,Lazio,,,ITA.8_1
+ITA,Liguria,,,Liguria,,,ITA.9_1
+ITA,Lombardia,,,Lombardia,,,ITA.10_1
+ITA,Marche,,,Marche,,,ITA.11_1
+ITA,Molise,,,Molise,,,ITA.12_1
+ITA,Piemonte,,,Piemonte,,,ITA.13_1
+ITA,Sardegna,,,Sardegna,,,ITA.14_1
+ITA,Sicilia,,,Sicily,,,ITA.15_1
+ITA,Toscana,,,Toscana,,,ITA.16_1
+ITA,P.A. Bolzano,,,Bolzano,,,ITA.17.1_1
+ITA,P.A. Trento,,,Trento,,,ITA.17.2_1
+ITA,Umbria,,,Umbria,,,ITA.18_1
+ITA,Valle d'Aosta,,,Valle d'Aosta,,,ITA.19_1
+ITA,Veneto,,,Veneto,,,ITA.20_1
+ITA,Abruzzo,Chieti,,Abruzzo,Chieti,,ITA.1.1_1
+ITA,Abruzzo,L'Aquila,,Abruzzo,L'Aquila,,ITA.1.2_1
+ITA,Abruzzo,Pescara,,Abruzzo,Pescara,,ITA.1.3_1
+ITA,Abruzzo,Teramo,,Abruzzo,Teramo,,ITA.1.4_1
+ITA,Puglia,Bari,,Apulia,Bari,,ITA.2.1_1
+ITA,Puglia,Barletta-Andria-Trani,,Apulia,Barletta-Andria-Trani,,ITA.2.2_1
+ITA,Puglia,Brindisi,,Apulia,Brindisi,,ITA.2.3_1
+ITA,Puglia,Foggia,,Apulia,Foggia,,ITA.2.4_1
+ITA,Puglia,Lecce,,Apulia,Lecce,,ITA.2.5_1
+ITA,Puglia,Taranto,,Apulia,Taranto,,ITA.2.6_1
+ITA,Basilicata,Matera,,Basilicata,Matera,,ITA.3.1_1
+ITA,Basilicata,Potenza,,Basilicata,Potenza,,ITA.3.2_1
+ITA,Calabria,Catanzaro,,Calabria,Catanzaro,,ITA.4.1_1
+ITA,Calabria,Cosenza,,Calabria,Cosenza,,ITA.4.2_1
+ITA,Calabria,Crotone,,Calabria,Crotone,,ITA.4.3_1
+ITA,Calabria,Reggio di Calabria,,Calabria,Reggio Di Calabria,,ITA.4.4_1
+ITA,Calabria,Vibo Valentia,,Calabria,Vibo Valentia,,ITA.4.5_1
+ITA,Campania,Avellino,,Campania,Avellino,,ITA.5.1_1
+ITA,Campania,Benevento,,Campania,Benevento,,ITA.5.2_1
+ITA,Campania,Caserta,,Campania,Caserta,,ITA.5.3_1
+ITA,Campania,Napoli,,Campania,Napoli,,ITA.5.4_1
+ITA,Campania,Salerno,,Campania,Salerno,,ITA.5.5_1
+ITA,Emilia-Romagna,Bologna,,Emilia-Romagna,Bologna,,ITA.6.1_1
+ITA,Emilia-Romagna,Ferrara,,Emilia-Romagna,Ferrara,,ITA.6.2_1
+ITA,Emilia-Romagna,Forlì-Cesena,,Emilia-Romagna,Forli' - Cesena,,ITA.6.3_1
+ITA,Emilia-Romagna,Modena,,Emilia-Romagna,Modena,,ITA.6.4_1
+ITA,Emilia-Romagna,Parma,,Emilia-Romagna,Parma,,ITA.6.5_1
+ITA,Emilia-Romagna,Piacenza,,Emilia-Romagna,Piacenza,,ITA.6.6_1
+ITA,Emilia-Romagna,Ravenna,,Emilia-Romagna,Ravenna,,ITA.6.7_1
+ITA,Emilia-Romagna,Reggio nell'Emilia,,Emilia-Romagna,Reggio Nell'Emilia,,ITA.6.8_1
+ITA,Emilia-Romagna,Rimini,,Emilia-Romagna,Rimini,,ITA.6.9_1
+ITA,Friuli Venezia Giulia,Gorizia,,Friuli-Venezia Giulia,Gorizia,,ITA.7.1_1
+ITA,Friuli Venezia Giulia,Pordenone,,Friuli-Venezia Giulia,Pordenone,,ITA.7.2_1
+ITA,Friuli Venezia Giulia,Trieste,,Friuli-Venezia Giulia,Trieste,,ITA.7.3_1
+ITA,Friuli Venezia Giulia,Udine,,Friuli-Venezia Giulia,Udine,,ITA.7.4_1
+ITA,Lazio,Frosinone,,Lazio,Frosinone,,ITA.8.1_1
+ITA,Lazio,Latina,,Lazio,Latina,,ITA.8.2_1
+ITA,Lazio,Rieti,,Lazio,Rieti,,ITA.8.3_1
+ITA,Lazio,Roma,,Lazio,Roma,,ITA.8.4_1
+ITA,Lazio,Viterbo,,Lazio,Viterbo,,ITA.8.5_1
+ITA,Liguria,Genova,,Liguria,Genova,,ITA.9.1_1
+ITA,Liguria,Imperia,,Liguria,Imperia,,ITA.9.2_1
+ITA,Liguria,La Spezia,,Liguria,La Spezia,,ITA.9.3_1
+ITA,Liguria,Savona,,Liguria,Savona,,ITA.9.4_1
+ITA,Lombardia,Bergamo,,Lombardia,Bergamo,,ITA.10.1_1
+ITA,Lombardia,Brescia,,Lombardia,Brescia,,ITA.10.2_1
+ITA,Lombardia,Como,,Lombardia,Como,,ITA.10.3_1
+ITA,Lombardia,Cremona,,Lombardia,Cremona,,ITA.10.4_1
+ITA,Lombardia,Lecco,,Lombardia,Lecco,,ITA.10.5_1
+ITA,Lombardia,Lodi,,Lombardia,Lodi,,ITA.10.6_1
+ITA,Lombardia,Mantova,,Lombardia,Mantua,,ITA.10.7_1
+ITA,Lombardia,Milano,,Lombardia,Milano,,ITA.10.8_1
+ITA,Lombardia,Monza e della Brianza,,Lombardia,Monza and Brianza,,ITA.10.9_1
+ITA,Lombardia,Pavia,,Lombardia,Pavia,,ITA.10.10_1
+ITA,Lombardia,Sondrio,,Lombardia,Sondrio,,ITA.10.11_1
+ITA,Lombardia,Varese,,Lombardia,Varese,,ITA.10.12_1
+ITA,Marche,Ancona,,Marche,Ancona,,ITA.11.1_1
+ITA,Marche,Ascoli Piceno,,Marche,Ascoli Piceno,,ITA.11.2_1
+ITA,Marche,Fermo,,Marche,Fermo,,ITA.11.3_1
+ITA,Marche,Macerata,,Marche,Macerata,,ITA.11.4_1
+ITA,Marche,Pesaro e Urbino,,Marche,Pesaro E Urbino,,ITA.11.5_1
+ITA,Molise,Campobasso,,Molise,Campobasso,,ITA.12.1_1
+ITA,Molise,Isernia,,Molise,Isernia,,ITA.12.2_1
+ITA,Piemonte,Alessandria,,Piemonte,Alessandria,,ITA.13.1_1
+ITA,Piemonte,Asti,,Piemonte,Asti,,ITA.13.2_1
+ITA,Piemonte,Biella,,Piemonte,Biella,,ITA.13.3_1
+ITA,Piemonte,Cuneo,,Piemonte,Cuneo,,ITA.13.4_1
+ITA,Piemonte,Novara,,Piemonte,Novara,,ITA.13.5_1
+ITA,Piemonte,Torino,,Piemonte,Torino,,ITA.13.6_1
+ITA,Piemonte,Verbano-Cusio-Ossola,,Piemonte,Verbano-Cusio-Ossola,,ITA.13.7_1
+ITA,Piemonte,Vercelli,,Piemonte,Vercelli,,ITA.13.8_1
+ITA,Sardegna,Cagliari,,Sardegna,Cagliari,,ITA.14.1_1
+ITA,Sardegna,Nuoro,,Sardegna,Nuoro,,ITA.14.4_1:ITA.14.5_1
+ITA,Sardegna,Oristano,,Sardegna,Oristano,,ITA.14.7_1
+ITA,Sardegna,Sassari,,Sardegna,Sassari,,ITA.14.6_1:ITA.14.8_1
+ITA,Sardegna,Sud Sardegna,,Sardegna,Sud Sardegna,,ITA.14.2_1:ITA.14.3_1
+ITA,Sicilia,Agrigento,,Sicily,Agrigento,,ITA.15.1_1
+ITA,Sicilia,Caltanissetta,,Sicily,Caltanissetta,,ITA.15.2_1
+ITA,Sicilia,Catania,,Sicily,Catania,,ITA.15.3_1
+ITA,Sicilia,Enna,,Sicily,Enna,,ITA.15.4_1
+ITA,Sicilia,Messina,,Sicily,Messina,,ITA.15.5_1
+ITA,Sicilia,Palermo,,Sicily,Palermo,,ITA.15.6_1
+ITA,Sicilia,Ragusa,,Sicily,Ragusa,,ITA.15.7_1
+ITA,Sicilia,Siracusa,,Sicily,Syracuse,,ITA.15.8_1
+ITA,Sicilia,Trapani,,Sicily,Trapani,,ITA.15.9_1
+ITA,Toscana,Arezzo,,Toscana,Arezzo,,ITA.16.1_1
+ITA,Toscana,Firenze,,Toscana,Florence,,ITA.16.2_1
+ITA,Toscana,Grosseto,,Toscana,Grosseto,,ITA.16.3_1
+ITA,Toscana,Livorno,,Toscana,Livorno,,ITA.16.4_1
+ITA,Toscana,Lucca,,Toscana,Lucca,,ITA.16.5_1
+ITA,Toscana,Massa Carrara,,Toscana,Massa Carrara,,ITA.16.6_1
+ITA,Toscana,Pisa,,Toscana,Pisa,,ITA.16.7_1
+ITA,Toscana,Pistoia,,Toscana,Pistoia,,ITA.16.8_1
+ITA,Toscana,Prato,,Toscana,Prato,,ITA.16.9_1
+ITA,Toscana,Siena,,Toscana,Siena,,ITA.16.10_1
+ITA,P.A. Bolzano,Bolzano,,Bolzano,Bolzano,,ITA.17.1_1
+ITA,P.A. Trento,Trento,,Trento,Trento,,ITA.17.2_1
+ITA,Umbria,Perugia,,Umbria,Perugia,,ITA.18.1_1
+ITA,Umbria,Terni,,Umbria,Terni,,ITA.18.2_1
+ITA,Valle d'Aosta,Aosta,,Valle d'Aosta,Aosta,,ITA.19.1_1
+ITA,Veneto,Belluno,,Veneto,Belluno,,ITA.20.1_1
+ITA,Veneto,Padova,,Veneto,Padua,,ITA.20.2_1
+ITA,Veneto,Rovigo,,Veneto,Rovigo,,ITA.20.3_1
+ITA,Veneto,Treviso,,Veneto,Treviso,,ITA.20.4_1
+ITA,Veneto,Venezia,,Veneto,Venezia,,ITA.20.5_1
+ITA,Veneto,Verona,,Veneto,Verona,,ITA.20.6_1
+ITA,Veneto,Vicenza,,Veneto,Vicenza,,ITA.20.7_1

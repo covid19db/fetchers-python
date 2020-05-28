@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 
 class IndiaCOVINDFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'IND_COVIND'
 
     def fetch_cases(self):
         url = 'https://api.covid19india.org/csv/latest/case_time_series.csv'
@@ -35,9 +36,9 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                            usecols=[0, 1],
                            parse_dates=[0],
                            date_parser=lambda d: pd.to_datetime(d[:10], format='%d/%m/%Y')) \
-                 .dropna() \
-                 .groupby(level=0) \
-                 .last()
+            .dropna() \
+            .groupby(level=0) \
+            .last()
 
     def fetch_state_cases(self):
         url = 'https://api.covid19india.org/csv/latest/state_wise_daily.csv'
@@ -48,10 +49,10 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                            usecols=[c for c in range(40) if c != 2],
                            parse_dates=[0],
                            date_parser=lambda d: pd.to_datetime(d, format='%d-%b-%y')) \
-                 .rename(columns=iso_3166_2_in) \
-                 .unstack(level=1) \
-                 .apply(pd.Series.cumsum) \
-                 .stack(level=0)
+            .rename(columns=iso_3166_2_in) \
+            .unstack(level=1) \
+            .apply(pd.Series.cumsum) \
+            .stack(level=0)
 
     def fetch_state_tested(self):
         url = 'https://api.covid19india.org/csv/latest/statewise_tested_numbers_data.csv'
@@ -62,9 +63,9 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                            usecols=[0, 1, 2],
                            parse_dates=[0],
                            date_parser=lambda d: pd.to_datetime(d, format='%d/%m/%Y')) \
-                 .dropna() \
-                 .groupby(level=[0, 1]) \
-                 .last()
+            .dropna() \
+            .groupby(level=[0, 1]) \
+            .last()
 
     def run(self):
         logger.debug('Fetching country-level information')
@@ -81,7 +82,7 @@ class IndiaCOVINDFetcher(AbstractFetcher):
             samples_tested = int(record[3]) if pd.notna(record[3]) else None
 
             upsert_obj = {
-                'source': 'IND_COVIND',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'India',
                 'countrycode': 'IND',
@@ -115,7 +116,7 @@ class IndiaCOVINDFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'IND_COVIND',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'India',
                 'countrycode': 'IND',

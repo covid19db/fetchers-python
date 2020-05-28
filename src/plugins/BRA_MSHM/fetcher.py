@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 class BRA_MSHMFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'BRA_MSHM'
 
     def province_confirmed_fetch(self):
 
@@ -72,7 +73,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'BRA_MSHM',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English
@@ -125,7 +126,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
 
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'BRA_MSHM',
+                    'source': self.SOURCE,
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
                     # country is mandatory and should be in English

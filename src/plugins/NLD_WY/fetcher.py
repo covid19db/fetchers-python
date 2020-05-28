@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 class NLD_WYFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'NLD_WY'
 
     def country_fetch(self):
 
@@ -71,7 +72,7 @@ class NLD_WYFetcher(AbstractFetcher):
 
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'NLD_WY',
+                    'source': self.SOURCE,
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
                     # country is mandatory and should be in English

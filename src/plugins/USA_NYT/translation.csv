@@ -1,0 +1,2991 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+USA,New York,New York City,,New York,New York City,,USA.33.3_1:USA.33.24_1:USA.33.32_1:USA.33.42_1:USA.33.44_1
+USA,Guam,,,Guam,,,GUM
+USA,Northern Mariana Islands,,,Northern Mariana Islands,,,MNP
+USA,Puerto Rico,,,Puerto Rico,,,PRI
+USA,Virgin Islands,,,Virgin Islands,,,VIR
+USA,Alaska,Ketchikan Gateway Borough,,Alaska,Ketchikan Gateway,,USA.2.12_1
+USA,Alaska,Petersburg Borough,,Alaska,Wrangell-Petersburg,,USA.2.25_1
+USA,Alaska,Prince of Wales-Hyder Census Area,,Alaska,Prince of Wales-Outer Ketchi,,USA.2.19_1
+USA,Virginia,Bedford,,Virginia,Bedford,,USA.47.11_1:USA.47.12_1
+USA,Alabama,,,Alabama,,,USA.1_1
+USA,Alaska,,,Alaska,,,USA.2_1
+USA,Arizona,,,Arizona,,,USA.3_1
+USA,Arkansas,,,Arkansas,,,USA.4_1
+USA,California,,,California,,,USA.5_1
+USA,Colorado,,,Colorado,,,USA.6_1
+USA,Connecticut,,,Connecticut,,,USA.7_1
+USA,Delaware,,,Delaware,,,USA.8_1
+USA,District of Columbia,,,District of Columbia,,,USA.9_1
+USA,Florida,,,Florida,,,USA.10_1
+USA,Georgia,,,Georgia,,,USA.11_1
+USA,Hawaii,,,Hawaii,,,USA.12_1
+USA,Idaho,,,Idaho,,,USA.13_1
+USA,Illinois,,,Illinois,,,USA.14_1
+USA,Indiana,,,Indiana,,,USA.15_1
+USA,Iowa,,,Iowa,,,USA.16_1
+USA,Kansas,,,Kansas,,,USA.17_1
+USA,Kentucky,,,Kentucky,,,USA.18_1
+USA,Louisiana,,,Louisiana,,,USA.19_1
+USA,Maine,,,Maine,,,USA.20_1
+USA,Maryland,,,Maryland,,,USA.21_1
+USA,Massachusetts,,,Massachusetts,,,USA.22_1
+USA,Michigan,,,Michigan,,,USA.23_1
+USA,Minnesota,,,Minnesota,,,USA.24_1
+USA,Mississippi,,,Mississippi,,,USA.25_1
+USA,Missouri,,,Missouri,,,USA.26_1
+USA,Montana,,,Montana,,,USA.27_1
+USA,Nebraska,,,Nebraska,,,USA.28_1
+USA,Nevada,,,Nevada,,,USA.29_1
+USA,New Hampshire,,,New Hampshire,,,USA.30_1
+USA,New Jersey,,,New Jersey,,,USA.31_1
+USA,New Mexico,,,New Mexico,,,USA.32_1
+USA,New York,,,New York,,,USA.33_1
+USA,North Carolina,,,North Carolina,,,USA.34_1
+USA,North Dakota,,,North Dakota,,,USA.35_1
+USA,Ohio,,,Ohio,,,USA.36_1
+USA,Oklahoma,,,Oklahoma,,,USA.37_1
+USA,Oregon,,,Oregon,,,USA.38_1
+USA,Pennsylvania,,,Pennsylvania,,,USA.39_1
+USA,Rhode Island,,,Rhode Island,,,USA.40_1
+USA,South Carolina,,,South Carolina,,,USA.41_1
+USA,South Dakota,,,South Dakota,,,USA.42_1
+USA,Tennessee,,,Tennessee,,,USA.43_1
+USA,Texas,,,Texas,,,USA.44_1
+USA,Utah,,,Utah,,,USA.45_1
+USA,Vermont,,,Vermont,,,USA.46_1
+USA,Virginia,,,Virginia,,,USA.47_1
+USA,Washington,,,Washington,,,USA.48_1
+USA,West Virginia,,,West Virginia,,,USA.49_1
+USA,Wisconsin,,,Wisconsin,,,USA.50_1
+USA,Wyoming,,,Wyoming,,,USA.51_1
+USA,Alabama,Autauga,,Alabama,Autauga,,USA.1.1_1
+USA,Alabama,Baldwin,,Alabama,Baldwin,,USA.1.2_1
+USA,Alabama,Barbour,,Alabama,Barbour,,USA.1.3_1
+USA,Alabama,Bibb,,Alabama,Bibb,,USA.1.4_1
+USA,Alabama,Blount,,Alabama,Blount,,USA.1.5_1
+USA,Alabama,Bullock,,Alabama,Bullock,,USA.1.6_1
+USA,Alabama,Butler,,Alabama,Butler,,USA.1.7_1
+USA,Alabama,Calhoun,,Alabama,Calhoun,,USA.1.8_1
+USA,Alabama,Chambers,,Alabama,Chambers,,USA.1.9_1
+USA,Alabama,Cherokee,,Alabama,Cherokee,,USA.1.10_1
+USA,Alabama,Chilton,,Alabama,Chilton,,USA.1.11_1
+USA,Alabama,Choctaw,,Alabama,Choctaw,,USA.1.12_1
+USA,Alabama,Clarke,,Alabama,Clarke,,USA.1.13_1
+USA,Alabama,Clay,,Alabama,Clay,,USA.1.14_1
+USA,Alabama,Cleburne,,Alabama,Cleburne,,USA.1.15_1
+USA,Alabama,Coffee,,Alabama,Coffee,,USA.1.16_1
+USA,Alabama,Colbert,,Alabama,Colbert,,USA.1.17_1
+USA,Alabama,Conecuh,,Alabama,Conecuh,,USA.1.18_1
+USA,Alabama,Coosa,,Alabama,Coosa,,USA.1.19_1
+USA,Alabama,Covington,,Alabama,Covington,,USA.1.20_1
+USA,Alabama,Crenshaw,,Alabama,Crenshaw,,USA.1.21_1
+USA,Alabama,Cullman,,Alabama,Cullman,,USA.1.22_1
+USA,Alabama,Dale,,Alabama,Dale,,USA.1.23_1
+USA,Alabama,Dallas,,Alabama,Dallas,,USA.1.24_1
+USA,Alabama,DeKalb,,Alabama,De Kalb,,USA.1.25_1
+USA,Alabama,Elmore,,Alabama,Elmore,,USA.1.26_1
+USA,Alabama,Escambia,,Alabama,Escambia,,USA.1.27_1
+USA,Alabama,Etowah,,Alabama,Etowah,,USA.1.28_1
+USA,Alabama,Fayette,,Alabama,Fayette,,USA.1.29_1
+USA,Alabama,Franklin,,Alabama,Franklin,,USA.1.30_1
+USA,Alabama,Geneva,,Alabama,Geneva,,USA.1.31_1
+USA,Alabama,Greene,,Alabama,Greene,,USA.1.32_1
+USA,Alabama,Hale,,Alabama,Hale,,USA.1.33_1
+USA,Alabama,Henry,,Alabama,Henry,,USA.1.34_1
+USA,Alabama,Houston,,Alabama,Houston,,USA.1.35_1
+USA,Alabama,Jackson,,Alabama,Jackson,,USA.1.36_1
+USA,Alabama,Jefferson,,Alabama,Jefferson,,USA.1.37_1
+USA,Alabama,Lamar,,Alabama,Lamar,,USA.1.38_1
+USA,Alabama,Lauderdale,,Alabama,Lauderdale,,USA.1.39_1
+USA,Alabama,Lawrence,,Alabama,Lawrence,,USA.1.40_1
+USA,Alabama,Lee,,Alabama,Lee,,USA.1.41_1
+USA,Alabama,Limestone,,Alabama,Limestone,,USA.1.42_1
+USA,Alabama,Lowndes,,Alabama,Lowndes,,USA.1.43_1
+USA,Alabama,Macon,,Alabama,Macon,,USA.1.44_1
+USA,Alabama,Madison,,Alabama,Madison,,USA.1.45_1
+USA,Alabama,Marengo,,Alabama,Marengo,,USA.1.46_1
+USA,Alabama,Marion,,Alabama,Marion,,USA.1.47_1
+USA,Alabama,Marshall,,Alabama,Marshall,,USA.1.48_1
+USA,Alabama,Mobile,,Alabama,Mobile,,USA.1.49_1
+USA,Alabama,Monroe,,Alabama,Monroe,,USA.1.50_1
+USA,Alabama,Montgomery,,Alabama,Montgomery,,USA.1.51_1
+USA,Alabama,Morgan,,Alabama,Morgan,,USA.1.52_1
+USA,Alabama,Perry,,Alabama,Perry,,USA.1.53_1
+USA,Alabama,Pickens,,Alabama,Pickens,,USA.1.54_1
+USA,Alabama,Pike,,Alabama,Pike,,USA.1.55_1
+USA,Alabama,Randolph,,Alabama,Randolph,,USA.1.56_1
+USA,Alabama,Russell,,Alabama,Russell,,USA.1.57_1
+USA,Alabama,Shelby,,Alabama,Shelby,,USA.1.59_1
+USA,Alabama,St. Clair,,Alabama,Saint Clair,,USA.1.58_1
+USA,Alabama,Sumter,,Alabama,Sumter,,USA.1.60_1
+USA,Alabama,Talladega,,Alabama,Talladega,,USA.1.61_1
+USA,Alabama,Tallapoosa,,Alabama,Tallapoosa,,USA.1.62_1
+USA,Alabama,Tuscaloosa,,Alabama,Tuscaloosa,,USA.1.63_1
+USA,Alabama,Walker,,Alabama,Walker,,USA.1.64_1
+USA,Alabama,Washington,,Alabama,Washington,,USA.1.65_1
+USA,Alabama,Wilcox,,Alabama,Wilcox,,USA.1.66_1
+USA,Alabama,Winston,,Alabama,Winston,,USA.1.67_1
+USA,Alaska,Anchorage,,Alaska,Anchorage,,USA.2.3_1
+USA,Alaska,Bethel Census Area,,Alaska,Bethel,,USA.2.4_1
+USA,Alaska,Fairbanks North Star Borough,,Alaska,Fairbanks North Star,,USA.2.8_1
+USA,Alaska,Juneau City and Borough,,Alaska,Juneau,,USA.2.10_1
+USA,Alaska,Kenai Peninsula Borough,,Alaska,Kenai Peninsula,,USA.2.11_1
+USA,Alaska,Kodiak Island Borough,,Alaska,Kodiak Island,,USA.2.13_1
+USA,Alaska,Matanuska-Susitna Borough,,Alaska,Matanuska-Susitna,,USA.2.15_1
+USA,Alaska,Nome Census Area,,Alaska,Nome,,USA.2.16_1
+USA,Alaska,Northwest Arctic Borough,,Alaska,Northwest Arctic,,USA.2.18_1
+USA,Alaska,Sitka City and Borough,,Alaska,Sitka,,USA.2.20_1
+USA,Alaska,Southeast Fairbanks Census Area,,Alaska,Southeast Fairbanks,,USA.2.22_1
+USA,Alaska,Valdez-Cordova Census Area,,Alaska,Valdez-Cordova,,USA.2.23_1
+USA,Alaska,Yukon-Koyukuk Census Area,,Alaska,Yukon-Koyukuk,,USA.2.26_1
+USA,Arizona,Apache,,Arizona,Apache,,USA.3.1_1
+USA,Arizona,Cochise,,Arizona,Cochise,,USA.3.2_1
+USA,Arizona,Coconino,,Arizona,Coconino,,USA.3.3_1
+USA,Arizona,Gila,,Arizona,Gila,,USA.3.4_1
+USA,Arizona,Graham,,Arizona,Graham,,USA.3.5_1
+USA,Arizona,Greenlee,,Arizona,Greenlee,,USA.3.6_1
+USA,Arizona,La Paz,,Arizona,La Paz,,USA.3.7_1
+USA,Arizona,Maricopa,,Arizona,Maricopa,,USA.3.8_1
+USA,Arizona,Mohave,,Arizona,Mohave,,USA.3.9_1
+USA,Arizona,Navajo,,Arizona,Navajo,,USA.3.10_1
+USA,Arizona,Pima,,Arizona,Pima,,USA.3.11_1
+USA,Arizona,Pinal,,Arizona,Pinal,,USA.3.12_1
+USA,Arizona,Santa Cruz,,Arizona,Santa Cruz,,USA.3.13_1
+USA,Arizona,Yavapai,,Arizona,Yavapai,,USA.3.14_1
+USA,Arizona,Yuma,,Arizona,Yuma,,USA.3.15_1
+USA,Arkansas,Arkansas,,Arkansas,Arkansas,,USA.4.1_1
+USA,Arkansas,Ashley,,Arkansas,Ashley,,USA.4.2_1
+USA,Arkansas,Baxter,,Arkansas,Baxter,,USA.4.3_1
+USA,Arkansas,Benton,,Arkansas,Benton,,USA.4.4_1
+USA,Arkansas,Boone,,Arkansas,Boone,,USA.4.5_1
+USA,Arkansas,Bradley,,Arkansas,Bradley,,USA.4.6_1
+USA,Arkansas,Carroll,,Arkansas,Carroll,,USA.4.8_1
+USA,Arkansas,Chicot,,Arkansas,Chicot,,USA.4.9_1
+USA,Arkansas,Clark,,Arkansas,Clark,,USA.4.10_1
+USA,Arkansas,Clay,,Arkansas,Clay,,USA.4.11_1
+USA,Arkansas,Cleburne,,Arkansas,Cleburne,,USA.4.12_1
+USA,Arkansas,Cleveland,,Arkansas,Cleveland,,USA.4.13_1
+USA,Arkansas,Columbia,,Arkansas,Columbia,,USA.4.14_1
+USA,Arkansas,Conway,,Arkansas,Conway,,USA.4.15_1
+USA,Arkansas,Craighead,,Arkansas,Craighead,,USA.4.16_1
+USA,Arkansas,Crawford,,Arkansas,Crawford,,USA.4.17_1
+USA,Arkansas,Crittenden,,Arkansas,Crittenden,,USA.4.18_1
+USA,Arkansas,Cross,,Arkansas,Cross,,USA.4.19_1
+USA,Arkansas,Dallas,,Arkansas,Dallas,,USA.4.20_1
+USA,Arkansas,Desha,,Arkansas,Desha,,USA.4.21_1
+USA,Arkansas,Drew,,Arkansas,Drew,,USA.4.22_1
+USA,Arkansas,Faulkner,,Arkansas,Faulkner,,USA.4.23_1
+USA,Arkansas,Franklin,,Arkansas,Franklin,,USA.4.24_1
+USA,Arkansas,Fulton,,Arkansas,Fulton,,USA.4.25_1
+USA,Arkansas,Garland,,Arkansas,Garland,,USA.4.26_1
+USA,Arkansas,Grant,,Arkansas,Grant,,USA.4.27_1
+USA,Arkansas,Greene,,Arkansas,Greene,,USA.4.28_1
+USA,Arkansas,Hempstead,,Arkansas,Hempstead,,USA.4.29_1
+USA,Arkansas,Hot Spring,,Arkansas,Hot Spring,,USA.4.30_1
+USA,Arkansas,Howard,,Arkansas,Howard,,USA.4.31_1
+USA,Arkansas,Independence,,Arkansas,Independence,,USA.4.32_1
+USA,Arkansas,Izard,,Arkansas,Izard,,USA.4.33_1
+USA,Arkansas,Jackson,,Arkansas,Jackson,,USA.4.34_1
+USA,Arkansas,Jefferson,,Arkansas,Jefferson,,USA.4.35_1
+USA,Arkansas,Johnson,,Arkansas,Johnson,,USA.4.36_1
+USA,Arkansas,Lafayette,,Arkansas,Lafayette,,USA.4.37_1
+USA,Arkansas,Lawrence,,Arkansas,Lawrence,,USA.4.38_1
+USA,Arkansas,Lee,,Arkansas,Lee,,USA.4.39_1
+USA,Arkansas,Lincoln,,Arkansas,Lincoln,,USA.4.40_1
+USA,Arkansas,Little River,,Arkansas,Little River,,USA.4.41_1
+USA,Arkansas,Logan,,Arkansas,Logan,,USA.4.42_1
+USA,Arkansas,Lonoke,,Arkansas,Lonoke,,USA.4.43_1
+USA,Arkansas,Madison,,Arkansas,Madison,,USA.4.44_1
+USA,Arkansas,Marion,,Arkansas,Marion,,USA.4.45_1
+USA,Arkansas,Miller,,Arkansas,Miller,,USA.4.46_1
+USA,Arkansas,Mississippi,,Arkansas,Mississippi,,USA.4.47_1
+USA,Arkansas,Monroe,,Arkansas,Monroe,,USA.4.48_1
+USA,Arkansas,Montgomery,,Arkansas,Montgomery,,USA.4.49_1
+USA,Arkansas,Nevada,,Arkansas,Nevada,,USA.4.50_1
+USA,Arkansas,Newton,,Arkansas,Newton,,USA.4.51_1
+USA,Arkansas,Ouachita,,Arkansas,Ouachita,,USA.4.52_1
+USA,Arkansas,Perry,,Arkansas,Perry,,USA.4.53_1
+USA,Arkansas,Phillips,,Arkansas,Phillips,,USA.4.54_1
+USA,Arkansas,Pike,,Arkansas,Pike,,USA.4.55_1
+USA,Arkansas,Poinsett,,Arkansas,Poinsett,,USA.4.56_1
+USA,Arkansas,Polk,,Arkansas,Polk,,USA.4.57_1
+USA,Arkansas,Pope,,Arkansas,Pope,,USA.4.58_1
+USA,Arkansas,Prairie,,Arkansas,Prairie,,USA.4.59_1
+USA,Arkansas,Pulaski,,Arkansas,Pulaski,,USA.4.60_1
+USA,Arkansas,Randolph,,Arkansas,Randolph,,USA.4.61_1
+USA,Arkansas,Saline,,Arkansas,Saline,,USA.4.63_1
+USA,Arkansas,Scott,,Arkansas,Scott,,USA.4.64_1
+USA,Arkansas,Searcy,,Arkansas,Searcy,,USA.4.65_1
+USA,Arkansas,Sebastian,,Arkansas,Sebastian,,USA.4.66_1
+USA,Arkansas,Sevier,,Arkansas,Sevier,,USA.4.67_1
+USA,Arkansas,Sharp,,Arkansas,Sharp,,USA.4.68_1
+USA,Arkansas,St. Francis,,Arkansas,Saint Francis,,USA.4.62_1
+USA,Arkansas,Stone,,Arkansas,Stone,,USA.4.69_1
+USA,Arkansas,Union,,Arkansas,Union,,USA.4.70_1
+USA,Arkansas,Van Buren,,Arkansas,Van Buren,,USA.4.71_1
+USA,Arkansas,Washington,,Arkansas,Washington,,USA.4.72_1
+USA,Arkansas,White,,Arkansas,White,,USA.4.73_1
+USA,Arkansas,Woodruff,,Arkansas,Woodruff,,USA.4.74_1
+USA,Arkansas,Yell,,Arkansas,Yell,,USA.4.75_1
+USA,California,Alameda,,California,Alameda,,USA.5.1_1
+USA,California,Alpine,,California,Alpine,,USA.5.2_1
+USA,California,Amador,,California,Amador,,USA.5.3_1
+USA,California,Butte,,California,Butte,,USA.5.4_1
+USA,California,Calaveras,,California,Calaveras,,USA.5.5_1
+USA,California,Colusa,,California,Colusa,,USA.5.6_1
+USA,California,Contra Costa,,California,Contra Costa,,USA.5.7_1
+USA,California,Del Norte,,California,Del Norte,,USA.5.8_1
+USA,California,El Dorado,,California,El Dorado,,USA.5.9_1
+USA,California,Fresno,,California,Fresno,,USA.5.10_1
+USA,California,Glenn,,California,Glenn,,USA.5.11_1
+USA,California,Humboldt,,California,Humboldt,,USA.5.12_1
+USA,California,Imperial,,California,Imperial,,USA.5.13_1
+USA,California,Inyo,,California,Inyo,,USA.5.14_1
+USA,California,Kern,,California,Kern,,USA.5.15_1
+USA,California,Kings,,California,Kings,,USA.5.16_1
+USA,California,Lake,,California,Lake,,USA.5.17_1
+USA,California,Lassen,,California,Lassen,,USA.5.18_1
+USA,California,Los Angeles,,California,Los Angeles,,USA.5.19_1
+USA,California,Madera,,California,Madera,,USA.5.20_1
+USA,California,Marin,,California,Marin,,USA.5.21_1
+USA,California,Mariposa,,California,Mariposa,,USA.5.22_1
+USA,California,Mendocino,,California,Mendocino,,USA.5.23_1
+USA,California,Merced,,California,Merced,,USA.5.24_1
+USA,California,Mono,,California,Mono,,USA.5.26_1
+USA,California,Monterey,,California,Monterey,,USA.5.27_1
+USA,California,Napa,,California,Napa,,USA.5.28_1
+USA,California,Nevada,,California,Nevada,,USA.5.29_1
+USA,California,Orange,,California,Orange,,USA.5.30_1
+USA,California,Placer,,California,Placer,,USA.5.31_1
+USA,California,Plumas,,California,Plumas,,USA.5.32_1
+USA,California,Riverside,,California,Riverside,,USA.5.33_1
+USA,California,Sacramento,,California,Sacramento,,USA.5.34_1
+USA,California,San Benito,,California,San Benito,,USA.5.35_1
+USA,California,San Bernardino,,California,San Bernardino,,USA.5.36_1
+USA,California,San Diego,,California,San Diego,,USA.5.37_1
+USA,California,San Francisco,,California,San Francisco,,USA.5.38_1
+USA,California,San Joaquin,,California,San Joaquin,,USA.5.39_1
+USA,California,San Luis Obispo,,California,San Luis Obispo,,USA.5.40_1
+USA,California,San Mateo,,California,San Mateo,,USA.5.41_1
+USA,California,Santa Barbara,,California,Santa Barbara,,USA.5.42_1
+USA,California,Santa Clara,,California,Santa Clara,,USA.5.43_1
+USA,California,Santa Cruz,,California,Santa Cruz,,USA.5.44_1
+USA,California,Shasta,,California,Shasta,,USA.5.45_1
+USA,California,Sierra,,California,Sierra,,USA.5.46_1
+USA,California,Siskiyou,,California,Siskiyou,,USA.5.47_1
+USA,California,Solano,,California,Solano,,USA.5.48_1
+USA,California,Sonoma,,California,Sonoma,,USA.5.49_1
+USA,California,Stanislaus,,California,Stanislaus,,USA.5.50_1
+USA,California,Sutter,,California,Sutter,,USA.5.51_1
+USA,California,Tehama,,California,Tehama,,USA.5.52_1
+USA,California,Trinity,,California,Trinity,,USA.5.53_1
+USA,California,Tulare,,California,Tulare,,USA.5.54_1
+USA,California,Tuolumne,,California,Tuolumne,,USA.5.55_1
+USA,California,Ventura,,California,Ventura,,USA.5.56_1
+USA,California,Yolo,,California,Yolo,,USA.5.57_1
+USA,California,Yuba,,California,Yuba,,USA.5.58_1
+USA,Colorado,Adams,,Colorado,Adams,,USA.6.1_1
+USA,Colorado,Alamosa,,Colorado,Alamosa,,USA.6.2_1
+USA,Colorado,Arapahoe,,Colorado,Arapahoe,,USA.6.3_1
+USA,Colorado,Archuleta,,Colorado,Archuleta,,USA.6.4_1
+USA,Colorado,Baca,,Colorado,Baca,,USA.6.5_1
+USA,Colorado,Bent,,Colorado,Bent,,USA.6.6_1
+USA,Colorado,Boulder,,Colorado,Boulder,,USA.6.7_1
+USA,Colorado,Broomfield,,Colorado,Broomfield,,USA.6.8_1
+USA,Colorado,Chaffee,,Colorado,Chaffee,,USA.6.9_1
+USA,Colorado,Cheyenne,,Colorado,Cheyenne,,USA.6.10_1
+USA,Colorado,Clear Creek,,Colorado,Clear Creek,,USA.6.11_1
+USA,Colorado,Conejos,,Colorado,Conejos,,USA.6.12_1
+USA,Colorado,Costilla,,Colorado,Costilla,,USA.6.13_1
+USA,Colorado,Crowley,,Colorado,Crowley,,USA.6.14_1
+USA,Colorado,Custer,,Colorado,Custer,,USA.6.15_1
+USA,Colorado,Delta,,Colorado,Delta,,USA.6.16_1
+USA,Colorado,Denver,,Colorado,Denver,,USA.6.17_1
+USA,Colorado,Douglas,,Colorado,Douglas,,USA.6.19_1
+USA,Colorado,Eagle,,Colorado,Eagle,,USA.6.20_1
+USA,Colorado,El Paso,,Colorado,El Paso,,USA.6.21_1
+USA,Colorado,Elbert,,Colorado,Elbert,,USA.6.22_1
+USA,Colorado,Fremont,,Colorado,Fremont,,USA.6.23_1
+USA,Colorado,Garfield,,Colorado,Garfield,,USA.6.24_1
+USA,Colorado,Gilpin,,Colorado,Gilpin,,USA.6.25_1
+USA,Colorado,Grand,,Colorado,Grand,,USA.6.26_1
+USA,Colorado,Gunnison,,Colorado,Gunnison,,USA.6.27_1
+USA,Colorado,Hinsdale,,Colorado,Hinsdale,,USA.6.28_1
+USA,Colorado,Huerfano,,Colorado,Huerfano,,USA.6.29_1
+USA,Colorado,Jefferson,,Colorado,Jefferson,,USA.6.31_1
+USA,Colorado,Kit Carson,,Colorado,Kit Carson,,USA.6.33_1
+USA,Colorado,La Plata,,Colorado,La Plata,,USA.6.34_1
+USA,Colorado,Lake,,Colorado,Lake,,USA.6.35_1
+USA,Colorado,Larimer,,Colorado,Larimer,,USA.6.36_1
+USA,Colorado,Las Animas,,Colorado,Las Animas,,USA.6.37_1
+USA,Colorado,Lincoln,,Colorado,Lincoln,,USA.6.38_1
+USA,Colorado,Logan,,Colorado,Logan,,USA.6.39_1
+USA,Colorado,Mesa,,Colorado,Mesa,,USA.6.40_1
+USA,Colorado,Mineral,,Colorado,Mineral,,USA.6.41_1
+USA,Colorado,Moffat,,Colorado,Moffat,,USA.6.42_1
+USA,Colorado,Montezuma,,Colorado,Montezuma,,USA.6.43_1
+USA,Colorado,Montrose,,Colorado,Montrose,,USA.6.44_1
+USA,Colorado,Morgan,,Colorado,Morgan,,USA.6.45_1
+USA,Colorado,Otero,,Colorado,Otero,,USA.6.46_1
+USA,Colorado,Ouray,,Colorado,Ouray,,USA.6.47_1
+USA,Colorado,Park,,Colorado,Park,,USA.6.48_1
+USA,Colorado,Phillips,,Colorado,Phillips,,USA.6.49_1
+USA,Colorado,Pitkin,,Colorado,Pitkin,,USA.6.50_1
+USA,Colorado,Prowers,,Colorado,Prowers,,USA.6.51_1
+USA,Colorado,Pueblo,,Colorado,Pueblo,,USA.6.52_1
+USA,Colorado,Rio Blanco,,Colorado,Rio Blanco,,USA.6.53_1
+USA,Colorado,Rio Grande,,Colorado,Rio Grande,,USA.6.54_1
+USA,Colorado,Routt,,Colorado,Routt,,USA.6.55_1
+USA,Colorado,Saguache,,Colorado,Saguache,,USA.6.56_1
+USA,Colorado,San Juan,,Colorado,San Juan,,USA.6.57_1
+USA,Colorado,San Miguel,,Colorado,San Miguel,,USA.6.58_1
+USA,Colorado,Summit,,Colorado,Summit,,USA.6.60_1
+USA,Colorado,Teller,,Colorado,Teller,,USA.6.61_1
+USA,Colorado,Washington,,Colorado,Washington,,USA.6.62_1
+USA,Colorado,Weld,,Colorado,Weld,,USA.6.63_1
+USA,Colorado,Yuma,,Colorado,Yuma,,USA.6.64_1
+USA,Connecticut,Fairfield,,Connecticut,Fairfield,,USA.7.1_1
+USA,Connecticut,Hartford,,Connecticut,Hartford,,USA.7.2_1
+USA,Connecticut,Litchfield,,Connecticut,Litchfield,,USA.7.3_1
+USA,Connecticut,Middlesex,,Connecticut,Middlesex,,USA.7.4_1
+USA,Connecticut,New Haven,,Connecticut,New Haven,,USA.7.5_1
+USA,Connecticut,New London,,Connecticut,New London,,USA.7.6_1
+USA,Connecticut,Tolland,,Connecticut,Tolland,,USA.7.7_1
+USA,Connecticut,Windham,,Connecticut,Windham,,USA.7.8_1
+USA,Delaware,Kent,,Delaware,Kent,,USA.8.1_1
+USA,Delaware,New Castle,,Delaware,New Castle,,USA.8.2_1
+USA,Delaware,Sussex,,Delaware,Sussex,,USA.8.3_1
+USA,District of Columbia,District of Columbia,,District of Columbia,District of Columbia,,USA.9.1_1
+USA,Florida,Alachua,,Florida,Alachua,,USA.10.1_1
+USA,Florida,Baker,,Florida,Baker,,USA.10.2_1
+USA,Florida,Bay,,Florida,Bay,,USA.10.3_1
+USA,Florida,Bradford,,Florida,Bradford,,USA.10.4_1
+USA,Florida,Brevard,,Florida,Brevard,,USA.10.5_1
+USA,Florida,Broward,,Florida,Broward,,USA.10.6_1
+USA,Florida,Calhoun,,Florida,Calhoun,,USA.10.7_1
+USA,Florida,Charlotte,,Florida,Charlotte,,USA.10.8_1
+USA,Florida,Citrus,,Florida,Citrus,,USA.10.9_1
+USA,Florida,Clay,,Florida,Clay,,USA.10.10_1
+USA,Florida,Collier,,Florida,Collier,,USA.10.11_1
+USA,Florida,Columbia,,Florida,Columbia,,USA.10.12_1
+USA,Florida,DeSoto,,Florida,Desoto,,USA.10.13_1
+USA,Florida,Dixie,,Florida,Dixie,,USA.10.14_1
+USA,Florida,Duval,,Florida,Duval,,USA.10.15_1
+USA,Florida,Escambia,,Florida,Escambia,,USA.10.16_1
+USA,Florida,Flagler,,Florida,Flagler,,USA.10.17_1
+USA,Florida,Franklin,,Florida,Franklin,,USA.10.18_1
+USA,Florida,Gadsden,,Florida,Gadsden,,USA.10.19_1
+USA,Florida,Gilchrist,,Florida,Gilchrist,,USA.10.20_1
+USA,Florida,Glades,,Florida,Glades,,USA.10.21_1
+USA,Florida,Gulf,,Florida,Gulf,,USA.10.22_1
+USA,Florida,Hamilton,,Florida,Hamilton,,USA.10.23_1
+USA,Florida,Hardee,,Florida,Hardee,,USA.10.24_1
+USA,Florida,Hendry,,Florida,Hendry,,USA.10.25_1
+USA,Florida,Hernando,,Florida,Hernando,,USA.10.26_1
+USA,Florida,Highlands,,Florida,Highlands,,USA.10.27_1
+USA,Florida,Hillsborough,,Florida,Hillsborough,,USA.10.28_1
+USA,Florida,Holmes,,Florida,Holmes,,USA.10.29_1
+USA,Florida,Indian River,,Florida,Indian River,,USA.10.30_1
+USA,Florida,Jackson,,Florida,Jackson,,USA.10.31_1
+USA,Florida,Jefferson,,Florida,Jefferson,,USA.10.32_1
+USA,Florida,Lafayette,,Florida,Lafayette,,USA.10.33_1
+USA,Florida,Lake,,Florida,Lake,,USA.10.34_1
+USA,Florida,Lee,,Florida,Lee,,USA.10.35_1
+USA,Florida,Leon,,Florida,Leon,,USA.10.36_1
+USA,Florida,Levy,,Florida,Levy,,USA.10.37_1
+USA,Florida,Liberty,,Florida,Liberty,,USA.10.38_1
+USA,Florida,Madison,,Florida,Madison,,USA.10.39_1
+USA,Florida,Manatee,,Florida,Manatee,,USA.10.40_1
+USA,Florida,Marion,,Florida,Marion,,USA.10.41_1
+USA,Florida,Martin,,Florida,Martin,,USA.10.42_1
+USA,Florida,Miami-Dade,,Florida,Miami-Dade,,USA.10.43_1
+USA,Florida,Monroe,,Florida,Monroe,,USA.10.44_1
+USA,Florida,Nassau,,Florida,Nassau,,USA.10.45_1
+USA,Florida,Okaloosa,,Florida,Okaloosa,,USA.10.46_1
+USA,Florida,Okeechobee,,Florida,Okeechobee,,USA.10.47_1
+USA,Florida,Orange,,Florida,Orange,,USA.10.48_1
+USA,Florida,Osceola,,Florida,Osceola,,USA.10.49_1
+USA,Florida,Palm Beach,,Florida,Palm Beach,,USA.10.50_1
+USA,Florida,Pasco,,Florida,Pasco,,USA.10.51_1
+USA,Florida,Pinellas,,Florida,Pinellas,,USA.10.52_1
+USA,Florida,Polk,,Florida,Polk,,USA.10.53_1
+USA,Florida,Putnam,,Florida,Putnam,,USA.10.54_1
+USA,Florida,Santa Rosa,,Florida,Santa Rosa,,USA.10.57_1
+USA,Florida,Sarasota,,Florida,Sarasota,,USA.10.58_1
+USA,Florida,Seminole,,Florida,Seminole,,USA.10.59_1
+USA,Florida,St. Johns,,Florida,Saint Johns,,USA.10.55_1
+USA,Florida,St. Lucie,,Florida,Saint Lucie,,USA.10.56_1
+USA,Florida,Sumter,,Florida,Sumter,,USA.10.60_1
+USA,Florida,Suwannee,,Florida,Suwannee,,USA.10.61_1
+USA,Florida,Taylor,,Florida,Taylor,,USA.10.62_1
+USA,Florida,Union,,Florida,Union,,USA.10.63_1
+USA,Florida,Volusia,,Florida,Volusia,,USA.10.64_1
+USA,Florida,Wakulla,,Florida,Wakulla,,USA.10.65_1
+USA,Florida,Walton,,Florida,Walton,,USA.10.66_1
+USA,Florida,Washington,,Florida,Washington,,USA.10.67_1
+USA,Georgia,Appling,,Georgia,Appling,,USA.11.1_1
+USA,Georgia,Atkinson,,Georgia,Atkinson,,USA.11.2_1
+USA,Georgia,Bacon,,Georgia,Bacon,,USA.11.3_1
+USA,Georgia,Baker,,Georgia,Baker,,USA.11.4_1
+USA,Georgia,Baldwin,,Georgia,Baldwin,,USA.11.5_1
+USA,Georgia,Banks,,Georgia,Banks,,USA.11.6_1
+USA,Georgia,Barrow,,Georgia,Barrow,,USA.11.7_1
+USA,Georgia,Bartow,,Georgia,Bartow,,USA.11.8_1
+USA,Georgia,Ben Hill,,Georgia,Ben Hill,,USA.11.9_1
+USA,Georgia,Berrien,,Georgia,Berrien,,USA.11.10_1
+USA,Georgia,Bibb,,Georgia,Bibb,,USA.11.11_1
+USA,Georgia,Bleckley,,Georgia,Bleckley,,USA.11.12_1
+USA,Georgia,Brantley,,Georgia,Brantley,,USA.11.13_1
+USA,Georgia,Brooks,,Georgia,Brooks,,USA.11.14_1
+USA,Georgia,Bryan,,Georgia,Bryan,,USA.11.15_1
+USA,Georgia,Bulloch,,Georgia,Bulloch,,USA.11.16_1
+USA,Georgia,Burke,,Georgia,Burke,,USA.11.17_1
+USA,Georgia,Butts,,Georgia,Butts,,USA.11.18_1
+USA,Georgia,Calhoun,,Georgia,Calhoun,,USA.11.19_1
+USA,Georgia,Camden,,Georgia,Camden,,USA.11.20_1
+USA,Georgia,Candler,,Georgia,Candler,,USA.11.21_1
+USA,Georgia,Carroll,,Georgia,Carroll,,USA.11.22_1
+USA,Georgia,Catoosa,,Georgia,Catoosa,,USA.11.23_1
+USA,Georgia,Charlton,,Georgia,Charlton,,USA.11.24_1
+USA,Georgia,Chatham,,Georgia,Chatham,,USA.11.25_1
+USA,Georgia,Chattahoochee,,Georgia,Chattahoochee,,USA.11.26_1
+USA,Georgia,Chattooga,,Georgia,Chattooga,,USA.11.27_1
+USA,Georgia,Cherokee,,Georgia,Cherokee,,USA.11.28_1
+USA,Georgia,Clarke,,Georgia,Clarke,,USA.11.29_1
+USA,Georgia,Clay,,Georgia,Clay,,USA.11.30_1
+USA,Georgia,Clayton,,Georgia,Clayton,,USA.11.31_1
+USA,Georgia,Clinch,,Georgia,Clinch,,USA.11.32_1
+USA,Georgia,Cobb,,Georgia,Cobb,,USA.11.33_1
+USA,Georgia,Coffee,,Georgia,Coffee,,USA.11.34_1
+USA,Georgia,Colquitt,,Georgia,Colquitt,,USA.11.35_1
+USA,Georgia,Columbia,,Georgia,Columbia,,USA.11.36_1
+USA,Georgia,Cook,,Georgia,Cook,,USA.11.37_1
+USA,Georgia,Coweta,,Georgia,Coweta,,USA.11.38_1
+USA,Georgia,Crawford,,Georgia,Crawford,,USA.11.39_1
+USA,Georgia,Crisp,,Georgia,Crisp,,USA.11.40_1
+USA,Georgia,Dade,,Georgia,Dade,,USA.11.41_1
+USA,Georgia,Dawson,,Georgia,Dawson,,USA.11.42_1
+USA,Georgia,DeKalb,,Georgia,DeKalb,,USA.11.44_1
+USA,Georgia,Decatur,,Georgia,Decatur,,USA.11.43_1
+USA,Georgia,Dodge,,Georgia,Dodge,,USA.11.45_1
+USA,Georgia,Dooly,,Georgia,Dooly,,USA.11.46_1
+USA,Georgia,Dougherty,,Georgia,Dougherty,,USA.11.47_1
+USA,Georgia,Douglas,,Georgia,Douglas,,USA.11.48_1
+USA,Georgia,Early,,Georgia,Early,,USA.11.49_1
+USA,Georgia,Echols,,Georgia,Echols,,USA.11.50_1
+USA,Georgia,Effingham,,Georgia,Effingham,,USA.11.51_1
+USA,Georgia,Elbert,,Georgia,Elbert,,USA.11.52_1
+USA,Georgia,Emanuel,,Georgia,Emanuel,,USA.11.53_1
+USA,Georgia,Evans,,Georgia,Evans,,USA.11.54_1
+USA,Georgia,Fannin,,Georgia,Fannin,,USA.11.55_1
+USA,Georgia,Fayette,,Georgia,Fayette,,USA.11.56_1
+USA,Georgia,Floyd,,Georgia,Floyd,,USA.11.57_1
+USA,Georgia,Forsyth,,Georgia,Forsyth,,USA.11.58_1
+USA,Georgia,Franklin,,Georgia,Franklin,,USA.11.59_1
+USA,Georgia,Fulton,,Georgia,Fulton,,USA.11.60_1
+USA,Georgia,Gilmer,,Georgia,Gilmer,,USA.11.61_1
+USA,Georgia,Glascock,,Georgia,Glascock,,USA.11.62_1
+USA,Georgia,Glynn,,Georgia,Glynn,,USA.11.63_1
+USA,Georgia,Gordon,,Georgia,Gordon,,USA.11.64_1
+USA,Georgia,Grady,,Georgia,Grady,,USA.11.65_1
+USA,Georgia,Greene,,Georgia,Greene,,USA.11.66_1
+USA,Georgia,Gwinnett,,Georgia,Gwinnett,,USA.11.67_1
+USA,Georgia,Habersham,,Georgia,Habersham,,USA.11.68_1
+USA,Georgia,Hall,,Georgia,Hall,,USA.11.69_1
+USA,Georgia,Hancock,,Georgia,Hancock,,USA.11.70_1
+USA,Georgia,Haralson,,Georgia,Haralson,,USA.11.71_1
+USA,Georgia,Harris,,Georgia,Harris,,USA.11.72_1
+USA,Georgia,Hart,,Georgia,Hart,,USA.11.73_1
+USA,Georgia,Heard,,Georgia,Heard,,USA.11.74_1
+USA,Georgia,Henry,,Georgia,Henry,,USA.11.75_1
+USA,Georgia,Houston,,Georgia,Houston,,USA.11.76_1
+USA,Georgia,Irwin,,Georgia,Irwin,,USA.11.77_1
+USA,Georgia,Jackson,,Georgia,Jackson,,USA.11.78_1
+USA,Georgia,Jasper,,Georgia,Jasper,,USA.11.79_1
+USA,Georgia,Jeff Davis,,Georgia,Jeff Davis,,USA.11.80_1
+USA,Georgia,Jefferson,,Georgia,Jefferson,,USA.11.81_1
+USA,Georgia,Jenkins,,Georgia,Jenkins,,USA.11.82_1
+USA,Georgia,Johnson,,Georgia,Johnson,,USA.11.83_1
+USA,Georgia,Jones,,Georgia,Jones,,USA.11.84_1
+USA,Georgia,Lamar,,Georgia,Lamar,,USA.11.85_1
+USA,Georgia,Lanier,,Georgia,Lanier,,USA.11.86_1
+USA,Georgia,Laurens,,Georgia,Laurens,,USA.11.87_1
+USA,Georgia,Lee,,Georgia,Lee,,USA.11.88_1
+USA,Georgia,Liberty,,Georgia,Liberty,,USA.11.89_1
+USA,Georgia,Lincoln,,Georgia,Lincoln,,USA.11.90_1
+USA,Georgia,Long,,Georgia,Long,,USA.11.91_1
+USA,Georgia,Lowndes,,Georgia,Lowndes,,USA.11.92_1
+USA,Georgia,Lumpkin,,Georgia,Lumpkin,,USA.11.93_1
+USA,Georgia,Macon,,Georgia,Macon,,USA.11.94_1
+USA,Georgia,Madison,,Georgia,Madison,,USA.11.95_1
+USA,Georgia,Marion,,Georgia,Marion,,USA.11.96_1
+USA,Georgia,McDuffie,,Georgia,McDuffie,,USA.11.97_1
+USA,Georgia,McIntosh,,Georgia,McIntosh,,USA.11.98_1
+USA,Georgia,Meriwether,,Georgia,Meriwether,,USA.11.99_1
+USA,Georgia,Miller,,Georgia,Miller,,USA.11.100_1
+USA,Georgia,Mitchell,,Georgia,Mitchell,,USA.11.101_1
+USA,Georgia,Monroe,,Georgia,Monroe,,USA.11.102_1
+USA,Georgia,Montgomery,,Georgia,Montgomery,,USA.11.103_1
+USA,Georgia,Morgan,,Georgia,Morgan,,USA.11.104_1
+USA,Georgia,Murray,,Georgia,Murray,,USA.11.105_1
+USA,Georgia,Muscogee,,Georgia,Muscogee,,USA.11.106_1
+USA,Georgia,Newton,,Georgia,Newton,,USA.11.107_1
+USA,Georgia,Oconee,,Georgia,Oconee,,USA.11.108_1
+USA,Georgia,Oglethorpe,,Georgia,Oglethorpe,,USA.11.109_1
+USA,Georgia,Paulding,,Georgia,Paulding,,USA.11.110_1
+USA,Georgia,Peach,,Georgia,Peach,,USA.11.111_1
+USA,Georgia,Pickens,,Georgia,Pickens,,USA.11.112_1
+USA,Georgia,Pierce,,Georgia,Pierce,,USA.11.113_1
+USA,Georgia,Pike,,Georgia,Pike,,USA.11.114_1
+USA,Georgia,Polk,,Georgia,Polk,,USA.11.115_1
+USA,Georgia,Pulaski,,Georgia,Pulaski,,USA.11.116_1
+USA,Georgia,Putnam,,Georgia,Putnam,,USA.11.117_1
+USA,Georgia,Quitman,,Georgia,Quitman,,USA.11.118_1
+USA,Georgia,Rabun,,Georgia,Rabun,,USA.11.119_1
+USA,Georgia,Randolph,,Georgia,Randolph,,USA.11.120_1
+USA,Georgia,Richmond,,Georgia,Richmond,,USA.11.121_1
+USA,Georgia,Rockdale,,Georgia,Rockdale,,USA.11.122_1
+USA,Georgia,Schley,,Georgia,Schley,,USA.11.123_1
+USA,Georgia,Screven,,Georgia,Screven,,USA.11.124_1
+USA,Georgia,Seminole,,Georgia,Seminole,,USA.11.125_1
+USA,Georgia,Spalding,,Georgia,Spalding,,USA.11.126_1
+USA,Georgia,Stephens,,Georgia,Stephens,,USA.11.127_1
+USA,Georgia,Stewart,,Georgia,Stewart,,USA.11.128_1
+USA,Georgia,Sumter,,Georgia,Sumter,,USA.11.129_1
+USA,Georgia,Talbot,,Georgia,Talbot,,USA.11.130_1
+USA,Georgia,Taliaferro,,Georgia,Taliaferro,,USA.11.131_1
+USA,Georgia,Tattnall,,Georgia,Tattnall,,USA.11.132_1
+USA,Georgia,Taylor,,Georgia,Taylor,,USA.11.133_1
+USA,Georgia,Telfair,,Georgia,Telfair,,USA.11.134_1
+USA,Georgia,Terrell,,Georgia,Terrell,,USA.11.135_1
+USA,Georgia,Thomas,,Georgia,Thomas,,USA.11.136_1
+USA,Georgia,Tift,,Georgia,Tift,,USA.11.137_1
+USA,Georgia,Toombs,,Georgia,Toombs,,USA.11.138_1
+USA,Georgia,Towns,,Georgia,Towns,,USA.11.139_1
+USA,Georgia,Treutlen,,Georgia,Treutlen,,USA.11.140_1
+USA,Georgia,Troup,,Georgia,Troup,,USA.11.141_1
+USA,Georgia,Turner,,Georgia,Turner,,USA.11.142_1
+USA,Georgia,Twiggs,,Georgia,Twiggs,,USA.11.143_1
+USA,Georgia,Union,,Georgia,Union,,USA.11.144_1
+USA,Georgia,Upson,,Georgia,Upson,,USA.11.145_1
+USA,Georgia,Walker,,Georgia,Walker,,USA.11.146_1
+USA,Georgia,Walton,,Georgia,Walton,,USA.11.147_1
+USA,Georgia,Ware,,Georgia,Ware,,USA.11.148_1
+USA,Georgia,Warren,,Georgia,Warren,,USA.11.149_1
+USA,Georgia,Washington,,Georgia,Washington,,USA.11.150_1
+USA,Georgia,Wayne,,Georgia,Wayne,,USA.11.151_1
+USA,Georgia,Webster,,Georgia,Webster,,USA.11.152_1
+USA,Georgia,Wheeler,,Georgia,Wheeler,,USA.11.153_1
+USA,Georgia,White,,Georgia,White,,USA.11.154_1
+USA,Georgia,Whitfield,,Georgia,Whitfield,,USA.11.155_1
+USA,Georgia,Wilcox,,Georgia,Wilcox,,USA.11.156_1
+USA,Georgia,Wilkes,,Georgia,Wilkes,,USA.11.157_1
+USA,Georgia,Wilkinson,,Georgia,Wilkinson,,USA.11.158_1
+USA,Georgia,Worth,,Georgia,Worth,,USA.11.159_1
+USA,Hawaii,Hawaii,,Hawaii,Hawaii,,USA.12.1_1
+USA,Hawaii,Honolulu,,Hawaii,Honolulu,,USA.12.2_1
+USA,Hawaii,Kauai,,Hawaii,Kauai,,USA.12.4_1
+USA,Hawaii,Maui,,Hawaii,Maui,,USA.12.5_1
+USA,Idaho,Ada,,Idaho,Ada,,USA.13.1_1
+USA,Idaho,Adams,,Idaho,Adams,,USA.13.2_1
+USA,Idaho,Bannock,,Idaho,Bannock,,USA.13.3_1
+USA,Idaho,Bingham,,Idaho,Bingham,,USA.13.6_1
+USA,Idaho,Blaine,,Idaho,Blaine,,USA.13.7_1
+USA,Idaho,Bonner,,Idaho,Bonner,,USA.13.9_1
+USA,Idaho,Bonneville,,Idaho,Bonneville,,USA.13.10_1
+USA,Idaho,Camas,,Idaho,Camas,,USA.13.13_1
+USA,Idaho,Canyon,,Idaho,Canyon,,USA.13.14_1
+USA,Idaho,Caribou,,Idaho,Caribou,,USA.13.15_1
+USA,Idaho,Cassia,,Idaho,Cassia,,USA.13.16_1
+USA,Idaho,Custer,,Idaho,Custer,,USA.13.19_1
+USA,Idaho,Elmore,,Idaho,Elmore,,USA.13.20_1
+USA,Idaho,Fremont,,Idaho,Fremont,,USA.13.22_1
+USA,Idaho,Gem,,Idaho,Gem,,USA.13.23_1
+USA,Idaho,Gooding,,Idaho,Gooding,,USA.13.24_1
+USA,Idaho,Idaho,,Idaho,Idaho,,USA.13.25_1
+USA,Idaho,Jefferson,,Idaho,Jefferson,,USA.13.26_1
+USA,Idaho,Jerome,,Idaho,Jerome,,USA.13.27_1
+USA,Idaho,Kootenai,,Idaho,Kootenai,,USA.13.28_1
+USA,Idaho,Latah,,Idaho,Latah,,USA.13.29_1
+USA,Idaho,Lemhi,,Idaho,Lemhi,,USA.13.30_1
+USA,Idaho,Lincoln,,Idaho,Lincoln,,USA.13.32_1
+USA,Idaho,Madison,,Idaho,Madison,,USA.13.33_1
+USA,Idaho,Minidoka,,Idaho,Minidoka,,USA.13.34_1
+USA,Idaho,Nez Perce,,Idaho,Nez Perce,,USA.13.35_1
+USA,Idaho,Owyhee,,Idaho,Owyhee,,USA.13.37_1
+USA,Idaho,Payette,,Idaho,Payette,,USA.13.38_1
+USA,Idaho,Power,,Idaho,Power,,USA.13.39_1
+USA,Idaho,Teton,,Idaho,Teton,,USA.13.41_1
+USA,Idaho,Twin Falls,,Idaho,Twin Falls,,USA.13.42_1
+USA,Idaho,Valley,,Idaho,Valley,,USA.13.43_1
+USA,Idaho,Washington,,Idaho,Washington,,USA.13.44_1
+USA,Illinois,Adams,,Illinois,Adams,,USA.14.1_1
+USA,Illinois,Alexander,,Illinois,Alexander,,USA.14.2_1
+USA,Illinois,Bond,,Illinois,Bond,,USA.14.3_1
+USA,Illinois,Boone,,Illinois,Boone,,USA.14.4_1
+USA,Illinois,Brown,,Illinois,Brown,,USA.14.5_1
+USA,Illinois,Bureau,,Illinois,Bureau,,USA.14.6_1
+USA,Illinois,Calhoun,,Illinois,Calhoun,,USA.14.7_1
+USA,Illinois,Carroll,,Illinois,Carroll,,USA.14.8_1
+USA,Illinois,Cass,,Illinois,Cass,,USA.14.9_1
+USA,Illinois,Champaign,,Illinois,Champaign,,USA.14.10_1
+USA,Illinois,Christian,,Illinois,Christian,,USA.14.11_1
+USA,Illinois,Clark,,Illinois,Clark,,USA.14.12_1
+USA,Illinois,Clay,,Illinois,Clay,,USA.14.13_1
+USA,Illinois,Clinton,,Illinois,Clinton,,USA.14.14_1
+USA,Illinois,Coles,,Illinois,Coles,,USA.14.15_1
+USA,Illinois,Cook,,Illinois,Cook,,USA.14.16_1
+USA,Illinois,Crawford,,Illinois,Crawford,,USA.14.17_1
+USA,Illinois,Cumberland,,Illinois,Cumberland,,USA.14.18_1
+USA,Illinois,De Witt,,Illinois,De Witt,,USA.14.20_1
+USA,Illinois,DeKalb,,Illinois,De Kalb,,USA.14.19_1
+USA,Illinois,Douglas,,Illinois,Douglas,,USA.14.21_1
+USA,Illinois,DuPage,,Illinois,Dupage,,USA.14.22_1
+USA,Illinois,Edwards,,Illinois,Edwards,,USA.14.24_1
+USA,Illinois,Effingham,,Illinois,Effingham,,USA.14.25_1
+USA,Illinois,Fayette,,Illinois,Fayette,,USA.14.26_1
+USA,Illinois,Ford,,Illinois,Ford,,USA.14.27_1
+USA,Illinois,Franklin,,Illinois,Franklin,,USA.14.28_1
+USA,Illinois,Fulton,,Illinois,Fulton,,USA.14.29_1
+USA,Illinois,Gallatin,,Illinois,Gallatin,,USA.14.30_1
+USA,Illinois,Greene,,Illinois,Greene,,USA.14.31_1
+USA,Illinois,Grundy,,Illinois,Grundy,,USA.14.32_1
+USA,Illinois,Hamilton,,Illinois,Hamilton,,USA.14.33_1
+USA,Illinois,Hancock,,Illinois,Hancock,,USA.14.34_1
+USA,Illinois,Hardin,,Illinois,Hardin,,USA.14.35_1
+USA,Illinois,Henderson,,Illinois,Henderson,,USA.14.36_1
+USA,Illinois,Henry,,Illinois,Henry,,USA.14.37_1
+USA,Illinois,Iroquois,,Illinois,Iroquois,,USA.14.38_1
+USA,Illinois,Jackson,,Illinois,Jackson,,USA.14.39_1
+USA,Illinois,Jasper,,Illinois,Jasper,,USA.14.40_1
+USA,Illinois,Jefferson,,Illinois,Jefferson,,USA.14.41_1
+USA,Illinois,Jersey,,Illinois,Jersey,,USA.14.42_1
+USA,Illinois,Jo Daviess,,Illinois,Jo Daviess,,USA.14.43_1
+USA,Illinois,Johnson,,Illinois,Johnson,,USA.14.44_1
+USA,Illinois,Kane,,Illinois,Kane,,USA.14.45_1
+USA,Illinois,Kankakee,,Illinois,Kankakee,,USA.14.46_1
+USA,Illinois,Kendall,,Illinois,Kendall,,USA.14.47_1
+USA,Illinois,Knox,,Illinois,Knox,,USA.14.48_1
+USA,Illinois,LaSalle,,Illinois,La Salle,,USA.14.49_1
+USA,Illinois,Lake,,Illinois,Lake,,USA.14.50_1
+USA,Illinois,Lawrence,,Illinois,Lawrence,,USA.14.52_1
+USA,Illinois,Lee,,Illinois,Lee,,USA.14.53_1
+USA,Illinois,Livingston,,Illinois,Livingston,,USA.14.54_1
+USA,Illinois,Logan,,Illinois,Logan,,USA.14.55_1
+USA,Illinois,Macon,,Illinois,Macon,,USA.14.56_1
+USA,Illinois,Macoupin,,Illinois,Macoupin,,USA.14.57_1
+USA,Illinois,Madison,,Illinois,Madison,,USA.14.58_1
+USA,Illinois,Marion,,Illinois,Marion,,USA.14.59_1
+USA,Illinois,Marshall,,Illinois,Marshall,,USA.14.60_1
+USA,Illinois,Mason,,Illinois,Mason,,USA.14.61_1
+USA,Illinois,Massac,,Illinois,Massac,,USA.14.62_1
+USA,Illinois,McDonough,,Illinois,McDonough,,USA.14.63_1
+USA,Illinois,McHenry,,Illinois,McHenry,,USA.14.64_1
+USA,Illinois,McLean,,Illinois,McLean,,USA.14.65_1
+USA,Illinois,Menard,,Illinois,Menard,,USA.14.66_1
+USA,Illinois,Mercer,,Illinois,Mercer,,USA.14.67_1
+USA,Illinois,Monroe,,Illinois,Monroe,,USA.14.68_1
+USA,Illinois,Montgomery,,Illinois,Montgomery,,USA.14.69_1
+USA,Illinois,Morgan,,Illinois,Morgan,,USA.14.70_1
+USA,Illinois,Moultrie,,Illinois,Moultrie,,USA.14.71_1
+USA,Illinois,Ogle,,Illinois,Ogle,,USA.14.72_1
+USA,Illinois,Peoria,,Illinois,Peoria,,USA.14.73_1
+USA,Illinois,Perry,,Illinois,Perry,,USA.14.74_1
+USA,Illinois,Piatt,,Illinois,Piatt,,USA.14.75_1
+USA,Illinois,Pike,,Illinois,Pike,,USA.14.76_1
+USA,Illinois,Pope,,Illinois,Pope,,USA.14.77_1
+USA,Illinois,Pulaski,,Illinois,Pulaski,,USA.14.78_1
+USA,Illinois,Putnam,,Illinois,Putnam,,USA.14.79_1
+USA,Illinois,Randolph,,Illinois,Randolph,,USA.14.80_1
+USA,Illinois,Richland,,Illinois,Richland,,USA.14.81_1
+USA,Illinois,Rock Island,,Illinois,Rock Island,,USA.14.82_1
+USA,Illinois,Saline,,Illinois,Saline,,USA.14.84_1
+USA,Illinois,Sangamon,,Illinois,Sangamon,,USA.14.85_1
+USA,Illinois,Schuyler,,Illinois,Schuyler,,USA.14.86_1
+USA,Illinois,Shelby,,Illinois,Shelby,,USA.14.88_1
+USA,Illinois,St. Clair,,Illinois,Saint Clair,,USA.14.83_1
+USA,Illinois,Stark,,Illinois,Stark,,USA.14.89_1
+USA,Illinois,Stephenson,,Illinois,Stephenson,,USA.14.90_1
+USA,Illinois,Tazewell,,Illinois,Tazewell,,USA.14.91_1
+USA,Illinois,Union,,Illinois,Union,,USA.14.92_1
+USA,Illinois,Vermilion,,Illinois,Vermilion,,USA.14.93_1
+USA,Illinois,Wabash,,Illinois,Lake Michigan,,USA.14.51_1
+USA,Illinois,Wabash,,Illinois,Wabash,,USA.14.94_1
+USA,Illinois,Warren,,Illinois,Warren,,USA.14.95_1
+USA,Illinois,Washington,,Illinois,Washington,,USA.14.96_1
+USA,Illinois,Wayne,,Illinois,Wayne,,USA.14.97_1
+USA,Illinois,White,,Illinois,White,,USA.14.98_1
+USA,Illinois,Whiteside,,Illinois,Whiteside,,USA.14.99_1
+USA,Illinois,Will,,Illinois,Will,,USA.14.100_1
+USA,Illinois,Williamson,,Illinois,Williamson,,USA.14.101_1
+USA,Illinois,Winnebago,,Illinois,Winnebago,,USA.14.102_1
+USA,Illinois,Woodford,,Illinois,Woodford,,USA.14.103_1
+USA,Indiana,Adams,,Indiana,Adams,,USA.15.1_1
+USA,Indiana,Allen,,Indiana,Allen,,USA.15.2_1
+USA,Indiana,Bartholomew,,Indiana,Bartholomew,,USA.15.3_1
+USA,Indiana,Benton,,Indiana,Benton,,USA.15.4_1
+USA,Indiana,Blackford,,Indiana,Blackford,,USA.15.5_1
+USA,Indiana,Boone,,Indiana,Boone,,USA.15.6_1
+USA,Indiana,Brown,,Indiana,Brown,,USA.15.7_1
+USA,Indiana,Carroll,,Indiana,Carroll,,USA.15.8_1
+USA,Indiana,Cass,,Indiana,Cass,,USA.15.9_1
+USA,Indiana,Clark,,Indiana,Clark,,USA.15.10_1
+USA,Indiana,Clay,,Indiana,Clay,,USA.15.11_1
+USA,Indiana,Clinton,,Indiana,Clinton,,USA.15.12_1
+USA,Indiana,Crawford,,Indiana,Crawford,,USA.15.13_1
+USA,Indiana,Daviess,,Indiana,Daviess,,USA.15.14_1
+USA,Indiana,DeKalb,,Indiana,De Kalb,,USA.15.15_1
+USA,Indiana,Dearborn,,Indiana,Dearborn,,USA.15.16_1
+USA,Indiana,Decatur,,Indiana,Decatur,,USA.15.17_1
+USA,Indiana,Delaware,,Indiana,Delaware,,USA.15.18_1
+USA,Indiana,Dubois,,Indiana,Dubois,,USA.15.19_1
+USA,Indiana,Elkhart,,Indiana,Elkhart,,USA.15.20_1
+USA,Indiana,Fayette,,Indiana,Fayette,,USA.15.21_1
+USA,Indiana,Floyd,,Indiana,Floyd,,USA.15.22_1
+USA,Indiana,Fountain,,Indiana,Fountain,,USA.15.23_1
+USA,Indiana,Franklin,,Indiana,Franklin,,USA.15.24_1
+USA,Indiana,Fulton,,Indiana,Fulton,,USA.15.25_1
+USA,Indiana,Gibson,,Indiana,Gibson,,USA.15.26_1
+USA,Indiana,Grant,,Indiana,Grant,,USA.15.27_1
+USA,Indiana,Greene,,Indiana,Greene,,USA.15.28_1
+USA,Indiana,Hamilton,,Indiana,Hamilton,,USA.15.29_1
+USA,Indiana,Hancock,,Indiana,Hancock,,USA.15.30_1
+USA,Indiana,Harrison,,Indiana,Harrison,,USA.15.31_1
+USA,Indiana,Hendricks,,Indiana,Hendricks,,USA.15.32_1
+USA,Indiana,Henry,,Indiana,Henry,,USA.15.33_1
+USA,Indiana,Howard,,Indiana,Howard,,USA.15.34_1
+USA,Indiana,Huntington,,Indiana,Huntington,,USA.15.35_1
+USA,Indiana,Jackson,,Indiana,Jackson,,USA.15.36_1
+USA,Indiana,Jasper,,Indiana,Jasper,,USA.15.37_1
+USA,Indiana,Jay,,Indiana,Jay,,USA.15.38_1
+USA,Indiana,Jefferson,,Indiana,Jefferson,,USA.15.39_1
+USA,Indiana,Jennings,,Indiana,Jennings,,USA.15.40_1
+USA,Indiana,Johnson,,Indiana,Johnson,,USA.15.41_1
+USA,Indiana,Knox,,Indiana,Knox,,USA.15.42_1
+USA,Indiana,Kosciusko,,Indiana,Kosciusko,,USA.15.43_1
+USA,Indiana,LaGrange,,Indiana,LaGrange,,USA.15.44_1
+USA,Indiana,LaPorte,,Indiana,LaPorte,,USA.15.47_1
+USA,Indiana,Lake,,Indiana,Lake,,USA.15.45_1
+USA,Indiana,Lawrence,,Indiana,Lawrence,,USA.15.48_1
+USA,Indiana,Madison,,Indiana,Madison,,USA.15.49_1
+USA,Indiana,Marion,,Indiana,Marion,,USA.15.50_1
+USA,Indiana,Marshall,,Indiana,Marshall,,USA.15.51_1
+USA,Indiana,Martin,,Indiana,Martin,,USA.15.52_1
+USA,Indiana,Miami,,Indiana,Miami,,USA.15.53_1
+USA,Indiana,Monroe,,Indiana,Monroe,,USA.15.54_1
+USA,Indiana,Montgomery,,Indiana,Montgomery,,USA.15.55_1
+USA,Indiana,Morgan,,Indiana,Morgan,,USA.15.56_1
+USA,Indiana,Newton,,Indiana,Newton,,USA.15.57_1
+USA,Indiana,Noble,,Indiana,Noble,,USA.15.58_1
+USA,Indiana,Ohio,,Indiana,Ohio,,USA.15.59_1
+USA,Indiana,Orange,,Indiana,Orange,,USA.15.60_1
+USA,Indiana,Owen,,Indiana,Owen,,USA.15.61_1
+USA,Indiana,Parke,,Indiana,Parke,,USA.15.62_1
+USA,Indiana,Perry,,Indiana,Perry,,USA.15.63_1
+USA,Indiana,Pike,,Indiana,Pike,,USA.15.64_1
+USA,Indiana,Porter,,Indiana,Porter,,USA.15.65_1
+USA,Indiana,Posey,,Indiana,Posey,,USA.15.66_1
+USA,Indiana,Pulaski,,Indiana,Pulaski,,USA.15.67_1
+USA,Indiana,Putnam,,Indiana,Putnam,,USA.15.68_1
+USA,Indiana,Randolph,,Indiana,Randolph,,USA.15.69_1
+USA,Indiana,Ripley,,Indiana,Ripley,,USA.15.70_1
+USA,Indiana,Rush,,Indiana,Rush,,USA.15.71_1
+USA,Indiana,Scott,,Indiana,Scott,,USA.15.73_1
+USA,Indiana,Shelby,,Indiana,Shelby,,USA.15.74_1
+USA,Indiana,Spencer,,Indiana,Spencer,,USA.15.75_1
+USA,Indiana,St. Joseph,,Indiana,Saint Joseph,,USA.15.72_1
+USA,Indiana,Starke,,Indiana,Starke,,USA.15.76_1
+USA,Indiana,Steuben,,Indiana,Steuben,,USA.15.77_1
+USA,Indiana,Sullivan,,Indiana,Sullivan,,USA.15.78_1
+USA,Indiana,Switzerland,,Indiana,Switzerland,,USA.15.79_1
+USA,Indiana,Tippecanoe,,Indiana,Tippecanoe,,USA.15.80_1
+USA,Indiana,Tipton,,Indiana,Tipton,,USA.15.81_1
+USA,Indiana,Union,,Indiana,Union,,USA.15.82_1
+USA,Indiana,Vanderburgh,,Indiana,Vanderburgh,,USA.15.83_1
+USA,Indiana,Vermillion,,Indiana,Vermillion,,USA.15.84_1
+USA,Indiana,Vigo,,Indiana,Vigo,,USA.15.85_1
+USA,Indiana,Wabash,,Indiana,Lake Michigan,,USA.15.46_1
+USA,Indiana,Wabash,,Indiana,Wabash,,USA.15.86_1
+USA,Indiana,Warren,,Indiana,Warren,,USA.15.87_1
+USA,Indiana,Warrick,,Indiana,Warrick,,USA.15.88_1
+USA,Indiana,Washington,,Indiana,Washington,,USA.15.89_1
+USA,Indiana,Wayne,,Indiana,Wayne,,USA.15.90_1
+USA,Indiana,Wells,,Indiana,Wells,,USA.15.91_1
+USA,Indiana,White,,Indiana,White,,USA.15.92_1
+USA,Indiana,Whitley,,Indiana,Whitley,,USA.15.93_1
+USA,Iowa,Adair,,Iowa,Adair,,USA.16.1_1
+USA,Iowa,Adams,,Iowa,Adams,,USA.16.2_1
+USA,Iowa,Allamakee,,Iowa,Allamakee,,USA.16.3_1
+USA,Iowa,Appanoose,,Iowa,Appanoose,,USA.16.4_1
+USA,Iowa,Audubon,,Iowa,Audubon,,USA.16.5_1
+USA,Iowa,Benton,,Iowa,Benton,,USA.16.6_1
+USA,Iowa,Black Hawk,,Iowa,Black Hawk,,USA.16.7_1
+USA,Iowa,Boone,,Iowa,Boone,,USA.16.8_1
+USA,Iowa,Bremer,,Iowa,Bremer,,USA.16.9_1
+USA,Iowa,Buchanan,,Iowa,Buchanan,,USA.16.10_1
+USA,Iowa,Buena Vista,,Iowa,Buena Vista,,USA.16.11_1
+USA,Iowa,Butler,,Iowa,Butler,,USA.16.12_1
+USA,Iowa,Calhoun,,Iowa,Calhoun,,USA.16.13_1
+USA,Iowa,Carroll,,Iowa,Carroll,,USA.16.14_1
+USA,Iowa,Cass,,Iowa,Cass,,USA.16.15_1
+USA,Iowa,Cedar,,Iowa,Cedar,,USA.16.16_1
+USA,Iowa,Cerro Gordo,,Iowa,Cerro Gordo,,USA.16.17_1
+USA,Iowa,Cherokee,,Iowa,Cherokee,,USA.16.18_1
+USA,Iowa,Chickasaw,,Iowa,Chickasaw,,USA.16.19_1
+USA,Iowa,Clarke,,Iowa,Clarke,,USA.16.20_1
+USA,Iowa,Clay,,Iowa,Clay,,USA.16.21_1
+USA,Iowa,Clayton,,Iowa,Clayton,,USA.16.22_1
+USA,Iowa,Clinton,,Iowa,Clinton,,USA.16.23_1
+USA,Iowa,Crawford,,Iowa,Crawford,,USA.16.24_1
+USA,Iowa,Dallas,,Iowa,Dallas,,USA.16.25_1
+USA,Iowa,Davis,,Iowa,Davis,,USA.16.26_1
+USA,Iowa,Delaware,,Iowa,Delaware,,USA.16.28_1
+USA,Iowa,Des Moines,,Iowa,Des Moines,,USA.16.29_1
+USA,Iowa,Dickinson,,Iowa,Dickinson,,USA.16.30_1
+USA,Iowa,Dubuque,,Iowa,Dubuque,,USA.16.31_1
+USA,Iowa,Emmet,,Iowa,Emmet,,USA.16.32_1
+USA,Iowa,Fayette,,Iowa,Fayette,,USA.16.33_1
+USA,Iowa,Floyd,,Iowa,Floyd,,USA.16.34_1
+USA,Iowa,Franklin,,Iowa,Franklin,,USA.16.35_1
+USA,Iowa,Fremont,,Iowa,Fremont,,USA.16.36_1
+USA,Iowa,Greene,,Iowa,Greene,,USA.16.37_1
+USA,Iowa,Grundy,,Iowa,Grundy,,USA.16.38_1
+USA,Iowa,Guthrie,,Iowa,Guthrie,,USA.16.39_1
+USA,Iowa,Hamilton,,Iowa,Hamilton,,USA.16.40_1
+USA,Iowa,Hancock,,Iowa,Hancock,,USA.16.41_1
+USA,Iowa,Hardin,,Iowa,Hardin,,USA.16.42_1
+USA,Iowa,Harrison,,Iowa,Harrison,,USA.16.43_1
+USA,Iowa,Henry,,Iowa,Henry,,USA.16.44_1
+USA,Iowa,Howard,,Iowa,Howard,,USA.16.45_1
+USA,Iowa,Humboldt,,Iowa,Humboldt,,USA.16.46_1
+USA,Iowa,Ida,,Iowa,Ida,,USA.16.47_1
+USA,Iowa,Iowa,,Iowa,Iowa,,USA.16.48_1
+USA,Iowa,Jackson,,Iowa,Jackson,,USA.16.49_1
+USA,Iowa,Jasper,,Iowa,Jasper,,USA.16.50_1
+USA,Iowa,Jefferson,,Iowa,Jefferson,,USA.16.51_1
+USA,Iowa,Johnson,,Iowa,Johnson,,USA.16.52_1
+USA,Iowa,Jones,,Iowa,Jones,,USA.16.53_1
+USA,Iowa,Keokuk,,Iowa,Keokuk,,USA.16.54_1
+USA,Iowa,Kossuth,,Iowa,Kossuth,,USA.16.55_1
+USA,Iowa,Lee,,Iowa,Lee,,USA.16.56_1
+USA,Iowa,Linn,,Iowa,Linn,,USA.16.57_1
+USA,Iowa,Louisa,,Iowa,Louisa,,USA.16.58_1
+USA,Iowa,Lucas,,Iowa,Lucas,,USA.16.59_1
+USA,Iowa,Lyon,,Iowa,Lyon,,USA.16.60_1
+USA,Iowa,Madison,,Iowa,Madison,,USA.16.61_1
+USA,Iowa,Mahaska,,Iowa,Mahaska,,USA.16.62_1
+USA,Iowa,Marion,,Iowa,Marion,,USA.16.63_1
+USA,Iowa,Marshall,,Iowa,Marshall,,USA.16.64_1
+USA,Iowa,Mills,,Iowa,Mills,,USA.16.65_1
+USA,Iowa,Mitchell,,Iowa,Mitchell,,USA.16.66_1
+USA,Iowa,Monona,,Iowa,Monona,,USA.16.67_1
+USA,Iowa,Monroe,,Iowa,Monroe,,USA.16.68_1
+USA,Iowa,Montgomery,,Iowa,Montgomery,,USA.16.69_1
+USA,Iowa,Muscatine,,Iowa,Muscatine,,USA.16.70_1
+USA,Iowa,O'Brien,,Iowa,O'Brien,,USA.16.71_1
+USA,Iowa,Osceola,,Iowa,Osceola,,USA.16.72_1
+USA,Iowa,Page,,Iowa,Page,,USA.16.73_1
+USA,Iowa,Palo Alto,,Iowa,Palo Alto,,USA.16.74_1
+USA,Iowa,Plymouth,,Iowa,Plymouth,,USA.16.75_1
+USA,Iowa,Pocahontas,,Iowa,Pocahontas,,USA.16.76_1
+USA,Iowa,Polk,,Iowa,Polk,,USA.16.77_1
+USA,Iowa,Pottawattamie,,Iowa,Pottawattamie,,USA.16.78_1
+USA,Iowa,Poweshiek,,Iowa,Poweshiek,,USA.16.79_1
+USA,Iowa,Ringgold,,Iowa,Ringgold,,USA.16.80_1
+USA,Iowa,Sac,,Iowa,Sac,,USA.16.81_1
+USA,Iowa,Scott,,Iowa,Scott,,USA.16.82_1
+USA,Iowa,Shelby,,Iowa,Shelby,,USA.16.83_1
+USA,Iowa,Sioux,,Iowa,Sioux,,USA.16.84_1
+USA,Iowa,Story,,Iowa,Story,,USA.16.85_1
+USA,Iowa,Tama,,Iowa,Tama,,USA.16.86_1
+USA,Iowa,Taylor,,Iowa,Taylor,,USA.16.87_1
+USA,Iowa,Union,,Iowa,Union,,USA.16.88_1
+USA,Iowa,Van Buren,,Iowa,Van Buren,,USA.16.89_1
+USA,Iowa,Wapello,,Iowa,Wapello,,USA.16.90_1
+USA,Iowa,Warren,,Iowa,Warren,,USA.16.91_1
+USA,Iowa,Washington,,Iowa,Washington,,USA.16.92_1
+USA,Iowa,Wayne,,Iowa,Wayne,,USA.16.93_1
+USA,Iowa,Webster,,Iowa,Webster,,USA.16.94_1
+USA,Iowa,Winnebago,,Iowa,Winnebago,,USA.16.95_1
+USA,Iowa,Winneshiek,,Iowa,Winneshiek,,USA.16.96_1
+USA,Iowa,Woodbury,,Iowa,Woodbury,,USA.16.97_1
+USA,Iowa,Worth,,Iowa,Worth,,USA.16.98_1
+USA,Iowa,Wright,,Iowa,Wright,,USA.16.99_1
+USA,Kansas,Anderson,,Kansas,Anderson,,USA.17.2_1
+USA,Kansas,Atchison,,Kansas,Atchison,,USA.17.3_1
+USA,Kansas,Barber,,Kansas,Barber,,USA.17.4_1
+USA,Kansas,Barton,,Kansas,Barton,,USA.17.5_1
+USA,Kansas,Bourbon,,Kansas,Bourbon,,USA.17.6_1
+USA,Kansas,Brown,,Kansas,Brown,,USA.17.7_1
+USA,Kansas,Butler,,Kansas,Butler,,USA.17.8_1
+USA,Kansas,Chase,,Kansas,Chase,,USA.17.9_1
+USA,Kansas,Chautauqua,,Kansas,Chautauqua,,USA.17.10_1
+USA,Kansas,Cherokee,,Kansas,Cherokee,,USA.17.11_1
+USA,Kansas,Cheyenne,,Kansas,Cheyenne,,USA.17.12_1
+USA,Kansas,Clark,,Kansas,Clark,,USA.17.13_1
+USA,Kansas,Clay,,Kansas,Clay,,USA.17.14_1
+USA,Kansas,Cloud,,Kansas,Cloud,,USA.17.15_1
+USA,Kansas,Coffey,,Kansas,Coffey,,USA.17.16_1
+USA,Kansas,Comanche,,Kansas,Comanche,,USA.17.17_1
+USA,Kansas,Cowley,,Kansas,Cowley,,USA.17.18_1
+USA,Kansas,Crawford,,Kansas,Crawford,,USA.17.19_1
+USA,Kansas,Dickinson,,Kansas,Dickinson,,USA.17.21_1
+USA,Kansas,Doniphan,,Kansas,Doniphan,,USA.17.22_1
+USA,Kansas,Douglas,,Kansas,Douglas,,USA.17.23_1
+USA,Kansas,Edwards,,Kansas,Edwards,,USA.17.24_1
+USA,Kansas,Ellis,,Kansas,Ellis,,USA.17.26_1
+USA,Kansas,Ellsworth,,Kansas,Ellsworth,,USA.17.27_1
+USA,Kansas,Finney,,Kansas,Finney,,USA.17.28_1
+USA,Kansas,Ford,,Kansas,Ford,,USA.17.29_1
+USA,Kansas,Franklin,,Kansas,Franklin,,USA.17.30_1
+USA,Kansas,Geary,,Kansas,Geary,,USA.17.31_1
+USA,Kansas,Gove,,Kansas,Gove,,USA.17.32_1
+USA,Kansas,Grant,,Kansas,Grant,,USA.17.34_1
+USA,Kansas,Gray,,Kansas,Gray,,USA.17.35_1
+USA,Kansas,Greenwood,,Kansas,Greenwood,,USA.17.37_1
+USA,Kansas,Hamilton,,Kansas,Hamilton,,USA.17.38_1
+USA,Kansas,Harper,,Kansas,Harper,,USA.17.39_1
+USA,Kansas,Harvey,,Kansas,Harvey,,USA.17.40_1
+USA,Kansas,Haskell,,Kansas,Haskell,,USA.17.41_1
+USA,Kansas,Hodgeman,,Kansas,Hodgeman,,USA.17.42_1
+USA,Kansas,Jackson,,Kansas,Jackson,,USA.17.43_1
+USA,Kansas,Jefferson,,Kansas,Jefferson,,USA.17.44_1
+USA,Kansas,Jewell,,Kansas,Jewell,,USA.17.45_1
+USA,Kansas,Johnson,,Kansas,Johnson,,USA.17.46_1
+USA,Kansas,Kearny,,Kansas,Kearny,,USA.17.47_1
+USA,Kansas,Kiowa,,Kansas,Kiowa,,USA.17.49_1
+USA,Kansas,Labette,,Kansas,Labette,,USA.17.50_1
+USA,Kansas,Lane,,Kansas,Lane,,USA.17.51_1
+USA,Kansas,Leavenworth,,Kansas,Leavenworth,,USA.17.52_1
+USA,Kansas,Linn,,Kansas,Linn,,USA.17.54_1
+USA,Kansas,Lyon,,Kansas,Lyon,,USA.17.56_1
+USA,Kansas,Marion,,Kansas,Marion,,USA.17.57_1
+USA,Kansas,McPherson,,Kansas,McPherson,,USA.17.59_1
+USA,Kansas,Meade,,Kansas,Meade,,USA.17.60_1
+USA,Kansas,Miami,,Kansas,Miami,,USA.17.61_1
+USA,Kansas,Mitchell,,Kansas,Mitchell,,USA.17.62_1
+USA,Kansas,Montgomery,,Kansas,Montgomery,,USA.17.63_1
+USA,Kansas,Morris,,Kansas,Morris,,USA.17.64_1
+USA,Kansas,Morton,,Kansas,Morton,,USA.17.65_1
+USA,Kansas,Nemaha,,Kansas,Nemaha,,USA.17.66_1
+USA,Kansas,Neosho,,Kansas,Neosho,,USA.17.67_1
+USA,Kansas,Ness,,Kansas,Ness,,USA.17.68_1
+USA,Kansas,Norton,,Kansas,Norton,,USA.17.69_1
+USA,Kansas,Osage,,Kansas,Osage,,USA.17.70_1
+USA,Kansas,Osborne,,Kansas,Osborne,,USA.17.71_1
+USA,Kansas,Ottawa,,Kansas,Ottawa,,USA.17.72_1
+USA,Kansas,Phillips,,Kansas,Phillips,,USA.17.74_1
+USA,Kansas,Pottawatomie,,Kansas,Pottawatomie,,USA.17.75_1
+USA,Kansas,Pratt,,Kansas,Pratt,,USA.17.76_1
+USA,Kansas,Reno,,Kansas,Reno,,USA.17.78_1
+USA,Kansas,Republic,,Kansas,Republic,,USA.17.79_1
+USA,Kansas,Rice,,Kansas,Rice,,USA.17.80_1
+USA,Kansas,Riley,,Kansas,Riley,,USA.17.81_1
+USA,Kansas,Rooks,,Kansas,Rooks,,USA.17.82_1
+USA,Kansas,Saline,,Kansas,Saline,,USA.17.85_1
+USA,Kansas,Scott,,Kansas,Scott,,USA.17.86_1
+USA,Kansas,Sedgwick,,Kansas,Sedgwick,,USA.17.87_1
+USA,Kansas,Seward,,Kansas,Seward,,USA.17.88_1
+USA,Kansas,Shawnee,,Kansas,Shawnee,,USA.17.89_1
+USA,Kansas,Sheridan,,Kansas,Sheridan,,USA.17.90_1
+USA,Kansas,Sherman,,Kansas,Sherman,,USA.17.91_1
+USA,Kansas,Smith,,Kansas,Smith,,USA.17.92_1
+USA,Kansas,Stafford,,Kansas,Stafford,,USA.17.93_1
+USA,Kansas,Stanton,,Kansas,Stanton,,USA.17.94_1
+USA,Kansas,Stevens,,Kansas,Stevens,,USA.17.95_1
+USA,Kansas,Sumner,,Kansas,Sumner,,USA.17.96_1
+USA,Kansas,Trego,,Kansas,Trego,,USA.17.98_1
+USA,Kansas,Wabaunsee,,Kansas,Wabaunsee,,USA.17.99_1
+USA,Kansas,Wilson,,Kansas,Wilson,,USA.17.103_1
+USA,Kansas,Woodson,,Kansas,Woodson,,USA.17.104_1
+USA,Kansas,Wyandotte,,Kansas,Wyandotte,,USA.17.105_1
+USA,Kentucky,Adair,,Kentucky,Adair,,USA.18.1_1
+USA,Kentucky,Allen,,Kentucky,Allen,,USA.18.2_1
+USA,Kentucky,Anderson,,Kentucky,Anderson,,USA.18.3_1
+USA,Kentucky,Ballard,,Kentucky,Ballard,,USA.18.4_1
+USA,Kentucky,Barren,,Kentucky,Barren,,USA.18.5_1
+USA,Kentucky,Bath,,Kentucky,Bath,,USA.18.6_1
+USA,Kentucky,Bell,,Kentucky,Bell,,USA.18.7_1
+USA,Kentucky,Boone,,Kentucky,Boone,,USA.18.8_1
+USA,Kentucky,Bourbon,,Kentucky,Bourbon,,USA.18.9_1
+USA,Kentucky,Boyd,,Kentucky,Boyd,,USA.18.10_1
+USA,Kentucky,Boyle,,Kentucky,Boyle,,USA.18.11_1
+USA,Kentucky,Bracken,,Kentucky,Bracken,,USA.18.12_1
+USA,Kentucky,Breathitt,,Kentucky,Breathitt,,USA.18.13_1
+USA,Kentucky,Breckinridge,,Kentucky,Breckinridge,,USA.18.14_1
+USA,Kentucky,Bullitt,,Kentucky,Bullitt,,USA.18.15_1
+USA,Kentucky,Butler,,Kentucky,Butler,,USA.18.16_1
+USA,Kentucky,Caldwell,,Kentucky,Caldwell,,USA.18.17_1
+USA,Kentucky,Calloway,,Kentucky,Calloway,,USA.18.18_1
+USA,Kentucky,Campbell,,Kentucky,Campbell,,USA.18.19_1
+USA,Kentucky,Carlisle,,Kentucky,Carlisle,,USA.18.20_1
+USA,Kentucky,Carroll,,Kentucky,Carroll,,USA.18.21_1
+USA,Kentucky,Carter,,Kentucky,Carter,,USA.18.22_1
+USA,Kentucky,Casey,,Kentucky,Casey,,USA.18.23_1
+USA,Kentucky,Christian,,Kentucky,Christian,,USA.18.24_1
+USA,Kentucky,Clark,,Kentucky,Clark,,USA.18.25_1
+USA,Kentucky,Clay,,Kentucky,Clay,,USA.18.26_1
+USA,Kentucky,Clinton,,Kentucky,Clinton,,USA.18.27_1
+USA,Kentucky,Crittenden,,Kentucky,Crittenden,,USA.18.28_1
+USA,Kentucky,Cumberland,,Kentucky,Cumberland,,USA.18.29_1
+USA,Kentucky,Daviess,,Kentucky,Daviess,,USA.18.30_1
+USA,Kentucky,Edmonson,,Kentucky,Edmonson,,USA.18.31_1
+USA,Kentucky,Elliott,,Kentucky,Elliott,,USA.18.32_1
+USA,Kentucky,Fayette,,Kentucky,Fayette,,USA.18.34_1
+USA,Kentucky,Fleming,,Kentucky,Fleming,,USA.18.35_1
+USA,Kentucky,Floyd,,Kentucky,Floyd,,USA.18.36_1
+USA,Kentucky,Franklin,,Kentucky,Franklin,,USA.18.37_1
+USA,Kentucky,Fulton,,Kentucky,Fulton,,USA.18.38_1
+USA,Kentucky,Gallatin,,Kentucky,Gallatin,,USA.18.39_1
+USA,Kentucky,Garrard,,Kentucky,Garrard,,USA.18.40_1
+USA,Kentucky,Grant,,Kentucky,Grant,,USA.18.41_1
+USA,Kentucky,Graves,,Kentucky,Graves,,USA.18.42_1
+USA,Kentucky,Grayson,,Kentucky,Grayson,,USA.18.43_1
+USA,Kentucky,Green,,Kentucky,Green,,USA.18.44_1
+USA,Kentucky,Greenup,,Kentucky,Greenup,,USA.18.45_1
+USA,Kentucky,Hancock,,Kentucky,Hancock,,USA.18.46_1
+USA,Kentucky,Hardin,,Kentucky,Hardin,,USA.18.47_1
+USA,Kentucky,Harlan,,Kentucky,Harlan,,USA.18.48_1
+USA,Kentucky,Harrison,,Kentucky,Harrison,,USA.18.49_1
+USA,Kentucky,Hart,,Kentucky,Hart,,USA.18.50_1
+USA,Kentucky,Henderson,,Kentucky,Henderson,,USA.18.51_1
+USA,Kentucky,Henry,,Kentucky,Henry,,USA.18.52_1
+USA,Kentucky,Hickman,,Kentucky,Hickman,,USA.18.53_1
+USA,Kentucky,Hopkins,,Kentucky,Hopkins,,USA.18.54_1
+USA,Kentucky,Jackson,,Kentucky,Jackson,,USA.18.55_1
+USA,Kentucky,Jefferson,,Kentucky,Jefferson,,USA.18.56_1
+USA,Kentucky,Jessamine,,Kentucky,Jessamine,,USA.18.57_1
+USA,Kentucky,Johnson,,Kentucky,Johnson,,USA.18.58_1
+USA,Kentucky,Kenton,,Kentucky,Kenton,,USA.18.59_1
+USA,Kentucky,Knott,,Kentucky,Knott,,USA.18.60_1
+USA,Kentucky,Knox,,Kentucky,Knox,,USA.18.61_1
+USA,Kentucky,Larue,,Kentucky,Larue,,USA.18.62_1
+USA,Kentucky,Laurel,,Kentucky,Laurel,,USA.18.63_1
+USA,Kentucky,Lawrence,,Kentucky,Lawrence,,USA.18.64_1
+USA,Kentucky,Leslie,,Kentucky,Leslie,,USA.18.66_1
+USA,Kentucky,Letcher,,Kentucky,Letcher,,USA.18.67_1
+USA,Kentucky,Lewis,,Kentucky,Lewis,,USA.18.68_1
+USA,Kentucky,Lincoln,,Kentucky,Lincoln,,USA.18.69_1
+USA,Kentucky,Livingston,,Kentucky,Livingston,,USA.18.70_1
+USA,Kentucky,Logan,,Kentucky,Logan,,USA.18.71_1
+USA,Kentucky,Lyon,,Kentucky,Lyon,,USA.18.72_1
+USA,Kentucky,Madison,,Kentucky,Madison,,USA.18.73_1
+USA,Kentucky,Magoffin,,Kentucky,Magoffin,,USA.18.74_1
+USA,Kentucky,Marion,,Kentucky,Marion,,USA.18.75_1
+USA,Kentucky,Marshall,,Kentucky,Marshall,,USA.18.76_1
+USA,Kentucky,Martin,,Kentucky,Martin,,USA.18.77_1
+USA,Kentucky,Mason,,Kentucky,Mason,,USA.18.78_1
+USA,Kentucky,McCracken,,Kentucky,McCracken,,USA.18.79_1
+USA,Kentucky,McCreary,,Kentucky,McCreary,,USA.18.80_1
+USA,Kentucky,McLean,,Kentucky,McLean,,USA.18.81_1
+USA,Kentucky,Meade,,Kentucky,Meade,,USA.18.82_1
+USA,Kentucky,Menifee,,Kentucky,Menifee,,USA.18.83_1
+USA,Kentucky,Mercer,,Kentucky,Mercer,,USA.18.84_1
+USA,Kentucky,Metcalfe,,Kentucky,Metcalfe,,USA.18.85_1
+USA,Kentucky,Monroe,,Kentucky,Monroe,,USA.18.86_1
+USA,Kentucky,Montgomery,,Kentucky,Montgomery,,USA.18.87_1
+USA,Kentucky,Morgan,,Kentucky,Morgan,,USA.18.88_1
+USA,Kentucky,Muhlenberg,,Kentucky,Muhlenberg,,USA.18.89_1
+USA,Kentucky,Nelson,,Kentucky,Nelson,,USA.18.90_1
+USA,Kentucky,Nicholas,,Kentucky,Nicholas,,USA.18.91_1
+USA,Kentucky,Ohio,,Kentucky,Ohio,,USA.18.92_1
+USA,Kentucky,Oldham,,Kentucky,Oldham,,USA.18.93_1
+USA,Kentucky,Owen,,Kentucky,Owen,,USA.18.94_1
+USA,Kentucky,Owsley,,Kentucky,Owsley,,USA.18.95_1
+USA,Kentucky,Pendleton,,Kentucky,Pendleton,,USA.18.96_1
+USA,Kentucky,Perry,,Kentucky,Perry,,USA.18.97_1
+USA,Kentucky,Pike,,Kentucky,Pike,,USA.18.98_1
+USA,Kentucky,Powell,,Kentucky,Powell,,USA.18.99_1
+USA,Kentucky,Pulaski,,Kentucky,Pulaski,,USA.18.100_1
+USA,Kentucky,Rockcastle,,Kentucky,Rockcastle,,USA.18.102_1
+USA,Kentucky,Rowan,,Kentucky,Rowan,,USA.18.103_1
+USA,Kentucky,Russell,,Kentucky,Russell,,USA.18.104_1
+USA,Kentucky,Scott,,Kentucky,Scott,,USA.18.105_1
+USA,Kentucky,Shelby,,Kentucky,Shelby,,USA.18.106_1
+USA,Kentucky,Simpson,,Kentucky,Simpson,,USA.18.107_1
+USA,Kentucky,Spencer,,Kentucky,Spencer,,USA.18.108_1
+USA,Kentucky,Taylor,,Kentucky,Taylor,,USA.18.109_1
+USA,Kentucky,Todd,,Kentucky,Todd,,USA.18.110_1
+USA,Kentucky,Trigg,,Kentucky,Trigg,,USA.18.111_1
+USA,Kentucky,Trimble,,Kentucky,Trimble,,USA.18.112_1
+USA,Kentucky,Union,,Kentucky,Union,,USA.18.113_1
+USA,Kentucky,Warren,,Kentucky,Warren,,USA.18.114_1
+USA,Kentucky,Washington,,Kentucky,Washington,,USA.18.115_1
+USA,Kentucky,Wayne,,Kentucky,Wayne,,USA.18.116_1
+USA,Kentucky,Webster,,Kentucky,Webster,,USA.18.117_1
+USA,Kentucky,Whitley,,Kentucky,Whitley,,USA.18.118_1
+USA,Kentucky,Wolfe,,Kentucky,Wolfe,,USA.18.119_1
+USA,Kentucky,Woodford,,Kentucky,Woodford,,USA.18.120_1
+USA,Louisiana,Acadia,,Louisiana,Acadia,,USA.19.1_1
+USA,Louisiana,Allen,,Louisiana,Allen,,USA.19.2_1
+USA,Louisiana,Ascension,,Louisiana,Ascension,,USA.19.3_1
+USA,Louisiana,Assumption,,Louisiana,Assumption,,USA.19.4_1
+USA,Louisiana,Avoyelles,,Louisiana,Avoyelles,,USA.19.5_1
+USA,Louisiana,Beauregard,,Louisiana,Beauregard,,USA.19.6_1
+USA,Louisiana,Bienville,,Louisiana,Bienville,,USA.19.7_1
+USA,Louisiana,Bossier,,Louisiana,Bossier,,USA.19.8_1
+USA,Louisiana,Caddo,,Louisiana,Caddo,,USA.19.9_1
+USA,Louisiana,Calcasieu,,Louisiana,Calcasieu,,USA.19.10_1
+USA,Louisiana,Caldwell,,Louisiana,Caldwell,,USA.19.11_1
+USA,Louisiana,Cameron,,Louisiana,Cameron,,USA.19.12_1
+USA,Louisiana,Catahoula,,Louisiana,Catahoula,,USA.19.13_1
+USA,Louisiana,Claiborne,,Louisiana,Claiborne,,USA.19.14_1
+USA,Louisiana,Concordia,,Louisiana,Concordia,,USA.19.15_1
+USA,Louisiana,De Soto,,Louisiana,De Soto,,USA.19.16_1
+USA,Louisiana,East Baton Rouge,,Louisiana,East Baton Rouge,,USA.19.17_1
+USA,Louisiana,East Carroll,,Louisiana,East Carroll,,USA.19.18_1
+USA,Louisiana,East Feliciana,,Louisiana,East Feliciana,,USA.19.19_1
+USA,Louisiana,Evangeline,,Louisiana,Evangeline,,USA.19.20_1
+USA,Louisiana,Franklin,,Louisiana,Franklin,,USA.19.21_1
+USA,Louisiana,Grant,,Louisiana,Grant,,USA.19.22_1
+USA,Louisiana,Iberia,,Louisiana,Iberia,,USA.19.23_1
+USA,Louisiana,Iberville,,Louisiana,Iberville,,USA.19.24_1
+USA,Louisiana,Jackson,,Louisiana,Jackson,,USA.19.25_1
+USA,Louisiana,Jefferson Davis,,Louisiana,Jefferson Davis,,USA.19.27_1
+USA,Louisiana,Jefferson,,Louisiana,Jefferson,,USA.19.26_1
+USA,Louisiana,LaSalle,,Louisiana,La Salle,,USA.19.28_1
+USA,Louisiana,Lafayette,,Louisiana,Lafayette,,USA.19.29_1
+USA,Louisiana,Lafourche,,Louisiana,Lafourche,,USA.19.30_1
+USA,Louisiana,Lincoln,,Louisiana,Lincoln,,USA.19.31_1
+USA,Louisiana,Livingston,,Louisiana,Livingston,,USA.19.32_1
+USA,Louisiana,Madison,,Louisiana,Madison,,USA.19.33_1
+USA,Louisiana,Morehouse,,Louisiana,Morehouse,,USA.19.34_1
+USA,Louisiana,Natchitoches,,Louisiana,Natchitoches,,USA.19.35_1
+USA,Louisiana,Orleans,,Louisiana,Orleans,,USA.19.36_1
+USA,Louisiana,Ouachita,,Louisiana,Ouachita,,USA.19.37_1
+USA,Louisiana,Plaquemines,,Louisiana,Plaquemines,,USA.19.38_1
+USA,Louisiana,Pointe Coupee,,Louisiana,Pointe Coupee,,USA.19.39_1
+USA,Louisiana,Rapides,,Louisiana,Rapides,,USA.19.40_1
+USA,Louisiana,Red River,,Louisiana,Red River,,USA.19.41_1
+USA,Louisiana,Richland,,Louisiana,Richland,,USA.19.42_1
+USA,Louisiana,Sabine,,Louisiana,Sabine,,USA.19.43_1
+USA,Louisiana,St. Bernard,,Louisiana,Saint Bernard,,USA.19.44_1
+USA,Louisiana,St. Charles,,Louisiana,Saint Charles,,USA.19.45_1
+USA,Louisiana,St. Helena,,Louisiana,Saint Helena,,USA.19.46_1
+USA,Louisiana,St. James,,Louisiana,Saint James,,USA.19.47_1
+USA,Louisiana,St. John the Baptist,,Louisiana,Saint John the Baptist,,USA.19.48_1
+USA,Louisiana,St. Landry,,Louisiana,Saint Landry,,USA.19.49_1
+USA,Louisiana,St. Martin,,Louisiana,Saint Martin,,USA.19.50_1
+USA,Louisiana,St. Mary,,Louisiana,Saint Mary,,USA.19.51_1
+USA,Louisiana,St. Tammany,,Louisiana,Saint Tammany,,USA.19.52_1
+USA,Louisiana,Tangipahoa,,Louisiana,Tangipahoa,,USA.19.53_1
+USA,Louisiana,Tensas,,Louisiana,Tensas,,USA.19.54_1
+USA,Louisiana,Terrebonne,,Louisiana,Terrebonne,,USA.19.55_1
+USA,Louisiana,Union,,Louisiana,Union,,USA.19.56_1
+USA,Louisiana,Vermilion,,Louisiana,Vermilion,,USA.19.57_1
+USA,Louisiana,Vernon,,Louisiana,Vernon,,USA.19.58_1
+USA,Louisiana,Washington,,Louisiana,Washington,,USA.19.59_1
+USA,Louisiana,Webster,,Louisiana,Webster,,USA.19.60_1
+USA,Louisiana,West Baton Rouge,,Louisiana,West Baton Rouge,,USA.19.61_1
+USA,Louisiana,West Carroll,,Louisiana,West Carroll,,USA.19.62_1
+USA,Louisiana,West Feliciana,,Louisiana,West Feliciana,,USA.19.63_1
+USA,Louisiana,Winn,,Louisiana,Winn,,USA.19.64_1
+USA,Maine,Androscoggin,,Maine,Androscoggin,,USA.20.1_1
+USA,Maine,Aroostook,,Maine,Aroostook,,USA.20.2_1
+USA,Maine,Cumberland,,Maine,Cumberland,,USA.20.3_1
+USA,Maine,Franklin,,Maine,Franklin,,USA.20.4_1
+USA,Maine,Hancock,,Maine,Hancock,,USA.20.5_1
+USA,Maine,Kennebec,,Maine,Kennebec,,USA.20.6_1
+USA,Maine,Knox,,Maine,Knox,,USA.20.7_1
+USA,Maine,Lincoln,,Maine,Lincoln,,USA.20.8_1
+USA,Maine,Oxford,,Maine,Oxford,,USA.20.9_1
+USA,Maine,Penobscot,,Maine,Penobscot,,USA.20.10_1
+USA,Maine,Piscataquis,,Maine,Piscataquis,,USA.20.11_1
+USA,Maine,Sagadahoc,,Maine,Sagadahoc,,USA.20.12_1
+USA,Maine,Somerset,,Maine,Somerset,,USA.20.13_1
+USA,Maine,Waldo,,Maine,Waldo,,USA.20.14_1
+USA,Maine,Washington,,Maine,Washington,,USA.20.15_1
+USA,Maine,York,,Maine,York,,USA.20.16_1
+USA,Maryland,Allegany,,Maryland,Allegany,,USA.21.1_1
+USA,Maryland,Anne Arundel,,Maryland,Anne Arundel,,USA.21.2_1
+USA,Maryland,Baltimore city,,Maryland,Baltimore,,USA.21.3_1
+USA,Maryland,Calvert,,Maryland,Calvert,,USA.21.4_1
+USA,Maryland,Caroline,,Maryland,Caroline,,USA.21.5_1
+USA,Maryland,Carroll,,Maryland,Carroll,,USA.21.6_1
+USA,Maryland,Cecil,,Maryland,Cecil,,USA.21.7_1
+USA,Maryland,Charles,,Maryland,Charles,,USA.21.8_1
+USA,Maryland,Dorchester,,Maryland,Dorchester,,USA.21.9_1
+USA,Maryland,Frederick,,Maryland,Frederick,,USA.21.10_1
+USA,Maryland,Garrett,,Maryland,Garrett,,USA.21.11_1
+USA,Maryland,Harford,,Maryland,Harford,,USA.21.12_1
+USA,Maryland,Howard,,Maryland,Howard,,USA.21.13_1
+USA,Maryland,Kent,,Maryland,Kent,,USA.21.14_1
+USA,Maryland,Montgomery,,Maryland,Montgomery,,USA.21.15_1
+USA,Maryland,Prince George's,,Maryland,Prince George's,,USA.21.16_1
+USA,Maryland,Queen Anne's,,Maryland,Queen Anne's,,USA.21.17_1
+USA,Maryland,Somerset,,Maryland,Somerset,,USA.21.19_1
+USA,Maryland,St. Mary's,,Maryland,Saint Mary's,,USA.21.18_1
+USA,Maryland,Talbot,,Maryland,Talbot,,USA.21.20_1
+USA,Maryland,Washington,,Maryland,Washington,,USA.21.21_1
+USA,Maryland,Wicomico,,Maryland,Wicomico,,USA.21.22_1
+USA,Maryland,Worcester,,Maryland,Worcester,,USA.21.23_1
+USA,Massachusetts,Barnstable,,Massachusetts,Barnstable,,USA.22.1_1
+USA,Massachusetts,Berkshire,,Massachusetts,Berkshire,,USA.22.2_1
+USA,Massachusetts,Bristol,,Massachusetts,Bristol,,USA.22.3_1
+USA,Massachusetts,Dukes,,Massachusetts,Dukes,,USA.22.4_1
+USA,Massachusetts,Essex,,Massachusetts,Essex,,USA.22.5_1
+USA,Massachusetts,Franklin,,Massachusetts,Franklin,,USA.22.6_1
+USA,Massachusetts,Hampden,,Massachusetts,Hampden,,USA.22.7_1
+USA,Massachusetts,Hampshire,,Massachusetts,Hampshire,,USA.22.8_1
+USA,Massachusetts,Middlesex,,Massachusetts,Middlesex,,USA.22.9_1
+USA,Massachusetts,Nantucket,,Massachusetts,Nantucket,,USA.22.10_1
+USA,Massachusetts,Norfolk,,Massachusetts,Norfolk,,USA.22.11_1
+USA,Massachusetts,Plymouth,,Massachusetts,Plymouth,,USA.22.12_1
+USA,Massachusetts,Suffolk,,Massachusetts,Suffolk,,USA.22.13_1
+USA,Massachusetts,Worcester,,Massachusetts,Worcester,,USA.22.14_1
+USA,Michigan,Alcona,,Michigan,Alcona,,USA.23.1_1
+USA,Michigan,Allegan,,Michigan,Allegan,,USA.23.3_1
+USA,Michigan,Alpena,,Michigan,Alpena,,USA.23.4_1
+USA,Michigan,Antrim,,Michigan,Antrim,,USA.23.5_1
+USA,Michigan,Arenac,,Michigan,Arenac,,USA.23.6_1
+USA,Michigan,Baraga,,Michigan,Baraga,,USA.23.7_1
+USA,Michigan,Barry,,Michigan,Barry,,USA.23.8_1
+USA,Michigan,Bay,,Michigan,Bay,,USA.23.9_1
+USA,Michigan,Benzie,,Michigan,Benzie,,USA.23.10_1
+USA,Michigan,Berrien,,Michigan,Berrien,,USA.23.11_1
+USA,Michigan,Branch,,Michigan,Branch,,USA.23.12_1
+USA,Michigan,Calhoun,,Michigan,Calhoun,,USA.23.13_1
+USA,Michigan,Cass,,Michigan,Cass,,USA.23.14_1
+USA,Michigan,Charlevoix,,Michigan,Charlevoix,,USA.23.15_1
+USA,Michigan,Cheboygan,,Michigan,Cheboygan,,USA.23.16_1
+USA,Michigan,Chippewa,,Michigan,Chippewa,,USA.23.17_1
+USA,Michigan,Clare,,Michigan,Clare,,USA.23.18_1
+USA,Michigan,Clinton,,Michigan,Clinton,,USA.23.19_1
+USA,Michigan,Crawford,,Michigan,Crawford,,USA.23.20_1
+USA,Michigan,Delta,,Michigan,Delta,,USA.23.21_1
+USA,Michigan,Dickinson,,Michigan,Dickinson,,USA.23.22_1
+USA,Michigan,Eaton,,Michigan,Eaton,,USA.23.23_1
+USA,Michigan,Emmet,,Michigan,Emmet,,USA.23.24_1
+USA,Michigan,Genesee,,Michigan,Genesee,,USA.23.25_1
+USA,Michigan,Gladwin,,Michigan,Gladwin,,USA.23.26_1
+USA,Michigan,Gogebic,,Michigan,Gogebic,,USA.23.27_1
+USA,Michigan,Grand Traverse,,Michigan,Grand Traverse,,USA.23.28_1
+USA,Michigan,Gratiot,,Michigan,Gratiot,,USA.23.29_1
+USA,Michigan,Hillsdale,,Michigan,Hillsdale,,USA.23.30_1
+USA,Michigan,Houghton,,Michigan,Houghton,,USA.23.31_1
+USA,Michigan,Huron,,Michigan,Huron,,USA.23.32_1
+USA,Michigan,Ingham,,Michigan,Ingham,,USA.23.33_1
+USA,Michigan,Ionia,,Michigan,Ionia,,USA.23.34_1
+USA,Michigan,Iosco,,Michigan,Iosco,,USA.23.35_1
+USA,Michigan,Isabella,,Michigan,Isabella,,USA.23.37_1
+USA,Michigan,Jackson,,Michigan,Jackson,,USA.23.38_1
+USA,Michigan,Kalamazoo,,Michigan,Kalamazoo,,USA.23.39_1
+USA,Michigan,Kalkaska,,Michigan,Kalkaska,,USA.23.40_1
+USA,Michigan,Kent,,Michigan,Kent,,USA.23.41_1
+USA,Michigan,Lake,,Michigan,Lake,,USA.23.43_1
+USA,Michigan,Lapeer,,Michigan,Lapeer,,USA.23.48_1
+USA,Michigan,Leelanau,,Michigan,Leelanau,,USA.23.49_1
+USA,Michigan,Lenawee,,Michigan,Lenawee,,USA.23.50_1
+USA,Michigan,Livingston,,Michigan,Livingston,,USA.23.51_1
+USA,Michigan,Luce,,Michigan,Luce,,USA.23.52_1
+USA,Michigan,Mackinac,,Michigan,Mackinac,,USA.23.53_1
+USA,Michigan,Macomb,,Michigan,Macomb,,USA.23.54_1
+USA,Michigan,Manistee,,Michigan,Manistee,,USA.23.55_1
+USA,Michigan,Marquette,,Michigan,Marquette,,USA.23.56_1
+USA,Michigan,Mason,,Michigan,Mason,,USA.23.57_1
+USA,Michigan,Mecosta,,Michigan,Mecosta,,USA.23.58_1
+USA,Michigan,Menominee,,Michigan,Menominee,,USA.23.59_1
+USA,Michigan,Midland,,Michigan,Midland,,USA.23.60_1
+USA,Michigan,Missaukee,,Michigan,Missaukee,,USA.23.61_1
+USA,Michigan,Monroe,,Michigan,Monroe,,USA.23.62_1
+USA,Michigan,Montcalm,,Michigan,Montcalm,,USA.23.63_1
+USA,Michigan,Montmorency,,Michigan,Montmorency,,USA.23.64_1
+USA,Michigan,Muskegon,,Michigan,Muskegon,,USA.23.65_1
+USA,Michigan,Newaygo,,Michigan,Newaygo,,USA.23.66_1
+USA,Michigan,Oakland,,Michigan,Oakland,,USA.23.67_1
+USA,Michigan,Oceana,,Michigan,Oceana,,USA.23.68_1
+USA,Michigan,Ogemaw,,Michigan,Ogemaw,,USA.23.69_1
+USA,Michigan,Ontonagon,,Michigan,Ontonagon,,USA.23.70_1
+USA,Michigan,Osceola,,Michigan,Osceola,,USA.23.71_1
+USA,Michigan,Oscoda,,Michigan,Oscoda,,USA.23.72_1
+USA,Michigan,Otsego,,Michigan,Otsego,,USA.23.73_1
+USA,Michigan,Ottawa,,Michigan,Ottawa,,USA.23.74_1
+USA,Michigan,Presque Isle,,Michigan,Presque Isle,,USA.23.75_1
+USA,Michigan,Roscommon,,Michigan,Roscommon,,USA.23.76_1
+USA,Michigan,Saginaw,,Michigan,Saginaw,,USA.23.77_1
+USA,Michigan,Sanilac,,Michigan,Sanilac,,USA.23.80_1
+USA,Michigan,Schoolcraft,,Michigan,Schoolcraft,,USA.23.81_1
+USA,Michigan,Shiawassee,,Michigan,Shiawassee,,USA.23.82_1
+USA,Michigan,St. Clair,,Michigan,Saint Clair,,USA.23.78_1
+USA,Michigan,St. Joseph,,Michigan,Saint Joseph,,USA.23.79_1
+USA,Michigan,Tuscola,,Michigan,Tuscola,,USA.23.83_1
+USA,Michigan,Van Buren,,Michigan,Van Buren,,USA.23.84_1
+USA,Michigan,Washtenaw,,Michigan,Washtenaw,,USA.23.85_1
+USA,Michigan,Wayne,,Michigan,Wayne,,USA.23.86_1
+USA,Michigan,Wexford,,Michigan,Wexford,,USA.23.87_1
+USA,Minnesota,Aitkin,,Minnesota,Aitkin,,USA.24.1_1
+USA,Minnesota,Anoka,,Minnesota,Anoka,,USA.24.2_1
+USA,Minnesota,Becker,,Minnesota,Becker,,USA.24.3_1
+USA,Minnesota,Beltrami,,Minnesota,Beltrami,,USA.24.4_1
+USA,Minnesota,Benton,,Minnesota,Benton,,USA.24.5_1
+USA,Minnesota,Big Stone,,Minnesota,Big Stone,,USA.24.6_1
+USA,Minnesota,Blue Earth,,Minnesota,Blue Earth,,USA.24.7_1
+USA,Minnesota,Brown,,Minnesota,Brown,,USA.24.8_1
+USA,Minnesota,Carlton,,Minnesota,Carlton,,USA.24.9_1
+USA,Minnesota,Carver,,Minnesota,Carver,,USA.24.10_1
+USA,Minnesota,Cass,,Minnesota,Cass,,USA.24.11_1
+USA,Minnesota,Chippewa,,Minnesota,Chippewa,,USA.24.12_1
+USA,Minnesota,Chisago,,Minnesota,Chisago,,USA.24.13_1
+USA,Minnesota,Clay,,Minnesota,Clay,,USA.24.14_1
+USA,Minnesota,Clearwater,,Minnesota,Clearwater,,USA.24.15_1
+USA,Minnesota,Cottonwood,,Minnesota,Cottonwood,,USA.24.17_1
+USA,Minnesota,Crow Wing,,Minnesota,Crow Wing,,USA.24.18_1
+USA,Minnesota,Dakota,,Minnesota,Dakota,,USA.24.19_1
+USA,Minnesota,Dodge,,Minnesota,Dodge,,USA.24.20_1
+USA,Minnesota,Douglas,,Minnesota,Douglas,,USA.24.21_1
+USA,Minnesota,Faribault,,Minnesota,Faribault,,USA.24.22_1
+USA,Minnesota,Fillmore,,Minnesota,Fillmore,,USA.24.23_1
+USA,Minnesota,Freeborn,,Minnesota,Freeborn,,USA.24.24_1
+USA,Minnesota,Goodhue,,Minnesota,Goodhue,,USA.24.25_1
+USA,Minnesota,Grant,,Minnesota,Grant,,USA.24.26_1
+USA,Minnesota,Hennepin,,Minnesota,Hennepin,,USA.24.27_1
+USA,Minnesota,Houston,,Minnesota,Houston,,USA.24.28_1
+USA,Minnesota,Hubbard,,Minnesota,Hubbard,,USA.24.29_1
+USA,Minnesota,Isanti,,Minnesota,Isanti,,USA.24.30_1
+USA,Minnesota,Itasca,,Minnesota,Itasca,,USA.24.31_1
+USA,Minnesota,Jackson,,Minnesota,Jackson,,USA.24.32_1
+USA,Minnesota,Kanabec,,Minnesota,Kanabec,,USA.24.33_1
+USA,Minnesota,Kandiyohi,,Minnesota,Kandiyohi,,USA.24.34_1
+USA,Minnesota,Kittson,,Minnesota,Kittson,,USA.24.35_1
+USA,Minnesota,Koochiching,,Minnesota,Koochiching,,USA.24.36_1
+USA,Minnesota,Lac qui Parle,,Minnesota,Lac qui Parle,,USA.24.37_1
+USA,Minnesota,Lake,,Minnesota,Lake,,USA.24.38_1
+USA,Minnesota,Le Sueur,,Minnesota,Le Sueur,,USA.24.41_1
+USA,Minnesota,Lincoln,,Minnesota,Lincoln,,USA.24.42_1
+USA,Minnesota,Lyon,,Minnesota,Lyon,,USA.24.43_1
+USA,Minnesota,Mahnomen,,Minnesota,Mahnomen,,USA.24.44_1
+USA,Minnesota,Marshall,,Minnesota,Marshall,,USA.24.45_1
+USA,Minnesota,Martin,,Minnesota,Martin,,USA.24.46_1
+USA,Minnesota,McLeod,,Minnesota,McLeod,,USA.24.47_1
+USA,Minnesota,Meeker,,Minnesota,Meeker,,USA.24.48_1
+USA,Minnesota,Mille Lacs,,Minnesota,Mille Lacs,,USA.24.49_1
+USA,Minnesota,Morrison,,Minnesota,Morrison,,USA.24.50_1
+USA,Minnesota,Mower,,Minnesota,Mower,,USA.24.51_1
+USA,Minnesota,Murray,,Minnesota,Murray,,USA.24.52_1
+USA,Minnesota,Nicollet,,Minnesota,Nicollet,,USA.24.53_1
+USA,Minnesota,Nobles,,Minnesota,Nobles,,USA.24.54_1
+USA,Minnesota,Norman,,Minnesota,Norman,,USA.24.55_1
+USA,Minnesota,Olmsted,,Minnesota,Olmsted,,USA.24.56_1
+USA,Minnesota,Otter Tail,,Minnesota,Otter Tail,,USA.24.57_1
+USA,Minnesota,Pennington,,Minnesota,Pennington,,USA.24.58_1
+USA,Minnesota,Pine,,Minnesota,Pine,,USA.24.59_1
+USA,Minnesota,Pipestone,,Minnesota,Pipestone,,USA.24.60_1
+USA,Minnesota,Polk,,Minnesota,Polk,,USA.24.61_1
+USA,Minnesota,Pope,,Minnesota,Pope,,USA.24.62_1
+USA,Minnesota,Ramsey,,Minnesota,Ramsey,,USA.24.63_1
+USA,Minnesota,Red Lake,,Minnesota,Red Lake,,USA.24.64_1
+USA,Minnesota,Redwood,,Minnesota,Redwood,,USA.24.65_1
+USA,Minnesota,Renville,,Minnesota,Renville,,USA.24.66_1
+USA,Minnesota,Rice,,Minnesota,Rice,,USA.24.67_1
+USA,Minnesota,Rock,,Minnesota,Rock,,USA.24.68_1
+USA,Minnesota,Roseau,,Minnesota,Roseau,,USA.24.69_1
+USA,Minnesota,Scott,,Minnesota,Scott,,USA.24.71_1
+USA,Minnesota,Sherburne,,Minnesota,Sherburne,,USA.24.72_1
+USA,Minnesota,Sibley,,Minnesota,Sibley,,USA.24.73_1
+USA,Minnesota,St. Louis,,Minnesota,Saint Louis,,USA.24.70_1
+USA,Minnesota,Stearns,,Minnesota,Stearns,,USA.24.74_1
+USA,Minnesota,Steele,,Minnesota,Steele,,USA.24.75_1
+USA,Minnesota,Swift,,Minnesota,Swift,,USA.24.77_1
+USA,Minnesota,Todd,,Minnesota,Todd,,USA.24.78_1
+USA,Minnesota,Traverse,,Minnesota,Traverse,,USA.24.79_1
+USA,Minnesota,Wabasha,,Minnesota,Lake Superior,,USA.24.40_1
+USA,Minnesota,Wabasha,,Minnesota,Wabasha,,USA.24.80_1
+USA,Minnesota,Wadena,,Minnesota,Wadena,,USA.24.81_1
+USA,Minnesota,Waseca,,Minnesota,Waseca,,USA.24.82_1
+USA,Minnesota,Washington,,Minnesota,Washington,,USA.24.83_1
+USA,Minnesota,Watonwan,,Minnesota,Watonwan,,USA.24.84_1
+USA,Minnesota,Wilkin,,Minnesota,Wilkin,,USA.24.85_1
+USA,Minnesota,Winona,,Minnesota,Winona,,USA.24.86_1
+USA,Minnesota,Wright,,Minnesota,Wright,,USA.24.87_1
+USA,Minnesota,Yellow Medicine,,Minnesota,Yellow Medicine,,USA.24.88_1
+USA,Mississippi,Adams,,Mississippi,Adams,,USA.25.1_1
+USA,Mississippi,Alcorn,,Mississippi,Alcorn,,USA.25.2_1
+USA,Mississippi,Amite,,Mississippi,Amite,,USA.25.3_1
+USA,Mississippi,Attala,,Mississippi,Attala,,USA.25.4_1
+USA,Mississippi,Benton,,Mississippi,Benton,,USA.25.5_1
+USA,Mississippi,Bolivar,,Mississippi,Bolivar,,USA.25.6_1
+USA,Mississippi,Calhoun,,Mississippi,Calhoun,,USA.25.7_1
+USA,Mississippi,Carroll,,Mississippi,Carroll,,USA.25.8_1
+USA,Mississippi,Chickasaw,,Mississippi,Chickasaw,,USA.25.9_1
+USA,Mississippi,Choctaw,,Mississippi,Choctaw,,USA.25.10_1
+USA,Mississippi,Claiborne,,Mississippi,Claiborne,,USA.25.11_1
+USA,Mississippi,Clarke,,Mississippi,Clarke,,USA.25.12_1
+USA,Mississippi,Clay,,Mississippi,Clay,,USA.25.13_1
+USA,Mississippi,Coahoma,,Mississippi,Coahoma,,USA.25.14_1
+USA,Mississippi,Copiah,,Mississippi,Copiah,,USA.25.15_1
+USA,Mississippi,Covington,,Mississippi,Covington,,USA.25.16_1
+USA,Mississippi,DeSoto,,Mississippi,Desoto,,USA.25.17_1
+USA,Mississippi,Forrest,,Mississippi,Forrest,,USA.25.18_1
+USA,Mississippi,Franklin,,Mississippi,Franklin,,USA.25.19_1
+USA,Mississippi,George,,Mississippi,George,,USA.25.20_1
+USA,Mississippi,Greene,,Mississippi,Greene,,USA.25.21_1
+USA,Mississippi,Grenada,,Mississippi,Grenada,,USA.25.22_1
+USA,Mississippi,Hancock,,Mississippi,Hancock,,USA.25.23_1
+USA,Mississippi,Harrison,,Mississippi,Harrison,,USA.25.24_1
+USA,Mississippi,Hinds,,Mississippi,Hinds,,USA.25.25_1
+USA,Mississippi,Holmes,,Mississippi,Holmes,,USA.25.26_1
+USA,Mississippi,Humphreys,,Mississippi,Humphreys,,USA.25.27_1
+USA,Mississippi,Itawamba,,Mississippi,Itawamba,,USA.25.29_1
+USA,Mississippi,Jackson,,Mississippi,Jackson,,USA.25.30_1
+USA,Mississippi,Jasper,,Mississippi,Jasper,,USA.25.31_1
+USA,Mississippi,Jefferson Davis,,Mississippi,Jefferson Davis,,USA.25.33_1
+USA,Mississippi,Jefferson,,Mississippi,Jefferson,,USA.25.32_1
+USA,Mississippi,Jones,,Mississippi,Jones,,USA.25.34_1
+USA,Mississippi,Kemper,,Mississippi,Kemper,,USA.25.35_1
+USA,Mississippi,Lafayette,,Mississippi,Lafayette,,USA.25.36_1
+USA,Mississippi,Lamar,,Mississippi,Lamar,,USA.25.37_1
+USA,Mississippi,Lauderdale,,Mississippi,Lauderdale,,USA.25.38_1
+USA,Mississippi,Lawrence,,Mississippi,Lawrence,,USA.25.39_1
+USA,Mississippi,Leake,,Mississippi,Leake,,USA.25.40_1
+USA,Mississippi,Lee,,Mississippi,Lee,,USA.25.41_1
+USA,Mississippi,Leflore,,Mississippi,Leflore,,USA.25.42_1
+USA,Mississippi,Lincoln,,Mississippi,Lincoln,,USA.25.43_1
+USA,Mississippi,Lowndes,,Mississippi,Lowndes,,USA.25.44_1
+USA,Mississippi,Madison,,Mississippi,Madison,,USA.25.45_1
+USA,Mississippi,Marion,,Mississippi,Marion,,USA.25.46_1
+USA,Mississippi,Marshall,,Mississippi,Marshall,,USA.25.47_1
+USA,Mississippi,Monroe,,Mississippi,Monroe,,USA.25.48_1
+USA,Mississippi,Montgomery,,Mississippi,Montgomery,,USA.25.49_1
+USA,Mississippi,Neshoba,,Mississippi,Neshoba,,USA.25.50_1
+USA,Mississippi,Newton,,Mississippi,Newton,,USA.25.51_1
+USA,Mississippi,Noxubee,,Mississippi,Noxubee,,USA.25.52_1
+USA,Mississippi,Oktibbeha,,Mississippi,Oktibbeha,,USA.25.53_1
+USA,Mississippi,Panola,,Mississippi,Panola,,USA.25.54_1
+USA,Mississippi,Pearl River,,Mississippi,Pearl River,,USA.25.55_1
+USA,Mississippi,Perry,,Mississippi,Perry,,USA.25.56_1
+USA,Mississippi,Pike,,Mississippi,Pike,,USA.25.57_1
+USA,Mississippi,Pontotoc,,Mississippi,Pontotoc,,USA.25.58_1
+USA,Mississippi,Prentiss,,Mississippi,Prentiss,,USA.25.59_1
+USA,Mississippi,Quitman,,Mississippi,Quitman,,USA.25.60_1
+USA,Mississippi,Rankin,,Mississippi,Rankin,,USA.25.61_1
+USA,Mississippi,Scott,,Mississippi,Scott,,USA.25.62_1
+USA,Mississippi,Sharkey,,Mississippi,Sharkey,,USA.25.63_1
+USA,Mississippi,Simpson,,Mississippi,Simpson,,USA.25.64_1
+USA,Mississippi,Smith,,Mississippi,Smith,,USA.25.65_1
+USA,Mississippi,Stone,,Mississippi,Stone,,USA.25.66_1
+USA,Mississippi,Sunflower,,Mississippi,Sunflower,,USA.25.67_1
+USA,Mississippi,Tallahatchie,,Mississippi,Tallahatchie,,USA.25.68_1
+USA,Mississippi,Tate,,Mississippi,Tate,,USA.25.69_1
+USA,Mississippi,Tippah,,Mississippi,Tippah,,USA.25.70_1
+USA,Mississippi,Tishomingo,,Mississippi,Tishomingo,,USA.25.71_1
+USA,Mississippi,Tunica,,Mississippi,Tunica,,USA.25.72_1
+USA,Mississippi,Union,,Mississippi,Union,,USA.25.73_1
+USA,Mississippi,Walthall,,Mississippi,Walthall,,USA.25.74_1
+USA,Mississippi,Warren,,Mississippi,Warren,,USA.25.75_1
+USA,Mississippi,Washington,,Mississippi,Washington,,USA.25.76_1
+USA,Mississippi,Wayne,,Mississippi,Wayne,,USA.25.77_1
+USA,Mississippi,Webster,,Mississippi,Webster,,USA.25.78_1
+USA,Mississippi,Wilkinson,,Mississippi,Wilkinson,,USA.25.79_1
+USA,Mississippi,Winston,,Mississippi,Winston,,USA.25.80_1
+USA,Mississippi,Yalobusha,,Mississippi,Yalobusha,,USA.25.81_1
+USA,Mississippi,Yazoo,,Mississippi,Yazoo,,USA.25.82_1
+USA,Missouri,Adair,,Missouri,Adair,,USA.26.1_1
+USA,Missouri,Andrew,,Missouri,Andrew,,USA.26.2_1
+USA,Missouri,Atchison,,Missouri,Atchison,,USA.26.3_1
+USA,Missouri,Audrain,,Missouri,Audrain,,USA.26.4_1
+USA,Missouri,Barry,,Missouri,Barry,,USA.26.5_1
+USA,Missouri,Bates,,Missouri,Bates,,USA.26.7_1
+USA,Missouri,Benton,,Missouri,Benton,,USA.26.8_1
+USA,Missouri,Bollinger,,Missouri,Bollinger,,USA.26.9_1
+USA,Missouri,Boone,,Missouri,Boone,,USA.26.10_1
+USA,Missouri,Buchanan,,Missouri,Buchanan,,USA.26.11_1
+USA,Missouri,Butler,,Missouri,Butler,,USA.26.12_1
+USA,Missouri,Caldwell,,Missouri,Caldwell,,USA.26.13_1
+USA,Missouri,Callaway,,Missouri,Callaway,,USA.26.14_1
+USA,Missouri,Camden,,Missouri,Camden,,USA.26.15_1
+USA,Missouri,Cape Girardeau,,Missouri,Cape Girardeau,,USA.26.16_1
+USA,Missouri,Carroll,,Missouri,Carroll,,USA.26.17_1
+USA,Missouri,Carter,,Missouri,Carter,,USA.26.18_1
+USA,Missouri,Cass,,Missouri,Cass,,USA.26.19_1
+USA,Missouri,Cedar,,Missouri,Cedar,,USA.26.20_1
+USA,Missouri,Chariton,,Missouri,Chariton,,USA.26.21_1
+USA,Missouri,Christian,,Missouri,Christian,,USA.26.22_1
+USA,Missouri,Clark,,Missouri,Clark,,USA.26.23_1
+USA,Missouri,Clay,,Missouri,Clay,,USA.26.24_1
+USA,Missouri,Clinton,,Missouri,Clinton,,USA.26.25_1
+USA,Missouri,Cole,,Missouri,Cole,,USA.26.26_1
+USA,Missouri,Cooper,,Missouri,Cooper,,USA.26.27_1
+USA,Missouri,Crawford,,Missouri,Crawford,,USA.26.28_1
+USA,Missouri,Dallas,,Missouri,Dallas,,USA.26.30_1
+USA,Missouri,Daviess,,Missouri,Daviess,,USA.26.31_1
+USA,Missouri,DeKalb,,Missouri,De Kalb,,USA.26.32_1
+USA,Missouri,Dent,,Missouri,Dent,,USA.26.33_1
+USA,Missouri,Dunklin,,Missouri,Dunklin,,USA.26.35_1
+USA,Missouri,Franklin,,Missouri,Franklin,,USA.26.36_1
+USA,Missouri,Gasconade,,Missouri,Gasconade,,USA.26.37_1
+USA,Missouri,Gentry,,Missouri,Gentry,,USA.26.38_1
+USA,Missouri,Greene,,Missouri,Greene,,USA.26.39_1
+USA,Missouri,Grundy,,Missouri,Grundy,,USA.26.40_1
+USA,Missouri,Harrison,,Missouri,Harrison,,USA.26.41_1
+USA,Missouri,Henry,,Missouri,Henry,,USA.26.42_1
+USA,Missouri,Holt,,Missouri,Holt,,USA.26.44_1
+USA,Missouri,Howard,,Missouri,Howard,,USA.26.45_1
+USA,Missouri,Howell,,Missouri,Howell,,USA.26.46_1
+USA,Missouri,Iron,,Missouri,Iron,,USA.26.47_1
+USA,Missouri,Jackson,,Missouri,Jackson,,USA.26.48_1
+USA,Missouri,Jasper,,Missouri,Jasper,,USA.26.49_1
+USA,Missouri,Jefferson,,Missouri,Jefferson,,USA.26.50_1
+USA,Missouri,Johnson,,Missouri,Johnson,,USA.26.51_1
+USA,Missouri,Laclede,,Missouri,Laclede,,USA.26.53_1
+USA,Missouri,Lafayette,,Missouri,Lafayette,,USA.26.54_1
+USA,Missouri,Lawrence,,Missouri,Lawrence,,USA.26.55_1
+USA,Missouri,Lewis,,Missouri,Lewis,,USA.26.56_1
+USA,Missouri,Lincoln,,Missouri,Lincoln,,USA.26.57_1
+USA,Missouri,Linn,,Missouri,Linn,,USA.26.58_1
+USA,Missouri,Livingston,,Missouri,Livingston,,USA.26.59_1
+USA,Missouri,Macon,,Missouri,Macon,,USA.26.60_1
+USA,Missouri,Madison,,Missouri,Madison,,USA.26.61_1
+USA,Missouri,Maries,,Missouri,Maries,,USA.26.62_1
+USA,Missouri,Marion,,Missouri,Marion,,USA.26.63_1
+USA,Missouri,McDonald,,Missouri,McDonald,,USA.26.64_1
+USA,Missouri,Miller,,Missouri,Miller,,USA.26.66_1
+USA,Missouri,Mississippi,,Missouri,Mississippi,,USA.26.67_1
+USA,Missouri,Moniteau,,Missouri,Moniteau,,USA.26.68_1
+USA,Missouri,Montgomery,,Missouri,Montgomery,,USA.26.70_1
+USA,Missouri,Morgan,,Missouri,Morgan,,USA.26.71_1
+USA,Missouri,New Madrid,,Missouri,New Madrid,,USA.26.72_1
+USA,Missouri,Newton,,Missouri,Newton,,USA.26.73_1
+USA,Missouri,Nodaway,,Missouri,Nodaway,,USA.26.74_1
+USA,Missouri,Oregon,,Missouri,Oregon,,USA.26.75_1
+USA,Missouri,Osage,,Missouri,Osage,,USA.26.76_1
+USA,Missouri,Pemiscot,,Missouri,Pemiscot,,USA.26.78_1
+USA,Missouri,Perry,,Missouri,Perry,,USA.26.79_1
+USA,Missouri,Pettis,,Missouri,Pettis,,USA.26.80_1
+USA,Missouri,Phelps,,Missouri,Phelps,,USA.26.81_1
+USA,Missouri,Pike,,Missouri,Pike,,USA.26.82_1
+USA,Missouri,Platte,,Missouri,Platte,,USA.26.83_1
+USA,Missouri,Polk,,Missouri,Polk,,USA.26.84_1
+USA,Missouri,Pulaski,,Missouri,Pulaski,,USA.26.85_1
+USA,Missouri,Ralls,,Missouri,Ralls,,USA.26.87_1
+USA,Missouri,Randolph,,Missouri,Randolph,,USA.26.88_1
+USA,Missouri,Ray,,Missouri,Ray,,USA.26.89_1
+USA,Missouri,Reynolds,,Missouri,Reynolds,,USA.26.90_1
+USA,Missouri,Ripley,,Missouri,Ripley,,USA.26.91_1
+USA,Missouri,Saline,,Missouri,Saline,,USA.26.97_1
+USA,Missouri,Schuyler,,Missouri,Schuyler,,USA.26.98_1
+USA,Missouri,Scotland,,Missouri,Scotland,,USA.26.99_1
+USA,Missouri,Scott,,Missouri,Scott,,USA.26.100_1
+USA,Missouri,Shelby,,Missouri,Shelby,,USA.26.102_1
+USA,Missouri,St. Charles,,Missouri,Saint Charles,,USA.26.92_1
+USA,Missouri,St. Clair,,Missouri,Saint Clair,,USA.26.93_1
+USA,Missouri,St. Francois,,Missouri,Saint Francois,,USA.26.94_1
+USA,Missouri,St. Louis,,Missouri,Saint Louis,,USA.26.95_1
+USA,Missouri,Ste. Genevieve,,Missouri,Sainte Genevieve,,USA.26.96_1
+USA,Missouri,Stoddard,,Missouri,Stoddard,,USA.26.103_1
+USA,Missouri,Stone,,Missouri,Stone,,USA.26.104_1
+USA,Missouri,Sullivan,,Missouri,Sullivan,,USA.26.105_1
+USA,Missouri,Taney,,Missouri,Taney,,USA.26.106_1
+USA,Missouri,Vernon,,Missouri,Vernon,,USA.26.108_1
+USA,Missouri,Warren,,Missouri,Warren,,USA.26.109_1
+USA,Missouri,Washington,,Missouri,Washington,,USA.26.110_1
+USA,Missouri,Webster,,Missouri,Webster,,USA.26.112_1
+USA,Missouri,Worth,,Missouri,Worth,,USA.26.113_1
+USA,Missouri,Wright,,Missouri,Wright,,USA.26.114_1
+USA,Montana,Beaverhead,,Montana,Beaverhead,,USA.27.1_1
+USA,Montana,Big Horn,,Montana,Big Horn,,USA.27.2_1
+USA,Montana,Broadwater,,Montana,Broadwater,,USA.27.4_1
+USA,Montana,Carbon,,Montana,Carbon,,USA.27.5_1
+USA,Montana,Cascade,,Montana,Cascade,,USA.27.7_1
+USA,Montana,Deer Lodge,,Montana,Deer Lodge,,USA.27.12_1
+USA,Montana,Flathead,,Montana,Flathead,,USA.27.15_1
+USA,Montana,Gallatin,,Montana,Gallatin,,USA.27.16_1
+USA,Montana,Glacier,,Montana,Glacier,,USA.27.18_1
+USA,Montana,Golden Valley,,Montana,Golden Valley,,USA.27.19_1
+USA,Montana,Hill,,Montana,Hill,,USA.27.21_1
+USA,Montana,Jefferson,,Montana,Jefferson,,USA.27.22_1
+USA,Montana,Lake,,Montana,Lake,,USA.27.24_1
+USA,Montana,Lewis and Clark,,Montana,Lewis and Clark,,USA.27.25_1
+USA,Montana,Liberty,,Montana,Liberty,,USA.27.26_1
+USA,Montana,Lincoln,,Montana,Lincoln,,USA.27.27_1
+USA,Montana,Madison,,Montana,Madison,,USA.27.28_1
+USA,Montana,Meagher,,Montana,Meagher,,USA.27.30_1
+USA,Montana,Missoula,,Montana,Missoula,,USA.27.32_1
+USA,Montana,Musselshell,,Montana,Musselshell,,USA.27.33_1
+USA,Montana,Park,,Montana,Park,,USA.27.34_1
+USA,Montana,Pondera,,Montana,Pondera,,USA.27.37_1
+USA,Montana,Ravalli,,Montana,Ravalli,,USA.27.41_1
+USA,Montana,Richland,,Montana,Richland,,USA.27.42_1
+USA,Montana,Roosevelt,,Montana,Roosevelt,,USA.27.43_1
+USA,Montana,Silver Bow,,Montana,Silver Bow,,USA.27.47_1
+USA,Montana,Stillwater,,Montana,Stillwater,,USA.27.48_1
+USA,Montana,Toole,,Montana,Toole,,USA.27.51_1
+USA,Montana,Wheatland,,Montana,Wheatland,,USA.27.54_1
+USA,Montana,Yellowstone,,Montana,Yellowstone,,USA.27.56_1
+USA,Nebraska,Adams,,Nebraska,Adams,,USA.28.1_1
+USA,Nebraska,Antelope,,Nebraska,Antelope,,USA.28.2_1
+USA,Nebraska,Boone,,Nebraska,Boone,,USA.28.6_1
+USA,Nebraska,Box Butte,,Nebraska,Box Butte,,USA.28.7_1
+USA,Nebraska,Buffalo,,Nebraska,Buffalo,,USA.28.10_1
+USA,Nebraska,Burt,,Nebraska,Burt,,USA.28.11_1
+USA,Nebraska,Butler,,Nebraska,Butler,,USA.28.12_1
+USA,Nebraska,Cass,,Nebraska,Cass,,USA.28.13_1
+USA,Nebraska,Cedar,,Nebraska,Cedar,,USA.28.14_1
+USA,Nebraska,Cherry,,Nebraska,Cherry,,USA.28.16_1
+USA,Nebraska,Cheyenne,,Nebraska,Cheyenne,,USA.28.17_1
+USA,Nebraska,Clay,,Nebraska,Clay,,USA.28.18_1
+USA,Nebraska,Colfax,,Nebraska,Colfax,,USA.28.19_1
+USA,Nebraska,Cuming,,Nebraska,Cuming,,USA.28.20_1
+USA,Nebraska,Custer,,Nebraska,Custer,,USA.28.21_1
+USA,Nebraska,Dakota,,Nebraska,Dakota,,USA.28.22_1
+USA,Nebraska,Dawes,,Nebraska,Dawes,,USA.28.23_1
+USA,Nebraska,Dawson,,Nebraska,Dawson,,USA.28.24_1
+USA,Nebraska,Dixon,,Nebraska,Dixon,,USA.28.26_1
+USA,Nebraska,Dodge,,Nebraska,Dodge,,USA.28.27_1
+USA,Nebraska,Douglas,,Nebraska,Douglas,,USA.28.28_1
+USA,Nebraska,Fillmore,,Nebraska,Fillmore,,USA.28.30_1
+USA,Nebraska,Franklin,,Nebraska,Franklin,,USA.28.31_1
+USA,Nebraska,Frontier,,Nebraska,Frontier,,USA.28.32_1
+USA,Nebraska,Furnas,,Nebraska,Furnas,,USA.28.33_1
+USA,Nebraska,Gage,,Nebraska,Gage,,USA.28.34_1
+USA,Nebraska,Gosper,,Nebraska,Gosper,,USA.28.37_1
+USA,Nebraska,Greeley,,Nebraska,Greeley,,USA.28.39_1
+USA,Nebraska,Hall,,Nebraska,Hall,,USA.28.40_1
+USA,Nebraska,Hamilton,,Nebraska,Hamilton,,USA.28.41_1
+USA,Nebraska,Harlan,,Nebraska,Harlan,,USA.28.42_1
+USA,Nebraska,Hitchcock,,Nebraska,Hitchcock,,USA.28.44_1
+USA,Nebraska,Holt,,Nebraska,Holt,,USA.28.45_1
+USA,Nebraska,Howard,,Nebraska,Howard,,USA.28.47_1
+USA,Nebraska,Jefferson,,Nebraska,Jefferson,,USA.28.48_1
+USA,Nebraska,Johnson,,Nebraska,Johnson,,USA.28.49_1
+USA,Nebraska,Kearney,,Nebraska,Kearney,,USA.28.50_1
+USA,Nebraska,Keith,,Nebraska,Keith,,USA.28.51_1
+USA,Nebraska,Kimball,,Nebraska,Kimball,,USA.28.53_1
+USA,Nebraska,Knox,,Nebraska,Knox,,USA.28.54_1
+USA,Nebraska,Lancaster,,Nebraska,Lancaster,,USA.28.55_1
+USA,Nebraska,Lincoln,,Nebraska,Lincoln,,USA.28.56_1
+USA,Nebraska,Madison,,Nebraska,Madison,,USA.28.59_1
+USA,Nebraska,Merrick,,Nebraska,Merrick,,USA.28.61_1
+USA,Nebraska,Morrill,,Nebraska,Morrill,,USA.28.62_1
+USA,Nebraska,Nance,,Nebraska,Nance,,USA.28.63_1
+USA,Nebraska,Nemaha,,Nebraska,Nemaha,,USA.28.64_1
+USA,Nebraska,Nuckolls,,Nebraska,Nuckolls,,USA.28.65_1
+USA,Nebraska,Otoe,,Nebraska,Otoe,,USA.28.66_1
+USA,Nebraska,Phelps,,Nebraska,Phelps,,USA.28.69_1
+USA,Nebraska,Pierce,,Nebraska,Pierce,,USA.28.70_1
+USA,Nebraska,Platte,,Nebraska,Platte,,USA.28.71_1
+USA,Nebraska,Polk,,Nebraska,Polk,,USA.28.72_1
+USA,Nebraska,Red Willow,,Nebraska,Red Willow,,USA.28.73_1
+USA,Nebraska,Richardson,,Nebraska,Richardson,,USA.28.74_1
+USA,Nebraska,Saline,,Nebraska,Saline,,USA.28.76_1
+USA,Nebraska,Sarpy,,Nebraska,Sarpy,,USA.28.77_1
+USA,Nebraska,Saunders,,Nebraska,Saunders,,USA.28.78_1
+USA,Nebraska,Scotts Bluff,,Nebraska,Scotts Bluff,,USA.28.79_1
+USA,Nebraska,Seward,,Nebraska,Seward,,USA.28.80_1
+USA,Nebraska,Sherman,,Nebraska,Sherman,,USA.28.82_1
+USA,Nebraska,Stanton,,Nebraska,Stanton,,USA.28.84_1
+USA,Nebraska,Thomas,,Nebraska,Thomas,,USA.28.86_1
+USA,Nebraska,Thurston,,Nebraska,Thurston,,USA.28.87_1
+USA,Nebraska,Valley,,Nebraska,Valley,,USA.28.88_1
+USA,Nebraska,Washington,,Nebraska,Washington,,USA.28.89_1
+USA,Nebraska,Wayne,,Nebraska,Wayne,,USA.28.90_1
+USA,Nebraska,Webster,,Nebraska,Webster,,USA.28.91_1
+USA,Nebraska,York,,Nebraska,York,,USA.28.93_1
+USA,Nevada,Carson City,,Nevada,Carson City,,USA.29.1_1
+USA,Nevada,Churchill,,Nevada,Churchill,,USA.29.2_1
+USA,Nevada,Clark,,Nevada,Clark,,USA.29.3_1
+USA,Nevada,Douglas,,Nevada,Douglas,,USA.29.4_1
+USA,Nevada,Elko,,Nevada,Elko,,USA.29.5_1
+USA,Nevada,Humboldt,,Nevada,Humboldt,,USA.29.8_1
+USA,Nevada,Lander,,Nevada,Lander,,USA.29.9_1
+USA,Nevada,Lincoln,,Nevada,Lincoln,,USA.29.10_1
+USA,Nevada,Lyon,,Nevada,Lyon,,USA.29.11_1
+USA,Nevada,Mineral,,Nevada,Mineral,,USA.29.12_1
+USA,Nevada,Nye,,Nevada,Nye,,USA.29.13_1
+USA,Nevada,Storey,,Nevada,Storey,,USA.29.15_1
+USA,Nevada,Washoe,,Nevada,Washoe,,USA.29.16_1
+USA,Nevada,White Pine,,Nevada,White Pine,,USA.29.17_1
+USA,New Hampshire,Belknap,,New Hampshire,Belknap,,USA.30.1_1
+USA,New Hampshire,Carroll,,New Hampshire,Carroll,,USA.30.2_1
+USA,New Hampshire,Cheshire,,New Hampshire,Cheshire,,USA.30.3_1
+USA,New Hampshire,Coos,,New Hampshire,Coos,,USA.30.4_1
+USA,New Hampshire,Grafton,,New Hampshire,Grafton,,USA.30.5_1
+USA,New Hampshire,Hillsborough,,New Hampshire,Hillsborough,,USA.30.6_1
+USA,New Hampshire,Merrimack,,New Hampshire,Merrimack,,USA.30.7_1
+USA,New Hampshire,Rockingham,,New Hampshire,Rockingham,,USA.30.8_1
+USA,New Hampshire,Strafford,,New Hampshire,Strafford,,USA.30.9_1
+USA,New Hampshire,Sullivan,,New Hampshire,Sullivan,,USA.30.10_1
+USA,New Jersey,Atlantic,,New Jersey,Atlantic,,USA.31.1_1
+USA,New Jersey,Bergen,,New Jersey,Bergen,,USA.31.2_1
+USA,New Jersey,Burlington,,New Jersey,Burlington,,USA.31.3_1
+USA,New Jersey,Camden,,New Jersey,Camden,,USA.31.4_1
+USA,New Jersey,Cape May,,New Jersey,Cape May,,USA.31.5_1
+USA,New Jersey,Cumberland,,New Jersey,Cumberland,,USA.31.6_1
+USA,New Jersey,Essex,,New Jersey,Essex,,USA.31.7_1
+USA,New Jersey,Gloucester,,New Jersey,Gloucester,,USA.31.8_1
+USA,New Jersey,Hudson,,New Jersey,Hudson,,USA.31.9_1
+USA,New Jersey,Hunterdon,,New Jersey,Hunterdon,,USA.31.10_1
+USA,New Jersey,Mercer,,New Jersey,Mercer,,USA.31.11_1
+USA,New Jersey,Middlesex,,New Jersey,Middlesex,,USA.31.12_1
+USA,New Jersey,Monmouth,,New Jersey,Monmouth,,USA.31.13_1
+USA,New Jersey,Morris,,New Jersey,Morris,,USA.31.14_1
+USA,New Jersey,Ocean,,New Jersey,Ocean,,USA.31.15_1
+USA,New Jersey,Passaic,,New Jersey,Passaic,,USA.31.16_1
+USA,New Jersey,Salem,,New Jersey,Salem,,USA.31.17_1
+USA,New Jersey,Somerset,,New Jersey,Somerset,,USA.31.18_1
+USA,New Jersey,Sussex,,New Jersey,Sussex,,USA.31.19_1
+USA,New Jersey,Union,,New Jersey,Union,,USA.31.20_1
+USA,New Jersey,Warren,,New Jersey,Warren,,USA.31.21_1
+USA,New Mexico,Bernalillo,,New Mexico,Bernalillo,,USA.32.1_1
+USA,New Mexico,Catron,,New Mexico,Catron,,USA.32.2_1
+USA,New Mexico,Chaves,,New Mexico,Chaves,,USA.32.3_1
+USA,New Mexico,Cibola,,New Mexico,Cibola,,USA.32.4_1
+USA,New Mexico,Colfax,,New Mexico,Colfax,,USA.32.5_1
+USA,New Mexico,Curry,,New Mexico,Curry,,USA.32.6_1
+USA,New Mexico,Doña Ana,,New Mexico,Dona Ana,,USA.32.8_1
+USA,New Mexico,Eddy,,New Mexico,Eddy,,USA.32.9_1
+USA,New Mexico,Grant,,New Mexico,Grant,,USA.32.10_1
+USA,New Mexico,Guadalupe,,New Mexico,Guadalupe,,USA.32.11_1
+USA,New Mexico,Harding,,New Mexico,Harding,,USA.32.12_1
+USA,New Mexico,Hidalgo,,New Mexico,Hidalgo,,USA.32.13_1
+USA,New Mexico,Lea,,New Mexico,Lea,,USA.32.14_1
+USA,New Mexico,Lincoln,,New Mexico,Lincoln,,USA.32.15_1
+USA,New Mexico,Los Alamos,,New Mexico,Los Alamos,,USA.32.16_1
+USA,New Mexico,Luna,,New Mexico,Luna,,USA.32.17_1
+USA,New Mexico,McKinley,,New Mexico,McKinley,,USA.32.18_1
+USA,New Mexico,Otero,,New Mexico,Otero,,USA.32.20_1
+USA,New Mexico,Quay,,New Mexico,Quay,,USA.32.21_1
+USA,New Mexico,Rio Arriba,,New Mexico,Rio Arriba,,USA.32.22_1
+USA,New Mexico,Roosevelt,,New Mexico,Roosevelt,,USA.32.23_1
+USA,New Mexico,San Juan,,New Mexico,San Juan,,USA.32.24_1
+USA,New Mexico,San Miguel,,New Mexico,San Miguel,,USA.32.25_1
+USA,New Mexico,Sandoval,,New Mexico,Sandoval,,USA.32.26_1
+USA,New Mexico,Santa Fe,,New Mexico,Santa Fe,,USA.32.27_1
+USA,New Mexico,Sierra,,New Mexico,Sierra,,USA.32.28_1
+USA,New Mexico,Socorro,,New Mexico,Socorro,,USA.32.29_1
+USA,New Mexico,Taos,,New Mexico,Taos,,USA.32.30_1
+USA,New Mexico,Torrance,,New Mexico,Torrance,,USA.32.31_1
+USA,New Mexico,Union,,New Mexico,Union,,USA.32.32_1
+USA,New Mexico,Valencia,,New Mexico,Valencia,,USA.32.33_1
+USA,New York,Albany,,New York,Albany,,USA.33.1_1
+USA,New York,Allegany,,New York,Allegany,,USA.33.2_1
+USA,New York,Broome,,New York,Broome,,USA.33.4_1
+USA,New York,Cattaraugus,,New York,Cattaraugus,,USA.33.5_1
+USA,New York,Cayuga,,New York,Cayuga,,USA.33.6_1
+USA,New York,Chautauqua,,New York,Chautauqua,,USA.33.7_1
+USA,New York,Chemung,,New York,Chemung,,USA.33.8_1
+USA,New York,Chenango,,New York,Chenango,,USA.33.9_1
+USA,New York,Clinton,,New York,Clinton,,USA.33.10_1
+USA,New York,Columbia,,New York,Columbia,,USA.33.11_1
+USA,New York,Cortland,,New York,Cortland,,USA.33.12_1
+USA,New York,Delaware,,New York,Delaware,,USA.33.13_1
+USA,New York,Dutchess,,New York,Dutchess,,USA.33.14_1
+USA,New York,Erie,,New York,Erie,,USA.33.15_1
+USA,New York,Essex,,New York,Essex,,USA.33.16_1
+USA,New York,Franklin,,New York,Franklin,,USA.33.17_1
+USA,New York,Fulton,,New York,Fulton,,USA.33.18_1
+USA,New York,Genesee,,New York,Genesee,,USA.33.19_1
+USA,New York,Greene,,New York,Greene,,USA.33.20_1
+USA,New York,Hamilton,,New York,Hamilton,,USA.33.21_1
+USA,New York,Herkimer,,New York,Herkimer,,USA.33.22_1
+USA,New York,Jefferson,,New York,Jefferson,,USA.33.23_1
+USA,New York,Lewis,,New York,Lewis,,USA.33.26_1
+USA,New York,Livingston,,New York,Livingston,,USA.33.27_1
+USA,New York,Madison,,New York,Madison,,USA.33.28_1
+USA,New York,Monroe,,New York,Monroe,,USA.33.29_1
+USA,New York,Montgomery,,New York,Montgomery,,USA.33.30_1
+USA,New York,Nassau,,New York,Nassau,,USA.33.31_1
+USA,New York,Niagara,,New York,Niagara,,USA.33.33_1
+USA,New York,Oneida,,New York,Oneida,,USA.33.34_1
+USA,New York,Onondaga,,New York,Onondaga,,USA.33.35_1
+USA,New York,Ontario,,New York,Ontario,,USA.33.36_1
+USA,New York,Orange,,New York,Orange,,USA.33.37_1
+USA,New York,Orleans,,New York,Orleans,,USA.33.38_1
+USA,New York,Oswego,,New York,Oswego,,USA.33.39_1
+USA,New York,Otsego,,New York,Otsego,,USA.33.40_1
+USA,New York,Putnam,,New York,Putnam,,USA.33.41_1
+USA,New York,Rensselaer,,New York,Rensselaer,,USA.33.43_1
+USA,New York,Rockland,,New York,Rockland,,USA.33.45_1
+USA,New York,Saratoga,,New York,Saratoga,,USA.33.47_1
+USA,New York,Schenectady,,New York,Schenectady,,USA.33.48_1
+USA,New York,Schoharie,,New York,Schoharie,,USA.33.49_1
+USA,New York,Schuyler,,New York,Schuyler,,USA.33.50_1
+USA,New York,Seneca,,New York,Seneca,,USA.33.51_1
+USA,New York,St. Lawrence,,New York,Saint Lawrence,,USA.33.46_1
+USA,New York,Steuben,,New York,Steuben,,USA.33.52_1
+USA,New York,Suffolk,,New York,Suffolk,,USA.33.53_1
+USA,New York,Sullivan,,New York,Sullivan,,USA.33.54_1
+USA,New York,Tioga,,New York,Tioga,,USA.33.55_1
+USA,New York,Tompkins,,New York,Tompkins,,USA.33.56_1
+USA,New York,Ulster,,New York,Ulster,,USA.33.57_1
+USA,New York,Warren,,New York,Warren,,USA.33.58_1
+USA,New York,Washington,,New York,Washington,,USA.33.59_1
+USA,New York,Wayne,,New York,Wayne,,USA.33.60_1
+USA,New York,Westchester,,New York,Westchester,,USA.33.61_1
+USA,New York,Wyoming,,New York,Wyoming,,USA.33.62_1
+USA,New York,Yates,,New York,Yates,,USA.33.63_1
+USA,North Carolina,Alamance,,North Carolina,Alamance,,USA.34.1_1
+USA,North Carolina,Alexander,,North Carolina,Alexander,,USA.34.2_1
+USA,North Carolina,Alleghany,,North Carolina,Alleghany,,USA.34.3_1
+USA,North Carolina,Anson,,North Carolina,Anson,,USA.34.4_1
+USA,North Carolina,Ashe,,North Carolina,Ashe,,USA.34.5_1
+USA,North Carolina,Avery,,North Carolina,Avery,,USA.34.6_1
+USA,North Carolina,Beaufort,,North Carolina,Beaufort,,USA.34.7_1
+USA,North Carolina,Bertie,,North Carolina,Bertie,,USA.34.8_1
+USA,North Carolina,Bladen,,North Carolina,Bladen,,USA.34.9_1
+USA,North Carolina,Brunswick,,North Carolina,Brunswick,,USA.34.10_1
+USA,North Carolina,Buncombe,,North Carolina,Buncombe,,USA.34.11_1
+USA,North Carolina,Burke,,North Carolina,Burke,,USA.34.12_1
+USA,North Carolina,Cabarrus,,North Carolina,Cabarrus,,USA.34.13_1
+USA,North Carolina,Caldwell,,North Carolina,Caldwell,,USA.34.14_1
+USA,North Carolina,Camden,,North Carolina,Camden,,USA.34.15_1
+USA,North Carolina,Carteret,,North Carolina,Carteret,,USA.34.16_1
+USA,North Carolina,Caswell,,North Carolina,Caswell,,USA.34.17_1
+USA,North Carolina,Catawba,,North Carolina,Catawba,,USA.34.18_1
+USA,North Carolina,Chatham,,North Carolina,Chatham,,USA.34.19_1
+USA,North Carolina,Cherokee,,North Carolina,Cherokee,,USA.34.20_1
+USA,North Carolina,Chowan,,North Carolina,Chowan,,USA.34.21_1
+USA,North Carolina,Clay,,North Carolina,Clay,,USA.34.22_1
+USA,North Carolina,Cleveland,,North Carolina,Cleveland,,USA.34.23_1
+USA,North Carolina,Columbus,,North Carolina,Columbus,,USA.34.24_1
+USA,North Carolina,Craven,,North Carolina,Craven,,USA.34.25_1
+USA,North Carolina,Cumberland,,North Carolina,Cumberland,,USA.34.26_1
+USA,North Carolina,Currituck,,North Carolina,Currituck,,USA.34.27_1
+USA,North Carolina,Dare,,North Carolina,Dare,,USA.34.28_1
+USA,North Carolina,Davidson,,North Carolina,Davidson,,USA.34.29_1
+USA,North Carolina,Davie,,North Carolina,Davie,,USA.34.30_1
+USA,North Carolina,Duplin,,North Carolina,Duplin,,USA.34.31_1
+USA,North Carolina,Durham,,North Carolina,Durham,,USA.34.32_1
+USA,North Carolina,Edgecombe,,North Carolina,Edgecombe,,USA.34.33_1
+USA,North Carolina,Forsyth,,North Carolina,Forsyth,,USA.34.34_1
+USA,North Carolina,Franklin,,North Carolina,Franklin,,USA.34.35_1
+USA,North Carolina,Gaston,,North Carolina,Gaston,,USA.34.36_1
+USA,North Carolina,Gates,,North Carolina,Gates,,USA.34.37_1
+USA,North Carolina,Graham,,North Carolina,Graham,,USA.34.38_1
+USA,North Carolina,Granville,,North Carolina,Granville,,USA.34.39_1
+USA,North Carolina,Greene,,North Carolina,Greene,,USA.34.40_1
+USA,North Carolina,Guilford,,North Carolina,Guilford,,USA.34.41_1
+USA,North Carolina,Halifax,,North Carolina,Halifax,,USA.34.42_1
+USA,North Carolina,Harnett,,North Carolina,Harnett,,USA.34.43_1
+USA,North Carolina,Haywood,,North Carolina,Haywood,,USA.34.44_1
+USA,North Carolina,Henderson,,North Carolina,Henderson,,USA.34.45_1
+USA,North Carolina,Hertford,,North Carolina,Hertford,,USA.34.46_1
+USA,North Carolina,Hoke,,North Carolina,Hoke,,USA.34.47_1
+USA,North Carolina,Hyde,,North Carolina,Hyde,,USA.34.48_1
+USA,North Carolina,Iredell,,North Carolina,Iredell,,USA.34.49_1
+USA,North Carolina,Jackson,,North Carolina,Jackson,,USA.34.50_1
+USA,North Carolina,Johnston,,North Carolina,Johnston,,USA.34.51_1
+USA,North Carolina,Jones,,North Carolina,Jones,,USA.34.52_1
+USA,North Carolina,Lee,,North Carolina,Lee,,USA.34.53_1
+USA,North Carolina,Lenoir,,North Carolina,Lenoir,,USA.34.54_1
+USA,North Carolina,Lincoln,,North Carolina,Lincoln,,USA.34.55_1
+USA,North Carolina,Macon,,North Carolina,Macon,,USA.34.56_1
+USA,North Carolina,Madison,,North Carolina,Madison,,USA.34.57_1
+USA,North Carolina,Martin,,North Carolina,Martin,,USA.34.58_1
+USA,North Carolina,McDowell,,North Carolina,McDowell,,USA.34.59_1
+USA,North Carolina,Mecklenburg,,North Carolina,Mecklenburg,,USA.34.60_1
+USA,North Carolina,Mitchell,,North Carolina,Mitchell,,USA.34.61_1
+USA,North Carolina,Montgomery,,North Carolina,Montgomery,,USA.34.62_1
+USA,North Carolina,Moore,,North Carolina,Moore,,USA.34.63_1
+USA,North Carolina,Nash,,North Carolina,Nash,,USA.34.64_1
+USA,North Carolina,New Hanover,,North Carolina,New Hanover,,USA.34.65_1
+USA,North Carolina,Northampton,,North Carolina,Northampton,,USA.34.66_1
+USA,North Carolina,Onslow,,North Carolina,Onslow,,USA.34.67_1
+USA,North Carolina,Orange,,North Carolina,Orange,,USA.34.68_1
+USA,North Carolina,Pamlico,,North Carolina,Pamlico,,USA.34.69_1
+USA,North Carolina,Pasquotank,,North Carolina,Pasquotank,,USA.34.70_1
+USA,North Carolina,Pender,,North Carolina,Pender,,USA.34.71_1
+USA,North Carolina,Perquimans,,North Carolina,Perquimans,,USA.34.72_1
+USA,North Carolina,Person,,North Carolina,Person,,USA.34.73_1
+USA,North Carolina,Pitt,,North Carolina,Pitt,,USA.34.74_1
+USA,North Carolina,Polk,,North Carolina,Polk,,USA.34.75_1
+USA,North Carolina,Randolph,,North Carolina,Randolph,,USA.34.76_1
+USA,North Carolina,Richmond,,North Carolina,Richmond,,USA.34.77_1
+USA,North Carolina,Robeson,,North Carolina,Robeson,,USA.34.78_1
+USA,North Carolina,Rockingham,,North Carolina,Rockingham,,USA.34.79_1
+USA,North Carolina,Rowan,,North Carolina,Rowan,,USA.34.80_1
+USA,North Carolina,Rutherford,,North Carolina,Rutherford,,USA.34.81_1
+USA,North Carolina,Sampson,,North Carolina,Sampson,,USA.34.82_1
+USA,North Carolina,Scotland,,North Carolina,Scotland,,USA.34.83_1
+USA,North Carolina,Stanly,,North Carolina,Stanly,,USA.34.84_1
+USA,North Carolina,Stokes,,North Carolina,Stokes,,USA.34.85_1
+USA,North Carolina,Surry,,North Carolina,Surry,,USA.34.86_1
+USA,North Carolina,Swain,,North Carolina,Swain,,USA.34.87_1
+USA,North Carolina,Transylvania,,North Carolina,Transylvania,,USA.34.88_1
+USA,North Carolina,Tyrrell,,North Carolina,Tyrrell,,USA.34.89_1
+USA,North Carolina,Union,,North Carolina,Union,,USA.34.90_1
+USA,North Carolina,Vance,,North Carolina,Vance,,USA.34.91_1
+USA,North Carolina,Wake,,North Carolina,Wake,,USA.34.92_1
+USA,North Carolina,Warren,,North Carolina,Warren,,USA.34.93_1
+USA,North Carolina,Washington,,North Carolina,Washington,,USA.34.94_1
+USA,North Carolina,Watauga,,North Carolina,Watauga,,USA.34.95_1
+USA,North Carolina,Wayne,,North Carolina,Wayne,,USA.34.96_1
+USA,North Carolina,Wilkes,,North Carolina,Wilkes,,USA.34.97_1
+USA,North Carolina,Wilson,,North Carolina,Wilson,,USA.34.98_1
+USA,North Carolina,Yadkin,,North Carolina,Yadkin,,USA.34.99_1
+USA,North Carolina,Yancey,,North Carolina,Yancey,,USA.34.100_1
+USA,North Dakota,Barnes,,North Dakota,Barnes,,USA.35.2_1
+USA,North Dakota,Benson,,North Dakota,Benson,,USA.35.3_1
+USA,North Dakota,Bottineau,,North Dakota,Bottineau,,USA.35.5_1
+USA,North Dakota,Bowman,,North Dakota,Bowman,,USA.35.6_1
+USA,North Dakota,Burke,,North Dakota,Burke,,USA.35.7_1
+USA,North Dakota,Burleigh,,North Dakota,Burleigh,,USA.35.8_1
+USA,North Dakota,Cass,,North Dakota,Cass,,USA.35.9_1
+USA,North Dakota,Divide,,North Dakota,Divide,,USA.35.12_1
+USA,North Dakota,Dunn,,North Dakota,Dunn,,USA.35.13_1
+USA,North Dakota,Eddy,,North Dakota,Eddy,,USA.35.14_1
+USA,North Dakota,Emmons,,North Dakota,Emmons,,USA.35.15_1
+USA,North Dakota,Foster,,North Dakota,Foster,,USA.35.16_1
+USA,North Dakota,Grand Forks,,North Dakota,Grand Forks,,USA.35.18_1
+USA,North Dakota,Grant,,North Dakota,Grant,,USA.35.19_1
+USA,North Dakota,Griggs,,North Dakota,Griggs,,USA.35.20_1
+USA,North Dakota,McHenry,,North Dakota,McHenry,,USA.35.25_1
+USA,North Dakota,McIntosh,,North Dakota,McIntosh,,USA.35.26_1
+USA,North Dakota,McKenzie,,North Dakota,McKenzie,,USA.35.27_1
+USA,North Dakota,McLean,,North Dakota,McLean,,USA.35.28_1
+USA,North Dakota,Mercer,,North Dakota,Mercer,,USA.35.29_1
+USA,North Dakota,Morton,,North Dakota,Morton,,USA.35.30_1
+USA,North Dakota,Mountrail,,North Dakota,Mountrail,,USA.35.31_1
+USA,North Dakota,Nelson,,North Dakota,Nelson,,USA.35.32_1
+USA,North Dakota,Oliver,,North Dakota,Oliver,,USA.35.33_1
+USA,North Dakota,Pembina,,North Dakota,Pembina,,USA.35.34_1
+USA,North Dakota,Pierce,,North Dakota,Pierce,,USA.35.35_1
+USA,North Dakota,Ramsey,,North Dakota,Ramsey,,USA.35.36_1
+USA,North Dakota,Ransom,,North Dakota,Ransom,,USA.35.37_1
+USA,North Dakota,Renville,,North Dakota,Renville,,USA.35.38_1
+USA,North Dakota,Richland,,North Dakota,Richland,,USA.35.39_1
+USA,North Dakota,Rolette,,North Dakota,Rolette,,USA.35.40_1
+USA,North Dakota,Sargent,,North Dakota,Sargent,,USA.35.41_1
+USA,North Dakota,Sioux,,North Dakota,Sioux,,USA.35.43_1
+USA,North Dakota,Slope,,North Dakota,Slope,,USA.35.44_1
+USA,North Dakota,Stark,,North Dakota,Stark,,USA.35.45_1
+USA,North Dakota,Steele,,North Dakota,Steele,,USA.35.46_1
+USA,North Dakota,Stutsman,,North Dakota,Stutsman,,USA.35.47_1
+USA,North Dakota,Traill,,North Dakota,Traill,,USA.35.49_1
+USA,North Dakota,Walsh,,North Dakota,Walsh,,USA.35.50_1
+USA,North Dakota,Ward,,North Dakota,Ward,,USA.35.51_1
+USA,North Dakota,Wells,,North Dakota,Wells,,USA.35.52_1
+USA,North Dakota,Williams,,North Dakota,Williams,,USA.35.53_1
+USA,Ohio,Adams,,Ohio,Adams,,USA.36.1_1
+USA,Ohio,Allen,,Ohio,Allen,,USA.36.2_1
+USA,Ohio,Ashland,,Ohio,Ashland,,USA.36.3_1
+USA,Ohio,Ashtabula,,Ohio,Ashtabula,,USA.36.4_1
+USA,Ohio,Athens,,Ohio,Athens,,USA.36.5_1
+USA,Ohio,Auglaize,,Ohio,Auglaize,,USA.36.6_1
+USA,Ohio,Belmont,,Ohio,Belmont,,USA.36.7_1
+USA,Ohio,Brown,,Ohio,Brown,,USA.36.8_1
+USA,Ohio,Butler,,Ohio,Butler,,USA.36.9_1
+USA,Ohio,Carroll,,Ohio,Carroll,,USA.36.10_1
+USA,Ohio,Champaign,,Ohio,Champaign,,USA.36.11_1
+USA,Ohio,Clark,,Ohio,Clark,,USA.36.12_1
+USA,Ohio,Clermont,,Ohio,Clermont,,USA.36.13_1
+USA,Ohio,Clinton,,Ohio,Clinton,,USA.36.14_1
+USA,Ohio,Columbiana,,Ohio,Columbiana,,USA.36.15_1
+USA,Ohio,Coshocton,,Ohio,Coshocton,,USA.36.16_1
+USA,Ohio,Crawford,,Ohio,Crawford,,USA.36.17_1
+USA,Ohio,Cuyahoga,,Ohio,Cuyahoga,,USA.36.18_1
+USA,Ohio,Darke,,Ohio,Darke,,USA.36.19_1
+USA,Ohio,Defiance,,Ohio,Defiance,,USA.36.20_1
+USA,Ohio,Delaware,,Ohio,Delaware,,USA.36.21_1
+USA,Ohio,Erie,,Ohio,Erie,,USA.36.22_1
+USA,Ohio,Fairfield,,Ohio,Fairfield,,USA.36.23_1
+USA,Ohio,Fayette,,Ohio,Fayette,,USA.36.24_1
+USA,Ohio,Franklin,,Ohio,Franklin,,USA.36.25_1
+USA,Ohio,Fulton,,Ohio,Fulton,,USA.36.26_1
+USA,Ohio,Gallia,,Ohio,Gallia,,USA.36.27_1
+USA,Ohio,Geauga,,Ohio,Geauga,,USA.36.28_1
+USA,Ohio,Greene,,Ohio,Greene,,USA.36.29_1
+USA,Ohio,Guernsey,,Ohio,Guernsey,,USA.36.30_1
+USA,Ohio,Hamilton,,Ohio,Hamilton,,USA.36.31_1
+USA,Ohio,Hancock,,Ohio,Hancock,,USA.36.32_1
+USA,Ohio,Hardin,,Ohio,Hardin,,USA.36.33_1
+USA,Ohio,Harrison,,Ohio,Harrison,,USA.36.34_1
+USA,Ohio,Henry,,Ohio,Henry,,USA.36.35_1
+USA,Ohio,Highland,,Ohio,Highland,,USA.36.36_1
+USA,Ohio,Hocking,,Ohio,Hocking,,USA.36.37_1
+USA,Ohio,Holmes,,Ohio,Holmes,,USA.36.38_1
+USA,Ohio,Huron,,Ohio,Huron,,USA.36.39_1
+USA,Ohio,Jackson,,Ohio,Jackson,,USA.36.40_1
+USA,Ohio,Jefferson,,Ohio,Jefferson,,USA.36.41_1
+USA,Ohio,Knox,,Ohio,Knox,,USA.36.42_1
+USA,Ohio,Lake,,Ohio,Lake,,USA.36.43_1
+USA,Ohio,Lawrence,,Ohio,Lawrence,,USA.36.45_1
+USA,Ohio,Licking,,Ohio,Licking,,USA.36.46_1
+USA,Ohio,Logan,,Ohio,Logan,,USA.36.47_1
+USA,Ohio,Lorain,,Ohio,Lorain,,USA.36.48_1
+USA,Ohio,Lucas,,Ohio,Lucas,,USA.36.49_1
+USA,Ohio,Madison,,Ohio,Madison,,USA.36.50_1
+USA,Ohio,Mahoning,,Ohio,Mahoning,,USA.36.51_1
+USA,Ohio,Marion,,Ohio,Marion,,USA.36.52_1
+USA,Ohio,Medina,,Ohio,Medina,,USA.36.53_1
+USA,Ohio,Meigs,,Ohio,Meigs,,USA.36.54_1
+USA,Ohio,Mercer,,Ohio,Mercer,,USA.36.55_1
+USA,Ohio,Miami,,Ohio,Miami,,USA.36.56_1
+USA,Ohio,Monroe,,Ohio,Monroe,,USA.36.57_1
+USA,Ohio,Montgomery,,Ohio,Montgomery,,USA.36.58_1
+USA,Ohio,Morgan,,Ohio,Morgan,,USA.36.59_1
+USA,Ohio,Morrow,,Ohio,Morrow,,USA.36.60_1
+USA,Ohio,Muskingum,,Ohio,Muskingum,,USA.36.61_1
+USA,Ohio,Noble,,Ohio,Noble,,USA.36.62_1
+USA,Ohio,Ottawa,,Ohio,Ottawa,,USA.36.63_1
+USA,Ohio,Paulding,,Ohio,Paulding,,USA.36.64_1
+USA,Ohio,Perry,,Ohio,Perry,,USA.36.65_1
+USA,Ohio,Pickaway,,Ohio,Pickaway,,USA.36.66_1
+USA,Ohio,Pike,,Ohio,Pike,,USA.36.67_1
+USA,Ohio,Portage,,Ohio,Portage,,USA.36.68_1
+USA,Ohio,Preble,,Ohio,Preble,,USA.36.69_1
+USA,Ohio,Putnam,,Ohio,Putnam,,USA.36.70_1
+USA,Ohio,Richland,,Ohio,Richland,,USA.36.71_1
+USA,Ohio,Ross,,Ohio,Ross,,USA.36.72_1
+USA,Ohio,Sandusky,,Ohio,Sandusky,,USA.36.73_1
+USA,Ohio,Scioto,,Ohio,Scioto,,USA.36.74_1
+USA,Ohio,Seneca,,Ohio,Seneca,,USA.36.75_1
+USA,Ohio,Shelby,,Ohio,Shelby,,USA.36.76_1
+USA,Ohio,Stark,,Ohio,Stark,,USA.36.77_1
+USA,Ohio,Summit,,Ohio,Summit,,USA.36.78_1
+USA,Ohio,Trumbull,,Ohio,Trumbull,,USA.36.79_1
+USA,Ohio,Tuscarawas,,Ohio,Tuscarawas,,USA.36.80_1
+USA,Ohio,Union,,Ohio,Union,,USA.36.81_1
+USA,Ohio,Van Wert,,Ohio,Van Wert,,USA.36.82_1
+USA,Ohio,Vinton,,Ohio,Vinton,,USA.36.83_1
+USA,Ohio,Warren,,Ohio,Warren,,USA.36.84_1
+USA,Ohio,Washington,,Ohio,Washington,,USA.36.85_1
+USA,Ohio,Wayne,,Ohio,Wayne,,USA.36.86_1
+USA,Ohio,Williams,,Ohio,Williams,,USA.36.87_1
+USA,Ohio,Wood,,Ohio,Wood,,USA.36.88_1
+USA,Ohio,Wyandot,,Ohio,Wyandot,,USA.36.89_1
+USA,Oklahoma,Adair,,Oklahoma,Adair,,USA.37.1_1
+USA,Oklahoma,Alfalfa,,Oklahoma,Alfalfa,,USA.37.2_1
+USA,Oklahoma,Atoka,,Oklahoma,Atoka,,USA.37.3_1
+USA,Oklahoma,Beaver,,Oklahoma,Beaver,,USA.37.4_1
+USA,Oklahoma,Beckham,,Oklahoma,Beckham,,USA.37.5_1
+USA,Oklahoma,Blaine,,Oklahoma,Blaine,,USA.37.6_1
+USA,Oklahoma,Bryan,,Oklahoma,Bryan,,USA.37.7_1
+USA,Oklahoma,Caddo,,Oklahoma,Caddo,,USA.37.8_1
+USA,Oklahoma,Canadian,,Oklahoma,Canadian,,USA.37.9_1
+USA,Oklahoma,Carter,,Oklahoma,Carter,,USA.37.10_1
+USA,Oklahoma,Cherokee,,Oklahoma,Cherokee,,USA.37.11_1
+USA,Oklahoma,Choctaw,,Oklahoma,Choctaw,,USA.37.12_1
+USA,Oklahoma,Cimarron,,Oklahoma,Cimarron,,USA.37.13_1
+USA,Oklahoma,Cleveland,,Oklahoma,Cleveland,,USA.37.14_1
+USA,Oklahoma,Coal,,Oklahoma,Coal,,USA.37.15_1
+USA,Oklahoma,Comanche,,Oklahoma,Comanche,,USA.37.16_1
+USA,Oklahoma,Cotton,,Oklahoma,Cotton,,USA.37.17_1
+USA,Oklahoma,Craig,,Oklahoma,Craig,,USA.37.18_1
+USA,Oklahoma,Creek,,Oklahoma,Creek,,USA.37.19_1
+USA,Oklahoma,Custer,,Oklahoma,Custer,,USA.37.20_1
+USA,Oklahoma,Delaware,,Oklahoma,Delaware,,USA.37.21_1
+USA,Oklahoma,Dewey,,Oklahoma,Dewey,,USA.37.22_1
+USA,Oklahoma,Garfield,,Oklahoma,Garfield,,USA.37.24_1
+USA,Oklahoma,Garvin,,Oklahoma,Garvin,,USA.37.25_1
+USA,Oklahoma,Grady,,Oklahoma,Grady,,USA.37.26_1
+USA,Oklahoma,Grant,,Oklahoma,Grant,,USA.37.27_1
+USA,Oklahoma,Greer,,Oklahoma,Greer,,USA.37.28_1
+USA,Oklahoma,Harper,,Oklahoma,Harper,,USA.37.30_1
+USA,Oklahoma,Haskell,,Oklahoma,Haskell,,USA.37.31_1
+USA,Oklahoma,Jackson,,Oklahoma,Jackson,,USA.37.33_1
+USA,Oklahoma,Jefferson,,Oklahoma,Jefferson,,USA.37.34_1
+USA,Oklahoma,Johnston,,Oklahoma,Johnston,,USA.37.35_1
+USA,Oklahoma,Kay,,Oklahoma,Kay,,USA.37.36_1
+USA,Oklahoma,Kingfisher,,Oklahoma,Kingfisher,,USA.37.37_1
+USA,Oklahoma,Kiowa,,Oklahoma,Kiowa,,USA.37.38_1
+USA,Oklahoma,Latimer,,Oklahoma,Latimer,,USA.37.39_1
+USA,Oklahoma,Le Flore,,Oklahoma,Le Flore,,USA.37.40_1
+USA,Oklahoma,Lincoln,,Oklahoma,Lincoln,,USA.37.41_1
+USA,Oklahoma,Logan,,Oklahoma,Logan,,USA.37.42_1
+USA,Oklahoma,Love,,Oklahoma,Love,,USA.37.43_1
+USA,Oklahoma,Major,,Oklahoma,Major,,USA.37.44_1
+USA,Oklahoma,Marshall,,Oklahoma,Marshall,,USA.37.45_1
+USA,Oklahoma,Mayes,,Oklahoma,Mayes,,USA.37.46_1
+USA,Oklahoma,McClain,,Oklahoma,McClain,,USA.37.47_1
+USA,Oklahoma,McCurtain,,Oklahoma,McCurtain,,USA.37.48_1
+USA,Oklahoma,McIntosh,,Oklahoma,McIntosh,,USA.37.49_1
+USA,Oklahoma,Murray,,Oklahoma,Murray,,USA.37.50_1
+USA,Oklahoma,Muskogee,,Oklahoma,Muskogee,,USA.37.51_1
+USA,Oklahoma,Noble,,Oklahoma,Noble,,USA.37.52_1
+USA,Oklahoma,Nowata,,Oklahoma,Nowata,,USA.37.53_1
+USA,Oklahoma,Okfuskee,,Oklahoma,Okfuskee,,USA.37.54_1
+USA,Oklahoma,Oklahoma,,Oklahoma,Oklahoma,,USA.37.55_1
+USA,Oklahoma,Okmulgee,,Oklahoma,Okmulgee,,USA.37.56_1
+USA,Oklahoma,Osage,,Oklahoma,Osage,,USA.37.57_1
+USA,Oklahoma,Ottawa,,Oklahoma,Ottawa,,USA.37.58_1
+USA,Oklahoma,Pawnee,,Oklahoma,Pawnee,,USA.37.59_1
+USA,Oklahoma,Payne,,Oklahoma,Payne,,USA.37.60_1
+USA,Oklahoma,Pittsburg,,Oklahoma,Pittsburg,,USA.37.61_1
+USA,Oklahoma,Pontotoc,,Oklahoma,Pontotoc,,USA.37.62_1
+USA,Oklahoma,Pottawatomie,,Oklahoma,Pottawatomie,,USA.37.63_1
+USA,Oklahoma,Pushmataha,,Oklahoma,Pushmataha,,USA.37.64_1
+USA,Oklahoma,Rogers,,Oklahoma,Rogers,,USA.37.66_1
+USA,Oklahoma,Seminole,,Oklahoma,Seminole,,USA.37.67_1
+USA,Oklahoma,Sequoyah,,Oklahoma,Sequoyah,,USA.37.68_1
+USA,Oklahoma,Stephens,,Oklahoma,Stephens,,USA.37.69_1
+USA,Oklahoma,Texas,,Oklahoma,Texas,,USA.37.70_1
+USA,Oklahoma,Tillman,,Oklahoma,Tillman,,USA.37.71_1
+USA,Oklahoma,Tulsa,,Oklahoma,Tulsa,,USA.37.72_1
+USA,Oklahoma,Wagoner,,Oklahoma,Wagoner,,USA.37.73_1
+USA,Oklahoma,Washington,,Oklahoma,Washington,,USA.37.74_1
+USA,Oklahoma,Washita,,Oklahoma,Washita,,USA.37.75_1
+USA,Oklahoma,Woods,,Oklahoma,Woods,,USA.37.76_1
+USA,Oklahoma,Woodward,,Oklahoma,Woodward,,USA.37.77_1
+USA,Oregon,Baker,,Oregon,Baker,,USA.38.1_1
+USA,Oregon,Benton,,Oregon,Benton,,USA.38.2_1
+USA,Oregon,Clackamas,,Oregon,Clackamas,,USA.38.3_1
+USA,Oregon,Clatsop,,Oregon,Clatsop,,USA.38.4_1
+USA,Oregon,Columbia,,Oregon,Columbia,,USA.38.5_1
+USA,Oregon,Coos,,Oregon,Coos,,USA.38.6_1
+USA,Oregon,Crook,,Oregon,Crook,,USA.38.7_1
+USA,Oregon,Curry,,Oregon,Curry,,USA.38.8_1
+USA,Oregon,Deschutes,,Oregon,Deschutes,,USA.38.9_1
+USA,Oregon,Douglas,,Oregon,Douglas,,USA.38.10_1
+USA,Oregon,Grant,,Oregon,Grant,,USA.38.12_1
+USA,Oregon,Harney,,Oregon,Harney,,USA.38.13_1
+USA,Oregon,Hood River,,Oregon,Hood River,,USA.38.14_1
+USA,Oregon,Jackson,,Oregon,Jackson,,USA.38.15_1
+USA,Oregon,Jefferson,,Oregon,Jefferson,,USA.38.16_1
+USA,Oregon,Josephine,,Oregon,Josephine,,USA.38.17_1
+USA,Oregon,Klamath,,Oregon,Klamath,,USA.38.18_1
+USA,Oregon,Lane,,Oregon,Lane,,USA.38.20_1
+USA,Oregon,Lincoln,,Oregon,Lincoln,,USA.38.21_1
+USA,Oregon,Linn,,Oregon,Linn,,USA.38.22_1
+USA,Oregon,Malheur,,Oregon,Malheur,,USA.38.23_1
+USA,Oregon,Marion,,Oregon,Marion,,USA.38.24_1
+USA,Oregon,Morrow,,Oregon,Morrow,,USA.38.25_1
+USA,Oregon,Multnomah,,Oregon,Multnomah,,USA.38.26_1
+USA,Oregon,Polk,,Oregon,Polk,,USA.38.27_1
+USA,Oregon,Sherman,,Oregon,Sherman,,USA.38.28_1
+USA,Oregon,Tillamook,,Oregon,Tillamook,,USA.38.29_1
+USA,Oregon,Umatilla,,Oregon,Umatilla,,USA.38.30_1
+USA,Oregon,Union,,Oregon,Union,,USA.38.31_1
+USA,Oregon,Wallowa,,Oregon,Wallowa,,USA.38.32_1
+USA,Oregon,Wasco,,Oregon,Wasco,,USA.38.33_1
+USA,Oregon,Washington,,Oregon,Washington,,USA.38.34_1
+USA,Oregon,Yamhill,,Oregon,Yamhill,,USA.38.36_1
+USA,Pennsylvania,Adams,,Pennsylvania,Adams,,USA.39.1_1
+USA,Pennsylvania,Allegheny,,Pennsylvania,Allegheny,,USA.39.2_1
+USA,Pennsylvania,Armstrong,,Pennsylvania,Armstrong,,USA.39.3_1
+USA,Pennsylvania,Beaver,,Pennsylvania,Beaver,,USA.39.4_1
+USA,Pennsylvania,Bedford,,Pennsylvania,Bedford,,USA.39.5_1
+USA,Pennsylvania,Berks,,Pennsylvania,Berks,,USA.39.6_1
+USA,Pennsylvania,Blair,,Pennsylvania,Blair,,USA.39.7_1
+USA,Pennsylvania,Bradford,,Pennsylvania,Bradford,,USA.39.8_1
+USA,Pennsylvania,Bucks,,Pennsylvania,Bucks,,USA.39.9_1
+USA,Pennsylvania,Butler,,Pennsylvania,Butler,,USA.39.10_1
+USA,Pennsylvania,Cambria,,Pennsylvania,Cambria,,USA.39.11_1
+USA,Pennsylvania,Cameron,,Pennsylvania,Cameron,,USA.39.12_1
+USA,Pennsylvania,Carbon,,Pennsylvania,Carbon,,USA.39.13_1
+USA,Pennsylvania,Centre,,Pennsylvania,Centre,,USA.39.14_1
+USA,Pennsylvania,Chester,,Pennsylvania,Chester,,USA.39.15_1
+USA,Pennsylvania,Clarion,,Pennsylvania,Clarion,,USA.39.16_1
+USA,Pennsylvania,Clearfield,,Pennsylvania,Clearfield,,USA.39.17_1
+USA,Pennsylvania,Clinton,,Pennsylvania,Clinton,,USA.39.18_1
+USA,Pennsylvania,Columbia,,Pennsylvania,Columbia,,USA.39.19_1
+USA,Pennsylvania,Crawford,,Pennsylvania,Crawford,,USA.39.20_1
+USA,Pennsylvania,Cumberland,,Pennsylvania,Cumberland,,USA.39.21_1
+USA,Pennsylvania,Dauphin,,Pennsylvania,Dauphin,,USA.39.22_1
+USA,Pennsylvania,Delaware,,Pennsylvania,Delaware,,USA.39.23_1
+USA,Pennsylvania,Elk,,Pennsylvania,Elk,,USA.39.24_1
+USA,Pennsylvania,Erie,,Pennsylvania,Erie,,USA.39.25_1
+USA,Pennsylvania,Fayette,,Pennsylvania,Fayette,,USA.39.26_1
+USA,Pennsylvania,Forest,,Pennsylvania,Forest,,USA.39.27_1
+USA,Pennsylvania,Franklin,,Pennsylvania,Franklin,,USA.39.28_1
+USA,Pennsylvania,Fulton,,Pennsylvania,Fulton,,USA.39.29_1
+USA,Pennsylvania,Greene,,Pennsylvania,Greene,,USA.39.30_1
+USA,Pennsylvania,Huntingdon,,Pennsylvania,Huntingdon,,USA.39.31_1
+USA,Pennsylvania,Indiana,,Pennsylvania,Indiana,,USA.39.32_1
+USA,Pennsylvania,Jefferson,,Pennsylvania,Jefferson,,USA.39.33_1
+USA,Pennsylvania,Juniata,,Pennsylvania,Juniata,,USA.39.34_1
+USA,Pennsylvania,Lackawanna,,Pennsylvania,Lackawanna,,USA.39.35_1
+USA,Pennsylvania,Lancaster,,Pennsylvania,Lancaster,,USA.39.36_1
+USA,Pennsylvania,Lawrence,,Pennsylvania,Lawrence,,USA.39.37_1
+USA,Pennsylvania,Lebanon,,Pennsylvania,Lebanon,,USA.39.38_1
+USA,Pennsylvania,Lehigh,,Pennsylvania,Lehigh,,USA.39.39_1
+USA,Pennsylvania,Luzerne,,Pennsylvania,Luzerne,,USA.39.40_1
+USA,Pennsylvania,Lycoming,,Pennsylvania,Lycoming,,USA.39.41_1
+USA,Pennsylvania,McKean,,Pennsylvania,Mc Kean,,USA.39.42_1
+USA,Pennsylvania,Mercer,,Pennsylvania,Mercer,,USA.39.43_1
+USA,Pennsylvania,Mifflin,,Pennsylvania,Mifflin,,USA.39.44_1
+USA,Pennsylvania,Monroe,,Pennsylvania,Monroe,,USA.39.45_1
+USA,Pennsylvania,Montgomery,,Pennsylvania,Montgomery,,USA.39.46_1
+USA,Pennsylvania,Montour,,Pennsylvania,Montour,,USA.39.47_1
+USA,Pennsylvania,Northampton,,Pennsylvania,Northampton,,USA.39.48_1
+USA,Pennsylvania,Northumberland,,Pennsylvania,Northumberland,,USA.39.49_1
+USA,Pennsylvania,Perry,,Pennsylvania,Perry,,USA.39.50_1
+USA,Pennsylvania,Philadelphia,,Pennsylvania,Philadelphia,,USA.39.51_1
+USA,Pennsylvania,Pike,,Pennsylvania,Pike,,USA.39.52_1
+USA,Pennsylvania,Potter,,Pennsylvania,Potter,,USA.39.53_1
+USA,Pennsylvania,Schuylkill,,Pennsylvania,Schuylkill,,USA.39.54_1
+USA,Pennsylvania,Snyder,,Pennsylvania,Snyder,,USA.39.55_1
+USA,Pennsylvania,Somerset,,Pennsylvania,Somerset,,USA.39.56_1
+USA,Pennsylvania,Sullivan,,Pennsylvania,Sullivan,,USA.39.57_1
+USA,Pennsylvania,Susquehanna,,Pennsylvania,Susquehanna,,USA.39.58_1
+USA,Pennsylvania,Tioga,,Pennsylvania,Tioga,,USA.39.59_1
+USA,Pennsylvania,Union,,Pennsylvania,Union,,USA.39.60_1
+USA,Pennsylvania,Venango,,Pennsylvania,Venango,,USA.39.61_1
+USA,Pennsylvania,Warren,,Pennsylvania,Warren,,USA.39.62_1
+USA,Pennsylvania,Washington,,Pennsylvania,Washington,,USA.39.63_1
+USA,Pennsylvania,Wayne,,Pennsylvania,Wayne,,USA.39.64_1
+USA,Pennsylvania,Westmoreland,,Pennsylvania,Westmoreland,,USA.39.65_1
+USA,Pennsylvania,Wyoming,,Pennsylvania,Wyoming,,USA.39.66_1
+USA,Pennsylvania,York,,Pennsylvania,York,,USA.39.67_1
+USA,Rhode Island,Bristol,,Rhode Island,Bristol,,USA.40.1_1
+USA,Rhode Island,Kent,,Rhode Island,Kent,,USA.40.2_1
+USA,Rhode Island,Newport,,Rhode Island,Newport,,USA.40.3_1
+USA,Rhode Island,Providence,,Rhode Island,Providence,,USA.40.4_1
+USA,Rhode Island,Washington,,Rhode Island,Washington,,USA.40.5_1
+USA,South Carolina,Abbeville,,South Carolina,Abbeville,,USA.41.1_1
+USA,South Carolina,Aiken,,South Carolina,Aiken,,USA.41.2_1
+USA,South Carolina,Allendale,,South Carolina,Allendale,,USA.41.3_1
+USA,South Carolina,Anderson,,South Carolina,Anderson,,USA.41.4_1
+USA,South Carolina,Bamberg,,South Carolina,Bamberg,,USA.41.5_1
+USA,South Carolina,Barnwell,,South Carolina,Barnwell,,USA.41.6_1
+USA,South Carolina,Beaufort,,South Carolina,Beaufort,,USA.41.7_1
+USA,South Carolina,Berkeley,,South Carolina,Berkeley,,USA.41.8_1
+USA,South Carolina,Calhoun,,South Carolina,Calhoun,,USA.41.9_1
+USA,South Carolina,Charleston,,South Carolina,Charleston,,USA.41.10_1
+USA,South Carolina,Cherokee,,South Carolina,Cherokee,,USA.41.11_1
+USA,South Carolina,Chester,,South Carolina,Chester,,USA.41.12_1
+USA,South Carolina,Chesterfield,,South Carolina,Chesterfield,,USA.41.13_1
+USA,South Carolina,Clarendon,,South Carolina,Clarendon,,USA.41.14_1
+USA,South Carolina,Colleton,,South Carolina,Colleton,,USA.41.15_1
+USA,South Carolina,Darlington,,South Carolina,Darlington,,USA.41.16_1
+USA,South Carolina,Dillon,,South Carolina,Dillon,,USA.41.17_1
+USA,South Carolina,Dorchester,,South Carolina,Dorchester,,USA.41.18_1
+USA,South Carolina,Edgefield,,South Carolina,Edgefield,,USA.41.19_1
+USA,South Carolina,Fairfield,,South Carolina,Fairfield,,USA.41.20_1
+USA,South Carolina,Florence,,South Carolina,Florence,,USA.41.21_1
+USA,South Carolina,Georgetown,,South Carolina,Georgetown,,USA.41.22_1
+USA,South Carolina,Greenville,,South Carolina,Greenville,,USA.41.23_1
+USA,South Carolina,Greenwood,,South Carolina,Greenwood,,USA.41.24_1
+USA,South Carolina,Hampton,,South Carolina,Hampton,,USA.41.25_1
+USA,South Carolina,Horry,,South Carolina,Horry,,USA.41.26_1
+USA,South Carolina,Jasper,,South Carolina,Jasper,,USA.41.27_1
+USA,South Carolina,Kershaw,,South Carolina,Kershaw,,USA.41.28_1
+USA,South Carolina,Lancaster,,South Carolina,Lancaster,,USA.41.29_1
+USA,South Carolina,Laurens,,South Carolina,Laurens,,USA.41.30_1
+USA,South Carolina,Lee,,South Carolina,Lee,,USA.41.31_1
+USA,South Carolina,Lexington,,South Carolina,Lexington,,USA.41.32_1
+USA,South Carolina,Marion,,South Carolina,Marion,,USA.41.33_1
+USA,South Carolina,Marlboro,,South Carolina,Marlboro,,USA.41.34_1
+USA,South Carolina,McCormick,,South Carolina,McCormick,,USA.41.35_1
+USA,South Carolina,Newberry,,South Carolina,Newberry,,USA.41.36_1
+USA,South Carolina,Oconee,,South Carolina,Oconee,,USA.41.37_1
+USA,South Carolina,Orangeburg,,South Carolina,Orangeburg,,USA.41.38_1
+USA,South Carolina,Pickens,,South Carolina,Pickens,,USA.41.39_1
+USA,South Carolina,Richland,,South Carolina,Richland,,USA.41.40_1
+USA,South Carolina,Saluda,,South Carolina,Saluda,,USA.41.41_1
+USA,South Carolina,Spartanburg,,South Carolina,Spartanburg,,USA.41.42_1
+USA,South Carolina,Sumter,,South Carolina,Sumter,,USA.41.43_1
+USA,South Carolina,Union,,South Carolina,Union,,USA.41.44_1
+USA,South Carolina,Williamsburg,,South Carolina,Williamsburg,,USA.41.45_1
+USA,South Carolina,York,,South Carolina,York,,USA.41.46_1
+USA,South Dakota,Aurora,,South Dakota,Aurora,,USA.42.1_1
+USA,South Dakota,Beadle,,South Dakota,Beadle,,USA.42.2_1
+USA,South Dakota,Bon Homme,,South Dakota,Bon Homme,,USA.42.4_1
+USA,South Dakota,Brookings,,South Dakota,Brookings,,USA.42.5_1
+USA,South Dakota,Brown,,South Dakota,Brown,,USA.42.6_1
+USA,South Dakota,Buffalo,,South Dakota,Buffalo,,USA.42.8_1
+USA,South Dakota,Charles Mix,,South Dakota,Charles Mix,,USA.42.11_1
+USA,South Dakota,Clark,,South Dakota,Clark,,USA.42.12_1
+USA,South Dakota,Clay,,South Dakota,Clay,,USA.42.13_1
+USA,South Dakota,Codington,,South Dakota,Codington,,USA.42.14_1
+USA,South Dakota,Corson,,South Dakota,Corson,,USA.42.15_1
+USA,South Dakota,Davison,,South Dakota,Davison,,USA.42.17_1
+USA,South Dakota,Day,,South Dakota,Day,,USA.42.18_1
+USA,South Dakota,Deuel,,South Dakota,Deuel,,USA.42.19_1
+USA,South Dakota,Douglas,,South Dakota,Douglas,,USA.42.21_1
+USA,South Dakota,Fall River,,South Dakota,Fall River,,USA.42.23_1
+USA,South Dakota,Faulk,,South Dakota,Faulk,,USA.42.24_1
+USA,South Dakota,Grant,,South Dakota,Grant,,USA.42.25_1
+USA,South Dakota,Hamlin,,South Dakota,Hamlin,,USA.42.28_1
+USA,South Dakota,Hand,,South Dakota,Hand,,USA.42.29_1
+USA,South Dakota,Hughes,,South Dakota,Hughes,,USA.42.32_1
+USA,South Dakota,Hutchinson,,South Dakota,Hutchinson,,USA.42.33_1
+USA,South Dakota,Hyde,,South Dakota,Hyde,,USA.42.34_1
+USA,South Dakota,Jerauld,,South Dakota,Jerauld,,USA.42.36_1
+USA,South Dakota,Lake,,South Dakota,Lake,,USA.42.39_1
+USA,South Dakota,Lawrence,,South Dakota,Lawrence,,USA.42.40_1
+USA,South Dakota,Lincoln,,South Dakota,Lincoln,,USA.42.41_1
+USA,South Dakota,Lyman,,South Dakota,Lyman,,USA.42.42_1
+USA,South Dakota,Marshall,,South Dakota,Marshall,,USA.42.43_1
+USA,South Dakota,McCook,,South Dakota,McCook,,USA.42.44_1
+USA,South Dakota,McPherson,,South Dakota,McPherson,,USA.42.45_1
+USA,South Dakota,Meade,,South Dakota,Meade,,USA.42.46_1
+USA,South Dakota,Miner,,South Dakota,Miner,,USA.42.48_1
+USA,South Dakota,Minnehaha,,South Dakota,Minnehaha,,USA.42.49_1
+USA,South Dakota,Moody,,South Dakota,Moody,,USA.42.50_1
+USA,South Dakota,Oglala Lakota,,South Dakota,Shannon,,USA.42.56_1
+USA,South Dakota,Pennington,,South Dakota,Pennington,,USA.42.51_1
+USA,South Dakota,Roberts,,South Dakota,Roberts,,USA.42.54_1
+USA,South Dakota,Sanborn,,South Dakota,Sanborn,,USA.42.55_1
+USA,South Dakota,Spink,,South Dakota,Spink,,USA.42.57_1
+USA,South Dakota,Stanley,,South Dakota,Stanley,,USA.42.58_1
+USA,South Dakota,Sully,,South Dakota,Sully,,USA.42.59_1
+USA,South Dakota,Todd,,South Dakota,Todd,,USA.42.60_1
+USA,South Dakota,Tripp,,South Dakota,Tripp,,USA.42.61_1
+USA,South Dakota,Turner,,South Dakota,Turner,,USA.42.62_1
+USA,South Dakota,Union,,South Dakota,Union,,USA.42.63_1
+USA,South Dakota,Walworth,,South Dakota,Walworth,,USA.42.64_1
+USA,South Dakota,Yankton,,South Dakota,Yankton,,USA.42.65_1
+USA,South Dakota,Ziebach,,South Dakota,Ziebach,,USA.42.66_1
+USA,Tennessee,Anderson,,Tennessee,Anderson,,USA.43.1_1
+USA,Tennessee,Bedford,,Tennessee,Bedford,,USA.43.2_1
+USA,Tennessee,Benton,,Tennessee,Benton,,USA.43.3_1
+USA,Tennessee,Bledsoe,,Tennessee,Bledsoe,,USA.43.4_1
+USA,Tennessee,Blount,,Tennessee,Blount,,USA.43.5_1
+USA,Tennessee,Bradley,,Tennessee,Bradley,,USA.43.6_1
+USA,Tennessee,Campbell,,Tennessee,Campbell,,USA.43.7_1
+USA,Tennessee,Cannon,,Tennessee,Cannon,,USA.43.8_1
+USA,Tennessee,Carroll,,Tennessee,Carroll,,USA.43.9_1
+USA,Tennessee,Carter,,Tennessee,Carter,,USA.43.10_1
+USA,Tennessee,Cheatham,,Tennessee,Cheatham,,USA.43.11_1
+USA,Tennessee,Chester,,Tennessee,Chester,,USA.43.12_1
+USA,Tennessee,Claiborne,,Tennessee,Claiborne,,USA.43.13_1
+USA,Tennessee,Clay,,Tennessee,Clay,,USA.43.14_1
+USA,Tennessee,Cocke,,Tennessee,Cocke,,USA.43.15_1
+USA,Tennessee,Coffee,,Tennessee,Coffee,,USA.43.16_1
+USA,Tennessee,Crockett,,Tennessee,Crockett,,USA.43.17_1
+USA,Tennessee,Cumberland,,Tennessee,Cumberland,,USA.43.18_1
+USA,Tennessee,Davidson,,Tennessee,Davidson,,USA.43.19_1
+USA,Tennessee,DeKalb,,Tennessee,DeKalb,,USA.43.21_1
+USA,Tennessee,Decatur,,Tennessee,Decatur,,USA.43.20_1
+USA,Tennessee,Dickson,,Tennessee,Dickson,,USA.43.22_1
+USA,Tennessee,Dyer,,Tennessee,Dyer,,USA.43.23_1
+USA,Tennessee,Fayette,,Tennessee,Fayette,,USA.43.24_1
+USA,Tennessee,Fentress,,Tennessee,Fentress,,USA.43.25_1
+USA,Tennessee,Franklin,,Tennessee,Franklin,,USA.43.26_1
+USA,Tennessee,Gibson,,Tennessee,Gibson,,USA.43.27_1
+USA,Tennessee,Giles,,Tennessee,Giles,,USA.43.28_1
+USA,Tennessee,Grainger,,Tennessee,Grainger,,USA.43.29_1
+USA,Tennessee,Greene,,Tennessee,Greene,,USA.43.30_1
+USA,Tennessee,Grundy,,Tennessee,Grundy,,USA.43.31_1
+USA,Tennessee,Hamblen,,Tennessee,Hamblen,,USA.43.32_1
+USA,Tennessee,Hamilton,,Tennessee,Hamilton,,USA.43.33_1
+USA,Tennessee,Hancock,,Tennessee,Hancock,,USA.43.34_1
+USA,Tennessee,Hardeman,,Tennessee,Hardeman,,USA.43.35_1
+USA,Tennessee,Hardin,,Tennessee,Hardin,,USA.43.36_1
+USA,Tennessee,Hawkins,,Tennessee,Hawkins,,USA.43.37_1
+USA,Tennessee,Haywood,,Tennessee,Haywood,,USA.43.38_1
+USA,Tennessee,Henderson,,Tennessee,Henderson,,USA.43.39_1
+USA,Tennessee,Henry,,Tennessee,Henry,,USA.43.40_1
+USA,Tennessee,Hickman,,Tennessee,Hickman,,USA.43.41_1
+USA,Tennessee,Houston,,Tennessee,Houston,,USA.43.42_1
+USA,Tennessee,Humphreys,,Tennessee,Humphreys,,USA.43.43_1
+USA,Tennessee,Jackson,,Tennessee,Jackson,,USA.43.44_1
+USA,Tennessee,Jefferson,,Tennessee,Jefferson,,USA.43.45_1
+USA,Tennessee,Johnson,,Tennessee,Johnson,,USA.43.46_1
+USA,Tennessee,Knox,,Tennessee,Knox,,USA.43.47_1
+USA,Tennessee,Lake,,Tennessee,Lake,,USA.43.48_1
+USA,Tennessee,Lauderdale,,Tennessee,Lauderdale,,USA.43.49_1
+USA,Tennessee,Lawrence,,Tennessee,Lawrence,,USA.43.50_1
+USA,Tennessee,Lewis,,Tennessee,Lewis,,USA.43.51_1
+USA,Tennessee,Lincoln,,Tennessee,Lincoln,,USA.43.52_1
+USA,Tennessee,Loudon,,Tennessee,Loudon,,USA.43.53_1
+USA,Tennessee,Macon,,Tennessee,Macon,,USA.43.54_1
+USA,Tennessee,Madison,,Tennessee,Madison,,USA.43.55_1
+USA,Tennessee,Marion,,Tennessee,Marion,,USA.43.56_1
+USA,Tennessee,Marshall,,Tennessee,Marshall,,USA.43.57_1
+USA,Tennessee,Maury,,Tennessee,Maury,,USA.43.58_1
+USA,Tennessee,McMinn,,Tennessee,McMinn,,USA.43.59_1
+USA,Tennessee,McNairy,,Tennessee,McNairy,,USA.43.60_1
+USA,Tennessee,Meigs,,Tennessee,Meigs,,USA.43.61_1
+USA,Tennessee,Monroe,,Tennessee,Monroe,,USA.43.62_1
+USA,Tennessee,Montgomery,,Tennessee,Montgomery,,USA.43.63_1
+USA,Tennessee,Moore,,Tennessee,Moore,,USA.43.64_1
+USA,Tennessee,Morgan,,Tennessee,Morgan,,USA.43.65_1
+USA,Tennessee,Obion,,Tennessee,Obion,,USA.43.66_1
+USA,Tennessee,Overton,,Tennessee,Overton,,USA.43.67_1
+USA,Tennessee,Perry,,Tennessee,Perry,,USA.43.68_1
+USA,Tennessee,Pickett,,Tennessee,Pickett,,USA.43.69_1
+USA,Tennessee,Polk,,Tennessee,Polk,,USA.43.70_1
+USA,Tennessee,Putnam,,Tennessee,Putnam,,USA.43.71_1
+USA,Tennessee,Rhea,,Tennessee,Rhea,,USA.43.72_1
+USA,Tennessee,Roane,,Tennessee,Roane,,USA.43.73_1
+USA,Tennessee,Robertson,,Tennessee,Robertson,,USA.43.74_1
+USA,Tennessee,Rutherford,,Tennessee,Rutherford,,USA.43.75_1
+USA,Tennessee,Scott,,Tennessee,Scott,,USA.43.76_1
+USA,Tennessee,Sequatchie,,Tennessee,Sequatchie,,USA.43.77_1
+USA,Tennessee,Sevier,,Tennessee,Sevier,,USA.43.78_1
+USA,Tennessee,Shelby,,Tennessee,Shelby,,USA.43.79_1
+USA,Tennessee,Smith,,Tennessee,Smith,,USA.43.80_1
+USA,Tennessee,Stewart,,Tennessee,Stewart,,USA.43.81_1
+USA,Tennessee,Sullivan,,Tennessee,Sullivan,,USA.43.82_1
+USA,Tennessee,Sumner,,Tennessee,Sumner,,USA.43.83_1
+USA,Tennessee,Tipton,,Tennessee,Tipton,,USA.43.84_1
+USA,Tennessee,Trousdale,,Tennessee,Trousdale,,USA.43.85_1
+USA,Tennessee,Unicoi,,Tennessee,Unicoi,,USA.43.86_1
+USA,Tennessee,Union,,Tennessee,Union,,USA.43.87_1
+USA,Tennessee,Van Buren,,Tennessee,Van Buren,,USA.43.88_1
+USA,Tennessee,Warren,,Tennessee,Warren,,USA.43.89_1
+USA,Tennessee,Washington,,Tennessee,Washington,,USA.43.90_1
+USA,Tennessee,Wayne,,Tennessee,Wayne,,USA.43.91_1
+USA,Tennessee,Weakley,,Tennessee,Weakley,,USA.43.92_1
+USA,Tennessee,White,,Tennessee,White,,USA.43.93_1
+USA,Tennessee,Williamson,,Tennessee,Williamson,,USA.43.94_1
+USA,Tennessee,Wilson,,Tennessee,Wilson,,USA.43.95_1
+USA,Texas,Anderson,,Texas,Anderson,,USA.44.1_1
+USA,Texas,Andrews,,Texas,Andrews,,USA.44.2_1
+USA,Texas,Angelina,,Texas,Angelina,,USA.44.3_1
+USA,Texas,Aransas,,Texas,Aransas,,USA.44.4_1
+USA,Texas,Archer,,Texas,Archer,,USA.44.5_1
+USA,Texas,Armstrong,,Texas,Armstrong,,USA.44.6_1
+USA,Texas,Atascosa,,Texas,Atascosa,,USA.44.7_1
+USA,Texas,Austin,,Texas,Austin,,USA.44.8_1
+USA,Texas,Bailey,,Texas,Bailey,,USA.44.9_1
+USA,Texas,Bandera,,Texas,Bandera,,USA.44.10_1
+USA,Texas,Bastrop,,Texas,Bastrop,,USA.44.11_1
+USA,Texas,Bee,,Texas,Bee,,USA.44.13_1
+USA,Texas,Bell,,Texas,Bell,,USA.44.14_1
+USA,Texas,Bexar,,Texas,Bexar,,USA.44.15_1
+USA,Texas,Blanco,,Texas,Blanco,,USA.44.16_1
+USA,Texas,Bosque,,Texas,Bosque,,USA.44.18_1
+USA,Texas,Bowie,,Texas,Bowie,,USA.44.19_1
+USA,Texas,Brazoria,,Texas,Brazoria,,USA.44.20_1
+USA,Texas,Brazos,,Texas,Brazos,,USA.44.21_1
+USA,Texas,Brewster,,Texas,Brewster,,USA.44.22_1
+USA,Texas,Briscoe,,Texas,Briscoe,,USA.44.23_1
+USA,Texas,Brooks,,Texas,Brooks,,USA.44.24_1
+USA,Texas,Brown,,Texas,Brown,,USA.44.25_1
+USA,Texas,Burleson,,Texas,Burleson,,USA.44.26_1
+USA,Texas,Burnet,,Texas,Burnet,,USA.44.27_1
+USA,Texas,Caldwell,,Texas,Caldwell,,USA.44.28_1
+USA,Texas,Calhoun,,Texas,Calhoun,,USA.44.29_1
+USA,Texas,Callahan,,Texas,Callahan,,USA.44.30_1
+USA,Texas,Cameron,,Texas,Cameron,,USA.44.31_1
+USA,Texas,Camp,,Texas,Camp,,USA.44.32_1
+USA,Texas,Carson,,Texas,Carson,,USA.44.33_1
+USA,Texas,Cass,,Texas,Cass,,USA.44.34_1
+USA,Texas,Castro,,Texas,Castro,,USA.44.35_1
+USA,Texas,Chambers,,Texas,Chambers,,USA.44.36_1
+USA,Texas,Cherokee,,Texas,Cherokee,,USA.44.37_1
+USA,Texas,Childress,,Texas,Childress,,USA.44.38_1
+USA,Texas,Clay,,Texas,Clay,,USA.44.39_1
+USA,Texas,Cochran,,Texas,Cochran,,USA.44.40_1
+USA,Texas,Coke,,Texas,Coke,,USA.44.41_1
+USA,Texas,Coleman,,Texas,Coleman,,USA.44.42_1
+USA,Texas,Collin,,Texas,Collin,,USA.44.43_1
+USA,Texas,Collingsworth,,Texas,Collingsworth,,USA.44.44_1
+USA,Texas,Colorado,,Texas,Colorado,,USA.44.45_1
+USA,Texas,Comal,,Texas,Comal,,USA.44.46_1
+USA,Texas,Comanche,,Texas,Comanche,,USA.44.47_1
+USA,Texas,Concho,,Texas,Concho,,USA.44.48_1
+USA,Texas,Cooke,,Texas,Cooke,,USA.44.49_1
+USA,Texas,Coryell,,Texas,Coryell,,USA.44.50_1
+USA,Texas,Cottle,,Texas,Cottle,,USA.44.51_1
+USA,Texas,Crane,,Texas,Crane,,USA.44.52_1
+USA,Texas,Crosby,,Texas,Crosby,,USA.44.54_1
+USA,Texas,Dallam,,Texas,Dallam,,USA.44.56_1
+USA,Texas,Dallas,,Texas,Dallas,,USA.44.57_1
+USA,Texas,Dawson,,Texas,Dawson,,USA.44.58_1
+USA,Texas,DeWitt,,Texas,Dewitt,,USA.44.62_1
+USA,Texas,Deaf Smith,,Texas,Deaf Smith,,USA.44.59_1
+USA,Texas,Delta,,Texas,Delta,,USA.44.60_1
+USA,Texas,Denton,,Texas,Denton,,USA.44.61_1
+USA,Texas,Dickens,,Texas,Dickens,,USA.44.63_1
+USA,Texas,Dimmit,,Texas,Dimmit,,USA.44.64_1
+USA,Texas,Donley,,Texas,Donley,,USA.44.65_1
+USA,Texas,Duval,,Texas,Duval,,USA.44.66_1
+USA,Texas,Eastland,,Texas,Eastland,,USA.44.67_1
+USA,Texas,Ector,,Texas,Ector,,USA.44.68_1
+USA,Texas,El Paso,,Texas,El Paso,,USA.44.70_1
+USA,Texas,Ellis,,Texas,Ellis,,USA.44.71_1
+USA,Texas,Erath,,Texas,Erath,,USA.44.72_1
+USA,Texas,Falls,,Texas,Falls,,USA.44.73_1
+USA,Texas,Fannin,,Texas,Fannin,,USA.44.74_1
+USA,Texas,Fayette,,Texas,Fayette,,USA.44.75_1
+USA,Texas,Fisher,,Texas,Fisher,,USA.44.76_1
+USA,Texas,Floyd,,Texas,Floyd,,USA.44.77_1
+USA,Texas,Fort Bend,,Texas,Fort Bend,,USA.44.79_1
+USA,Texas,Franklin,,Texas,Franklin,,USA.44.80_1
+USA,Texas,Freestone,,Texas,Freestone,,USA.44.81_1
+USA,Texas,Frio,,Texas,Frio,,USA.44.82_1
+USA,Texas,Gaines,,Texas,Gaines,,USA.44.83_1
+USA,Texas,Galveston,,Texas,Galveston,,USA.44.84_1
+USA,Texas,Garza,,Texas,Garza,,USA.44.85_1
+USA,Texas,Gillespie,,Texas,Gillespie,,USA.44.86_1
+USA,Texas,Glasscock,,Texas,Glasscock,,USA.44.87_1
+USA,Texas,Goliad,,Texas,Goliad,,USA.44.88_1
+USA,Texas,Gonzales,,Texas,Gonzales,,USA.44.89_1
+USA,Texas,Gray,,Texas,Gray,,USA.44.90_1
+USA,Texas,Grayson,,Texas,Grayson,,USA.44.91_1
+USA,Texas,Gregg,,Texas,Gregg,,USA.44.92_1
+USA,Texas,Grimes,,Texas,Grimes,,USA.44.93_1
+USA,Texas,Guadalupe,,Texas,Guadalupe,,USA.44.94_1
+USA,Texas,Hale,,Texas,Hale,,USA.44.95_1
+USA,Texas,Hall,,Texas,Hall,,USA.44.96_1
+USA,Texas,Hamilton,,Texas,Hamilton,,USA.44.97_1
+USA,Texas,Hansford,,Texas,Hansford,,USA.44.98_1
+USA,Texas,Hardeman,,Texas,Hardeman,,USA.44.99_1
+USA,Texas,Hardin,,Texas,Hardin,,USA.44.100_1
+USA,Texas,Harris,,Texas,Harris,,USA.44.101_1
+USA,Texas,Harrison,,Texas,Harrison,,USA.44.102_1
+USA,Texas,Hartley,,Texas,Hartley,,USA.44.103_1
+USA,Texas,Haskell,,Texas,Haskell,,USA.44.104_1
+USA,Texas,Hays,,Texas,Hays,,USA.44.105_1
+USA,Texas,Hemphill,,Texas,Hemphill,,USA.44.106_1
+USA,Texas,Henderson,,Texas,Henderson,,USA.44.107_1
+USA,Texas,Hidalgo,,Texas,Hidalgo,,USA.44.108_1
+USA,Texas,Hill,,Texas,Hill,,USA.44.109_1
+USA,Texas,Hockley,,Texas,Hockley,,USA.44.110_1
+USA,Texas,Hood,,Texas,Hood,,USA.44.111_1
+USA,Texas,Hopkins,,Texas,Hopkins,,USA.44.112_1
+USA,Texas,Houston,,Texas,Houston,,USA.44.113_1
+USA,Texas,Howard,,Texas,Howard,,USA.44.114_1
+USA,Texas,Hunt,,Texas,Hunt,,USA.44.116_1
+USA,Texas,Hutchinson,,Texas,Hutchinson,,USA.44.117_1
+USA,Texas,Jack,,Texas,Jack,,USA.44.119_1
+USA,Texas,Jackson,,Texas,Jackson,,USA.44.120_1
+USA,Texas,Jasper,,Texas,Jasper,,USA.44.121_1
+USA,Texas,Jefferson,,Texas,Jefferson,,USA.44.123_1
+USA,Texas,Jim Hogg,,Texas,Jim Hogg,,USA.44.124_1
+USA,Texas,Jim Wells,,Texas,Jim Wells,,USA.44.125_1
+USA,Texas,Johnson,,Texas,Johnson,,USA.44.126_1
+USA,Texas,Jones,,Texas,Jones,,USA.44.127_1
+USA,Texas,Karnes,,Texas,Karnes,,USA.44.128_1
+USA,Texas,Kaufman,,Texas,Kaufman,,USA.44.129_1
+USA,Texas,Kendall,,Texas,Kendall,,USA.44.130_1
+USA,Texas,Kerr,,Texas,Kerr,,USA.44.133_1
+USA,Texas,Kimble,,Texas,Kimble,,USA.44.134_1
+USA,Texas,Kleberg,,Texas,Kleberg,,USA.44.137_1
+USA,Texas,Knox,,Texas,Knox,,USA.44.138_1
+USA,Texas,La Salle,,Texas,La Salle,,USA.44.139_1
+USA,Texas,Lamar,,Texas,Lamar,,USA.44.140_1
+USA,Texas,Lamb,,Texas,Lamb,,USA.44.141_1
+USA,Texas,Lampasas,,Texas,Lampasas,,USA.44.142_1
+USA,Texas,Lavaca,,Texas,Lavaca,,USA.44.143_1
+USA,Texas,Lee,,Texas,Lee,,USA.44.144_1
+USA,Texas,Leon,,Texas,Leon,,USA.44.145_1
+USA,Texas,Liberty,,Texas,Liberty,,USA.44.146_1
+USA,Texas,Limestone,,Texas,Limestone,,USA.44.147_1
+USA,Texas,Lipscomb,,Texas,Lipscomb,,USA.44.148_1
+USA,Texas,Live Oak,,Texas,Live Oak,,USA.44.149_1
+USA,Texas,Llano,,Texas,Llano,,USA.44.150_1
+USA,Texas,Lubbock,,Texas,Lubbock,,USA.44.152_1
+USA,Texas,Lynn,,Texas,Lynn,,USA.44.153_1
+USA,Texas,Madison,,Texas,Madison,,USA.44.154_1
+USA,Texas,Marion,,Texas,Marion,,USA.44.155_1
+USA,Texas,Martin,,Texas,Martin,,USA.44.156_1
+USA,Texas,Mason,,Texas,Mason,,USA.44.157_1
+USA,Texas,Matagorda,,Texas,Matagorda,,USA.44.158_1
+USA,Texas,Maverick,,Texas,Maverick,,USA.44.159_1
+USA,Texas,McCulloch,,Texas,McCulloch,,USA.44.160_1
+USA,Texas,McLennan,,Texas,McLennan,,USA.44.161_1
+USA,Texas,Medina,,Texas,Medina,,USA.44.163_1
+USA,Texas,Midland,,Texas,Midland,,USA.44.165_1
+USA,Texas,Milam,,Texas,Milam,,USA.44.166_1
+USA,Texas,Mills,,Texas,Mills,,USA.44.167_1
+USA,Texas,Mitchell,,Texas,Mitchell,,USA.44.168_1
+USA,Texas,Montague,,Texas,Montague,,USA.44.169_1
+USA,Texas,Montgomery,,Texas,Montgomery,,USA.44.170_1
+USA,Texas,Moore,,Texas,Moore,,USA.44.171_1
+USA,Texas,Morris,,Texas,Morris,,USA.44.172_1
+USA,Texas,Motley,,Texas,Motley,,USA.44.173_1
+USA,Texas,Nacogdoches,,Texas,Nacogdoches,,USA.44.174_1
+USA,Texas,Navarro,,Texas,Navarro,,USA.44.175_1
+USA,Texas,Newton,,Texas,Newton,,USA.44.176_1
+USA,Texas,Nolan,,Texas,Nolan,,USA.44.177_1
+USA,Texas,Nueces,,Texas,Nueces,,USA.44.178_1
+USA,Texas,Ochiltree,,Texas,Ochiltree,,USA.44.179_1
+USA,Texas,Oldham,,Texas,Oldham,,USA.44.180_1
+USA,Texas,Orange,,Texas,Orange,,USA.44.181_1
+USA,Texas,Palo Pinto,,Texas,Palo Pinto,,USA.44.182_1
+USA,Texas,Panola,,Texas,Panola,,USA.44.183_1
+USA,Texas,Parker,,Texas,Parker,,USA.44.184_1
+USA,Texas,Parmer,,Texas,Parmer,,USA.44.185_1
+USA,Texas,Pecos,,Texas,Pecos,,USA.44.186_1
+USA,Texas,Polk,,Texas,Polk,,USA.44.187_1
+USA,Texas,Potter,,Texas,Potter,,USA.44.188_1
+USA,Texas,Rains,,Texas,Rains,,USA.44.190_1
+USA,Texas,Randall,,Texas,Randall,,USA.44.191_1
+USA,Texas,Red River,,Texas,Red River,,USA.44.194_1
+USA,Texas,Reeves,,Texas,Reeves,,USA.44.195_1
+USA,Texas,Refugio,,Texas,Refugio,,USA.44.196_1
+USA,Texas,Roberts,,Texas,Roberts,,USA.44.197_1
+USA,Texas,Robertson,,Texas,Robertson,,USA.44.198_1
+USA,Texas,Rockwall,,Texas,Rockwall,,USA.44.199_1
+USA,Texas,Runnels,,Texas,Runnels,,USA.44.200_1
+USA,Texas,Rusk,,Texas,Rusk,,USA.44.201_1
+USA,Texas,Sabine,,Texas,Sabine,,USA.44.202_1
+USA,Texas,San Augustine,,Texas,San Augustine,,USA.44.203_1
+USA,Texas,San Jacinto,,Texas,San Jacinto,,USA.44.204_1
+USA,Texas,San Patricio,,Texas,San Patricio,,USA.44.205_1
+USA,Texas,San Saba,,Texas,San Saba,,USA.44.206_1
+USA,Texas,Scurry,,Texas,Scurry,,USA.44.208_1
+USA,Texas,Shackelford,,Texas,Shackelford,,USA.44.209_1
+USA,Texas,Shelby,,Texas,Shelby,,USA.44.210_1
+USA,Texas,Sherman,,Texas,Sherman,,USA.44.211_1
+USA,Texas,Smith,,Texas,Smith,,USA.44.212_1
+USA,Texas,Starr,,Texas,Starr,,USA.44.214_1
+USA,Texas,Stephens,,Texas,Stephens,,USA.44.215_1
+USA,Texas,Swisher,,Texas,Swisher,,USA.44.219_1
+USA,Texas,Tarrant,,Texas,Tarrant,,USA.44.220_1
+USA,Texas,Taylor,,Texas,Taylor,,USA.44.221_1
+USA,Texas,Terry,,Texas,Terry,,USA.44.223_1
+USA,Texas,Titus,,Texas,Titus,,USA.44.225_1
+USA,Texas,Tom Green,,Texas,Tom Green,,USA.44.226_1
+USA,Texas,Travis,,Texas,Travis,,USA.44.227_1
+USA,Texas,Trinity,,Texas,Trinity,,USA.44.228_1
+USA,Texas,Tyler,,Texas,Tyler,,USA.44.229_1
+USA,Texas,Upshur,,Texas,Upshur,,USA.44.230_1
+USA,Texas,Uvalde,,Texas,Uvalde,,USA.44.232_1
+USA,Texas,Val Verde,,Texas,Val Verde,,USA.44.233_1
+USA,Texas,Van Zandt,,Texas,Van Zandt,,USA.44.234_1
+USA,Texas,Victoria,,Texas,Victoria,,USA.44.235_1
+USA,Texas,Walker,,Texas,Walker,,USA.44.236_1
+USA,Texas,Waller,,Texas,Waller,,USA.44.237_1
+USA,Texas,Ward,,Texas,Ward,,USA.44.238_1
+USA,Texas,Washington,,Texas,Washington,,USA.44.239_1
+USA,Texas,Webb,,Texas,Webb,,USA.44.240_1
+USA,Texas,Wharton,,Texas,Wharton,,USA.44.241_1
+USA,Texas,Wheeler,,Texas,Wheeler,,USA.44.242_1
+USA,Texas,Wichita,,Texas,Wichita,,USA.44.243_1
+USA,Texas,Wilbarger,,Texas,Wilbarger,,USA.44.244_1
+USA,Texas,Willacy,,Texas,Willacy,,USA.44.245_1
+USA,Texas,Williamson,,Texas,Williamson,,USA.44.246_1
+USA,Texas,Wilson,,Texas,Wilson,,USA.44.247_1
+USA,Texas,Winkler,,Texas,Winkler,,USA.44.248_1
+USA,Texas,Wise,,Texas,Wise,,USA.44.249_1
+USA,Texas,Wood,,Texas,Wood,,USA.44.250_1
+USA,Texas,Yoakum,,Texas,Yoakum,,USA.44.251_1
+USA,Texas,Young,,Texas,Young,,USA.44.252_1
+USA,Texas,Zapata,,Texas,Zapata,,USA.44.253_1
+USA,Texas,Zavala,,Texas,Zavala,,USA.44.254_1
+USA,Utah,Box Elder,,Utah,Box Elder,,USA.45.2_1
+USA,Utah,Cache,,Utah,Cache,,USA.45.3_1
+USA,Utah,Carbon,,Utah,Carbon,,USA.45.4_1
+USA,Utah,Davis,,Utah,Davis,,USA.45.6_1
+USA,Utah,Duchesne,,Utah,Duchesne,,USA.45.7_1
+USA,Utah,Emery,,Utah,Emery,,USA.45.8_1
+USA,Utah,Garfield,,Utah,Garfield,,USA.45.9_1
+USA,Utah,Grand,,Utah,Grand,,USA.45.10_1
+USA,Utah,Iron,,Utah,Iron,,USA.45.11_1
+USA,Utah,Juab,,Utah,Juab,,USA.45.12_1
+USA,Utah,Kane,,Utah,Kane,,USA.45.13_1
+USA,Utah,Millard,,Utah,Millard,,USA.45.14_1
+USA,Utah,Morgan,,Utah,Morgan,,USA.45.15_1
+USA,Utah,Piute,,Utah,Piute,,USA.45.16_1
+USA,Utah,Salt Lake,,Utah,Salt Lake,,USA.45.18_1
+USA,Utah,San Juan,,Utah,San Juan,,USA.45.19_1
+USA,Utah,Sanpete,,Utah,Sanpete,,USA.45.20_1
+USA,Utah,Sevier,,Utah,Sevier,,USA.45.21_1
+USA,Utah,Summit,,Utah,Summit,,USA.45.22_1
+USA,Utah,Tooele,,Utah,Tooele,,USA.45.23_1
+USA,Utah,Uintah,,Utah,Uintah,,USA.45.24_1
+USA,Utah,Utah,,Utah,Utah,,USA.45.25_1
+USA,Utah,Wasatch,,Utah,Wasatch,,USA.45.26_1
+USA,Utah,Washington,,Utah,Washington,,USA.45.27_1
+USA,Utah,Weber,,Utah,Weber,,USA.45.29_1
+USA,Vermont,Addison,,Vermont,Addison,,USA.46.1_1
+USA,Vermont,Bennington,,Vermont,Bennington,,USA.46.2_1
+USA,Vermont,Caledonia,,Vermont,Caledonia,,USA.46.3_1
+USA,Vermont,Chittenden,,Vermont,Chittenden,,USA.46.4_1
+USA,Vermont,Essex,,Vermont,Essex,,USA.46.5_1
+USA,Vermont,Franklin,,Vermont,Franklin,,USA.46.6_1
+USA,Vermont,Grand Isle,,Vermont,Grand Isle,,USA.46.7_1
+USA,Vermont,Lamoille,,Vermont,Lamoille,,USA.46.8_1
+USA,Vermont,Orange,,Vermont,Orange,,USA.46.9_1
+USA,Vermont,Orleans,,Vermont,Orleans,,USA.46.10_1
+USA,Vermont,Rutland,,Vermont,Rutland,,USA.46.11_1
+USA,Vermont,Washington,,Vermont,Washington,,USA.46.12_1
+USA,Vermont,Windham,,Vermont,Windham,,USA.46.13_1
+USA,Vermont,Windsor,,Vermont,Windsor,,USA.46.14_1
+USA,Virginia,Accomack,,Virginia,Accomack,,USA.47.1_1
+USA,Virginia,Albemarle,,Virginia,Albemarle,,USA.47.2_1
+USA,Virginia,Alexandria city,,Virginia,Alexandria,,USA.47.3_1
+USA,Virginia,Alleghany,,Virginia,Alleghany,,USA.47.4_1
+USA,Virginia,Amelia,,Virginia,Amelia,,USA.47.5_1
+USA,Virginia,Amherst,,Virginia,Amherst,,USA.47.6_1
+USA,Virginia,Appomattox,,Virginia,Appomattox,,USA.47.7_1
+USA,Virginia,Arlington,,Virginia,Arlington,,USA.47.8_1
+USA,Virginia,Augusta,,Virginia,Augusta,,USA.47.9_1
+USA,Virginia,Botetourt,,Virginia,Botetourt,,USA.47.14_1
+USA,Virginia,Bristol city,,Virginia,Bristol,,USA.47.15_1
+USA,Virginia,Brunswick,,Virginia,Brunswick,,USA.47.16_1
+USA,Virginia,Buchanan,,Virginia,Buchanan,,USA.47.17_1
+USA,Virginia,Buckingham,,Virginia,Buckingham,,USA.47.18_1
+USA,Virginia,Buena Vista city,,Virginia,Buena Vista,,USA.47.19_1
+USA,Virginia,Campbell,,Virginia,Campbell,,USA.47.20_1
+USA,Virginia,Caroline,,Virginia,Caroline,,USA.47.21_1
+USA,Virginia,Carroll,,Virginia,Carroll,,USA.47.22_1
+USA,Virginia,Charles City,,Virginia,Charles City,,USA.47.23_1
+USA,Virginia,Charlotte,,Virginia,Charlotte,,USA.47.24_1
+USA,Virginia,Charlottesville city,,Virginia,Charlottesville,,USA.47.25_1
+USA,Virginia,Chesapeake city,,Virginia,Chesapeake,,USA.47.26_1
+USA,Virginia,Chesterfield,,Virginia,Chesterfield,,USA.47.27_1
+USA,Virginia,Clarke,,Virginia,Clarke,,USA.47.28_1
+USA,Virginia,Colonial Heights city,,Virginia,Colonial Heights,,USA.47.30_1
+USA,Virginia,Covington city,,Virginia,Covington,,USA.47.31_1
+USA,Virginia,Craig,,Virginia,Craig,,USA.47.32_1
+USA,Virginia,Culpeper,,Virginia,Culpeper,,USA.47.33_1
+USA,Virginia,Cumberland,,Virginia,Cumberland,,USA.47.34_1
+USA,Virginia,Danville city,,Virginia,Danville,,USA.47.35_1
+USA,Virginia,Dinwiddie,,Virginia,Dinwiddie,,USA.47.37_1
+USA,Virginia,Emporia city,,Virginia,Emporia,,USA.47.38_1
+USA,Virginia,Essex,,Virginia,Essex,,USA.47.39_1
+USA,Virginia,Fairfax city,,Virginia,Fairfax City,,USA.47.41_1
+USA,Virginia,Fairfax,,Virginia,Fairfax,,USA.47.40_1
+USA,Virginia,Falls Church city,,Virginia,Falls Church,,USA.47.42_1
+USA,Virginia,Fauquier,,Virginia,Fauquier,,USA.47.43_1
+USA,Virginia,Floyd,,Virginia,Floyd,,USA.47.44_1
+USA,Virginia,Fluvanna,,Virginia,Fluvanna,,USA.47.45_1
+USA,Virginia,Franklin,,Virginia,Franklin,,USA.47.46_1
+USA,Virginia,Frederick,,Virginia,Frederick,,USA.47.47_1
+USA,Virginia,Fredericksburg city,,Virginia,Fredericksburg,,USA.47.48_1
+USA,Virginia,Galax city,,Virginia,Galax,,USA.47.49_1
+USA,Virginia,Giles,,Virginia,Giles,,USA.47.50_1
+USA,Virginia,Gloucester,,Virginia,Gloucester,,USA.47.51_1
+USA,Virginia,Goochland,,Virginia,Goochland,,USA.47.52_1
+USA,Virginia,Grayson,,Virginia,Grayson,,USA.47.53_1
+USA,Virginia,Greene,,Virginia,Greene,,USA.47.54_1
+USA,Virginia,Greensville,,Virginia,Greensville,,USA.47.55_1
+USA,Virginia,Halifax,,Virginia,Halifax,,USA.47.56_1
+USA,Virginia,Hampton city,,Virginia,Hampton,,USA.47.57_1
+USA,Virginia,Hanover,,Virginia,Hanover,,USA.47.58_1
+USA,Virginia,Harrisonburg city,,Virginia,Harrisonburg,,USA.47.59_1
+USA,Virginia,Henrico,,Virginia,Henrico,,USA.47.60_1
+USA,Virginia,Henry,,Virginia,Henry,,USA.47.61_1
+USA,Virginia,Highland,,Virginia,Highland,,USA.47.62_1
+USA,Virginia,Hopewell city,,Virginia,Hopewell,,USA.47.63_1
+USA,Virginia,Isle of Wight,,Virginia,Isle of Wight,,USA.47.64_1
+USA,Virginia,James City,,Virginia,James City,,USA.47.65_1
+USA,Virginia,King George,,Virginia,King George,,USA.47.67_1
+USA,Virginia,King William,,Virginia,King William,,USA.47.68_1
+USA,Virginia,King and Queen,,Virginia,King and Queen,,USA.47.66_1
+USA,Virginia,Lancaster,,Virginia,Lancaster,,USA.47.69_1
+USA,Virginia,Lee,,Virginia,Lee,,USA.47.70_1
+USA,Virginia,Lexington city,,Virginia,Lexington,,USA.47.71_1
+USA,Virginia,Loudoun,,Virginia,Loudoun,,USA.47.72_1
+USA,Virginia,Louisa,,Virginia,Louisa,,USA.47.73_1
+USA,Virginia,Lunenburg,,Virginia,Lunenburg,,USA.47.74_1
+USA,Virginia,Lynchburg city,,Virginia,Lynchburg,,USA.47.75_1
+USA,Virginia,Madison,,Virginia,Madison,,USA.47.76_1
+USA,Virginia,Manassas Park city,,Virginia,Manassas Park,,USA.47.78_1
+USA,Virginia,Manassas city,,Virginia,Manassas,,USA.47.77_1
+USA,Virginia,Mathews,,Virginia,Mathews,,USA.47.80_1
+USA,Virginia,Mecklenburg,,Virginia,Mecklenburg,,USA.47.81_1
+USA,Virginia,Middlesex,,Virginia,Middlesex,,USA.47.82_1
+USA,Virginia,Montgomery,,Virginia,Montgomery,,USA.47.83_1
+USA,Virginia,Nelson,,Virginia,Nelson,,USA.47.84_1
+USA,Virginia,New Kent,,Virginia,New Kent,,USA.47.85_1
+USA,Virginia,Newport News city,,Virginia,Newport News,,USA.47.86_1
+USA,Virginia,Norfolk city,,Virginia,Norfolk,,USA.47.87_1
+USA,Virginia,Northampton,,Virginia,Northampton,,USA.47.88_1
+USA,Virginia,Northumberland,,Virginia,Northumberland,,USA.47.89_1
+USA,Virginia,Norton city,,Virginia,Norton,,USA.47.90_1
+USA,Virginia,Nottoway,,Virginia,Nottoway,,USA.47.91_1
+USA,Virginia,Orange,,Virginia,Orange,,USA.47.92_1
+USA,Virginia,Page,,Virginia,Page,,USA.47.93_1
+USA,Virginia,Patrick,,Virginia,Patrick,,USA.47.94_1
+USA,Virginia,Petersburg city,,Virginia,Petersburg,,USA.47.95_1
+USA,Virginia,Pittsylvania,,Virginia,Pittsylvania,,USA.47.96_1
+USA,Virginia,Poquoson city,,Virginia,Poquoson,,USA.47.97_1
+USA,Virginia,Portsmouth city,,Virginia,Portsmouth,,USA.47.98_1
+USA,Virginia,Powhatan,,Virginia,Powhatan,,USA.47.99_1
+USA,Virginia,Prince Edward,,Virginia,Prince Edward,,USA.47.100_1
+USA,Virginia,Prince George,,Virginia,Prince George,,USA.47.101_1
+USA,Virginia,Prince William,,Virginia,Prince William,,USA.47.102_1
+USA,Virginia,Pulaski,,Virginia,Pulaski,,USA.47.103_1
+USA,Virginia,Radford city,,Virginia,Radford,,USA.47.104_1
+USA,Virginia,Rappahannock,,Virginia,Rappahannock,,USA.47.105_1
+USA,Virginia,Richmond city,,Virginia,Richmond,,USA.47.106_1
+USA,Virginia,Roanoke city,,Virginia,Roanoke City,,USA.47.108_1
+USA,Virginia,Roanoke,,Virginia,Roanoke,,USA.47.107_1
+USA,Virginia,Rockbridge,,Virginia,Rockbridge,,USA.47.109_1
+USA,Virginia,Rockingham,,Virginia,Rockingham,,USA.47.110_1
+USA,Virginia,Russell,,Virginia,Russell,,USA.47.111_1
+USA,Virginia,Salem city,,Virginia,Salem,,USA.47.112_1
+USA,Virginia,Scott,,Virginia,Scott,,USA.47.113_1
+USA,Virginia,Shenandoah,,Virginia,Shenandoah,,USA.47.114_1
+USA,Virginia,Smyth,,Virginia,Smyth,,USA.47.115_1
+USA,Virginia,Southampton,,Virginia,Southampton,,USA.47.116_1
+USA,Virginia,Spotsylvania,,Virginia,Spotsylvania,,USA.47.117_1
+USA,Virginia,Stafford,,Virginia,Stafford,,USA.47.118_1
+USA,Virginia,Staunton city,,Virginia,Staunton,,USA.47.119_1
+USA,Virginia,Suffolk city,,Virginia,Suffolk,,USA.47.120_1
+USA,Virginia,Surry,,Virginia,Surry,,USA.47.121_1
+USA,Virginia,Sussex,,Virginia,Sussex,,USA.47.122_1
+USA,Virginia,Tazewell,,Virginia,Tazewell,,USA.47.123_1
+USA,Virginia,Virginia Beach city,,Virginia,Virginia Beach,,USA.47.124_1
+USA,Virginia,Warren,,Virginia,Warren,,USA.47.125_1
+USA,Virginia,Washington,,Virginia,Washington,,USA.47.126_1
+USA,Virginia,Waynesboro city,,Virginia,Waynesboro,,USA.47.127_1
+USA,Virginia,Westmoreland,,Virginia,Westmoreland,,USA.47.128_1
+USA,Virginia,Williamsburg city,,Virginia,Williamsburg,,USA.47.129_1
+USA,Virginia,Winchester city,,Virginia,Winchester,,USA.47.130_1
+USA,Virginia,Wise,,Virginia,Wise,,USA.47.131_1
+USA,Virginia,Wythe,,Virginia,Wythe,,USA.47.132_1
+USA,Virginia,York,,Virginia,York,,USA.47.133_1
+USA,Washington,Adams,,Washington,Adams,,USA.48.1_1
+USA,Washington,Asotin,,Washington,Asotin,,USA.48.2_1
+USA,Washington,Benton,,Washington,Benton,,USA.48.3_1
+USA,Washington,Chelan,,Washington,Chelan,,USA.48.4_1
+USA,Washington,Clallam,,Washington,Clallam,,USA.48.5_1
+USA,Washington,Clark,,Washington,Clark,,USA.48.6_1
+USA,Washington,Columbia,,Washington,Columbia,,USA.48.7_1
+USA,Washington,Cowlitz,,Washington,Cowlitz,,USA.48.8_1
+USA,Washington,Douglas,,Washington,Douglas,,USA.48.9_1
+USA,Washington,Ferry,,Washington,Ferry,,USA.48.10_1
+USA,Washington,Franklin,,Washington,Franklin,,USA.48.11_1
+USA,Washington,Grant,,Washington,Grant,,USA.48.13_1
+USA,Washington,Grays Harbor,,Washington,Grays Harbor,,USA.48.14_1
+USA,Washington,Island,,Washington,Island,,USA.48.15_1
+USA,Washington,Jefferson,,Washington,Jefferson,,USA.48.16_1
+USA,Washington,King,,Washington,King,,USA.48.17_1
+USA,Washington,Kitsap,,Washington,Kitsap,,USA.48.18_1
+USA,Washington,Kittitas,,Washington,Kittitas,,USA.48.19_1
+USA,Washington,Klickitat,,Washington,Klickitat,,USA.48.20_1
+USA,Washington,Lewis,,Washington,Lewis,,USA.48.21_1
+USA,Washington,Lincoln,,Washington,Lincoln,,USA.48.22_1
+USA,Washington,Mason,,Washington,Mason,,USA.48.23_1
+USA,Washington,Okanogan,,Washington,Okanogan,,USA.48.24_1
+USA,Washington,Pacific,,Washington,Pacific,,USA.48.25_1
+USA,Washington,Pend Oreille,,Washington,Pend Oreille,,USA.48.26_1
+USA,Washington,Pierce,,Washington,Pierce,,USA.48.27_1
+USA,Washington,San Juan,,Washington,San Juan,,USA.48.28_1
+USA,Washington,Skagit,,Washington,Skagit,,USA.48.29_1
+USA,Washington,Skamania,,Washington,Skamania,,USA.48.30_1
+USA,Washington,Snohomish,,Washington,Snohomish,,USA.48.31_1
+USA,Washington,Spokane,,Washington,Spokane,,USA.48.32_1
+USA,Washington,Stevens,,Washington,Stevens,,USA.48.33_1
+USA,Washington,Thurston,,Washington,Thurston,,USA.48.34_1
+USA,Washington,Wahkiakum,,Washington,Wahkiakum,,USA.48.35_1
+USA,Washington,Walla Walla,,Washington,Walla Walla,,USA.48.36_1
+USA,Washington,Whatcom,,Washington,Whatcom,,USA.48.37_1
+USA,Washington,Whitman,,Washington,Whitman,,USA.48.38_1
+USA,Washington,Yakima,,Washington,Yakima,,USA.48.39_1
+USA,West Virginia,Barbour,,West Virginia,Barbour,,USA.49.1_1
+USA,West Virginia,Berkeley,,West Virginia,Berkeley,,USA.49.2_1
+USA,West Virginia,Boone,,West Virginia,Boone,,USA.49.3_1
+USA,West Virginia,Braxton,,West Virginia,Braxton,,USA.49.4_1
+USA,West Virginia,Brooke,,West Virginia,Brooke,,USA.49.5_1
+USA,West Virginia,Cabell,,West Virginia,Cabell,,USA.49.6_1
+USA,West Virginia,Calhoun,,West Virginia,Calhoun,,USA.49.7_1
+USA,West Virginia,Clay,,West Virginia,Clay,,USA.49.8_1
+USA,West Virginia,Fayette,,West Virginia,Fayette,,USA.49.10_1
+USA,West Virginia,Gilmer,,West Virginia,Gilmer,,USA.49.11_1
+USA,West Virginia,Grant,,West Virginia,Grant,,USA.49.12_1
+USA,West Virginia,Greenbrier,,West Virginia,Greenbrier,,USA.49.13_1
+USA,West Virginia,Hampshire,,West Virginia,Hampshire,,USA.49.14_1
+USA,West Virginia,Hancock,,West Virginia,Hancock,,USA.49.15_1
+USA,West Virginia,Hardy,,West Virginia,Hardy,,USA.49.16_1
+USA,West Virginia,Harrison,,West Virginia,Harrison,,USA.49.17_1
+USA,West Virginia,Jackson,,West Virginia,Jackson,,USA.49.18_1
+USA,West Virginia,Jefferson,,West Virginia,Jefferson,,USA.49.19_1
+USA,West Virginia,Kanawha,,West Virginia,Kanawha,,USA.49.20_1
+USA,West Virginia,Lewis,,West Virginia,Lewis,,USA.49.21_1
+USA,West Virginia,Lincoln,,West Virginia,Lincoln,,USA.49.22_1
+USA,West Virginia,Logan,,West Virginia,Logan,,USA.49.23_1
+USA,West Virginia,Marion,,West Virginia,Marion,,USA.49.24_1
+USA,West Virginia,Marshall,,West Virginia,Marshall,,USA.49.25_1
+USA,West Virginia,Mason,,West Virginia,Mason,,USA.49.26_1
+USA,West Virginia,McDowell,,West Virginia,McDowell,,USA.49.27_1
+USA,West Virginia,Mercer,,West Virginia,Mercer,,USA.49.28_1
+USA,West Virginia,Mineral,,West Virginia,Mineral,,USA.49.29_1
+USA,West Virginia,Mingo,,West Virginia,Mingo,,USA.49.30_1
+USA,West Virginia,Monongalia,,West Virginia,Monongalia,,USA.49.31_1
+USA,West Virginia,Monroe,,West Virginia,Monroe,,USA.49.32_1
+USA,West Virginia,Morgan,,West Virginia,Morgan,,USA.49.33_1
+USA,West Virginia,Nicholas,,West Virginia,Nicholas,,USA.49.34_1
+USA,West Virginia,Ohio,,West Virginia,Ohio,,USA.49.35_1
+USA,West Virginia,Pendleton,,West Virginia,Pendleton,,USA.49.36_1
+USA,West Virginia,Pleasants,,West Virginia,Pleasants,,USA.49.37_1
+USA,West Virginia,Pocahontas,,West Virginia,Pocahontas,,USA.49.38_1
+USA,West Virginia,Preston,,West Virginia,Preston,,USA.49.39_1
+USA,West Virginia,Putnam,,West Virginia,Putnam,,USA.49.40_1
+USA,West Virginia,Raleigh,,West Virginia,Raleigh,,USA.49.41_1
+USA,West Virginia,Randolph,,West Virginia,Randolph,,USA.49.42_1
+USA,West Virginia,Ritchie,,West Virginia,Ritchie,,USA.49.43_1
+USA,West Virginia,Roane,,West Virginia,Roane,,USA.49.44_1
+USA,West Virginia,Summers,,West Virginia,Summers,,USA.49.45_1
+USA,West Virginia,Taylor,,West Virginia,Taylor,,USA.49.46_1
+USA,West Virginia,Tucker,,West Virginia,Tucker,,USA.49.47_1
+USA,West Virginia,Tyler,,West Virginia,Tyler,,USA.49.48_1
+USA,West Virginia,Upshur,,West Virginia,Upshur,,USA.49.49_1
+USA,West Virginia,Wayne,,West Virginia,Wayne,,USA.49.50_1
+USA,West Virginia,Wetzel,,West Virginia,Wetzel,,USA.49.52_1
+USA,West Virginia,Wirt,,West Virginia,Wirt,,USA.49.53_1
+USA,West Virginia,Wood,,West Virginia,Wood,,USA.49.54_1
+USA,West Virginia,Wyoming,,West Virginia,Wyoming,,USA.49.55_1
+USA,Wisconsin,Adams,,Wisconsin,Adams,,USA.50.1_1
+USA,Wisconsin,Ashland,,Wisconsin,Ashland,,USA.50.2_1
+USA,Wisconsin,Barron,,Wisconsin,Barron,,USA.50.3_1
+USA,Wisconsin,Bayfield,,Wisconsin,Bayfield,,USA.50.4_1
+USA,Wisconsin,Brown,,Wisconsin,Brown,,USA.50.5_1
+USA,Wisconsin,Buffalo,,Wisconsin,Buffalo,,USA.50.6_1
+USA,Wisconsin,Burnett,,Wisconsin,Burnett,,USA.50.7_1
+USA,Wisconsin,Calumet,,Wisconsin,Calumet,,USA.50.8_1
+USA,Wisconsin,Chippewa,,Wisconsin,Chippewa,,USA.50.9_1
+USA,Wisconsin,Clark,,Wisconsin,Clark,,USA.50.10_1
+USA,Wisconsin,Columbia,,Wisconsin,Columbia,,USA.50.11_1
+USA,Wisconsin,Crawford,,Wisconsin,Crawford,,USA.50.12_1
+USA,Wisconsin,Dane,,Wisconsin,Dane,,USA.50.13_1
+USA,Wisconsin,Dodge,,Wisconsin,Dodge,,USA.50.14_1
+USA,Wisconsin,Door,,Wisconsin,Door,,USA.50.15_1
+USA,Wisconsin,Douglas,,Wisconsin,Douglas,,USA.50.16_1
+USA,Wisconsin,Dunn,,Wisconsin,Dunn,,USA.50.17_1
+USA,Wisconsin,Eau Claire,,Wisconsin,Eau Claire,,USA.50.18_1
+USA,Wisconsin,Florence,,Wisconsin,Florence,,USA.50.19_1
+USA,Wisconsin,Fond du Lac,,Wisconsin,Fond du Lac,,USA.50.20_1
+USA,Wisconsin,Forest,,Wisconsin,Forest,,USA.50.21_1
+USA,Wisconsin,Grant,,Wisconsin,Grant,,USA.50.22_1
+USA,Wisconsin,Green Lake,,Wisconsin,Green Lake,,USA.50.24_1
+USA,Wisconsin,Green,,Wisconsin,Green,,USA.50.23_1
+USA,Wisconsin,Iowa,,Wisconsin,Iowa,,USA.50.25_1
+USA,Wisconsin,Iron,,Wisconsin,Iron,,USA.50.26_1
+USA,Wisconsin,Jackson,,Wisconsin,Jackson,,USA.50.27_1
+USA,Wisconsin,Jefferson,,Wisconsin,Jefferson,,USA.50.28_1
+USA,Wisconsin,Juneau,,Wisconsin,Juneau,,USA.50.29_1
+USA,Wisconsin,Kenosha,,Wisconsin,Kenosha,,USA.50.30_1
+USA,Wisconsin,Kewaunee,,Wisconsin,Kewaunee,,USA.50.31_1
+USA,Wisconsin,La Crosse,,Wisconsin,La Crosse,,USA.50.32_1
+USA,Wisconsin,Lafayette,,Wisconsin,Lafayette,,USA.50.33_1
+USA,Wisconsin,Langlade,,Wisconsin,Langlade,,USA.50.36_1
+USA,Wisconsin,Lincoln,,Wisconsin,Lincoln,,USA.50.37_1
+USA,Wisconsin,Manitowoc,,Wisconsin,Manitowoc,,USA.50.38_1
+USA,Wisconsin,Marathon,,Wisconsin,Marathon,,USA.50.39_1
+USA,Wisconsin,Marinette,,Wisconsin,Marinette,,USA.50.40_1
+USA,Wisconsin,Marquette,,Wisconsin,Marquette,,USA.50.41_1
+USA,Wisconsin,Menominee,,Wisconsin,Menominee,,USA.50.42_1
+USA,Wisconsin,Milwaukee,,Wisconsin,Milwaukee,,USA.50.43_1
+USA,Wisconsin,Monroe,,Wisconsin,Monroe,,USA.50.44_1
+USA,Wisconsin,Oconto,,Wisconsin,Oconto,,USA.50.45_1
+USA,Wisconsin,Oneida,,Wisconsin,Oneida,,USA.50.46_1
+USA,Wisconsin,Outagamie,,Wisconsin,Outagamie,,USA.50.47_1
+USA,Wisconsin,Ozaukee,,Wisconsin,Ozaukee,,USA.50.48_1
+USA,Wisconsin,Pepin,,Wisconsin,Pepin,,USA.50.49_1
+USA,Wisconsin,Pierce,,Wisconsin,Pierce,,USA.50.50_1
+USA,Wisconsin,Polk,,Wisconsin,Polk,,USA.50.51_1
+USA,Wisconsin,Portage,,Wisconsin,Portage,,USA.50.52_1
+USA,Wisconsin,Price,,Wisconsin,Price,,USA.50.53_1
+USA,Wisconsin,Racine,,Wisconsin,Racine,,USA.50.54_1
+USA,Wisconsin,Richland,,Wisconsin,Richland,,USA.50.55_1
+USA,Wisconsin,Rock,,Wisconsin,Rock,,USA.50.56_1
+USA,Wisconsin,Rusk,,Wisconsin,Rusk,,USA.50.57_1
+USA,Wisconsin,Sauk,,Wisconsin,Sauk,,USA.50.59_1
+USA,Wisconsin,Sawyer,,Wisconsin,Sawyer,,USA.50.60_1
+USA,Wisconsin,Shawano,,Wisconsin,Shawano,,USA.50.61_1
+USA,Wisconsin,Sheboygan,,Wisconsin,Sheboygan,,USA.50.62_1
+USA,Wisconsin,St. Croix,,Wisconsin,Saint Croix,,USA.50.58_1
+USA,Wisconsin,Taylor,,Wisconsin,Taylor,,USA.50.63_1
+USA,Wisconsin,Trempealeau,,Wisconsin,Trempealeau,,USA.50.64_1
+USA,Wisconsin,Vernon,,Wisconsin,Vernon,,USA.50.65_1
+USA,Wisconsin,Vilas,,Wisconsin,Vilas,,USA.50.66_1
+USA,Wisconsin,Walworth,,Wisconsin,Walworth,,USA.50.67_1
+USA,Wisconsin,Washburn,,Wisconsin,Washburn,,USA.50.68_1
+USA,Wisconsin,Washington,,Wisconsin,Washington,,USA.50.69_1
+USA,Wisconsin,Waukesha,,Wisconsin,Waukesha,,USA.50.70_1
+USA,Wisconsin,Waupaca,,Wisconsin,Waupaca,,USA.50.71_1
+USA,Wisconsin,Waushara,,Wisconsin,Waushara,,USA.50.72_1
+USA,Wisconsin,Winnebago,,Wisconsin,Winnebago,,USA.50.73_1
+USA,Wisconsin,Wood,,Wisconsin,Wood,,USA.50.74_1
+USA,Wyoming,Albany,,Wyoming,Albany,,USA.51.1_1
+USA,Wyoming,Big Horn,,Wyoming,Big Horn,,USA.51.2_1
+USA,Wyoming,Campbell,,Wyoming,Campbell,,USA.51.3_1
+USA,Wyoming,Carbon,,Wyoming,Carbon,,USA.51.4_1
+USA,Wyoming,Converse,,Wyoming,Converse,,USA.51.5_1
+USA,Wyoming,Crook,,Wyoming,Crook,,USA.51.6_1
+USA,Wyoming,Fremont,,Wyoming,Fremont,,USA.51.7_1
+USA,Wyoming,Goshen,,Wyoming,Goshen,,USA.51.8_1
+USA,Wyoming,Hot Springs,,Wyoming,Hot Springs,,USA.51.9_1
+USA,Wyoming,Johnson,,Wyoming,Johnson,,USA.51.10_1
+USA,Wyoming,Laramie,,Wyoming,Laramie,,USA.51.11_1
+USA,Wyoming,Lincoln,,Wyoming,Lincoln,,USA.51.12_1
+USA,Wyoming,Natrona,,Wyoming,Natrona,,USA.51.13_1
+USA,Wyoming,Niobrara,,Wyoming,Niobrara,,USA.51.14_1
+USA,Wyoming,Park,,Wyoming,Park,,USA.51.15_1
+USA,Wyoming,Platte,,Wyoming,Platte,,USA.51.16_1
+USA,Wyoming,Sheridan,,Wyoming,Sheridan,,USA.51.17_1
+USA,Wyoming,Sublette,,Wyoming,Sublette,,USA.51.18_1
+USA,Wyoming,Sweetwater,,Wyoming,Sweetwater,,USA.51.19_1
+USA,Wyoming,Teton,,Wyoming,Teton,,USA.51.20_1
+USA,Wyoming,Uinta,,Wyoming,Uinta,,USA.51.21_1
+USA,Wyoming,Washakie,,Wyoming,Washakie,,USA.51.22_1

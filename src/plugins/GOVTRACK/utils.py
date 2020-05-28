@@ -1,21 +1,15 @@
 import pandas as pd
+from typing import Dict
+
+from utils.country_codes_translator.translator import CountryCodesTranslator
 
 
-def get_country_codes():
-    """
-    DESCRIPTION:
-    This function returns ISO country codes
-
-    :return: [pandas DataFrame] ISO country codes.
-    """
-    return pd.read_csv('http://geohack.net/gis/wikipedia-iso-country-codes.csv')
-
-
-def parser(api_data):
+def parser(api_data: Dict, country_codes_translator: CountryCodesTranslator):
     """
     DESCRIPTION:
     This function paste out daily updates of govtrack data from JSON into DataFrame format.
     :param api_data: [JSON] non-parsed data.
+    :param country_codes_translator: [CountryCodesTranslator] country codes translator
     :return: [pandas DataFrame] parsed data.
     """
     records = []
@@ -27,5 +21,5 @@ def parser(api_data):
     govtrack_data.fillna(0, inplace=True)
 
     # Adding country name based on country code
-    country_codes_data = get_country_codes()
-    return govtrack_data.merge(country_codes_data, right_on='Alpha-3 code', left_on='country_code', how='left')
+    return govtrack_data.merge(country_codes_translator.translation_pd, right_on='Alpha-3 code', left_on='country_code',
+                               how='left')

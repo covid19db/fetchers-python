@@ -71,6 +71,21 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
+    def call_db_function_compare(self, source_code: str):
+        self.cur.callproc('covid19_compare_tables', (source_code,))
+        compare_result = self.cur.fetchone()
+        print(compare_result)
+        logger.debug("Validating incoming data")
+        return compare_result
+
+    def call_db_function_send_data(self, source_code: str):
+        self.cur.callproc('send_validated_data', [source_code])
+        logger.debug("Moving data to epidemiology")
+
+    def truncate_staging(self):
+        sql_query = sql.SQL("""TRUNCATE staging_epidemiology; SELECT 1""")
+        self.execute(sql_query)
+
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""
@@ -90,15 +105,6 @@ class PostgresqlHelper(AbstractAdapter):
             raise Exception(f'Ambiguous result: {results}')
         result = results[0]
         return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
-
-    def get_administrative_division_for_country(self, countrycode: str, adm_level: str):
-        sql_query = sql.SQL("""
-            SELECT country, countrycode, countrycode_alpha2, adm_level,
-                adm_area_1, adm_area_2, adm_area_3, gid FROM administrative_division
-            WHERE countrycode LIKE %s AND adm_leve LIKE %s """)
-
-        result = self.execute(sql_query, (countrycode, adm_level))
-        return result
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
@@ -123,6 +129,7 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
+    ## Ahmad Changes : changed table name to staging_epidemiology
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
                      'recovered']
@@ -175,8 +182,8 @@ class PostgresqlHelper(AbstractAdapter):
     def close_connection(self):
         if self.conn:
             if self.cur:
-                self.cur.close_connection()
-            self.conn.close_connection()
+                self.cur.close()
+            self.conn.close()
             logger.debug("Closing connection")
         self.conn = None
         self.cur = None

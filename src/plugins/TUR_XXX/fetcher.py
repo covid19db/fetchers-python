@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 class TUR_XXXFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'TUR_XXX'
 
     def country_fetch(self):
         """
@@ -59,7 +60,7 @@ class TUR_XXXFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'TUR_XXX',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English

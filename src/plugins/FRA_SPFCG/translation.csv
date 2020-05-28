@@ -1,0 +1,19 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+FRA,Auvergne-Rhône-Alpes,,,Auvergne-Rhône-Alpes,,,FRA.1_1
+FRA,Bourgogne-Franche-Comté,,,Bourgogne-Franche-Comté,,,FRA.2_1
+FRA,Bretagne,,,Bretagne,,,FRA.3_1
+FRA,Centre-Val de Loire,,,Centre-Val de Loire,,,FRA.4_1
+FRA,Corse,,,Corse,,,FRA.5_1
+FRA,Grand Est,,,Grand Est,,,FRA.6_1
+FRA,Hauts-de-France,,,Hauts-de-France,,,FRA.7_1
+FRA,Île-de-France,,,Île-de-France,,,FRA.8_1
+FRA,Normandie,,,Normandie,,,FRA.9_1
+FRA,Nouvelle-Aquitaine,,,Nouvelle-Aquitaine,,,FRA.10_1
+FRA,Occitanie,,,Occitanie,,,FRA.11_1
+FRA,Pays de la Loire,,,Pays de la Loire,,,FRA.12_1
+FRA,Provence-Alpes-Côte d'Azur,,,Provence-Alpes-Côte d'Azur,,,FRA.13_1
+FRA,Guadeloupe,,,Guadeloupe,,,GLP
+FRA,Martinique,,,Martinique,,,MTQ
+FRA,Guyane,,,French Guiana,,,GUF
+FRA,La Réunion,,,Reunion,,,REU
+FRA,Mayotte,,,Mayotte,,,MYT

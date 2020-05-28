@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 class LatinAmericaDSRPFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'LAT_DSRP'
 
     def fetch_confirmed(self):
         url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
@@ -25,9 +26,9 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
         return pd.read_csv(url,
                            index_col=['Country', 'Subdivision'],
                            usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
-                 .stack() \
-                 .rename_axis(['Country', 'Subdivision', 'Date']) \
-                 .rename('Confirmed')
+            .stack() \
+            .rename_axis(['Country', 'Subdivision', 'Date']) \
+            .rename('Confirmed')
 
     def fetch_deaths(self):
         url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
@@ -35,9 +36,9 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
         return pd.read_csv(url,
                            index_col=['Country', 'Subdivision'],
                            usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
-                 .stack() \
-                 .rename_axis(['Country', 'Subdivision', 'Date']) \
-                 .rename('Deaths')
+            .stack() \
+            .rename_axis(['Country', 'Subdivision', 'Date']) \
+            .rename('Deaths')
 
     def fetch_recovered(self):
         url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
@@ -45,9 +46,9 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
         return pd.read_csv(url,
                            index_col=['Country', 'Subdivision'],
                            usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
-                 .stack() \
-                 .rename_axis(['Country', 'Subdivision', 'Date']) \
-                 .rename('Recovered')
+            .stack() \
+            .rename_axis(['Country', 'Subdivision', 'Date']) \
+            .rename('Recovered')
 
     def run(self):
         logger.debug('Fetching regional information')
@@ -78,7 +79,7 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
                 )
 
                 upsert_obj = {
-                    'source': 'LAT_DSRP',
+                    'source': self.SOURCE,
                     'date': date,
                     'country': country,
                     'countrycode': countrycode,

@@ -19,15 +19,16 @@ logger = logging.getLogger(__name__)
 
 class UnitedKingdomPHTWFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'GBR_PHTW'
 
     def fetch(self):
         url = 'https://raw.githubusercontent.com/tomwhite/covid-19-uk-data/master/data/covid-19-indicators-uk.csv'
 
         # Return pivoted data
         return pd.read_csv(url) \
-                 .set_index(['Date', 'Country', 'Indicator']) \
-                 .unstack('Indicator') \
-                 .reset_index()
+            .set_index(['Date', 'Country', 'Indicator']) \
+            .unstack('Indicator') \
+            .reset_index()
 
     def fetch_area(self):
         url = 'https://raw.githubusercontent.com/tomwhite/covid-19-uk-data/master/data/covid-19-cases-uk.csv'
@@ -53,7 +54,7 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
             )
 
             upsert_obj = {
-                'source': 'GBR_PHTW',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'United Kingdom',
                 'countrycode': 'GBR',
@@ -85,7 +86,7 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
                 )
 
                 upsert_obj = {
-                    'source': 'GBR_PHTW',
+                    'source': self.SOURCE,
                     'date': date,
                     'country': 'United Kingdom',
                     'countrycode': 'GBR',

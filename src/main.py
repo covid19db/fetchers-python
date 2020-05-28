@@ -1,42 +1,32 @@
+import os
 import time
 import logging
 import schedule
-from typing import List
 
 from utils.logger import setup_logger
-from utils.plugins import search_for_plugins, get_only_selected_plugins
+from utils.plugins import Plugins
 from utils.adapters import DataAdapter
-
-from utils.adapter_abstract import AbstractAdapter
+from utils.adapter_wrapper import AdapterWrapper
 
 logger = logging.getLogger(__name__)
-
-
-def run_plugins_job(db: AbstractAdapter, available_plugins: List, run_only_plugins: List = None):
-    for plugin in available_plugins:
-        if run_only_plugins and plugin.__name__ not in run_only_plugins:
-            continue
-        try:
-            logger.info(f'Running plugin {plugin.__name__} ')
-            instance = plugin(db=db)
-            instance.run()
-            db.flush()
-            logger.info(f"Plugin {plugin.__name__} finished successfully")
-        except Exception as ex:
-            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
+VALIDATE_INPUT_DATA = os.environ.get("VALIDATE_INPUT_DATA", "").lower() == 'true'
 
 
 def main():
     setup_logger()
-    db = DataAdapter.get_adapter()
-    available_plugins = search_for_plugins()
+    plugins = Plugins(validate_input_data=VALIDATE_INPUT_DATA)
+    table_name_postfix = 'staging_' if VALIDATE_INPUT_DATA else None
+
+    # get data adapter
+    data_adapter = DataAdapter.get_adapter()
+    db_wrapper = AdapterWrapper(data_adapter,
+                                sliding_window_days=os.environ.get("SLIDING_WINDOW_DAYS"),
+                                table_name_postfix=table_name_postfix)
 
     # run once
-    run_plugins_job(db=db,
-                    available_plugins=available_plugins,
-                    run_only_plugins=get_only_selected_plugins())
+    plugins.run_plugins_job(data_adapter=db_wrapper)
     # run every day at 2am
-    schedule.every().day.at("02:00").do(run_plugins_job, db=db, available_plugins=available_plugins)
+    schedule.every().day.at("02:00").do(plugins.run_plugins_job, data_adapter=db_wrapper)
 
     logger.debug('Run schedule job every day at 02:00')
     while True:

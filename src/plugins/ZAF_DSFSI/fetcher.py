@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 class ZAF_DSFSIFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'ZAF_DSFSI'
 
     def country_fetch(self):
 
@@ -123,7 +124,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source
-                'source': 'ZAF_DSFSI',
+                'source': self.SOURCE,
                 # date
                 'date': date,
                 # country
@@ -210,7 +211,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
                 upsert_obj_province = {
                     # source is mandatory and is a code that identifies the  source
-                    'source': 'ZAF_DSFSI',
+                    'source': self.SOURCE,
                     # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
                     'country': "South Africa",

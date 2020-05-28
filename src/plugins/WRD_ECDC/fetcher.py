@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 class WorldECDCFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'WRD_ECDC'
 
     def fetch(self):
         url = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
@@ -22,9 +23,8 @@ class WorldECDCFetcher(AbstractFetcher):
 
         # Data contains new cases and deaths for each day. Get cumulative data by sorting by country
         # code and date, then reverse iterating (old to new) and adding to cumulative data for the same country
-        last_country_code = None
-        last_country_total_confirmed_cases = 0
-        last_country_total_deaths = 0
+        country_total_confirmed_cases = dict()
+        country_total_deaths = dict()
 
         for index, record in data[::-1].iterrows():
             # CSV file has format: dateRep,day,month,year,cases,deaths,geoId,continentExp,countryterritoryCode,
@@ -39,17 +39,16 @@ class WorldECDCFetcher(AbstractFetcher):
             confirmed = int(record['cases'])
             dead = int(record['deaths'])
 
-            if last_country_code is None or last_country_code != country_code:
-                # New country so reset counters
-                last_country_total_confirmed_cases = confirmed
-                last_country_total_deaths = dead
-                last_country_code = country_code
-            else:
-                last_country_total_confirmed_cases += confirmed
-                last_country_total_deaths += dead
+            total_confirmed = country_total_confirmed_cases.get(country_code, 0)
+            total_confirmed = total_confirmed + confirmed
+            country_total_confirmed_cases[country_code] = total_confirmed
+
+            total_deaths = country_total_deaths.get(country_code, 0)
+            total_deaths = total_deaths + dead
+            country_total_deaths[country_code] = total_deaths
 
             upsert_obj = {
-                'source': 'WRD_ECDC',
+                'source': self.SOURCE,
                 'date': date,
                 'country': country,
                 'countrycode': country_code,
@@ -57,8 +56,8 @@ class WorldECDCFetcher(AbstractFetcher):
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'gid': [country_code],
-                'confirmed': last_country_total_confirmed_cases,
-                'dead': last_country_total_deaths
+                'confirmed': total_confirmed,
+                'dead': total_deaths
             }
 
             self.db.upsert_epidemiology_data(**upsert_obj)

@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 class CanadaFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'CAN_GOV'
 
     def fetch(self):
         # a csv file to be downloaded
@@ -58,7 +59,7 @@ class CanadaFetcher(AbstractFetcher):
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'CAN_GOV',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English

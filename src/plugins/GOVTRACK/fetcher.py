@@ -13,13 +13,14 @@ logger = logging.getLogger(__name__)
 
 class StringencyFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'GOVTRACK'
 
     def fetch(self):
         date_from = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
         date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/{date_from}/{date_to}').json()
-        return parser(api_data)
+        return parser(api_data, self.country_codes_translator)
 
     def fetch_details(self, country_code, date_value):
         api_details = requests.get(
@@ -33,7 +34,7 @@ class StringencyFetcher(AbstractFetcher):
         for index, record in govtrack_data.iterrows():
             govtrack_actions = self.fetch_details(record['country_code'], record['date_value'])
             upsert_obj = {
-                'source': 'GOVTRACK',
+                'source': self.SOURCE,
                 'date': record['date_value'],
                 'country': record['English short name lower case'],
                 'countrycode': record['country_code'],
