@@ -45,6 +45,7 @@ Currently implemented fetchers:
 | USA_NYT | United States | USA  | [New York Times](https://github.com/nytimes/covid-19-data) | release | adm_area_1: US State, adm_area_2: county (exception is New York City, which includes more counties) |
 | FRA_SPFCG | France | FRA | [Cedric Guadalupe from Santé Publique France](https://github.com/cedricguadalupe/FRANCE-COVID-19) | release | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France) |
 | DEU_JPGG | Germany | DEU | [Jan-Philip Gehrcke, from the Public Health Offices (Gesundheitsaemter)](https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/) | release | adm_area_1: [German "länder"](https://en.wikipedia.org/wiki/States_of_Germany) |
+| PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | candidate | adm_area_1: province |
 
 
 Explanation of status:
