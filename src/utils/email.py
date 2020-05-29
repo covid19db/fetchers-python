@@ -18,8 +18,8 @@ def send_email(src_code: str, message: str):
         emails = [email1, email2, email3, email4]
         destination = [email for email in emails if validate_address(email)]
 
-        email = os.getenv('SYS_EMAIL')
-        password = os.getenv('SYS_EMAIL_PASS')
+        email = Config.SYS_EMAIL
+        password = Config.SYS_EMAIL_PASS
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
         s.login(email, password)

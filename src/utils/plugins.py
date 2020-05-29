@@ -6,6 +6,7 @@ import importlib
 from typing import List
 from pathlib import Path
 
+from utils.config import Config
 from utils.adapter_abstract import AbstractAdapter
 from utils.fetcher_abstract import AbstractFetcher
 from utils.validation import validate_incoming_data
@@ -42,7 +43,7 @@ class Plugins:
         return sorted(available_plugins, key=lambda x: x.__name__)
 
     def get_only_selected_plugins(self) -> List:
-        run_only_plugins = os.environ.get("RUN_ONLY_PLUGINS")
+        run_only_plugins = Config.RUN_ONLY_PLUGINS
         if run_only_plugins:
             return run_only_plugins.split(",")
         return None

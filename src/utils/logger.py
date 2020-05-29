@@ -1,10 +1,11 @@
 import os
 import logging
+from utils.config import Config
 
 
 def setup_logger():
     format = '%(asctime)s %(levelname)s %(name)s %(message)s'
-    level = os.environ.get("LOGLEVEL", "DEBUG")
+    level = Config.LOGLEVEL
     log_file = os.path.join(os.path.dirname(__file__), '..', 'data', 'fetcher.log')
 
     fh = logging.FileHandler(log_file)
