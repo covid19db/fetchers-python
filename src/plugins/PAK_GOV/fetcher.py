@@ -1,7 +1,6 @@
 import logging
 import pandas as pd
 from utils.fetcher_abstract import AbstractFetcher
-from datetime import datetime
 import os
 import sys
 from selenium import webdriver
@@ -22,6 +21,7 @@ logger = logging.getLogger(__name__)
 
 class PAK_GOV_Fetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    SOURCE = 'PAK_GOV'
     wd = None
 
     def wd_config(self):
@@ -31,14 +31,12 @@ class PAK_GOV_Fetcher(AbstractFetcher):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        self.wd = webdriver.Chrome(
-            executable_path=r'C:/Users/johnm/anaconda3/chromedriver/chromedriver.exe',
-            chrome_options=chrome_options)
+        self.wd = webdriver.Chrome(chrome_options=chrome_options)
 
     def fetch(self, url):
         self.wd.get(url)
         # the site loads slowly, so wait until all content is present
-        time.sleep(8)
+        time.sleep(20)
 
         # the data is contained in chart labels - find all charts and extract their labels
         soup = BeautifulSoup(self.wd.page_source, "lxml")
@@ -80,7 +78,7 @@ class PAK_GOV_Fetcher(AbstractFetcher):
 
             # we need to build an object containing the data we want to add or update
             upsert_obj = {
-                'source': 'PAK_GOV',
+                'source': self.SOURCE,
                 'date': date,
                 'country': 'Pakistan',
                 'countrycode': 'PAK',
@@ -117,7 +115,7 @@ class PAK_GOV_Fetcher(AbstractFetcher):
                 self.province_fetcher(record['province'], record['url'])
                 total_failure = False
             except:
-                logging.warning(f'Fetcher failed for {province}, may work next time', exc_info=True)
+                logging.warning(f'Fetcher failed for {record["province"]}, may work next time', exc_info=True)
         self.wd.quit()
         if total_failure:
             raise Exception('No provinces could be fetched for Pakistan')
