@@ -48,6 +48,8 @@ Currently implemented fetchers:
 | PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | candidate | adm_area_1: province |
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | candidate | adm_area_3: English lower tier local authority |
 | SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
+| MYS_XXX | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
+
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
