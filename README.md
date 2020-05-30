@@ -47,6 +47,7 @@ Currently implemented fetchers:
 | DEU_JPGG | Germany | DEU | [Jan-Philip Gehrcke, from the Public Health Offices (Gesundheitsaemter)](https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/) | release | adm_area_1: [German "länder"](https://en.wikipedia.org/wiki/States_of_Germany) |
 | PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | candidate | adm_area_1: province |
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | candidate | adm_area_3: English lower tier local authority |
+| SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
