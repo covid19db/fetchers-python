@@ -13,5 +13,7 @@ services:
       SQLITE: ${SQLITE}
       CSV: ${CSV}
       SLIDING_WINDOW_DAYS: ${SLIDING_WINDOW_DAYS}
+      RUN_ONLY_PLUGINS: ${RUN_ONLY_PLUGINS}
+      VALIDATE_INPUT_DATA: ${VALIDATE_INPUT_DATA}
     volumes:
       - ./data:/src/data
