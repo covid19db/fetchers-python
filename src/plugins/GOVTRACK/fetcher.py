@@ -16,7 +16,8 @@ class StringencyFetcher(AbstractFetcher):
     SOURCE = 'GOVTRACK'
 
     def fetch(self):
-        date_from = (datetime.now() - timedelta(days=7)).strftime('%Y-%m-%d')
+        sliding_window_days = self.sliding_window_days if self.sliding_window_days else 365
+        date_from = (datetime.now() - timedelta(days=sliding_window_days)).strftime('%Y-%m-%d')
         date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/{date_from}/{date_to}').json()

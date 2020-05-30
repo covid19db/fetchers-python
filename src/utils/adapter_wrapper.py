@@ -6,11 +6,10 @@ from utils.adapter_abstract import AbstractAdapter
 
 class AdapterWrapper(AbstractAdapter):
 
-    def __init__(self, data_adapter: AbstractAdapter = None,
-                 sliding_window_days: bool = None,
-                 table_name_postfix: bool = None):
+    def __init__(self, data_adapter: AbstractAdapter = None):
         self.data_adapter = data_adapter
-        self.sliding_window_days = int(sliding_window_days) if sliding_window_days else None
+        self.sliding_window_days = config.SLIDING_WINDOW_DAYS
+        table_name_postfix = 'staging_' if config.VALIDATE_INPUT_DATA else None
         self.table_name_postfix = table_name_postfix
 
     def date_in_window(self, args: Dict) -> bool:

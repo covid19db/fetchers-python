@@ -6,7 +6,7 @@ import importlib
 from typing import List
 from pathlib import Path
 
-from utils.config import Config
+from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
 from utils.fetcher_abstract import AbstractFetcher
 from utils.validation import validate_incoming_data
@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 
 class Plugins:
 
-    def __init__(self, validate_input_data: bool = False):
-        self.validate_input_data = validate_input_data
+    def __init__(self):
+        self.validate_input_data = config.VALIDATE_INPUT_DATA
         self.available_plugins = self.search_for_plugins()
         self.run_only_plugins = self.get_only_selected_plugins()
 
@@ -43,7 +43,7 @@ class Plugins:
         return sorted(available_plugins, key=lambda x: x.__name__)
 
     def get_only_selected_plugins(self) -> List:
-        run_only_plugins = Config.RUN_ONLY_PLUGINS
+        run_only_plugins = config.RUN_ONLY_PLUGINS
         if run_only_plugins:
             return run_only_plugins.split(",")
         return None

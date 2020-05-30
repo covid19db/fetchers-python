@@ -2,6 +2,7 @@ import os
 import sys
 from abc import ABC, abstractmethod
 
+from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
 
 __all__ = ('AbstractFetcher',)
@@ -15,6 +16,7 @@ class AbstractFetcher(ABC):
     def __init__(self, db: AbstractAdapter):
         self.adm_translator = self.load_adm_translator()
         self.country_codes_translator = self.load_country_codes_translator()
+        self.sliding_window_days = config.SLIDING_WINDOW_DAYS
         self.db = db
 
     def load_adm_translator(self) -> AdmTranslator:
