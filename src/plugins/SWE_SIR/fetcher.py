@@ -37,7 +37,14 @@ class SwedenSIRFetcher(AbstractFetcher):
 
     def run(self):
         today = date.today()
-        for days in range(7):
+
+        # First intensive care hospitalisation on 2020-03-06
+        if self.sliding_window_days:
+            sliding_window_days = self.sliding_window_days
+        else:
+            sliding_window_days = (today - date(2020, 3, 5)).days
+
+        for days in range(sliding_window_days):
             day = (today - timedelta(days=days)).isoformat()
             data = self.fetch(day)
             time.sleep(2)  # crawl delay
