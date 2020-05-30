@@ -63,9 +63,11 @@ class Plugins:
                 data_adapter.flush()
                 if self.validate_input_data:
                     source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
-                    result = validate_incoming_data(data_adapter, source_name)
+                    validation_success = validate_incoming_data(data_adapter, source_name)
+                else:
+                    validation_success = True
 
-                if result or not self.validate_input_data:
+                if validation_success:
                     logger.info(f"Plugin {plugin.__name__} finished successfully")
                 else:
                     logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
