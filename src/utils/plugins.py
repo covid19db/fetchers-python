@@ -58,15 +58,17 @@ class Plugins:
                     data_adapter.truncate_staging()
                 instance = plugin(db=data_adapter)
                 instance.run()
+                data_adapter.flush()
                 if self.validate_input_data:
                     source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
                     result = validate_incoming_data(data_adapter, source_name)
-                    if result:
-                        logger.info(f"Plugin {plugin.__name__} finished successfully")
-                    else:
-                        logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
 
-                data_adapter.flush()
+                if result or not self.validate_input_data:
+                    logger.info(f"Plugin {plugin.__name__} finished successfully")
+                else:
+                    logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+
+
 
             except Exception as ex:
                 logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
