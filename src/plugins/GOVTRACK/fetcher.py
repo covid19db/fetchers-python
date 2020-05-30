@@ -2,7 +2,7 @@ import json
 import logging
 import requests
 from .utils import parser
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 from utils.fetcher_abstract import AbstractFetcher
 
@@ -16,8 +16,12 @@ class StringencyFetcher(AbstractFetcher):
     SOURCE = 'GOVTRACK'
 
     def fetch(self):
-        sliding_window_days = self.sliding_window_days if self.sliding_window_days else 365
-        date_from = (datetime.now() - timedelta(days=sliding_window_days)).strftime('%Y-%m-%d')
+        # First intensive care hospitalisation on 2020-01-01
+        if self.sliding_window_days:
+            date_from = (datetime.now() - timedelta(days=self.sliding_window_days)).strftime('%Y-%m-%d')
+        else:
+            date_from = '2020-01-01'
+
         date_to = datetime.today().strftime('%Y-%m-%d')
         api_data = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/date-range/{date_from}/{date_to}').json()
