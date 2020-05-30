@@ -10,29 +10,30 @@ class Config:
         self.load_config_from_env_variables()
         Config.__instance = self
 
+    def load_env_variable(self, name, default=None, fun=None):
+        value = os.environ.get(name, default)
+        if fun:
+            value = fun(value)
+        setattr(self, name, value)
+        if value:
+            if 'pass' in name.lower():
+                value = '*****'
+            print(f'Env {name} = {value}')
+
     def load_config_from_env_variables(self):
-        validate_input_data = os.environ.get("VALIDATE_INPUT_DATA", "").lower() == 'true'
-        setattr(self, 'VALIDATE_INPUT_DATA', validate_input_data)
-
-        sliding_window_days = os.environ.get("SLIDING_WINDOW_DAYS")
-        sliding_window_days = int(sliding_window_days) if sliding_window_days else None
-        setattr(self, 'SLIDING_WINDOW_DAYS', sliding_window_days)
-        setattr(self, 'RUN_ONLY_PLUGINS', os.environ.get("RUN_ONLY_PLUGINS"))
-
-        loglevel = os.environ.get("LOGLEVEL", "DEBUG")
-        setattr(self, 'LOGLEVEL', loglevel)
-        setattr(self, 'SYS_EMAIL', os.getenv("SYS_EMAIL"))
-        setattr(self, 'SYS_EMAIL_PASS', os.getenv("SYS_EMAIL_PASS"))
-
-        setattr(self, 'DB_USERNAME', os.getenv('DB_USERNAME'))
-        setattr(self, 'DB_PASSWORD', os.getenv('DB_PASSWORD'))
-        setattr(self, 'DB_ADDRESS', os.getenv('DB_ADDRESS'))
-        setattr(self, 'DB_NAME', os.getenv('DB_NAME'))
-
-        port = int(os.getenv('DB_PORT', 5432))
-        setattr(self, 'DB_PORT', port)
-        setattr(self, 'SQLITE', os.getenv('SQLITE'))
-        setattr(self, 'CSV', os.getenv('CSV'))
+        self.load_env_variable("VALIDATE_INPUT_DATA", "", fun=lambda x: x.lower == 'true')
+        self.load_env_variable("SLIDING_WINDOW_DAYS", fun=lambda x: int(x) if x else None)
+        self.load_env_variable("RUN_ONLY_PLUGINS")
+        self.load_env_variable("LOGLEVEL", "DEBUG")
+        self.load_env_variable("SYS_EMAIL")
+        self.load_env_variable("SYS_EMAIL_PASS")
+        self.load_env_variable("DB_USERNAME")
+        self.load_env_variable("DB_PASSWORD")
+        self.load_env_variable("DB_ADDRESS")
+        self.load_env_variable("DB_NAME")
+        self.load_env_variable("DB_PORT", 5432, fun=lambda x: int(x))
+        self.load_env_variable("SQLITE")
+        self.load_env_variable("CSV")
 
 
 config = Config()

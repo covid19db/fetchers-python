@@ -2,6 +2,7 @@ from typing import Dict
 from datetime import datetime
 
 from utils.adapter_abstract import AbstractAdapter
+from utils.config import config
 
 
 class AdapterWrapper(AbstractAdapter):
