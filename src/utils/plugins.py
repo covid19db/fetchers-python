@@ -21,7 +21,8 @@ class Plugins:
         self.available_plugins = self.search_for_plugins()
         self.run_only_plugins = self.get_only_selected_plugins()
 
-    def search_for_plugins(self) -> List:
+    @staticmethod
+    def search_for_plugins() -> List:
         plugins_path = os.path.join(os.path.dirname(__file__), "..", "plugins")
         sys.path.append(plugins_path)
         available_plugins = []
@@ -42,7 +43,8 @@ class Plugins:
 
         return sorted(available_plugins, key=lambda x: x.__name__)
 
-    def get_only_selected_plugins(self) -> List:
+    @staticmethod
+    def get_only_selected_plugins() -> List:
         run_only_plugins = config.RUN_ONLY_PLUGINS
         if run_only_plugins:
             return run_only_plugins.split(",")
@@ -67,8 +69,6 @@ class Plugins:
                     logger.info(f"Plugin {plugin.__name__} finished successfully")
                 else:
                     logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
-
-
 
             except Exception as ex:
                 logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
