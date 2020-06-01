@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import logging
 import netCDF4
 import datetime
 import psycopg2
@@ -28,7 +29,7 @@ def download_MET_file(url, file_name):
 # dowload the weather data for a single variable for all days in daterange
 # use the adm_2_to_grid to assign each point in the grid to the right GID
 # returns a pandas dataframe
-def create_aggr_df(indicator, daterange, variables, adm_2_to_grid):
+def create_aggr_df(indicator, daterange, variables, adm_2_to_grid, logger):
     days = []
     country = []
     avg = []
@@ -36,7 +37,7 @@ def create_aggr_df(indicator, daterange, variables, adm_2_to_grid):
     region = []
     city = []
 
-    print("downloading data for {} from {} to {}".format(indicator,
+    logger.debug("downloading data for {} from {} to {}".format(indicator,
                                                      daterange[0],
                                                      daterange[-1]))
 
