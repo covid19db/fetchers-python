@@ -4,6 +4,7 @@ from datetime import datetime
 from utils.adapter_abstract import AbstractAdapter
 from utils.config import config
 
+MAX_ATTEMPT_FAIL = 10
 
 class AdapterWrapper(AbstractAdapter):
 
@@ -66,3 +67,9 @@ class AdapterWrapper(AbstractAdapter):
     def flush(self):
         if hasattr(self.data_adapter, 'flush'):
             self.data_adapter.flush()
+
+    def execute(self, query: str, data: str = None, attempt: int = MAX_ATTEMPT_FAIL):
+        return self.data_adapter.execute(query, data, attempt)
+
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        return self.data_adapter.upsert_weather_data(self.correct_table_name(table_name), **kwargs)

@@ -9,12 +9,12 @@ from utils.adapter_abstract import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 
-sql_create_epidemiology_table = """ 
+sql_create_epidemiology_table = """
     CREATE TABLE IF NOT EXISTS epidemiology (
         source text NOT NULL,
         date date NOT NULL,
         country text NOT NULL,
-        countrycode text NOT NULL, 
+        countrycode text NOT NULL,
         adm_area_1 text DEFAULT NULL,
         adm_area_2 text DEFAULT NULL,
         adm_area_3 text DEFAULT NULL,
@@ -30,12 +30,12 @@ sql_create_epidemiology_table = """
         PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
 
-sql_create_government_response_table = """ 
+sql_create_government_response_table = """
     CREATE TABLE IF NOT EXISTS government_response (
         source text NOT NULL,
         date date NOT NULL,
         country text NOT NULL,
-        countrycode text NOT NULL, 
+        countrycode text NOT NULL,
         adm_area_1 text DEFAULT NULL,
         adm_area_2 text DEFAULT NULL,
         adm_area_3 text DEFAULT NULL,
@@ -49,12 +49,12 @@ sql_create_government_response_table = """
         PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
 
-sql_create_mobility_table = """ 
+sql_create_mobility_table = """
     CREATE TABLE IF NOT EXISTS government_response (
         source text NOT NULL,
         date date NOT NULL,
         country text NOT NULL,
-        countrycode text NOT NULL, 
+        countrycode text NOT NULL,
         adm_area_1 text DEFAULT NULL,
         adm_area_2 text DEFAULT NULL,
         adm_area_3 text DEFAULT NULL,
@@ -71,6 +71,48 @@ sql_create_mobility_table = """
         UNIQUE (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3) ON CONFLICT REPLACE,
         PRIMARY KEY (source, date, country, countrycode, adm_area_1, adm_area_2, adm_area_3)
     ) WITHOUT ROWID"""
+
+sql_create_weather_table = """
+    CREATE TABLE IF NOT EXISTS weather (
+        date date NOT NULL,
+        countrycode text NOT NULL,
+        gid text NOT NULL,
+        precip_max_avg float,
+        precip_max_std float,
+        precip_mean_avg float,
+        precip_mean_std float,
+        specific_humidity_max_avg float,
+        specific_humidity_max_std float,
+        specific_humidity_mean_avg float,
+        specific_humidity_mean_std float,
+        specific_humidity_min_avg float,
+        specific_humidity_min_std float,
+        short_wave_radiation_max_avg float,
+        short_wave_radiation_max_std float,
+        short_wave_radiation_mean_avg float,
+        short_wave_radiation_mean_std float,
+        air_temperature_max_avg float,
+        air_temperature_max_std float,
+        air_temperature_mean_avg float,
+        air_temperature_mean_std float,
+        air_temperature_min_avg float,
+        air_temperature_min_std float,
+        windgust_max_avg float,
+        windgust_max_std float,
+        windgust_mean_avg float,
+        windgust_mean_std float,
+        windgust_min_avg float,
+        windgust_min_std float,
+        windspeed_max_avg float,
+        windspeed_max_std float,
+        windspeed_mean_avg float,
+        windspeed_mean_std float,
+        windspeed_min_avg float,
+        windspeed_min_std float,
+        UNIQUE (gid, date),
+        PRIMARY KEY (gid, date)
+    )"""
+
 
 
 def update_type(val):
@@ -100,6 +142,7 @@ class SqliteHelper(AbstractAdapter):
         self.execute(sql_create_epidemiology_table)
         self.execute(sql_create_government_response_table)
         self.execute(sql_create_mobility_table)
+        self.execute(sql_create_weather_table)
 
     def cursor(self):
         self.cur = self.conn.cursor()
@@ -164,6 +207,17 @@ class SqliteHelper(AbstractAdapter):
 
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        self.check_if_gid_exists(kwargs)
+        kwargs = self.format_data(kwargs)
+        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
+            table_name=table_name,
+            insert_keys=",".join([key for key in kwargs.keys()]),
+            insert_data=",".join('?' * len(kwargs)),
+        )
+
+        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
 
     def close_connection(self):
         if self.conn:
