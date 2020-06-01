@@ -56,4 +56,5 @@ class METDailyWEatherFetcher(AbstractFetcher):
         new_data = self.fetch(DATERANGE)
         new_data.to_pickle("plugins/WEATHER/out/weather_table_{}_{}.pkl".format(
                            start.strftime('%Y-%m-%d'),
-                           stop.strftime('%Y-%m-%d')))
+                           stop.strftime('%Y-%m-%d')),
+                           protocol=3)
