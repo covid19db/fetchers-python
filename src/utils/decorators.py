@@ -27,9 +27,8 @@ def timeit(method):
     def timed(*args, **kw):
         start_time = time.time()
         result = method(*args, **kw)
-        time_diff = time.time() - start_time
-        logger.info(f'{method.__name__} execution time: {seconds_to_human(time_diff)}')
-
+        hr_time_diff = seconds_to_human(time.time() - start_time)
+        logger.info(f'{method.__name__} execution time: {hr_time_diff}')
         return result
 
     return timed

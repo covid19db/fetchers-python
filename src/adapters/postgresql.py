@@ -83,6 +83,7 @@ class PostgresqlHelper(AbstractAdapter):
         logger.debug("Moving data to epidemiology")
 
     def truncate_staging(self):
+        # TODO: Add more staging tables, currently only for epidemiology
         sql_query = sql.SQL("""TRUNCATE staging_epidemiology; SELECT 1""")
         self.execute(sql_query)
 

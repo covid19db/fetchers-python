@@ -42,7 +42,10 @@ class AdapterWrapper(AbstractAdapter):
             self.data_adapter.truncate_staging()
 
     def correct_table_name(self, table_name: str) -> str:
-        return self.table_name_postfix + table_name if self.table_name_postfix else table_name
+        if self.table_name_postfix and table_name in ['epidemiology']:
+            return self.table_name_postfix + table_name
+        else:
+            return table_name
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         if not self.date_in_window(kwargs):
