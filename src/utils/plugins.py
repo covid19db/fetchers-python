@@ -51,6 +51,15 @@ class Plugins:
             return run_only_plugins.split(",")
         return None
 
+    @staticmethod
+    def validate(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
+                 data_adapter: AbstractAdapter) -> bool:
+        source_name = plugin_instance.SOURCE if hasattr(plugin_instance, 'SOURCE') else None
+        logger.info(f"Validate incoming data for {plugin.__name__}, source_name: {source_name}")
+        validation_success = validate_incoming_data(data_adapter, source_name)
+        logger.info(f"Validation result: {validation_success}")
+        return validation_success
+
     @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
         for plugin in self.available_plugins:
@@ -67,13 +76,7 @@ class Plugins:
             instance = plugin(db=data_adapter)
             instance.run()
             data_adapter.flush()
-            if self.validate_input_data:
-                source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
-                logger.info(f"Validate incoming data for {plugin.__name__}, source_name: {source_name}")
-                validation_success = validate_incoming_data(data_adapter, source_name)
-                logger.info(f"Validation result: {validation_success}")
-            else:
-                validation_success = True
+            validation_success = self.validate(plugin, instance, data_adapter) if self.validate_input_data else True
 
             if validation_success:
                 logger.info(f"Plugin {plugin.__name__} finished successfully")

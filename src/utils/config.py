@@ -21,7 +21,7 @@ class Config:
             print(f'Env {name} = {value}')
 
     def load_config_from_env_variables(self):
-        self.load_env_variable("VALIDATE_INPUT_DATA", "", fun=lambda x: x.lower == 'true')
+        self.load_env_variable("VALIDATE_INPUT_DATA", "", fun=lambda x: x.lower() == 'true')
         self.load_env_variable("SLIDING_WINDOW_DAYS", fun=lambda x: int(x) if x else None)
         self.load_env_variable("RUN_ONLY_PLUGINS")
         self.load_env_variable("LOGLEVEL", "DEBUG")
