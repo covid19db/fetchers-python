@@ -86,6 +86,9 @@ class CSVFileHelper(AbstractAdapter):
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         self.upsert_data(table_name, **kwargs)
 
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        self.upsert_data(table_name, **kwargs)
+
     def flush(self):
         if self.csv_file_name and self.temp_df is not None:
             csv_file_path = os.path.join(self.csv_path, self.csv_file_name)

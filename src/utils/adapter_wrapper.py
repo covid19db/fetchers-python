@@ -4,7 +4,6 @@ from datetime import datetime
 from utils.adapter_abstract import AbstractAdapter
 from utils.config import config
 
-MAX_ATTEMPT_FAIL = 10
 
 class AdapterWrapper(AbstractAdapter):
 
@@ -60,6 +59,11 @@ class AdapterWrapper(AbstractAdapter):
             return
         return self.data_adapter.upsert_mobility_data(self.correct_table_name(table_name), **kwargs)
 
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        if not self.date_in_window(kwargs):
+            return
+        return self.data_adapter.upsert_weather_data(self.correct_table_name(table_name), **kwargs)
+
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
         return self.data_adapter.get_adm_division(countrycode, adm_area_1, adm_area_2, adm_area_3)
@@ -68,8 +72,5 @@ class AdapterWrapper(AbstractAdapter):
         if hasattr(self.data_adapter, 'flush'):
             self.data_adapter.flush()
 
-    def execute(self, query: str, data: str = None, attempt: int = MAX_ATTEMPT_FAIL):
-        return self.data_adapter.execute(query, data, attempt)
-
-    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
-        return self.data_adapter.upsert_weather_data(self.correct_table_name(table_name), **kwargs)
+    def execute(self, query: str, data: str = None):
+        return self.data_adapter.execute(query, data)

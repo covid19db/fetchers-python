@@ -114,7 +114,6 @@ sql_create_weather_table = """
     )"""
 
 
-
 def update_type(val):
     if isinstance(val, pd.Timestamp):
         return val.date()
@@ -173,7 +172,7 @@ class SqliteHelper(AbstractAdapter):
         # TODO: Implement get division
         raise NotImplementedError("To be implemented")
 
-    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+    def upsert_data(self, table_name: str, **kwargs):
         self.check_if_gid_exists(kwargs)
         kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
@@ -183,41 +182,18 @@ class SqliteHelper(AbstractAdapter):
         )
         self.execute(sql_query, [update_type(val) for val in kwargs.values()])
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        self.upsert_data(table_name, **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        self.check_if_gid_exists(kwargs)
-        kwargs = self.format_data(kwargs)
-        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
-            table_name=table_name,
-            insert_keys=",".join([key for key in kwargs.keys()]),
-            insert_data=",".join('?' * len(kwargs)),
-        )
-
-        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+        self.upsert_data(table_name, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
-        self.check_if_gid_exists(kwargs)
-        kwargs = self.format_data(kwargs)
-        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
-            table_name=table_name,
-            insert_keys=",".join([key for key in kwargs.keys()]),
-            insert_data=",".join('?' * len(kwargs)),
-        )
-
-        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
-        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+        self.upsert_data(table_name, **kwargs)
 
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
-        self.check_if_gid_exists(kwargs)
-        kwargs = self.format_data(kwargs)
-        sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
-            table_name=table_name,
-            insert_keys=",".join([key for key in kwargs.keys()]),
-            insert_data=",".join('?' * len(kwargs)),
-        )
-
-        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
+        self.upsert_data(table_name, **kwargs)
 
     def close_connection(self):
         if self.conn:
