@@ -55,9 +55,9 @@ class Plugins:
     def validate(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
                  data_adapter: AbstractAdapter) -> bool:
         source_name = plugin_instance.SOURCE if hasattr(plugin_instance, 'SOURCE') else None
-        logger.info(f"Validate incoming data for {plugin.__name__}, source_name: {source_name}")
         validation_success = validate_incoming_data(data_adapter, source_name)
-        logger.info(f"Validation result: {validation_success}")
+        logger.info(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
+                    f"result: {validation_success}")
         return validation_success
 
     @timeit

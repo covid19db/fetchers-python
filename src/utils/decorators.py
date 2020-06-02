@@ -13,8 +13,8 @@ TIME_DURATION_UNITS = (
 
 
 def seconds_to_human(seconds):
-    if seconds == 0:
-        return 'inf'
+    if seconds < 1:
+        return f'{seconds}s'
     parts = []
     for unit, div in TIME_DURATION_UNITS:
         amount, seconds = divmod(int(seconds), div)
