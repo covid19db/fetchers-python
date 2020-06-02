@@ -142,7 +142,7 @@ class PostgresqlHelper(AbstractAdapter):
         self.upsert_data(table_name, data_keys, **kwargs)
 
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
-        composite_key = ['date', 'country', 'countrycode', 'gid']
+        composite_key = ['date', 'countrycode', 'gid']
 
         self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
