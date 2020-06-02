@@ -3,8 +3,6 @@ import pandas as pd
 from utils.fetcher_abstract import AbstractFetcher
 from functools import reduce
 import datetime
-import pickle
-import json
 
 from .utils import create_aggr_df, load_local_data
 
