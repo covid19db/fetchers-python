@@ -147,7 +147,7 @@ class PostgresqlHelper(AbstractAdapter):
         self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
-                                    (date, country, countrycode, COALESCE(gid, ''))
+                                    (date, countrycode, COALESCE(gid, ''))
                                 DO
                                     UPDATE SET {update_data}
                                RETURNING *
