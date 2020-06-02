@@ -1,17 +1,26 @@
 import os
 import sys
+from enum import Enum
 from abc import ABC, abstractmethod
 
 from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
 
-__all__ = ('AbstractFetcher',)
+__all__ = ('AbstractFetcher', 'FetcherType')
 
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.administrative_division_translator.translator import AdmTranslator
 
 
+class FetcherType(Enum):
+    EPIDEMIOLOGY = 'epidemiology'
+    GOVERNMENT_RESPONSE = 'government_response'
+    MOBILITY = 'mobility'
+    WEATHER = 'weather'
+
+
 class AbstractFetcher(ABC):
+    TYPE = FetcherType.EPIDEMIOLOGY
 
     def __init__(self, db: AbstractAdapter):
         self.adm_translator = self.load_adm_translator()

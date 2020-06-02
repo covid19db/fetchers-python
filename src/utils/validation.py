@@ -1,12 +1,13 @@
 import logging
 from utils.adapters import DataAdapter
 from utils.email import send_email
+from utils.fetcher_abstract import FetcherType
 
 logger = logging.getLogger(__name__)
 
 
-def validate_incoming_data(data_adapter: DataAdapter, source_name: str):
-    # TODO: Add data type, currently works only for epidemiology
+def validate_incoming_data(data_adapter: DataAdapter, fetcher_type: FetcherType, source_name: str):
+    # TODO: Add fetcher type support, currently works only for epidemiology
     compare_result = data_adapter.call_db_function_compare(source_name)
 
     if compare_result[0] == 0:

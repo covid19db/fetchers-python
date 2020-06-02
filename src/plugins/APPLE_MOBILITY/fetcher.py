@@ -1,7 +1,7 @@
 import os
 import csv
 import logging
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.helper import remove_words
 from .utils import get_recent_apple_mobility_data
@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class AppleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.MOBILITY
     SOURCE = 'APPLE_MOBILITY'
 
     @staticmethod

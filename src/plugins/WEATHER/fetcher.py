@@ -1,6 +1,6 @@
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 from functools import reduce
 import datetime
 
@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class METDailyWeatherFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.WEATHER
     SOURCE = 'MET'
 
     def fetch(self, day, weather_indicators, adm_2_to_grid):

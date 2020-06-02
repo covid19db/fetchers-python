@@ -54,8 +54,14 @@ class Plugins:
     @staticmethod
     def validate(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
                  data_adapter: AbstractAdapter) -> bool:
+        fetcher_type = plugin_instance.TYPE if hasattr(plugin_instance, 'TYPE') else None
+
+        if fetcher_type.value not in ['epidemiology']:
+            # Exit without verification - fetcher type not supported yet
+            return True
+
         source_name = plugin_instance.SOURCE if hasattr(plugin_instance, 'SOURCE') else None
-        validation_success = validate_incoming_data(data_adapter, source_name)
+        validation_success = validate_incoming_data(data_adapter, fetcher_type, source_name)
         logger.info(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
                     f"result: {validation_success}")
         return validation_success

@@ -2,7 +2,7 @@ import os
 import csv
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 
 __all__ = ('GoogleMobilityFetcher',)
 
@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class GoogleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.MOBILITY
     SOURCE = 'GOOGLE_MOBILITY'
 
     def fetch(self):
