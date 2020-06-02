@@ -10,6 +10,7 @@ from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
 from utils.fetcher_abstract import AbstractFetcher
 from utils.validation import validate_incoming_data
+from utils.decorators import timeit
 
 logger = logging.getLogger(__name__)
 
@@ -50,27 +51,34 @@ class Plugins:
             return run_only_plugins.split(",")
         return None
 
+    @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
         for plugin in self.available_plugins:
             if self.run_only_plugins and plugin.__name__ not in self.run_only_plugins:
                 continue
-            try:
-                logger.info(f'Running plugin {plugin.__name__} ')
-                if self.validate_input_data:
-                    data_adapter.truncate_staging()
-                instance = plugin(db=data_adapter)
-                instance.run()
-                data_adapter.flush()
-                if self.validate_input_data:
-                    source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
-                    validation_success = validate_incoming_data(data_adapter, source_name)
-                else:
-                    validation_success = True
+            self.run_single_plugin(data_adapter, plugin)
 
-                if validation_success:
-                    logger.info(f"Plugin {plugin.__name__} finished successfully")
-                else:
-                    logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+    @timeit
+    def run_single_plugin(self, data_adapter: AbstractAdapter, plugin: AbstractFetcher):
+        try:
+            logger.info(f'Running plugin {plugin.__name__} ')
+            if self.validate_input_data:
+                data_adapter.truncate_staging()
+            instance = plugin(db=data_adapter)
+            instance.run()
+            data_adapter.flush()
+            if self.validate_input_data:
+                source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
+                logger.info(f"Validate incoming data for {plugin.__name__}, source_name: {source_name}")
+                validation_success = validate_incoming_data(data_adapter, source_name)
+                logger.info(f"Validation result: {validation_success}")
+            else:
+                validation_success = True
 
-            except Exception as ex:
-                logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
+            if validation_success:
+                logger.info(f"Plugin {plugin.__name__} finished successfully")
+            else:
+                logger.warning(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+
+        except Exception as ex:
+            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
