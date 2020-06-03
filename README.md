@@ -49,6 +49,7 @@ Currently implemented fetchers:
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | candidate | adm_area_3: English lower tier local authority |
 | SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
 | MYS_XXX | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
+| JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | candidate | adm_area_1: Prefecture |
 
 
 Explanation of status:
