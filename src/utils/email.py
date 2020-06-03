@@ -1,9 +1,16 @@
 import re
 import os
 import smtplib
+import itertools
 import pandas as pd
 
 from utils.config import config
+
+EMAIL_REGEX = re.compile(r"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
+
+
+def validate_address(email: str) -> bool:
+    return isinstance(email, str) and re.match(EMAIL_REGEX, email)
 
 
 def send_email(src_code: str, message: str):
@@ -12,12 +19,11 @@ def send_email(src_code: str, message: str):
     if os.path.isfile(emails_file_path):
         df = pd.read_csv(emails_file_path, encoding='utf-8')
 
-        email1 = df.loc[df['source_code'] == src_code, 'email_curator_1'].iloc[0]
-        email2 = df.loc[df['source_code'] == src_code, 'email_curator_2'].iloc[0]
-        email3 = df.loc[df['source_code'] == src_code, 'email_curator_3'].iloc[0]
-        email4 = df.loc[df['source_code'] == src_code, 'email_curator_4'].iloc[0]
-
-        emails = [email1, email2, email3, email4]
+        df_recipients = df[(df.source_code == src_code) | (df.source_code == '*')]
+        emails_list = df_recipients[
+            ['email_curator_1', 'email_curator_2', 'email_curator_3', 'email_curator_4']
+        ].values.tolist()
+        emails = set(itertools.chain.from_iterable(emails_list))
         destination = [email for email in emails if validate_address(email)]
 
         email = config.SYS_EMAIL
@@ -27,13 +33,3 @@ def send_email(src_code: str, message: str):
         s.login(email, password)
         s.sendmail("covid19db", destination, message)
         s.quit()
-
-
-def isNaN(string: str) -> str:
-    return string != string
-
-
-def validate_address(email: str) -> bool:
-    if not isNaN(email):
-        pattern = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$'
-        return not isNaN(email) and re.match(pattern, email) != None
