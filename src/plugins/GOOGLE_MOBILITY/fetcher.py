@@ -21,24 +21,6 @@ class GoogleMobilityFetcher(AbstractFetcher):
         url = 'https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv'
         return pd.read_csv(url, low_memory=False)
 
-    def get_region(self, countrycode: str, input_adm_area_1: str = None, input_adm_area_2: str = None,
-                   input_adm_area_3: str = None):
-        try:
-            # Check if input data can be matched directly into administrative division table
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-        except Exception as ex:
-            adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
-
-        if not gid:
-            # Check translate.csv for translation
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3,
-                suppress_exception=True
-            )
-
-        return adm_area_1, adm_area_2, adm_area_3, gid
-
     def run(self):
         data = self.fetch()
 
@@ -85,7 +67,8 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 adm_area_1, adm_area_2, adm_area_3, gid = region_cache.get(key)
             else:
                 adm_area_1, adm_area_2, adm_area_3, gid = self.get_region(
-                    countrycode, input_adm_area_1, input_adm_area_2, None)
+                    countrycode, input_adm_area_1, input_adm_area_2,
+                    suppress_exception=True)
                 region_cache[key] = (adm_area_1, adm_area_2, adm_area_3, gid)
 
             if not gid:
