@@ -65,7 +65,7 @@ Explanation of status:
 
 ## Database structure
 
-Infections table: see https://covid19db.github.io/data.html
+See https://covid19db.github.io/data.html
 
 ## Develop and test
 
@@ -85,6 +85,24 @@ You need:
 
 1. Add the `STAGE=test`, `DB_ADDRESS`, `DB_PORT`, `DB_NAME`, `DB_USERNAME` and `DB_PASSWORD` environment variables
 2. Run ```docker-compose up```
+
+## Environmental variables
+
+| Variable name       | Default value |             Description      |
+----------------------|---------|------------------------------|
+| DB_USERNAME         |         | Postgres database adapter user name |
+| DB_PASSWORD         |         | Postgres database adapter password |
+| DB_ADDRESS          |         | Postgres database adapter address |
+| DB_NAME             |         | Postgres database adapter name |
+| DB_PORT             | 5432    | Postgres database adapter port |
+| SQLITE              |         | SQLITE adapter file path  |
+| CSV                 |         | CSV adapter file path |
+| VALIDATE_INPUT_DATA | False   | Validate input data |
+| SLIDING_WINDOW_DAYS |         | Sliding window, number of days in the past to process |
+| RUN_ONLY_PLUGINS    | ALL     | Run selected plugins from given list, run all plugins if empty |
+| LOGLEVEL            | DEBUG   | Log level |
+| SYS_EMAIL           |         | Notifications SMTP username |
+| SYS_EMAIL_PASS      |         | Notifications SMTP password |
 
 ## Contribute
 
