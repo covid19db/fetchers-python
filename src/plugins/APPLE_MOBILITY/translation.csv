@@ -20,3 +20,294 @@ POL,West Pomeranian,,,Zachodniopomorskie,,,POL.16_1
 USA,Missouri,Ste. Genevieve,,Missouri,Sainte Genevieve,,USA.26.96_1
 USA,New Mexico,Doña Ana,,New Mexico,Dona Ana,,USA.32.8_1
 USA,Alaska,Kenai Peninsula Borough,,Alaska,Kenai Peninsula,,USA.2.11_1
+# AUT
+AUT,Carinthia,,,Kärnten,,,AUT.2_1
+AUT,Lower Austria,,,Niederösterreich,,,AUT.3_1
+AUT,Styria,,,Steiermark,,,AUT.6_1
+AUT,Tyrol,,,Tirol,,,AUT.7_1
+AUT,Upper Austria,,,Oberösterreich,,,AUT.4_1
+# BEL
+BEL,Antwerp,,,Vlaanderen,Antwerpen,,BEL.2.1_1
+BEL,East Flanders,,,Vlaanderen,Oost-Vlaanderen,,BEL.2.3_1
+BEL,Flemish Brabant,,,Vlaanderen,Vlaams Brabant,,BEL.2.4_1
+BEL,Hainaut,,,Wallonie,Hainaut,,BEL.3.2_1
+BEL,Limburg,,,Vlaanderen,Limburg,,BEL.2.2_1
+BEL,Liège,,,Wallonie,Liège,,BEL.3.3_1
+BEL,Luxembourg,,,Wallonie,Luxembourg,,BEL.3.4_1
+BEL,Namur,,,Wallonie,Namur,,BEL.3.5_1
+BEL,Walloon Brabant,,,Wallonie,Brabant Wallon,,BEL.3.1_1
+BEL,West Flanders,,,Vlaanderen,West-Vlaanderen,,BEL.2.5_1
+# BRA
+BRA,Amapá,,,Amapá,,,BRA.3_1
+BRA,CearÃ¡,,,Ceará,,,BRA.6_1
+BRA,Distrito Federal (Brazil),,,Distrito Federal,,,BRA.7_1
+BRA,EspÃ­rito Santo,,,Espírito Santo,,,BRA.8_1
+BRA,GoiÃ¡s,,,Goiás,,,BRA.9_1
+BRA,ParanÃ¡,,,Paraná,,,BRA.16_1
+BRA,ParaÃ­ba,,,Paraíba,,,BRA.15_1
+BRA,ParÃ¡,,,Pará,,,BRA.14_1
+BRA,PiauÃ­,,,Piauí,,,BRA.18_1
+BRA,Rio de Janeiro (state),,,Rio de Janeiro,,,BRA.19_1
+BRA,RondÃ´nia,,,São Paulo,,,BRA.25_1
+BRA,São Paulo (state),,,São Paulo,,,BRA.25_1
+CAN,Quebec,,,Québec,,,CAN.11_1
+CAN,Yukon Territory,,,Yukon,,,CAN.13_1
+CHE,Canton of Aargau,,,Aargau,,,CHE.1_1
+CHE,Canton of Appenzell Ausserrhoden,,,Appenzell Ausserrhoden,,,CHE.2_1
+CHE,Canton of Appenzell Innerrhoden,,,Appenzell Innerrhoden,,,CHE.3_1
+CHE,Canton of Basel-Landschaft,,,Basel-Landschaft,,,CHE.4_1
+CHE,Canton of Basel-Stadt,,,Basel-Stadt,,,CHE.5_1
+CHE,Canton of Bern,,,Bern,,,CHE.6_1
+CHE,Canton of Fribourg,,,Fribourg,,,CHE.7_1
+CHE,Canton of Geneva,,,Genève,,,CHE.8_1
+CHE,Canton of Glarus,,,Glarus,,,CHE.9_1
+CHE,Canton of Graubünden,,,Graubünden,,,CHE.10_1
+CHE,Canton of Jura,,,Jura,,,CHE.11_1
+CHE,Canton of Lucerne,,,Lucerne,,,CHE.12_1
+CHE,Canton of Neuchâtel,,,Neuchâtel,,,CHE.13_1
+CHE,Canton of Nidwalden,,,Nidwalden,,,CHE.14_1
+CHE,Canton of Obwalden,,,Obwalden,,,CHE.15_1
+CHE,Canton of Schaffhausen,,,Schaffhausen,,,CHE.17_1
+CHE,Canton of Schwyz,,,Schwyz,,,CHE.18_1
+CHE,Canton of Solothurn,,,Solothurn,,,CHE.19_1
+CHE,Canton of St. Gallen,,,Sankt Gallen,,,CHE.16_1
+CHE,Canton of Thurgau,,,Thurgau,,,CHE.20_1
+CHE,Canton of Ticino,,,Ticino,,,CHE.21_1
+CHE,Canton of Uri,,,Uri,,,CHE.22_1
+CHE,Canton of Valais,,,Valais,,,CHE.23_1
+CHE,Canton of Vaud,,,Vaud,,,CHE.24_1
+CHE,Canton of Zug,,,Zug,,,CHE.25_1
+CHE,Canton of Zürich,,,Zürich,,,CHE.26_1
+CHL,AraucanÃ­a,,,Araucanía,,,CHL.3_1
+CHL,Arica and Parinacota,,,Arica y Parinacota,,,CHL.4_1
+CHL,Aysén del General Carlos Ibáñez del Campo,,,Aisén del General Carlos Ibáñez del Campo,,,CHL.1_1
+CHL,Biobío,,,Bío-Bío,,,CHL.6_1
+CHL,Los RÃ­os,,,Los Ríos,,,CHL.10_1
+CHL,Magallanes and the Chilean Antarctic,,,Magallanes y Antártica Chilena,,,CHL.11_1
+CHL,Santiago Metropolitan,,,Región Metropolitana de Santiago,,,CHL.14_1
+CHL,TarapacÃ¡,,,Tarapacá,,,CHL.15_1
+CHL,ValparaÃ­so,,,Valparaíso,,,CHL.16_1
+CZE,Central Bohemian,,,Středočeský,,,CZE.12_1
+CZE,Hradec Králové,,,Královéhradecký,,,CZE.5_1
+CZE,Karlovy Vary,,,Karlovarský,,,CZE.3_1
+CZE,Liberec,,,Liberecký,,,CZE.6_1
+CZE,Moravian-Silesian,,,Moravskoslezský,,,CZE.7_1
+CZE,Olomouc,,,Olomoucký,,,CZE.8_1
+CZE,Pardubice,,,Pardubický,,,CZE.9_1
+CZE,Plzeň,,,Plzeňský,,,CZE.10_1
+CZE,South Bohemia,,,Jihočeský,,,CZE.1_1
+CZE,South Moravian,,,Jihomoravský,,,CZE.2_1
+CZE,Vysočina,,,Kraj Vysočina,,,CZE.4_1
+CZE,Zlín,,,Zlínský,,,CZE.14_1
+CZE,Ústí nad Labem,,,Ústecký,,,CZE.13_1
+DEU,Baden-Württemberg,,,Baden-Württemberg,,,DEU.1_1
+DEU,Bavaria,,,Bayern,,,DEU.2_1
+DEU,Bremen (state),,,Bremen,,,DEU.5_1
+DEU,Hesse,,,Hessen,,,DEU.7_1
+DEU,Lower Saxony,,,Niedersachsen,,,DEU.9_1
+DEU,North Rhine-Westphalia,,,Nordrhein-Westfalen,,,DEU.10_1
+DEU,Rhineland-Palatinate,,,Rheinland-Pfalz,,,DEU.11_1
+DEU,Saxony,,,Sachsen,,,DEU.14_1
+DEU,Saxony-Anhalt,,,Sachsen-Anhalt,,,DEU.13_1
+DEU,Thuringia,,,Thüringen,,,DEU.16_1
+DNK,Capital  of Denmark,,,Hovedstaden,,,DNK.1_1
+DNK,Central Denmark,,,Midtjylland,,,DNK.2_1
+DNK,North Denmark,,,Nordjylland,,,DNK.3_1
+DNK,Zealand,,,Sjælland,,,DNK.4_1
+DNK,of Southern Denmark,,,Syddanmark,,,DNK.5_1
+ESP,Andalusia,,,Andalucía,,,ESP.1_1
+ESP,Aragon,,,Aragón,,,ESP.2_1
+ESP,Asturias,,,Principado de Asturias,,,ESP.17_1
+ESP,Balearic Islands,,,Islas Baleares,,,ESP.13_1
+ESP,Basque Country,,,País Vasco,,,ESP.16_1
+ESP,Canary Islands,,,Islas Canarias,,,ESP.14_1
+ESP,Castile and Leon,,,Castilla y León,,,ESP.5_1
+ESP,Castile-La Mancha,,,Castilla-La Mancha,,,ESP.4_1
+ESP,Catalonia,,,Cataluña,,,ESP.6_1
+ESP,Ceuta,,,Ceuta y Melilla,,,ESP.7_1
+ESP,Community of Madrid,,,Comunidad de Madrid,,,ESP.8_1
+ESP,Melilla,,,Ceuta y Melilla,,,ESP.7_1
+ESP,Navarre,,,Comunidad Foral de Navarra,,,ESP.9_1
+ESP,Valencian Community,,,Comunidad Valenciana,,,ESP.10_1
+ESP,of Murcia,,,Región de Murcia,,,ESP.18_1
+FIN,Central Finland,,,Western Finland,Central Finland,,FIN.5.1_1
+FIN,Central Ostrobothnia,,,Western Finland,Central Ostrobothnia,,FIN.5.2_1
+FIN,Kainuu,,,Oulu,Kainuu,,FIN.3.1_1
+FIN,Kanta-Häme,,,Western Finland,Tavastia Proper,,FIN.5.9_1
+FIN,Kymenlaakso,,,Southern Finland,Kymenlaakso,,FIN.4.2_1
+FIN,North Karelia,,,Eastern Finland,North Karelia,,FIN.1.1_1
+FIN,North Ostrobothnia,,,Oulu,Northern Ostrobothnia,,FIN.3.2_1
+FIN,North Savo,,,Eastern Finland,North Savonia,,FIN.1.2_1
+FIN,Ostrobothnia,,,Western Finland,Ostrobothnia,,FIN.5.4_1
+FIN,Päijät-Häme,,,Päijät-Häme,,,FIN.1.3_1:FIN.4.3_1:FIN5.5_1
+FIN,Satakunta,,,Western Finland,Satakunta,,FIN.5.7_1
+FIN,South Karelia,,,Southern Finland,South Karelia,,FIN.4.4_1
+FIN,South Ostrobothnia,,,Western Finland,Southern Ostrobothnia,,FIN.5.8_1
+FIN,South Savo,,,Eastern Finland,Southern Savonia,,FIN.1.4_1
+FIN,Southwest Finland,,,Western Finland,Finland Proper,,FIN.5.3_1
+FIN,Tampere,,,Tampere,,,FIN5.6_1
+FIN,Uusimaa,,,Uusimaa,,,FIN.4.1_1:FIN.4.5_1
+FRA,Alsace,,,Alsace,,,FRA.6.3_1:FRA.6.4_1
+FRA,Aquitaine,,,Aquitaine,,,FRA.10.6_1:FRA.10.7_1:FRA.10.9_1:FRA.10.10_1:FRA.10.11_1
+FRA,Auvergne,,,Auvergne,,,FRA.1.2_1:FRA.1.4_1:FRA.1.6_1:FRA.1.10_1
+FRA,Brittany,,,Bretagne,,,FRA.3_1
+FRA,Burgundy,,,Burgundy,,,FRA.2.1_1:FRA.2.5_1:FRA.2.6_1:FRA.2.8_1
+FRA,Centre,,,Centre-Val de Loire,,,FRA.4_1
+FRA,Champagne-Ardenne,,,Champagne-Ardenne,,,FRA.6.1_1:FRA.6.2_1:FRA.6.5_1:FRA.6.6_1
+FRA,Corsica,,,Corse,,,FRA.5_1
+FRA,Franche-Comté,,,Franche-Comté,,,FRA.2.2_1:FRA.2.3_1:FRA.2.4_1:FRA.2.7_1
+FRA,Languedoc-Roussillon,,,Languedoc-Roussillon,,,FRA.11.2_1:FRA.11.4_1:FRA.11.8_1:FRA.11.10_1:FRA.11.11_1
+FRA,Limousin,,,Limousin,,,FRA.10.3_1:FRA.10.4_1:FRA.10.8_1
+FRA,Lorraine,,,Lorraine,,,FRA.6.7_1:FRA.6.8_1:FRA.6.9_1:FRA.6.10_1
+FRA,Lower Normandy,,,Lower Normandy,,,FRA.9.1_1:FRA.9.3_1:FRA.9.4_1
+FRA,Midi-Pyrénées,,,Midi-Pyrénées,,,FRA.11.1_1:FRA.11.3_1:FRA.11.5_1:FRA.11.6_1:FRA.11.7_1:FRA.11.9_1:FRA.11.13_1:FRA.11.12_1
+FRA,Nord-Pas-de-Calais,,,Nord-Pas-de-Calais,,,FRA.7.2_1:FRA.7.4_1
+FRA,Picardy,,,Picardy,,,FRA.7.1_1:FRA.7.3_1:FRA.7.5_1
+FRA,Poitou-Charentes,,,Poitou-Charentes,,,FRA.10.2_1:FRA.10.1_1:FRA.10.5_1:FRA.10.12_1
+FRA,Provence-Alpes-Côte d'Azur,,,Provence-Alpes-Côte d'Azur,,,FRA.13_1
+FRA,Rhône-Alpes,,,Rhône-Alpes,,,FRA.1.1_1:FRA.1.3_1:FRA.1.5_1:FRA.1.7_1:FRA.1.8_1:FRA.1.9_1:FRA.1.11_1:FRA.1.12_1
+FRA,Upper Normandy,,,Upper Normandy,,,FRA.9.2_1:FRA.9.5_1
+FRA,Île-de-France,,,Île-de-France,,,FRA.8_1
+GBR,Bailiwick of Guernsey,,,Bailiwick of Guernsey,,,GGY
+GBR,Bailiwick of Jersey,,,Bailiwick of Jersey,,,JEY
+GBR,Isle of Man,,,Isle of Man,,,IMN
+HUN,Borsod-Abaúj-Zemplén,,,Borsod-Abaúj-Zemplén,,,HUN.4_1
+HUN,Bács-Kiskun,,,Bács-Kiskun,,,HUN.1_1
+HUN,Békés,,,Békés,,,HUN.3_1
+HUN,Csongrád,,,Csongrád,,,HUN.6_1
+HUN,Fejér,,,Fejér,,,HUN.7_1
+HUN,Győr-Moson-Sopron,,,Gyor-Moson-Sopron,,,HUN.8_1
+HUN,Hajdú-Bihar,,,Hajdú-Bihar,,,HUN.9_1
+HUN,Jász-Nagykun-Szolnok,,,Jász-Nagykun-Szolnok,,,HUN.11_1
+HUN,Komárom-Esztergom,,,Komárom-Esztergom,,,HUN.12_1
+HUN,Nógrád,,,Nógrád,,,HUN.13_1
+HUN,Szabolcs-Szatmár-Bereg,,,Szabolcs-Szatmár-Bereg,,,HUN.16_1
+HUN,Veszprém,,,Veszprém,,,HUN.19_1
+IRL,Laois,,,Laoighis,,,IRL.11_1
+ISR,Central District,,,HaMerkaz,,,ISR.4_1
+ISR,Haifa District,,,Haifa,,,ISR.3_1
+ISR,Jerusalem District,,,Jerusalem,,,ISR.6_1
+ISR,Northern District,,,HaZafon,,,ISR.5_1
+ISR,Southern District,,,HaDarom,,,ISR.2_1
+ISR,Tel Aviv District,,,Tel Aviv,,,ISR.7_1
+ITA,Autonomous  Aosta Valley,,,Valle d'Aosta,,,ITA.19_1
+ITA,Autonomous  Friuli-Venezia Giulia,,,Friuli-Venezia Giulia,,,ITA.7_1
+ITA,Autonomous  Sardinia,,,Sardegna,,,ITA.14_1
+ITA,Autonomous  Trentino-Alto Adige/Südtirol,,,Trentino-Alto Adige,,,ITA.17_1
+ITA,Lombardy,,,Lombardia,,,ITA.10_1
+ITA,Piedmont,,,Piemonte,,,ITA.13_1
+ITA,Tuscany,,,Toscana,,,ITA.16_1
+JPN,Hyogo,,,Hyōgo,Fukusaki,,JPN.13.8_1
+JPN,Nagasaki,,,Naoasaki,,,JPN.27_1
+KOR,Busan Metropolitan City,,,Busan,,,KOR.1_1
+KOR,Daegu Metropolitan City,,,Daegu,,,KOR.4_1
+KOR,Gwangju Metropolitan City,,,Gwangju,,,KOR.7_1
+KOR,Incheon Metropolitan City,,,Incheon,,,KOR.11_1
+KOR,Jeju Special Autonomous,,,Jeju,,,KOR.12_1
+LUX,Diekirch District,,,Diekirch,,,LUX.1_1
+LUX,Grevenmacher District,,,Grevenmacher,,,LUX.2_1
+LUX,Luxembourg District,,,Luxembourg,,,LUX.3_1
+MEX,Michoacán,,,Michoacán,,,MEX.16_1
+MEX,Nuevo León,,,Nuevo León,,,MEX.19_1
+MEX,Puebla (state),,,Puebla,,,MEX.21_1
+MEX,Querétaro,,,Querétaro,,,MEX.22_1
+MEX,San Luis Potosí,,,San Luis Potosí,,,MEX.24_1
+MEX,State of Mexico,,,México,,,MEX.15_1
+MEX,Yucatán,,,Yucatán,,,MEX.31_1
+NLD,North Brabant,,,Noord-Brabant,,,NLD.8_1
+NLD,North Holland,,,Noord-Holland,,,NLD.9_1
+NLD,South Holland,,,Zuid-Holland,,,NLD.14_1
+NOR,Agder,,,Agder,,,NOR.3_1:NOR.18_1
+NOR,Innlandet,,,Innlandet,,,NOR.6_1:NOR.11_1
+NOR,MÃ¸re og Romsdal,,,Møre og Romsdal,,,NOR.8_1
+NOR,Troms og Finnmark,,,Troms og Finnmark,,,NOR.5_1:NOR.17_1
+NOR,Trøndelag,,,Sør-Trøndelag,,,NOR.9_1:NOR.15_1
+NOR,Vestfold og Telemark,,,Vestfold og Telemark,,,NOR.19_1:NOR.16_1
+NOR,Vestland,,,Vestland,,,NOR.7_1:NOR.14_1
+NOR,Viken,,,Viken,,,NOR.1_1:NOR.2_1:NOR.4_1
+NZL,Gisborne District,,,Gisborne,,,NZL.5_1
+NZL,Manawatū-Whanganui,,,Manawatu-Wanganui,,,NZL.7_1
+NZL,Tasman District,,,Tasman,,,NZL.16_1
+SVK,Banská Bystrica,,,Banskobystrický,,,SVK.1_1
+SVK,Bratislava,,,Bratislavský,,,SVK.2_1
+SVK,Košice,,,Košický,,,SVK.3_1
+SVK,Nitra,,,Nitriansky,,,SVK.4_1
+SVK,Prešov,,,Prešovský,Prešov,,SVK.5.7_1
+SVK,Trenčín,,,Trenčiansky,Trenčín,,SVK.6.9_1
+SVK,Trnava,,,Trnavský,,,SVK.7_1
+SVK,Žilina,,,Žilinský,,,SVK.8_1
+# SWE
+SWE,GÃ¤vleborg,,,Gävleborg,,,SWE.3_1
+SWE,JÃ¤mtland,,,Jämtland,,,SWE.6_1
+SWE,JÃ¶nkÃ¶ping,,,Jönköping,,,SWE.7_1
+SWE,Scania,,,Skåne,,,SWE.13_1
+SWE,Södermanland,,,Södermanland,,,SWE.14_1
+SWE,Värmland,,,Värmland,,,SWE.17_1
+SWE,Västerbotten,,,Västerbotten,,,SWE.18_1
+SWE,Västernorrland,,,Västernorrland,,,SWE.19_1
+SWE,Västmanland,,,Västmanland,,,SWE.20_1
+SWE,Västra Götaland,,,Västra Götaland,,,SWE.21_1
+SWE,Örebro,,,Orebro,,,SWE.11_1
+SWE,Östergötland,,,Östergötland,,,SWE.12_1
+TWN,Kaohsiung City,,,Kaohsiung,,,TWN.2_1
+TWN,New Taipei City,,,New Taipei,,,TWN.3_1
+TWN,Taichung City,,,Taichung,,,TWN.4_1
+TWN,Tainan City,,,Tainan,,,TWN.5_1
+TWN,Taipei City,,,Taipei,,,TWN.6_1
+TWN,Taoyuan City,,,Taiwan,Taoyuan,,TWN.7.13_1
+# USA
+USA,Alaska,Anchorage Municipality,,Alaska,Anchorage,,USA.2.3_1
+USA,Alaska,Fairbanks North Star Borough,,Alaska,Fairbanks North Star,,USA.2.8_1
+USA,Alaska,Juneau City and Borough,,Alaska,Juneau,,USA.2.10_1
+USA,Alaska,Matanuska-Susitna Borough,,Alaska,Matanuska-Susitna,,USA.2.15_1
+USA,Guam,,,Guam,,,GUM
+USA,Guam,Guam,,Guam,Guam,,GUM
+USA,Maryland,Baltimore City,,Maryland,Baltimore,,USA.21.3_1
+USA,Missouri,Saint Louis City,,Missouri,Saint Louis,,USA.26.95_1
+USA,New Mexico,DoÃ±a Ana,,New Mexico,Dona Ana,,USA.32.8_1
+USA,Puerto Rico,,,Puerto Rico,,,PRI
+USA,Puerto Rico,Aguadilla Municipio,,Aguadilla,,,PRI.3_1
+USA,Puerto Rico,Arecibo Municipio,,Arecibo,,,PRI.7_1
+USA,Puerto Rico,Bayamón Municipio,,Bayamón,,,PRI.11_1
+USA,Puerto Rico,Caguas Municipio,,Caguas,,,PRI.13_1
+USA,Puerto Rico,Carolina Municipio,,Carolina,,,PRI.16_1
+USA,Puerto Rico,Dorado Municipio,,Dorado,,,PRI.26_1
+USA,Puerto Rico,Guaynabo Municipio,,Guaynabo,,,PRI.32_1
+USA,Puerto Rico,Gurabo Municipio,,Gurabo,,,PRI.33_1
+USA,Puerto Rico,Humacao Municipio,,Humacao,,,PRI.36_1
+USA,Puerto Rico,Mayagüez Municipio,,Mayagüez,,,PRI.50_1
+USA,Puerto Rico,Ponce Municipio,,Ponce,,,PRI.58_1
+USA,Puerto Rico,Río Grande Municipio,,Río Grande,,,PRI.61_1
+USA,Puerto Rico,San Juan Municipio,,San Juan,,,PRI.65_1
+USA,Puerto Rico,Toa Baja Municipio,,Toa Baja,,,PRI.70_1
+USA,Puerto Rico,Trujillo Alto Municipio,,Trujillo Alto,,,PRI.71_1
+USA,Virgin Islands,,,Virgin Islands,,,VIR
+USA,Virgin Islands,Saint Croix Island,,Saint Croix,,,VIR.1_1
+USA,Virgin Islands,Saint Thomas Island,,Saint Thomas,,,VIR.3_1
+USA,Virginia,Alexandria City,,Virginia,Alexandria,,USA.47.3_1
+USA,Virginia,Bristol City,,Virginia,Bristol,,USA.47.15_1
+USA,Virginia,Charlottesville City,,Virginia,Charlottesville,,USA.47.25_1
+USA,Virginia,Chesapeake City,,Virginia,Chesapeake,,USA.47.26_1
+USA,Virginia,Colonial Heights City,,Virginia,Colonial Heights,,USA.47.30_1
+USA,Virginia,Danville City,,Virginia,Danville,,USA.47.35_1
+USA,Virginia,Falls Church City,,Virginia,Falls Church,,USA.47.42_1
+USA,Virginia,Fredericksburg City,,Virginia,Fredericksburg,,USA.47.48_1
+USA,Virginia,Hampton City,,Virginia,Hampton,,USA.47.57_1
+USA,Virginia,Harrisonburg City,,Virginia,Harrisonburg,,USA.47.59_1
+USA,Virginia,Hopewell City,,Virginia,Hopewell,,USA.47.63_1
+USA,Virginia,Lynchburg City,,Virginia,Lynchburg,,USA.47.75_1
+USA,Virginia,Manassas City,,Virginia,Manassas,,USA.47.77_1
+USA,Virginia,Manassas Park City,,Virginia,Manassas Park,,USA.47.78_1
+USA,Virginia,Martinsville City,,Virginia,Martinsville,,USA.47.79_1
+USA,Virginia,Newport News City,,Virginia,Newport News,,USA.47.86_1
+USA,Virginia,Norfolk City,,Virginia,Norfolk,,USA.47.87_1
+USA,Virginia,Petersburg City,,Virginia,Petersburg,,USA.47.95_1
+USA,Virginia,Portsmouth City,,Virginia,Portsmouth,,USA.47.98_1
+USA,Virginia,Richmond City,,Virginia,Richmond,,USA.47.106_1
+USA,Virginia,Salem City,,Virginia,Salem,,USA.47.112_1
+USA,Virginia,Staunton City,,Virginia,Staunton,,USA.47.119_1
+USA,Virginia,Suffolk City,,Virginia,Suffolk,,USA.47.120_1
+USA,Virginia,Virginia Beach City,,Virginia,Virginia Beach,,USA.47.124_1
+USA,Virginia,Waynesboro City,,Virginia,Waynesboro,,USA.47.127_1
+USA,Virginia,Williamsburg City,,Virginia,Williamsburg,,USA.47.129_1
+USA,Virginia,Winchester City,,Virginia,Winchester,,USA.47.130_1

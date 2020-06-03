@@ -33,7 +33,9 @@ class GoogleMobilityFetcher(AbstractFetcher):
         if not gid:
             # Check translate.csv for translation
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
+                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3,
+                suppress_exception=True
+            )
 
         return adm_area_1, adm_area_2, adm_area_3, gid
 
@@ -65,10 +67,13 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 # Use adm_area_2 for Great Britain
                 input_adm_area_2 = input_adm_area_1
                 input_adm_area_1 = '%'
+            elif countrycode == 'JAM' and input_adm_area_1:
+                input_adm_area_1 = remove_words(input_adm_area_1, words=['Parish']) \
+                    .replace('St.', 'Saint').strip()
             elif input_adm_area_1:
                 input_adm_area_1 = remove_words(
                     input_adm_area_1,
-                    words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of'])
+                    words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of', 'Department'])
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
 
