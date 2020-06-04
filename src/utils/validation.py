@@ -18,6 +18,6 @@ def validate_incoming_data(data_adapter: DataAdapter, fetcher_type: FetcherType,
         try:
             send_email(source_name, message)
         except Exception as ex:
-            logger.error(f'Unable to send an email {source_name}, {ex}')
+            logger.error(f'Unable to send an email {source_name}', exc_info=True)
 
         return False

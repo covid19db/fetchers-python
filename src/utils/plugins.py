@@ -62,8 +62,12 @@ class Plugins:
 
         source_name = plugin_instance.SOURCE if hasattr(plugin_instance, 'SOURCE') else None
         validation_success = validate_incoming_data(data_adapter, fetcher_type, source_name)
-        logger.info(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
-                    f"result: {validation_success}")
+        if validation_success:
+            logger.info(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
+                        f"result: {validation_success}")
+        else:
+            logger.warning(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
+                           f"result: {validation_success}")
         return validation_success
 
     @timeit
