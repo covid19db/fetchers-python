@@ -16,17 +16,13 @@ class AustraliaC1AFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'AUS_C1A'
 
-    def fetch(self):
-        url = 'https://raw.githubusercontent.com/covid-19-au/covid-19-au.github.io/prod/src/data/country.json'
-        return pd.read_json(url, orient='index')
-
-    def fetch_state(self):
-        url = 'https://raw.githubusercontent.com/covid-19-au/covid-19-au.github.io/prod/src/data/state.json'
-        return pd.read_json(url, orient='index')
+    def fetch(self, category):
+        return pd.read_json(f'https://raw.githubusercontent.com/covid-19-au/covid-19-au.github.io/'
+                            f'prod/src/data/{category}.json', orient='index')
 
     def run(self):
         logger.debug('Fetching country-level information')
-        data = self.fetch()
+        data = self.fetch('country')
 
         for index, record in data.iterrows():
             # confirmed, recovered, deaths, active, tested, in_hospital, in_icu
@@ -54,7 +50,7 @@ class AustraliaC1AFetcher(AbstractFetcher):
             self.db.upsert_epidemiology_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
-        data = self.fetch_state()
+        data = self.fetch('state')
 
         for index, row in data.iterrows():
             date = index.strftime('%Y-%m-%d')
