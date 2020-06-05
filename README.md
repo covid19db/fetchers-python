@@ -55,6 +55,7 @@ Currently implemented fetchers:
 | SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
 | MYS_XXX | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | candidate | adm_area_1: Prefecture |
+| USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | candidate | adm_area_1: State |
 
 
 Explanation of status:

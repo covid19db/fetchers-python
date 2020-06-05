@@ -1,0 +1,57 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+USA,AS,,,American Samoa,,,ASM
+USA,GU,,,Guam,,,GUM
+USA,MP,,,Northern Mariana Islands,,,MNP
+USA,PR,,,Puerto Rico,,,PRI
+USA,VI,,,Virgin Islands,,,VIR
+USA,AL,,,Alabama,,,USA.1_1
+USA,AK,,,Alaska,,,USA.2_1
+USA,AZ,,,Arizona,,,USA.3_1
+USA,AR,,,Arkansas,,,USA.4_1
+USA,CA,,,California,,,USA.5_1
+USA,CO,,,Colorado,,,USA.6_1
+USA,CT,,,Connecticut,,,USA.7_1
+USA,DE,,,Delaware,,,USA.8_1
+USA,DC,,,District of Columbia,,,USA.9_1
+USA,FL,,,Florida,,,USA.10_1
+USA,GA,,,Georgia,,,USA.11_1
+USA,HI,,,Hawaii,,,USA.12_1
+USA,ID,,,Idaho,,,USA.13_1
+USA,IL,,,Illinois,,,USA.14_1
+USA,IN,,,Indiana,,,USA.15_1
+USA,IA,,,Iowa,,,USA.16_1
+USA,KS,,,Kansas,,,USA.17_1
+USA,KY,,,Kentucky,,,USA.18_1
+USA,LA,,,Louisiana,,,USA.19_1
+USA,ME,,,Maine,,,USA.20_1
+USA,MD,,,Maryland,,,USA.21_1
+USA,MA,,,Massachusetts,,,USA.22_1
+USA,MI,,,Michigan,,,USA.23_1
+USA,MN,,,Minnesota,,,USA.24_1
+USA,MS,,,Mississippi,,,USA.25_1
+USA,MO,,,Missouri,,,USA.26_1
+USA,MT,,,Montana,,,USA.27_1
+USA,NE,,,Nebraska,,,USA.28_1
+USA,NV,,,Nevada,,,USA.29_1
+USA,NH,,,New Hampshire,,,USA.30_1
+USA,NJ,,,New Jersey,,,USA.31_1
+USA,NM,,,New Mexico,,,USA.32_1
+USA,NY,,,New York,,,USA.33_1
+USA,NC,,,North Carolina,,,USA.34_1
+USA,ND,,,North Dakota,,,USA.35_1
+USA,OH,,,Ohio,,,USA.36_1
+USA,OK,,,Oklahoma,,,USA.37_1
+USA,OR,,,Oregon,,,USA.38_1
+USA,PA,,,Pennsylvania,,,USA.39_1
+USA,RI,,,Rhode Island,,,USA.40_1
+USA,SC,,,South Carolina,,,USA.41_1
+USA,SD,,,South Dakota,,,USA.42_1
+USA,TN,,,Tennessee,,,USA.43_1
+USA,TX,,,Texas,,,USA.44_1
+USA,UT,,,Utah,,,USA.45_1
+USA,VT,,,Vermont,,,USA.46_1
+USA,VA,,,Virginia,,,USA.47_1
+USA,WA,,,Washington,,,USA.48_1
+USA,WV,,,West Virginia,,,USA.49_1
+USA,WI,,,Wisconsin,,,USA.50_1
+USA,WY,,,Wyoming,,,USA.51_1
