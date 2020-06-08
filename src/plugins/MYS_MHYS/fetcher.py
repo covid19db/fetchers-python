@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-__all__ = ('MYS_XXXFetcher',)
+__all__ = ('MYS_MHYS',)
 
 """ 
     site-location: https://github.com/ynshung/covid-19-malaysia
@@ -24,9 +24,9 @@ __all__ = ('MYS_XXXFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class MYS_XXXFetcher(AbstractFetcher):
+class MYS_MHYS(AbstractFetcher):
     LOAD_PLUGIN = True
-    SOURCE = 'MYS_GM'
+    SOURCE = 'MYS_MHYS'
 
     def province_confirmed_fetch(self):
 
@@ -36,7 +36,7 @@ class MYS_XXXFetcher(AbstractFetcher):
 
         url = 'https://raw.githubusercontent.com/ynshung/covid-19-malaysia/master/covid-19-my-states-cases.csv'
 
-        logger.debug('Fetching Malaysia province-level confirmed cases from MYS_XXX')
+        logger.debug('Fetching Malaysia province-level confirmed cases from MYS_MHYS')
         return pd.read_csv(url)
 
     def country_fetch(self):
@@ -46,7 +46,7 @@ class MYS_XXXFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/ynshung/covid-19-malaysia/master/covid-19-malaysia.csv'
-        logger.debug('Fetching Malaysia country-level confirmed/dead/icu cases from MYS_XXX')
+        logger.debug('Fetching Malaysia country-level confirmed/dead/icu cases from MYS_MHYS')
 
         return pd.read_csv(url)
 
@@ -75,7 +75,7 @@ class MYS_XXXFetcher(AbstractFetcher):
 
             upsert_obj = {
                 # source is mandatory and is a code that identifies the  source
-                'source': 'MYS_GM',
+                'source': self.SOURCE,
                 # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
                 # country is mandatory and should be in English

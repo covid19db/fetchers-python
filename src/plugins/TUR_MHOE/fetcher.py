@@ -4,7 +4,7 @@ import logging
 import pandas as pd
 import numpy as np
 
-__all__ = ('TUR_XXXFetcher',)
+__all__ = ('TUR_MHOE',)
 
 """ 
     site-location: https://github.com/ozanerturk/covid19-turkey-api
@@ -17,9 +17,9 @@ __all__ = ('TUR_XXXFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class TUR_XXXFetcher(AbstractFetcher):
+class TUR_MHOE(AbstractFetcher):
     LOAD_PLUGIN = True
-    SOURCE = 'TUR_XXX'
+    SOURCE = 'TUR_MHOE'
 
     def country_fetch(self):
         """
@@ -27,7 +27,7 @@ class TUR_XXXFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/ozanerturk/covid19-turkey-api/master/dataset/timeline.csv'
-        logger.debug('Fetching Turkey country-level data from TUR_XXX')
+        logger.debug('Fetching Turkey country-level data from TUR_MHOE')
         return pd.read_csv(url)
 
     def run(self):

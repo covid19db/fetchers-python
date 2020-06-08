@@ -25,7 +25,7 @@ Currently implemented fetchers:
 | POR_MSDS | Portugal | POR | [Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data) | release | adm_area_1: NA or province |
 | GBR_PHTW | United Kingdom | GBR | [Coronavirus (COVID-19) UK Historical Data](https://github.com/tomwhite/covid-19-uk-data) | release | adm_area_1: NA or country, adm_area_2: NA or upper tier/health boards |
 | CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | release | adm_area_1: Canton
-| TUR_XXX | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | release | adm_area_1: NA
+| TUR_MHOE | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | release | adm_area_1: NA
 | BEL_WY | Belgium | BEL | [github:eschnou](https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv) | release | adm_area_1: NA
 | IND_COVIND | India | IND | [COVID19-India API](https://api.covid19india.org/) | release | adm_area_1: NA or State |
 | THA_STAT | Thailand | THA | [Covid-19 Infected Situation Reports](https://covid19.th-stat.com/en/api) | release | adm_area_1: NA or Province |
@@ -53,7 +53,7 @@ Currently implemented fetchers:
 | PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | candidate | adm_area_1: province |
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | candidate | adm_area_3: English lower tier local authority |
 | SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
-| MYS_XXX | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
+| MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | candidate | adm_area_1: Prefecture |
 | USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | candidate | adm_area_1: State |
 
