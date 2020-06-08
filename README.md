@@ -45,17 +45,17 @@ Currently implemented fetchers:
 | NGA_SO | Nigeria | NGA | [Covid-19 Nigeria API](https://github.com/sink-opuba/covid-19-nigeria-api) | release | adm_area_1: state |
 | NGS_CDC | Nigeria | NGA | [Nigeria Centre for Disease Control](https://covid19.ncdc.gov.ng/) | release | adm_area_1: state |
 | RUS_GOV | Russia | RUS | [Russian Government](https://xn--80aesfpebagmfblc0a.xn--p1ai/) | release | adm_area_1: federal subjects |
-| ITA_PC | Italy | ITA | [Protezione Civile](https://github.com/pcm-dpc/COVID-19) | candidate | adm_area_1: [Italian regions](https://en.wikipedia.org/wiki/Regions_of_Italy), adm_area_2: [Italian provinces](https://en.wikipedia.org/wiki/Provinces_of_Italy)|
+| ITA_PC | Italy | ITA | [Protezione Civile](https://github.com/pcm-dpc/COVID-19) | release | adm_area_1: [Italian regions](https://en.wikipedia.org/wiki/Regions_of_Italy), adm_area_2: [Italian provinces](https://en.wikipedia.org/wiki/Provinces_of_Italy)|
 | ITA_PCDM | Italy | ITA | [Davide Magno, from Protezione Civile](https://github.com/DavideMagno/ItalianCovidData) | release | adm_area_1: [Italian region](https://en.wikipedia.org/wiki/Regions_of_Italy) |
 | USA_NYT | United States | USA  | [New York Times](https://github.com/nytimes/covid-19-data) | release | adm_area_1: US State, adm_area_2: county (exception is New York City, which includes more counties) |
 | FRA_SPFCG | France | FRA | [Cedric Guadalupe from Santé Publique France](https://github.com/cedricguadalupe/FRANCE-COVID-19) | release | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France) |
 | DEU_JPGG | Germany | DEU | [Jan-Philip Gehrcke, from the Public Health Offices (Gesundheitsaemter)](https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/) | release | adm_area_1: [German "länder"](https://en.wikipedia.org/wiki/States_of_Germany) |
-| PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | candidate | adm_area_1: province |
-| GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | candidate | adm_area_3: English lower tier local authority |
-| SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | candidate | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
-| MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | candidate | adm_area_1: None or province|
-| JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | candidate | adm_area_1: Prefecture |
-| USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | candidate | adm_area_1: State |
+| PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | release | adm_area_1: province |
+| GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | release | adm_area_3: English lower tier local authority |
+| SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | release | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
+| MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | release | adm_area_1: None or province|
+| JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: Prefecture |
+| USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | release | adm_area_1: State |
 
 
 Explanation of status:
