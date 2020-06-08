@@ -51,7 +51,7 @@ def parseChartData(textTagList):
     if not legendEndFound:
         for idx, val in enumerate(textTagList):
             if idx >= idx_list[-1]:
-                if int(textTagList[idx + 1]) < int(val):
+                if float(textTagList[idx + 1]) < float(val):
                     idx_list.append(idx + 1)
                     break
     if isHeader(textTagList[-1]):
@@ -77,7 +77,7 @@ def parseChartData(textTagList):
 
     # check the last date in the x-axis is what it should be
     lastDateCheck = dates[-1].split(',')[0]
-    if not lastDateCheck == datetime.strftime(lastDate, '%b %#d'):
+    if not lastDateCheck == datetime.strftime(lastDate, '%b %-d'):
         raise Exception('date range does not match length of value list')
 
     # now generate the list of dates
