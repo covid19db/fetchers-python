@@ -8,7 +8,7 @@ COVID19 data source fetchers written in Python3.
 
 Currently implemented fetchers:
 
-| Name     | Country | [Country Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Data source | Status | Regional levels mapping | License / Terms of Use |
+| Name     | Country | [Country Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Data source | Status | Regional levels mapping | Terms of Use |
 |----------|---------|------|--------|--------|-------------------------|--------|
 | GOOGLE_MOBILITY | World | several  | [COVID-19 Community Mobility Reports - Google](https://www.google.com/covid19/mobility/) | release | adm_area_1, adm_area_2: depending on the country |
 | APPLE_MOBILITY | World | several  | [COVID‑19 Mobility Trends Reports - Apple](https://www.apple.com/covid19/mobility) | release | adm_area_1, adm_area_2: depending on the country |
