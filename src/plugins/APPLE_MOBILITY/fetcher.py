@@ -1,7 +1,7 @@
 import os
 import csv
 import logging
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.helper import remove_words
 from .utils import get_recent_apple_mobility_data
@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class AppleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.MOBILITY
     SOURCE = 'APPLE_MOBILITY'
 
     @staticmethod
@@ -56,22 +57,6 @@ class AppleMobilityFetcher(AbstractFetcher):
 
         return country, countrycode, adm_area_1, adm_area_2
 
-    def get_region(self, countrycode: str, input_adm_area_1: str = None, input_adm_area_2: str = None,
-                   input_adm_area_3: str = None):
-        try:
-            # Check if input data can be matched directly into administrative division table
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-        except Exception as ex:
-            adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
-
-        if not gid:
-            # Check translate.csv for translation
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-
-        return adm_area_1, adm_area_2, adm_area_3, gid
-
     def fetch(self):
         return get_recent_apple_mobility_data()
 
@@ -109,7 +94,8 @@ class AppleMobilityFetcher(AbstractFetcher):
                 adm_area_1, adm_area_2, adm_area_3, gid = region_cache.get(key)
             else:
                 adm_area_1, adm_area_2, adm_area_3, gid = self.get_region(
-                    countrycode, input_adm_area_1, input_adm_area_2, None)
+                    countrycode, input_adm_area_1, input_adm_area_2,
+                    suppress_exception=True)
                 region_cache[key] = (adm_area_1, adm_area_2, adm_area_3, gid)
 
             if not gid:

@@ -7,6 +7,16 @@ from typing import Tuple, List
 logger = logging.getLogger(__name__)
 
 
+def area_compare(data1, data2):
+    if data1 == data2:
+        return True
+
+    if isinstance(data1, str) and isinstance(data2, str):
+        return data1.lower().replace(" ", '') == data2.lower().replace(" ", "")
+
+    return False
+
+
 class AdmTranslator:
     def __init__(self, csv_fname: str):
         self.translation_pd = self.load_translation_csv(csv_fname)
@@ -36,15 +46,15 @@ class AdmTranslator:
             return self.cache.get(key)
 
         for index, row in self.translation_pd.iterrows():
-            if row.input_adm_area_1 == input_adm_area_1 \
-                    and row.input_adm_area_2 == input_adm_area_2 \
-                    and row.input_adm_area_3 == input_adm_area_3:
+            if area_compare(row.input_adm_area_1, input_adm_area_1) \
+                    and area_compare(row.input_adm_area_2, input_adm_area_2) \
+                    and area_compare(row.input_adm_area_3, input_adm_area_3):
 
                 if hasattr(row, 'countrycode') and country_code and row.countrycode != country_code:
                     continue
 
                 if row.gid is None:
-                    message = f'Unable to get GID for: {row.adm_area_1} {row.adm_area_2} {row.adm_area_3}'
+                    message = f'Unable to get GID for: {row.adm_area_1}, {row.adm_area_2}, {row.adm_area_3}'
                     if not suppress_exception:
                         raise Exception(message)
                     else:

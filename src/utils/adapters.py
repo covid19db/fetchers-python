@@ -15,9 +15,9 @@ class DataAdapter:
                                     host=config.DB_ADDRESS,
                                     port=config.DB_PORT,
                                     database_name=config.DB_NAME)
-        elif Config.SQLITE:
+        elif config.SQLITE:
             return SqliteHelper(sqlite_file_path=config.SQLITE)
-        elif Config.CSV:
+        elif config.CSV:
             return CSVFileHelper(csv_path=config.CSV)
         else:
             raise ValueError('Unable to select serializer')

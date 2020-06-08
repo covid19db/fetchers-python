@@ -16,17 +16,13 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'KOR_DS4C'
 
-    def fetch(self):
-        url = 'https://raw.githubusercontent.com/jihoo-kim/Data-Science-for-COVID-19/master/dataset/Time/Time.csv'
-        return pd.read_csv(url)
-
-    def fetch_province(self):
-        url = 'https://raw.githubusercontent.com/jihoo-kim/Data-Science-for-COVID-19/master/dataset/Time/TimeProvince.csv'
-        return pd.read_csv(url)
+    def fetch(self, category):
+        return pd.read_csv(f'https://raw.githubusercontent.com/jihoo-kim/'
+                           f'Data-Science-for-COVID-19/master/dataset/Time/{category}.csv')
 
     def run(self):
         logger.debug('Fetching country-level information')
-        data = self.fetch()
+        data = self.fetch('Time')
 
         for index, record in data.iterrows():
             # date, time, test, negative, confirmed, released, deceased
@@ -50,7 +46,7 @@ class SouthKoreaDS4CFetcher(AbstractFetcher):
             self.db.upsert_epidemiology_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
-        data = self.fetch_province()
+        data = self.fetch('TimeProvince')
 
         for index, record in data.iterrows():
             # date, time, province, confirmed, released, deceased

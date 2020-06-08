@@ -10,6 +10,7 @@ from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
 from utils.fetcher_abstract import AbstractFetcher
 from utils.validation import validate_incoming_data
+from utils.decorators import timeit
 
 logger = logging.getLogger(__name__)
 
@@ -50,25 +51,47 @@ class Plugins:
             return run_only_plugins.split(",")
         return None
 
+    @staticmethod
+    def validate(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
+                 data_adapter: AbstractAdapter) -> bool:
+        fetcher_type = plugin_instance.TYPE if hasattr(plugin_instance, 'TYPE') else None
+
+        if fetcher_type.value not in ['epidemiology']:
+            # Exit without verification - fetcher type not supported yet
+            return True
+
+        source_name = plugin_instance.SOURCE if hasattr(plugin_instance, 'SOURCE') else None
+        validation_success = validate_incoming_data(data_adapter, fetcher_type, source_name)
+        if validation_success:
+            logger.info(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
+                        f"result: {validation_success}")
+        else:
+            logger.warning(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
+                           f"result: {validation_success}")
+        return validation_success
+
+    @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
         for plugin in self.available_plugins:
             if self.run_only_plugins and plugin.__name__ not in self.run_only_plugins:
                 continue
-            try:
-                logger.info(f'Running plugin {plugin.__name__} ')
-                if self.validate_input_data:
-                    data_adapter.truncate_staging()
-                instance = plugin(db=data_adapter)
-                instance.run()
-                data_adapter.flush()
-                if self.validate_input_data:
-                    source_name = instance.SOURCE if hasattr(instance, 'SOURCE') else None
-                    result = validate_incoming_data(data_adapter, source_name)
+            self.run_single_plugin(data_adapter, plugin)
 
-                if result or not self.validate_input_data:
-                    logger.info(f"Plugin {plugin.__name__} finished successfully")
-                else:
-                    logger.info(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+    @timeit
+    def run_single_plugin(self, data_adapter: AbstractAdapter, plugin: AbstractFetcher):
+        try:
+            logger.info(f'Running plugin {plugin.__name__} ')
+            if self.validate_input_data:
+                data_adapter.truncate_staging()
+            instance = plugin(db=data_adapter)
+            instance.run()
+            data_adapter.flush()
+            validation_success = self.validate(plugin, instance, data_adapter) if self.validate_input_data else True
 
-            except Exception as ex:
-                logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
+            if validation_success:
+                logger.info(f"Plugin {plugin.__name__} finished successfully")
+            else:
+                logger.warning(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+
+        except Exception as ex:
+            logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)

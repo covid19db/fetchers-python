@@ -2,7 +2,7 @@ import os
 import csv
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 
 __all__ = ('GoogleMobilityFetcher',)
 
@@ -13,28 +13,13 @@ logger = logging.getLogger(__name__)
 
 class GoogleMobilityFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.MOBILITY
     SOURCE = 'GOOGLE_MOBILITY'
 
     def fetch(self):
         # Google covid19 mobility data
         url = 'https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv'
         return pd.read_csv(url, low_memory=False)
-
-    def get_region(self, countrycode: str, input_adm_area_1: str = None, input_adm_area_2: str = None,
-                   input_adm_area_3: str = None):
-        try:
-            # Check if input data can be matched directly into administrative division table
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-        except Exception as ex:
-            adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
-
-        if not gid:
-            # Check translate.csv for translation
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-
-        return adm_area_1, adm_area_2, adm_area_3, gid
 
     def run(self):
         data = self.fetch()
@@ -64,10 +49,13 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 # Use adm_area_2 for Great Britain
                 input_adm_area_2 = input_adm_area_1
                 input_adm_area_1 = '%'
+            elif countrycode == 'JAM' and input_adm_area_1:
+                input_adm_area_1 = remove_words(input_adm_area_1, words=['Parish']) \
+                    .replace('St.', 'Saint').strip()
             elif input_adm_area_1:
                 input_adm_area_1 = remove_words(
                     input_adm_area_1,
-                    words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of'])
+                    words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of', 'Department'])
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
 
@@ -79,7 +67,8 @@ class GoogleMobilityFetcher(AbstractFetcher):
                 adm_area_1, adm_area_2, adm_area_3, gid = region_cache.get(key)
             else:
                 adm_area_1, adm_area_2, adm_area_3, gid = self.get_region(
-                    countrycode, input_adm_area_1, input_adm_area_2, None)
+                    countrycode, input_adm_area_1, input_adm_area_2,
+                    suppress_exception=True)
                 region_cache[key] = (adm_area_1, adm_area_2, adm_area_3, gid)
 
             if not gid:

@@ -1,5 +1,10 @@
 countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
-# Argentina
+AGO,Huila,,,Huíla,,,AGO.10_1
+BFA,Hauts-Bassins,,,Haut-Bassins,,,BFA.9_1
+BOL,Beni,,,El Beni,,,BOL.3_1
+BOL,Potosi,,,Potosí,,,BOL.7_1
+BHS,Freeport,,,City of Freeport,,,BHS.9_1
+# ARG
 ARG,Cordoba,,,Córdoba,,,ARG.6_1
 ARG,Entre Rios,,,Entre Ríos,,,ARG.8_1
 ARG,Neuquen,,,Neuquén,,,ARG.15_1
@@ -20,6 +25,7 @@ ESP,Valencian Community,,,Comunidad Valenciana,,,ESP.10_1
 ESP,of Murcia,,,Región de Murcia,,,ESP.18_1
 ESP,Canary Islands,,,Islas Canarias,,,ESP.14_1
 ESP,Balearic Islands,,,Islas Baleares,,,ESP.13_1
+ESP,Basque Country,,,País Vasco,,,ESP.16_1
 # France
 FRA,Brittany,,,Bretagne,,,FRA.3_1
 FRA,Corsica,,,Corse,,,FRA.5_1
@@ -31,6 +37,7 @@ GRC,Decentralized Administration of Macedonia and Thrace,,,Macedonia and Thrace,
 GRC,"Decentralized Administration of Peloponnese, Western Greece and the Ionian",,,"Peloponnese, Western Greece and the Ionian Islands",,,GRC.7_1
 GRC,Decentralized Administration of Thessaly and Central Greece,,,Thessaly and Central Greece,,,GRC.8_1
 GRC,Decentralized Administration of the Aegean,,,Aegean,,,GRC.1_1
+GRC,Decentralized Administration of Crete,,,Crete,,,GRC.4_1
 # Deutschland
 DEU,Bavaria,,,Bayern,,,DEU.2_1
 DEU,Hesse,,,Hessen,,,DEU.7_1
@@ -69,6 +76,7 @@ POL,Podlaskie Voivodeship,,,Podlaskie,,,POL.10_1
 POL,Pomeranian Voivodeship,,,Pomorskie,,,POL.11_1
 POL,Silesian Voivodeship,,,Śląskie,,,POL.12_1
 POL,Swietokrzyskie,,,Świętokrzyskie,,,POL.13_1
+POL,Świętokrzyskie Voivodeship,,,Świętokrzyskie,,,POL.13_1
 POL,Warmian-Masurian Voivodeship,,,Warmińsko-Mazurskie,,,POL.14_1
 POL,Greater Poland Voivodeship,,,Wielkopolskie,,,POL.15_1
 POL,West Pomeranian Voivodeship,,,Zachodniopomorskie,,,POL.16_1
@@ -78,8 +86,612 @@ SWE,Jamtland,,,Jämtland,,,SWE.6_1
 SWE,Jonkoping,,,Jönköping,,,SWE.7_1
 SWE,Varmland,,,Värmland,,,SWE.17_1
 SWE,Örebro,,,Orebro,,,SWE.11_1
+# AUT
+AUT,Carinthia,,,Carinthia,,,AUT.2_1
+AUT,Lower Austria,,,Lower Austria,,,AUT.3_1
+AUT,Styria,,,Styria,,,AUT.6_1
+AUT,Tyrol,,,Tyrol,,,AUT.7_1
+AUT,Upper Austria,,,Upper Austria,,,AUT.4_1
+AUT,Vienna,,,Vienna,,,AUT.9_1
+# BEL
+BEL,Brussels,,,Brussels,,,BEL.1.1
+BEL,Flanders,,,Flanders,,,BEL.2._1
+BEL,Wallonia,,,Wallonia,,,BEL.3_1
+# BGR
+BGR,Jambol,,,Jambol,,,BGR.28_1
+BGR,Lovec,,,Lovec,,,BGR.9_1
+BGR,Smoljan,,,Smoljan,,,BGR.20_1
+BGR,Sofia City,,,Sofia City,,,BGR.21_1
+BGR,Vraca,,,Vraca,,,BGR.27_1
+BRA,Federal,,,Federal,,,BRA.7_1
+# CHE
+CHE,Basel City,,,Basel City,,,CHE.5_1
+CHE,Canton of Bern,,,Canton of Bern,,,CHE.6_1
+CHE,Canton of Zug,,,Canton of Zug,,,CHE.25_1
+CHE,Geneva,,,Geneva,,,CHE.8_1
+CHE,Grisons,,,Grisons,,,CHE.10_1
+CHE,St. Gallen,,,St. Gallen,,,CHE.16_1
+CHE,Zurich,,,Zurich,,,CHE.26_1
+# CHL
+CHL,Araucania,,,Araucania,,,CHL.3_1
+CHL,Aysén,,,Aysén,,,CHL.1_1
+CHL,Bio Bio,,,Bio Bio,,,CHL.6_1
+CHL,Magallanes and Chilean Antarctica,,,Magallanes and Chilean Antarctica,,,CHL.11_1
+CHL,O'Higgins,,,O'Higgins,,,CHL.8_1
+CHL,Santiago Metropolitan,,,Santiago Metropolitan,,,CHL.14_1
+# COL
+COL,Bogota,,,Bogota,,,COL.14.79_1
+COL,Bolivar,,,Bolivar,,,COL.5_1
+COL,Boyaca,,,Boyaca,,,COL.6_1
+COL,Caqueta,,,Caqueta,,,COL.8_1
+COL,Choco,,,Choco,,,COL.12_1
+COL,Narino,,,Narino,,,COL.21_1
+COL,North Santander,,,North Santander,,,COL.22_1
+COL,Quindio,,,Quindio,,,COL.24_1
+COL,San Andres and Providencia,,,San Andres and Providencia,,,COL.26_1
+COL,Atlantico,,,Atlántico,,,COL.4_1
+COL,Cordoba,,,Córdoba,,,COL.13_1
+# CHE
+CZE,Central Bohemian,,,Central Bohemian,,,CZE.12_1
+CZE,Hradec Králové,,,Hradec Králové,,,CZE.5_1
+CZE,Karlovy Vary,,,Karlovy Vary,,,CZE.3_1
+CZE,Liberec,,,Liberec,,,CZE.6_1
+CZE,Moravian-Silesian,,,Moravian-Silesian,,,CZE.7_1
+CZE,Olomouc,,,Olomouc,,,CZE.8_1
+CZE,Pardubice,,,Pardubice,,,CZE.9_1
+CZE,Plzeň,,,Plzeň,,,CZE.10_1
+CZE,South Bohemian,,,South Bohemian,,,CZE.1_1
+CZE,South Moravian,,,South Moravian,,,CZE.2_1
+CZE,Vysocina,,,Vysocina,,,CZE.4_1
+CZE,Zlin,,,Zlin,,,CZE.14_1
+CZE,Ústí nad Labem,,,Ústí nad Labem,,,CZE.13_1
+# DNK
+DNK,Capital  of Denmark,,,Capital  of Denmark,,,DNK.1_1
+DNK,Central Denmark,,,Central Denmark,,,DNK.2_1
+DNK,North Denmark,,,North Denmark,,,DNK.3_1
+DNK,Zealand,,,Zealand,,,DNK.4_1
+DNK,of Southern Denmark,,,of Southern Denmark,,,DNK.5_1
+# EGY
+EGY,Al Qalyubia,,,Al Qalyubia,,,EGY.12_1
+EGY,Alexandria,,,Alexandria,,,EGY.6_1
+EGY,Ash Sharqia,,,Ash Sharqia,,,EGY.16_1
+EGY,Assiut,,,Assiut,,,EGY.18_1
+EGY,Beni Suef,,,Beni Suef,,,EGY.19_1
+EGY,Cairo,,,Cairo,,,EGY.11_1
+EGY,Dakahlia,,,Dakahlia,,,EGY.1_1
+EGY,Damietta,,,Damietta,,,EGY.21_1
+EGY,El Beheira,,,El Beheira,,,EGY.3_1
+EGY,Faiyum,,,Faiyum,,,EGY.4_1
+EGY,Gharbia,,,Gharbia,,,EGY.5_1
+EGY,Giza,,,Giza,,,EGY.8_1
+EGY,Ismailia,,,Ismailia,,,EGY.7_1
+EGY,Kafr El Sheikh,,,Kafr El Sheikh,,,EGY.23_1
+EGY,Luxor,,,Luxor,,,EGY.13_1
+EGY,Menia,,,Menia,,,EGY.10_1
+EGY,Menofia,,,Menofia,,,EGY.9_1
+EGY,New Valley,,,New Valley,,,EGY.14_1
+EGY,North Sinai,,,North Sinai,,,EGY.26_1
+EGY,Port Said,,,Port Said,,,EGY.20_1
+EGY,Qena,,,Qena,,,EGY.25_1
+EGY,Red Sea,,,Red Sea,,,EGY.2_1
+EGY,Sohag,,,Sohag,,,EGY.27_1
+EGY,South Sinai,,,South Sinai,,,EGY.22_1
+EGY,Suez,,,Suez,,,EGY.15_1
+# FIN
+FIN,Central Finland,,,Central Finland,,,FIN.5.1_1
+FIN,Central Ostrobothnia,,,Central Ostrobothnia,,,FIN.5.2_1
+FIN,Kainuu,,,Kainuu,,,FIN.3.1_1
+FIN,Kymenlaakso,,,Kymenlaakso,,,FIN.4.2_1
+FIN,North Karelia,,,North Karelia,,,FIN.1.1_1
+FIN,Northern Ostrobothnia,,,Northern Ostrobothnia,,,FIN.3.2_1
+FIN,Northern Savonia,,,Northern Savonia,,,FIN.1.2_1
+FIN,Ostrobothnia,,,Ostrobothnia,,,FIN.5.4_1
+FIN,Pirkanmaa,,,Pirkanmaa,,,FIN.5.6_1
+FIN,Päijänne Tavastia,,,Päijänne Tavastia,,,FIN.1.3_1:FIN.4.3_1:FIN5.5_1
+FIN,Satakunta,,,Satakunta,,,FIN.5.7_1
+FIN,South Karelia,,,South Karelia,,,FIN.4.4_1
+FIN,Southern Ostrobothnia,,,Southern Ostrobothnia,,,FIN.5.8_1
+FIN,Southern Savonia,,,Southern Savonia,,,FIN.1.4_1
+FIN,Southwest Finland,,,Southwest Finland,,,FIN.5.3_1
+FIN,Tavastia Proper,,,Tavastia Proper,,,FIN.5.9_1
+FIN,Uusimaa,,,Uusimaa,,,FIN.4.1_1:FIN.4.5_1
+# GBR
+GBR,%,Aberdeen City,,Scotland,Aberdeen,,GBR.3.1_1
+GBR,%,Angus Council,,Scotland,Angus,,GBR.3.3_1
+GBR,%,Ards and North Down,,Northern Ireland,North Down and Ards,,GBR.2.11_1
+GBR,%,Argyll and Bute Council,,Scotland,Argyll and Bute,,GBR.3.4_1
+GBR,%,"Armagh City, Banbridge and Craigavon",,Northern Ireland,"Armagh, Banbridge and Craigavon",,GBR.2.2_1
+GBR,%,Bedford,,England,Bedfordshire,Bedford,GBR.1.3.1_1
+GBR,%,Borough of Halton,,England,Halton,,GBR.1.37_1
+GBR,%,Bridgend County Borough,,Wales,Bridgend,,GBR.4.3_1
+GBR,%,Caerphilly County Borough,,Wales,Caerphilly,,GBR.4.4_1
+GBR,%,City of Bristol,,England,Bristol,,GBR.1.12_1
+GBR,%,Conwy Principal Area,,Wales,Conwy,,GBR.4.8_1
+GBR,%,County Durham,,England,Durham,,GBR.1.30_1
+GBR,%,Dundee City Council,,Scotland,Dundee,,GBR.3.7_1
+GBR,%,East Ayrshire Council,,Scotland,East Ayrshire,,GBR.3.8_1
+GBR,%,East Dunbartonshire Council,,Scotland,East Dunbartonshire,,GBR.3.9_1
+GBR,%,East Lothian Council,,Scotland,East Lothian,,GBR.3.10_1
+GBR,%,East Renfrewshire Council,,Scotland,East Renfrewshire,,GBR.3.11_1
+GBR,%,Glasgow City,,Scotland,Glasgow,,GBR.3.16_1
+GBR,%,Greater Manchester,,England,Manchester,,GBR.1.54_1
+GBR,%,Highland Council,,Scotland,Highland,,GBR.3.17_1
+GBR,%,Isle of Anglesey,,Wales,Anglesey,,GBR.4.1_1
+GBR,%,Merseyside,,%,Merseyside,,GBR.1.47_1:GBR.1.79_1:GBR.1.82_1:GBR.1.114_1
+GBR,%,Merthyr Tydfil County Borough,,Wales,Merthyr Tydfil,,GBR.4.12_1
+GBR,%,Na h-Eileanan an Iar,,Scotland,Eilean Siar,,GBR.3.13_1
+GBR,%,Neath Port Talbot Principle Area,,Wales,Neath Port Talbot,,GBR.4.14_1
+GBR,%,North Ayrshire Council,,Scotland,North Ayrshire,,GBR.3.21_1
+GBR,%,North East Lincolnshire,,England,Lincolnshire,North East Lincolnshire,GBR.1.52.4_1
+GBR,%,Orkney,,Scotland,Orkney Islands,,GBR.3.23_1
+GBR,%,Perth and Kinross,,Scotland,Perthshire and Kinross,,GBR.3.24_1
+GBR,%,South Ayrshire Council,,Scotland,South Ayrshire,,GBR.3.28_1
+GBR,%,South Yorkshire,,%,South Yorkshire,,GBR.1.1_1:GBR.1.27_1:GBR.1.77_1:GBR.1.83_1
+GBR,%,Torfaen Principal Area,,Wales,Torfaen,,GBR.4.20_1
+GBR,%,Tyne and Wear,,%,Tyne and Wear,,GBR.1.34_1:GBR.1.58_1:GBR.1.62_1:GBR.1.89_1:GBR.1.97_1
+GBR,%,West Dunbartonshire Council,,Scotland,West Dunbartonshire,,GBR.3.31_1
+GBR,%,West Midlands,,%,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1:GBR.1.86_1:GBR.1.106_1:GBR.1.116_1
+GBR,%,West Yorkshire,,%,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
+GBR,%,Wrexham Principal Area,,Wales,Wrexham,,GBR.4.22_1
+GBR,%,Bristol City,,England,Bristol,,GBR.1.12_1
+
+# HRV
+HRV,Bjelovar-Bilogora,,,Bjelovar-Bilogora,,,HRV.1_1
+HRV,Brod-Posavina,,,Brod-Posavina,,,HRV.2_1
+HRV,City of Zagreb,,,City of Zagreb,,,HRV.4_1
+HRV,Dubrovnik-Neretva,,,Dubrovnik-Neretva,,,HRV.3_1
+HRV,Istria,,,Istria,,,HRV.5_1
+HRV,Karlovac,,,Karlovac,,,HRV.6_1
+HRV,Koprivnica-Križevci,,,Koprivnica-Križevci,,,HRV.7_1
+HRV,Krapina-Zagorje,,,Krapina-Zagorje,,,HRV.8_1
+HRV,Lika-Senj,,,Lika-Senj,,,HRV.9_1
+HRV,Međimurje,,,Međimurje,,,HRV.10_1
+HRV,Osijek-Baranja,,,Osijek-Baranja,,,HRV.11_1
+HRV,Požega-Slavonia,,,Požega-Slavonia,,,HRV.12_1
+HRV,Primorje-Gorski Kotar,,,Primorje-Gorski Kotar,,,HRV.13_1
+HRV,Sisak-Moslavina,,,Sisak-Moslavina,,,HRV.15_1
+HRV,Split-Dalmatia,,,Split-Dalmatia,,,HRV.16_1
+HRV,Varaždin,,,Varaždin,,,HRV.17_1
+HRV,Virovitica-Podravina,,,Virovitica-Podravina,,,HRV.18_1
+HRV,Vukovar-Srijem,,,Vukovar-Srijem,,,HRV.19_1
+HRV,Zadar,,,Zadar,,,HRV.20_1
+HRV,Zagreb,,,Zagreb,,,HRV.21_1
+HRV,Šibenik-Knin,,,Šibenik-Knin,,,HRV.14_1
+# IDN
+IDN,Bangka Belitung Islands,,,Bangka Belitung Islands,,,IDN.3_1
+IDN,Central Java,,,Central Java,,,IDN.10_1
+IDN,Central Kalimantan,,,Central Kalimantan,,,IDN.14_1
+IDN,Central Sulawesi,,,Central Sulawesi,,,IDN.27_1
+IDN,East Java,,,East Java,,,IDN.11_1
+IDN,East Kalimantan,,,East Kalimantan,,,IDN.15.1_1:IDN.15.2_1:IDN.15.3_1:IDN.15.5_1:IDN.15.6_1:IDN.15.7_1:IDN.15.10_1:IDN.15.11_1:IDN.15.12_1
+IDN,East Nusa Tenggara,,,East Nusa Tenggara,,,IDN.21_1
+IDN,Jakarta,,,Jakarta,,,IDN.7_1
+IDN,North Kalimantan,,,North Kalimantan,,,IDN.15.4_1:IDN.15.8_1:IDN.15.9_1:IDN.15.13_1:IDN.15.14_1
+IDN,North Maluku,,,North Maluku,,,IDN.18_1
+IDN,North Sulawesi,,,North Sulawesi,,,IDN.29_1
+IDN,North Sumatra,,,North Sumatra,,,IDN.32_1
+IDN,Riau Islands,,,Riau Islands,,,IDN.24_1
+IDN,South East Sulawesi,,,South East Sulawesi,,,IDN.28_1
+IDN,South Kalimantan,,,South Kalimantan,,,IDN.13_1
+IDN,South Sulawesi,,,South Sulawesi,,,IDN.26_1
+IDN,South Sumatra,,,South Sumatra,,,IDN.31_1
+IDN,Special  of Yogyakarta,,,Special  of Yogyakarta,,,IDN.33_1
+IDN,West Java,,,West Java,,,IDN.9_1
+IDN,West Kalimantan,,,West Kalimantan,,,IDN.12_1
+IDN,West Nusa Tenggara,,,West Nusa Tenggara,,,IDN.20_1
+IDN,West Papua,,,West Papua,,,IDN.22_1
+IDN,West Sulawesi,,,West Sulawesi,,,IDN.25_1
+IDN,West Sumatra,,,West Sumatra,,,IDN.30_1
+IND,Andaman and Nicobar Islands,,,Andaman and Nicobar Islands,,,IND.1_1
+IND,Delhi,,,Delhi,,,IND.25_1
+# ISR
+ISR,Center,,,Center,,,ISR.4_1
+ISR,North,,,North,,,ISR.5_1
+ISR,South,,,South,,,ISR.2_1
+# KWT
+KWT,Al Asimah Governate,,,Al Asimah Governate,,,KWT.4_1
+KWT,Al Jahra,,,Al Jahra,,,KWT.3_1
+# LTU
+LTU,Alytus,,,Alytus,,,LTU.1_1
+LTU,Kaunas,,,Kaunas,,,LTU.2_1
+LTU,Klaipėda,,,Klaipėda,,,LTU.3_1
+LTU,Marijampolė,,,Marijampolė,,,LTU.4_1
+LTU,Panevėžys,,,Panevėžys,,,LTU.5_1
+LTU,Tauragė,,,Tauragė,,,LTU.7_1
+LTU,Utena,,,Utena,,,LTU.9_1
+LTU,Vilnius,,,Vilnius,,,LTU.10_1
+# LVA
+LVA,Aizkraukle Municipality,,,Aizkraukle Municipality,,,None
+LVA,Aloja Municipality,,,Aloja Municipality,,,None
+LVA,Alūksne Municipality,,,Alūksne Municipality,,,None
+LVA,Babīte Municipality,,,Babīte Municipality,,,None
+LVA,Baldone Municipality,,,Baldone Municipality,,,None
+LVA,Balvi Municipality,,,Balvi Municipality,,,None
+LVA,Bauska Municipality,,,Bauska Municipality,,,None
+LVA,Burtnieki Municipality,,,Burtnieki Municipality,,,None
+LVA,Carnikava Municipality,,,Carnikava Municipality,,,None
+LVA,City of Liepāja,,,City of Liepāja,,,None
+LVA,Cēsis Municipality,,,Cēsis Municipality,,,None
+LVA,Daugavpils,,,Daugavpils,,,None
+LVA,Daugavpils Municipality,,,Daugavpils Municipality,,,None
+LVA,Dobele Municipality,,,Dobele Municipality,,,None
+LVA,Engure Municipality,,,Engure Municipality,,,None
+LVA,Garkalne Municipality,,,Garkalne Municipality,,,None
+LVA,Grobiņa Municipality,,,Grobiņa Municipality,,,None
+LVA,Gulbene Municipality,,,Gulbene Municipality,,,None
+LVA,Iecava Municipality,,,Iecava Municipality,,,None
+LVA,Ikšķile Municipality,,,Ikšķile Municipality,,,None
+LVA,Inčukalns Municipality,,,Inčukalns Municipality,,,None
+LVA,Jelgava,,,Jelgava,,,None
+LVA,Jelgava Municipality,,,Jelgava Municipality,,,None
+LVA,Jēkabpils,,,Jēkabpils,,,None
+LVA,Jēkabpils Municipality,,,Jēkabpils Municipality,,,None
+LVA,Jūrmala,,,Jūrmala,,,None
+LVA,Kocēni Municipality,,,Kocēni Municipality,,,None
+LVA,Krimulda Municipality,,,Krimulda Municipality,,,None
+LVA,Krāslava Municipality,,,Krāslava Municipality,,,None
+LVA,Kuldīga Municipality,,,Kuldīga Municipality,,,None
+LVA,Lielvārde Municipality,,,Lielvārde Municipality,,,None
+LVA,Limbaži Municipality,,,Limbaži Municipality,,,None
+LVA,Madona Municipality,,,Madona Municipality,,,None
+LVA,Mārupe Municipality,,,Mārupe Municipality,,,None
+LVA,Ogre Municipality,,,Ogre Municipality,,,None
+LVA,Olaine Municipality,,,Olaine Municipality,,,None
+LVA,Ozolnieki Municipality,,,Ozolnieki Municipality,,,None
+LVA,Preiļi Municipality,,,Preiļi Municipality,,,None
+LVA,Priekuļi Municipality,,,Priekuļi Municipality,,,None
+LVA,Ropaži Municipality,,,Ropaži Municipality,,,None
+LVA,Rēzekne,,,Rēzekne,,,None
+LVA,Rēzekne Municipality,,,Rēzekne Municipality,,,None
+LVA,Salacgrīva Municipality,,,Salacgrīva Municipality,,,None
+LVA,Salaspils Municipality,,,Salaspils Municipality,,,None
+LVA,Saldus Municipality,,,Saldus Municipality,,,None
+LVA,Saulkrasti Municipality,,,Saulkrasti Municipality,,,None
+LVA,Sigulda Municipality,,,Sigulda Municipality,,,None
+LVA,Smiltene Municipality,,,Smiltene Municipality,,,None
+LVA,Stopiņi Municipality,,,Stopiņi Municipality,,,None
+LVA,Talsi Municipality,,,Talsi Municipality,,,None
+LVA,Tukums Municipality,,,Tukums Municipality,,,None
+LVA,Valmiera,,,Valmiera,,,None
+LVA,Ventspils,,,Ventspils,,,None
+LVA,Ventspils Municipality,,,Ventspils Municipality,,,None
+LVA,Ādaži Municipality,,,Ādaži Municipality,,,None
+LVA,Ķegums Municipality,,,Ķegums Municipality,,,None
+LVA,Ķekava Municipality,,,Ķekava Municipality,,,None
+# MEX
+MEX,Mexico,,,Mexico,,,MEX.15_1
+MEX,Mexico City,,,Mexico City,,,MEX.9_1
+MEX,Nuevo Leon,,,Nuevo Leon,,,MEX.19_1
+MEX,San Luis Potosi,,,San Luis Potosi,,,MEX.24_1
+MEX,Yucatan,,,Yucatan,,,MEX.31_1
+# MUS
+MUS,Rivière Noire,,,Rivière Noire,,,MUS.2_1
+MUS,Rodrigues,,,Rodrigues,,,MUS.10_1
+# NGA
+NGA,Nasarawa,,,Nasarawa,,,NGA.26_1
+NGA,Ogun State,,,Ogun State,,,NGA.28_1
+# NDL
+NLD,North Brabant,,,North Brabant,,,NLD.8_1
+NLD,North Holland,,,North Holland,,,NLD.9_1
+NLD,South Holland,,,South Holland,,,NLD.14_1
+# NOR
+NOR,Agder,,,Agder,,,NOR.3_1:NOR.18_1
+NOR,Innlandet,,,Innlandet,,,NOR.6_1:NOR.11_1
+NOR,Troms og Finnmark,,,Troms og Finnmark,,,NOR.5_1:NOR.17_1
+NOR,Trøndelag,,,Trøndelag,,,NOR.9_1:NOR.15_1
+NOR,Vestfold og Telemark,,,Vestfold og Telemark,,,NOR.19_1:NOR.16_1
+NOR,Vestland,,,Vestland,,,NOR.7_1:NOR.14_1
+NOR,Viken,,,Viken,,,NOR.1_1:NOR.2_1:NOR.4_1
+# PER
+PER,Apurimac,,,Apurimac,,,PER.3_1
+PER,Huanuco,,,Huanuco,,,PER.10_1
+PER,Junin,,,Junin,,,PER.12_1
+PER,Metropolitan Municipality of Lima,,,Metropolitan Municipality of Lima,,,PER.15_1
+PER,San Martin,,,San Martin,,,PER.23_1
+# PRT
+PRT,Lisbon,,,Lisbon,,,PRT.12_1
+PRT,Setubal,,,Setubal,,,PRT.17_1
+# SAU
+SAU,Al Jowf,,,Al Jowf,,,SAU.4_1
+SAU,Al Qassim,,,Al Qassim,,,SAU.6_1
+SAU,Aseer,,,Aseer,,,SAU.1_1
+SAU,Eastern,,,Eastern,,,SAU.8_1
+SAU,Jazan,,,Jazan,,,SAU.10_1
+SAU,Northern Borders,,,Northern Borders,,,SAU.3_1
+SAU,Riyadh,,,Riyadh,,,SAU.7_1
+# SVK
+SVK,Banská Bystrica,,,Banská Bystrica,,,SVK.1_1
+SVK,Bratislava,,,Bratislava,,,SVK.2_1
+SVK,Košice,,,Košice,,,SVK.3_1
+SVK,Nitra,,,Nitra,,,SVK.4_1
+SVK,Prešov,,,Prešov,,,SVK.5.7_1
+SVK,Trenčín,,,Trenčín,,,SVK.6.9_1
+SVK,Trnava,,,Trnava,,,SVK.7_1
+SVK,Žilina,,,Žilina,,,SVK.8_1
+SVN,Administrative unit Maribor,,,Administrative unit Maribor,,,SVN.8.15_1
+SVN,Ajdovščina,,,Ajdovščina,,,SVN.2.1_1
+SVN,Brežice,,,Brežice,,,SVN.11.1_1
+SVN,Celje,,,Celje,,,SVN.10.3_1
+SVN,Cerknica,,,Cerknica,,,SVN.5.2_1
+SVN,Domžale,,,Domžale,,,SVN.7.6_1
+SVN,Dravograd,,,Dravograd,,,SVN.4.2_1
+SVN,Gornja Radgona,,,Gornja Radgona,,,SVN.9.5_1
+SVN,Grosuplje,,,Grosuplje,,,SVN.7.7_1
+SVN,Idrija,,,Idrija,,,SVN.2.5_1
+SVN,Ilirska Bistrica,,,Ilirska Bistrica,,,SVN.5.3_1
+SVN,Izola,,,Izola,,,SVN.6.3_1
+SVN,Jesenice,,,Jesenice,,,SVN.1.5_1
+SVN,Kamnik,,,Kamnik,,,SVN.7.11_1
+SVN,Koper,,,Koper,,,SVN.6.5_1
+SVN,Kočevje,,,Kočevje,,,SVN.3.3_1
+SVN,Kranj,,,Kranj,,,SVN.1.7_1
+SVN,Krško,,,Krško,,,SVN.11.2_1
+SVN,Laško,,,Laško,,,SVN.10.8_1
+SVN,Lenart,,,Lenart,,,SVN.8.12_1
+SVN,Lendava,,,Lendava,,,SVN.9.12_1
+SVN,Litija,,,Litija,,,SVN.7.13_1
+SVN,Ljubljana,,,Ljubljana,,,SVN.7.14_1
+SVN,Ljutomer,,,Ljutomer,,,SVN.9.13_1
+SVN,Logatec,,,Logatec,,,SVN.7.15_1
+SVN,Metlika,,,Metlika,,,SVN.3.6_1
+SVN,Mozirje,,,Mozirje,,,SVN.10.11_1
+SVN,Municipality of Hrastnik,,,Municipality of Hrastnik,,,SVN.12.1_1
+SVN,Murska Sobota,,,Murska Sobota,,,SVN.9.15_1
+SVN,Nova Gorica,,,Nova Gorica,,,SVN.2.9_1
+SVN,Novo Mesto,,,Novo Mesto,,,SVN.3.8_1
+SVN,Ormož,,,Ormož,,,SVN.8.19_1
+SVN,Pesnica,,,Pesnica,,,SVN.8.20_1
+SVN,Piran,,,Piran,,,SVN.6.6_1
+SVN,Postojna,,,Postojna,,,SVN.5.6_1
+SVN,Ptuj,,,Ptuj,,,SVN.8.22_1
+SVN,Radlje ob Dravi,,,Radlje ob Dravi,,,SVN.4.8_1
+SVN,Radovljica,,,Radovljica,,,SVN.1.11_1
+SVN,Ravne na Koroškem,,,Ravne na Koroškem,,,SVN.4.9_1
+SVN,Ribnica,,,Ribnica,,,SVN.3.10_1
+SVN,Ruše,,,Ruše,,,SVN.8.24_1
+SVN,Sevnica,,,Sevnica,,,SVN.11.3_1
+SVN,Sežana,,,Sežana,,,SVN.6.7_1
+SVN,Slovenj Gradec,,,Slovenj Gradec,,,SVN.4.11_1
+SVN,Slovenska Bistrica,,,Slovenska Bistrica,,,SVN.8.27_1
+SVN,Slovenske Konjice,,,Slovenske Konjice,,,SVN.10.20_1
+SVN,Tolmin,,,Tolmin,,,SVN.2.11_1
+SVN,Trbovlje,,,Trbovlje,,,SVN.12.2_1
+SVN,Trebnje,,,Trebnje,,,SVN.3.15_1
+SVN,Tržič,,,Tržič,,,SVN.1.14_1
+SVN,Velenje,,,Velenje,,,SVN.10.27_1
+SVN,Vrhnika,,,Vrhnika,,,SVN.7.24_1
+SVN,Zagorje ob Savi,,,Zagorje ob Savi,,,SVN.12.3_1
+SVN,Črnomelj,,,Črnomelj,,,SVN.3.1_1
+SVN,Šentjur,,,Šentjur,,,SVN.10.19_1
+SVN,Škofja Loka,,,Škofja Loka,,,SVN.1.13_1
+SVN,Šmarje pri Jelšah,,,Šmarje pri Jelšah,,,SVN.10.21_1
+SVN,Žalec,,,Žalec,,,SVN.10.31_1
+URY,Artigas Department,,,Artigas Department,,,URY.1_1
+URY,Canelones Department,,,Canelones Department,,,URY.2_1
+URY,Cerro Largo Department,,,Cerro Largo Department,,,URY.3_1
+URY,Colonia Department,,,Colonia Department,,,URY.4_1
+URY,Durazno Department,,,Durazno Department,,,URY.5_1
+URY,Flores Department,,,Flores Department,,,URY.6_1
+URY,Florida Department,,,Florida Department,,,URY.7_1
+URY,Lavalleja Department,,,Lavalleja Department,,,URY.8_1
+URY,Maldonado Department,,,Maldonado Department,,,URY.9_1
+URY,Montevideo Department,,,Montevideo Department,,,URY.10_1
+URY,Paysandú Department,,,Paysandú Department,,,URY.11_1
+URY,Rivera Department,,,Rivera Department,,,URY.13_1
+URY,Rocha Department,,,Rocha Department,,,URY.14_1
+URY,Río Negro Department,,,Río Negro Department,,,URY.12_1
+URY,Salto Department,,,Salto Department,,,URY.15_1
+URY,San José Department,,,San José Department,,,URY.16_1
+URY,Soriano Department,,,Soriano Department,,,URY.17_1
+URY,Tacuarembó Department,,,Tacuarembó Department,,,URY.18_1
+URY,Treinta y Tres Department,,,Treinta y Tres Department,,,URY.19_1
 # USA
 USA,Missouri,Ste. Genevieve,,Missouri,Sainte Genevieve,,USA.26.96_1
 USA,New Mexico,Doña Ana,,New Mexico,Dona Ana,,USA.32.8_1
 USA,Alaska,Kenai Peninsula Borough,,Alaska,Kenai Peninsula,,USA.2.11_1
+USA,South Dakota,Oglala Lakota,,South Dakota,Shannon,,USA.42.56_1
+# CIV
+CIV,Abidjan Autonomous,,,Abidjan,,,CIV.1_1
+# CMR
+CMR,Adamawa,,,Adamaoua,,,CMR.1_1
+CMR,East,,,Est,,,CMR.3_1
+CMR,Far North,,,Extrême-Nord,,,CMR.4_1
+CMR,North,,,Nord,,,CMR.7_1
+CMR,Northwest,,,Nord-Ouest,,,CMR.6_1
+CMR,South,,,Sud,,,CMR.10_1
+CMR,Southwest,,,Sud-Ouest,,,CMR.9_1
+CMR,West,,,Ouest,,,CMR.8_1
 
+DOM,Baoruco,,,Bahoruco,,,DOM.2_1
+DOM,El Seibo,,,El Seybo,,,DOM.7_1
+DOM,Hermanas Mirabal,,,Salcedo,,,DOM.22_1
+# ECU
+ECU,Bolívar,,,Bolivar,,,ECU.2_1
+ECU,Galápagos Islands,,,Galápagos,,,ECU.9_1
+ECU,Los Ríos,,,Los Rios,,,ECU.13_1
+ECU,Manabí,,,Manabi,,,ECU.14_1
+ECU,Provincia de Napo,,,Napo,,,ECU.16_1
+ECU,Santo Domingo de los Tsáchilas,,,Santo Domingo de los Tsachilas,,,ECU.21_1
+ECU,Sucumbíos,,,Sucumbios,,,ECU.22_1
+# GAB
+GAB,Haut-Ogooue,,,Haut-Ogooué,,,GAB.2_1
+GAB,Ogooue-Maritime,,,Ogooué-Maritime,,,GAB.8_1
+# GTM
+GTM,Quetzaltenango,,,Quezaltenango,,,GTM.13_1
+GTM,Suchitepequez,,,Suchitepéquez,,,GTM.20_1
+# HND
+HND,Bay Islands,,,Islas de la Bahía,,,HND.11_1
+# HTI
+HTI,Artibonite,,,L'Artibonite,,,HTI.3_1
+# JOR
+JOR,Ajloun,,,Ajlun,,,JOR.1_1
+JOR,Jerash,,,Jarash,,,JOR.6_1
+# KGZ
+KGZ,Chuy,,,Chüy,,,KGZ.3_1
+KGZ,Issyk-Kul,,,Ysyk-Köl,,,KGZ.9_1
+# KHM
+KHM,Banteay Meanchey,,,Bântéay Méanchey,,,KHM.1_1
+KHM,Battambang,,,Batdâmbâng,,,KHM.2_1
+KHM,Kampong Cham,,,Kâmpóng Cham,,,KHM.3_1
+KHM,Kampong Chhnang,,,Kâmpóng Chhnang,,,KHM.4_1
+KHM,Kampong Speu,,,Kâmpóng Spœ,,,KHM.5_1
+KHM,Kampong Thom,,,Kâmpóng Thum,,,KHM.6_1
+KHM,Kampot,,,Kâmpôt,,,KHM.7_1
+KHM,Kandal,,,Kândal,,,KHM.8_1
+KHM,Koh Kong,,,Kaôh Kong,,,KHM.9_1
+KHM,Kratié,,,Krâchéh,,,KHM.11_1
+KHM,Mondulkiri,,,Môndól Kiri,,,KHM.14_1
+KHM,Oddar Meanchey,,,Otdar Mean Chey,,,KHM.15_1
+KHM,Pailin,,,Krong Pailin,,,KHM.12_1
+KHM,Preah Vihear,,,Preah Vihéar,,,KHM.18_1
+KHM,Prey Veng,,,Prey Vêng,,,KHM.19_1
+KHM,Pursat,,,Pouthisat,,,KHM.17_1
+KHM,Ratanakiri,,,Rôtânôkiri,,,KHM.20_1
+KHM,Siem Reap,,,Siemréab,,,KHM.21_1
+KHM,Sihanoukville,,,Krong Preah Sihanouk,,,KHM.13_1
+KHM,Steung Treng,,,Stœng Trêng,,,KHM.22_1
+KHM,Takéo,,,Takêv,,,KHM.24_1
+# LBN
+LBN,Baalbek-Hermel,,,Baalbak - Hermel,,,LBN.2_1
+LBN,Beqaa,,,Bekaa,,,LBN.4_1
+# LBY
+LBY,Benghazi district,,,Benghazi,,,LBY.12_1
+LBY,Butnan,,,Al Butnan,,,LBY.1_1
+LBY,Jabal al Akhdar,,,Al Jabal al Akhdar,,,LBY.2_1
+LBY,Jabal al Gharbi,,,Al Jabal al Gharbi,,,LBY.3_1
+LBY,Misrata,,,Misratah,,,LBY.15_1
+LBY,Murqub,,,Al Marqab,,,LBY.8_1
+LBY,Nuqat al Khams,,,An Nuqat al Khams,,,LBY.10_1
+LBY,Zawiya,,,Az Zawiyah,,,LBY.11_1
+# MNG
+MNG,Darkhan-Uul,,,Darhan-Uul,,,MNG.5_1
+MNG,Orkhon,,,Orhon,,,MNG.16_1
+# MOZ
+MOZ,Niassa,,,Nassa,,,MOZ.8_1
+# MYS
+MYS,Federal Territory of Kuala Lumpur,,,Kuala Lumpur,,,MYS.4_1
+MYS,Labuan Federal Territory,,,Labuan,,,MYS.5_1
+MYS,Malacca,,,Melaka,,,MYS.6_1
+MYS,Penang,,,Pulau Pinang,,,MYS.11_1
+MYS,Terengganu,,,Trengganu,,,MYS.16_1
+# NER
+NER,Niamey Urban Community,,,Niamey,,,NER.5_1
+# NIC
+NIC,Esteli,,,Estelí,,,NIC.7_1
+NIC,Leon,,,León,,,NIC.11_1
+NIC,North Caribbean Coast Autonomous,,,Atlántico Norte,,,NIC.1_1
+NIC,South Caribbean Coast Autonomous,,,Atlántico Sur,,,NIC.2_1
+# OMN
+OMN,Ad Dakhiliyah ‍,,,Ad Dakhliyah,,,OMN.1_1
+OMN,Ad Dhahirah,,,Al Dhahira,,,OMN.5_1
+# PAK
+PAK,Azad Jammu and Kashmir,,,Azad Kashmir,,,PAK.1_1
+PAK,Balochistan,,,Baluchistan,,,PAK.2_1
+PAK,Federally Administered Tribal Area,,,F.A.T.A.,,,PAK.3_1
+PAK,Gilgit-Baltistan,,,Northern Areas,,,PAK.6_1
+PAK,Islamabad Capital Territory,,,F.C.T.,,,PAK.4_1
+PAK,Khyber Pakhtunkhwa,,,N.W.F.P.,,,PAK.5_1
+PAK,Sindh,,,Sind,,,PAK.8_1
+# PHL
+PHL,Autonomous  in Muslim Mindanao,,,Autonomous  in Muslim Mindanao,,,PHL.42_1:PHL.44_1:PHL.73_1:PHL.77_1:PHL.9_1
+PHL,Bicol,,,Bicol,,,PHL.5_1:PHL.19_1:PHL.20_1:PHL.23_1:PHL.46_1:PHL.69_1
+PHL,Cagayan Valley,,,Cagayan Valley,,,PHL.11_1:PHL.18_1:PHL.37_1:PHL.56_1:PHL.63_1
+PHL,Calabarzon,,,Calabarzon,,,PHL.12_1:PHL.24_1:PHL.40_1:PHL.62_1:PHL.64_1
+PHL,Caraga,,,Caraga,,,PHL.2_1:PHL.3_1:PHL.30_1:PHL.74_1:PHL.75_1
+PHL,Central Luzon,,,Central Luzon,,,PHL.8_1:PHL.10_1:PHL.17_1:PHL.55_1:PHL.60_1:PHL.76_1:PHL.78_1
+PHL,Central Visayas,,,Central Visayas,,,PHL.15_1:PHL.25_1:PHL.52_1:PHL.68_1
+PHL,Cordillera Administrative,,,Cordillera Administrative,,,PHL.1_1:PHL.7_1:PHL.13_1:PHL.33_1:PHL.38_1:PHL.50_1
+PHL,Davao,,,Davao,,,PHL.26_1:PHL.27_1:PHL.28_1:PHL.29_1
+PHL,Eastern Visayas,,,Eastern Visayas,,,PHL.14_1:PHL.31_1:PHL.43_1:PHL.54_1:PHL.66_1:PHL.71_1
+PHL,Ilocos,,,Ilocos,,,PHL.34_1:PHL.35_1:PHL.39_1:PHL.61_1
+PHL,MIMAROPA,,,MIMAROPA,,,PHL.45_1:PHL.57_1:PHL.58_1:PHL.59_1:PHL.65_1
+PHL,Metro Manila,,,Metropolitan Manila,,,PHL.47_1
+PHL,Northern Mindanao,,,Northern Mindanao,,,PHL.16_1:PHL.21_1:PHL.41_1:PHL.48_1:PHL.49_1
+PHL,SOCCSKSARGEN,,,SOCCSKSARGEN,,,PHL.53_1:PHL.67_1:PHL.70_1:PHL.72_1
+PHL,Western Visayas,,,Western Visayas,,,PHL.4_1:PHL.6_1:PHL.22_1:PHL.32_1:PHL.36_1:PHL.51_1
+PHL,Zamboanga Peninsula,,,Zamboanga Peninsula,,,PHL.79_1:PHL.80_1:PHL.81_1
+# PRY
+PRY,Boquerón department,,,Boquerón,,,PRY.5_1
+# RWA
+RWA,Eastern,,,Iburasirazuba,,,RWA.3_1
+RWA,Kigali City,,,Umujyi wa Kigali,,,RWA.5_1
+RWA,Northern,,,Amajyaruguru,,,RWA.1_1
+RWA,Southern,,,Amajyepfo,,,RWA.2_1
+RWA,Western,,,Iburengerazuba,,,RWA.4_1
+# TUR
+TUR,Adıyaman,,,Adiyaman,,,TUR.2_1
+TUR,Afyonkarahisar,,,Afyon,,,TUR.3_1
+TUR,Aydın,,,Aydin,,,TUR.11_1
+TUR,Ağrı,,,Agri,,,TUR.4_1
+TUR,Balıkesir,,,Balikesir,,,TUR.12_1
+TUR,Diyarbakır,,,Diyarbakir,,,TUR.26_1
+TUR,Eskişehir,,,Eskisehir,,,TUR.32_1
+TUR,Gümüşhane,,,Gümüshane,,,TUR.35_1
+TUR,Kahramanmaraş,,,K. Maras,,,TUR.42_1
+TUR,Kırklareli,,,Kirklareli,,,TUR.50_1
+TUR,Kırıkkale,,,Kinkkale,,,TUR.49_1
+TUR,Kırşehir,,,Kirsehir,,,TUR.51_1
+TUR,Muğla,,,Mugla,,,TUR.59_1
+TUR,Muş,,,Mus,,,TUR.60_1
+TUR,Nevşehir,,,Nevsehir,,,TUR.61_1
+TUR,Niğde,,,Nigde,,,TUR.62_1
+TUR,Tekirdağ,,,Tekirdag,,,TUR.73_1
+TUR,Uşak,,,Usak,,,TUR.77_1
+TUR,Zonguldak,,,Zinguldak,,,TUR.81_1
+TUR,Çankırı,,,Çankiri,,,TUR.23_1
+TUR,Şanlıurfa,,,Sanliurfa,,,TUR.68_1
+TUR,Şırnak,,,Sirnak,,,TUR.71_1
+# TZA
+TZA,Dar es Salam,,,Dar es Salaam,,,TZA.2_1
+TZA,Mjini Magharibi,,,Zanzibar West,,,TZA.30_1
+TZA,Unguja South,,,Zanzibar South and Central,,,TZA.29_1
+# UGA
+UGA,Central,,,Central,,,UGA.15_1:UGA.16_1:UGA.23_1:UGA.25_1:UGA.34_1:UGA.35_1:UGA.42_1:UGA.43_1:UGA.44_1:UGA.46_1:UGA.51_1:UGA.53_1:UGA.57_1
+UGA,Eastern,,,Eastern,,,UGA.4_1:UGA.7_1:UGA.10_1:UGA.11_1:UGA.14_1:UGA.17_1:UGA.20_1:UGA.22_1:UGA.29_1:UGA.37_1:UGA.38_1:UGA.50_1:UGA.54_1:UGA.55_1:UGA.56_1
+UGA,Northern,,,Northern,,,UGA.1_1:UGA.2_1:UGA.3_1:UGA.8_1:UGA.27_1:UGA.28_1:UGA.33_1:UGA.40_1:UGA.41_1:UGA.45_1:UGA.47_1:UGA.49_1:UGA.58_1
+UGA,Western,,,Western,,,UGA.5_1:UGA.6_1:UGA.9_1:UGA.12_1:UGA.13_1:UGA.18_1:UGA.19_1:UGA.21_1:UGA.24_1:UGA.26_1:UGA.30_1:UGA.36_1:UGA.39_1:UGA.48_1:UGA.52_1
+# VNM
+VNM,Ba Ria - Vung Tau,,,Bà Rịa - Vũng Tàu,,,VNM.7_1
+VNM,Bac Giang,,,Bắc Giang,,,VNM.3_1
+VNM,Bac Lieu,,,Bạc Liêu,,,VNM.2_1
+VNM,Bac Ninh,,,Bắc Ninh,,,VNM.5_1
+VNM,Ben Tre,,,Bến Tre,,,VNM.6_1
+VNM,Binh Dinh,,,Bình Định,,,VNM.8_1
+VNM,Binh Duong,,,Bình Dương,,,VNM.9_1
+VNM,Binh Phuoc,,,Bình Phước,,,VNM.10_1
+VNM,Ca Mau,,,Cà Mau,,,VNM.13_1
+VNM,Cao Bang,,,Cao Bằng,,,VNM.14_1
+VNM,Da Nang,,,Đà Nẵng,,,VNM.19_1
+VNM,Dak Nong,,,Đắk Nông,,,VNM.16_1
+VNM,Dien Bien,,,Điện Biên,,,VNM.20_1
+VNM,Dong Nai,,,Đồng Nai,,,VNM.17_1
+VNM,Ha Giang,,,Hà Giang,,,VNM.26_1
+VNM,Ha Tinh,,,Hà Tĩnh,,,VNM.29_1
+VNM,Hai Duong,,,Hải Dương,,,VNM.22_1
+VNM,Hai Phong,,,Hải Phòng,,,VNM.23_1
+VNM,Hanoi,,,Hà Nội,,,VNM.27_1
+VNM,Hau Giang,,,Hậu Giang,,,VNM.24_1
+VNM,Ho Chi Minh City,,,Hồ Chí Minh,,,VNM.25_1
+VNM,Hoa Binh,,,Hoà Bình,,,VNM.30_1
+VNM,Hung Yen,,,Hưng Yên,,,VNM.31_1
+VNM,Khanh Hoa,,,Khánh Hòa,,,VNM.32_1
+VNM,Kien Giang,,,Kiên Giang,,,VNM.33_1
+VNM,Lai Chau,,,Lai Châu,,,VNM.36_1
+VNM,Lao Cai,,,Lào Cai,,,VNM.38_1
+VNM,Nam Dinh,,,Nam Định,,,VNM.40_1
+VNM,Nghe An,,,Nghệ An,,,VNM.41_1
+VNM,Ninh Thuan,,,Ninh Thuận,,,VNM.43_1
+VNM,Phu Tho,,,Phú Thọ,,,VNM.44_1
+VNM,Quang Binh,,,Quảng Bình,,,VNM.46_1
+VNM,Quang Nam,,,Quảng Nam,,,VNM.47_1
+VNM,Quang Ngai,,,Quảng Ngãi,,,VNM.48_1
+VNM,Soc Trang,,,Sóc Trăng,,,VNM.51_1
+VNM,Son La,,,Sơn La,,,VNM.52_1
+VNM,Thai Binh,,,Thái Bình,,,VNM.55_1
+VNM,Thai Nguyen,,,Thái Nguyên,,,VNM.56_1
+VNM,Thanh Hoa,,,Thanh Hóa,,,VNM.57_1
+VNM,Thua Thien Hue,,,Thừa Thiên Huế,,,VNM.54_1
+VNM,Tien Giang,,,Tiền Giang,,,VNM.58_1
+VNM,Tra Vinh,,,Trà Vinh,,,VNM.59_1
+VNM,Vinh Long,,,Vĩnh Long,,,VNM.61_1
+VNM,Vinh Phuc,,,Vĩnh Phúc,,,VNM.62_1

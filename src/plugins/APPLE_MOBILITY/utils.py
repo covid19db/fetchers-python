@@ -16,6 +16,7 @@ def get_recent_apple_mobility_data() -> DataFrame:
             request = requests.get(url, timeout=30)
             if request.status_code != 200:
                 continue
+            request.encoding = 'utf-8'
             return pd.read_csv(io.StringIO(request.text))
         except ConnectionError:
             continue

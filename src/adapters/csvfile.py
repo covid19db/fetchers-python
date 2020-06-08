@@ -24,6 +24,18 @@ colnames = {
         'source', 'date', 'country', 'countrycode', 'adm_area_1',
         'adm_area_2', 'adm_area_3', 'gid', 'transit_stations', 'residential',
         'workplace', 'parks', 'retail_recreation', 'grocery_pharmacy'
+    ],
+    'weather': [
+        'date', 'countrycode', 'gid', 'precip_max_avg', 'precip_max_std',
+        'precip_mean_avg', 'precip_mean_std', 'specific_humidity_max_avg', 'specific_humidity_max_std',
+        'specific_humidity_mean_avg', 'specific_humidity_mean_std', 'specific_humidity_min_avg',
+        'specific_humidity_min_std', 'short_wave_radiation_max_avg', 'short_wave_radiation_max_std',
+        'short_wave_radiation_mean_avg', 'short_wave_radiation_mean_std', 'air_temperature_max_avg',
+        'air_temperature_max_std', 'air_temperature_mean_avg', 'air_temperature_mean_std',
+        'air_temperature_min_avg', 'air_temperature_min_std',
+        'windgust_max_avg', 'windgust_max_std', 'windgust_mean_avg', 'windgust_mean_std', 'windgust_min_avg',
+        'windgust_min_std', 'windspeed_max_avg', 'windspeed_max_std', 'windspeed_mean_avg',
+        'windspeed_mean_std', 'windspeed_min_avg', 'windspeed_min_std'
     ]
 }
 
@@ -84,6 +96,9 @@ class CSVFileHelper(AbstractAdapter):
         self.upsert_data(table_name, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
+        self.upsert_data(table_name, **kwargs)
+
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
         self.upsert_data(table_name, **kwargs)
 
     def flush(self):

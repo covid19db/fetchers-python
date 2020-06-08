@@ -20,43 +20,23 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'LAT_DSRP'
 
-    def fetch_confirmed(self):
-        url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
-              'master/latam_covid_19_data/time_series/time_series_confirmed.csv'
+    def fetch(self, category):
+        url = f'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
+              f'master/latam_covid_19_data/time_series/time_series_{category}.csv'
         return pd.read_csv(url,
                            index_col=['Country', 'Subdivision'],
                            usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
             .stack() \
             .rename_axis(['Country', 'Subdivision', 'Date']) \
-            .rename('Confirmed')
-
-    def fetch_deaths(self):
-        url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
-              'master/latam_covid_19_data/time_series/time_series_deaths.csv'
-        return pd.read_csv(url,
-                           index_col=['Country', 'Subdivision'],
-                           usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
-            .stack() \
-            .rename_axis(['Country', 'Subdivision', 'Date']) \
-            .rename('Deaths')
-
-    def fetch_recovered(self):
-        url = 'https://raw.githubusercontent.com/DataScienceResearchPeru/covid-19_latinoamerica/' \
-              'master/latam_covid_19_data/time_series/time_series_recovered.csv'
-        return pd.read_csv(url,
-                           index_col=['Country', 'Subdivision'],
-                           usecols=lambda c: c not in ['ISO 3166-2 Code', 'Last Update']) \
-            .stack() \
-            .rename_axis(['Country', 'Subdivision', 'Date']) \
-            .rename('Recovered')
+            .rename(category.title())
 
     def run(self):
         logger.debug('Fetching regional information')
-        confirmed = self.fetch_confirmed()
+        confirmed = self.fetch('confirmed')
         time.sleep(5)
-        deaths = self.fetch_deaths()
+        deaths = self.fetch('deaths')
         time.sleep(5)
-        recovered = self.fetch_recovered()
+        recovered = self.fetch('recovered')
         data = pd.concat([confirmed, deaths, recovered], axis=1).reset_index()
 
         for country in ['Brazil', 'Mexico', 'Ecuador', 'Peru', 'Colombia', 'Chile',

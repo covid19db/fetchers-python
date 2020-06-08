@@ -2,9 +2,9 @@ import json
 import logging
 import requests
 from .utils import parser
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher_abstract import AbstractFetcher, FetcherType
 
 __all__ = ('StringencyFetcher',)
 
@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class StringencyFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
+    TYPE = FetcherType.GOVERNMENT_RESPONSE
     SOURCE = 'GOVTRACK'
 
     def fetch(self):

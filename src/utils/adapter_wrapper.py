@@ -42,7 +42,10 @@ class AdapterWrapper(AbstractAdapter):
             self.data_adapter.truncate_staging()
 
     def correct_table_name(self, table_name: str) -> str:
-        return self.table_name_postfix + table_name if self.table_name_postfix else table_name
+        if self.table_name_postfix and table_name in ['epidemiology']:
+            return self.table_name_postfix + table_name
+        else:
+            return table_name
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
         if not self.date_in_window(kwargs):
@@ -59,6 +62,11 @@ class AdapterWrapper(AbstractAdapter):
             return
         return self.data_adapter.upsert_mobility_data(self.correct_table_name(table_name), **kwargs)
 
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        if not self.date_in_window(kwargs):
+            return
+        return self.data_adapter.upsert_weather_data(self.correct_table_name(table_name), **kwargs)
+
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
         return self.data_adapter.get_adm_division(countrycode, adm_area_1, adm_area_2, adm_area_3)
@@ -66,3 +74,6 @@ class AdapterWrapper(AbstractAdapter):
     def flush(self):
         if hasattr(self.data_adapter, 'flush'):
             self.data_adapter.flush()
+
+    def execute(self, query: str, data: str = None):
+        return self.data_adapter.execute(query, data)

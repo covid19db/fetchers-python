@@ -2,7 +2,6 @@ import time
 import logging
 import schedule
 
-from utils.config import config
 from utils.logger import setup_logger
 from utils.plugins import Plugins
 from utils.adapters import DataAdapter

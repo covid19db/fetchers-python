@@ -18,23 +18,17 @@ class ThailandSTATFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'THA_STAT'
 
-    def fetch_timeline(self):
-        url = 'https://covid19.th-stat.com/api/open/timeline'
-        return requests.get(url).json()
-
-    def fetch_cases(self):
-        url = 'https://covid19.th-stat.com/api/open/cases'
-        return requests.get(url).json()
+    def fetch(self, category):
+        return requests.get(f'https://covid19.th-stat.com/api/open/{category}').json()
 
     def run(self):
         logger.debug('Fetching country-level information')
-        data = self.fetch_timeline()
+        data = self.fetch('timeline')
 
         for record in data['Data']:
             upsert_obj = {
                 'source': self.SOURCE,
-                'date': datetime.strptime(record['Date'], '%m/%d/%Y') \
-                    .strftime('%Y-%m-%d'),
+                'date': datetime.strptime(record['Date'], '%m/%d/%Y').strftime('%Y-%m-%d'),
                 'country': 'Thailand',
                 'countrycode': 'THA',
                 'gid': ['THA'],
@@ -46,12 +40,11 @@ class ThailandSTATFetcher(AbstractFetcher):
             self.db.upsert_epidemiology_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
-        data = self.fetch_cases()
+        data = self.fetch('cases')
 
         # Get cumulative counts from the cross table of dates and provinces
         df = pd.DataFrame(data['Data'], columns=['ConfirmDate', 'ProvinceEn'])
-        crosstabsum = pd.crosstab(df.ConfirmDate.apply(lambda d: d[:10]),
-                                  df.ProvinceEn) \
+        crosstabsum = pd.crosstab(df.ConfirmDate.apply(lambda d: d[:10]), df.ProvinceEn) \
             .sort_index() \
             .cumsum()
 

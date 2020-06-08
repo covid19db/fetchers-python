@@ -1,6 +1,6 @@
 import time
 import logging
-from typing import Tuple
+from typing import Tuple, List
 import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -83,6 +83,7 @@ class PostgresqlHelper(AbstractAdapter):
         logger.debug("Moving data to epidemiology")
 
     def truncate_staging(self):
+        # TODO: Add more staging tables, currently only for epidemiology
         sql_query = sql.SQL("""TRUNCATE staging_epidemiology; SELECT 1""")
         self.execute(sql_query)
 
@@ -90,12 +91,12 @@ class PostgresqlHelper(AbstractAdapter):
                          adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""
             SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
-            WHERE countrycode = %s 
-                AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g') 
+            WHERE countrycode = %s
+                AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g')
-                AND regexp_replace(COALESCE(adm_area_2, ''), '[^\w%%]+','','g') 
+                AND regexp_replace(COALESCE(adm_area_2, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g')
-                AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g') 
+                AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
 
         results = self.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
@@ -106,43 +107,15 @@ class PostgresqlHelper(AbstractAdapter):
         result = results[0]
         return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
-    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
-        data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
-
-        self.check_if_gid_exists(kwargs)
-        sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
-                                    ON CONFLICT
-                                        (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
-                                         COALESCE(adm_area_3, ''), source)
-                                    DO
-                                        UPDATE SET {update_data}
-                                    RETURNING *
-                                    """).format(
-            table_name=sql.Identifier(table_name),
-            insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
-            insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
-            update_data=sql.SQL(",").join(
-                sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
-                k in data_keys)
-        )
-
-        self.execute(sql_query, kwargs)
-        logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
-
-    ## Ahmad Changes : changed table name to staging_epidemiology
-    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
-                     'recovered']
-
+    def upsert_data(self, table_name: str, data_keys: List, **kwargs):
         self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
-                                    (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''), 
+                                    (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''),
                                      COALESCE(adm_area_3, ''), source)
                                 DO
                                     UPDATE SET {update_data}
-                                RETURNING *
-                                """).format(
+                                RETURNING *""").format(
             table_name=sql.Identifier(table_name),
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
@@ -153,26 +126,39 @@ class PostgresqlHelper(AbstractAdapter):
 
         self.execute(sql_query, kwargs)
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
+        data_keys = ['gid', 'confirmed', 'dead', 'stringency', 'stringency_actual']
+        self.upsert_data(table_name, data_keys, **kwargs)
+
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
+        data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
+                     'recovered']
+        self.upsert_data(table_name, data_keys, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         data_keys = ['gid', 'transit_stations', 'residential', 'workplace', 'parks', 'retail_recreation',
                      'grocery_pharmacy']
 
+        self.upsert_data(table_name, data_keys, **kwargs)
+
+    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+        composite_key = ['date', 'countrycode', 'gid']
+
         self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
-                                    ON CONFLICT
-                                        (source, date, country, countrycode, COALESCE(adm_area_1, ''), 
-                                         COALESCE(adm_area_2, ''), COALESCE(adm_area_3, ''))
-                                    DO
-                                        UPDATE SET {update_data}
-                                    RETURNING *
+                                ON CONFLICT
+                                    (date, countrycode, gid)
+                                DO
+                                    UPDATE SET {update_data}
+                               RETURNING *
                                     """).format(
             table_name=sql.Identifier(table_name),
             insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
             insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
             update_data=sql.SQL(",").join(
                 sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
-                k in data_keys)
+                k not in composite_key)
         )
 
         self.execute(sql_query, kwargs)
