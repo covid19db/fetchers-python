@@ -10,16 +10,17 @@ Currently implemented fetchers:
 
 | Name     | Country | [Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Source | Status | Regional levels mapping |
 |----------|---------|------|--------|--------|-------------------------|
-| GOOGLE_MOBILITY | World | several  | [COVID-19 Community Mobility Reports - Google](https://www.google.com/covid19/mobility/) | release | adm_area_1, adm_area_2: depending on the country |
-| APPLE_MOBILITY | World | several  | [COVID‑19 Mobility Trends Reports - Apple](https://www.apple.com/covid19/mobility) | release | adm_area_1, adm_area_2: depending on the country |
+| GOOGLE_MOBILITY | World | several  | [COVID-19 Community Mobility Reports - Google](https://www.google.com/covid19/mobility/) | release | adm_area_1, adm_area_2: Depending on the country |
+| APPLE_MOBILITY | World | several  | [COVID‑19 Mobility Trends Reports - Apple](https://www.apple.com/covid19/mobility) | release | adm_area_1, adm_area_2: Depending on the country |
 | GOVTRACK | World | several  | [Oxford COVID-19 Government Response Tracker](https://covidtracker.bsg.ox.ac.uk/) | release | NA  |
-| WRD_WHOJHU | World | several | [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) | release | adm_area_1: depending on the country |
+| WEATHER | World | several  | [MET Informatics Lab](https://www.informaticslab.co.uk/) | release | adm_area_1, adm_area_2, adm_area_3: Depending on the country |
+| WRD_WHOJHU | World | several | [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) | release | adm_area_1: Depending on the country |
 | WRD_ECDC | World | several  | [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) | release | NA |
 | POL_WIKI | Poland | POL  | [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland) | release | adm_area_1: NA or Voivodeship |
 | ESP_MSVP | Spain | ESP  | [Ministerio de Sanidad](https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv) | release | adm_area_1: Comunidades autónomas |
 | ZAF_DSFSI | South Africa | ZAF  | [Data Science for Social Impact research group, the University of Pretoria](https://github.com/dsfsi/covid19za) | release | adm_area_1: province |
-| BRA_MSHM | Brazil | BRA  | [github: elhenrico](https://github.com/elhenrico/covid19-Brazil-timeseries) | release | adm_area_1: province|
-| SWE_GM | Sweden | SWE  | [github: elinlutz](https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series) | release | adm_area_1: province|
+| BRA_MSHM | Brazil | BRA  | [github: elhenrico](https://github.com/elhenrico/covid19-Brazil-timeseries) | release | adm_area_1: Province|
+| SWE_GM | Sweden | SWE  | [github: elinlutz](https://github.com/elinlutz/gatsby-map/tree/master/src/data/time_series) | release | adm_area_1: Province|
 | KOR_DS4C | South Korea | KOR | [Data Science for COVID-19 in South Korea](https://github.com/jihoo-kim/Data-Science-for-COVID-19) | release | adm_area_1: NA or Province |
 | AUS_C1A | Australia | AUS | [The Real-time COVID-19 Status in Australia](https://github.com/covid-19-au/covid-19-au.github.io) | release | adm_area_1: NA or State |
 | POR_MSDS | Portugal | POR | [Data Science for Social Good Portugal](https://github.com/dssg-pt/covid19pt-data) | release | adm_area_1: NA or province |
@@ -33,18 +34,18 @@ Currently implemented fetchers:
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | release | adm_area_1: Province
 | NLD_WY | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | release | adm_area_1: NA
 | LAT_DSRP | Latin America | several | [Latin America Covid-19 Data Repository by DSRP](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica) | release | adm_area_1: Subdivision |
-| EU_ZH | Norway | NOR | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: county |
+| EU_ZH | Norway | NOR | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: County |
 | EU_ZH | Slovenia | SVN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: NA |
-| EU_ZH | Sweden | SWE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: province |
-| EU_ZH | Poland | POL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: voivodeship |
-| EU_ZH | Ireland | IRL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: county |
+| EU_ZH | Sweden | SWE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: Province |
+| EU_ZH | Poland | POL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: Voivodeship |
+| EU_ZH | Ireland | IRL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: County |
 | EU_ZH | Hungary | HUN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: NA |
-| EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
-| EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
-| EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: region |
-| NGA_SO | Nigeria | NGA | [Covid-19 Nigeria API](https://github.com/sink-opuba/covid-19-nigeria-api) | release | adm_area_1: state |
-| NGS_CDC | Nigeria | NGA | [Nigeria Centre for Disease Control](https://covid19.ncdc.gov.ng/) | release | adm_area_1: state |
-| RUS_GOV | Russia | RUS | [Russian Government](https://xn--80aesfpebagmfblc0a.xn--p1ai/) | release | adm_area_1: federal subjects |
+| EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: State |
+| EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: State |
+| EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: Region |
+| NGA_SO | Nigeria | NGA | [Covid-19 Nigeria API](https://github.com/sink-opuba/covid-19-nigeria-api) | release | adm_area_1: State |
+| NGS_CDC | Nigeria | NGA | [Nigeria Centre for Disease Control](https://covid19.ncdc.gov.ng/) | release | adm_area_1: State |
+| RUS_GOV | Russia | RUS | [Russian Government](https://xn--80aesfpebagmfblc0a.xn--p1ai/) | release | adm_area_1: Federal subjects |
 | ITA_PC | Italy | ITA | [Protezione Civile](https://github.com/pcm-dpc/COVID-19) | release | adm_area_1: [Italian regions](https://en.wikipedia.org/wiki/Regions_of_Italy), adm_area_2: [Italian provinces](https://en.wikipedia.org/wiki/Provinces_of_Italy)|
 | ITA_PCDM | Italy | ITA | [Davide Magno, from Protezione Civile](https://github.com/DavideMagno/ItalianCovidData) | release | adm_area_1: [Italian region](https://en.wikipedia.org/wiki/Regions_of_Italy) |
 | USA_NYT | United States | USA  | [New York Times](https://github.com/nytimes/covid-19-data) | release | adm_area_1: US State, adm_area_2: county (exception is New York City, which includes more counties) |
