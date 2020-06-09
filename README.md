@@ -14,7 +14,6 @@ Currently implemented fetchers:
 | APPLE_MOBILITY | World | several  | [COVID‑19 Mobility Trends Reports - Apple](https://www.apple.com/covid19/mobility) | release | adm_area_1, adm_area_2: depending on the country |
 | GOVTRACK | World | several  | [Oxford COVID-19 Government Response Tracker](https://covidtracker.bsg.ox.ac.uk/) | release | NA  |
 | WEATHER | World | several  | [MET Informatics Lab](https://www.informaticslab.co.uk/) | release | adm_area_1, adm_area_2, adm_area_3: depending on the country |
-| WRD_WHOJHU | World | several | [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) | release | adm_area_1: depending on the country |
 | WRD_ECDC | World | several  | [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) | release | NA |
 | POL_WIKI | Poland | POL  | [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland) | release | adm_area_1: NA or voivodeship |
 | ESP_MSVP | Spain | ESP  | [Ministerio de Sanidad](https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv) | release | adm_area_1: comunidades autónomas |
