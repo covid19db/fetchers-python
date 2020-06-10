@@ -50,10 +50,13 @@ class StringencyFetcher(AbstractFetcher):
         # RAW Govtrack data
         raw_govtrack_data = self.fetch_csv()
         for index, record in raw_govtrack_data.iterrows():
+            if pd.isna(record['English short name lower case']):
+                logger.error(f"Unable to decode: {record['CountryCode']} -> {record['CountryName']} ")
+
             upsert_obj = {
                 'source': self.SOURCE,
                 'gid': record['CountryCode'],
-                'country': record['CountryName'],  # record['English short name lower case'],
+                'country': record['English short name lower case'],
                 'countrycode': record['CountryCode'],
                 'date': pd.to_datetime(record['Date'], format='%Y%m%d').strftime('%Y-%m-%d'),
                 'c1_school_closing': to_int(record['C1_School closing']),
