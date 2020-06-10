@@ -23,3 +23,7 @@ def parser(api_data: Dict, country_codes_translator: CountryCodesTranslator):
     # Adding country name based on country code
     return govtrack_data.merge(country_codes_translator.translation_pd, right_on='Alpha-3 code', left_on='country_code',
                                how='left')
+
+
+def to_int(data):
+    return int(data) if pd.notna(data) else None

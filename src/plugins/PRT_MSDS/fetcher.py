@@ -151,7 +151,8 @@ class PRT_MSDSFetcher(AbstractFetcher):
                     input_adm_area_1=province,
                     input_adm_area_2=None,
                     input_adm_area_3=None,
-                    return_original_if_failure=True
+                    return_original_if_failure=True,
+                    suppress_exception=True
                 )
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source

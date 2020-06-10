@@ -11,9 +11,35 @@ logger = logging.getLogger(__name__)
 
 colnames = {
     'government_response': [
-        'source', 'date', 'country', 'countrycode', 'adm_area_1',
-        'adm_area_2', 'adm_area_3', 'gid', 'confirmed',
-        'dead', 'stringency', 'stringency_actual', 'actions'
+        'source', 'date', 'gid', 'country', 'countrycode', 'adm_area_1', 'adm_area_2', 'adm_area_3',
+        'c1_school_closing', 'c1_flag',
+        'c2_workplace_closing', 'c2_flag',
+        'c3_cancel_public_events', 'c3_flag',
+        'c4_restrictions_on_gatherings', 'c4_flag',
+        'c5_close_public_transport', 'c5_flag',
+        'c6_stay_at_home_requirements', 'c6_flag',
+        'c7_restrictions_on_internal_movement', 'c7_flag',
+        'c8_international_travel_controls',
+        'e1_income_support', 'e1_flag',
+        'e2_debtcontract_relief',
+        'e3_fiscal_measures',
+        'e4_international_support',
+        'h1_public_information_campaigns', 'h1_flag',
+        'h2_testing_policy',
+        'h3_contact_tracing',
+        'h4_emergency_investment_in_healthcare',
+        'h5_investment_in_vaccines',
+        'm1_wildcard',
+        'stringency_index',
+        'stringency_indexfordisplay',
+        'stringency_legacy_index',
+        'stringency_legacy_indexfordisplay',
+        'government_response_index',
+        'government_response_index_for_display',
+        'containment_health_index',
+        'containment_health_index_for_display',
+        'economic_support_index',
+        'economic_support_index_for_display'
     ],
     'epidemiology': [
         'source', 'date', 'country', 'countrycode', 'adm_area_1',

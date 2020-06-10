@@ -3,18 +3,17 @@
 
 This is the data fetcher-python repository for the **OxCOVID19 Database**, a large, single-centre database consisting of information relating to COVID-19 pandemic. 
 
-**OxCOVID19 Project** [https://covid19db.github.io/](https://covid19db.github.io/)  aims to increase our understanding of the Covid-19 pandemic and elaborate possible strategies to reduce the impact on the society through the combined power of Statistical and Mathematical Modelling, and Machine Learning techniques.
-COVID19 data source fetchers written in Python3.
+**OxCOVID19 Project** [https://covid19.eng.ox.ac.uk/](https://covid19.eng.ox.ac.uk/)  aims to increase our understanding of the Covid-19 pandemic and elaborate possible strategies to reduce the impact on the society through the combined power of Statistical and Mathematical Modelling, and Machine Learning techniques.
+OxCOVID19 data source fetchers written in Python3.
 
 Currently implemented fetchers:
 
-| Name     | Country | [Country Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Data source | Status | Regional levels mapping | License / Terms of Use |
+| Name     | Country | [Country Code](https://www.nationsonline.org/oneworld/country_code_list.htm) | Data source | Status | Regional levels mapping | Terms of Use |
 |----------|---------|------|--------|--------|-------------------------|--------|
 | GOOGLE_MOBILITY | World | several  | [COVID-19 Community Mobility Reports - Google](https://www.google.com/covid19/mobility/) | release | adm_area_1, adm_area_2: depending on the country |
 | APPLE_MOBILITY | World | several  | [COVID‑19 Mobility Trends Reports - Apple](https://www.apple.com/covid19/mobility) | release | adm_area_1, adm_area_2: depending on the country |
 | GOVTRACK | World | several  | [Oxford COVID-19 Government Response Tracker](https://covidtracker.bsg.ox.ac.uk/) | release | NA  |
 | WEATHER | World | several  | [MET Informatics Lab](https://www.informaticslab.co.uk/) | release | adm_area_1, adm_area_2, adm_area_3: depending on the country |
-| WRD_WHOJHU | World | several | [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) | release | adm_area_1: depending on the country |
 | WRD_ECDC | World | several  | [European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide) | release | NA |
 | POL_WIKI | Poland | POL  | [Wikipedia](https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland) | release | adm_area_1: NA or voivodeship |
 | ESP_MSVP | Spain | ESP  | [Ministerio de Sanidad](https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv) | release | adm_area_1: comunidades autónomas |
@@ -48,11 +47,11 @@ Currently implemented fetchers:
 | ITA_PC | Italy | ITA | [Protezione Civile](https://github.com/pcm-dpc/COVID-19) | release | adm_area_1: [italian regions](https://en.wikipedia.org/wiki/Regions_of_Italy), adm_area_2: [italian provinces](https://en.wikipedia.org/wiki/Provinces_of_Italy)|
 | ITA_PCDM | Italy | ITA | [Davide Magno, from Protezione Civile](https://github.com/DavideMagno/ItalianCovidData) | release | adm_area_1: [italian region](https://en.wikipedia.org/wiki/Regions_of_Italy) |
 | USA_NYT | United States | USA  | [New York Times](https://github.com/nytimes/covid-19-data) | release | adm_area_1: US State, adm_area_2: county (exception is New York City, which includes more counties) |
-| FRA_SPFCG | France | FRA | [Cedric Guadalupe from Santé Publique France](https://github.com/cedricguadalupe/FRANCE-COVID-19) | release | adm_area_1: [france "régions"](https://en.wikipedia.org/wiki/Regions_of_France) |
-| DEU_JPGG | Germany | DEU | [Jan-Philip Gehrcke, from the Public Health Offices (Gesundheitsaemter)](https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/) | release | adm_area_1: [german "länder"](https://en.wikipedia.org/wiki/States_of_Germany) |
+| FRA_SPFCG | France | FRA | [Cedric Guadalupe from Santé Publique France](https://github.com/cedricguadalupe/FRANCE-COVID-19) | release | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France) |
+| DEU_JPGG | Germany | DEU | [Jan-Philip Gehrcke, from the Public Health Offices (Gesundheitsaemter)](https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/) | release | adm_area_1: [German "länder"](https://en.wikipedia.org/wiki/States_of_Germany) |
 | PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | release | adm_area_1: Province |
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | release | adm_area_3: English lower tier local authority |
-| SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | release | adm_area_1: [swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
+| SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | release | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
 | MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | release | adm_area_1: NA or province|
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: prefecture |
 | USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | release | adm_area_1: state |

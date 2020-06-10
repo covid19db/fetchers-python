@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 class WorldWHOJHUFetcher(AbstractFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'WRD_WHOJHU'
 
     def fetch(self, category):
