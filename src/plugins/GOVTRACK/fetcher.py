@@ -42,6 +42,8 @@ class StringencyFetcher(AbstractFetcher):
         df = pd.read_csv(
             f'https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv')
         df = df.replace({np.nan: None})
+        df = df.merge(self.country_codes_translator.translation_pd, right_on='Alpha-3 code', left_on='CountryCode',
+                      how='left')
         return df
 
     def run(self):
@@ -51,7 +53,7 @@ class StringencyFetcher(AbstractFetcher):
             upsert_obj = {
                 'source': self.SOURCE,
                 'gid': record['CountryCode'],
-                'country': record['CountryName'],
+                'country': record['English short name lower case'],
                 'countrycode': record['CountryCode'],
                 'date': pd.to_datetime(record['Date'], format='%Y%m%d').strftime('%Y-%m-%d'),
                 'c1_school_closing': to_int(record['C1_School closing']),
@@ -104,10 +106,6 @@ class StringencyFetcher(AbstractFetcher):
                 'country': record['English short name lower case'],
                 'countrycode': record['country_code'],
                 'gid': [record['country_code']],
-                'confirmed': int(record['confirmed']),
-                'dead': int(record['deaths']),
-                'stringency': int(record['stringency']),
-                'stringency_actual': int(record['stringency_actual']),
                 'actions': json.dumps(govtrack_actions)
             }
             self.db.upsert_government_response_data(**upsert_obj)
