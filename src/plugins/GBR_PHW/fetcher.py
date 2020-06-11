@@ -1,10 +1,20 @@
+# Copyright University of Oxford 2020
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import logging
 import pandas as pd
-import math
 from utils.fetcher_abstract import AbstractFetcher
-from io import StringIO
-import requests
-from datetime import datetime, timedelta
 
 __all__ = ('WalesFetcher',)
 
@@ -16,20 +26,18 @@ class WalesFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHW'  # Public Health Wales
 
-
     def fetch(self):
         # an excel file to be downloaded
         url = 'http://www2.nphs.wales.nhs.uk:8080/CommunitySurveillanceDocs.nsf/3dc04669c9e1eaa880257062003b246b/77fdb9a33544aee88025855100300cab/$FILE/Rapid%20COVID-19%20surveillance%20data.xlsx'
-        testing_data = pd.read_excel(url,sheet_name='Tests by specimen date',parse_dates=[1])
-        deaths_data = pd.read_excel(url,sheet_name='Deaths by LHB')
+        testing_data = pd.read_excel(url, sheet_name='Tests by specimen date', parse_dates=[1])
+        deaths_data = pd.read_excel(url, sheet_name='Deaths by LHB')
 
         # collect the date of the last update for deaths from another sheet, as Deaths by LHB does not have a date in it
-        national_deaths = pd.read_excel(url,sheet_name='Deaths by date',parse_dates=[0],nrows=1)
+        national_deaths = pd.read_excel(url, sheet_name='Deaths by date', parse_dates=[0], nrows=1)
         effective_date = national_deaths.at[0, 'Date of death']
         effective_date = effective_date.strftime('%Y-%m-%d')
 
         return testing_data, deaths_data, effective_date
-
 
     def tests(self, data):
         for index, record in data.iterrows():
@@ -88,7 +96,6 @@ class WalesFetcher(AbstractFetcher):
 
             self.db.upsert_epidemiology_data(**level3_upsert_obj)
 
-
     def deaths(self, data, date):
         for index, record in data.iterrows():
 
@@ -118,7 +125,6 @@ class WalesFetcher(AbstractFetcher):
             }
 
             self.db.upsert_epidemiology_data(**upsert_obj)
-
 
     def run(self):
         testing_data, deaths_data, effective_date = self.fetch()
