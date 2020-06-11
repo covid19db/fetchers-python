@@ -24,6 +24,7 @@ logger = logging.getLogger(__name__)
     Poland - Government https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2
     Sweden's Public Health Authority https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/aktuellt-epidemiologiskt-lage/
     Slovenia's Government Communications Office https://www.gov.si/en/topics/coronavirus-disease-covid-19/
+    Belgian institute for health: https://epistat.wiv-isp.be/Covid/
 """
 
 
