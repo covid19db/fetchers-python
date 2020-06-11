@@ -129,5 +129,18 @@ SWE,Västerbotten,,,Västerbotten,,,SWE.18_1
 SWE,Västernorrland,,,Västernorrland,,,SWE.19_1
 SWE,Västmanland,,,Västmanland,,,SWE.20_1
 SWE,Västra Götaland,,,Västra Götaland,,,SWE.21_1
-
-
+BEL,Brussels,,,Bruxelles,,,BEL.1_1
+BEL,Flanders,,,Vlaanderen,,,BEL.2_1
+BEL,Wallonia,,,Wallonie,,,BEL.3_1
+BEL,MISSING,MISSING,,MISSING,MISSING,,
+BEL,Brussels,Brussels,,Bruxelles,Bruxelles,,BEL.1.1_1
+BEL,Flanders,Antwerpen,,Vlaanderen,Antwerpen,,BEL.2.1_1
+BEL,Flanders,Limburg,,Vlaanderen,Limburg,,BEL.2.2_1
+BEL,Flanders,OostVlaanderen,,Vlaanderen,Oost-Vlaanderen,,BEL.2.3_1
+BEL,Flanders,VlaamsBrabant,,Vlaanderen,Vlaams Brabant,,BEL.2.4_1
+BEL,Flanders,WestVlaanderen,,Vlaanderen,West-Vlaanderen,,BEL.2.5_1
+BEL,Wallonia,BrabantWallon,,Wallonie,Brabant Wallon,,BEL.3.1_1
+BEL,Wallonia,Hainaut,,Wallonie,Hainaut,,BEL.3.2_1
+BEL,Wallonia,Liège,,Wallonie,Liège,,BEL.3.3_1
+BEL,Wallonia,Luxembourg,,Wallonie,Luxembourg,,BEL.3.4_1
+BEL,Wallonia,Namur,,Wallonie,Namur,,BEL.3.5_1
