@@ -55,7 +55,10 @@ class EU_ZH_Fetcher(AbstractFetcher):
 
             # date must be reformatted
             d = record['datetime']
-            date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
+            if code_3=='BEL':
+                date = d
+            else:    
+                date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
 
             # If no region is reported then all data is national
             if not hasattr(record, region):
@@ -137,3 +140,4 @@ class EU_ZH_Fetcher(AbstractFetcher):
         countries = self.load_countries_to_fetch()
         for index, record in countries.iterrows():
             self.country_fetcher(record['region'], record['country'], record['code_3'], record['code_2'])
+
