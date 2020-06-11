@@ -22,8 +22,8 @@ logger = logging.getLogger(__name__)
 
 
 class BEL_WYFetcher(AbstractFetcher):
-    LOAD_PLUGIN = True
-    SOURCE = 'BEL_WY'
+    LOAD_PLUGIN = False
+    SOURCE = 'BEL_LE'
 
     def country_fetch(self):
 
@@ -32,7 +32,7 @@ class BEL_WYFetcher(AbstractFetcher):
         """
 
         url = 'https://raw.githubusercontent.com/eschnou/covid19-be/master/covid19-belgium.csv'
-        logger.debug('Fetching Belgium country-level data from BEL_WY')
+        logger.debug('Fetching Belgium country-level data from BEL_LE')
         return pd.read_csv(url)
 
     def run(self):
