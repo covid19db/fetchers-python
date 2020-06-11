@@ -9,7 +9,7 @@ OxCOVID19 data source fetchers written in Python3.
 ---
 
 __Cite as:__ Adam Mahdi, Piotr Błaszczyk, Paweł Dłotko, Dario Salvi, Tak-Shing Chan, John Harvey, Davide Gurnari, Yue Wu, Ahmad Farhat, Niklas Hellmer, Alexander Zarebski, Lionel Tarassenko,
-Oxford COVID-19 Database: multimodal data repository for understanding global impact of COVID-19.University of Oxford, 2020.
+Oxford COVID-19 Database: multimodal data repository for understanding the global impact of COVID-19.University of Oxford, 2020.
 
 ---
 
