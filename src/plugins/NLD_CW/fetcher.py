@@ -1,9 +1,23 @@
+# Copyright University of Oxford 2020
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 from utils.fetcher_abstract import AbstractFetcher
 import logging
 import pandas as pd
 import numpy as np
 
-__all__ = ('NLD_WYFetcher',)
+__all__ = ('NLD_CWFetcher',)
 
 """ 
     site-location: https://github.com/J535D165/CoronaWatchNL
@@ -17,9 +31,9 @@ __all__ = ('NLD_WYFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class NLD_WYFetcher(AbstractFetcher):
+class NLD_CWFetcher(AbstractFetcher):
     LOAD_PLUGIN = True
-    SOURCE = 'NLD_WY'
+    SOURCE = 'NLD_CW'
 
     def country_fetch(self):
 
@@ -29,7 +43,7 @@ class NLD_WYFetcher(AbstractFetcher):
 
         url = 'https://raw.githubusercontent.com/J535D165/CoronaWatchNL/master/data/rivm_NL_covid19_national.csv'
 
-        logger.debug('Fetching Netherland country-level confirmed-dead-hospitalised data from NLD_WY')
+        logger.debug('Fetching Netherland country-level confirmed-dead-hospitalised data from NLD_CW')
 
         return pd.read_csv(url)
 
