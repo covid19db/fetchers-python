@@ -1,3 +1,17 @@
+# Copyright University of Oxford 2020
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import logging
 import pandas as pd
 from utils.fetcher_abstract import AbstractFetcher
@@ -11,11 +25,8 @@ logger = logging.getLogger(__name__)
 
 """
     site-location: https://github.com/covid19-eu-zh/covid19-eu-data
-
     COVID19 data for European countries created and maintained by covid19-eu-zh
-
     Data originally from
-
     Austria's Sozial Ministerium https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
     Czech Ministry of Health https://onemocneni-aktualne.mzcr.cz/covid-19
     Germany's Robert Koch Institute https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html
@@ -59,7 +70,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
             d = record['datetime']
             if code_3=='BEL':
                 date = d
-            else:    
+            else:
                 date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
 
             # If no region is reported then all data is national
@@ -75,7 +86,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
             elif pd.isna(record[region]) and code_3 == 'AUT':
                 adm_area_1 = None
                 gid = [code_3]
-            elif region=='nuts_2' and code_3 == 'BEL': 
+            elif region=='nuts_2' and code_3 == 'BEL':
                 if self.clean_string(record['nuts_1'])=='MISSING' or pd.isna(record[region]):
                     continue
                 else:
@@ -129,7 +140,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'gid': gid
-                }                
+                }
             # add the epidemiological properties to the object if they exist
             if hasattr(record, 'tests'):
                 tested = int(record['tests']) if pd.notna(record['tests']) else None
@@ -175,5 +186,3 @@ class EU_ZH_Fetcher(AbstractFetcher):
         countries = self.load_countries_to_fetch()
         for index, record in countries.iterrows():
             self.country_fetcher(record['region'], record['country'], record['code_3'], record['code_2'])
-
-
