@@ -65,13 +65,9 @@ class EU_ZH_Fetcher(AbstractFetcher):
         df = self.fetch(url)
 
         for index, record in df.iterrows():
-
-            # date must be reformatted
-            d = record['datetime']
-            if code_3 == 'BEL':
-                date = d
-            else:
-                date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S').strftime('%Y-%m-%d')
+            # date Y-m-d or Y-m-dTH:M:S
+            date = record['datetime'].split('T')[0]
+            adm_area_2 = None
 
             # If no region is reported then all data is national
             if not hasattr(record, region):
@@ -89,58 +85,41 @@ class EU_ZH_Fetcher(AbstractFetcher):
             elif region == 'nuts_2' and code_3 == 'BEL':
                 if self.clean_string(record['nuts_1']) == 'MISSING' or pd.isna(record[region]):
                     continue
-                else:
-                    success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                        input_adm_area_1=self.clean_string(record['nuts_1']),
-                        input_adm_area_2=self.clean_string(record[region]),
-                        input_adm_area_3=None,
-                        return_original_if_failure=True,
-                        suppress_exception=True
-                    )
+
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=self.clean_string(record['nuts_1']),
+                    input_adm_area_2=self.clean_string(record[region]),
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
             # If the region appears cleanly, then we can translate to obtain GID
             elif region == 'nuts_1' and code_3 == 'BEL':
-                if pd.isna(record['nuts_2']):
-                    success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                        input_adm_area_1=self.clean_string(record[region]),
-                        input_adm_area_2=None,
-                        input_adm_area_3=None,
-                        return_original_if_failure=True,
-                        suppress_exception=True
-                    )
-                else:
+                if pd.notna(record['nuts_2']):
                     continue
+
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=self.clean_string(record[region]),
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
             else:
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=self.clean_string(record[region]),
-                    input_adm_area_2=None,
-                    input_adm_area_3=None,
                     return_original_if_failure=True,
                     suppress_exception=True
                 )
 
-            # we need to build an object containing the data we want to add or update
-            if region == 'nuts_2' and code_3 == 'BEL':
-                upsert_obj = {
-                    'source': self.SOURCE,
-                    'date': date,
-                    'country': country,
-                    'countrycode': code_3,
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': adm_area_2,
-                    'adm_area_3': None,
-                    'gid': gid
-                }
-            else:
-                upsert_obj = {
-                    'source': self.SOURCE,
-                    'date': date,
-                    'country': country,
-                    'countrycode': code_3,
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': None,
-                    'adm_area_3': None,
-                    'gid': gid
-                }
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date,
+                'country': country,
+                'countrycode': code_3,
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': None,
+                'gid': gid
+            }
+
             # add the epidemiological properties to the object if they exist
             if hasattr(record, 'tests'):
                 tested = int(record['tests']) if pd.notna(record['tests']) else None
