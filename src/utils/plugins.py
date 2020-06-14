@@ -22,7 +22,7 @@ from pathlib import Path
 
 from utils.config import config
 from utils.adapter_abstract import AbstractAdapter
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.validation import validate_incoming_data
 from utils.decorators import timeit
 
@@ -97,7 +97,7 @@ class Plugins:
             logger.info(f'Running plugin {plugin.__name__} ')
             if self.validate_input_data:
                 data_adapter.truncate_staging()
-            instance = plugin(db=data_adapter)
+            instance = plugin(data_adapter)
             instance.run()
             data_adapter.flush()
             validation_success = self.validate(plugin, instance, data_adapter) if self.validate_input_data else True

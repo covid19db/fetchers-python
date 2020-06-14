@@ -14,16 +14,17 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 from io import StringIO
 import requests
 
 __all__ = ('EnglandFetcher',)
 
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
+
 logger = logging.getLogger(__name__)
 
 
-class EnglandFetcher(AbstractFetcher):
+class EnglandFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data for English lower tier local authorities'''
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHE'  # Public Health England
@@ -64,4 +65,4 @@ class EnglandFetcher(AbstractFetcher):
                 'confirmed': confirmed,
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

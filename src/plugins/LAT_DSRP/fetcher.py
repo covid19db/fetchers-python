@@ -23,14 +23,15 @@
 import time
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('LatinAmericaDSRPFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class LatinAmericaDSRPFetcher(AbstractFetcher):
+class LatinAmericaDSRPFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'LAT_DSRP'
 
@@ -85,4 +86,4 @@ class LatinAmericaDSRPFetcher(AbstractFetcher):
                     'dead': deaths,
                     'recovered': recovered
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('PRT_MSDSFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/dssg-pt/covid19pt-data
@@ -32,7 +33,7 @@ __all__ = ('PRT_MSDSFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class PRT_MSDSFetcher(AbstractFetcher):
+class PRT_MSDSFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'PRT_MSDS'
 
@@ -110,7 +111,7 @@ class PRT_MSDSFetcher(AbstractFetcher):
 
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         ### Manually get province names
         province_list = ['ARS Norte', 'ARS Centro', 'ARS Lisboa e Vale do Tejo', 'ARS Alentejo', \
@@ -192,4 +193,4 @@ class PRT_MSDSFetcher(AbstractFetcher):
 
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

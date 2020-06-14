@@ -14,7 +14,7 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import parser
 
 __all__ = ('SpainWikiFetcher',)
@@ -22,7 +22,7 @@ __all__ = ('SpainWikiFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class SpainWikiFetcher(AbstractFetcher):
+class SpainWikiFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'ESP_MSVP'
 
@@ -68,4 +68,4 @@ class SpainWikiFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

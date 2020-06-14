@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('TUR_MHOE',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/ozanerturk/covid19-turkey-api
@@ -31,7 +32,7 @@ __all__ = ('TUR_MHOE',)
 logger = logging.getLogger(__name__)
 
 
-class TUR_MHOE(AbstractFetcher):
+class TUR_MHOE(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'TUR_MHOE'
 
@@ -99,4 +100,4 @@ class TUR_MHOE(AbstractFetcher):
 
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

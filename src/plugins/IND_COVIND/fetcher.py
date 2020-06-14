@@ -21,7 +21,7 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import iso_3166_2_in
 
 __all__ = ('IndiaCOVINDFetcher',)
@@ -29,7 +29,7 @@ __all__ = ('IndiaCOVINDFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class IndiaCOVINDFetcher(AbstractFetcher):
+class IndiaCOVINDFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'IND_COVIND'
 
@@ -106,7 +106,7 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                 'dead': deceased,
                 'recovered': recovered
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
         state_cases = self.fetch_state_cases().rename_axis(['Date', 'State'])
@@ -143,4 +143,4 @@ class IndiaCOVINDFetcher(AbstractFetcher):
                 'dead': deceased,
                 'recovered': recovered
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

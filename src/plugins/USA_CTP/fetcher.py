@@ -15,14 +15,15 @@
 from datetime import datetime
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('UnitedStatesCTPFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class UnitedStatesCTPFetcher(AbstractFetcher):
+class UnitedStatesCTPFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'USA_CTP'
 
@@ -63,7 +64,7 @@ class UnitedStatesCTPFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu,
                 'gid': ['USA']
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
         data = self.fetch('states',
@@ -110,4 +111,4 @@ class UnitedStatesCTPFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu,
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

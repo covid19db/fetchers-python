@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 import logging
 import pandas as pd
 import numpy as np
 from datetime import date
 
 __all__ = ('SWE_GMFFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     
@@ -30,7 +31,7 @@ __all__ = ('SWE_GMFFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class SWE_GMFFetcher(AbstractFetcher):
+class SWE_GMFFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'SWE_GM'
 
@@ -92,7 +93,7 @@ class SWE_GMFFetcher(AbstractFetcher):
             province = self.fix_naming(province_list[j])
 
             if province != 'UNKNOWN':
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('SWE', province)
+                adm_area_1, adm_area_2, adm_area_3, gid = self.get_region('SWE', province)
                 if not gid:
                     raise Exception(f'Unable to obtain GID for: {province}')
             else:
@@ -153,7 +154,7 @@ class SWE_GMFFetcher(AbstractFetcher):
                     'dead': dead
 
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
                 # replace previous cumulative data by the current cumulative date for iteration
                 previous_confirmed = confirmed
@@ -199,4 +200,4 @@ class SWE_GMFFetcher(AbstractFetcher):
                 'dead': dead
 
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

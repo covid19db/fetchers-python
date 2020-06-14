@@ -19,14 +19,15 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('UnitedStatesNYTFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class UnitedStatesNYTFetcher(AbstractFetcher):
+class UnitedStatesNYTFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'USA_NYT'
 
@@ -72,7 +73,7 @@ class UnitedStatesNYTFetcher(AbstractFetcher):
                 'dead': deaths,
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Going to fetch the NY Times US States')
         data = self.fetch('us-states')
@@ -104,4 +105,4 @@ class UnitedStatesNYTFetcher(AbstractFetcher):
                 'dead': deaths,
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

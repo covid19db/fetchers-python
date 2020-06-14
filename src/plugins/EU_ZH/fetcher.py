@@ -14,12 +14,12 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
-from datetime import datetime
 import os
 import sys
 
 __all__ = ('EU_ZH_Fetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,7 @@ logger = logging.getLogger(__name__)
 """
 
 
-class EU_ZH_Fetcher(AbstractFetcher):
+class EU_ZH_Fetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'EU_ZH'
 
@@ -146,7 +146,7 @@ class EU_ZH_Fetcher(AbstractFetcher):
                 quarantine = int(record['quarantine']) if pd.notna(record['quarantine']) else None
                 upsert_obj['quarantined'] = quarantine
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     # read the list of countries from a csv file in order to fetch each one
     def load_countries_to_fetch(self):

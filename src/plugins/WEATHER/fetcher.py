@@ -14,10 +14,10 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher, FetcherType
 from functools import reduce
 import datetime
 
+from utils.fetcher.base_weather import BaseWeatherFetcher
 from .utils import create_aggr_df, load_local_data
 
 __all__ = ('METDailyWEatherFetcher',)
@@ -25,9 +25,8 @@ __all__ = ('METDailyWEatherFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class METDailyWeatherFetcher(AbstractFetcher):
+class METDailyWeatherFetcher(BaseWeatherFetcher):
     LOAD_PLUGIN = True
-    TYPE = FetcherType.WEATHER
     SOURCE = 'MET'
 
     def fetch(self, day, weather_indicators, adm_2_to_grid):
@@ -40,7 +39,7 @@ class METDailyWeatherFetcher(AbstractFetcher):
 
     def get_last_weather_date(self):
         sql = f"SELECT max(date) as date FROM weather"
-        date = pd.DataFrame(self.db.execute(sql), columns=["date"])
+        date = pd.DataFrame(self.data_adapter.execute(sql), columns=["date"])
 
         return date.date.values[0] or datetime.datetime.strptime('2020-01-01', "%Y-%m-%d").date()
 
@@ -97,4 +96,4 @@ class METDailyWeatherFetcher(AbstractFetcher):
                     'windspeed_min_avg': row['windspeed_min_avg'],
                     'windspeed_min_std': row['windspeed_min_std']
                 }
-                self.db.upsert_weather_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

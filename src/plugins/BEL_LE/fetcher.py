@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('BEL_WYFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv
@@ -35,7 +36,7 @@ __all__ = ('BEL_WYFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class BEL_WYFetcher(AbstractFetcher):
+class BEL_WYFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = False
     SOURCE = 'BEL_LE'
 
@@ -138,4 +139,4 @@ class BEL_WYFetcher(AbstractFetcher):
 
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

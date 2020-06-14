@@ -14,15 +14,16 @@
 
 import logging
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import date
 
 __all__ = ('NigeriaSO',)
 
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
+
 logger = logging.getLogger(__name__)
 
 
-class NigeriaSO(AbstractFetcher):
+class NigeriaSO(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'NGA_SO'
 
@@ -60,4 +61,4 @@ class NigeriaSO(AbstractFetcher):
             'gid': ['NGA']
         }
 
-        self.db.upsert_epidemiology_data(**upsert_obj)
+        self.upsert_data(**upsert_obj)

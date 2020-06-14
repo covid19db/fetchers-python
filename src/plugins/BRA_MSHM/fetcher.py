@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('BRA_MSHMFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/elhenrico/covid19-Brazil-timeseries
@@ -31,7 +32,7 @@ __all__ = ('BRA_MSHMFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class BRA_MSHMFetcher(AbstractFetcher):
+class BRA_MSHMFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'BRA_MSHM'
 
@@ -109,7 +110,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
 
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         ### For province-level
         for k in range(len(time_list)):
@@ -136,7 +137,7 @@ class BRA_MSHMFetcher(AbstractFetcher):
                 confirmed = current_confirm_list[1 + i]
                 dead = current_dead_list[1 + i]
 
-                adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('BRA', province, None, None)
+                adm_area_1, adm_area_2, adm_area_3, gid = self.get_region('BRA', province)
 
                 upsert_obj = {
                     # source is mandatory and is a code that identifies the  source
@@ -162,4 +163,4 @@ class BRA_MSHMFetcher(AbstractFetcher):
 
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

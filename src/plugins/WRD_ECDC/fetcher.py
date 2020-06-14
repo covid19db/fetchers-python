@@ -15,14 +15,15 @@
 from datetime import datetime
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('WorldECDCFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class WorldECDCFetcher(AbstractFetcher):
+class WorldECDCFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'WRD_ECDC'
 
@@ -74,4 +75,4 @@ class WorldECDCFetcher(AbstractFetcher):
                 'dead': total_deaths
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

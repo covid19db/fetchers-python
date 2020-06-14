@@ -15,15 +15,16 @@
 import logging
 import pandas as pd
 import math
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 
 __all__ = ('CanadaFetcher',)
 
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
+
 logger = logging.getLogger(__name__)
 
 
-class CanadaFetcher(AbstractFetcher):
+class CanadaFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'CAN_GOV'
 
@@ -105,7 +106,7 @@ class CanadaFetcher(AbstractFetcher):
 
             # the db object comes with a helper method that does the upsert for you:
             if province != 'Repatriated travellers':
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
             # but use it with care!

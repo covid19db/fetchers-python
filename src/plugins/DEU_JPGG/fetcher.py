@@ -21,14 +21,15 @@
 
 import logging
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('GermanyJPGGFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class GermanyJPGGFetcher(AbstractFetcher):
+class GermanyJPGGFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'DEU_JPGG'
 
@@ -58,7 +59,7 @@ class GermanyJPGGFetcher(AbstractFetcher):
                 'confirmed': int(record[date]),
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug(f'Fetching deaths for Germany region {state}')
         data = requests.get(f'https://covid19-germany.appspot.com/timeseries/{state}/deaths').json()
@@ -85,7 +86,7 @@ class GermanyJPGGFetcher(AbstractFetcher):
                 'dead': int(record[date]),
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     def run(self):
         for state in self.adm_translator.translation_pd['input_adm_area_1']:

@@ -19,14 +19,15 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('AustraliaC1AFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class AustraliaC1AFetcher(AbstractFetcher):
+class AustraliaC1AFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'AUS_C1A'
 
@@ -61,7 +62,7 @@ class AustraliaC1AFetcher(AbstractFetcher):
                 'hospitalised': in_hospital,
                 'hospitalised_icu': in_icu
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
         data = self.fetch('state')
@@ -101,4 +102,4 @@ class AustraliaC1AFetcher(AbstractFetcher):
                     'hospitalised': in_hospital,
                     'hospitalised_icu': in_icu
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
