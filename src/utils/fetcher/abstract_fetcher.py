@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,11 +37,11 @@ class AbstractFetcher(ABC):
     TYPE = FetcherType.EPIDEMIOLOGY
     LOAD_PLUGIN = False
 
-    def __init__(self, db: AbstractAdapter):
+    def __init__(self, data_adapter: AbstractAdapter):
         self.adm_translator = self.load_adm_translator()
         self.country_codes_translator = CountryCodesTranslator()
         self.sliding_window_days = config.SLIDING_WINDOW_DAYS
-        self.db = db
+        self.data_adapter = data_adapter
 
     def load_adm_translator(self) -> AdmTranslator:
         translation_csv_fname = getattr(self.__class__, 'TRANSLATION_CSV', "translation.csv")
@@ -52,7 +52,7 @@ class AbstractFetcher(ABC):
                    input_adm_area_3: str = None, suppress_exception: bool = False):
         try:
             # Check if input data can be matched directly into administrative division table
-            adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division(
+            adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(
                 countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
         except Exception as ex:
             adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
@@ -69,4 +69,4 @@ class AbstractFetcher(ABC):
 
     @abstractmethod
     def run(self):
-        pass
+        raise NotImplementedError()

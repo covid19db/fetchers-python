@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,14 +19,15 @@
 
 import logging
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('JapanC1JACDFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class JapanC1JACDFetcher(AbstractFetcher):
+class JapanC1JACDFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'JPN_C1JACD'
 
@@ -65,7 +66,7 @@ class JapanC1JACDFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu,
                 'gid': ['JPN']
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
             for area in record['area']:
                 prefecture = area['name']
@@ -100,4 +101,4 @@ class JapanC1JACDFetcher(AbstractFetcher):
                     'hospitalised_icu': hospitalised_icu,
                     'gid': gid
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

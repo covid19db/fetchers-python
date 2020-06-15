@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@ import logging
 from pandas import DataFrame
 from collections import OrderedDict
 
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import to_number, extract_data_table, fetch_html_tables_from_wiki
 
 __all__ = ('PolandWikiFetcher',)
@@ -24,7 +24,7 @@ __all__ = ('PolandWikiFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class PolandWikiFetcher(AbstractFetcher):
+class PolandWikiFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'POL_WIKI'
 
@@ -36,7 +36,7 @@ class PolandWikiFetcher(AbstractFetcher):
             item = OrderedDict(row)
             total_deaths = total_deaths + to_number(item['Official deaths daily'])
 
-            self.db.upsert_epidemiology_data(
+            self.upsert_data(
                 date=item['Date'],
                 country='Poland',
                 countrycode='POL',
@@ -75,7 +75,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     return_original_if_failure=True
                 )
 
-                self.db.upsert_epidemiology_data(
+                self.upsert_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',
@@ -110,7 +110,7 @@ class PolandWikiFetcher(AbstractFetcher):
                     return_original_if_failure=True
                 )
 
-                self.db.upsert_epidemiology_data(
+                self.upsert_data(
                     date=item['Date'],
                     country='Poland',
                     countrycode='POL',

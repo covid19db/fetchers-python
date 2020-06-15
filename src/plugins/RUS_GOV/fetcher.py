@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,16 +16,17 @@ import logging
 import pandas as pd
 import json
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 from bs4 import BeautifulSoup
 
 __all__ = ('RussiaGovFetcher',)
 
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
+
 logger = logging.getLogger(__name__)
 
 
-class RussiaGovFetcher(AbstractFetcher):
+class RussiaGovFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'RUS_GOV'
 
@@ -77,7 +78,7 @@ class RussiaGovFetcher(AbstractFetcher):
                 'gid': ['RUS']
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     def update_provincial_cases(self):
         logger.info("Processing number of cases in Russia by province")
@@ -127,7 +128,7 @@ class RussiaGovFetcher(AbstractFetcher):
                     'gid': gid
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
     def run(self):
         self.update_national_cases()

@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,15 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('WalesFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class WalesFetcher(AbstractFetcher):
+class WalesFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data for testing by Welsh local authorities and deaths by health board'''
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHW'  # Public Health Wales
@@ -72,7 +73,7 @@ class WalesFetcher(AbstractFetcher):
                 'tested': tested
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
             # in order to provide coherent level 3 admin data for users, insert the same records but with a level 3 gid
 
@@ -94,7 +95,7 @@ class WalesFetcher(AbstractFetcher):
                 'tested': tested
             }
 
-            self.db.upsert_epidemiology_data(**level3_upsert_obj)
+            self.upsert_data(**level3_upsert_obj)
 
     def deaths(self, data, date):
         for index, record in data.iterrows():
@@ -124,7 +125,7 @@ class WalesFetcher(AbstractFetcher):
                 'dead': dead
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     def run(self):
         testing_data, deaths_data, effective_date = self.fetch()

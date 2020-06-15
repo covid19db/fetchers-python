@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('ZAF_DSFSIFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/dsfsi/covid19za
@@ -34,7 +35,7 @@ __all__ = ('ZAF_DSFSIFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class ZAF_DSFSIFetcher(AbstractFetcher):
+class ZAF_DSFSIFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'ZAF_DSFSI'
 
@@ -170,20 +171,20 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         ### Get the 10 province names    
         province_lists = list(province_confirmed_data.columns)[2:12]
 
-        trans_dict = {'EC': 'Eastern Cape', \
-                      'FS': 'Free State', \
-                      'GP': 'Gauteng', \
-                      'KZN': 'KwaZulu-Natal', \
-                      'LP': 'Limpopo', \
-                      'MP': 'Mpumalanga', \
-                      'NC': 'Northern Cape', \
-                      'NW': 'North West', \
-                      'WC': 'Western Cape', \
+        trans_dict = {'EC': 'Eastern Cape',
+                      'FS': 'Free State',
+                      'GP': 'Gauteng',
+                      'KZN': 'KwaZulu-Natal',
+                      'LP': 'Limpopo',
+                      'MP': 'Mpumalanga',
+                      'NC': 'Northern Cape',
+                      'NW': 'North West',
+                      'WC': 'Western Cape',
                       'UNKNOWN': 'UNKNOWN'}
 
         ### Basically using province_confirmed_data csv
@@ -216,7 +217,7 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
                                0])
 
                 if province != 'UNKNOWN':
-                    adm_area_1, adm_area_2, adm_area_3, gid = self.db.get_adm_division('ZAF', province)
+                    adm_area_1, adm_area_2, adm_area_3, gid = self.get_region('ZAF', province)
 
                     if not gid:
                         raise Exception(f'Unable to obtain GID for: {province}')
@@ -244,4 +245,4 @@ class ZAF_DSFSIFetcher(AbstractFetcher):
 
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj_province)
+                self.upsert_data(**upsert_obj_province)

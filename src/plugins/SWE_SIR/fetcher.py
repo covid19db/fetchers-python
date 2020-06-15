@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,14 +23,15 @@ import logging
 import time
 import pandas as pd
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('SwedenSIRFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class SwedenSIRFetcher(AbstractFetcher):
+class SwedenSIRFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'SWE_SIR'
 
@@ -91,4 +92,4 @@ class SwedenSIRFetcher(AbstractFetcher):
                     upsert_obj['adm_area_3'] = adm_area_3
                     upsert_obj['gid'] = gid
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

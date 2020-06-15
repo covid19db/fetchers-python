@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,15 +15,16 @@
 import logging
 import pandas as pd
 import requests
-from utils.fetcher_abstract import AbstractFetcher
 from datetime import datetime
 
 __all__ = ('IndonesiaFetcher',)
 
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
+
 logger = logging.getLogger(__name__)
 
 
-class IndonesiaFetcher(AbstractFetcher):
+class IndonesiaFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'IDN_GTPPC'
 
@@ -70,7 +71,7 @@ class IndonesiaFetcher(AbstractFetcher):
                 'gid': ['IDN']
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     def update_provincial_cases(self):
         logger.info("Processing number of cases in Indonesia by province")
@@ -120,7 +121,7 @@ class IndonesiaFetcher(AbstractFetcher):
                     'gid': gid
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
     def run(self):
         self.update_national_cases()

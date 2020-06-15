@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,8 +15,9 @@
 import os
 import csv
 import logging
-from utils.fetcher_abstract import AbstractFetcher, FetcherType
+from utils.fetcher.abstract_fetcher import AbstractFetcher, FetcherType
 from utils.country_codes_translator.translator import CountryCodesTranslator
+from utils.fetcher.base_mobility import BaseMobilityFetcher
 from utils.helper import remove_words
 from .utils import get_recent_apple_mobility_data
 
@@ -25,9 +26,8 @@ __all__ = ('AppleMobilityFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class AppleMobilityFetcher(AbstractFetcher):
+class AppleMobilityFetcher(BaseMobilityFetcher):
     LOAD_PLUGIN = True
-    TYPE = FetcherType.MOBILITY
     SOURCE = 'APPLE_MOBILITY'
 
     @staticmethod
@@ -141,7 +141,7 @@ class AppleMobilityFetcher(AbstractFetcher):
                     upsert_obj['driving'] = value
 
                 if gid:
-                    self.db.upsert_mobility_data(**upsert_obj)
+                    self.upsert_data(**upsert_obj)
 
         # FOR DEBUGGING PURPOSE ONLY - save unknown regions into CSV file
         logger.warning('Unknown regions total: {}'.format(len(unknown_regions)))

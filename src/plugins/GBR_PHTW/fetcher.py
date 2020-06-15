@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,14 +24,15 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('UnitedKingdomPHTWFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class UnitedKingdomPHTWFetcher(AbstractFetcher):
+class UnitedKingdomPHTWFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHTW'
 
@@ -78,7 +79,7 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
                 'dead': deaths,
                 'gid': gid
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
         logger.warning('Scotland and Wales report by health board - GIDs are approximations by local authorities')
@@ -109,4 +110,4 @@ class UnitedKingdomPHTWFetcher(AbstractFetcher):
                     'confirmed': totalcases,
                     'gid': gid
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

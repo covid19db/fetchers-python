@@ -12,10 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import List
+
+from abc import abstractmethod
+
+__all__ = ('BaseGovernmentResponseFetcher')
+
+from utils.fetcher.abstract_fetcher import AbstractFetcher, FetcherType
 
 
-def remove_words(data: str, words: List) -> str:
-    for w in words:
-        data = data.replace(w, '')
-    return data.strip()
+class BaseGovernmentResponseFetcher(AbstractFetcher):
+    TYPE = FetcherType.GOVERNMENT_RESPONSE
+    LOAD_PLUGIN = False
+
+    def upsert_data(self, **kwargs):
+        self.data_adapter.upsert_government_response_data(**kwargs)
+
+    @abstractmethod
+    def run(self):
+        raise NotImplementedError()

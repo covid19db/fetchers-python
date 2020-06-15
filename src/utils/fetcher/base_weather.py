@@ -12,10 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import List
+
+from abc import abstractmethod
+
+__all__ = ('BaseWeatherFetcher')
+
+from utils.fetcher.abstract_fetcher import AbstractFetcher, FetcherType
 
 
-def remove_words(data: str, words: List) -> str:
-    for w in words:
-        data = data.replace(w, '')
-    return data.strip()
+class BaseWeatherFetcher(AbstractFetcher):
+    TYPE = FetcherType.WEATHER
+    LOAD_PLUGIN = False
+
+    def upsert_data(self, **kwargs):
+        self.data_adapter.upsert_weather_data(**kwargs)
+
+    @abstractmethod
+    def run(self):
+        raise NotImplementedError()

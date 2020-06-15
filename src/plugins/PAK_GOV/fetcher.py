@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +14,13 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 import os
 import sys
 from selenium import webdriver
 import time
 from bs4 import BeautifulSoup
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import isData, parseChartData
 
 __all__ = ('PAK_GOV_Fetcher',)
@@ -33,7 +34,7 @@ logger = logging.getLogger(__name__)
 """
 
 
-class PAK_GOV_Fetcher(AbstractFetcher):
+class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'PAK_GOV'
     wd = None
@@ -105,7 +106,7 @@ class PAK_GOV_Fetcher(AbstractFetcher):
                 'dead': dead
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     # read the list of countries from a csv file in order to fetch each one
     def load_provinces_to_fetch(self):

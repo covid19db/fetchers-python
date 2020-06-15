@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 import logging
 import pandas as pd
 import numpy as np
 from datetime import datetime
 
 __all__ = ('MYS_MHYS',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/ynshung/covid-19-malaysia
@@ -38,7 +39,7 @@ __all__ = ('MYS_MHYS',)
 logger = logging.getLogger(__name__)
 
 
-class MYS_MHYS(AbstractFetcher):
+class MYS_MHYS(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'MYS_MHYS'
 
@@ -111,7 +112,7 @@ class MYS_MHYS(AbstractFetcher):
                 'hospitalised': int(icu)
 
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
             province_confirmed_data = self.province_confirmed_fetch()
             province_list = list(province_confirmed_data.columns[1:])
@@ -157,4 +158,4 @@ class MYS_MHYS(AbstractFetcher):
                         'gid': gid,
                         'confirmed': province_confirmed
                     }
-                    self.db.upsert_epidemiology_data(**upsert_obj)
+                    self.upsert_data(**upsert_obj)

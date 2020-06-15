@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,19 +18,17 @@ import requests
 import pandas as pd
 import numpy as np
 
+from utils.fetcher.base_government_response import BaseGovernmentResponseFetcher
 from .utils import parser, to_int
 from datetime import datetime, timedelta
-
-from utils.fetcher_abstract import AbstractFetcher, FetcherType
 
 __all__ = ('StringencyFetcher',)
 
 logger = logging.getLogger(__name__)
 
 
-class StringencyFetcher(AbstractFetcher):
+class StringencyFetcher(BaseGovernmentResponseFetcher):
     LOAD_PLUGIN = True
-    TYPE = FetcherType.GOVERNMENT_RESPONSE
     SOURCE = 'GOVTRACK'
 
     def fetch(self):
@@ -111,7 +109,7 @@ class StringencyFetcher(AbstractFetcher):
                 'economic_support_index': record['EconomicSupportIndex'],
                 'economic_support_index_for_display': record['EconomicSupportIndexForDisplay']
             }
-            self.db.upsert_government_response_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         # GOVTRACK data from API
         govtrack_data = self.fetch()
@@ -125,4 +123,4 @@ class StringencyFetcher(AbstractFetcher):
                 'gid': [record['country_code']],
                 'actions': json.dumps(govtrack_actions)
             }
-            self.db.upsert_government_response_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

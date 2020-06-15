@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import parser
 
 __all__ = ('SwitzerlandFetcher',)
@@ -22,7 +22,7 @@ __all__ = ('SwitzerlandFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class SwitzerlandFetcher(AbstractFetcher):
+class SwitzerlandFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'CHE_OPGOV'
     region_names = {'CH.AG': 'Aargau',
@@ -113,4 +113,4 @@ class SwitzerlandFetcher(AbstractFetcher):
                 'hospitalised_icu': hospitalised_icu
             }
 
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)

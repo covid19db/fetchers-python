@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from utils.fetcher_abstract import AbstractFetcher
 import logging
 import pandas as pd
 import numpy as np
 
 __all__ = ('NLD_CWFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 """ 
     site-location: https://github.com/J535D165/CoronaWatchNL
@@ -31,7 +32,7 @@ __all__ = ('NLD_CWFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class NLD_CWFetcher(AbstractFetcher):
+class NLD_CWFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'NLD_CW'
 
@@ -108,4 +109,4 @@ class NLD_CWFetcher(AbstractFetcher):
                     'hospitalised': HOSPITALISED
                 }
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)

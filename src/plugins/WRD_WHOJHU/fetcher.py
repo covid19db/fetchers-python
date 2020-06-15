@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
 from datetime import datetime
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 from .utils import iso_alpha_3
 
 __all__ = ('WorldWHOJHUFetcher',)
@@ -28,7 +28,7 @@ __all__ = ('WorldWHOJHUFetcher',)
 logger = logging.getLogger(__name__)
 
 
-class WorldWHOJHUFetcher(AbstractFetcher):
+class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = False
     SOURCE = 'WRD_WHOJHU'
 
@@ -73,7 +73,7 @@ class WorldWHOJHUFetcher(AbstractFetcher):
                     upsert_obj['adm_area_3'] = adm_area_3
                     upsert_obj['gid'] = gid
 
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
     def run(self):
         self.fetch('confirmed')

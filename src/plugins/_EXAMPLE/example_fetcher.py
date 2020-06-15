@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,15 @@
 
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('ExampleFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class ExampleFetcher(AbstractFetcher):
+class ExampleFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = False
     SOURCE = 'CND_XXX'
 
@@ -70,8 +71,8 @@ class ExampleFetcher(AbstractFetcher):
             # see the main webpage or the README for all the available fields and their
             # semantics
 
-            # the db object comes with a helper method that does the upsert for you:
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            # update data
+            self.upsert_data(**upsert_obj)
 
             # alternatively, we can issue the query directly using self.db.execute(query, data)
             # but use it with care!

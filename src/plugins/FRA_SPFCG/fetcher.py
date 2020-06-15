@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,14 +20,15 @@
 from datetime import datetime
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('FranceSPFCGFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class FranceSPFCGFetcher(AbstractFetcher):
+class FranceSPFCGFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'FRA_SPFCG'
 
@@ -70,7 +71,7 @@ class FranceSPFCGFetcher(AbstractFetcher):
                         upsert_obj['adm_area_3'] = adm_area_3
                         upsert_obj['gid'] = gid
 
-                    self.db.upsert_epidemiology_data(**upsert_obj)
+                    self.upsert_data(**upsert_obj)
 
     def run(self):
         self.fetch('confirmed')

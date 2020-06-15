@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,18 +16,17 @@ import os
 import csv
 import logging
 import pandas as pd
-from utils.fetcher_abstract import AbstractFetcher, FetcherType
 
 __all__ = ('GoogleMobilityFetcher',)
 
+from utils.fetcher.base_mobility import BaseMobilityFetcher
 from utils.helper import remove_words
 
 logger = logging.getLogger(__name__)
 
 
-class GoogleMobilityFetcher(AbstractFetcher):
+class GoogleMobilityFetcher(BaseMobilityFetcher):
     LOAD_PLUGIN = True
-    TYPE = FetcherType.MOBILITY
     SOURCE = 'GOOGLE_MOBILITY'
 
     def fetch(self):
@@ -109,7 +108,7 @@ class GoogleMobilityFetcher(AbstractFetcher):
             }
 
             if gid:
-                self.db.upsert_mobility_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
 
         # FOR DEBUGGING PURPOSE ONLY - save unknown regions into CSV file
         logger.warning('Unknown regions total: {}'.format(len(unknown_regions)))

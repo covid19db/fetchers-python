@@ -1,4 +1,4 @@
-# Copyright University of Oxford 2020
+# Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,14 +21,15 @@ import logging
 import requests
 import pandas as pd
 from datetime import datetime
-from utils.fetcher_abstract import AbstractFetcher
 
 __all__ = ('ThailandSTATFetcher',)
+
+from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
 
-class ThailandSTATFetcher(AbstractFetcher):
+class ThailandSTATFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'THA_STAT'
 
@@ -51,7 +52,7 @@ class ThailandSTATFetcher(AbstractFetcher):
                 'recovered': int(record['Recovered']),
                 'hospitalised': int(record['Hospitalized'])
             }
-            self.db.upsert_epidemiology_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
         data = self.fetch('cases')
@@ -82,4 +83,4 @@ class ThailandSTATFetcher(AbstractFetcher):
                     'gid': gid,
                     'confirmed': int(confirmed)
                 }
-                self.db.upsert_epidemiology_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)
