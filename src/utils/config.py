@@ -41,6 +41,7 @@ class Config:
         self.load_env_variable("LOGLEVEL", "DEBUG")
         self.load_env_variable("SYS_EMAIL")
         self.load_env_variable("SYS_EMAIL_PASS")
+        self.load_env_variable("SYS_EMAIL_SMTP")
         self.load_env_variable("DB_USERNAME")
         self.load_env_variable("DB_PASSWORD")
         self.load_env_variable("DB_ADDRESS")

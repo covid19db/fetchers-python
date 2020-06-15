@@ -31,7 +31,7 @@ def validate_address(email: str) -> bool:
     return isinstance(email, str) and re.match(EMAIL_REGEX, email)
 
 
-def send_email(src_code: str, message: str):
+def send_email(src_code: str, subject: str, message: str):
     emails_file_path = os.path.join(os.path.dirname(__file__), "..", "data", "emails.csv")
 
     if not os.path.isfile(emails_file_path):
@@ -47,12 +47,12 @@ def send_email(src_code: str, message: str):
     receivers = [email for email in emails if validate_address(email)]
 
     msg = EmailMessage()
-    msg['Subject'] = f'Covid19db fetchers-python validation error'
-    msg['From'] = "covid19db.org"
+    msg['Subject'] = subject
+    msg['From'] = config.SYS_EMAIL
     msg['To'] = receivers
     msg.set_content(message)
 
-    with smtplib.SMTP('smtp.gmail.com', 587) as s:
+    with smtplib.SMTP(config.SYS_EMAIL_SMTP, 587) as s:
         s.starttls()
         s.login(config.SYS_EMAIL, config.SYS_EMAIL_PASS)
         s.send_message(msg)

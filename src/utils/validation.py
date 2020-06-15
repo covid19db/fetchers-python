@@ -28,9 +28,10 @@ def validate_incoming_data(data_adapter: DataAdapter, fetcher_type: FetcherType,
         data_adapter.call_db_function_send_data(source_name)
         return True
     else:
+        subject = f"Covid19db fetchers-python validation error"
         message = f"Validation failed for {source_name}, please check"
         try:
-            send_email(source_name, message)
+            send_email(source_name, subject, message)
         except Exception as ex:
             logger.error(f'Unable to send an email {source_name}', exc_info=True)
 
