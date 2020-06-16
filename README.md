@@ -65,7 +65,7 @@ Currently implemented fetchers:
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: prefecture |
 | USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | release | adm_area_1: state |
 | EU_ZH | Belgium | BEL| [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | tested | adm_area_1: region; adm_area_2: province |
-
+| CHN_ICL | China | CHN| [MRC Centre Imperial College London](https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china) | tested | adm_area_1: province or None |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
