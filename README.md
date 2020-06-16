@@ -64,7 +64,7 @@ Currently implemented fetchers:
 | MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | release | adm_area_1: NA or province|
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: prefecture |
 | USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | release | adm_area_1: state |
-
+| FRA_SPF | France | FRA | [Données hospitalières relatives à l'épidémie de COVID-19](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/) | candidate | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France), adm_area_2: [France "départements"](https://en.wikipedia.org/wiki/Departments_of_France) |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
