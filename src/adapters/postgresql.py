@@ -85,12 +85,11 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def call_db_function_compare(self, source_code: str):
+    def call_db_function_compare(self, source_code: str) -> int:
         self.cur.callproc('covid19_compare_tables', (source_code,))
+        logger.debug("Validating incoming data...")
         compare_result = self.cur.fetchone()
-        print(compare_result)
-        logger.debug("Validating incoming data")
-        return compare_result
+        return compare_result[0]
 
     def call_db_function_send_data(self, source_code: str):
         self.cur.callproc('send_validated_data', [source_code])

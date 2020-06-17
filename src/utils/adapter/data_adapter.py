@@ -18,7 +18,7 @@ from adapters.sqlite import SqliteHelper
 from adapters.csvfile import CSVFileHelper
 from utils.adapter.abstract_adapter import AbstractAdapter
 
-__all__ = ('DataAdapter')
+__all__ = ('AdapterWrapper')
 
 
 class DataAdapter:
