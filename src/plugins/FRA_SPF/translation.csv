@@ -1,0 +1,120 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+FRA,Région 84,,,Auvergne-Rhône-Alpes,,,FRA.1_1
+FRA,Région 27,,,Bourgogne-Franche-Comté,,,FRA.2_1
+FRA,Région 53,,,Bretagne,,,FRA.3_1
+FRA,Région 24,,,Centre-Val de Loire,,,FRA.4_1
+FRA,Région 94,,,Corse,,,FRA.5_1
+FRA,Région 44,,,Grand Est,,,FRA.6_1
+FRA,Région 32,,,Hauts-de-France,,,FRA.7_1
+FRA,Région 11,,,Île-de-France,,,FRA.8_1
+FRA,Région 28,,,Normandie,,,FRA.9_1
+FRA,Région 75,,,Nouvelle-Aquitaine,,,FRA.10_1
+FRA,Région 76,,,Occitanie,,,FRA.11_1
+FRA,Région 52,,,Pays de la Loire,,,FRA.12_1
+FRA,Région 93,,,Provence-Alpes-Côte d'Azur,,,FRA.13_1
+FRA,Région 01,,,Guadeloupe,,,GLP
+FRA,Région 02,,,Martinique,,,MTQ
+FRA,Région 03,,,French Guiana,,,GUF
+FRA,Région 04,,,Reunion,,,REU
+FRA,Région 06,,,Mayotte,,,MYT
+FRA,,Département 01,,Auvergne-Rhône-Alpes,Ain,,FRA.1.1_1
+FRA,,Département 03,,Auvergne-Rhône-Alpes,Allier,,FRA.1.2_1
+FRA,,Département 07,,Auvergne-Rhône-Alpes,Ardèche,,FRA.1.3_1
+FRA,,Département 15,,Auvergne-Rhône-Alpes,Cantal,,FRA.1.4_1
+FRA,,Département 26,,Auvergne-Rhône-Alpes,Drôme,,FRA.1.5_1
+FRA,,Département 43,,Auvergne-Rhône-Alpes,Haute-Loire,,FRA.1.6_1
+FRA,,Département 74,,Auvergne-Rhône-Alpes,Haute-Savoie,,FRA.1.7_1
+FRA,,Département 38,,Auvergne-Rhône-Alpes,Isère,,FRA.1.8_1
+FRA,,Département 42,,Auvergne-Rhône-Alpes,Loire,,FRA.1.9_1
+FRA,,Département 63,,Auvergne-Rhône-Alpes,Puy-de-Dôme,,FRA.1.10_1
+FRA,,Département 69,,Auvergne-Rhône-Alpes,Rhône,,FRA.1.11_1
+FRA,,Département 73,,Auvergne-Rhône-Alpes,Savoie,,FRA.1.12_1
+FRA,,Département 21,,Bourgogne-Franche-Comté,Côte-d'Or,,FRA.2.1_1
+FRA,,Département 25,,Bourgogne-Franche-Comté,Doubs,,FRA.2.2_1
+FRA,,Département 70,,Bourgogne-Franche-Comté,Haute-Saône,,FRA.2.3_1
+FRA,,Département 39,,Bourgogne-Franche-Comté,Jura,,FRA.2.4_1
+FRA,,Département 58,,Bourgogne-Franche-Comté,Nièvre,,FRA.2.5_1
+FRA,,Département 71,,Bourgogne-Franche-Comté,Saône-et-Loire,,FRA.2.6_1
+FRA,,Département 90,,Bourgogne-Franche-Comté,Territoire de Belfort,,FRA.2.7_1
+FRA,,Département 89,,Bourgogne-Franche-Comté,Yonne,,FRA.2.8_1
+FRA,,Département 22,,Bretagne,Côtes-d'Armor,,FRA.3.1_1
+FRA,,Département 29,,Bretagne,Finistère,,FRA.3.2_1
+FRA,,Département 35,,Bretagne,Ille-et-Vilaine,,FRA.3.3_1
+FRA,,Département 56,,Bretagne,Morbihan,,FRA.3.4_1
+FRA,,Département 18,,Centre-Val de Loire,Cher,,FRA.4.1_1
+FRA,,Département 28,,Centre-Val de Loire,Eure-et-Loir,,FRA.4.2_1
+FRA,,Département 36,,Centre-Val de Loire,Indre,,FRA.4.4_1
+FRA,,Département 37,,Centre-Val de Loire,Indre-et-Loire,,FRA.4.3_1
+FRA,,Département 41,,Centre-Val de Loire,Loir-et-Cher,,FRA.4.5_1
+FRA,,Département 45,,Centre-Val de Loire,Loiret,,FRA.4.6_1
+FRA,,Département 2A,,Corse,Corse-du-Sud,,FRA.5.1_1
+FRA,,Département 2B,,Corse,Haute-Corse,,FRA.5.2_1
+FRA,,Département 08,,Grand Est,Ardennes,,FRA.6.1_1
+FRA,,Département 10,,Grand Est,Aube,,FRA.6.2_1
+FRA,,Département 67,,Grand Est,Bas-Rhin,,FRA.6.3_1
+FRA,,Département 68,,Grand Est,Haut-Rhin,,FRA.6.4_1
+FRA,,Département 52,,Grand Est,Haute-Marne,,FRA.6.5_1
+FRA,,Département 51,,Grand Est,Marne,,FRA.6.6_1
+FRA,,Département 54,,Grand Est,Meurthe-et-Moselle,,FRA.6.7_1
+FRA,,Département 55,,Grand Est,Meuse,,FRA.6.8_1
+FRA,,Département 57,,Grand Est,Moselle,,FRA.6.9_1
+FRA,,Département 88,,Grand Est,Vosges,,FRA.6.10_1
+FRA,,Département 02,,Hauts-de-France,Aisne,,FRA.7.1_1
+FRA,,Département 59,,Hauts-de-France,Nord,,FRA.7.2_1
+FRA,,Département 60,,Hauts-de-France,Oise,,FRA.7.3_1
+FRA,,Département 62,,Hauts-de-France,Pas-de-Calais,,FRA.7.4_1
+FRA,,Département 80,,Hauts-de-France,Somme,,FRA.7.5_1
+FRA,,Département 91,,Île-de-France,Essonne,,FRA.8.1_1
+FRA,,Département 92,,Île-de-France,Hauts-de-Seine,,FRA.8.2_1
+FRA,,Département 75,,Île-de-France,Paris,,FRA.8.3_1
+FRA,,Département 77,,Île-de-France,Seine-et-Marne,,FRA.8.4_1
+FRA,,Département 93,,Île-de-France,Seine-Saint-Denis,,FRA.8.5_1
+FRA,,Département 95,,Île-de-France,Val-d'Oise,,FRA.8.6_1
+FRA,,Département 94,,Île-de-France,Val-de-Marne,,FRA.8.7_1
+FRA,,Département 78,,Île-de-France,Yvelines,,FRA.8.8_1
+FRA,,Département 14,,Normandie,Calvados,,FRA.9.1_1
+FRA,,Département 27,,Normandie,Eure,,FRA.9.2_1
+FRA,,Département 50,,Normandie,Manche,,FRA.9.3_1
+FRA,,Département 61,,Normandie,Orne,,FRA.9.4_1
+FRA,,Département 76,,Normandie,Seine-Maritime,,FRA.9.5_1
+FRA,,Département 16,,Nouvelle-Aquitaine,Charente,,FRA.10.2_1
+FRA,,Département 17,,Nouvelle-Aquitaine,Charente-Maritime,,FRA.10.1_1
+FRA,,Département 19,,Nouvelle-Aquitaine,Corrèze,,FRA.10.3_1
+FRA,,Département 23,,Nouvelle-Aquitaine,Creuse,,FRA.10.4_1
+FRA,,Département 79,,Nouvelle-Aquitaine,Deux-Sèvres,,FRA.10.5_1
+FRA,,Département 24,,Nouvelle-Aquitaine,Dordogne,,FRA.10.6_1
+FRA,,Département 33,,Nouvelle-Aquitaine,Gironde,,FRA.10.7_1
+FRA,,Département 87,,Nouvelle-Aquitaine,Haute-Vienne,,FRA.10.8_1
+FRA,,Département 40,,Nouvelle-Aquitaine,Landes,,FRA.10.9_1
+FRA,,Département 47,,Nouvelle-Aquitaine,Lot-et-Garonne,,FRA.10.10_1
+FRA,,Département 64,,Nouvelle-Aquitaine,Pyrénées-Atlantiques,,FRA.10.11_1
+FRA,,Département 86,,Nouvelle-Aquitaine,Vienne,,FRA.10.12_1
+FRA,,Département 09,,Occitanie,Ariège,,FRA.11.1_1
+FRA,,Département 11,,Occitanie,Aude,,FRA.11.2_1
+FRA,,Département 12,,Occitanie,Aveyron,,FRA.11.3_1
+FRA,,Département 30,,Occitanie,Gard,,FRA.11.4_1
+FRA,,Département 32,,Occitanie,Gers,,FRA.11.5_1
+FRA,,Département 31,,Occitanie,Haute-Garonne,,FRA.11.6_1
+FRA,,Département 65,,Occitanie,Hautes-Pyrénées,,FRA.11.7_1
+FRA,,Département 34,,Occitanie,Hérault,,FRA.11.8_1
+FRA,,Département 46,,Occitanie,Lot,,FRA.11.9_1
+FRA,,Département 48,,Occitanie,Lozère,,FRA.11.10_1
+FRA,,Département 66,,Occitanie,Pyrénées-Orientales,,FRA.11.11_1
+FRA,,Département 81,,Occitanie,Tarn,,FRA.11.13_1
+FRA,,Département 82,,Occitanie,Tarn-et-Garonne,,FRA.11.12_1
+FRA,,Département 44,,Pays de la Loire,Loire-Atlantique,,FRA.12.1_1
+FRA,,Département 49,,Pays de la Loire,Maine-et-Loire,,FRA.12.2_1
+FRA,,Département 53,,Pays de la Loire,Mayenne,,FRA.12.3_1
+FRA,,Département 72,,Pays de la Loire,Sarthe,,FRA.12.4_1
+FRA,,Département 85,,Pays de la Loire,Vendée,,FRA.12.5_1
+FRA,,Département 04,,Provence-Alpes-Côte d'Azur,Alpes-de-Haute-Provence,,FRA.13.1_1
+FRA,,Département 06,,Provence-Alpes-Côte d'Azur,Alpes-Maritimes,,FRA.13.2_1
+FRA,,Département 13,,Provence-Alpes-Côte d'Azur,Bouches-du-Rhône,,FRA.13.3_1
+FRA,,Département 05,,Provence-Alpes-Côte d'Azur,Hautes-Alpes,,FRA.13.4_1
+FRA,,Département 83,,Provence-Alpes-Côte d'Azur,Var,,FRA.13.5_1
+FRA,,Département 84,,Provence-Alpes-Côte d'Azur,Vaucluse,,FRA.13.6_1
+FRA,,Département 971,,Guadeloupe,Guadeloupe,,GLP
+FRA,,Département 972,,Martinique,Martinique,,MTQ
+FRA,,Département 973,,French Guiana,French Guiana,,GUF
+FRA,,Département 974,,Reunion,Reunion,,REU
+FRA,,Département 976,,Mayotte,Mayotte,,MYT

@@ -15,9 +15,11 @@
 from typing import Dict
 from datetime import datetime
 
-from utils.adapter_abstract import AbstractAdapter
+from utils.types import FetcherType
+from utils.adapter.abstract_adapter import AbstractAdapter
 from utils.config import config
 
+__all__ = ('AdapterWrapper')
 
 class AdapterWrapper(AbstractAdapter):
 
@@ -61,29 +63,28 @@ class AdapterWrapper(AbstractAdapter):
         else:
             return table_name
 
-    def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
-        if not self.date_in_window(kwargs):
-            return
-        return self.data_adapter.upsert_government_response_data(self.correct_table_name(table_name), **kwargs)
+    def upsert_government_response_data(self, table_name: str, **kwargs):
+        raise NotImplementedError()
 
-    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        if not self.date_in_window(kwargs):
-            return
-        return self.data_adapter.upsert_epidemiology_data(self.correct_table_name(table_name), **kwargs)
+    def upsert_epidemiology_data(self, table_name: str, **kwargs):
+        raise NotImplementedError()
 
-    def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
-        if not self.date_in_window(kwargs):
-            return
-        return self.data_adapter.upsert_mobility_data(self.correct_table_name(table_name), **kwargs)
+    def upsert_mobility_data(self, table_name: str, **kwargs):
+        raise NotImplementedError()
 
-    def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
+    def upsert_data(self, fetcher_type: FetcherType, **kwargs):
         if not self.date_in_window(kwargs):
             return
-        return self.data_adapter.upsert_weather_data(self.correct_table_name(table_name), **kwargs)
+        table_name = self.correct_table_name(fetcher_type.value)
+        return self.data_adapter.upsert_data(fetcher_type, table_name, **kwargs)
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
         return self.data_adapter.get_adm_division(countrycode, adm_area_1, adm_area_2, adm_area_3)
+
+    def get_latest_timestamp(self, table_name: str = None):
+        if hasattr(self.data_adapter, 'get_latest_timestamp'):
+            return self.data_adapter.get_latest_timestamp(table_name)
 
     def flush(self):
         if hasattr(self.data_adapter, 'flush'):

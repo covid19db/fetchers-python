@@ -17,7 +17,8 @@ from abc import abstractmethod
 
 __all__ = ('BaseGovernmentResponseFetcher')
 
-from utils.fetcher.abstract_fetcher import AbstractFetcher, FetcherType
+from utils.types import FetcherType
+from utils.fetcher.abstract_fetcher import AbstractFetcher
 
 
 class BaseGovernmentResponseFetcher(AbstractFetcher):
@@ -25,7 +26,10 @@ class BaseGovernmentResponseFetcher(AbstractFetcher):
     LOAD_PLUGIN = False
 
     def upsert_data(self, **kwargs):
-        self.data_adapter.upsert_government_response_data(**kwargs)
+        self.data_adapter.upsert_data(self.TYPE, **kwargs)
+
+    def get_latest_timestamp(self):
+        return self.data_adapter.get_latest_timestamp(self.TYPE.value)
 
     @abstractmethod
     def run(self):

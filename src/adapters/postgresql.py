@@ -19,7 +19,7 @@ import psycopg2.extras
 from psycopg2 import sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-from utils.adapter_abstract import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 
 MAX_ATTEMPT_FAIL = 10
 
@@ -121,7 +121,7 @@ class PostgresqlHelper(AbstractAdapter):
         result = results[0]
         return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
-    def upsert_data(self, table_name: str, data_keys: List, **kwargs):
+    def upsert_table_data(self, table_name: str, data_keys: List, **kwargs):
         self.check_if_gid_exists(kwargs)
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
@@ -173,18 +173,18 @@ class PostgresqlHelper(AbstractAdapter):
             'economic_support_index_for_display',
             'actions'
         ]
-        self.upsert_data(table_name, government_response_data_fields, **kwargs)
+        self.upsert_table_data(table_name, government_response_data_fields, **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
         data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
                      'recovered']
-        self.upsert_data(table_name, data_keys, **kwargs)
+        self.upsert_table_data(table_name, data_keys, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         data_keys = ['gid', 'transit_stations', 'residential', 'workplace', 'parks', 'retail_recreation',
                      'grocery_pharmacy']
 
-        self.upsert_data(table_name, data_keys, **kwargs)
+        self.upsert_table_data(table_name, data_keys, **kwargs)
 
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
         composite_key = ['date', 'countrycode', 'gid']
@@ -208,6 +208,12 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug(
             "Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def get_latest_timestamp(self, table_name: str = None):
+        sql_query = sql.SQL("""SELECT max(date) as date FROM {table_name}""").format(
+            table_name=sql.Identifier(table_name))
+        result = self.execute(sql_query)
+        return result[0]['date'] if len(result) > 0 else None
 
     def close_connection(self):
         if self.conn:

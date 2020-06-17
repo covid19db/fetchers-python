@@ -18,8 +18,8 @@ import schedule
 
 from utils.logger import setup_logger
 from utils.plugins import Plugins
-from utils.adapters import DataAdapter
-from utils.adapter_wrapper import AdapterWrapper
+from utils.adapter.data_adapter import DataAdapter
+from utils.adapter.adapter_wrapper import AdapterWrapper
 
 logger = logging.getLogger(__name__)
 

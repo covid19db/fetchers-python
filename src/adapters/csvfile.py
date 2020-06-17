@@ -19,7 +19,7 @@ from datetime import date
 
 __all__ = ('CSVFileHelper',)
 
-from utils.adapter_abstract import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 
@@ -122,7 +122,7 @@ class CSVFileHelper(AbstractAdapter):
         # TODO: Implement get adm division
         raise NotImplementedError("To be implemented")
 
-    def upsert_data(self, table_name: str, **kwargs):
+    def upsert_table_data(self, table_name: str, **kwargs):
         self.check_if_gid_exists(kwargs)
         csv_file_name = f'{table_name}_{kwargs.get("source")}.csv'
         kwargs = self.format_data(kwargs)
@@ -130,16 +130,16 @@ class CSVFileHelper(AbstractAdapter):
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def flush(self):
         if self.csv_file_name and self.temp_df is not None:

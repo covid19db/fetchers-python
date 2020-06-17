@@ -14,6 +14,7 @@
 
 import logging
 from typing import List
+from utils.types import FetcherType
 from abc import ABC, abstractmethod
 
 __all__ = ('AbstractAdapter',)
@@ -45,6 +46,24 @@ class AbstractAdapter(ABC):
     @abstractmethod
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
+        raise NotImplementedError()
+
+    def upsert_data(self, fetcher_type: FetcherType, table_name: str = None, **kwargs):
+        if not table_name:
+            table_name = FetcherType.value
+
+        if fetcher_type == FetcherType.EPIDEMIOLOGY:
+            return self.upsert_epidemiology_data(table_name, **kwargs)
+        elif fetcher_type == FetcherType.MOBILITY:
+            return self.upsert_mobility_data(table_name, **kwargs)
+        elif fetcher_type == FetcherType.GOVERNMENT_RESPONSE:
+            return self.upsert_government_response_data(table_name, **kwargs)
+        elif fetcher_type == FetcherType.WEATHER:
+            return self.upsert_weather_data(table_name, **kwargs)
+        else:
+            raise NotImplementedError()
+
+    def get_latest_timestamp(self, table_name: str):
         raise NotImplementedError()
 
     def flush(self):

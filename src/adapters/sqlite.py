@@ -19,7 +19,7 @@ import pandas as pd
 
 __all__ = ('SqliteHelper',)
 
-from utils.adapter_abstract import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 
@@ -219,7 +219,7 @@ class SqliteHelper(AbstractAdapter):
         # TODO: Implement get division
         raise NotImplementedError("To be implemented")
 
-    def upsert_data(self, table_name: str, **kwargs):
+    def upsert_table_data(self, table_name: str, **kwargs):
         self.check_if_gid_exists(kwargs)
         kwargs = self.format_data(kwargs)
         sql_query = """INSERT OR REPLACE INTO {table_name} ({insert_keys}) VALUES ({insert_data})""".format(
@@ -231,16 +231,16 @@ class SqliteHelper(AbstractAdapter):
         logger.debug("Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
     def upsert_government_response_data(self, table_name: str = 'government_response', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
-        self.upsert_data(table_name, **kwargs)
+        self.upsert_table_data(table_name, **kwargs)
 
     def close_connection(self):
         if self.conn:
