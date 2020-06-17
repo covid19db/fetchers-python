@@ -23,6 +23,7 @@ from datetime import datetime
 
 from utils.config import config
 from utils.adapter.abstract_adapter import AbstractAdapter
+from utils.email import send_email
 from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.validation import validate_incoming_data
 from utils.decorators import timeit
@@ -98,7 +99,14 @@ class Plugins:
         if latest_timestamp:
             days = (datetime.now().date() - latest_timestamp).days
             if days > config.VALIDATE_LATEST_TS_DAYS:
-                logger.info(f"Plugin {plugin.__name__} has latest_timestamp {days} days old")
+                message = f"Plugin {plugin.__name__} has latest_timestamp {days} days old, " \
+                          f"max is {config.VALIDATE_LATEST_TS_DAYS}"
+                logger.info(message)
+                subject = f"Covid19db fetchers-python latest_timestamp validation error"
+                try:
+                    send_email(plugin.__name__, subject, message)
+                except Exception as ex:
+                    logger.error(f'Unable to send an email {plugin.__name__}', exc_info=True)
 
     @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
