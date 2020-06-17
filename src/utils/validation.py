@@ -15,7 +15,7 @@
 import logging
 from utils.adapters import DataAdapter
 from utils.email import send_email
-from utils.fetcher.abstract_fetcher import FetcherType
+from utils.types import FetcherType
 
 logger = logging.getLogger(__name__)
 

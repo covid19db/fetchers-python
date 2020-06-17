@@ -14,23 +14,15 @@
 
 import os
 import sys
-from enum import Enum
 from abc import ABC, abstractmethod
 
+__all__ = ('AbstractFetcher')
+
 from utils.config import config
-from utils.adapter_abstract import AbstractAdapter
-
-__all__ = ('AbstractFetcher', 'FetcherType')
-
+from utils.types import FetcherType
+from utils.abstract_adapter import AbstractAdapter
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.administrative_division_translator.translator import AdmTranslator
-
-
-class FetcherType(Enum):
-    EPIDEMIOLOGY = 'epidemiology'
-    GOVERNMENT_RESPONSE = 'government_response'
-    MOBILITY = 'mobility'
-    WEATHER = 'weather'
 
 
 class AbstractFetcher(ABC):
@@ -66,6 +58,9 @@ class AbstractFetcher(ABC):
             )
 
         return adm_area_1, adm_area_2, adm_area_3, gid
+
+    def get_latest_timestamp(self):
+        return None
 
     @abstractmethod
     def run(self):

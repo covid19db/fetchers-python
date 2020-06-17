@@ -19,9 +19,10 @@ import inspect
 import importlib
 from typing import List
 from pathlib import Path
+from datetime import datetime
 
 from utils.config import config
-from utils.adapter_abstract import AbstractAdapter
+from utils.abstract_adapter import AbstractAdapter
 from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.validation import validate_incoming_data
 from utils.decorators import timeit
@@ -66,8 +67,8 @@ class Plugins:
         return None
 
     @staticmethod
-    def validate(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
-                 data_adapter: AbstractAdapter) -> bool:
+    def validate_consistency(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
+                             data_adapter: AbstractAdapter) -> bool:
         fetcher_type = plugin_instance.TYPE if hasattr(plugin_instance, 'TYPE') else None
 
         if fetcher_type.value not in ['epidemiology']:
@@ -82,7 +83,20 @@ class Plugins:
         else:
             logger.warning(f"Validating source data for: {plugin.__name__}, source_name: {source_name} "
                            f"result: {validation_success}")
+            logger.warning(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
+
         return validation_success
+
+    @staticmethod
+    def validate_latest_timestamp(plugin: AbstractFetcher, plugin_instance: AbstractFetcher):
+        if not config.VALIDATE_LATEST_TS_DAYS:
+            return
+
+        latest_timestamp = plugin_instance.get_latest_timestamp()
+        if latest_timestamp:
+            days = (datetime.now().date() - latest_timestamp).days
+            if days > config.VALIDATE_LATEST_TS_DAYS:
+                logger.info(f"Plugin {plugin.__name__} has latest_timestamp {days} days old")
 
     @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
@@ -97,15 +111,16 @@ class Plugins:
             logger.info(f'Running plugin {plugin.__name__} ')
             if self.validate_input_data:
                 data_adapter.truncate_staging()
-            instance = plugin(data_adapter)
-            instance.run()
+            plugin_instance = plugin(data_adapter)
+            plugin_instance.run()
             data_adapter.flush()
-            validation_success = self.validate(plugin, instance, data_adapter) if self.validate_input_data else True
+            validation_success = self.validate_consistency(plugin,
+                                                           plugin_instance,
+                                                           data_adapter) if self.validate_input_data else True
+            self.validate_latest_timestamp(plugin, plugin_instance)
 
             if validation_success:
                 logger.info(f"Plugin {plugin.__name__} finished successfully")
-            else:
-                logger.warning(f"Plugin {plugin.__name__} failed due to data discrepancy, email was sent")
 
         except Exception as ex:
             logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)

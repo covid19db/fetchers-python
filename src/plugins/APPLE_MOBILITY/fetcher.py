@@ -15,7 +15,6 @@
 import os
 import csv
 import logging
-from utils.fetcher.abstract_fetcher import AbstractFetcher, FetcherType
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.fetcher.base_mobility import BaseMobilityFetcher
 from utils.helper import remove_words
