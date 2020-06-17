@@ -16,7 +16,7 @@ from utils.config import config
 from adapters.postgresql import PostgresqlHelper
 from adapters.sqlite import SqliteHelper
 from adapters.csvfile import CSVFileHelper
-from utils.adapter_abstract import AbstractAdapter
+from utils.abstract_adapter import AbstractAdapter
 
 
 class DataAdapter:
