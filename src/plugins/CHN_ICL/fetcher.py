@@ -29,13 +29,13 @@ logger = logging.getLogger(__name__)
 """
     site-location: https://github.com/mrc-ide/covid19_mainland_China_report
     COVID19 data for China created and maintained by mrc-ide
-    
+
     Data originally from the lists in the following link
-    
+
     https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china
-    
-    
-    
+
+
+
 """
 
 
@@ -58,18 +58,31 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
 
         return int(len(date_list) - 1) - np.array(reverse_unique_indices)
 
+    def replace_datastart(self, date_list, date_substitute_list):
+        data_final_list = []
+        for i in range(len(date_list)):
+            date_ = date_list[i]
+            if isinstance(date_, datetime):
+                data_final_list.append(date_)
+            else:
+                data_final_list.append(date_substitute_list[i])
+
+        return data_final_list
+
     def CHN_fetcher(self, province_name):
 
         logger.info("Processing number of cases in " + province_name)
 
         df = self.fetch(province_name)
         date_list = list(df["Unnamed: 3"][1:])
+        date_substitute_list = list(df["Unnamed: 5"][1:])
         confirmed_list = np.array(df["Cumulative number of cases"][1:])
         recovered_list = np.array(df["Unnamed: 9"][1:])
         dead_list = np.array(df["Unnamed: 10"][1:])
 
         # If data being reported twice at the same day, we get the last indice of the date because this data is cumulating
-        indices = self.get_last_indices(date_list)
+        # indices = self.get_last_indices(date_list)
+        indices = self.get_last_indices(self.replace_datastart(date_list, date_substitute_list))
 
         for i in range(len(indices)):
 
