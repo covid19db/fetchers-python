@@ -19,7 +19,6 @@ import sys
 import copy
 import numpy as np
 from datetime import datetime
-import math
 
 __all__ = ('CHN_ICL_Fetcher',)
 
@@ -45,119 +44,99 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
     SOURCE = 'CHN_ICL'
 
     def fetch(self, name):
-        url="https://github.com/mrc-ide/covid19_mainland_China_report/blob/master/Data/extracted_epidemic_trend.xlsx?raw=true"
-        return pd.read_excel(url,sheet_name=name)
+        url = "https://github.com/mrc-ide/covid19_mainland_China_report/blob/master/Data/extracted_epidemic_trend.xlsx?raw=true"
+        return pd.read_excel(url, sheet_name=name)
 
     # Get the last date indices if more than one cells contain the same date
     def get_last_indices(self, date_list):
-    
-        reverse_list=copy.deepcopy(date_list)
+
+        reverse_list = copy.deepcopy(date_list)
         reverse_list.reverse()
-        reverse_unique_indices=list(set([reverse_list.index(reverse_list[i]) for i in range(len(reverse_list))]))
- 
+        reverse_unique_indices = list(set([reverse_list.index(reverse_list[i]) for i in range(len(reverse_list))]))
+
         reverse_unique_indices.reverse()
-    
-        return int(len(date_list)-1)-np.array(reverse_unique_indices)
-    
-    def convert_nan(self,number):
-        a=0
-        if not math.isnan(number):
-            a = int(number)
-        else:
-            a = None
-        return a
-        
+
+        return int(len(date_list) - 1) - np.array(reverse_unique_indices)
+
     def CHN_fetcher(self, province_name):
 
         logger.info("Processing number of cases in " + province_name)
 
         df = self.fetch(province_name)
-        
-        date_list=list(df["Unnamed: 3"][1:])
-        confirmed_list=np.array(df["Cumulative number of cases"][1:])
-        recovered_list=np.array(df["Unnamed: 9"][1:])
-        dead_list=np.array(df["Unnamed: 10"][1:])
-        
-        #If data being reported twice at the same day, we get the last indice of the date because this data is cumulating
-        indices=self.get_last_indices(date_list)
-    
+        date_list = list(df["Unnamed: 3"][1:])
+        confirmed_list = np.array(df["Cumulative number of cases"][1:])
+        recovered_list = np.array(df["Unnamed: 9"][1:])
+        dead_list = np.array(df["Unnamed: 10"][1:])
+
+        # If data being reported twice at the same day, we get the last indice of the date because this data is cumulating
+        indices = self.get_last_indices(date_list)
+
         for i in range(len(indices)):
-        
-            j=indices[i]
-        
-            date_=date_list[j]
-            
-            #In case there is nan value for date cell
-            
-            if type(date_)!=float:
-                date=date_.strftime('%Y-%m-%d')
+
+            j = indices[i]
+            date_ = date_list[j]
+
+            if isinstance(date_, datetime):
+                date = date_.strftime('%Y-%m-%d')
             else:
+                logger.warning(f"Wrong date format: {date_}, type: {type(date_)}, skipping line ")
                 continue
-            
-            confirmed=confirmed_list[j]
-            recovered=recovered_list[j]
-            dead=dead_list[j]
 
+            confirmed = confirmed_list[j] if pd.notna(confirmed_list[j]) else None
+            recovered = recovered_list[j] if pd.notna(recovered_list[j]) else None
+            dead = dead_list[j] if pd.notna(dead_list[j]) else None
 
-            if province_name=="National (mainland)":
-            
+            if province_name == "National (mainland)":
                 upsert_obj = {
                     'source': self.SOURCE,
                     'date': date,
                     'country': 'China',
-                    'countrycode':'CHN',
+                    'countrycode': 'CHN',
                     'adm_area_1': None,
                     'adm_area_2': None,
                     'adm_area_3': None,
                     'gid': ['CHN'],
-                    'confirmed': self.convert_nan(confirmed),
-                    'recovered': self.convert_nan(recovered),
-                    'dead': self.convert_nan(dead)
-                    }
-
-
-                self.upsert_data(**upsert_obj)
-            
-            else: 
-
+                    'confirmed': confirmed,
+                    'recovered': recovered,
+                    'dead': dead
+                }
+            else:
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                                        input_adm_area_1=province_name,
-                                        input_adm_area_2=None,
-                                        return_original_if_failure=True,
-                                        suppress_exception=True
-                                            )
+                    input_adm_area_1=province_name,
+                    input_adm_area_2=None,
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
 
-            # add the epidemiological properties to the object if they exist
+                # add the epidemiological properties to the object if they exist
                 upsert_obj = {
                     'source': self.SOURCE,
                     'date': date,
-                    'country':'China',
-                    'countrycode':'CHN',
+                    'country': 'China',
+                    'countrycode': 'CHN',
                     'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
                     'gid': gid,
-                    'confirmed': self.convert_nan(confirmed),
-                    'recovered': self.convert_nan(recovered),
-                    'dead': self.convert_nan(dead)
+                    'confirmed': confirmed,
+                    'recovered': recovered,
+                    'dead': dead
                 }
-            
 
-                self.upsert_data(**upsert_obj)
-
+            self.upsert_data(**upsert_obj)
 
     def run(self):
-        
-        sheet_names=["National (mainland)","Wuhan","Hubei","Guangdong","Zhejiang",\
-                     "Henan","Hunan","Anhui","Shandong","Beijing",\
-                     "Sichuan","Chongqing","Fujian","Jiangxi","Jiangsu",\
-                     "Shanghai","Guangxi","Shaanxi","Yunnan","Liaoning",\
-                     "Hebei","Heilongjiang","Tianjin","Hainan","Shanxi",\
-                     "Gansu","Inner Mongolia","Ningxia","Guizhou","Jilin",\
-                     "Xinjiang","Qinghai","Tibet"]
-        
+
+        sheet_names = ["National (mainland)", "Wuhan", "Hubei", "Guangdong", "Zhejiang",
+                       "Henan", "Hunan", "Anhui", "Shandong", "Beijing",
+                       "Sichuan", "Chongqing", "Fujian", "Jiangxi", "Jiangsu",
+                       "Shanghai", "Guangxi", "Shaanxi", "Yunnan", "Liaoning",
+                       "Hebei", "Heilongjiang", "Tianjin", "Hainan", "Shanxi",
+                       "Gansu", "Inner Mongolia", "Ningxia", "Guizhou", "Jilin",
+                       "Xinjiang", "Qinghai", "Tibet"]
+
         self.CHN_fetcher("National (mainland)")
-        
-        #Wuhan is excluded as it is the only adm_area_2 data
+
+        # Wuhan is excluded as it is the only adm_area_2 data
         for province_name in sheet_names[2:]:
             self.CHN_fetcher(province_name)
