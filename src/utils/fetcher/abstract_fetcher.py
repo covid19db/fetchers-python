@@ -20,7 +20,7 @@ __all__ = ('AbstractFetcher')
 
 from utils.config import config
 from utils.types import FetcherType
-from utils.abstract_adapter import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 from utils.country_codes_translator.translator import CountryCodesTranslator
 from utils.administrative_division_translator.translator import AdmTranslator
 

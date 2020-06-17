@@ -22,12 +22,14 @@ from pathlib import Path
 from datetime import datetime
 
 from utils.config import config
-from utils.abstract_adapter import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.validation import validate_incoming_data
 from utils.decorators import timeit
 
 logger = logging.getLogger(__name__)
+
+__all__ = ('Plugins')
 
 
 class Plugins:

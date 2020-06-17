@@ -19,7 +19,7 @@ import pandas as pd
 
 __all__ = ('SqliteHelper',)
 
-from utils.abstract_adapter import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 
 logger = logging.getLogger(__name__)
 

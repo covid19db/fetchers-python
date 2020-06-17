@@ -16,9 +16,10 @@ from typing import Dict
 from datetime import datetime
 
 from utils.types import FetcherType
-from utils.abstract_adapter import AbstractAdapter
+from utils.adapter.abstract_adapter import AbstractAdapter
 from utils.config import config
 
+__all__ = ('AdapterWrapper')
 
 class AdapterWrapper(AbstractAdapter):
 
