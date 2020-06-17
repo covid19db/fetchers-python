@@ -57,7 +57,15 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
         reverse_unique_indices.reverse()
     
         return int(len(date_list)-1)-np.array(reverse_unique_indices)
-
+    
+    def convert_nan(self,number):
+        a=0
+        if not math.isnan(number):
+            a = int(number)
+        else:
+            a = None
+        return a
+        
     def CHN_fetcher(self, province_name):
 
         logger.info("Processing number of cases in " + province_name)
@@ -101,9 +109,9 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
                     'adm_area_2': None,
                     'adm_area_3': None,
                     'gid': ['CHN'],
-                    'confirmed': confirmed,
-                    'recovered': recovered,
-                    'dead': dead
+                    'confirmed': self.convert_nan(confirmed),
+                    'recovered': self.convert_nan(recovered),
+                    'dead': self.convert_nan(dead)
                     }
 
 
@@ -128,9 +136,9 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
                     'adm_area_2': None,
                     'adm_area_3': None,
                     'gid': gid,
-                    'confirmed': confirmed,
-                    'recovered': recovered,
-                    'dead': dead
+                    'confirmed': self.convert_nan(confirmed),
+                    'recovered': self.convert_nan(recovered),
+                    'dead': self.convert_nan(dead)
                 }
             
 
