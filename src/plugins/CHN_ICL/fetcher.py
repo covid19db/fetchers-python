@@ -19,6 +19,7 @@ import sys
 import copy
 import numpy as np
 from datetime import datetime
+import math
 
 __all__ = ('CHN_ICL_Fetcher',)
 
