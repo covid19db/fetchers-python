@@ -123,7 +123,7 @@ class CHN_ICL_Fetcher(BaseEpidemiologyFetcher):
                     'dead': dead
                 }
 
-            # self.upsert_data(**upsert_obj)
+            self.upsert_data(**upsert_obj)
 
     def run(self):
 
