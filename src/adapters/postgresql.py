@@ -208,10 +208,14 @@ class PostgresqlHelper(AbstractAdapter):
         logger.debug(
             "Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def get_latest_timestamp(self, table_name: str = None):
-        sql_query = sql.SQL("""SELECT max(date) as date FROM {table_name}""").format(
-            table_name=sql.Identifier(table_name))
-        result = self.execute(sql_query)
+    def get_latest_timestamp(self, table_name: str, source: str = None):
+        sql_str = """SELECT max(date) as date FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+
+        sql_query = sql.SQL(sql_str).format(table_name=sql.Identifier(table_name))
+
+        result = self.execute(sql_query, (source,))
         return result[0]['date'] if len(result) > 0 else None
 
     def close_connection(self):

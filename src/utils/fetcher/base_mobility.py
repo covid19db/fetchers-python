@@ -29,7 +29,7 @@ class BaseMobilityFetcher(AbstractFetcher):
         self.data_adapter.upsert_data(self.TYPE, **kwargs)
 
     def get_latest_timestamp(self):
-        return self.data_adapter.get_latest_timestamp(self.TYPE.value)
+        return self.data_adapter.get_latest_timestamp(self.TYPE.value, self.SOURCE)
 
     @abstractmethod
     def run(self):

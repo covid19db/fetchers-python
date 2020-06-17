@@ -90,7 +90,7 @@ class AbstractAdapter(ABC):
         else:
             raise NotImplementedError()
 
-    def get_latest_timestamp(self, table_name: str):
+    def get_latest_timestamp(self, table_name: str, source: str = None):
         raise NotImplementedError()
 
     def flush(self):
