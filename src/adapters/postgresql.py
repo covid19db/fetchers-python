@@ -85,12 +85,11 @@ class PostgresqlHelper(AbstractAdapter):
             raise error
         return self.cur.fetchall()
 
-    def call_db_function_compare(self, source_code: str):
+    def call_db_function_compare(self, source_code: str) -> int:
         self.cur.callproc('covid19_compare_tables', (source_code,))
+        logger.debug("Validating incoming data...")
         compare_result = self.cur.fetchone()
-        print(compare_result)
-        logger.debug("Validating incoming data")
-        return compare_result
+        return compare_result[0]
 
     def call_db_function_send_data(self, source_code: str):
         self.cur.callproc('send_validated_data', [source_code])
@@ -209,10 +208,14 @@ class PostgresqlHelper(AbstractAdapter):
         logger.debug(
             "Updating {} table with data: {}".format(table_name, list(kwargs.values())))
 
-    def get_latest_timestamp(self, table_name: str = None):
-        sql_query = sql.SQL("""SELECT max(date) as date FROM {table_name}""").format(
-            table_name=sql.Identifier(table_name))
-        result = self.execute(sql_query)
+    def get_latest_timestamp(self, table_name: str, source: str = None):
+        sql_str = """SELECT max(date) as date FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+
+        sql_query = sql.SQL(sql_str).format(table_name=sql.Identifier(table_name))
+
+        result = self.execute(sql_query, (source,))
         return result[0]['date'] if len(result) > 0 else None
 
     def close_connection(self):

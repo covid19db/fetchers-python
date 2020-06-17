@@ -104,7 +104,7 @@ class Plugins:
                 logger.info(message)
                 subject = f"Covid19db fetchers-python latest_timestamp validation error"
                 try:
-                    send_email(plugin.__name__, subject, message)
+                    send_email(plugin_instance.SOURCE, subject, message)
                 except Exception as ex:
                     logger.error(f'Unable to send an email {plugin.__name__}', exc_info=True)
 

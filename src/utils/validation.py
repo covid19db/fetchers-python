@@ -24,7 +24,7 @@ def validate_incoming_data(data_adapter: DataAdapter, fetcher_type: FetcherType,
     # TODO: Add fetcher type support, currently works only for epidemiology
     compare_result = data_adapter.call_db_function_compare(source_name)
 
-    if compare_result[0] == 0:
+    if compare_result == 0:
         data_adapter.call_db_function_send_data(source_name)
         return True
     else:

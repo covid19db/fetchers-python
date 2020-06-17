@@ -13,9 +13,11 @@
 # limitations under the License.
 
 import logging
-from typing import List
+from typing import List, Dict
+from datetime import datetime
 from utils.types import FetcherType
 from abc import ABC, abstractmethod
+from utils.config import config
 
 __all__ = ('AbstractAdapter',)
 
@@ -30,6 +32,29 @@ class AbstractAdapter(ABC):
             logger.warning(
                 f'GID is missing for: {kwargs.get("countrycode")}, {kwargs.get("adm_area_1")}, '
                 f'{kwargs.get("adm_area_2")}, {kwargs.get("adm_area_3")}, please correct your data')
+
+    @staticmethod
+    def date_in_window(args: Dict) -> bool:
+        if not config.SLIDING_WINDOW_DAYS:
+            return True
+
+        date = args.get('date')
+        if isinstance(date, str):
+            date = datetime.strptime(date.split(' ')[0].split('T')[0], '%Y-%m-%d')
+
+        if isinstance(date, datetime):
+            days = (datetime.now() - date).days
+            if days > config.SLIDING_WINDOW_DAYS:
+                return False
+
+        return True
+
+    @staticmethod
+    def correct_table_name(table_name: str) -> str:
+        if config.VALIDATE_INPUT_DATA and table_name in ['epidemiology']:
+            return 'staging_' + table_name
+
+        return table_name
 
     @abstractmethod
     def upsert_government_response_data(self, table_name: str, **kwargs):
@@ -48,9 +73,11 @@ class AbstractAdapter(ABC):
                          adm_area_3: str = None):
         raise NotImplementedError()
 
-    def upsert_data(self, fetcher_type: FetcherType, table_name: str = None, **kwargs):
-        if not table_name:
-            table_name = FetcherType.value
+    def upsert_data(self, fetcher_type: FetcherType, **kwargs):
+        if not self.date_in_window(kwargs):
+            return
+
+        table_name = self.correct_table_name(fetcher_type.value)
 
         if fetcher_type == FetcherType.EPIDEMIOLOGY:
             return self.upsert_epidemiology_data(table_name, **kwargs)
@@ -63,8 +90,17 @@ class AbstractAdapter(ABC):
         else:
             raise NotImplementedError()
 
-    def get_latest_timestamp(self, table_name: str):
+    def get_latest_timestamp(self, table_name: str, source: str = None):
         raise NotImplementedError()
 
     def flush(self):
+        pass
+
+    def call_db_function_compare(self, source_code: str) -> bool:
+        return False
+
+    def call_db_function_send_data(self, source_code: str):
+        pass
+
+    def truncate_staging(self):
         pass

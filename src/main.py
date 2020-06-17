@@ -19,7 +19,6 @@ import schedule
 from utils.logger import setup_logger
 from utils.plugins import Plugins
 from utils.adapter.data_adapter import DataAdapter
-from utils.adapter.adapter_wrapper import AdapterWrapper
 
 logger = logging.getLogger(__name__)
 
@@ -30,12 +29,11 @@ def main():
 
     # get data adapter
     data_adapter = DataAdapter.get_adapter()
-    db_wrapper = AdapterWrapper(data_adapter)
 
     # run once
-    plugins.run_plugins_job(data_adapter=db_wrapper)
+    plugins.run_plugins_job(data_adapter=data_adapter)
     # run every day at 2am
-    schedule.every().day.at("02:00").do(plugins.run_plugins_job, data_adapter=db_wrapper)
+    schedule.every().day.at("02:00").do(plugins.run_plugins_job, data_adapter=data_adapter)
 
     logger.debug('Run schedule job every day at 02:00')
     while True:
