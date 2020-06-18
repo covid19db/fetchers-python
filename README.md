@@ -39,7 +39,7 @@ Currently implemented fetchers:
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | release | adm_area_1: province
 | NLD_WY | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | release | adm_area_1: NA
 | LAT_DSRP | Latin America | several | [Latin America Covid-19 Data Repository by DSRP](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica) | release | adm_area_1: subdivision |
-| EU_ZH | Belgium | BEL| [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | tested | adm_area_1: region; adm_area_2: province |
+| EU_ZH | Belgium | BEL| [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: region; adm_area_2: province |
 | EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
 | EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: region |
 | EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
@@ -65,7 +65,7 @@ Currently implemented fetchers:
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: prefecture |
 | USA_CTP | United States | USA | [The COVID Tracking Project](https://covidtracking.com/api) | release | adm_area_1: state |
 | FRA_SPF | France | FRA | [Données hospitalières relatives à l'épidémie de COVID-19](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/) | candidate | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France), adm_area_2: [France "départements"](https://en.wikipedia.org/wiki/Departments_of_France) |
-| CHN_ICL | China | CHN| [MRC Centre Imperial College London](https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china) | tested | adm_area_1: province or None |
+| CHN_ICL | China | CHN| [MRC Centre Imperial College London](https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china) | candidate | adm_area_1: province or None |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
