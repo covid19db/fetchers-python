@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 """
     site-location: https://github.com/mrc-ide/covid19_mainland_China_report
-    COVID19 data for China created and maintained by mrc-ide
+    COVID19 data for Mainland China created and maintained by mrc-ide
 
     Data originally from the lists in the following link
 
