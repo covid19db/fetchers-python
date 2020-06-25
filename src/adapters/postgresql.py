@@ -103,7 +103,7 @@ class PostgresqlHelper(AbstractAdapter):
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""
-            SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+            SELECT country, adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
             WHERE countrycode = %s
                 AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g')
@@ -118,7 +118,7 @@ class PostgresqlHelper(AbstractAdapter):
         if len(results) > 1:
             raise Exception(f'Ambiguous result: {results}')
         result = results[0]
-        return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
+        return result['country'], result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
     def upsert_table_data(self, table_name: str, data_keys: List, **kwargs):
         self.check_if_gid_exists(kwargs)

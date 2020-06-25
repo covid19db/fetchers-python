@@ -44,7 +44,7 @@ class AbstractFetcher(ABC):
                    input_adm_area_3: str = None, suppress_exception: bool = False):
         try:
             # Check if input data can be matched directly into administrative division table
-            adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(
+            country, adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(
                 countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
         except Exception as ex:
             adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
