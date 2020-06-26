@@ -18,6 +18,12 @@ RUN apt-get install -yqq unzip
 RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
 RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
 
+### Get Java via the package manager
+RUN apt-get update && \
+apt-get install -y openjdk-11-jdk && \
+apt-get install -y ant && \
+apt-get clean;
+
 # set display port to avoid crash
 ENV DISPLAY=:99
 
