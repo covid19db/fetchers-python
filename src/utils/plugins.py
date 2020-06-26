@@ -14,6 +14,7 @@
 
 import os
 import sys
+import time
 import logging
 import inspect
 import importlib
@@ -27,6 +28,7 @@ from utils.email import send_email
 from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.validation import validate_incoming_data
 from utils.decorators import timeit
+from utils.diagnostics import Diagnostics
 
 logger = logging.getLogger(__name__)
 
@@ -68,6 +70,18 @@ class Plugins:
         if run_only_plugins:
             return run_only_plugins.split(",")
         return None
+
+    def should_run_plugin(self, plugin_name: str) -> bool:
+        if not self.run_only_plugins:
+            return True
+
+        for plugin in self.run_only_plugins:
+            if plugin.startswith('-') and '-' + plugin_name == plugin:
+                return False
+            if plugin_name == plugin or plugin == '*':
+                return True
+
+        return False
 
     @staticmethod
     def validate_consistency(plugin: AbstractFetcher, plugin_instance: AbstractFetcher,
@@ -111,14 +125,16 @@ class Plugins:
     @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
         for plugin in self.available_plugins:
-            if self.run_only_plugins and plugin.__name__ not in self.run_only_plugins:
-                continue
-            self.run_single_plugin(data_adapter, plugin)
+            if self.should_run_plugin(plugin.__name__):
+                self.run_single_plugin(data_adapter, plugin)
 
     @timeit
     def run_single_plugin(self, data_adapter: AbstractAdapter, plugin: AbstractFetcher):
+        logger.info(f'Running plugin {plugin.__name__} ')
+        error = False
+        validation_success = None
+        start_time = time.time()
         try:
-            logger.info(f'Running plugin {plugin.__name__} ')
             if self.validate_input_data:
                 data_adapter.truncate_staging()
             plugin_instance = plugin(data_adapter)
@@ -133,4 +149,12 @@ class Plugins:
                 logger.info(f"Plugin {plugin.__name__} finished successfully")
 
         except Exception as ex:
+            error = True
             logger.error(f'Error running plugin {plugin.__name__}, exception: {ex}', exc_info=True)
+
+        Diagnostics(plugin_instance).update_diagnostics_info(
+            validation=validation_success,
+            error=error,
+            start_time=start_time,
+            end_time=time.time()
+        )

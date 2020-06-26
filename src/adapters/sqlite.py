@@ -242,6 +242,10 @@ class SqliteHelper(AbstractAdapter):
     def upsert_weather_data(self, table_name: str = 'weather', **kwargs):
         self.upsert_table_data(table_name, **kwargs)
 
+    def upsert_diagnostics(self, **kwargs):
+        # TODO: Implement get division
+        raise NotImplementedError("To be implemented")
+
     def close_connection(self):
         if self.conn:
             if self.cur:

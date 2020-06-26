@@ -28,6 +28,9 @@ class BaseWeatherFetcher(AbstractFetcher):
     def upsert_data(self, **kwargs):
         self.data_adapter.upsert_data(self.TYPE, **kwargs)
 
+    def get_earliest_timestamp(self):
+        return self.data_adapter.get_earliest_timestamp(self.TYPE.value)
+
     def get_latest_timestamp(self):
         return self.data_adapter.get_latest_timestamp(self.TYPE.value)
 

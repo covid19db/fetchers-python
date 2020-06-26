@@ -59,6 +59,9 @@ class AbstractFetcher(ABC):
 
         return adm_area_1, adm_area_2, adm_area_3, gid
 
+    def get_earliest_timestamp(self):
+        return None
+
     def get_latest_timestamp(self):
         return None
 
