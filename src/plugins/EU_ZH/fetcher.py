@@ -53,6 +53,15 @@ class EU_ZH_Fetcher(BaseEpidemiologyFetcher):
         else:
             return input
 
+    def parse_int(self, data):
+        if pd.isna(data):
+            return None
+
+        if isinstance(data, str):
+            data = data.replace('*', '')
+
+        return int(data)
+
     def country_fetcher(self, region, country, code_3, code_2):
 
         logger.info("Processing number of cases in " + country)
@@ -122,29 +131,21 @@ class EU_ZH_Fetcher(BaseEpidemiologyFetcher):
 
             # add the epidemiological properties to the object if they exist
             if hasattr(record, 'tests'):
-                tested = int(record['tests']) if pd.notna(record['tests']) else None
-                upsert_obj['tested'] = tested
+                upsert_obj['tested'] = self.parse_int(record['tests'])
             if hasattr(record, 'cases'):
-                confirmed = int(record['cases']) if pd.notna(record['cases']) else None
-                upsert_obj['confirmed'] = confirmed
+                upsert_obj['confirmed'] = self.parse_int(record['cases'])
             if hasattr(record, 'tests_positive'):
-                confirmed = int(record['tests_positive']) if pd.notna(record['tests_positive']) else None
-                upsert_obj['confirmed'] = confirmed
+                upsert_obj['confirmed'] = self.parse_int(record['tests_positive'])
             if hasattr(record, 'recovered'):
-                recovered = int(record['recovered']) if pd.notna(record['recovered']) else None
-                upsert_obj['recovered'] = recovered
+                upsert_obj['recovered'] = self.parse_int(record['recovered'])
             if hasattr(record, 'deaths'):
-                dead = int(record['deaths']) if pd.notna(record['deaths']) else None
-                upsert_obj['dead'] = dead
+                upsert_obj['dead'] = self.parse_int(record['deaths'])
             if hasattr(record, 'hospitalized'):
-                hospitalised = int(record['hospitalized']) if pd.notna(record['hospitalized']) else None
-                upsert_obj['hospitalised'] = hospitalised
+                upsert_obj['hospitalised'] = self.parse_int(record['hospitalized'])
             if hasattr(record, 'intensive_care'):
-                hospitalised_icu = int(record['intensive_care']) if pd.notna(record['intensive_care']) else None
-                upsert_obj['hospitalised_icu'] = hospitalised_icu
+                upsert_obj['hospitalised_icu'] = self.parse_int(record['intensive_care'])
             if hasattr(record, 'quarantine'):
-                quarantine = int(record['quarantine']) if pd.notna(record['quarantine']) else None
-                upsert_obj['quarantined'] = quarantine
+                upsert_obj['quarantined'] = self.parse_int(record['quarantine'])
 
             self.upsert_data(**upsert_obj)
 

@@ -20,7 +20,7 @@ import datetime
 from utils.fetcher.base_weather import BaseWeatherFetcher
 from .utils import create_aggr_df, load_local_data
 
-__all__ = ('METDailyWEatherFetcher',)
+__all__ = ('METDailyWeatherFetcher',)
 
 logger = logging.getLogger(__name__)
 

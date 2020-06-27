@@ -47,7 +47,7 @@ class IndiaCOVINDFetcher(BaseEpidemiologyFetcher):
         # Return the last update on each day
         return pd.read_csv(url,
                            index_col=0,
-                           usecols=[0, 1],
+                           usecols=[0, 2],
                            parse_dates=[0],
                            date_parser=lambda d: pd.to_datetime(d[:10], format='%d/%m/%Y')) \
             .dropna() \

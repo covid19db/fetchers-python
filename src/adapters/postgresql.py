@@ -103,7 +103,7 @@ class PostgresqlHelper(AbstractAdapter):
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
         sql_query = sql.SQL("""
-            SELECT adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+            SELECT country, adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
             WHERE countrycode = %s
                 AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g')
@@ -118,7 +118,7 @@ class PostgresqlHelper(AbstractAdapter):
         if len(results) > 1:
             raise Exception(f'Ambiguous result: {results}')
         result = results[0]
-        return result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
+        return result['country'], result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
     def upsert_table_data(self, table_name: str, data_keys: List, **kwargs):
         self.check_if_gid_exists(kwargs)
@@ -207,6 +207,35 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug(
             "Updating {} table with data: {}".format(table_name, list(kwargs.values())))
+
+    def upsert_diagnostics(self, **kwargs):
+        data_keys = ["validation_success", "error", "last_run_start", "last_run_stop", "first_timestamp",
+                     "last_timestamp"]
+        sql_query = sql.SQL("""INSERT INTO diagnostics ({insert_keys}) VALUES ({insert_data})
+                                        ON CONFLICT
+                                            (table_name, source)
+                                        DO
+                                            UPDATE SET {update_data}
+                                        RETURNING *""").format(
+            insert_keys=sql.SQL(",").join(map(sql.Identifier, kwargs.keys())),
+            insert_data=sql.SQL(",").join(map(sql.Placeholder, kwargs.keys())),
+            update_data=sql.SQL(",").join(
+                sql.Composed([sql.Identifier(k), sql.SQL("="), sql.Placeholder(k)]) for k in kwargs.keys() if
+                k in data_keys)
+        )
+
+        self.execute(sql_query, kwargs)
+        logger.debug("Updating diagnostics table with data: {}".format(list(kwargs.values())))
+
+    def get_earliest_timestamp(self, table_name: str, source: str = None):
+        sql_str = """SELECT min(date) as date FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+
+        sql_query = sql.SQL(sql_str).format(table_name=sql.Identifier(table_name))
+
+        result = self.execute(sql_query, (source,))
+        return result[0]['date'] if len(result) > 0 else None
 
     def get_latest_timestamp(self, table_name: str, source: str = None):
         sql_str = """SELECT max(date) as date FROM {table_name}"""

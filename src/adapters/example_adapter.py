@@ -41,3 +41,7 @@ class ExampleHelper(AbstractAdapter):
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):
         # TODO Implement Update mobility data
         raise NotImplementedError("To be implemented")
+
+    def upsert_diagnostics(self, **kwargs):
+        # TODO: Implement get division
+        raise NotImplementedError("To be implemented")
