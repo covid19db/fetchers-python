@@ -47,6 +47,21 @@ class NLD_CWFetcher(BaseEpidemiologyFetcher):
         logger.debug('Fetching Netherland country-level confirmed-dead-hospitalised data from NLD_CW')
 
         return pd.read_csv(url)
+    
+    
+    
+    def province_fetch(self):
+
+        """
+                        This url mainly provide cumulative confirmed data on the province-level.
+        """
+
+        url = 'https://raw.githubusercontent.com/J535D165/CoronaWatchNL/master/data/rivm_NL_covid19_province.csv'
+
+        logger.debug('Fetching Netherland province-level confirmed data from NLD_CW')
+
+        return pd.read_csv(url)        
+        
 
     def run(self):
 
@@ -57,6 +72,7 @@ class NLD_CWFetcher(BaseEpidemiologyFetcher):
         """
 
         country_data = self.country_fetch()
+        province_data=self.province_fetch()
 
         ### Get dates & cumulative recorded lists
         time_list = list(country_data.Datum)
@@ -110,3 +126,55 @@ class NLD_CWFetcher(BaseEpidemiologyFetcher):
                 }
 
                 self.upsert_data(**upsert_obj)
+                
+                
+        valid_provinces=list(set(province_data.Provincienaam))
+        
+        for province in valid_provinces[1:]:
+            
+#             if not np.isnan(province):
+                
+                current_data=province_data[province_data.Provincienaam==province]
+            
+                date_list=list(province_data[province_data.Provincienaam==province].Datum)
+            
+                confirmed_list=np.array(province_data[province_data.Provincienaam==province].Aantal,dtype='int')
+            
+            
+                for i in range(len(date_list)):
+                
+                    date=date_list[i]
+                    confirmed=confirmed_list[i]
+                
+                    adm_area_1, adm_area_2, adm_area_3, gid = province, None, None, None
+                
+                    upsert_obj = {
+                        # source is mandatory and is a code that identifies the  source
+                        'source': self.SOURCE,
+                        # date is also mandatory, the format must be YYYY-MM-DD
+                        'date': date,
+                        # country is mandatory and should be in English
+                        # the exception is "Ships"
+                        'country': "Netherlands",
+                        # countrycode is mandatory and it's the ISO Alpha-3 code of the country
+                        # an exception is ships, which has "---" as country code
+                        'countrycode': 'NLD',
+                        'gid': ['NLD'],
+                        # adm_area_1, when available, is a wide-area administrative region, like a
+                        # Canadian province in this case. There are also subareas adm_area_2 and
+                        # adm_area_3
+                        'adm_area_1': adm_area_1,
+                        'adm_area_2': None,
+                        'adm_area_3': None,
+                        'confirmed': int(confirmed)
+                        }
+
+                    self.upsert_data(**upsert_obj)
+
+               
+                
+            
+            
+            
+            
+
