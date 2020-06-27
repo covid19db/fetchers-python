@@ -132,7 +132,6 @@ class NLD_CWFetcher(BaseEpidemiologyFetcher):
         
         for province in valid_provinces[1:]:
             
-#             if not np.isnan(province):
                 
                 current_data=province_data[province_data.Provincienaam==province]
             
