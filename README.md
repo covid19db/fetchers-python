@@ -37,7 +37,7 @@ Currently implemented fetchers:
 | IND_COVIND | India | IND | [COVID19-India API](https://api.covid19india.org/) | release | adm_area_1: NA or state |
 | CAN_GOV | Canada | CAN | [Government of Canada](https://health-infobase.canada.ca/covid-19/) | release | adm_area_1: province
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | release | adm_area_1: province
-| NLD_WY | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | release | adm_area_1: NA
+| NLD_CW | Netherlands | NLD| [CoronaWatchNL](https://github.com/J535D165/CoronaWatchNL) | release | adm_area_1: NA/province
 | LAT_DSRP | Latin America | several | [Latin America Covid-19 Data Repository by DSRP](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica) | release | adm_area_1: subdivision |
 | EU_ZH | Belgium | BEL| [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | candidate | adm_area_1: region; adm_area_2: province |
 | EU_ZH | Austria | AUT | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
