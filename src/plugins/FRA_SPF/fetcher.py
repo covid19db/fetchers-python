@@ -17,6 +17,7 @@
 # https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/
 #
 
+from datetime import datetime
 import logging
 import pandas as pd
 
@@ -45,6 +46,8 @@ class FranceSPFFetcher(BaseEpidemiologyFetcher):
             if pd.notna(record[0]):
                 dep = 'Département ' + record[0]
                 jour = record[2]
+                if jour[2] == '/':  # jour can be either YYYY-MM-DD or DD/MM/YYYY
+                    jour = datetime.strptime(jour, '%d/%m/%Y').strftime('%Y-%m-%d')
                 hosp = int(record[3])
                 rea = int(record[4])
                 rad = int(record[5])
