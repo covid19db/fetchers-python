@@ -39,23 +39,29 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
         data = self.fetch()
 
         for index, record in data.iterrows():
-   
+
             date = str(record[0])
-            country_code = str(record[1])
-            country = str(record[2])
+            country_a2_code = str(record[1])
+            country_origin = str(record[2])
             confirmed = int(record[5])
             dead = int(record[7])
 
-          
+            country, countrycode = self.country_codes_translator.get_country_info(
+                country_a2_code=country_a2_code)
+
+            if pd.isna(countrycode):
+                logger.warning(f'Unable to process: {record}')
+                continue
+
             upsert_obj = {
                 'source': self.SOURCE,
                 'date': date,
                 'country': country,
-                'countrycode': country_code,
+                'countrycode': countrycode,
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
-                'gid': [country_code],
+                'gid': [countrycode],
                 'confirmed': confirmed,
                 'dead': dead,
             }
