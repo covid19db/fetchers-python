@@ -42,10 +42,8 @@ class ItalyPCFetcher(BaseEpidemiologyFetcher):
         for index, record in data.iterrows():
             # data,stato,codice_regione,denominazione_regione,lat,long,ricoverati_con_sintomi,
             # terapia_intensiva,totale_ospedalizzati,isolamento_domiciliare,totale_positivi,
-            # variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,totale_casi,
-            # tamponi,note_it,note_en
-            # 2020-02-24T18:00:00,ITA,03,Lombardia,45.46679409,9.190347404,
-            # 76,19,95,71,166,0,166,0,6,172,1463,,
+            # variazione_totale_positivi,nuovi_positivi,dimessi_guariti,deceduti,
+            # casi_da_sospetto_diagnostico,casi_da_screening,totale_casi,tamponi,casi_testati,note
             date = record[0][:10]  # 2020-02-24T18:00:00
             regione = record[3]
             inhospital_icu = int(record[7])
@@ -54,7 +52,7 @@ class ItalyPCFetcher(BaseEpidemiologyFetcher):
             confirmed = int(record[10])
             recovered = int(record[13])
             dead = int(record[14])
-            tested = int(record[16])
+            tested = int(record[18])
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 country_code='ITA',
@@ -88,14 +86,16 @@ class ItalyPCFetcher(BaseEpidemiologyFetcher):
 
         for index, record in data.iterrows():
             # data,stato,codice_regione,denominazione_regione,codice_provincia,
-            # denominazione_provincia,sigla_provincia,lat,long,totale_casi,note_it,note_en
+            # denominazione_provincia,sigla_provincia,lat,long,totale_casi,note
             date = record[0][:10]  # 2020-02-24T18:00:00
             regione = record[3]
             provincia = record[5]
             confirmed = int(record[9])
 
-            # Skip if being defined/updated
-            if provincia == 'In fase di definizione/aggiornamento':
+            # Skip if under definition or out of region / autonomous province
+            if provincia in ('In fase di definizione/aggiornamento',
+                             'Fuori Regione / Provincia Autonoma',
+                             'In fase di definizione'):
                 continue
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
