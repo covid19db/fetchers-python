@@ -44,7 +44,6 @@ Currently implemented fetchers:
 | EU_ZH | Czech Republic | CZE | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: region |
 | EU_ZH | Germany | DEU | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: state |
 | EU_ZH | Hungary | HUN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: NA |
-| EU_ZH | Ireland | IRL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: county |
 | EU_ZH | Norway | NOR | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: county |
 | EU_ZH | Poland | POL | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: voivodeship |
 | EU_ZH | Slovenia | SVN | [Novel Coronavirus Outbreak in Europe - Chinese language](https://github.com/covid19-eu-zh/covid19-eu-data) | release | adm_area_1: NA |
@@ -67,6 +66,8 @@ Currently implemented fetchers:
 | FRA_SPF | France | FRA | [Données hospitalières relatives à l'épidémie de COVID-19](https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/) | candidate | adm_area_1: [France "régions"](https://en.wikipedia.org/wiki/Regions_of_France), adm_area_2: [France "départements"](https://en.wikipedia.org/wiki/Departments_of_France) |
 | CHN_ICL | Mainland China | CHN| [MRC Centre Imperial College London](https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china) | candidate | adm_area_1: province or None |
 | ESP_MS | Spain | ESP | [Ministerio de Sanidad](https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm) | candidate | adm_area_1: comunidades autónomas |
+| IRL_HSPC | Ireland | IRL | [Health Surveillance Protection Centre](https://covid19ireland-geohive.hub.arcgis.com/search?groupIds=7e244cadac05461fb60b287a37b5ed2b) | candidate | adm_area_1: county |
+
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
