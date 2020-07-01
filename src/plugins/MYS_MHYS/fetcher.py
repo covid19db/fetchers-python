@@ -52,7 +52,7 @@ class MYS_MHYS(BaseEpidemiologyFetcher):
         url = 'https://raw.githubusercontent.com/ynshung/covid-19-malaysia/master/covid-19-my-states-cases.csv'
 
         logger.debug('Fetching Malaysia province-level confirmed cases from MYS_MHYS')
-        return pd.read_csv(url)
+        return pd.read_csv(url, na_values='-')
 
     def country_fetch(self):
 
@@ -109,53 +109,53 @@ class MYS_MHYS(BaseEpidemiologyFetcher):
                 'confirmed': int(confirmed),
                 # dead is the number of people who have died because of covid19, this is cumulative
                 'dead': int(dead),
-                'hospitalised': int(icu)
+                'hospitalised_icu': int(icu)
 
             }
             self.upsert_data(**upsert_obj)
 
-            province_confirmed_data = self.province_confirmed_fetch()
-            province_list = list(province_confirmed_data.columns[1:])
-            provincedata_list = list(province_confirmed_data.date)
+        province_confirmed_data = self.province_confirmed_fetch()
+        province_list = list(province_confirmed_data.columns[1:])
+        provincedata_list = list(province_confirmed_data.date)
 
-            for ii in range(len(province_list)):
+        for ii in range(len(province_list)):
 
-                province_confirmed_list = np.asarray(province_confirmed_data[province_list[ii]])
+            province_confirmed_list = np.asarray(province_confirmed_data[province_list[ii]])
 
-                for k in range(len(provincedata_list)):
+            for k in range(len(provincedata_list)):
 
-                    date = datetime.strptime(provincedata_list[k], '%d/%m/%Y').strftime('%Y-%m-%d')
+                date = datetime.strptime(provincedata_list[k], '%d/%m/%Y').strftime('%Y-%m-%d')
 
-                    province_confirmed = province_confirmed_list[k]
+                province_confirmed = province_confirmed_list[k]
 
-                    if pd.isna(province_confirmed) or province_confirmed < 0:
-                        province_confirmed = None
-                    else:
-                        province_confirmed = int(province_confirmed)
+                if pd.isna(province_confirmed):
+                    province_confirmed = None
+                else:
+                    province_confirmed = int(province_confirmed)
 
-                    success, adm_area_1, adm_area_2, adm_area_3, gid \
-                        = self.adm_translator.tr(input_adm_area_1=province_list[ii],
-                                                 input_adm_area_2=None,
-                                                 input_adm_area_3=None,
-                                                 return_original_if_failure=True)
+                success, adm_area_1, adm_area_2, adm_area_3, gid \
+                    = self.adm_translator.tr(input_adm_area_1=province_list[ii],
+                                             input_adm_area_2=None,
+                                             input_adm_area_3=None,
+                                             return_original_if_failure=True)
 
-                    upsert_obj = {  # source is mandatory and is a code that identifies the  source
-                        'source': self.SOURCE,
-                        # date is also mandatory, the format must be YYYY-MM-DD
-                        'date': date,
-                        # country is mandatory and should be in English
-                        # the exception is "Ships"
-                        'country': 'Malaysia',
-                        # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                        # an exception is ships, which has "---" as country code
-                        'countrycode': 'MYS',
-                        # adm_area_1, when available, is a wide-area administrative region, like a
-                        # Canadian province in this case. There are also subareas adm_area_2 and
-                        # adm_area_3
-                        'adm_area_1': adm_area_1,
-                        'adm_area_2': None,
-                        'adm_area_3': None,
-                        'gid': gid,
-                        'confirmed': province_confirmed
-                    }
-                    self.upsert_data(**upsert_obj)
+                upsert_obj = {  # source is mandatory and is a code that identifies the  source
+                    'source': self.SOURCE,
+                    # date is also mandatory, the format must be YYYY-MM-DD
+                    'date': date,
+                    # country is mandatory and should be in English
+                    # the exception is "Ships"
+                    'country': 'Malaysia',
+                    # countrycode is mandatory and it's the ISO Alpha-3 code of the country
+                    # an exception is ships, which has "---" as country code
+                    'countrycode': 'MYS',
+                    # adm_area_1, when available, is a wide-area administrative region, like a
+                    # Canadian province in this case. There are also subareas adm_area_2 and
+                    # adm_area_3
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': None,
+                    'adm_area_3': None,
+                    'gid': gid,
+                    'confirmed': province_confirmed
+                }
+                self.upsert_data(**upsert_obj)
