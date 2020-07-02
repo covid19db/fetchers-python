@@ -30,13 +30,16 @@ def download_MET_file(url, file_name):
     except:
         pass
     # dowload the file from url and save it on disk
+    # get request
+    response = get(url)
+    if response.status_code != 200:
+        return False
     # open in binary mode
     with open(file_name, "wb") as file:
-        # get request
-        response = get(url)
         # write to file
         file.write(response.content)
         file.close()
+    return True
 
 
 def load_local_data():
@@ -65,8 +68,9 @@ def create_aggr_df(indicator, day, variables, adm_2_to_grid, logger):
     logger.debug("downloading data for {} for {}".format(indicator, day.strftime('%Y-%m-%d')))
     URL = "https://metdatasa.blob.core.windows.net/covid19-response/metoffice_global_daily/"
     temp_file = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'netCDF4_file.nc')
-    download_MET_file("{}{}/{}{}.nc".format(URL, variables[indicator]['folder'], variables[indicator]['file'],
-                                            day.strftime('%Y%m%d')), file_name=temp_file)
+    if not download_MET_file("{}{}/{}{}.nc".format(URL, variables[indicator]['folder'], variables[indicator]['file'],
+                                                   day.strftime('%Y%m%d')), file_name=temp_file):
+        return None
 
     nc = netCDF4.Dataset(temp_file)
     data = nc.variables[variables[indicator]['variable']][:].data.reshape(-1)

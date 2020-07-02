@@ -31,8 +31,12 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
 
     def fetch(self, day, weather_indicators, adm_2_to_grid):
         # creates a dataframe for each variable and merge them
-        dfs = [create_aggr_df(indicator, day, weather_indicators,
-                              adm_2_to_grid, logger) for indicator in weather_indicators]
+        dfs = []
+        for indicator in weather_indicators:
+            df = create_aggr_df(indicator, day, weather_indicators, adm_2_to_grid, logger)
+            if df is None:
+                return None
+            dfs = dfs.append(df)
         df_final = reduce(lambda left, right: pd.merge(
             left, right, on=['day', 'country', 'region', 'city']), dfs)
         return df_final
@@ -57,6 +61,8 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
         for day in date_range:
             logger.debug(f"fetching weather data for: {day.strftime('%Y-%m-%d')}")
             new_data = self.fetch(day, weather_indicators, adm_2_to_grid)
+            if new_data is None:
+                continue
 
             for index, row in new_data.iterrows():
                 upsert_obj = {
