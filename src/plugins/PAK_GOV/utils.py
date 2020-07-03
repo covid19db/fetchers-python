@@ -41,7 +41,7 @@ def date_parser(date):
         current_year = datetime.today().year
         current_month = datetime.today().month
 
-        if date.month == 12 and current_month == 1:
+        if date.month in [11, 12] and current_month in [1,2]:
           date = date.replace(year = current_year - 1)
         else:
           date = date.replace(year = current_year)
