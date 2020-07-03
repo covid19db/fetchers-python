@@ -117,10 +117,6 @@ def parseChartData(chart_element):
         current += timedelta(days=1)
         fullDateList.append(current)
 
-    # the chart title is not consistently styled, so take the first two words
-    #splitted = title.split()
-    #title = " ".join(splitted[0:2])
-
     # build a dataframe with the dates and values, using chart title as column name
     df = pd.DataFrame()
     df['Date'] = fullDateList
