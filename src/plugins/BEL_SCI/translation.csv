@@ -1,0 +1,15 @@
+﻿input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+Brussels,,,Brussels,,,BEL.1_1
+Flanders,,,Flanders,,,BEL.2_1
+Wallonia,,,Wallonia,,,BEL.3_1
+Brussels,Brussels,,Brussels,Brussels,,BEL.1.1_1
+Flanders,Antwerpen,,Flanders,Antwerpen,,BEL.2.1_1
+Flanders,Limburg,,Flanders,Limburg,,BEL.2.2_1
+Flanders,OostVlaanderen,,Flanders,OostVlaanderen,,BEL.2.3_1
+Flanders,VlaamsBrabant,,Flanders,VlaamsBrabant,,BEL.2.4_1
+Flanders,WestVlaanderen,,Flanders,WestVlaanderen,,BEL.2.5_1
+Wallonia,BrabantWallon,,Wallonia,BrabantWallon,,BEL.3.1_1
+Wallonia,Hainaut,,Wallonia,Hainaut,,BEL.3.2_1
+Wallonia,Liège,,Wallonia,Liège,,BEL.3.3_1
+Wallonia,Luxembourg,,Wallonia,Luxembourg,,BEL.3.4_1
+Wallonia,Namur,,Wallonia,Namur,,BEL.3.5_1
