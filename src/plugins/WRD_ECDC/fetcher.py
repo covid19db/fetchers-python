@@ -39,25 +39,25 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
     def fetch(self):
         url = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
         logger.debug('Fetching world confirmed cases, deaths data from ECDC')
-        return pd.read_csv(url)
+        dateparse = lambda x: pd.datetime.strptime(x, '%d/%m/%Y')
+        return pd.read_csv(url, parse_dates=['dateRep'], date_parser=dateparse)
 
     def run(self):
         data = self.fetch()
-        data.sort_values(['countryterritoryCode', 'dateRep'])
+        data.sort_values(['countryterritoryCode', 'dateRep'], inplace=True)
 
         # Data contains new cases and deaths for each day. Get cumulative data by sorting by country
-        # code and date, then reverse iterating (old to new) and adding to cumulative data for the same country
+        # code and date, then iterating and adding to cumulative data for the same country
         country_total_confirmed_cases = dict()
         country_total_deaths = dict()
 
 
-        for index, record in data[::-1].iterrows():
+        for index, record in data.iterrows():
             # CSV file has format: dateRep,day,month,year,cases,deaths,geoId,continentExp,countryterritoryCode,
             # popData2018,countriesAndTerritories
 
-            # Date has format 'DD/MM/YYYY'; need to convert it to 'YYYY-MM-DD' format before adding to database
-            date_ddmmyyyy = record[0]
-            date = datetime.strptime(date_ddmmyyyy, '%d/%m/%Y').strftime('%Y-%m-%d')
+            # Date formatted correctly during read_csv
+            date = record[0]
 
             # country = record['countriesAndTerritories']
             country_code = self.map_country_code(record['countryterritoryCode'])
@@ -92,3 +92,41 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'dead': total_deaths
             }
             self.upsert_data(**upsert_obj)
+
+        # now group by continent
+        grouped = data.groupby(['dateRep', 'continentExp'], as_index=False)
+        continentaldf = grouped['cases', 'deaths'].sum()
+        continentaldf.sort_values(['continentExp', 'dateRep'], inplace=True)
+
+        # Data contains new cases and deaths for each day. Get cumulative data by sorting by continent
+        # and date, then iterating and adding to cumulative data for the same continent
+        # just use same dictionaries as for countries
+
+        for index, record in continentaldf.iterrows():
+            date = record['dateRep']
+            continent = record['continentExp']
+            confirmed = record['cases']
+            dead = record['deaths']
+
+            total_confirmed = country_total_confirmed_cases.get(continent, 0)
+            total_confirmed = total_confirmed + confirmed
+            country_total_confirmed_cases[continent] = total_confirmed
+
+            total_deaths = country_total_deaths.get(continent, 0)
+            total_deaths = total_deaths + dead
+            country_total_deaths[continent] = total_deaths
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date,
+                'country': continent,
+                'countrycode': None,
+                'adm_area_1': None,
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': None,
+                'confirmed': total_confirmed,
+                'dead': total_deaths
+            }
+            self.upsert_data(**upsert_obj)
+
