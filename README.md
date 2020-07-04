@@ -34,6 +34,7 @@ Currently implemented fetchers:
 | CHE_OPGOV | Switzerland | CHE | [Kanton Zürich Statistisches Amt](https://github.com/openZH/covid_19) | release | adm_area_1: canton
 | TUR_MHOE | Turkey | TUR | [github:ozanerturk](https://github.com/ozanerturk/covid19-turkey-api) | release | adm_area_1: NA
 | BEL_LE | Belgium | BEL | [github:eschnou](https://github.com/eschnou/covid19-be/blob/master/covid19-belgium.csv) | release | adm_area_1: NA
+| BEL_SCI | Belgium | BEL | [Sciensano (National Public Health Institute of Belgium)](https://epistat.wiv-isp.be/covid/) | release | adm_area_1: region, admin_area_2: province
 | IND_COVIND | India | IND | [COVID19-India API](https://api.covid19india.org/) | release | adm_area_1: NA or state |
 | CAN_GOV | Canada | CAN | [Government of Canada](https://health-infobase.canada.ca/covid-19/) | release | adm_area_1: province
 | IDN_GTPPC | Indonesia | IDN | [Government of Indonesia - Coronavirus Disease Response Acceleration Task Force](http://covid19.go.id/) | release | adm_area_1: province

@@ -18,7 +18,7 @@ import numpy as np
 from datetime import datetime
 import math
 
-__all__ = ('BelgiumFetcher',)
+__all__ = ('BEL_SCIFetcher',)
 
 from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
