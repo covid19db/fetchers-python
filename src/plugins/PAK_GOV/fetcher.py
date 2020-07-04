@@ -56,10 +56,9 @@ class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
         # the data is contained in chart labels - find all charts and extract their labels
         soup = BeautifulSoup(self.wd.page_source, "lxml")
         charts = soup.findAll("gviz-combochart") + soup.findAll("gviz-linechart") + soup.findAll("gviz-barchart")
-        textTags = [[tag.text for tag in chart.findAll("text")] for chart in charts]
 
         # if a chart has the expected formatting, parse it
-        dfList = [parseChartData(textTagList) for textTagList in textTags if isData(textTagList)]
+        dfList = [parseChartData(chart) for chart in charts if isData(chart)]
 
         # merge the three parsed charts
         if len(dfList) != 3:
