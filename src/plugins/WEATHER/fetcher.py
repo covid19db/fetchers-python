@@ -36,7 +36,7 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
             df = create_aggr_df(indicator, day, weather_indicators, adm_2_to_grid, logger)
             if df is None:
                 return None
-            dfs = dfs.append(df)
+            dfs.append(df)
         df_final = reduce(lambda left, right: pd.merge(
             left, right, on=['day', 'country', 'region', 'city']), dfs)
         return df_final
