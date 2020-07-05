@@ -39,7 +39,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
     def fetch(self):
         url = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
         logger.debug('Fetching world confirmed cases, deaths data from ECDC')
-        dateparse = lambda x: pd.datetime.strptime(x, '%d/%m/%Y')
+        dateparse = lambda x: datetime.strptime(x, '%d/%m/%Y')
         return pd.read_csv(url, parse_dates=['dateRep'], date_parser=dateparse)
 
     def run(self):
@@ -95,7 +95,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
 
         # now group by continent
         grouped = data.groupby(['dateRep', 'continentExp'], as_index=False)
-        continentaldf = grouped['cases', 'deaths'].sum()
+        continentaldf = grouped[['cases', 'deaths']].sum()
         continentaldf.sort_values(['continentExp', 'dateRep'], inplace=True)
 
         # Data contains new cases and deaths for each day. Get cumulative data by sorting by continent
@@ -104,7 +104,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
 
         for index, record in continentaldf.iterrows():
             date = record['dateRep']
-            continent = record['continentExp']
+            continent = 'Other continent' if record['continentExp'] == 'Other' else record['continentExp']
             confirmed = record['cases']
             dead = record['deaths']
 
