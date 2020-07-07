@@ -123,7 +123,7 @@ class PolandWikiFetcher(BaseEpidemiologyFetcher):
                 )
 
     def run(self):
-        url = 'https://en.wikipedia.org/wiki/2020_coronavirus_pandemic_in_Poland'
+        url = 'https://en.wikipedia.org/wiki/Statistics_of_the_COVID-19_pandemic_in_Poland'
         html_data = fetch_html_tables_from_wiki(url)
         self.update_total_cases(
             data=extract_data_table(html_data, text="timeline in Poland"))
