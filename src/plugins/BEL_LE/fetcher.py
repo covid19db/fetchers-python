@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 
 class BEL_WYFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = False
+    LOAD_PLUGIN = True
     SOURCE = 'BEL_LE'
 
     def country_fetch(self):
