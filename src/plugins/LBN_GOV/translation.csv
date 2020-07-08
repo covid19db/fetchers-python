@@ -1,0 +1,28 @@
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
+LBN,بيروت,,,Beirut,Beirut,,LBN.3.1_1
+LBN,بعبدا,,,Mount Lebanon,Baabda,,LBN.5.2_1
+LBN,المتن,,,Mount Lebanon,El Metn,,LBN.5.5_1
+LBN,الشوف,,,Mount Lebanon,Chouf,,LBN.5.4_1
+LBN,زحلة,,,Bekaa,Zahle,,LBN.4.3_1
+LBN,عاليه,,,Mount Lebanon,Aley,,LBN.5.1_1
+LBN,كسروان,,,Mount Lebanon,Kasrouane,,LBN.5.8_1
+LBN,عكار,,,Akkar,Akkar,,LBN.1.1_1
+LBN,زغرتا,,,North,Zgharta,,LBN.7.6_1
+LBN,بشري,,,North,Bcharre,,LBN.7.2_1
+LBN,صور,,,South,Sour,,LBN.8.4_1
+LBN,طرابلس,,,North,Tripoli,,LBN.7.5_1
+LBN,صيدا,,,South,Saida,,LBN.8.3_1
+LBN,جبيل,,,Mount Lebanon,Jubail,,LBN.5.7_1
+LBN,النبطية,,,Nabatiyeh,Nabatiyeh,,LBN.6.4_1
+LBN,البترون,,,North,Batroun,,LBN.7.1_1
+LBN,الضنية,,,North,Minieh-Danieh,,LBN.7.4_1
+LBN,بعلبك,,,Baalbak - Hermel,Baalbeck,,LBN.2.1_1
+LBN,بنت جبيل,,,Nabatiyeh,Bint Jbayl,,LBN.6.1_1
+LBN,الكورة,,,North,Koura,,LBN.7.3_1
+LBN,البقاع الغربي,,,Bekaa,West Bekaa,,LBN.4.2_1
+LBN,مرجعيون,,,Nabatiyeh,Marjaayoun,,LBN.6.3_1
+LBN,الهرمل,,,Beirut,,,LBN.3.1_1
+LBN,جزين,,,South,Jezzine,,LBN.8.1_1
+LBN,راشيا,,,Bekaa,Rachiaya,,LBN.4.1_1
+LBN,حاصبيا,,,Nabatiyeh,Hasbaya,,LBN.6.2_1
+LBN,غير محدد,,,,,,LBN
