@@ -22,6 +22,18 @@ from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 logger = logging.getLogger(__name__)
 
+continents_codes = {
+    'Asia': 'ABB',
+    'Europe': 'EEE',
+    'Africa': 'FFF',
+    'America': 'AME',
+    'North America': 'NNN',
+    'South America': 'SRR',
+    'Oceania': 'UUU',
+    'NATO countries': 'NTT',
+    'Other continent': '---'
+}
+
 
 class WorldECDCFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
@@ -115,11 +127,13 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
             total_deaths = total_deaths + dead
             country_total_deaths[continent] = total_deaths
 
+            continent_code = continents_codes.get(continent)
+
             upsert_obj = {
                 'source': self.SOURCE,
                 'date': date.strftime('%Y-%m-%d'),
                 'country': continent,
-                'countrycode': None,
+                'countrycode': continent_code,
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
