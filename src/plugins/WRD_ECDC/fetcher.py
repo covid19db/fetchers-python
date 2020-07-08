@@ -51,7 +51,6 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
         country_total_confirmed_cases = dict()
         country_total_deaths = dict()
 
-
         for index, record in data.iterrows():
             # CSV file has format: dateRep,day,month,year,cases,deaths,geoId,continentExp,countryterritoryCode,
             # popData2018,countriesAndTerritories
@@ -81,7 +80,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
 
             upsert_obj = {
                 'source': self.SOURCE,
-                'date': date,
+                'date': date.strftime('%Y-%m-%d'),
                 'country': country,
                 'countrycode': country_code,
                 'adm_area_1': None,
@@ -118,7 +117,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
 
             upsert_obj = {
                 'source': self.SOURCE,
-                'date': date,
+                'date': date.strftime('%Y-%m-%d'),
                 'country': continent,
                 'countrycode': None,
                 'adm_area_1': None,
@@ -129,4 +128,3 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'dead': total_deaths
             }
             self.upsert_data(**upsert_obj)
-

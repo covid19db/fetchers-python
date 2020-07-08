@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 
 class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = False
+    LOAD_PLUGIN = True
     SOURCE = 'WRD_WHOJHU'
 
     def fetch(self, category):
