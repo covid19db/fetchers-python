@@ -70,14 +70,18 @@ class AustraliaC1AFetcher(BaseEpidemiologyFetcher):
         for index, row in data.iterrows():
             date = index.strftime('%Y-%m-%d')
             for state, record in row.items():
-                # confirmed, deaths, recovered, tested, in_hospital, in_icu
+                # confirmed, deaths, recovered, tested, [active,] in_hospital, in_icu
                 length = len(record)
                 confirmed = int(record[0])
                 deaths = int(record[1]) if length > 1 else None
                 recovered = int(record[2]) if length > 2 else None
                 tested = int(record[3]) if length > 3 else None
-                in_hospital = int(record[4]) if length > 4 else None
-                in_icu = int(record[5]) if length > 5 else None
+                if length > 6:
+                    in_hospital = int(record[5])
+                    in_icu = int(record[6])
+                else:
+                    in_hospital = int(record[4]) if length > 4 else None
+                    in_icu = int(record[5]) if length > 5 else None
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1=state,
