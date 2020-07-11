@@ -70,7 +70,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     def fetch_national(self):
 
         # go to the national summary page
-        contents_wrapper = self.wd.find_element_by_xpath('//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
+        contents_wrapper = self.wd.find_element_by_xpath(
+            '//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
         summary_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[4]/transform")
         summary_page.click()
 
@@ -106,7 +107,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     def fetch_regional(self):
 
         # go to the page giving tests by local government
-        contents_wrapper = self.wd.find_element_by_xpath('//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
+        contents_wrapper = self.wd.find_element_by_xpath(
+            '//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
         local_govt_testing_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[11]/transform")
         local_govt_testing_page.click()
 
