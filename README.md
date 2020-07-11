@@ -60,6 +60,7 @@ Currently implemented fetchers:
 | PAK_GOV | Pakistan | PAK | [Government of Pakistan](http://covid.gov.pk/) | release | adm_area_1: Province |
 | GBR_PHE | United Kingdom | GBR | [Public Health England](https://coronavirus.data.gov.uk/) | release | adm_area_3: English lower tier local authority |
 | GBR_PHW | United Kingdom | GBR | [Public Health Wales](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary) | candidate | adm_area_2: Welsh health board for deaths, local authority for tests |
+| GBR_NIDH | United Kingdom | GBR | [Northern Ireland Department of Health](https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9) | candidate | adm_area_2: Northern Irish local government district |
 | SWE_SIR | Sweden | SWE | [Svenska Intensivvårdsregistret (SIR)](https://portal.icuregswe.org/siri/report/corona.inrapp) | release | adm_area_1: [Swedish counties (Län)](https://en.wikipedia.org/wiki/Counties_of_Sweden) |
 | MYS_MHYS | Malysia | MYS | [ynshung](https://github.com/ynshung/covid-19-malaysia) | release | adm_area_1: NA or province|
 | JPN_C1JACD | Japan | JPN | [COVID-19 Japan Anti-Coronavirus Dashboard](https://github.com/code4sabae/covid19) | release | adm_area_1: prefecture |
