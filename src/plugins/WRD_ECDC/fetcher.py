@@ -142,3 +142,39 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'dead': total_deaths
             }
             self.upsert_data(**upsert_obj)
+
+        # finally a global figure
+        grouped = data.groupby(['dateRep'], as_index=False)
+        globaldf = grouped[['cases', 'deaths']].sum()
+        globaldf.sort_values(['dateRep'], inplace=True)
+
+        # Data contains new cases and deaths for each day. Get cumulative data by sorting by continent
+        # and date, then iterating and adding to cumulative data for the same continent
+        # just use same dictionaries as for countries
+
+        for index, record in globaldf.iterrows():
+            date = record['dateRep']
+            confirmed = record['cases']
+            dead = record['deaths']
+
+            total_confirmed = country_total_confirmed_cases.get('world', 0)
+            total_confirmed = total_confirmed + confirmed
+            country_total_confirmed_cases['world'] = total_confirmed
+
+            total_deaths = country_total_deaths.get('world', 0)
+            total_deaths = total_deaths + dead
+            country_total_deaths['world'] = total_deaths
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date.strftime('%Y-%m-%d'),
+                'country': 'World',
+                'countrycode': 'WRD',
+                'adm_area_1': None,
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': None,
+                'confirmed': total_confirmed,
+                'dead': total_deaths
+            }
+            self.upsert_data(**upsert_obj)
