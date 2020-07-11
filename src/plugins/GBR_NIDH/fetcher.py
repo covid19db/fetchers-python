@@ -1,4 +1,4 @@
-# Copyright (C) 2020 University of Oxford
+    # Copyright (C) 2020 University of Oxford
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,21 +41,16 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
     def check_aria_label(self, item, phrase):
         label = item.get_attribute('aria-label')
-        if label:
-            return label.startswith(phrase)
-        else:
-            return False
+        return label.startswith(phrase) if label else False
 
     def lau_label(self, label):
         lau = label.split(".")[0]
         prefix = 'Local Government District '
-        lau = lau[len(prefix):]
-        return lau
+        return lau[len(prefix):]
 
     def lau_deaths(self, label):
         deaths = label.split()[-1]
-        deaths = deaths[:-1]
-        return self.parse_int(deaths)
+        return self.parse_int(deaths[:-1])
 
     def wd_config(self):
         # configue a webdriver for selenium
@@ -64,7 +59,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        self.wd = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
+        self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
         self.wd.implicitly_wait(10)
 
     def fetch_national(self):
@@ -80,8 +75,10 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         items = self.wd.find_elements_by_xpath('//*[name()="visual-container-group"]//*[name()="svg"]')
 
         # pick out items by aria-label
-        total_tested = [self.parse_int(item.text) for item in items if self.check_aria_label(item, 'Individuals Tested')]
-        confirmed = [self.parse_int(item.text) for item in items if self.check_aria_label(item, 'Individuals with a Positive Test')]
+        total_tested = [self.parse_int(item.text) for item in items if
+                        self.check_aria_label(item, 'Individuals Tested')]
+        confirmed = [self.parse_int(item.text) for item in items if
+                     self.check_aria_label(item, 'Individuals with a Positive Test')]
         deaths = [self.parse_int(item.text) for item in items if self.check_aria_label(item, 'Num_Deaths')]
 
         upsert_obj = {
@@ -113,7 +110,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         local_govt_testing_page.click()
 
         local_govt_table = self.wd.find_element_by_xpath(
-            '//*[name()="div" and @aria-label="Breakdown of Individuals with a Laboratory Completed Test (Pillar 1 & 2) by Local Government District Table"]//*[name()="div" and @class="bodyCells"]/div/div')
+            '//*[name()="div" and @aria-label="Breakdown of Individuals with a Laboratory Completed Test (Pillar 1 & '
+            '2) by Local Government District Table"]//*[name()="div" and @class="bodyCells"]/div/div')
         columns = local_govt_table.find_elements_by_xpath('./div')
 
         local_testing_data = []
@@ -123,7 +121,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 column_data.append(element.text)
             local_testing_data.append(column_data)
 
-        data = list(zip(local_testing_data[0], map(self.parse_int, local_testing_data[1]), map(self.parse_int, local_testing_data[2])))
+        data = list(zip(local_testing_data[0], map(self.parse_int, local_testing_data[1]),
+                        map(self.parse_int, local_testing_data[2])))
         df_test = pd.DataFrame(data, columns=['lau', 'tests', 'positive'])
 
         home_button = self.wd.find_element_by_xpath('//visual-container-repeat/visual-container-modern[7]/transform')
@@ -135,7 +134,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chart_area = self.wd.find_element_by_xpath(
             '//div[@aria-label="COVID-19 Deaths by Local Government District Clustered column chart"]')
         rectangles = chart_area.find_elements_by_xpath(
-            './/*[name()="svg"]/*[name()="svg"]//*[@class="series"]//*[name()="rect" and @class="column setFocusRing"]')
+            './/*[name()="svg"]/*[name()="svg"]//*[@class="series"]'
+            '//*[name()="rect" and @class="column setFocusRing"]')
         labels = [rectangle.get_attribute('aria-label') for rectangle in rectangles]
         lau = [self.lau_label(label) for label in labels]
         lau_deaths = [self.lau_deaths(label) for label in labels]
@@ -185,12 +185,14 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     def run(self):
 
         # this website doesn't always load properly, so we'll take a few attempts
+        url = 'https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMz'\
+            'lmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9'
+
         attempts = 1
         while attempts < 11:
             try:
                 self.wd_config()
                 logger.info("Fetching country-level information")
-                url='https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9'
                 self.wd.get(url)
                 self.fetch_national()
                 logger.debug('Fetching regional level information')
@@ -200,6 +202,6 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 logger.info(f'Failed on attempt {attempts}')
                 attempts = attempts + 1
                 if attempts == 10:
-                    raise Exception ('Could not fetch from Northern Ireland')
+                    raise Exception('Could not fetch from Northern Ireland')
 
         self.wd.quit()
