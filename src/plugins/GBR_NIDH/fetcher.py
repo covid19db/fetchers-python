@@ -59,7 +59,9 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
+        #self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
+        self.wd = webdriver.Chrome(executable_path=r'C:/Users/johnm/anaconda3/chromedriver/chromedriver.exe',
+                              chrome_options=chrome_options)
         self.wd.implicitly_wait(10)
 
     def fetch_national(self):
@@ -152,10 +154,10 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             date = self.yesterday
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1='Northern Ireland',
-                input_adm_area_2=lgd,
-                input_adm_area_3=None,
-                return_original_if_failure=True,
+                input_adm_area_1 = 'Northern Ireland',
+                input_adm_area_2 = lgd,
+                input_adm_area_3 = None,
+                return_original_if_failure = True,
                 suppress_exception=True
             )
 
