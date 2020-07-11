@@ -144,13 +144,13 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
             self.upsert_data(**upsert_obj)
 
         # finally a global figure
-        grouped = data.groupby(['dateRep'], as_index=False)
+        # same method but just sort by the date
+
+        grouped = continentaldf.groupby(['dateRep'], as_index=False)
         globaldf = grouped[['cases', 'deaths']].sum()
         globaldf.sort_values(['dateRep'], inplace=True)
 
-        # Data contains new cases and deaths for each day. Get cumulative data by sorting by continent
-        # and date, then iterating and adding to cumulative data for the same continent
-        # just use same dictionaries as for countries
+        # This
 
         for index, record in globaldf.iterrows():
             date = record['dateRep']
