@@ -15,6 +15,9 @@
 import logging
 import pandas as pd
 import time
+import os
+import sys
+import csv
 
 from datetime import date, timedelta
 from selenium import webdriver
@@ -61,6 +64,33 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
         self.wd.implicitly_wait(10)
+
+    def bridging_data(self):
+        input_csv_fname = 'bridging_data.csv'
+        path = os.path.dirname(sys.modules[self.__class__.__module__].__file__)
+        csv_fname = os.path.join(path, input_csv_fname)
+        if not os.path.exists(csv_fname):
+            return None
+
+        with open(csv_fname, newline='') as csvfile:
+            csv_reader = csv.DictReader(csvfile)
+            for upsert_obj in csv_reader:
+                # translate empty string to None in adm_area_2
+                if upsert_obj.get('adm_area_2') == '':
+                    upsert_obj['adm_area_2'] = None
+                # gid must be a list
+                gid = upsert_obj.get('gid')
+                gid = [gid]
+                upsert_obj['gid']=gid
+                # upsert the row
+                self.upsert_data(**upsert_obj)
+
+                # do the upsert again for level 3
+                adm_area_2 = upsert_obj.get('adm_area_2')
+                if adm_area_2 and adm_area_2 != 'Unknown':
+                    upsert_obj['adm_area_3'] = adm_area_2
+                    upsert_obj['gid'] = [gid_element.split('_')[0] + '.1_1' for gid_element in gid]
+                    self.upsert_data(**upsert_obj)
 
     def fetch_national(self):
 
@@ -183,6 +213,11 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 self.upsert_data(**upsert_obj)
 
     def run(self):
+
+        # this fetcher first collected data on 2020-07-11
+        # GBR_PHTW stopped collecting on 2020-06-24
+        # so first we gather some bridging data
+        self.bridging_data()
 
         # this website doesn't always load properly, so we'll take a few attempts
         url = 'https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMz'\
