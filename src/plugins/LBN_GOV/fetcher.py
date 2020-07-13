@@ -93,13 +93,56 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                            'quarantined':[lst[15],]})
     
         return df
+    
+    def fetch_historical(self,url):
+        self.wd.get(url)
+         
+         # wait until charts visible
+        element = WebDriverWait(self.wd, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "apexcharts-canvas")))
+        # make a list of all charts
+        # make a list of all charts
+        chart_list = self.wd.find_elements_by_css_selector("div.apexcharts-canvas")
+        chart=chart_list[0]
+
+        # only works if chart is in view - mouse needs to scroll over element
+        # this took me ages to figure out, but the rest of the code got better while it was happening!!
+        self.wd.execute_script("arguments[0].scrollIntoView();", chart)
+        
+        res = []
+        now = datetime.now()
+        yr = now.year
+                
+        # iterate through the bars on the chart to hover on
+        # you may need different methods for other charts
+        bar_list = chart.find_elements_by_xpath(".//*[name()='path' and @id='apexcharts-bar-area-0']")
+        for el in bar_list:
+            info = []
+            hover = ActionChains(self.wd).move_to_element(el)
+            hover.perform()
+        
+            # at this point the apexcharts-tooltip light element gets populated
+            label = chart.find_element_by_css_selector("div.apexcharts-tooltip.light")
+            d = label.find_element_by_css_selector("div.apexcharts-tooltip-title")
+            dt = d.text + ' ' + str(yr)
+            date = datetime.strptime(dt, '%d %b %Y').strftime('%Y-%m-%d')
+            info.append(date)
+            data = label.find_elements_by_css_selector("div.apexcharts-tooltip-y-group")
+            for datum in data:
+              label_and_value = datum.find_elements_by_css_selector("span")
+              if label_and_value:
+                info.append(label_and_value[0].text)
+                info.append(label_and_value[1].text)
+            res.append(info)
+        df = pd.DataFrame(res, columns=['date', 'daily', 'dailynum', 'total', 'totalnum'])
+        return df
+        
         
         
     def run(self):
         self.wd_config()     
         logger.info("feching country-level information")
         
-        url = 'https://corona.ministryinfo.gov.lb/'        
+        url = 'https://corona.ministryinfo.gov.lb/'  
         ndata = self.fetch_national(url)
         
         date = datetime.today().strftime('%Y-%m-%d')
@@ -155,4 +198,25 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                         'gid': gid
                     }
                     
-                    self.upsert_data(**upsert_obj)    
+                    self.upsert_data(**upsert_obj)
+        
+        logger.debug('Fetching historical level information')
+        hdata = self.fetch_historical(url)
+        for index, record in hdata.iterrows():
+                date = record['date']
+                confirmed = record['totalnum']
+                
+                upsert_obj = {
+                'source': self.SOURCE,
+                'date': date,
+                'country': 'Lebanon',
+                'countrycode': 'LBN',
+                'adm_area_1': None,
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': ['LBN'],
+                'confirmed': confirmed
+                }
+                
+                self.upsert_data(**upsert_obj)
+                
