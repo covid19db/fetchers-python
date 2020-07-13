@@ -104,7 +104,7 @@ class GoogleMobilityFetcher(BaseMobilityFetcher):
                 'workplace': record['workplaces_percent_change_from_baseline'],
                 'parks': record['parks_percent_change_from_baseline'],
                 'retail_recreation': record['retail_and_recreation_percent_change_from_baseline'],
-                'grocery_pharmacy': record['residential_percent_change_from_baseline']
+                'grocery_pharmacy': record['grocery_and_pharmacy_percent_change_from_baseline']
             }
 
             if gid:
