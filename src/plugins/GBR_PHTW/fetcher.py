@@ -79,6 +79,10 @@ class UnitedKingdomPHTWFetcher(BaseEpidemiologyFetcher):
                 'dead': deaths,
                 'gid': gid
             }
+
+            if adm_area_1=='Northern Ireland':
+                break
+
             self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
@@ -110,4 +114,8 @@ class UnitedKingdomPHTWFetcher(BaseEpidemiologyFetcher):
                     'confirmed': totalcases,
                     'gid': gid
                 }
+
+                if adm_area_1 == 'Northern Ireland':
+                    break
+
                 self.upsert_data(**upsert_obj)
