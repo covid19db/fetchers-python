@@ -34,7 +34,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'GBR_NIDH'  # Northern Ireland Department of Health
     wd = None
-    yesterday = date.today() - timedelta(days=1)
+    date = date.today() - timedelta(hours=6)
 
     def parse_int(self, myString):
         if isinstance(myString, int):
@@ -113,7 +113,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
         upsert_obj = {
             'source': self.SOURCE,
-            'date': self.yesterday.strftime('%Y-%m-%d'),
+            'date': self.date.strftime('%Y-%m-%d'),
             'country': 'United Kingdom',
             'countrycode': 'GBR',
             'adm_area_1': 'Northern Ireland',
@@ -179,7 +179,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             tested = record['tests']
             deaths = record['deaths']
             lgd = record['lau']
-            date = self.yesterday
+            date = self.date
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1 = 'Northern Ireland',
