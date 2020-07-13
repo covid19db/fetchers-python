@@ -69,8 +69,10 @@ Currently implemented fetchers:
 | CHN_ICL | Mainland China | CHN| [MRC Centre Imperial College London](https://github.com/mrc-ide/covid19_mainland_China_report#websites-of-health-commissions-in-mainland-china) | candidate | adm_area_1: province or None |
 | ESP_MS | Spain | ESP | [Ministerio de Sanidad](https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm) | candidate | adm_area_1: comunidades autónomas |
 | IRL_HSPC | Ireland | IRL | [Health Surveillance Protection Centre](https://covid19ireland-geohive.hub.arcgis.com/search?groupIds=7e244cadac05461fb60b287a37b5ed2b) | candidate | adm_area_1: county |
-| LBN_GOV | Lebanon | LBN| [Lebanon Ministry of Health](https://corona.ministryinfo.gov.lb/) | candidate | adm_area_1: region; adm_area_2: province |
+| LBN_GOV | Lebanon | LBN | [Lebanon Ministry of Health](https://corona.ministryinfo.gov.lb/) | candidate | adm_area_1: region; adm_area_2: province |
 | UAE_GOV | United Arab Emirates | ARE | [United Arab Emirates Government](https://covid19.ncema.gov.ae/en) | release | adm_area_1: NA|
+| SAU_GOV | Saudi Arabia | SAU | [Saudi Arabia Ministry of Health](https://covid19.moh.gov.sa/) | candidate | adm_area_1: province |
+| IRQ_GOV | Iraq | IRQ | [WHO Dynamic Dashboard for Iraq] (http://ow.ly/6Ghn50z9UTh ) | candidate | adm_area_1: province |
 
 Explanation of status:
 - Draft: being developed, should not be tested yet
