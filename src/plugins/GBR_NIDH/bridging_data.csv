@@ -1,209 +1,248 @@
-source,date,country,countrycode,adm_area_1,adm_area_2,gid,tested,confirmed,dead
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,,GBR.2_1,102164,5724,547
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8032,456,57
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,8962,444,44
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,11821,754,59
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,18891,1406,161
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6375,276,38
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7152,212,21
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,5906,179,10
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8061,505,47
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,6793,379,42
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7315,413,30
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,8806,350,33
-GBR_NIDH,2020-06-25,United Kingdom,GBR,Northern Ireland,Unknown,,4050,350,5
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,,GBR.2_1,106374,5748,548
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8445,459,57
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9378,450,44
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12231,748,59
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,19548,1411,161
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6661,276,38
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7426,212,21
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6153,179,10
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8422,508,47
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7295,387,42
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7507,412,30
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9200,356,33
-GBR_NIDH,2020-06-26,United Kingdom,GBR,Northern Ireland,Unknown,,4108,350,6
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,,GBR.2_1,107891,5750,549
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8582,459,58
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9531,450,44
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12470,748,59
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,19713,1411,161
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6704,276,38
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7534,212,21
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6251,179,10
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8495,509,47
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7402,388,42
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7649,412,30
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9412,356,33
-GBR_NIDH,2020-06-27,United Kingdom,GBR,Northern Ireland,Unknown,,4148,350,6
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,,GBR.2_1,108914,5751,550
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8683,459,58
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9630,450,44
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12568,748,59
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,19883,1411,161
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6770,276,38
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7584,212,21
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6378,179,11
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8557,510,47
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7469,388,42
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7732,412,30
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9476,356,33
-GBR_NIDH,2020-06-28,United Kingdom,GBR,Northern Ireland,Unknown,,4184,350,6
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,,GBR.2_1,109684,5757,551
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8730,459,58
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9703,451,44
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12647,749,59
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20021,1411,161
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6827,276,38
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7651,212,21
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6431,179,11
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8611,512,47
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7533,389,43
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7774,412,30
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9541,357,33
-GBR_NIDH,2020-06-29,United Kingdom,GBR,Northern Ireland,Unknown,,4215,350,6
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,,GBR.2_1,110227,5760,551
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8766,459,58
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9743,452,44
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12695,749,59
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20107,1412,161
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6874,276,38
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7688,212,21
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6459,179,11
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8652,512,47
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7576,389,43
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,7830,412,30
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9591,358,33
-GBR_NIDH,2020-06-30,United Kingdom,GBR,Northern Ireland,Unknown,,4246,350,6
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,,GBR.2_1,111698,5761,551
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8909,459,58
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9904,453,44
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,12827,749,59
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20350,1412,161
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,6962,276,38
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7775,212,21
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6528,179,11
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8722,512,47
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7626,389,43
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8015,412,30
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9764,358,33
-GBR_NIDH,2020-07-01,United Kingdom,GBR,Northern Ireland,Unknown,,4316,350,6
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,,GBR.2_1,113283,5768,552
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8999,460,59
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10025,453,44
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13003,749,59
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20610,1413,161
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7109,276,39
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7898,212,21
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6628,179,11
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8835,512,48
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7721,389,43
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8174,413,30
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9921,362,33
-GBR_NIDH,2020-07-02,United Kingdom,GBR,Northern Ireland,Unknown,,4360,350,4
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,,GBR.2_1,113061,5747,554
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8913,456,59
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9976,450,45
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13061,744,59
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20583,1412,161
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7102,276,39
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7910,212,21
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6596,180,11
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8781,510,49
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7677,386,43
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8132,408,30
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9954,363,33
-GBR_NIDH,2020-07-03,United Kingdom,GBR,Northern Ireland,Unknown,,4376,350,4
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,,GBR.2_1,113061,5747,554
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8913,456,59
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9976,450,45
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13061,744,59
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20583,1412,161
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7102,276,39
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7910,212,21
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6596,180,11
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8781,510,49
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7677,386,43
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8132,408,30
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9954,363,33
-GBR_NIDH,2020-07-04,United Kingdom,GBR,Northern Ireland,Unknown,,4376,350,4
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,,GBR.2_1,113061,5747,554
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,8913,456,59
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,9976,450,45
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13061,744,59
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,20583,1412,161
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7102,276,39
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,7910,212,21
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6596,180,11
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8781,510,49
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7677,386,43
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8132,408,30
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,9954,363,33
-GBR_NIDH,2020-07-05,United Kingdom,GBR,Northern Ireland,Unknown,,4376,350,4
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,,GBR.2_1,115340,5756,554
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,4431,350,59
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10189,368,45
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,8280,408,59
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,7811,387,161
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,8925,513,39
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,6734,180,21
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,8108,212,11
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,7258,276,49
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,21006,1412,43
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,13337,744,30
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,10180,450,33
-GBR_NIDH,2020-07-06,United Kingdom,GBR,Northern Ireland,Unknown,,9081,456,4
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,,GBR.2_1,116146,5761,554
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,9129,457,59
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10249,450,45
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13448,744,59
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,21129,1412,161
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7309,276,39
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,8181,212,21
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6784,180,11
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,8984,515,49
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7851,388,43
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8329,409,30
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,10277,368,33
-GBR_NIDH,2020-07-07,United Kingdom,GBR,Northern Ireland,Unknown,,4476,350,4
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,,GBR.2_1,116954,5765,554
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,9181,457,59
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10325,450,45
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13541,744,59
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,21271,1414,161
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7361,276,39
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,8248,212,21
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6848,180,11
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,9054,516,49
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7895,389,43
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8371,409,30
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,10358,368,33
-GBR_NIDH,2020-07-08,United Kingdom,GBR,Northern Ireland,Unknown,,4501,350,4
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,,GBR.2_1,118186,5768,554
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,9249,456,59
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10415,450,45
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13681,744,59
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,21490,1414,161
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7455,276,39
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,8359,212,21
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,6937,180,11
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,9148,516,49
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,7959,390,43
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8438,409,30
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,10519,369,33
-GBR_NIDH,2020-07-09,United Kingdom,GBR,Northern Ireland,Unknown,,4536,352,4
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,,GBR.2_1,119180,5772,554
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,GBR.2.1_1,9325,456,59
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Ards and North Down,GBR.2.11_1,10503,450,45
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",GBR.2.2_1,13787,744,59
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Belfast,GBR.2.3_1,21697,1415,161
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,GBR.2.4_1,7514,276,39
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,GBR.2.5_1,8414,212,21
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,GBR.2.6_1,7022,180,11
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,GBR.2.7_1,9213,517,49
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,GBR.2.8_1,8015,390,43
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Mid Ulster,GBR.2.9_1,8498,409,30
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",GBR.2.10_1,10605,370,33
-GBR_NIDH,2020-07-10,United Kingdom,GBR,Northern Ireland,Unknown,,4587,353,4
+source,date,country,countrycode,adm_area_1,adm_area_2,tested,confirmed,dead
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9493,457,59
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9325,456,59
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9325,456,59
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9325,456,59
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9249,456,59
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9181,457,59
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9129,457,59
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,9081,456,59
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8913,456,59
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8913,456,59
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8913,456,59
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8999,460,59
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8909,459,58
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8766,459,58
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8730,459,58
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8683,459,58
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8582,459,58
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8445,459,57
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Antrim and Newtownabbey,8032,456,57
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10716,452,45
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10503,450,45
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10503,450,45
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10503,450,45
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10415,450,45
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10325,450,45
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10249,450,45
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10180,450,45
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9976,450,45
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9976,450,45
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9976,450,45
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,10025,453,44
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9904,453,44
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9743,452,44
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9703,451,44
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9630,450,44
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9531,450,44
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,9378,450,44
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Ards and North Down,8962,444,44
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",14061,746,59
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13787,744,59
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13787,744,59
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13787,744,59
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13681,744,59
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13541,744,59
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13448,744,59
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13337,744,59
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13061,744,59
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13061,744,59
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13061,744,59
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",13003,749,59
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12827,749,59
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12695,749,59
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12647,749,59
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12568,748,59
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12470,748,59
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",12231,748,59
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,"Armagh City, Banbridge and Craigavon",11821,754,59
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,22097,1420,162
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21697,1415,161
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21697,1415,161
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21697,1415,161
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21490,1414,161
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21271,1414,161
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21129,1412,161
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,21006,1412,161
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,20583,1412,161
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,20583,1412,161
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,20583,1412,161
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,20610,1413,161
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Belfast,20350,1412,161
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,20107,1412,161
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,20021,1411,161
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,19883,1411,161
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,19713,1411,161
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,19548,1411,161
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Belfast,18891,1406,161
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7635,276,39
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7514,276,39
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7514,276,39
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7514,276,39
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7455,276,39
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7361,276,39
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7309,276,39
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7258,276,39
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7102,276,39
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7102,276,39
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7102,276,39
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,7109,276,39
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6962,276,38
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6874,276,38
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6827,276,38
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6770,276,38
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6704,276,38
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6661,276,38
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Causeway Coast and Glens,6375,276,38
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8570,212,21
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8414,212,21
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8414,212,21
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8414,212,21
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8359,212,21
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8248,212,21
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8181,212,21
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,8108,212,21
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7910,212,21
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7910,212,21
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7910,212,21
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7898,212,21
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7775,212,21
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7688,212,21
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7651,212,21
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7584,212,21
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7534,212,21
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7426,212,21
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Derry City and Strabane,7152,212,21
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,7147,180,11
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,7022,180,11
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,7022,180,11
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,7022,180,11
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6937,180,11
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6848,180,11
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6784,180,11
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6734,180,11
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6596,180,11
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6596,180,11
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6596,180,11
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6628,179,11
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6528,179,11
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6459,179,11
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6431,179,11
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6378,179,11
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6251,179,10
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,6153,179,10
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Fermanagh and Omagh,5906,179,10
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9416,517,50
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9213,517,49
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9213,517,49
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9213,517,49
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9148,516,49
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,9054,516,49
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8984,515,49
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8925,513,49
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8781,510,49
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8781,510,49
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8781,510,49
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8835,512,48
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8722,512,47
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8652,512,47
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8611,512,47
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8557,510,47
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8495,509,47
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8422,508,47
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Lisburn and Castlereagh,8061,505,47
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,8180,393,43
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,8015,390,43
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,8015,390,43
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,8015,390,43
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7959,390,43
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7895,389,43
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7851,388,43
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7811,387,43
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7677,386,43
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7677,386,43
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7677,386,43
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7721,389,43
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7626,389,43
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7576,389,43
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7533,389,43
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7469,388,42
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7402,388,42
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,7295,387,42
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Mid and East Antrim,6793,379,42
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8665,409,30
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8498,409,30
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8498,409,30
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8498,409,30
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8438,409,30
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8371,409,30
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8329,409,30
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8280,408,30
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8132,408,30
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8132,408,30
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8132,408,30
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8174,413,30
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,8015,412,30
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7830,412,30
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7774,412,30
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7732,412,30
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7649,412,30
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7507,412,30
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Mid Ulster,7315,413,30
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10894,373,33
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10605,370,33
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10605,370,33
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10605,370,33
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10519,369,33
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10358,368,33
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10277,368,33
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",10189,368,33
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9954,363,33
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9954,363,33
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9954,363,33
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9921,362,33
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9764,358,33
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9591,358,33
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9541,357,33
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9476,356,33
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9412,356,33
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",9200,356,33
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,"Newry, Mourne and Down",8806,350,33
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4654,353,4
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4587,353,4
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4587,353,4
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4587,353,4
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4536,352,4
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4501,350,4
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4476,350,4
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4431,350,4
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4376,350,4
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4376,350,4
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4376,350,4
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4360,350,4
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,Unknown,4316,350,6
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4246,350,6
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4215,350,6
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4184,350,6
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4148,350,6
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4108,350,6
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,Unknown,4050,350,5
+GBR_NIDH,13/07/2020,United Kingdom,GBR,Northern Ireland,,121528,5788,556
+GBR_NIDH,12/07/2020,United Kingdom,GBR,Northern Ireland,,119180,5772,554
+GBR_NIDH,11/07/2020,United Kingdom,GBR,Northern Ireland,,119180,5772,554
+GBR_NIDH,10/07/2020,United Kingdom,GBR,Northern Ireland,,119180,5772,554
+GBR_NIDH,09/07/2020,United Kingdom,GBR,Northern Ireland,,118186,5768,554
+GBR_NIDH,08/07/2020,United Kingdom,GBR,Northern Ireland,,116954,5765,554
+GBR_NIDH,07/07/2020,United Kingdom,GBR,Northern Ireland,,116146,5761,554
+GBR_NIDH,06/07/2020,United Kingdom,GBR,Northern Ireland,,115340,5756,554
+GBR_NIDH,05/07/2020,United Kingdom,GBR,Northern Ireland,,113061,5747,554
+GBR_NIDH,04/07/2020,United Kingdom,GBR,Northern Ireland,,113061,5747,554
+GBR_NIDH,03/07/2020,United Kingdom,GBR,Northern Ireland,,113061,5747,554
+GBR_NIDH,02/07/2020,United Kingdom,GBR,Northern Ireland,,113283,5768,552
+GBR_NIDH,01/07/2020,United Kingdom,GBR,Northern Ireland,,111698,5761,551
+GBR_NIDH,30/06/2020,United Kingdom,GBR,Northern Ireland,,110227,5760,551
+GBR_NIDH,29/06/2020,United Kingdom,GBR,Northern Ireland,,109684,5757,551
+GBR_NIDH,28/06/2020,United Kingdom,GBR,Northern Ireland,,108914,5751,550
+GBR_NIDH,27/06/2020,United Kingdom,GBR,Northern Ireland,,107891,5750,549
+GBR_NIDH,26/06/2020,United Kingdom,GBR,Northern Ireland,,106374,5748,548
+GBR_NIDH,25/06/2020,United Kingdom,GBR,Northern Ireland,,102164,5724,547

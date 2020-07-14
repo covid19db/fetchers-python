@@ -76,20 +76,33 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             csv_reader = csv.DictReader(csvfile)
             for upsert_obj in csv_reader:
                 # translate empty string to None in adm_area_2
-                if upsert_obj.get('adm_area_2') == '':
-                    upsert_obj['adm_area_2'] = None
-                # gid must be a list
-                gid = upsert_obj.get('gid')
-                gid = [gid]
-                upsert_obj['gid']=gid
-                # upsert the row
+                input_adm_area_2 = upsert_obj.get('adm_area_2')
+                if not input_adm_area_2:
+                    input_adm_area_2 = None
+
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1='Northern Ireland',
+                    input_adm_area_2=input_adm_area_2,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
+                upsert_obj['adm_area_2'] = adm_area_2
+                upsert_obj['gid'] = gid
+
                 self.upsert_data(**upsert_obj)
 
                 # do the upsert again for level 3
-                adm_area_2 = upsert_obj.get('adm_area_2')
                 if adm_area_2 and adm_area_2 != 'Unknown':
-                    upsert_obj['adm_area_3'] = adm_area_2
-                    upsert_obj['gid'] = [gid_element.split('_')[0] + '.1_1' for gid_element in gid]
+                    success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                        input_adm_area_1='Northern Ireland',
+                        input_adm_area_2=input_adm_area_2,
+                        input_adm_area_3=input_adm_area_2,
+                        return_original_if_failure=True,
+                        suppress_exception=True
+                    )
+                    upsert_obj['adm_area_3'] = adm_area_3
+                    upsert_obj['gid'] = gid
                     self.upsert_data(**upsert_obj)
 
     def fetch_national(self):
@@ -208,8 +221,15 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             # do the upsert again for level 3
 
             if adm_area_2 != 'Unknown':
-                upsert_obj['adm_area_3'] = adm_area_2
-                upsert_obj['gid'] = [gid_element.split('_')[0] + '.1_1' for gid_element in gid]
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1='Northern Ireland',
+                    input_adm_area_2=lgd,
+                    input_adm_area_3=lgd,
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
+                upsert_obj['adm_area_3'] = adm_area_3
+                upsert_obj['gid'] = gid
                 self.upsert_data(**upsert_obj)
 
     def run(self):
