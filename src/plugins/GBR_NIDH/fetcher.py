@@ -62,9 +62,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        #self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
-        self.wd = webdriver.Chrome(executable_path=r'C:/Users/johnm/anaconda3/chromedriver/chromedriver.exe',
-                                   options=chrome_options)
+        self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
         self.wd.implicitly_wait(10)
 
     def bridging_data(self):
@@ -78,27 +76,28 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             csv_reader = csv.DictReader(csvfile)
             for upsert_obj in csv_reader:
                 # translate empty string to None in adm_area_2
-                if upsert_obj.get('adm_area_2') == '':
-                    upsert_obj['adm_area_2'] = None
-                # gid must be a list
+                input_adm_area_2 = upsert_obj.get('adm_area_2')
+                if not input_adm_area_2:
+                    input_adm_area_2 = None
+
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     input_adm_area_1='Northern Ireland',
-                    input_adm_area_2=upsert_obj.get('adm_area_2'),
+                    input_adm_area_2=input_adm_area_2,
                     input_adm_area_3=None,
                     return_original_if_failure=True,
                     suppress_exception=True
                 )
-                upsert_obj['gid']=gid
-                # upsert the row
+                upsert_obj['adm_area_2'] = adm_area_2
+                upsert_obj['gid'] = gid
+
                 self.upsert_data(**upsert_obj)
 
                 # do the upsert again for level 3
-                adm_area_2 = upsert_obj.get('adm_area_2')
                 if adm_area_2 and adm_area_2 != 'Unknown':
                     success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                         input_adm_area_1='Northern Ireland',
-                        input_adm_area_2=adm_area_2,
-                        input_adm_area_3=adm_area_2,
+                        input_adm_area_2=input_adm_area_2,
+                        input_adm_area_3=input_adm_area_2,
                         return_original_if_failure=True,
                         suppress_exception=True
                     )
