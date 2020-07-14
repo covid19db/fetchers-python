@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 
 class SouthKoreaDS4CFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'KOR_DS4C'
 
     def fetch(self, category):
