@@ -62,7 +62,9 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
+        #self.wd = webdriver.Chrome('chromedriver', chrome_options=chrome_options)
+        self.wd = webdriver.Chrome(executable_path=r'C:/Users/johnm/anaconda3/chromedriver/chromedriver.exe',
+                                   options=chrome_options)
         self.wd.implicitly_wait(10)
 
     def bridging_data(self):
@@ -79,8 +81,13 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 if upsert_obj.get('adm_area_2') == '':
                     upsert_obj['adm_area_2'] = None
                 # gid must be a list
-                gid = upsert_obj.get('gid')
-                gid = [gid]
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1='Northern Ireland',
+                    input_adm_area_2=upsert_obj.get('adm_area_2'),
+                    input_adm_area_3=None,
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
                 upsert_obj['gid']=gid
                 # upsert the row
                 self.upsert_data(**upsert_obj)
@@ -88,8 +95,15 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 # do the upsert again for level 3
                 adm_area_2 = upsert_obj.get('adm_area_2')
                 if adm_area_2 and adm_area_2 != 'Unknown':
-                    upsert_obj['adm_area_3'] = adm_area_2
-                    upsert_obj['gid'] = [gid_element.split('_')[0] + '.1_1' for gid_element in gid]
+                    success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                        input_adm_area_1='Northern Ireland',
+                        input_adm_area_2=adm_area_2,
+                        input_adm_area_3=adm_area_2,
+                        return_original_if_failure=True,
+                        suppress_exception=True
+                    )
+                    upsert_obj['adm_area_3'] = adm_area_3
+                    upsert_obj['gid'] = gid
                     self.upsert_data(**upsert_obj)
 
     def fetch_national(self):
@@ -208,8 +222,15 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             # do the upsert again for level 3
 
             if adm_area_2 != 'Unknown':
-                upsert_obj['adm_area_3'] = adm_area_2
-                upsert_obj['gid'] = [gid_element.split('_')[0] + '.1_1' for gid_element in gid]
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1='Northern Ireland',
+                    input_adm_area_2=lgd,
+                    input_adm_area_3=lgd,
+                    return_original_if_failure=True,
+                    suppress_exception=True
+                )
+                upsert_obj['adm_area_3'] = adm_area_3
+                upsert_obj['gid'] = gid
                 self.upsert_data(**upsert_obj)
 
     def run(self):
