@@ -1,0 +1,48 @@
+input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+Scotland,,,Scotland,,,GBR.3_1
+Scotland,Grampian,,Scotland,NHS Grampian,,GBR.3.1_1:GBR.3.2_1:GBR.3.20_1
+Scotland,Lothian,,Scotland,NHS Lothian,,GBR.3.10_1:GBR.3.12_1:GBR.3.19_1:GBR.3.32_1
+Scotland,Western Isles,,Scotland,NHS Western Isles,,GBR.3.13_1
+Scotland,Fife,,Scotland,NHS Fife,,GBR.3.15_1
+Scotland,Lanarkshire,,Scotland,NHS Lanarkshire,,GBR.3.22_1:GBR.3.29_1
+Scotland,Orkney,,Scotland,NHS Orkney,,GBR.3.23_1
+Scotland,Borders,,Scotland,NHS Borders,,GBR.3.26_1
+Scotland,Shetland,,Scotland,NHS Shetland,,GBR.3.27_1
+Scotland,Tayside,,Scotland,NHS Tayside,,GBR.3.3_1:GBR.3.7_1:GBR.3.24_1
+Scotland,Highland,,Scotland,NHS Highland,,GBR.3.4_1:GBR.3.17_1
+Scotland,Forth Valley,,Scotland,NHS Forth Valley,,GBR.3.5_1:GBR.3.14_1:GBR.3.30_1
+Scotland,Dumfries and Galloway,,Scotland,NHS Dumfries and Galloway,,GBR.3.6_1
+Scotland,Ayrshire and Arran,,Scotland,NHS Ayrshire and Arran,,GBR.3.8_1:GBR.3.21_1:GBR.3.28_1
+Scotland,Greater Glasgow and Clyde,,Scotland,NHS Greater Glasgow and Clyde,,GBR.3.9_1:GBR.3.11_1:GBR.3.16_1:GBR.3.18_1:GBR.3.25_1:GBR.3.31_1:GBR.3.4_1
+Scotland,Aberdeen City,,Scotland,Aberdeen,Aberdeen,GBR.3.1.1_1
+Scotland,Aberdeenshire,,Scotland,Aberdeenshire,Aberdeenshire,GBR.3.2.1_1
+Scotland,Angus,,Scotland,Angus,Angus,GBR.3.3.1_1
+Scotland,Argyll & Bute,,Scotland,Argyll and Bute,Argyll and Bute,GBR.3.4.1_1
+Scotland,Clackmannanshire,,Scotland,Clackmannanshire,Clackmannanshire,GBR.3.5.1_1
+Scotland,Dumfries & Galloway,,Scotland,Dumfries and Galloway,Dumfries and Galloway,GBR.3.6.1_1
+Scotland,Dundee City,,Scotland,Dundee,Dundee,GBR.3.7.1_1
+Scotland,East Ayrshire,,Scotland,East Ayrshire,East Ayrshire,GBR.3.8.1_1
+Scotland,East Dunbartonshire,,Scotland,East Dunbartonshire,East Dunbartonshire,GBR.3.9.1_1
+Scotland,East Lothian,,Scotland,East Lothian,East Lothian,GBR.3.10.1_1
+Scotland,East Renfrewshire,,Scotland,East Renfrewshire,East Renfrewshire,GBR.3.11.1_1
+Scotland,"Edinburgh, City of",,Scotland,Edinburgh,Edinburgh,GBR.3.12.1_1
+Scotland,Na h-Eileanan Siar,,Scotland,Eilean Siar,Eilean Siar,GBR.3.13.1_1
+Scotland,Falkirk,,Scotland,Falkirk,Falkirk,GBR.3.14.1_1
+Scotland,Fife,,Scotland,Fife,Fife,GBR.3.15.1_1
+Scotland,Glasgow City,,Scotland,Glasgow,Glasgow,GBR.3.16.1_1
+Scotland,Highland,,Scotland,Highland,Highland,GBR.3.17.1_1
+Scotland,Inverclyde,,Scotland,Inverclyde,Inverclyde,GBR.3.18.1_1
+Scotland,Midlothian,,Scotland,Midlothian,Midlothian,GBR.3.19.1_1
+Scotland,Moray,,Scotland,Moray,Moray,GBR.3.20.1_1
+Scotland,North Ayrshire,,Scotland,North Ayrshire,North Ayrshire,GBR.3.21.1_1
+Scotland,North Lanarkshire,,Scotland,North Lanarkshire,North Lanarkshire,GBR.3.22.1_1
+Scotland,Orkney,,Scotland,Orkney Islands,Orkney Islands,GBR.3.23.1_1
+Scotland,Perth & Kinross,,Scotland,Perthshire and Kinross,Perthshire and Kinross,GBR.3.24.1_1
+Scotland,Renfrewshire,,Scotland,Renfrewshire,Renfrewshire,GBR.3.25.1_1
+Scotland,Scottish Borders,,Scotland,Scottish Borders,Scottish Borders,GBR.3.26.1_1
+Scotland,Shetland,,Scotland,Shetland Islands,Shetland Islands,GBR.3.27.1_1
+Scotland,South Ayrshire,,Scotland,South Ayrshire,South Ayrshire,GBR.3.28.1_1
+Scotland,South Lanarkshire,,Scotland,South Lanarkshire,South Lanarkshire,GBR.3.29.1_1
+Scotland,Stirling,,Scotland,Stirling,Stirling,GBR.3.30.1_1
+Scotland,West Dunbartonshire,,Scotland,West Dunbartonshire,West Dunbartonshire,GBR.3.31.1_1
+Scotland,West Lothian,,Scotland,West Lothian,West Lothian,GBR.3.32.1_1
