@@ -113,11 +113,17 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
                     'windspeed_mean_std': row['windspeed_mean_std'],
                     'windspeed_min_avg': row['windspeed_min_avg'],
                     'windspeed_min_std': row['windspeed_min_std'],
-                    'cloudaltitude_max': row['cloudaltitude_max'],
-                    'cloudaltitude_min': row['cloudaltitude_min'],
-                    'cloudaltitude_mean': row['cloudaltitude_mean'],
-                    'cloudfrac_max': row['cloudfrac_max'],
-                    'cloudfrac_min': row['cloudfrac_min'],
-                    'cloudfrac_mean': row['cloudfrac_mean']
+                    'cloudaltitude_max_avg': row['cloudaltitude_max_avg'],
+                    'cloudaltitude_max_std': row['cloudaltitude_max_std'],
+                    'cloudaltitude_min_avg': row['cloudaltitude_min_avg'],
+                    'cloudaltitude_min_std': row['cloudaltitude_min_std'],
+                    'cloudaltitude_mean_avg': row['cloudaltitude_mean_avg'],
+                    'cloudaltitude_mean_std': row['cloudaltitude_mean_std'],
+                    'cloudfrac_max_avg': row['cloudfrac_max_avg'],
+                    'cloudfrac_max_std': row['cloudfrac_max_std'],
+                    'cloudfrac_min_avg': row['cloudfrac_min_avg'],
+                    'cloudfrac_min_std': row['cloudfrac_min_std'],
+                    'cloudfrac_mean_avg': row['cloudfrac_mean_avg'],
+                    'cloudfrac_mean_std': row['cloudfrac_mean_std']
                 }
                 self.upsert_data(**upsert_obj)
