@@ -24,7 +24,6 @@ import pandas as pd
 import json
 import requests
 from datetime import datetime
-from bs4 import BeautifulSoup
 
 __all__ = ('ScotlandFetcher',)
 
@@ -51,7 +50,15 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         testing_df = pd.read_csv(url, header=0, parse_dates=[0], names=['date', 'positive', 'total'], usecols=[0, 2, 3])
         return testing_df.merge(deaths_df, how='outer', on='date')
 
-    def fetch_local_authority(self):
+    def fetch_local_authority_date(self):
+        url = 'https://services5.arcgis.com/fCRrQtNvX2pM5zRG/ArcGIS/rest/services/Scottish_Covid_Cases_and_Deaths' \
+              '/FeatureServer/1?f=pjson'
+        timestamp = requests.get(url).json().get('editingInfo').get('lastEditDate')
+        timestamp = timestamp // 1000
+        date = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
+        return date
+
+    def fetch_local_authority_data(self):
         url = 'https://services5.arcgis.com/fCRrQtNvX2pM5zRG/arcgis/rest/services/Scottish_Covid_Cases_and_Deaths' \
               '/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json'
         data = requests.get(url).json().get('features')
@@ -60,17 +67,22 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
             lau = element.get('attributes').get('Name')
             confirmedcases = element.get('attributes').get('TotalCases')
             df = df.append({'lau': lau, 'confirmedcases': confirmedcases}, ignore_index=True)
+        return df
 
-        # find update time on webpage
-        url = 'https://services5.arcgis.com/fCRrQtNvX2pM5zRG/ArcGIS/rest/services/Scottish_Covid_Cases_and_Deaths' \
-              '/FeatureServer/1'
-        website_content = requests.get(url, verify=False)
-        soup = BeautifulSoup(website_content.text, 'lxml')
-        edit_date_tag = soup.find("b", string="Last Edit Date:")
-        edit_date = edit_date_tag.next_sibling.strip()
-        date = datetime.strptime(edit_date, '%m/%d/%Y %H:%M:%S %p').strftime('%Y-%m-%d')
 
-        return date, df
+    def fetch_local_authority_date_and_data(self):
+
+        date = self.fetch_local_authority_date()
+        data = self.fetch_local_authority_data()
+
+        # check date again to make sure the data didn't update after the date-check
+        if date != datetime.today().strftime('%Y-%m-%d'):
+            date_1 = self.fetch_local_authority_date()
+            if date != date_1:
+                date = date_1
+                data = self.fetch_local_authority_data()
+
+        return date, data
 
     def run(self):
         logger.debug('Fetching country-level information')
@@ -128,7 +140,7 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
                 self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching local authority information')
-        date, data = self.fetch_local_authority()
+        date, data = self.fetch_local_authority_date_and_data()
 
         for index, record in data.iterrows():
             # date in first column, each health board in its own column
