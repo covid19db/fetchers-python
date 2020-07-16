@@ -80,9 +80,6 @@ class UnitedKingdomPHTWFetcher(BaseEpidemiologyFetcher):
                 'gid': gid
             }
 
-            if adm_area_1=='Northern Ireland':
-                break
-
             self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
@@ -116,6 +113,6 @@ class UnitedKingdomPHTWFetcher(BaseEpidemiologyFetcher):
                 }
 
                 if adm_area_1 == 'Northern Ireland':
-                    break
+                    continue
 
                 self.upsert_data(**upsert_obj)
