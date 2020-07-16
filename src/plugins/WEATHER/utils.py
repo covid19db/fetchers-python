@@ -47,23 +47,33 @@ def load_local_data():
     with open("plugins/WEATHER/input/weather_indicators.json", "r") as read_file:
         weather_indicators = json.load(read_file)
 
-    # load grid to GADM level 2 dict
-    with open('plugins/WEATHER/input/adm_2_to_grid.pkl', 'rb') as handle:
-        adm_2_to_grid = pickle.load(handle)
+    # load grid to GADM level 1 dict
+    with open('plugins/WEATHER/input/adm_1_info.pkl', 'rb') as handle:
+        adm_1_info = pickle.load(handle)
 
-    return weather_indicators, adm_2_to_grid
+    # load grid to GADM level 2 dict
+    with open('plugins/WEATHER/input/adm_2_info.pkl', 'rb') as handle:
+        adm_2_info = pickle.load(handle)
+
+    return weather_indicators, adm_1_info, adm_2_info
 
 
 # dowload the weather data for a single variable for all days in daterange
-# use the adm_2_to_grid to assign each point in the grid to the right GID
+# use the adm_1_info and adm_2_info to assign each point in the grid to the right
+# GID at level 1 or 2. the dicts also contains the GADM informations on each GID
 # returns a pandas dataframe
-def create_aggr_df(indicator, day, variables, adm_2_to_grid, logger):
-    days = []
+def create_aggr_df(indicator, day, variables, adm_1_info, adm_2_info, logger):
+    source = []
+    date = []
+    gid = []
     country = []
+    countrycode = []
+    adm_area_1 = []
+    adm_area_2 = []
+    adm_area_3 = []
     avg = []
     std = []
-    region = []
-    city = []
+    samplesize = []
 
     logger.debug("downloading data for {} for {}".format(indicator, day.strftime('%Y-%m-%d')))
     URL = "https://metdatasa.blob.core.windows.net/covid19-response/metoffice_global_daily/"
@@ -74,27 +84,61 @@ def create_aggr_df(indicator, day, variables, adm_2_to_grid, logger):
 
     nc = netCDF4.Dataset(temp_file)
     data = nc.variables[variables[indicator]['variable']][:].data.reshape(-1)
+    data = data.astype(np.float64)
 
-    for area_0 in adm_2_to_grid:
-        for area_1 in adm_2_to_grid[area_0]:
-            for area_2 in adm_2_to_grid[area_0][area_1]:
-                idx_list = [point[0] for point in adm_2_to_grid[area_0][area_1][area_2]]
+    # Level 1 aggregation
+    for area_0 in adm_1_info:
+        for area_1 in adm_1_info[area_0]:
+            idx_list = [point[0] for point in adm_1_info[area_0][area_1]["points"]]
+
+            to_avg = [data[idx] for idx in idx_list]
+            samplesize.append(len(to_avg))
+
+            source.append("MET")
+            date.append(day.strftime('%Y-%m-%d'))
+            gid.append(adm_1_info[area_0][area_1]["gid"])
+            country.append(adm_1_info[area_0][area_1]["country"])
+            countrycode.append(adm_1_info[area_0][area_1]["countrycode"])
+            adm_area_1.append(adm_1_info[area_0][area_1]["adm_area_1"])
+            adm_area_2.append(adm_1_info[area_0][area_1]["adm_area_2"])
+            adm_area_3.append(adm_1_info[area_0][area_1]["adm_area_3"])
+
+            avg.append(np.mean(to_avg))
+            std.append(np.std(to_avg, ddof=1))
+
+
+    # Level 2 aggregation
+    for area_0 in adm_2_info:
+        for area_1 in adm_2_info[area_0]:
+            for area_2 in adm_2_info[area_0][area_1]:
+                idx_list = [point[0] for point in adm_2_info[area_0][area_1][area_2]["points"]]
 
                 to_avg = [data[idx] for idx in idx_list]
+                samplesize.append(len(to_avg))
 
-                days.append(day.strftime('%Y-%m-%d'))
-                country.append(area_0)
-                region.append(area_1)
-                city.append(area_2)
+                source.append("MET")
+                date.append(day.strftime('%Y-%m-%d'))
+                gid.append(adm_2_info[area_0][area_1][area_2]["gid"])
+                country.append(adm_2_info[area_0][area_1][area_2]["country"])
+                countrycode.append(adm_2_info[area_0][area_1][area_2]["countrycode"])
+                adm_area_1.append(adm_2_info[area_0][area_1][area_2]["adm_area_1"])
+                adm_area_2.append(adm_2_info[area_0][area_1][area_2]["adm_area_2"])
+                adm_area_3.append(adm_2_info[area_0][area_1][area_2]["adm_area_3"])
+
                 avg.append(np.mean(to_avg))
-                std.append(np.std(to_avg))
+                std.append(np.std(to_avg, ddof=1))
 
     try:
         os.remove(temp_file)
     except:
         pass
 
-    d = {'day': days, 'country': country, 'region': region, 'city': city,
-         indicator + '_avg': avg, indicator + '_std': std}
+    d = {'source': source, 'date': date, 'gid': gid,
+         'country': country, 'countrycode': countrycode,
+         'adm_area_1': adm_area_1, 'adm_area_2': adm_area_2, 'adm_area_3': adm_area_3,
+         'samplesize': samplesize,
+         indicator+'_avg': avg,
+         indicator+'_std': std,
+         }
 
     return pd.DataFrame(data=d)

@@ -29,16 +29,22 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'MET'
 
-    def fetch(self, day, weather_indicators, adm_2_to_grid):
+    def fetch(self, day, weather_indicators, adm_1_info, adm_2_info):
         # creates a dataframe for each variable and merge them
         dfs = []
         for indicator in weather_indicators:
-            df = create_aggr_df(indicator, day, weather_indicators, adm_2_to_grid, logger)
+            df = create_aggr_df(indicator, day, weather_indicators,
+                                adm_1_info, adm_2_info, logger)
             if df is None:
                 return None
             dfs.append(df)
-        df_final = reduce(lambda left, right: pd.merge(
-            left, right, on=['day', 'country', 'region', 'city']), dfs)
+
+        df_final = reduce(lambda left,right: pd.merge(
+            left,right,on=['source', 'date', 'gid',
+                           'country', 'countrycode',
+                           'adm_area_1','adm_area_2',
+                           'adm_area_3',
+                           'samplesize']), dfs)
         return df_final
 
     def get_last_weather_date(self):
@@ -48,7 +54,7 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
         return date.date.values[0] or datetime.datetime.strptime('2020-01-01', "%Y-%m-%d").date()
 
     def run(self):
-        weather_indicators, adm_2_to_grid = load_local_data()
+        weather_indicators, adm_1_info, adm_2_info = load_local_data()
 
         # Define date range
         logger.debug("defining date range")
@@ -60,7 +66,7 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
 
         for day in date_range:
             logger.debug(f"fetching weather data for: {day.strftime('%Y-%m-%d')}")
-            new_data = self.fetch(day, weather_indicators, adm_2_to_grid)
+            new_data = self.fetch(day, weather_indicators, adm_1_info, adm_2_info)
             if new_data is None:
                 continue
 
