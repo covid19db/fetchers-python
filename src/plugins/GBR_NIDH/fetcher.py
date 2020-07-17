@@ -19,7 +19,7 @@ import os
 import sys
 import csv
 
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta
 from selenium import webdriver
 
 __all__ = ('NorthernIrelandFetcher',)
@@ -87,6 +87,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                     return_original_if_failure=True,
                     suppress_exception=True
                 )
+                upsert_obj['date'] = datetime.strptime(upsert_obj.get('date'),'%d/%m/%Y').strftime('%Y-%m-%d')
                 upsert_obj['adm_area_2'] = adm_area_2
                 upsert_obj['gid'] = gid
 
@@ -234,7 +235,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
     def run(self):
 
-        # this fetcher first collected data on 2020-07-11
+        # this fetcher first collected data on 2020-07-17
         # GBR_PHTW stopped collecting on 2020-06-24
         # so first we gather some bridging data
         self.bridging_data()
@@ -244,7 +245,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             'lmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9'
 
         attempts = 1
-        while attempts < 11:
+        success = False
+        while attempts < 10:
             try:
                 self.wd_config()
                 logger.info("Fetching country-level information")
@@ -252,11 +254,19 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 self.fetch_national()
                 logger.debug('Fetching regional level information')
                 self.fetch_regional()
+                success = True
                 break
             except:
                 logger.info(f'Failed on attempt {attempts}')
                 attempts = attempts + 1
-                if attempts == 10:
-                    raise Exception('Could not fetch from Northern Ireland')
+
+        # on tenth attempt move outside the try-except block to capture error
+        if not success:
+            self.wd_config()
+            logger.info("Fetching country-level information")
+            self.wd.get(url)
+            self.fetch_national()
+            logger.debug('Fetching regional level information')
+            self.fetch_regional()
 
         self.wd.quit()
