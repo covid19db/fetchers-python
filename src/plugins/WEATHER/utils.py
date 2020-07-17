@@ -74,6 +74,7 @@ def create_aggr_df(indicator, day, variables, adm_1_info, adm_2_info, logger):
     avg = []
     std = []
     samplesize = []
+    valid_percentage = []
 
     logger.debug("downloading data for {} for {}".format(indicator, day.strftime('%Y-%m-%d')))
     URL = "https://metdatasa.blob.core.windows.net/covid19-response/metoffice_global_daily/"
@@ -84,7 +85,10 @@ def create_aggr_df(indicator, day, variables, adm_1_info, adm_2_info, logger):
 
     nc = netCDF4.Dataset(temp_file)
     data = nc.variables[variables[indicator]['variable']][:].data.reshape(-1)
-    data = data.astype(np.float64)
+
+    if 'cloudaltitude' in indicator:
+        # remove default values 9*10^36
+        data[data > 10e20] = np.nan
 
     # Level 1 aggregation
     for area_0 in adm_1_info:
@@ -103,8 +107,13 @@ def create_aggr_df(indicator, day, variables, adm_1_info, adm_2_info, logger):
             adm_area_2.append(adm_1_info[area_0][area_1]["adm_area_2"])
             adm_area_3.append(adm_1_info[area_0][area_1]["adm_area_3"])
 
-            avg.append(np.mean(to_avg))
-            std.append(np.std(to_avg, ddof=1))
+            if 'cloudaltitude' in indicator:
+                avg.append(np.nanmean(to_avg))
+                std.append(np.nanstd(to_avg, ddof=1))
+                valid_percentage.append(((~np.isnan(to_avg)).sum()) / (len(to_avg)))
+            else:
+                avg.append(np.mean(to_avg))
+                std.append(np.std(to_avg, ddof=1))
 
 
     # Level 2 aggregation
@@ -125,20 +134,36 @@ def create_aggr_df(indicator, day, variables, adm_1_info, adm_2_info, logger):
                 adm_area_2.append(adm_2_info[area_0][area_1][area_2]["adm_area_2"])
                 adm_area_3.append(adm_2_info[area_0][area_1][area_2]["adm_area_3"])
 
-                avg.append(np.mean(to_avg))
-                std.append(np.std(to_avg, ddof=1))
+                if 'cloudaltitude' in indicator:
+                    avg.append(np.nanmean(to_avg))
+                    std.append(np.nanstd(to_avg, ddof=1))
+                    valid_percentage.append(((~np.isnan(to_avg)).sum()) / (len(to_avg)))
+                else:
+                    avg.append(np.mean(to_avg))
+                    std.append(np.std(to_avg, ddof=1))
+
+
+    if 'cloudaltitude' in indicator:
+        d = {'source': source, 'date': date, 'gid': gid,
+                 'country': country, 'countrycode': countrycode,
+                 'adm_area_1': adm_area_1, 'adm_area_2': adm_area_2, 'adm_area_3': adm_area_3,
+                 'samplesize': samplesize,
+                 indicator+'_valid': valid_percentage,
+                 indicator+'_avg': avg,
+                 indicator+'_std': std,
+                 }
+    else:
+        d = {'source': source, 'date': date, 'gid': gid,
+             'country': country, 'countrycode': countrycode,
+             'adm_area_1': adm_area_1, 'adm_area_2': adm_area_2, 'adm_area_3': adm_area_3,
+             'samplesize': samplesize,
+             indicator+'_avg': avg,
+             indicator+'_std': std,
+             }
 
     try:
         os.remove(temp_file)
     except:
         pass
-
-    d = {'source': source, 'date': date, 'gid': gid,
-         'country': country, 'countrycode': countrycode,
-         'adm_area_1': adm_area_1, 'adm_area_2': adm_area_2, 'adm_area_3': adm_area_3,
-         'samplesize': samplesize,
-         indicator+'_avg': avg,
-         indicator+'_std': std,
-         }
 
     return pd.DataFrame(data=d)
