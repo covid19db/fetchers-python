@@ -78,10 +78,14 @@ colnames = {
         'windgust_max_std', 'windgust_mean_avg', 'windgust_mean_std',
         'windgust_min_avg', 'windgust_min_std', 'windspeed_max_avg',
         'windspeed_max_std', 'windspeed_mean_avg', 'windspeed_mean_std',
-        'windspeed_min_avg', 'windspeed_min_std', 'cloudaltitude_max_avg',
-        'cloudaltitude_max_std', 'cloudaltitude_min_avg',
-        'cloudaltitude_min_std', 'cloudaltitude_mean_avg',
-        'cloudaltitude_mean_std', 'cloudfrac_max_avg', 'cloudfrac_max_std',
+        'windspeed_min_avg', 'windspeed_min_std',
+        'cloudaltitude_max_valid',
+        'cloudaltitude_max_avg', 'cloudaltitude_max_std',
+        'cloudaltitude_min_valid',
+        'cloudaltitude_min_avg', 'cloudaltitude_min_std',
+        'cloudaltitude_mean_valid',
+        'cloudaltitude_mean_avg', 'cloudaltitude_mean_std',
+        'cloudfrac_max_avg', 'cloudfrac_max_std',
         'cloudfrac_min_avg', 'cloudfrac_min_std', 'cloudfrac_mean_avg',
         'cloudfrac_mean_std'
     ]
