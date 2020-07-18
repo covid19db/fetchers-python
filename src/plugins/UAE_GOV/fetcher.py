@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 class UAEGovFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data from United Arab Emirates Government (UAE)'''
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'UAE_GOV'  # United Arab Emirates Government 
 
     def fetch(self):
