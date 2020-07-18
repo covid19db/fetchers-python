@@ -50,46 +50,70 @@ class IraqFetcher(BaseEpidemiologyFetcher):
     def fetch_province(self,url):
         self.wd.get(url)
         
+        #create an empty dataframe
         df = pd.DataFrame()        
           
         element = WebDriverWait(self.wd, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "visual.visual-columnChart.allow-deferred-rendering")))
         time.sleep(10)
-                
+        
+        #Get last updated date
+        last_updated = self.wd.find_element_by_xpath(".//span[contains(text(), 'Second Update')]").text
+        last_updated = last_updated.split(',')
+        last_updated =last_updated[0]
+        last_updated = last_updated.strip()
+        last_updated=last_updated.replace('Second Update with Individual Information at ','')
+        date = datetime.strptime(last_updated, '%d %B %Y').strftime('%Y-%m-%d')
+        
+        #get the pages menu        
         menu_btn = self.wd.find_element_by_xpath(".//*[@id='pbiAppPlaceHolder']/ui-view/div/div[2]/logo-bar/div/div/div/logo-bar-navigation/span/a[2]")
         menu_btn.click() 
-        time.sleep(1)
-        # go to the soecified page
+        time.sleep(5)   
+        
+        # go to the third page
         page_btn = self.wd.find_element_by_xpath(".//*[@id='flyoutElement']/div[1]/div/div/ul/li[3]")
         page_btn.click()
-        time.sleep(1)    
+        time.sleep(5)    
+           
+        # find all the str column values in the table
+        city = self.wd.find_element_by_xpath(".//*[name()='div' and @aria-label='COVID-19 Cumulative Status Matrix']//*[name()='div' and @class='rowHeaders']")
+        city = city.text.splitlines()
+       
+        confirmed = self.wd.find_element_by_xpath(".//*[name()='div' and @aria-label='COVID-19 Cumulative Status Matrix']//*[name()='div' and @class='bodyCells']/div/div/div[1]")
+        confirmed = confirmed.text.splitlines()
+        
+        recovered = self.wd.find_element_by_xpath(".//*[name()='div' and @aria-label='COVID-19 Cumulative Status Matrix']//*[name()='div' and @class='bodyCells']/div/div/div[2]")
+        recovered = recovered.text.splitlines()
+        
+        dead = self.wd.find_element_by_xpath(".//*[name()='div' and @aria-label='COVID-19 Cumulative Status Matrix']//*[name()='div' and @class='bodyCells']/div/div/div[3]")
+        dead = dead.text.splitlines()
         
         lst = []
-        lst1 = []
-        # find all the str column values in the table
-        city = self.wd.find_elements_by_xpath(".//*[@id='pvExplorationHost']/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[1]/transform/div/div[3]/div/visual-modern/div/div/div[2]/div[1]/div[3]")
+        lst = list(zip(city, confirmed, recovered, dead))
+        
+        df = pd.DataFrame(lst, columns=['city', 'confirmed','recovered', 'dead'])
+        
+        # Baghdad is reported two rows from the source. the code below adds up 
+        # the values from the two rows and creates a new total row for Baghdad
+        # set city column is the index
+        df.set_index('city', inplace =True)
+        # select the two rows for Baghdad
+        baghdad = df.loc[['BAGHDAD-KARKH','BAGHDAD-RESAFA and MIDICAL CITY'],:]
+        baghdad[['confirmed','recovered', 'dead']] = baghdad[['confirmed','recovered', 'dead']].apply(pd.to_numeric)
+        
+        #add the new cumulative Bagdad sum to the DF
+        df = df.append(baghdad.sum().rename('BAGHDAD'))
+        
+        #remove the two Baghdad rows from the original dataframe
+        df = df.drop(['BAGHDAD-KARKH', 'BAGHDAD-RESAFA and MIDICAL CITY'])
+        
+        # reove the city column as index
+        df.reset_index(inplace=True)
+        
+        self.wd.quit()
+        
+        return df,date
+        
     
-        for elem in city:
-            a = elem.text
-        lst = a.splitlines()   
-        length = len(lst)   
-        
-        # find all numeric values in the table
-        val = self.wd.find_elements_by_xpath(".//*[@id='pvExplorationHost']/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[1]/transform/div/div[3]/div/visual-modern/div/div/div[2]/div[1]/div[4]")
-        
-        for k in val:
-             m = k.text
-        lst1 = m.split('\n')
-               
-        sub_lst = [lst1[x:x+len(lst)] for x in range(0, len(lst1), len(lst))] 
-        
-        df = df.append(lst, ignore_index=True) 
-        
-        for i in range(len(sub_lst)):
-            df.insert(i+1,"" ,sub_lst[i], True)
-        
-        df.columns = ['city', 'confirmed','recovered', 'dead', 'active']
-        
-        return df
         
         
     def run(self):
@@ -97,15 +121,14 @@ class IraqFetcher(BaseEpidemiologyFetcher):
         logger.info("Processing provice data for Iraq")
         url = 'https://app.powerbi.com/view?r=eyJrIjoiNjljMDhiYmItZTlhMS00MDlhLTg3MjItMDNmM2FhNzE5NmM4IiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9'
         
-        data = self.fetch_province(url) 
-                
-        date = datetime.today().strftime('%Y-%m-%d')
-        
+        data,last_update = self.fetch_province(url)
+         
         for index, record in data.iterrows():
                 confirmed = int(record['confirmed'])
                 dead = int(record['dead'])
                 recovered = int(record['recovered'])
-                province = record['city']
+                province = record['city']    
+                  
                 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                         input_adm_area_1=province,
@@ -116,7 +139,7 @@ class IraqFetcher(BaseEpidemiologyFetcher):
                 
                 upsert_obj = {
                     'source': self.SOURCE,
-                    'date': date,
+                    'date': last_update,
                     'country': 'Iraq',
                     'countrycode': 'IRQ',
                     'adm_area_1': adm_area_1,

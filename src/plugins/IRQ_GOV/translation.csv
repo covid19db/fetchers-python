@@ -1,15 +1,14 @@
 countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
 IRQ,ANBAR,,,Al-Anbar,,,IRQ.1_1
 IRQ,BABYLON,,,Babil,,,IRQ.9_1
-IRQ,BAGHDAD-KARKH,,,Baghdad,,,IRQ.10_1
-IRQ,BAGHDAD-RESAFA and MIDICAL CITY,,,Baghdad,,,IRQ.10_1
+IRQ,BAGHDAD,,,Baghdad,,,IRQ.10_1
 IRQ,BASRAH,,,Al-Basrah,,,IRQ.2_1
 IRQ,DAHUK,,,Dihok,,,IRQ.12_1
-IRQ,DIWANIYA,,,Al-Qadisiyah,,,IRQ.4.1_1
+IRQ,DIWANIYA,,,Al-Qadisiyah,,,IRQ.4_1
 IRQ,DIYALA,,,Diyala,,,IRQ.13_1
 IRQ,ERBIL,,,Arbil,,,IRQ.6_1
 IRQ,KERBALA,,,Karbala',,,IRQ.14_1
-IRQ,KIRKUK,,,At-Ta'mim,,,IRQ.8.4_1
+IRQ,KIRKUK,,,At-Ta'mim,,,IRQ.8_1
 IRQ,MISSAN,,,Maysan,,,IRQ.15_1
 IRQ,MUTHANNA,,,Al-Muthannia,,,IRQ.3_1
 IRQ,NAJAF,,,An-Najaf,,,IRQ.5_1
