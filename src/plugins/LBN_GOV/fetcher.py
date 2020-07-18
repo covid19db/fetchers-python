@@ -24,7 +24,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-
+from .utils import AR_TO_EN
 
 
 __all__ = ('LebanonGovFetcher',)
@@ -51,16 +51,41 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.wd = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
     
+    
+        
+    
+    # function appends the year to the date. This fucntion does not work if the cagrt dates go back more than 11 months
+    def get_date(self,dt):
+        
+        yr = datetime.now().year
+        current_month  = datetime.now().month
+        month_name = dt[-3:]
+        month_number = datetime.strptime(month_name, '%b').month
+        if month_number > current_month:
+            yr = yr - 1
+        dt = dt + ' ' + str(yr)
+        date = datetime.strptime(dt, '%d %b %Y').strftime('%Y-%m-%d')
+        
+        return date
+    
     def fetch_regional(self,url):
-        self.wd.get(url)
+        self.wd_config() 
+        self.wd.get(url)      
+        
         
         # wait until charts visible
         element = WebDriverWait(self.wd, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "apexcharts-canvas")))
+        time.sleep(2)
         
-        # make a list of all charts
-        chart_list = self.wd.find_elements_by_css_selector("div.apexcharts-canvas")
-        chart=chart_list[4]
+        # Get last updated date
+        last_update = self.wd.find_element_by_xpath(".//*[name()='h4' and @class='last-update']/strong").text
+        last_update = last_update.split(',')
+        last_update = last_update[0]
+        last_update = last_update + ' ' + str(datetime.now().year)
+        last_update = datetime.strptime(last_update, '%b %d %Y').strftime('%Y-%m-%d')
         
+        chart = self.wd.find_element_by_xpath(".//*[name()='div' and @id='casesbydistricts']")
+                
         bar_labels = chart.find_element_by_css_selector("g.apexcharts-datalabels")
         labels=bar_labels.text
         lst1=labels.split()
@@ -71,8 +96,8 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
         
         data= list(zip(lst1,lst2))
         df = pd.DataFrame(data, columns =['cases', 'province']) 
-        
-        return df
+        self.wd.quit()
+        return df,last_update
         
         
 
@@ -80,40 +105,46 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
         website_content = requests.get(url)
         soup = BeautifulSoup(website_content.text, 'lxml')
         lst = []
+        Dict = {} 
         divs = soup.find_all('div', class_='counter-content')
         for elem in divs:
-            h = elem.find('h1').get_text()
-            lst.append(h.strip())
-            
-        df = pd.DataFrame({'confirmed':[lst[1],],
-                           'dead':[lst[7],],
-                           'recovered':[lst[8],],
-                           'hospitalised_icu':[lst[6],],
-                           'tested':[lst[9],],
-                           'quarantined':[lst[15],]})
-    
+            h = elem.find('h1').get_text().strip()
+            p = elem.find('p').get_text().strip()
+            #spaces and newline characters. split and join
+            AR_str = " ".join(p.split())
+            #map the Arabic to the English translation
+            EN_str = AR_TO_EN[AR_str]
+            # Add to Dictionary
+            Dict.update( {EN_str : h} )
+          
+        # NOTE : hospitalised_icu = Number of cases currently in ICU   
+        df = pd.DataFrame({'confirmed':[Dict['confirmed'],],
+                           'dead':[Dict['dead'],],
+                           'recovered':[Dict['recovered'],],
+                           'hospitalised_icu':[Dict['hospitalised_icu'],],
+                           'tested':[Dict['tested'],],
+                           'quarantined':[Dict['quarantined'],]})
+      
         return df
     
     def fetch_historical(self,url):
+        self.wd_config() 
         self.wd.get(url)
-         
+        res = []        
+        
          # wait until charts visible
         element = WebDriverWait(self.wd, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "apexcharts-canvas")))
-        # make a list of all charts
+        time.sleep(2)
+             
         # make a list of all charts
         chart_list = self.wd.find_elements_by_css_selector("div.apexcharts-canvas")
         chart=chart_list[0]
 
         # only works if chart is in view - mouse needs to scroll over element
         # this took me ages to figure out, but the rest of the code got better while it was happening!!
-        self.wd.execute_script("arguments[0].scrollIntoView();", chart)
-        
-        res = []
-        now = datetime.now()
-        yr = now.year
-                
+        self.wd.execute_script("arguments[0].scrollIntoView();", chart)         
+      
         # iterate through the bars on the chart to hover on
-        # you may need different methods for other charts
         bar_list = chart.find_elements_by_xpath(".//*[name()='path' and @id='apexcharts-bar-area-0']")
         for el in bar_list:
             info = []
@@ -123,8 +154,7 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
             # at this point the apexcharts-tooltip light element gets populated
             label = chart.find_element_by_css_selector("div.apexcharts-tooltip.light")
             d = label.find_element_by_css_selector("div.apexcharts-tooltip-title")
-            dt = d.text + ' ' + str(yr)
-            date = datetime.strptime(dt, '%d %b %Y').strftime('%Y-%m-%d')
+            date = self.get_date(d.text)
             info.append(date)
             data = label.find_elements_by_css_selector("div.apexcharts-tooltip-y-group")
             for datum in data:
@@ -134,46 +164,18 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                 info.append(label_and_value[1].text)
             res.append(info)
         df = pd.DataFrame(res, columns=['date', 'daily', 'dailynum', 'total', 'totalnum'])
+        self.wd.quit()
         return df
         
         
         
-    def run(self):
-        self.wd_config()     
-        logger.info("feching country-level information")
+    def run(self):        
         
-        url = 'https://corona.ministryinfo.gov.lb/'  
-        ndata = self.fetch_national(url)
+        url = 'https://corona.ministryinfo.gov.lb/'
         
-        date = datetime.today().strftime('%Y-%m-%d')
-        dead = int(ndata.loc[ : , 'dead' ]) 
-        confirmed = int(ndata.loc[ : , 'confirmed' ]) 
-        recovered = int(ndata.loc[ : , 'recovered' ]) 
-        tested = int(ndata.loc[ : , 'tested' ]) 
-        hospitalised_icu = int(ndata.loc[ : , 'hospitalised_icu' ]) 
-        quarantined = int(ndata.loc[ : , 'quarantined' ]) 
-                   
-        upsert_obj = {
-            'source': self.SOURCE,
-            'date': date,
-            'country': 'Lebanon',
-            'countrycode': 'LBN',
-            'adm_area_1': None,
-            'adm_area_2': None,
-            'adm_area_3': None,
-            'gid': ['LBN'],
-            'confirmed': confirmed,
-            'recovered': recovered,
-            'dead': dead,
-            'tested' : tested,
-            'hospitalised_icu' : hospitalised_icu,
-            'quarantined' : quarantined,
-        }
-
-        self.upsert_data(**upsert_obj)
-    
+        #Must run fetch_regional first as it gets last updated date
         logger.debug('Fetching regional level information')
-        rdata = self.fetch_regional(url)
+        rdata, last_update = self.fetch_regional(url)
 
         for index, record in rdata.iterrows():
                 confirmed = record[0]  
@@ -188,7 +190,7 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                 if adm_area_1 !='' :    
                     upsert_obj = {
                         'source': self.SOURCE,
-                        'date': date,
+                        'date': last_update,
                         'country': 'Lebanon',
                         'countrycode': 'LBN',
                         'adm_area_1': adm_area_1,
@@ -199,6 +201,7 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                     }
                     
                     self.upsert_data(**upsert_obj)
+                    
         
         logger.debug('Fetching historical level information')
         hdata = self.fetch_historical(url)
@@ -219,4 +222,39 @@ class LebanonGovFetcher(BaseEpidemiologyFetcher):
                 }
                 
                 self.upsert_data(**upsert_obj)
+   
+        
+        logger.info("feching country-level information")        
+        ndata = self.fetch_national(url)
+        
+        # date = datetime.today().strftime('%Y-%m-%d')
+        dead = int(ndata.loc[ : , 'dead' ]) 
+        confirmed = int(ndata.loc[ : , 'confirmed' ]) 
+        recovered = int(ndata.loc[ : , 'recovered' ]) 
+        tested = int(ndata.loc[ : , 'tested' ]) 
+        hospitalised_icu = int(ndata.loc[ : , 'hospitalised_icu' ]) 
+        quarantined = int(ndata.loc[ : , 'quarantined' ]) 
+                   
+        upsert_obj = {
+            'source': self.SOURCE,
+            'date': last_update,
+            'country': 'Lebanon',
+            'countrycode': 'LBN',
+            'adm_area_1': None,
+            'adm_area_2': None,
+            'adm_area_3': None,
+            'gid': ['LBN'],
+            'confirmed': confirmed,
+            'recovered': recovered,
+            'dead': dead,
+            'tested' : tested,
+            'hospitalised_icu' : hospitalised_icu,
+            'quarantined' : quarantined,
+        }
+
+        self.upsert_data(**upsert_obj)
+    
+        
+        
+        
                 
