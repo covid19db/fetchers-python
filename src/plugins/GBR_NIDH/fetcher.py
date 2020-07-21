@@ -172,7 +172,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         home_button = self.wd.find_element_by_xpath('//visual-container-repeat/visual-container-modern[7]/transform')
         home_button.click()
 
-        death_details_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[21]/transform")
+        death_details_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[20]/transform")
         death_details_page.click()
         time.sleep(5)
         chart_area = self.wd.find_element_by_xpath(
