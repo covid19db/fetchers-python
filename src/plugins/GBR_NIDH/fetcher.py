@@ -21,6 +21,9 @@ import csv
 
 from datetime import datetime, date, timedelta
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 __all__ = ('NorthernIrelandFetcher',)
 
@@ -109,10 +112,13 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     def fetch_national(self):
 
         # go to the national summary page
-        contents_wrapper = self.wd.find_element_by_xpath(
-            '//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
-        summary_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[4]/transform")
-        summary_page.click()
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @class='middleText']"))
+        ).click()
+        time.sleep(3)
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @title='COVID-19 Summary']"))
+        ).click()
 
         # seems to need a fixed wait period before looking for the headline items
         time.sleep(5)
@@ -141,17 +147,16 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
         self.upsert_data(**upsert_obj)
 
-        # return home for next search
-        home_button = self.wd.find_element_by_xpath('//visual-container-repeat/visual-container-modern[1]/transform')
-        home_button.click()
-
     def fetch_regional(self):
 
         # go to the page giving tests by local government
-        contents_wrapper = self.wd.find_element_by_xpath(
-            '//*[name()="div" and @class="visualContainerHost"]/visual-container-repeat')
-        local_govt_testing_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[11]/transform")
-        local_govt_testing_page.click()
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @class='middleText']"))
+        ).click()
+        time.sleep(3)
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @title='COVID-19 Testing LGD']"))
+        ).click()
 
         local_govt_table = self.wd.find_element_by_xpath(
             '//*[name()="div" and @aria-label="Breakdown of Individuals with a Laboratory Completed Test (Pillar 1 & '
@@ -169,11 +174,15 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                         map(self.parse_int, local_testing_data[2])))
         df_test = pd.DataFrame(data, columns=['lau', 'tests', 'positive'])
 
-        home_button = self.wd.find_element_by_xpath('//visual-container-repeat/visual-container-modern[7]/transform')
-        home_button.click()
+        # go to the page with deaths by LGD
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @class='middleText']"))
+        ).click()
+        time.sleep(3)
+        WebDriverWait(self.wd, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[name()='a' and @title='COVID-19 Death Details']"))
+        ).click()
 
-        death_details_page = contents_wrapper.find_element_by_xpath("./visual-container-modern[20]/transform")
-        death_details_page.click()
         time.sleep(5)
         chart_area = self.wd.find_element_by_xpath(
             '//div[@aria-label="COVID-19 Deaths by Local Government District Clustered column chart"]')
@@ -257,6 +266,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                 success = True
                 break
             except:
+                self.wd.quit()
                 logger.info(f'Failed on attempt {attempts}')
                 attempts = attempts + 1
 
