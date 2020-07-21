@@ -26,12 +26,12 @@ logger = logging.getLogger(__name__)
 
 
 class SAGOVFetcher(BaseEpidemiologyFetcher):
-    ''' a fetcher to collect data for Saudi Arabia'''
+    ''' a fetcher to collect data for Saudi Arabia https://covid19.moh.gov.sa/'''
     LOAD_PLUGIN = True
     SOURCE = 'SAU_GOV'
     
     def process_data(self,data):
-        
+        #loop through nested dictionaies and lists 
         df = pd.DataFrame()
         lst = []
         
@@ -45,6 +45,7 @@ class SAGOVFetcher(BaseEpidemiologyFetcher):
         
         return df
     
+    # convert esriFieldTypeDate to ('%Y-%m-%d') 
     def convert_date(self,df):
         
         for i in range(len(df)): 
@@ -54,38 +55,16 @@ class SAGOVFetcher(BaseEpidemiologyFetcher):
             
         return df
     
-    def fetch_daily_cases(self):
-        url = 'https://services6.arcgis.com/bKYAIlQgwHslVRaK/arcgis/rest/services/VWPlacesCasesHostedView/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
-        data = requests.get(url).json()
         
-        df = self.process_data(data)
-        
-        df = self.convert_date(df)
-            
-        return df
-    
-    def fetch_cases_by_region(self):
-        url = 'https://services6.arcgis.com/bKYAIlQgwHslVRaK/arcgis/rest/services/CasesByRegion_ViewLayer/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
-        data = requests.get(url).json()
-        
-        df = self.process_data(data)
-                                
-        return df
-    
-    def fetch_cases_by_date(self):
-        url = 'https://services6.arcgis.com/bKYAIlQgwHslVRaK/arcgis/rest/services/Cumulative_Date_Grouped_ViewLayer/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
-        data = requests.get(url).json()
-        
-        df = self.process_data(data)        
-             
-        df = self.convert_date(df)           
-                          
-        return df
-    
-    def run_cases_by_date(self):
+    #run_cases_by_date provides cumulative national level data by date 
+    def fetch_by_date(self):
         logger.info("Processing cases by date for Saudi Arabia")
-   
-        data = self.fetch_cases_by_date()
+        
+        url = 'https://services6.arcgis.com/bKYAIlQgwHslVRaK/arcgis/rest/services/Cumulative_Date_Grouped_ViewLayer/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+        data = requests.get(url).json()        
+        data = self.process_data(data)            
+        data = self.convert_date(data) 
+        
         
         for index, record in data.iterrows():
                 confirmed = int(record['Confirmed'])
@@ -111,12 +90,17 @@ class SAGOVFetcher(BaseEpidemiologyFetcher):
                 }
         
                 self.upsert_data(**upsert_obj)
-    
-    def run_cases_by_region(self):
+                
+    # run_cases_by_region() provides cumulative daily regional (level 1) data 
+    def fetch_by_region(self):
         logger.info("Processing cases by region for Saudi Arabia")
-                    
-        data = self.fetch_cases_by_region()
         
+        url = 'https://services6.arcgis.com/bKYAIlQgwHslVRaK/arcgis/rest/services/CasesByRegion_ViewLayer/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+        data = requests.get(url).json()        
+        data = self.process_data(data)
+                    
+             
+        #Last updated date is not present in the source
         date_ = date.today().strftime('%Y-%m-%d')   
         
         for index, record in data.iterrows():
@@ -147,51 +131,10 @@ class SAGOVFetcher(BaseEpidemiologyFetcher):
                     'gid': gid
                 }
         
-                self.upsert_data(**upsert_obj)
-
-    def run_daily_cases(self):
-        logger.info("Processing Daily Cases for Saudi Arabia")
-
-        data = self.fetch_daily_cases()              
-          
-        for index, record in data.iterrows():
-                confirmed = int(record['Confirmed'])
-                dead = int(record['Deaths'])
-                recovered = int(record['Recovered'])
-                tested = int(record['Tested'])
-                province = record['RegionName_AR'] 
-                city = record['Name_Eng'] 
-                date = record['Reportdt'] 
-                
-                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                        input_adm_area_1=province,
-                        input_adm_area_2=None,
-                        input_adm_area_3=None,
-                        return_original_if_failure=True
-                    )
-
-
-                upsert_obj = {
-                   
-                    'source': self.SOURCE,
-                    'date': date,
-                    'country': 'Saudi Arabia',
-                    'countrycode': 'SAU',
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': city,
-                    'adm_area_3': None,
-                    'confirmed': confirmed,
-                    'dead': dead,
-                    'recovered': recovered,
-                    'tested': tested,                    
-                    'gid': gid
-                }
-        
-                self.upsert_data(**upsert_obj)
+                self.upsert_data(**upsert_obj)    
     
-    def run(self):
+    def run(self):  
         
-        self.run_cases_by_region()
-        self.run_cases_by_date()
-        
-        
+          self.fetch_by_date()   
+          self.fetch_by_region()        
+              
