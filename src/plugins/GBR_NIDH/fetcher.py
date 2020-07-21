@@ -235,7 +235,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
     def run(self):
 
-        # this fetcher first collected data on 2020-07-18
+        # this fetcher first collected data for 2020-07-21
         # GBR_PHTW stopped collecting on 2020-06-24
         # so first we gather some bridging data
         self.bridging_data()
