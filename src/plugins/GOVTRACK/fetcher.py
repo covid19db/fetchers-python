@@ -47,7 +47,8 @@ class StringencyFetcher(BaseGovernmentResponseFetcher):
         api_details = requests.get(
             f'https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions/{country_code}/{date_value}'
         ).json()
-        api_details.pop("stringencyData")
+        if "stringencyData" in api_details:
+            api_details.pop("stringencyData")
         return api_details
 
     def fetch_csv(self):
