@@ -16,51 +16,52 @@ from datetime import datetime, timedelta
 import pandas as pd
 
 
-def isDate(element):
-    # the dates later can sometimes appear as 'Mar 18, 20..'
-    # So we will just rely on what comes before the comma
-    element = element.split(',')[0]
-
-    # check if the result has the format 'Mar 18' and store answer in correctDate
-    correctDate = None
-    try:
-        newDate = datetime.strptime(element, '%b %d')
-        correctDate = True
-    except ValueError:
-        correctDate = False
-    return correctDate
-
 def date_parser(date):
     ''' for expanding abbreviated dates'''
+
     try:
-        return datetime.strptime(date, '%b %d, %Y')
+        res = datetime.strptime(date, '%b %d, %Y') if ',' in date else datetime.strptime(date, '%d %b %Y')
+        return res
     except ValueError:
-        date = date.split(',')[0]
-        date = datetime.strptime(date, '%b %d')
+        if ',' in date:
+            date = date.split(',')[0]
+            date = datetime.strptime(date, '%b %d')
+        else:
+            date = ' '.join(date.split(' ')[0:-1])
+            date = datetime.strptime(date, '%d %b')
 
         current_year = datetime.today().year
         current_month = datetime.today().month
 
-        if date.month in [11, 12] and current_month in [1,2]:
-          date = date.replace(year = current_year - 1)
+        if date.month in [11, 12] and current_month in [1, 2]:
+            date = date.replace(year=current_year - 1)
         else:
-          date = date.replace(year = current_year)
-
+            date = date.replace(year=current_year)
         return date
 
+def isDate(element):
+    try:
+        date_parser(element)
+        return True
+    except:
+        return False
+
 def getTitle(chart_element):
-  gtag = chart_element.find("g")
-  chart_title=gtag.text
-  return chart_title
+    gtag = chart_element.find("g")
+    chart_title = gtag.text
+    return chart_title
+
 
 def isData(chart_element):
     # the text for charts of interest begins with a header and then moves straight into dates
-    return getTitle(chart_element) in ['Total Cases', 'Total Deaths', 'Total Recoveries']
+    titleList = ['Total Cases', 'Total Deaths', 'Total Recoveries', 'Total Cases in Sindh', 'Total Deaths in Sindh', 'Total Recoveries in Sindh']
+    return getTitle(chart_element) in titleList
+
 
 def parseChartData(chart_element):
     # The title
     gtag = chart_element.find("g")
-    title=gtag.text
+    title = gtag.text
 
     # The body data
     gtag = gtag.nextSibling
@@ -101,13 +102,13 @@ def parseChartData(chart_element):
     # Replace the x-axis labels with a list of dates corresponding to values
 
     # We can extract the first date and determine what the last date should be
-    firstDate = datetime.strptime(dates[0], '%b %d, %Y')
+    firstDate = date_parser(dates[0])
     d = timedelta(days=len(values) - 1)
     lastDate = firstDate + d
 
     # check the last date in the x-axis is what it should be
     lastDateCheck = dates[-1].split(',')[0]
-    if not lastDateCheck == datetime.strftime(lastDate, '%b %-d'):
+    if not date_parser(lastDateCheck) == lastDate:
         raise Exception('date range does not match length of value list')
 
     # now generate the list of dates
@@ -116,6 +117,10 @@ def parseChartData(chart_element):
     while current != lastDate:
         current += timedelta(days=1)
         fullDateList.append(current)
+
+    # the chart title is not consistently styled, so take the first two words
+    splitted = title.split()
+    title = " ".join(splitted[0:2])
 
     # build a dataframe with the dates and values, using chart title as column name
     df = pd.DataFrame()
