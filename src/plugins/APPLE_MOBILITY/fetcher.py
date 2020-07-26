@@ -32,13 +32,7 @@ class AppleMobilityFetcher(BaseMobilityFetcher):
     @staticmethod
     def fix_countryname(countryname):
         if countryname == 'Republic of Korea':
-            countryname = 'Korea, Republic of'
-        elif countryname == 'Russia':
-            countryname = 'Russian Federation'
-        elif countryname == 'Taiwan':
-            countryname = 'Taiwan, Province of China'
-        elif countryname == 'Vietnam':
-            countryname = 'Viet Nam'
+            countryname = 'South Korea'
         return countryname
 
     @staticmethod
