@@ -21,7 +21,7 @@ from datetime import datetime
 import logging
 import pandas as pd
 from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
-from .utils import iso_alpha_3
+from .utils import iso_alpha_3, country_names
 
 __all__ = ('WorldWHOJHUFetcher',)
 
@@ -31,6 +31,8 @@ logger = logging.getLogger(__name__)
 class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'WRD_WHOJHU'
+
+
 
     def fetch(self, category):
         logger.debug(f'Going to fetch world {category}')
@@ -49,6 +51,8 @@ class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
                     'Diamond Princess', 'MS Zaandam'):
                 continue
             countrycode = iso_alpha_3[country]
+            # replace with GADM standard
+            country = country_names.get(country, country)
 
             for col in range(4, len(record)):
                 upsert_obj = {

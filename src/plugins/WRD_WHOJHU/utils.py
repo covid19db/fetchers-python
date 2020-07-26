@@ -209,3 +209,19 @@ iso_alpha_3 = {
     'Zambia': 'ZMB',
     'Zimbabwe': 'ZWE'
 }
+
+country_names = {
+    'Congo (Kinshasa)': 'Democratic Republic of the Congo',
+    'Korea, South': 'South Korea',
+    'Congo (Brazzaville)': 'Republic of Congo',
+    'Sao Tome and Principe': 'São Tomé and Príncipe',
+    "Cote d'Ivoire": "Côte d'Ivoire",
+    'Cabo Verde': 'Cape Verde',
+    'Holy See': 'Vatican City',
+    'North Macedonia': 'Macedonia',
+    'West Bank and Gaza': 'Palestina',
+    'US': 'United States',
+    'Czechia': 'Czech Republic',
+    'Burma': 'Myanmar',
+    'Eswatini': 'Swaziland'
+}
