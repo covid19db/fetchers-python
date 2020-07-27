@@ -37,6 +37,7 @@ logger = logging.getLogger(__name__)
 class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'PAK_GOV'
+    DEBUG_LOG = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'PAK_GOV_debug.log')
     wd = None
 
     def wd_config(self):
@@ -58,7 +59,7 @@ class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
         charts = soup.findAll("gviz-combochart") + soup.findAll("gviz-linechart") + soup.findAll("gviz-barchart")
 
         # if a chart has the expected formatting, parse it
-        dfList = [parseChartData(chart) for chart in charts if isData(chart)]
+        dfList = [parseChartData(chart, self.DEBUG_LOG) for chart in charts if isData(chart)]
 
         # merge the three parsed charts
         if len(dfList) != 3:
