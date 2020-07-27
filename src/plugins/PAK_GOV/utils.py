@@ -58,7 +58,7 @@ def isData(chart_element):
     return getTitle(chart_element) in titleList
 
 
-def parseChartData(chart_element):
+def parseChartData(chart_element, debug_file):
     # The title
     gtag = chart_element.find("g")
     title = gtag.text
@@ -67,6 +67,9 @@ def parseChartData(chart_element):
     gtag = gtag.nextSibling
     textTags = gtag.findAll("text")
     textTagList = [tag.text for tag in textTags]
+
+    with open(debug_file, "a+") as outF:
+        print(textTagList, file = outF)
 
     # Starts with x-axis labels. These are dates - we can isolate the final date
     # Then y-axis labels are numbers - Large numbers will end in K
