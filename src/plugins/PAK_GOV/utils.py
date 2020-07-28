@@ -20,7 +20,12 @@ def date_parser(date):
     ''' for expanding abbreviated dates'''
 
     try:
-        res = datetime.strptime(date, '%b %d, %Y') if ',' in date else datetime.strptime(date, '%d %b %Y')
+        if '.' in date:
+            res = datetime.strptime(date, '%d.%m.%Y')
+        elif ',' in date:
+            res = datetime.strptime(date, '%b %d, %Y')
+        else:
+            res = datetime.strptime(date, '%d %b %Y')
         return res
     except ValueError:
         if ',' in date:
@@ -100,7 +105,7 @@ def parseChartData(chart_element, debug_file):
     values = res[2]
 
     # Turn the values into numbers
-    values = [int(value.replace(',', '')) for value in values]
+    values = [int(value.replace(',', '').replace('.', '')) for value in values]
 
     # Replace the x-axis labels with a list of dates corresponding to values
 
