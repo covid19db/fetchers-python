@@ -1,318 +1,471 @@
 input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
-Adur,,,England,West Sussex,Adur,GBR.1.110.1_1
-Allerdale,,,England,Cumbria,Allerdale,GBR.1.22.1_1
-Amber Valley,,,England,Derbyshire,Amber Valley,GBR.1.25.1_1
-Arun,,,England,West Sussex,Arun,GBR.1.110.2_1
-Ashfield,,,England,Nottinghamshire,Ashfield,GBR.1.67.1_1
-Ashford,,,England,Kent,Ashford,GBR.1.44.1_1
-Aylesbury Vale,,,England,Buckinghamshire,Aylesbury Vale,GBR.1.13.1_1
-Babergh,,,England,Suffolk,Babergh,GBR.1.96.1_1
-Barking and Dagenham,,,England,Greater London,Barking and Dagenham,GBR.1.36.1_1
-Barnet,,,England,Greater London,Barnet,GBR.1.36.2_1
-Barnsley,,,England,Barnsley,Barnsley,GBR.1.1.1_1
-Barrow-in-Furness,,,England,Cumbria,Barrow-in-Furness,GBR.1.22.2_1
-Basildon,,,England,Essex,Basildon,GBR.1.33.1_1
-Basingstoke and Deane,,,England,Hampshire,Basingstoke and Deane,GBR.1.38.1_1
-Bassetlaw,,,England,Nottinghamshire,Bassetlaw,GBR.1.67.2_1
-Bath and North East Somerset,,,England,Bath and North East Somerset,Bath and North East Somerset,GBR.1.2.1_1
-Bedford,,,England,Bedfordshire,Bedford,GBR.1.3.1_1
-Bexley,,,England,Greater London,Bexley,GBR.1.36.3_1
-Birmingham,,,England,Birmingham,Birmingham,GBR.1.4.1_1
-Blaby,,,England,Leicestershire,Blaby,GBR.1.51.1_1
-Blackburn with Darwen,,,England,Blackburn with Darwen,Blackburn with Darwen,GBR.1.5.1_1
-Blackpool,,,England,Blackpool,Blackpool,GBR.1.6.1_1
-Bolsover,,,England,Derbyshire,Bolsover,GBR.1.25.2_1
-Bolton,,,England,Bolton,Bolton,GBR.1.7.1_1
-Boston,,,England,Lincolnshire,Boston,GBR.1.52.1_1
-"Bournemouth, Christchurch and Poole",,,England,Bournemouth,"Bournemouth, Christchurch and Poole",GBR.1.8.1_1:GBR.1.28.1_1:GBR.1.72.1_1
-Bracknell Forest,,,England,Bracknell Forest,Bracknell Forest,GBR.1.9.1_1
-Bradford,,,England,Bradford,Bradford,GBR.1.10.1_1
-Braintree,,,England,Essex,Braintree,GBR.1.33.2_1
-Breckland,,,England,Norfolk,Breckland,GBR.1.59.1_1
-Brent,,,England,Greater London,Brent,GBR.1.36.4_1
-Brentwood,,,England,Essex,Brentwood,GBR.1.33.3_1
-Brighton and Hove,,,England,Brighton and Hove,Brighton and Hove,GBR.1.11.1_1
-"Bristol, City of",,,England,Bristol,Bristol,GBR.1.12.1_1
-Broadland,,,England,Norfolk,Broadland,GBR.1.59.2_1
-Bromley,,,England,Greater London,Bromley,GBR.1.36.5_1
-Bromsgrove,,,England,Worcestershire,Bromsgrove,GBR.1.117.1_1
-Broxbourne,,,England,Hertfordshire,Broxbourne,GBR.1.41.1_1
-Broxtowe,,,England,Nottinghamshire,Broxtowe,GBR.1.67.3_1
-Burnley,,,England,Lancashire,Burnley,GBR.1.48.1_1
-Bury,,,England,Bury,Bury,GBR.1.14.1_1
-Calderdale,,,England,Calderdale,Calderdale,GBR.1.15.1_1
-Cambridge,,,England,Cambridgeshire,Cambridge,GBR.1.16.1_1
-Camden,,,England,Greater London,Camden,GBR.1.36.6_1
-Cannock Chase,,,England,Staffordshire,Cannock Chase,GBR.1.92.1_1
-Canterbury,,,England,Kent,Canterbury,GBR.1.44.2_1
-Carlisle,,,England,Cumbria,Carlisle,GBR.1.22.3_1
-Castle Point,,,England,Essex,Castle Point,GBR.1.33.4_1
-Central Bedfordshire,,,England,Central Bedfordshire,Central Bedfordshire,GBR.1.17.1_1
-Charnwood,,,England,Leicestershire,Charnwood,GBR.1.51.2_1
-Chelmsford,,,England,Essex,Chelmsford,GBR.1.33.5_1
-Cheltenham,,,England,Gloucestershire,Cheltenham,GBR.1.35.1_1
-Cherwell,,,England,Oxfordshire,Cherwell,GBR.1.69.1_1
-Cheshire East,,,England,Cheshire East,Cheshire East,GBR.1.18.1_1
-Cheshire West and Chester,,,England,Cheshire West and Chester,Cheshire West and Chester,GBR.1.19.1_1
-Chesterfield,,,England,Derbyshire,Chesterfield,GBR.1.25.3_1
-Chichester,,,England,West Sussex,Chichester,GBR.1.110.3_1
-Chiltern,,,England,Buckinghamshire,Chiltern,GBR.1.13.2_1
-Chorley,,,England,Lancashire,Chorley,GBR.1.48.2_1
-City of London,,,England,Greater London,London,GBR.1.36.23_1
-Colchester,,,England,Essex,Colchester,GBR.1.33.6_1
-Copeland,,,England,Cumbria,Copeland,GBR.1.22.4_1
-Corby,,,England,Northamptonshire,Corby,GBR.1.64.1_1
-Cornwall and Isles of Scilly,,,England,Cornwall,Cornwall and Isles of Scilly,GBR.1.20.1_1:GBR.1.43.1_1
-Cotswold,,,England,Gloucestershire,Cotswold,GBR.1.35.2_1
-County Durham,,,England,Durham,Durham,GBR.1.30.1_1
-Coventry,,,England,Coventry,Coventry,GBR.1.21.1_1
-Craven,,,England,North Yorkshire,Craven,GBR.1.63.1_1
-Crawley,,,England,West Sussex,Crawley,GBR.1.110.4_1
-Croydon,,,England,Greater London,Croydon,GBR.1.36.7_1
-Dacorum,,,England,Hertfordshire,Dacorum,GBR.1.41.2_1
-Darlington,,,England,Darlington,Darlington,GBR.1.23.1_1
-Dartford,,,England,Kent,Dartford,GBR.1.44.3_1
-Daventry,,,England,Northamptonshire,Daventry,GBR.1.64.2_1
-Derby,,,England,Derby,Derby,GBR.1.24.1_1
-Derbyshire Dales,,,England,Derbyshire,Derbyshire Dales,GBR.1.25.4_1
-Doncaster,,,England,Doncaster,Doncaster,GBR.1.27.1_1
-Dorset,,,England,Dorset,Dorset,GBR.1.28.2_1:GBR.1.28.3_1:GBR.1.28.4_1:GBR.1.28.5_1:GBR.1.28.6_1
-Dover,,,England,Kent,Dover,GBR.1.44.4_1
-Dudley,,,England,Dudley,Dudley,GBR.1.29.1_1
-Ealing,,,England,Greater London,Ealing,GBR.1.36.8_1
-East Cambridgeshire,,,England,Cambridgeshire,East Cambridgeshire,GBR.1.16.2_1
-East Devon,,,England,Devon,East Devon,GBR.1.26.1_1
-East Hampshire,,,England,Hampshire,East Hampshire,GBR.1.38.2_1
-East Hertfordshire,,,England,Hertfordshire,East Hertfordshire,GBR.1.41.3_1
-East Lindsey,,,England,Lincolnshire,East Lindsey,GBR.1.52.2_1
-East Northamptonshire,,,England,Northamptonshire,East Northamptonshire,GBR.1.64.3_1
-East Riding of Yorkshire,,,England,East Riding of Yorkshire,East Riding of Yorkshire,GBR.1.31.1_1
-East Staffordshire,,,England,Staffordshire,East Staffordshire,GBR.1.92.2_1
-East Suffolk,,,England,Suffolk,East Suffolk,GBR.1.96.6_1:GBR.1.96.7_1
-Eastbourne,,,England,East Sussex,Eastbourne,GBR.1.32.1_1
-Eastleigh,,,England,Hampshire,Eastleigh,GBR.1.38.3_1
-Eden,,,England,Cumbria,Eden,GBR.1.22.5_1
-Elmbridge,,,England,Surrey,Elmbridge,GBR.1.98.1_1
-Enfield,,,England,Greater London,Enfield,GBR.1.36.9_1
-Epping Forest,,,England,Essex,Epping Forest,GBR.1.33.7_1
-Epsom and Ewell,,,England,Surrey,Epsom and Ewell,GBR.1.98.2_1
-Erewash,,,England,Derbyshire,Erewash,GBR.1.25.5_1
-Exeter,,,England,Devon,Exeter,GBR.1.26.2_1
-Fareham,,,England,Hampshire,Fareham,GBR.1.38.4_1
-Fenland,,,England,Cambridgeshire,Fenland,GBR.1.16.3_1
-Folkestone and Hythe,,,England,Kent,Shepway,GBR.1.44.8_1
-Forest of Dean,,,England,Gloucestershire,Forest of Dean,GBR.1.35.3_1
-Fylde,,,England,Lancashire,Fylde,GBR.1.48.3_1
-Gateshead,,,England,Gateshead,Gateshead,GBR.1.34.1_1
-Gedling,,,England,Nottinghamshire,Gedling,GBR.1.67.4_1
-Gloucester,,,England,Gloucestershire,Gloucester,GBR.1.35.4_1
-Gosport,,,England,Hampshire,Gosport,GBR.1.38.5_1
-Gravesham,,,England,Kent,Gravesham,GBR.1.44.5_1
-Great Yarmouth,,,England,Norfolk,Great Yarmouth,GBR.1.59.3_1
-Greenwich,,,England,Greater London,Greenwich,GBR.1.36.10_1
-Guildford,,,England,Surrey,Guildford,GBR.1.98.3_1
-Hackney,,,England,Greater London,Hackney,GBR.1.36.11_1
-Hackney and City of London,,,England,Greater London,Hackney and City of London,GBR.1.36.11_1:GBR.1.36.23_1
-Halton,,,England,Halton,Halton,GBR.1.37.1_1
-Hambleton,,,England,North Yorkshire,Hambleton,GBR.1.63.2_1
-Hammersmith and Fulham,,,England,Greater London,Hammersmith and Fulham,GBR.1.36.12_1
-Harborough,,,England,Leicestershire,Harborough,GBR.1.51.3_1
-Haringey,,,England,Greater London,Haringey,GBR.1.36.13_1
-Harlow,,,England,Essex,Harlow,GBR.1.33.8_1
-Harrogate,,,England,North Yorkshire,Harrogate,GBR.1.63.3_1
-Harrow,,,England,Greater London,Harrow,GBR.1.36.14_1
-Hart,,,England,Hampshire,Hart,GBR.1.38.6_1
-Hartlepool,,,England,Hartlepool,Hartlepool,GBR.1.39.1_1
-Hastings,,,England,East Sussex,Hastings,GBR.1.32.2_1
-Havant,,,England,Hampshire,Havant,GBR.1.38.7_1
-Havering,,,England,Greater London,Havering,GBR.1.36.15_1
-"Herefordshire, County of",,,England,Herefordshire,Herefordshire,GBR.1.40.1_1
-Hertsmere,,,England,Hertfordshire,Hertsmere,GBR.1.41.4_1
-High Peak,,,England,Derbyshire,High Peak,GBR.1.25.6_1
-Hillingdon,,,England,Greater London,Hillingdon,GBR.1.36.16_1
-Hinckley and Bosworth,,,England,Leicestershire,Hinckley and Bosworth,GBR.1.51.4_1
-Horsham,,,England,West Sussex,Horsham,GBR.1.110.5_1
-Hounslow,,,England,Greater London,Hounslow,GBR.1.36.17_1
-Huntingdonshire,,,England,Cambridgeshire,Huntingdonshire,GBR.1.16.4_1
-Hyndburn,,,England,Lancashire,Hyndburn,GBR.1.48.4_1
-Ipswich,,,England,Suffolk,Ipswich,GBR.1.96.3_1
-Isle of Wight,,,England,Isle of Wight,Isle of Wight,GBR.1.42.1_1
-Islington,,,England,Greater London,Islington,GBR.1.36.18_1
-Kensington and Chelsea,,,England,Greater London,Kensington and Chelsea,GBR.1.36.19_1
-Kettering,,,England,Northamptonshire,Kettering,GBR.1.64.4_1
-King's Lynn and West Norfolk,,,England,Cambridgeshire,King's Lynn and West Norfolk,GBR.1.16.5_1
-"Kingston upon Hull, City of",,,England,Kingston upon Hull,Kingston upon Hull,GBR.1.45.1_1
-Kingston upon Thames,,,England,Greater London,Kingston upon Thames,GBR.1.36.20_1
-Kirklees,,,England,Kirklees,Kirklees,GBR.1.46.1_1
-Knowsley,,,England,Knowsley,Knowsley,GBR.1.47.1_1
-Lambeth,,,England,Greater London,Lambeth,GBR.1.36.21_1
-Lancaster,,,England,Lancashire,Lancaster,GBR.1.48.5_1
-Leeds,,,England,Leeds,Leeds,GBR.1.49.1_1
-Leicester,,,England,Leicester,Leicester,GBR.1.50.1_1
-Lewes,,,England,East Sussex,Lewes,GBR.1.32.3_1
-Lewisham,,,England,Greater London,Lewisham,GBR.1.36.22_1
-Lichfield,,,England,Staffordshire,Lichfield,GBR.1.92.3_1
-Lincoln,,,England,Lincolnshire,Lincoln,GBR.1.52.3_1
-Liverpool,,,England,Sefton,Liverpool,GBR.1.82.1_1
-Luton,,,England,Luton,Luton,GBR.1.53.1_1
-Maidstone,,,England,Kent,Maidstone,GBR.1.44.6_1
-Maldon,,,England,Essex,Maldon,GBR.1.33.9_1
-Malvern Hills,,,England,Worcestershire,Malvern Hills,GBR.1.117.2_1
-Manchester,,,England,Manchester,Manchester,GBR.1.54.1_1
-Mansfield,,,England,Nottinghamshire,Mansfield,GBR.1.67.5_1
-Medway,,,England,Medway,Medway,GBR.1.55.1_1
-Melton,,,England,Leicestershire,Melton,GBR.1.51.5_1
-Mendip,,,England,Somerset,Mendip,GBR.1.87.1_1
-Merton,,,England,Greater London,Merton,GBR.1.36.24_1
-Mid Devon,,,England,Devon,Mid Devon,GBR.1.26.3_1
-Mid Suffolk,,,England,Suffolk,Mid Suffolk,GBR.1.96.4_1
-Mid Sussex,,,England,West Sussex,Mid Sussex,GBR.1.110.6_1
-Middlesbrough,,,England,Middlesbrough,Middlesbrough,GBR.1.56.1_1
-Milton Keynes,,,England,Milton Keynes,Milton Keynes,GBR.1.57.1_1
-Mole Valley,,,England,Surrey,Mole Valley,GBR.1.98.4_1
-New Forest,,,England,Hampshire,New Forest,GBR.1.38.8_1
-Newark and Sherwood,,,England,Nottinghamshire,Newark and Sherwood,GBR.1.67.6_1
-Newcastle upon Tyne,,,England,Newcastle upon Tyne,Newcastle upon Tyne,GBR.1.58.1_1
-Newcastle-under-Lyme,,,England,Staffordshire,Newcastle-under-Lyme,GBR.1.92.4_1
-Newham,,,England,Greater London,Newham,GBR.1.36.25_1
-North Devon,,,England,Devon,North Devon,GBR.1.26.4_1
-North East Derbyshire,,,England,Derbyshire,North East Derbyshire,GBR.1.25.7_1
-North East Lincolnshire,,,England,Lincolnshire,North East Lincolnshire,GBR.1.52.4_1
-North Hertfordshire,,,England,Hertfordshire,North Hertfordshire,GBR.1.41.5_1
-North Kesteven,,,England,Lincolnshire,North Kesteven,GBR.1.52.5_1
-North Lincolnshire,,,England,North Lincolnshire,North Lincolnshire,GBR.1.60.1_1
-North Norfolk,,,England,Norfolk,North Norfolk,GBR.1.59.4_1
-North Somerset,,,England,North Somerset,North Somerset,GBR.1.61.1_1
-North Tyneside,,,England,North Tyneside,North Tyneside,GBR.1.62.1_1
-North Warwickshire,,,England,Warwickshire,North Warwickshire,GBR.1.108.1_1
-North West Leicestershire,,,England,Leicestershire,North West Leicestershire,GBR.1.51.6_1
-Northampton,,,England,Northamptonshire,Northampton,GBR.1.64.5_1
-Northumberland,,,England,Northumberland,Northumberland,GBR.1.65.1_1
-Norwich,,,England,Norfolk,Norwich,GBR.1.59.5_1
-Nottingham,,,England,Nottingham,Nottingham,GBR.1.66.1_1
-Nuneaton and Bedworth,,,England,Warwickshire,Nuneaton and Bedworth,GBR.1.108.2_1
-Oadby and Wigston,,,England,Leicestershire,Oadby and Wigston,GBR.1.51.7_1
-Oldham,,,England,Oldham,Oldham,GBR.1.68.1_1
-Oxford,,,England,Oxfordshire,Oxford,GBR.1.69.2_1
-Pendle,,,England,Lancashire,Pendle,GBR.1.48.6_1
-Peterborough,,,England,Peterborough,Peterborough,GBR.1.70.1_1
-Plymouth,,,England,Plymouth,Plymouth,GBR.1.71.1_1
-Portsmouth,,,England,Portsmouth,Portsmouth,GBR.1.73.1_1
-Preston,,,England,Lancashire,Preston,GBR.1.48.7_1
-Reading,,,England,Reading,Reading,GBR.1.74.1_1
-Redbridge,,,England,Greater London,Redbridge,GBR.1.36.26_1
-Redcar and Cleveland,,,England,Redcar and Cleveland,Redcar and Cleveland,GBR.1.75.1_1
-Redditch,,,England,Worcestershire,Redditch,GBR.1.117.3_1
-Reigate and Banstead,,,England,Surrey,Reigate and Banstead,GBR.1.98.5_1
-Ribble Valley,,,England,Lancashire,Ribble Valley,GBR.1.48.8_1
-Richmond upon Thames,,,England,Greater London,Richmond upon Thames,GBR.1.36.27_1
-Richmondshire,,,England,North Yorkshire,Richmondshire,GBR.1.63.4_1
-Rochdale,,,England,Rochdale,Rochdale,GBR.1.76.1_1
-Rochford,,,England,Essex,Rochford,GBR.1.33.10_1
-Rossendale,,,England,Lancashire,Rossendale,GBR.1.48.9_1
-Rother,,,England,East Sussex,Rother,GBR.1.32.4_1
-Rotherham,,,England,Rotherham,Rotherham,GBR.1.77.1_1
-Rugby,,,England,Warwickshire,Rugby,GBR.1.108.3_1
-Runnymede,,,England,Surrey,Runnymede,GBR.1.98.6_1
-Rushcliffe,,,England,Nottinghamshire,Rushcliffe,GBR.1.67.7_1
-Rushmoor,,,England,Hampshire,Rushmoor,GBR.1.38.9_1
-Rutland,,,England,Rutland,Rutland,GBR.1.78.1_1
-Ryedale,,,England,North Yorkshire,Ryedale,GBR.1.63.5_1
-Salford,,,England,Salford,Salford,GBR.1.80.1_1
-Sandwell,,,England,Sandwell,Sandwell,GBR.1.81.1_1
-Scarborough,,,England,North Yorkshire,Scarborough,GBR.1.63.6_1
-Sedgemoor,,,England,Somerset,Sedgemoor,GBR.1.87.2_1
-Sefton,,,England,Sefton,Sefton,GBR.1.82.2_1
-Selby,,,England,North Yorkshire,Selby,GBR.1.63.7_1
-Sevenoaks,,,England,Kent,Sevenoaks,GBR.1.44.7_1
-Sheffield,,,England,Sheffield,Sheffield,GBR.1.83.1_1
-Shropshire,,,England,Shropshire,Shropshire,GBR.1.84.1_1
-Slough,,,England,Slough,Slough,GBR.1.85.1_1
-Solihull,,,England,Solihull,Solihull,GBR.1.86.1_1
-Somerset West and Taunton,,,England,Somerset,Somerset West and Taunton,GBR.1.87.4_1:GBR.1.87.5_1
-South Bucks,,,England,Buckinghamshire,South Bucks,GBR.1.13.3_1
-South Cambridgeshire,,,England,Cambridgeshire,South Cambridgeshire,GBR.1.16.6_1
-South Derbyshire,,,England,Derbyshire,South Derbyshire,GBR.1.25.8_1
-South Gloucestershire,,,England,South Gloucestershire,South Gloucestershire,GBR.1.88.1_1
-South Hams,,,England,Devon,South Hams,GBR.1.26.5_1
-South Holland,,,England,Lincolnshire,South Holland,GBR.1.52.6_1
-South Kesteven,,,England,Lincolnshire,South Kesteven,GBR.1.52.7_1
-South Lakeland,,,England,Cumbria,South Lakeland,GBR.1.22.6_1
-South Norfolk,,,England,Norfolk,South Norfolk,GBR.1.59.6_1
-South Northamptonshire,,,England,Northamptonshire,South Northamptonshire,GBR.1.64.6_1
-South Oxfordshire,,,England,Oxfordshire,South Oxfordshire,GBR.1.69.3_1
-South Ribble,,,England,Lancashire,South Ribble,GBR.1.48.10_1
-South Somerset,,,England,Somerset,South Somerset,GBR.1.87.3_1
-South Staffordshire,,,England,Staffordshire,South Staffordshire,GBR.1.92.5_1
-South Tyneside,,,England,South Tyneside,South Tyneside,GBR.1.89.1_1
-Southampton,,,England,Southampton,Southampton,GBR.1.90.1_1
-Southend-on-Sea,,,England,Southend-on-Sea,Southend-on-Sea,GBR.1.91.1_1
-Southwark,,,England,Greater London,Southwark,GBR.1.36.28_1
-Spelthorne,,,England,Surrey,Spelthorne,GBR.1.98.7_1
-St Albans,,,England,Hertfordshire,Saint Albans,GBR.1.41.6_1
-St. Helens,,,England,Saint Helens,Saint Helens,GBR.1.79.1_1
-Stafford,,,England,Staffordshire,Stafford,GBR.1.92.6_1
-Staffordshire Moorlands,,,England,Staffordshire,Staffordshire Moorlands,GBR.1.92.7_1
-Stevenage,,,England,Hertfordshire,Stevenage,GBR.1.41.7_1
-Stockport,,,England,Stockport,Stockport,GBR.1.93.1_1
-Stockton-on-Tees,,,England,Stockton-on-Tees,Stockton-on-Tees,GBR.1.94.1_1
-Stoke-on-Trent,,,England,Stoke-on-Trent,Stoke-on-Trent,GBR.1.95.1_1
-Stratford-on-Avon,,,England,Warwickshire,Stratford-on-Avon,GBR.1.108.4_1
-Stroud,,,England,Gloucestershire,Stroud,GBR.1.35.5_1
-Sunderland,,,England,Sunderland,Sunderland,GBR.1.97.1_1
-Surrey Heath,,,England,Surrey,Surrey Heath,GBR.1.98.8_1
-Sutton,,,England,Greater London,Sutton,GBR.1.36.29_1
-Swale,,,England,Kent,Swale,GBR.1.44.9_1
-Swindon,,,England,Swindon,Swindon,GBR.1.99.1_1
-Tameside,,,England,Tameside,Tameside,GBR.1.100.1_1
-Tamworth,,,England,Staffordshire,Tamworth,GBR.1.92.8_1
-Tandridge,,,England,Surrey,Tandridge,GBR.1.98.9_1
-Teignbridge,,,England,Devon,Teignbridge,GBR.1.26.6_1
-Telford and Wrekin,,,England,Telford and Wrekin,Telford and Wrekin,GBR.1.101.1_1
-Tendring,,,England,Essex,Tendring,GBR.1.33.11_1
-Test Valley,,,England,Hampshire,Test Valley,GBR.1.38.10_1
-Tewkesbury,,,England,Gloucestershire,Tewkesbury,GBR.1.35.6_1
-Thanet,,,England,Kent,Thanet,GBR.1.44.10_1
-Three Rivers,,,England,Hertfordshire,Three Rivers,GBR.1.41.8_1
-Thurrock,,,England,Thurrock,Thurrock,GBR.1.102.1_1
-Tonbridge and Malling,,,England,Kent,Tonbridge and Malling,GBR.1.44.11_1
-Torbay,,,England,Torbay,Torbay,GBR.1.103.1_1
-Torridge,,,England,Devon,Torridge,GBR.1.26.7_1
-Tower Hamlets,,,England,Greater London,Tower Hamlets,GBR.1.36.30_1
-Trafford,,,England,Trafford,Trafford,GBR.1.104.1_1
-Tunbridge Wells,,,England,Kent,Tunbridge Wells,GBR.1.44.12_1
-Uttlesford,,,England,Essex,Uttlesford,GBR.1.33.12_1
-Vale of White Horse,,,England,Oxfordshire,Vale of White Horse,GBR.1.69.4_1
-Wakefield,,,England,Wakefield,Wakefield,GBR.1.105.1_1
-Walsall,,,England,Walsall,Walsall,GBR.1.106.1_1
-Waltham Forest,,,England,Greater London,Waltham Forest,GBR.1.36.31_1
-Wandsworth,,,England,Greater London,Wandsworth,GBR.1.36.32_1
-Warrington,,,England,Warrington,Warrington,GBR.1.107.1_1
-Warwick,,,England,Warwickshire,Warwick,GBR.1.108.5_1
-Watford,,,England,Hertfordshire,Watford,GBR.1.41.9_1
-Waverley,,,England,Surrey,Waverley,GBR.1.98.10_1
-Wealden,,,England,East Sussex,Wealden,GBR.1.32.5_1
-Wellingborough,,,England,Northamptonshire,Wellingborough,GBR.1.64.7_1
-Welwyn Hatfield,,,England,Hertfordshire,Welwyn Hatfield,GBR.1.41.10_1
-West Berkshire,,,England,West Berkshire,West Berkshire,GBR.1.109.1_1
-West Devon,,,England,Devon,West Devon,GBR.1.26.8_1
-West Lancashire,,,England,Lancashire,West Lancashire,GBR.1.48.11_1
-West Lindsey,,,England,Lincolnshire,West Lindsey,GBR.1.52.8_1
-West Oxfordshire,,,England,Oxfordshire,West Oxfordshire,GBR.1.69.5_1
-West Suffolk,,,England,Suffolk,West Suffolk,GBR.1.96.2_1:GBR.1.96.5_1
-Westminster,,,England,Greater London,Westminster,GBR.1.36.33_1
-Wigan,,,England,Wigan,Wigan,GBR.1.111.1_1
-Wiltshire,,,England,Wiltshire,Wiltshire,GBR.1.112.1_1
-Winchester,,,England,Hampshire,Winchester,GBR.1.38.11_1
-Windsor and Maidenhead,,,England,Windsor and Maidenhead,Windsor and Maidenhead,GBR.1.113.1_1
-Wirral,,,England,Wirral,Wirral,GBR.1.114.1_1
-Woking,,,England,Surrey,Woking,GBR.1.98.11_1
-Wokingham,,,England,Wokingham,Wokingham,GBR.1.115.1_1
-Wolverhampton,,,England,Wolverhampton,Wolverhampton,GBR.1.116.1_1
-Worcester,,,England,Worcestershire,Worcester,GBR.1.117.4_1
-Worthing,,,England,West Sussex,Worthing,GBR.1.110.7_1
-Wychavon,,,England,Worcestershire,Wychavon,GBR.1.117.5_1
-Wycombe,,,England,Buckinghamshire,Wycombe,GBR.1.13.4_1
-Wyre,,,England,Lancashire,Wyre,GBR.1.48.12_1
-Wyre Forest,,,England,Worcestershire,Wyre Forest,GBR.1.117.6_1
-York,,,England,York,York,GBR.1.118.1_1
+United Kingdom,UK,,,,,GBR
+England,Nation,,England,,,GBR.1_1
+County Durham,Upper tier local authority,,England,County Durham,,GBR.1.30_1
+Darlington,Upper tier local authority,,England,Darlington,,GBR.1.23_1
+Hartlepool,Upper tier local authority,,England,Hartlepool,,GBR.1.39_1
+Middlesbrough,Upper tier local authority,,England,Middlesbrough,,GBR.1.56_1
+Redcar and Cleveland,Upper tier local authority,,England,Redcar and Cleveland,,GBR.1.75_1
+Stockton-on-Tees,Upper tier local authority,,England,Stockton-on-Tees,,GBR.1.94_1
+Gateshead,Upper tier local authority,,England,Gateshead,,GBR.1.34_1
+Newcastle upon Tyne,Upper tier local authority,,England,Newcastle upon Tyne,,GBR.1.58_1
+North Tyneside,Upper tier local authority,,England,North Tyneside,,GBR.1.62_1
+Northumberland,Upper tier local authority,,England,Northumberland,,GBR.1.65_1
+South Tyneside,Upper tier local authority,,England,South Tyneside,,GBR.1.89_1
+Sunderland,Upper tier local authority,,England,Sunderland,,GBR.1.97_1
+Cumbria,Upper tier local authority,,England,Cumbria,,GBR.1.22_1
+Cheshire East,Upper tier local authority,,England,Cheshire East,,GBR.1.18_1
+Cheshire West and Chester,Upper tier local authority,,England,Cheshire West and Chester,,GBR.1.19_1
+Halton,Upper tier local authority,,England,Halton,,GBR.1.37_1
+Warrington,Upper tier local authority,,England,Warrington,,GBR.1.107_1
+Bolton,Upper tier local authority,,England,Bolton,,GBR.1.7_1
+Bury,Upper tier local authority,,England,Bury,,GBR.1.14_1
+Manchester,Upper tier local authority,,England,Manchester,,GBR.1.54_1
+Oldham,Upper tier local authority,,England,Oldham,,GBR.1.68_1
+Rochdale,Upper tier local authority,,England,Rochdale,,GBR.1.76_1
+Salford,Upper tier local authority,,England,Salford,,GBR.1.80_1
+Stockport,Upper tier local authority,,England,Stockport,,GBR.1.93_1
+Tameside,Upper tier local authority,,England,Tameside,,GBR.1.100_1
+Trafford,Upper tier local authority,,England,Trafford,,GBR.1.104_1
+Wigan,Upper tier local authority,,England,Wigan,,GBR.1.111_1
+Blackburn with Darwen,Upper tier local authority,,England,Blackburn with Darwen,,GBR.1.5_1
+Blackpool,Upper tier local authority,,England,Blackpool,,GBR.1.6_1
+Lancashire,Upper tier local authority,,England,Lancashire,,GBR.1.48_1
+Knowsley,Upper tier local authority,,England,Knowsley,,GBR.1.47_1
+Liverpool,Upper tier local authority,,England,Liverpool,,GBR.1.82.1_1
+Sefton,Upper tier local authority,,England,Sefton,,GBR.1.82.2_1
+St. Helens,Upper tier local authority,,England,St. Helens,,GBR.1.79_1
+Wirral,Upper tier local authority,,England,Wirral,,GBR.1.114_1
+East Riding of Yorkshire,Upper tier local authority,,England,East Riding of Yorkshire,,GBR.1.31_1
+"Kingston upon Hull, City of",Upper tier local authority,,England,"Kingston upon Hull, City of",,GBR.1.45_1
+North East Lincolnshire,Upper tier local authority,,England,North East Lincolnshire,,GBR.1.52.4_1
+North Lincolnshire,Upper tier local authority,,England,North Lincolnshire,,GBR.1.60_1
+North Yorkshire,Upper tier local authority,,England,North Yorkshire,,GBR.1.63_1
+York,Upper tier local authority,,England,York,,GBR.1.118_1
+Barnsley,Upper tier local authority,,England,Barnsley,,GBR.1.1_1
+Doncaster,Upper tier local authority,,England,Doncaster,,GBR.1.27_1
+Rotherham,Upper tier local authority,,England,Rotherham,,GBR.1.77_1
+Sheffield,Upper tier local authority,,England,Sheffield,,GBR.1.83_1
+Bradford,Upper tier local authority,,England,Bradford,,GBR.1.10_1
+Calderdale,Upper tier local authority,,England,Calderdale,,GBR.1.15_1
+Kirklees,Upper tier local authority,,England,Kirklees,,GBR.1.46_1
+Leeds,Upper tier local authority,,England,Leeds,,GBR.1.49_1
+Wakefield,Upper tier local authority,,England,Wakefield,,GBR.1.105_1
+Derby,Upper tier local authority,,England,Derby,,GBR.1.24_1
+Derbyshire,Upper tier local authority,,England,Derbyshire,,GBR.1.25_1
+Nottingham,Upper tier local authority,,England,Nottingham,,GBR.1.66_1
+Nottinghamshire,Upper tier local authority,,England,Nottinghamshire,,GBR.1.67_1
+Leicester,Upper tier local authority,,England,Leicester,,GBR.1.50_1
+Leicestershire,Upper tier local authority,,England,Leicestershire,,GBR.1.51_1
+Northamptonshire,Upper tier local authority,,England,Northamptonshire,,GBR.1.64_1
+Rutland,Upper tier local authority,,England,Rutland,,GBR.1.78_1
+Lincolnshire,Upper tier local authority,,England,Lincolnshire,,GBR.1.52.1_1:GBR.1.52.2_1:GBR.1.52.3_1:GBR.1.52.5_1:GBR.1.52.6_1:GBR.1.52.7_1:GBR.1.52.8_1
+"Herefordshire, County of",Upper tier local authority,,England,"Herefordshire, County of",,GBR.1.40_1
+Warwickshire,Upper tier local authority,,England,Warwickshire,,GBR.1.108_1
+Worcestershire,Upper tier local authority,,England,Worcestershire,,GBR.1.117_1
+Shropshire,Upper tier local authority,,England,Shropshire,,GBR.1.84_1
+Staffordshire,Upper tier local authority,,England,Staffordshire,,GBR.1.92_1
+Stoke-on-Trent,Upper tier local authority,,England,Stoke-on-Trent,,GBR.1.95_1
+Telford and Wrekin,Upper tier local authority,,England,Telford and Wrekin,,GBR.1.101_1
+Birmingham,Upper tier local authority,,England,Birmingham,,GBR.1.4_1
+Coventry,Upper tier local authority,,England,Coventry,,GBR.1.21_1
+Dudley,Upper tier local authority,,England,Dudley,,GBR.1.29_1
+Sandwell,Upper tier local authority,,England,Sandwell,,GBR.1.81_1
+Solihull,Upper tier local authority,,England,Solihull,,GBR.1.86_1
+Walsall,Upper tier local authority,,England,Walsall,,GBR.1.106_1
+Wolverhampton,Upper tier local authority,,England,Wolverhampton,,GBR.1.116_1
+Cambridgeshire,Upper tier local authority,,England,Cambridgeshire,,GBR.1.16_1
+Norfolk,Upper tier local authority,,England,Norfolk,,GBR.1.59_1
+Peterborough,Upper tier local authority,,England,Peterborough,,GBR.1.70_1
+Suffolk,Upper tier local authority,,England,Suffolk,,GBR.1.96_1
+Bedford,Upper tier local authority,,England,Bedford,,GBR.1.3.1_1
+Central Bedfordshire,Upper tier local authority,,England,Central Bedfordshire,,GBR.1.17_1
+Hertfordshire,Upper tier local authority,,England,Hertfordshire,,GBR.1.41_1
+Luton,Upper tier local authority,,England,Luton,,GBR.1.53_1
+Essex,Upper tier local authority,,England,Essex,,GBR.1.33_1
+Southend-on-Sea,Upper tier local authority,,England,Southend-on-Sea,,GBR.1.91_1
+Thurrock,Upper tier local authority,,England,Thurrock,,GBR.1.102_1
+Camden,Upper tier local authority,,England,Camden,,GBR.1.36.6_1
+City of London,Upper tier local authority,,England,City of London,,GBR.1.36.23_1
+Hackney,Upper tier local authority,,England,Hackney,,GBR.1.36.11_1
+Hackney and City of London,Upper tier local authority,,England,Hackney and City of London,,GBR.1.36.11_1:GBR.1.36.23_1
+Hammersmith and Fulham,Upper tier local authority,,England,Hammersmith and Fulham,,GBR.1.36.12_1
+Haringey,Upper tier local authority,,England,Haringey,,GBR.1.36.13_1
+Islington,Upper tier local authority,,England,Islington,,GBR.1.36.18_1
+Kensington and Chelsea,Upper tier local authority,,England,Kensington and Chelsea,,GBR.1.36.19_1
+Lambeth,Upper tier local authority,,England,Lambeth,,GBR.1.36.21_1
+Lewisham,Upper tier local authority,,England,Lewisham,,GBR.1.36.22_1
+Newham,Upper tier local authority,,England,Newham,,GBR.1.36.25_1
+Southwark,Upper tier local authority,,England,Southwark,,GBR.1.36.28_1
+Tower Hamlets,Upper tier local authority,,England,Tower Hamlets,,GBR.1.36.30_1
+Wandsworth,Upper tier local authority,,England,Wandsworth,,GBR.1.36.32_1
+Westminster,Upper tier local authority,,England,Westminster,,GBR.1.36.33_1
+Barking and Dagenham,Upper tier local authority,,England,Barking and Dagenham,,GBR.1.36.1_1
+Barnet,Upper tier local authority,,England,Barnet,,GBR.1.36.2_1
+Bexley,Upper tier local authority,,England,Bexley,,GBR.1.36.3_1
+Brent,Upper tier local authority,,England,Brent,,GBR.1.36.4_1
+Bromley,Upper tier local authority,,England,Bromley,,GBR.1.36.5_1
+Croydon,Upper tier local authority,,England,Croydon,,GBR.1.36.7_1
+Ealing,Upper tier local authority,,England,Ealing,,GBR.1.36.8_1
+Enfield,Upper tier local authority,,England,Enfield,,GBR.1.36.9_1
+Greenwich,Upper tier local authority,,England,Greenwich,,GBR.1.36.10_1
+Harrow,Upper tier local authority,,England,Harrow,,GBR.1.36.14_1
+Havering,Upper tier local authority,,England,Havering,,GBR.1.36.15_1
+Hillingdon,Upper tier local authority,,England,Hillingdon,,GBR.1.36.16_1
+Hounslow,Upper tier local authority,,England,Hounslow,,GBR.1.36.17_1
+Kingston upon Thames,Upper tier local authority,,England,Kingston upon Thames,,GBR.1.36.20_1
+Merton,Upper tier local authority,,England,Merton,,GBR.1.36.24_1
+Redbridge,Upper tier local authority,,England,Redbridge,,GBR.1.36.26_1
+Richmond upon Thames,Upper tier local authority,,England,Richmond upon Thames,,GBR.1.36.27_1
+Sutton,Upper tier local authority,,England,Sutton,,GBR.1.36.29_1
+Waltham Forest,Upper tier local authority,,England,Waltham Forest,,GBR.1.36.31_1
+Bracknell Forest,Upper tier local authority,,England,Bracknell Forest,,GBR.1.9_1
+Buckinghamshire,Upper tier local authority,,England,Buckinghamshire,,GBR.1.13_1
+Milton Keynes,Upper tier local authority,,England,Milton Keynes,,GBR.1.57_1
+Oxfordshire,Upper tier local authority,,England,Oxfordshire,,GBR.1.69_1
+Reading,Upper tier local authority,,England,Reading,,GBR.1.74_1
+Slough,Upper tier local authority,,England,Slough,,GBR.1.85_1
+West Berkshire,Upper tier local authority,,England,West Berkshire,,GBR.1.109_1
+Windsor and Maidenhead,Upper tier local authority,,England,Windsor and Maidenhead,,GBR.1.113_1
+Wokingham,Upper tier local authority,,England,Wokingham,,GBR.1.115_1
+Brighton and Hove,Upper tier local authority,,England,Brighton and Hove,,GBR.1.11_1
+East Sussex,Upper tier local authority,,England,East Sussex,,GBR.1.32_1
+Surrey,Upper tier local authority,,England,Surrey,,GBR.1.98_1
+West Sussex,Upper tier local authority,,England,West Sussex,,GBR.1.110_1
+Hampshire,Upper tier local authority,,England,Hampshire,,GBR.1.38_1
+Isle of Wight,Upper tier local authority,,England,Isle of Wight,,GBR.1.42_1
+Portsmouth,Upper tier local authority,,England,Portsmouth,,GBR.1.73_1
+Southampton,Upper tier local authority,,England,Southampton,,GBR.1.90_1
+Kent,Upper tier local authority,,England,Kent,,GBR.1.44_1
+Medway,Upper tier local authority,,England,Medway,,GBR.1.55_1
+Bath and North East Somerset,Upper tier local authority,,England,Bath and North East Somerset,,GBR.1.2_1
+"Bristol, City of",Upper tier local authority,,England,"Bristol, City of",,GBR.1.12_1
+Gloucestershire,Upper tier local authority,,England,Gloucestershire,,GBR.1.35_1
+North Somerset,Upper tier local authority,,England,North Somerset,,GBR.1.61_1
+South Gloucestershire,Upper tier local authority,,England,South Gloucestershire,,GBR.1.88_1
+Swindon,Upper tier local authority,,England,Swindon,,GBR.1.99_1
+Wiltshire,Upper tier local authority,,England,Wiltshire,,GBR.1.112_1
+"Bournemouth, Christchurch and Poole",Upper tier local authority,,England,"Bournemouth, Christchurch and Poole",,GBR.1.28.1_1:GBR.1.72_1:GBR.1.8_1
+Dorset,Upper tier local authority,,England,Dorset,,GBR.1.28.2_1:GBR.1.28.3_1:GBR.1.28.4_1:GBR.1.28.5_1:GBR.1.28.6_1
+Somerset,Upper tier local authority,,England,Somerset,,GBR.1.87_1
+Cornwall and Isles of Scilly,Upper tier local authority,,England,Cornwall and Isles of Scilly,,GBR.1.20_1:GBR.1.43_1
+Devon,Upper tier local authority,,England,Devon,,GBR.1.26_1
+Plymouth,Upper tier local authority,,England,Plymouth,,GBR.1.71_1
+Torbay,Upper tier local authority,,England,Torbay,,GBR.1.103_1
+Adur,Lower tier local authority,,England,West Sussex,Adur,GBR.1.110.1_1
+Allerdale,Lower tier local authority,,England,Cumbria,Allerdale,GBR.1.22.1_1
+Amber Valley,Lower tier local authority,,England,Derbyshire,Amber Valley,GBR.1.25.1_1
+Arun,Lower tier local authority,,England,West Sussex,Arun,GBR.1.110.2_1
+Ashfield,Lower tier local authority,,England,Nottinghamshire,Ashfield,GBR.1.67.1_1
+Ashford,Lower tier local authority,,England,Kent,Ashford,GBR.1.44.1_1
+Aylesbury Vale,Lower tier local authority,,England,Buckinghamshire,Aylesbury Vale,GBR.1.13.1_1
+Babergh,Lower tier local authority,,England,Suffolk,Babergh,GBR.1.96.1_1
+Barking and Dagenham,Lower tier local authority,,England,Greater London,Barking and Dagenham,GBR.1.36.1_1
+Barnet,Lower tier local authority,,England,Greater London,Barnet,GBR.1.36.2_1
+Barnsley,Lower tier local authority,,England,Barnsley,Barnsley,GBR.1.1.1_1
+Barrow-in-Furness,Lower tier local authority,,England,Cumbria,Barrow-in-Furness,GBR.1.22.2_1
+Basildon,Lower tier local authority,,England,Essex,Basildon,GBR.1.33.1_1
+Basingstoke and Deane,Lower tier local authority,,England,Hampshire,Basingstoke and Deane,GBR.1.38.1_1
+Bassetlaw,Lower tier local authority,,England,Nottinghamshire,Bassetlaw,GBR.1.67.2_1
+Bath and North East Somerset,Lower tier local authority,,England,Bath and North East Somerset,Bath and North East Somerset,GBR.1.2.1_1
+Bedford,Lower tier local authority,,England,Bedfordshire,Bedford,GBR.1.3.1_1
+Bexley,Lower tier local authority,,England,Greater London,Bexley,GBR.1.36.3_1
+Birmingham,Lower tier local authority,,England,Birmingham,Birmingham,GBR.1.4.1_1
+Blaby,Lower tier local authority,,England,Leicestershire,Blaby,GBR.1.51.1_1
+Blackburn with Darwen,Lower tier local authority,,England,Blackburn with Darwen,Blackburn with Darwen,GBR.1.5.1_1
+Blackpool,Lower tier local authority,,England,Blackpool,Blackpool,GBR.1.6.1_1
+Bolsover,Lower tier local authority,,England,Derbyshire,Bolsover,GBR.1.25.2_1
+Bolton,Lower tier local authority,,England,Bolton,Bolton,GBR.1.7.1_1
+Boston,Lower tier local authority,,England,Lincolnshire,Boston,GBR.1.52.1_1
+"Bournemouth, Christchurch and Poole",Lower tier local authority,,England,Bournemouth,"Bournemouth, Christchurch and Poole",GBR.1.8.1_1:GBR.1.28.1_1:GBR.1.72.1_1
+Bracknell Forest,Lower tier local authority,,England,Bracknell Forest,Bracknell Forest,GBR.1.9.1_1
+Bradford,Lower tier local authority,,England,Bradford,Bradford,GBR.1.10.1_1
+Braintree,Lower tier local authority,,England,Essex,Braintree,GBR.1.33.2_1
+Breckland,Lower tier local authority,,England,Norfolk,Breckland,GBR.1.59.1_1
+Brent,Lower tier local authority,,England,Greater London,Brent,GBR.1.36.4_1
+Brentwood,Lower tier local authority,,England,Essex,Brentwood,GBR.1.33.3_1
+Brighton and Hove,Lower tier local authority,,England,Brighton and Hove,Brighton and Hove,GBR.1.11.1_1
+"Bristol, City of",Lower tier local authority,,England,Bristol,Bristol,GBR.1.12.1_1
+Broadland,Lower tier local authority,,England,Norfolk,Broadland,GBR.1.59.2_1
+Bromley,Lower tier local authority,,England,Greater London,Bromley,GBR.1.36.5_1
+Bromsgrove,Lower tier local authority,,England,Worcestershire,Bromsgrove,GBR.1.117.1_1
+Broxbourne,Lower tier local authority,,England,Hertfordshire,Broxbourne,GBR.1.41.1_1
+Broxtowe,Lower tier local authority,,England,Nottinghamshire,Broxtowe,GBR.1.67.3_1
+Burnley,Lower tier local authority,,England,Lancashire,Burnley,GBR.1.48.1_1
+Bury,Lower tier local authority,,England,Bury,Bury,GBR.1.14.1_1
+Calderdale,Lower tier local authority,,England,Calderdale,Calderdale,GBR.1.15.1_1
+Cambridge,Lower tier local authority,,England,Cambridgeshire,Cambridge,GBR.1.16.1_1
+Camden,Lower tier local authority,,England,Greater London,Camden,GBR.1.36.6_1
+Cannock Chase,Lower tier local authority,,England,Staffordshire,Cannock Chase,GBR.1.92.1_1
+Canterbury,Lower tier local authority,,England,Kent,Canterbury,GBR.1.44.2_1
+Carlisle,Lower tier local authority,,England,Cumbria,Carlisle,GBR.1.22.3_1
+Castle Point,Lower tier local authority,,England,Essex,Castle Point,GBR.1.33.4_1
+Central Bedfordshire,Lower tier local authority,,England,Central Bedfordshire,Central Bedfordshire,GBR.1.17.1_1
+Charnwood,Lower tier local authority,,England,Leicestershire,Charnwood,GBR.1.51.2_1
+Chelmsford,Lower tier local authority,,England,Essex,Chelmsford,GBR.1.33.5_1
+Cheltenham,Lower tier local authority,,England,Gloucestershire,Cheltenham,GBR.1.35.1_1
+Cherwell,Lower tier local authority,,England,Oxfordshire,Cherwell,GBR.1.69.1_1
+Cheshire East,Lower tier local authority,,England,Cheshire East,Cheshire East,GBR.1.18.1_1
+Cheshire West and Chester,Lower tier local authority,,England,Cheshire West and Chester,Cheshire West and Chester,GBR.1.19.1_1
+Chesterfield,Lower tier local authority,,England,Derbyshire,Chesterfield,GBR.1.25.3_1
+Chichester,Lower tier local authority,,England,West Sussex,Chichester,GBR.1.110.3_1
+Chiltern,Lower tier local authority,,England,Buckinghamshire,Chiltern,GBR.1.13.2_1
+Chorley,Lower tier local authority,,England,Lancashire,Chorley,GBR.1.48.2_1
+City of London,Lower tier local authority,,England,Greater London,London,GBR.1.36.23_1
+Colchester,Lower tier local authority,,England,Essex,Colchester,GBR.1.33.6_1
+Copeland,Lower tier local authority,,England,Cumbria,Copeland,GBR.1.22.4_1
+Corby,Lower tier local authority,,England,Northamptonshire,Corby,GBR.1.64.1_1
+Cornwall and Isles of Scilly,Lower tier local authority,,England,Cornwall,Cornwall and Isles of Scilly,GBR.1.20.1_1:GBR.1.43.1_1
+Cotswold,Lower tier local authority,,England,Gloucestershire,Cotswold,GBR.1.35.2_1
+County Durham,Lower tier local authority,,England,Durham,Durham,GBR.1.30.1_1
+Coventry,Lower tier local authority,,England,Coventry,Coventry,GBR.1.21.1_1
+Craven,Lower tier local authority,,England,North Yorkshire,Craven,GBR.1.63.1_1
+Crawley,Lower tier local authority,,England,West Sussex,Crawley,GBR.1.110.4_1
+Croydon,Lower tier local authority,,England,Greater London,Croydon,GBR.1.36.7_1
+Dacorum,Lower tier local authority,,England,Hertfordshire,Dacorum,GBR.1.41.2_1
+Darlington,Lower tier local authority,,England,Darlington,Darlington,GBR.1.23.1_1
+Dartford,Lower tier local authority,,England,Kent,Dartford,GBR.1.44.3_1
+Daventry,Lower tier local authority,,England,Northamptonshire,Daventry,GBR.1.64.2_1
+Derby,Lower tier local authority,,England,Derby,Derby,GBR.1.24.1_1
+Derbyshire Dales,Lower tier local authority,,England,Derbyshire,Derbyshire Dales,GBR.1.25.4_1
+Doncaster,Lower tier local authority,,England,Doncaster,Doncaster,GBR.1.27.1_1
+Dorset,Lower tier local authority,,England,Dorset,Dorset,GBR.1.28.2_1:GBR.1.28.3_1:GBR.1.28.4_1:GBR.1.28.5_1:GBR.1.28.6_1
+Dover,Lower tier local authority,,England,Kent,Dover,GBR.1.44.4_1
+Dudley,Lower tier local authority,,England,Dudley,Dudley,GBR.1.29.1_1
+Ealing,Lower tier local authority,,England,Greater London,Ealing,GBR.1.36.8_1
+East Cambridgeshire,Lower tier local authority,,England,Cambridgeshire,East Cambridgeshire,GBR.1.16.2_1
+East Devon,Lower tier local authority,,England,Devon,East Devon,GBR.1.26.1_1
+East Hampshire,Lower tier local authority,,England,Hampshire,East Hampshire,GBR.1.38.2_1
+East Hertfordshire,Lower tier local authority,,England,Hertfordshire,East Hertfordshire,GBR.1.41.3_1
+East Lindsey,Lower tier local authority,,England,Lincolnshire,East Lindsey,GBR.1.52.2_1
+East Northamptonshire,Lower tier local authority,,England,Northamptonshire,East Northamptonshire,GBR.1.64.3_1
+East Riding of Yorkshire,Lower tier local authority,,England,East Riding of Yorkshire,East Riding of Yorkshire,GBR.1.31.1_1
+East Staffordshire,Lower tier local authority,,England,Staffordshire,East Staffordshire,GBR.1.92.2_1
+East Suffolk,Lower tier local authority,,England,Suffolk,East Suffolk,GBR.1.96.6_1:GBR.1.96.7_1
+Eastbourne,Lower tier local authority,,England,East Sussex,Eastbourne,GBR.1.32.1_1
+Eastleigh,Lower tier local authority,,England,Hampshire,Eastleigh,GBR.1.38.3_1
+Eden,Lower tier local authority,,England,Cumbria,Eden,GBR.1.22.5_1
+Elmbridge,Lower tier local authority,,England,Surrey,Elmbridge,GBR.1.98.1_1
+Enfield,Lower tier local authority,,England,Greater London,Enfield,GBR.1.36.9_1
+Epping Forest,Lower tier local authority,,England,Essex,Epping Forest,GBR.1.33.7_1
+Epsom and Ewell,Lower tier local authority,,England,Surrey,Epsom and Ewell,GBR.1.98.2_1
+Erewash,Lower tier local authority,,England,Derbyshire,Erewash,GBR.1.25.5_1
+Exeter,Lower tier local authority,,England,Devon,Exeter,GBR.1.26.2_1
+Fareham,Lower tier local authority,,England,Hampshire,Fareham,GBR.1.38.4_1
+Fenland,Lower tier local authority,,England,Cambridgeshire,Fenland,GBR.1.16.3_1
+Folkestone and Hythe,Lower tier local authority,,England,Kent,Shepway,GBR.1.44.8_1
+Forest of Dean,Lower tier local authority,,England,Gloucestershire,Forest of Dean,GBR.1.35.3_1
+Fylde,Lower tier local authority,,England,Lancashire,Fylde,GBR.1.48.3_1
+Gateshead,Lower tier local authority,,England,Gateshead,Gateshead,GBR.1.34.1_1
+Gedling,Lower tier local authority,,England,Nottinghamshire,Gedling,GBR.1.67.4_1
+Gloucester,Lower tier local authority,,England,Gloucestershire,Gloucester,GBR.1.35.4_1
+Gosport,Lower tier local authority,,England,Hampshire,Gosport,GBR.1.38.5_1
+Gravesham,Lower tier local authority,,England,Kent,Gravesham,GBR.1.44.5_1
+Great Yarmouth,Lower tier local authority,,England,Norfolk,Great Yarmouth,GBR.1.59.3_1
+Greenwich,Lower tier local authority,,England,Greater London,Greenwich,GBR.1.36.10_1
+Guildford,Lower tier local authority,,England,Surrey,Guildford,GBR.1.98.3_1
+Hackney,Lower tier local authority,,England,Greater London,Hackney,GBR.1.36.11_1
+Hackney and City of London,Lower tier local authority,,England,Greater London,Hackney and City of London,GBR.1.36.11_1:GBR.1.36.23_1
+Halton,Lower tier local authority,,England,Halton,Halton,GBR.1.37.1_1
+Hambleton,Lower tier local authority,,England,North Yorkshire,Hambleton,GBR.1.63.2_1
+Hammersmith and Fulham,Lower tier local authority,,England,Greater London,Hammersmith and Fulham,GBR.1.36.12_1
+Harborough,Lower tier local authority,,England,Leicestershire,Harborough,GBR.1.51.3_1
+Haringey,Lower tier local authority,,England,Greater London,Haringey,GBR.1.36.13_1
+Harlow,Lower tier local authority,,England,Essex,Harlow,GBR.1.33.8_1
+Harrogate,Lower tier local authority,,England,North Yorkshire,Harrogate,GBR.1.63.3_1
+Harrow,Lower tier local authority,,England,Greater London,Harrow,GBR.1.36.14_1
+Hart,Lower tier local authority,,England,Hampshire,Hart,GBR.1.38.6_1
+Hartlepool,Lower tier local authority,,England,Hartlepool,Hartlepool,GBR.1.39.1_1
+Hastings,Lower tier local authority,,England,East Sussex,Hastings,GBR.1.32.2_1
+Havant,Lower tier local authority,,England,Hampshire,Havant,GBR.1.38.7_1
+Havering,Lower tier local authority,,England,Greater London,Havering,GBR.1.36.15_1
+"Herefordshire, County of",Lower tier local authority,,England,Herefordshire,Herefordshire,GBR.1.40.1_1
+Hertsmere,Lower tier local authority,,England,Hertfordshire,Hertsmere,GBR.1.41.4_1
+High Peak,Lower tier local authority,,England,Derbyshire,High Peak,GBR.1.25.6_1
+Hillingdon,Lower tier local authority,,England,Greater London,Hillingdon,GBR.1.36.16_1
+Hinckley and Bosworth,Lower tier local authority,,England,Leicestershire,Hinckley and Bosworth,GBR.1.51.4_1
+Horsham,Lower tier local authority,,England,West Sussex,Horsham,GBR.1.110.5_1
+Hounslow,Lower tier local authority,,England,Greater London,Hounslow,GBR.1.36.17_1
+Huntingdonshire,Lower tier local authority,,England,Cambridgeshire,Huntingdonshire,GBR.1.16.4_1
+Hyndburn,Lower tier local authority,,England,Lancashire,Hyndburn,GBR.1.48.4_1
+Ipswich,Lower tier local authority,,England,Suffolk,Ipswich,GBR.1.96.3_1
+Isle of Wight,Lower tier local authority,,England,Isle of Wight,Isle of Wight,GBR.1.42.1_1
+Islington,Lower tier local authority,,England,Greater London,Islington,GBR.1.36.18_1
+Kensington and Chelsea,Lower tier local authority,,England,Greater London,Kensington and Chelsea,GBR.1.36.19_1
+Kettering,Lower tier local authority,,England,Northamptonshire,Kettering,GBR.1.64.4_1
+King's Lynn and West Norfolk,Lower tier local authority,,England,Cambridgeshire,King's Lynn and West Norfolk,GBR.1.16.5_1
+"Kingston upon Hull, City of",Lower tier local authority,,England,Kingston upon Hull,Kingston upon Hull,GBR.1.45.1_1
+Kingston upon Thames,Lower tier local authority,,England,Greater London,Kingston upon Thames,GBR.1.36.20_1
+Kirklees,Lower tier local authority,,England,Kirklees,Kirklees,GBR.1.46.1_1
+Knowsley,Lower tier local authority,,England,Knowsley,Knowsley,GBR.1.47.1_1
+Lambeth,Lower tier local authority,,England,Greater London,Lambeth,GBR.1.36.21_1
+Lancaster,Lower tier local authority,,England,Lancashire,Lancaster,GBR.1.48.5_1
+Leeds,Lower tier local authority,,England,Leeds,Leeds,GBR.1.49.1_1
+Leicester,Lower tier local authority,,England,Leicester,Leicester,GBR.1.50.1_1
+Lewes,Lower tier local authority,,England,East Sussex,Lewes,GBR.1.32.3_1
+Lewisham,Lower tier local authority,,England,Greater London,Lewisham,GBR.1.36.22_1
+Lichfield,Lower tier local authority,,England,Staffordshire,Lichfield,GBR.1.92.3_1
+Lincoln,Lower tier local authority,,England,Lincolnshire,Lincoln,GBR.1.52.3_1
+Liverpool,Lower tier local authority,,England,Sefton,Liverpool,GBR.1.82.1_1
+Luton,Lower tier local authority,,England,Luton,Luton,GBR.1.53.1_1
+Maidstone,Lower tier local authority,,England,Kent,Maidstone,GBR.1.44.6_1
+Maldon,Lower tier local authority,,England,Essex,Maldon,GBR.1.33.9_1
+Malvern Hills,Lower tier local authority,,England,Worcestershire,Malvern Hills,GBR.1.117.2_1
+Manchester,Lower tier local authority,,England,Manchester,Manchester,GBR.1.54.1_1
+Mansfield,Lower tier local authority,,England,Nottinghamshire,Mansfield,GBR.1.67.5_1
+Medway,Lower tier local authority,,England,Medway,Medway,GBR.1.55.1_1
+Melton,Lower tier local authority,,England,Leicestershire,Melton,GBR.1.51.5_1
+Mendip,Lower tier local authority,,England,Somerset,Mendip,GBR.1.87.1_1
+Merton,Lower tier local authority,,England,Greater London,Merton,GBR.1.36.24_1
+Mid Devon,Lower tier local authority,,England,Devon,Mid Devon,GBR.1.26.3_1
+Mid Suffolk,Lower tier local authority,,England,Suffolk,Mid Suffolk,GBR.1.96.4_1
+Mid Sussex,Lower tier local authority,,England,West Sussex,Mid Sussex,GBR.1.110.6_1
+Middlesbrough,Lower tier local authority,,England,Middlesbrough,Middlesbrough,GBR.1.56.1_1
+Milton Keynes,Lower tier local authority,,England,Milton Keynes,Milton Keynes,GBR.1.57.1_1
+Mole Valley,Lower tier local authority,,England,Surrey,Mole Valley,GBR.1.98.4_1
+New Forest,Lower tier local authority,,England,Hampshire,New Forest,GBR.1.38.8_1
+Newark and Sherwood,Lower tier local authority,,England,Nottinghamshire,Newark and Sherwood,GBR.1.67.6_1
+Newcastle upon Tyne,Lower tier local authority,,England,Newcastle upon Tyne,Newcastle upon Tyne,GBR.1.58.1_1
+Newcastle-under-Lyme,Lower tier local authority,,England,Staffordshire,Newcastle-under-Lyme,GBR.1.92.4_1
+Newham,Lower tier local authority,,England,Greater London,Newham,GBR.1.36.25_1
+North Devon,Lower tier local authority,,England,Devon,North Devon,GBR.1.26.4_1
+North East Derbyshire,Lower tier local authority,,England,Derbyshire,North East Derbyshire,GBR.1.25.7_1
+North East Lincolnshire,Lower tier local authority,,England,Lincolnshire,North East Lincolnshire,GBR.1.52.4_1
+North Hertfordshire,Lower tier local authority,,England,Hertfordshire,North Hertfordshire,GBR.1.41.5_1
+North Kesteven,Lower tier local authority,,England,Lincolnshire,North Kesteven,GBR.1.52.5_1
+North Lincolnshire,Lower tier local authority,,England,North Lincolnshire,North Lincolnshire,GBR.1.60.1_1
+North Norfolk,Lower tier local authority,,England,Norfolk,North Norfolk,GBR.1.59.4_1
+North Somerset,Lower tier local authority,,England,North Somerset,North Somerset,GBR.1.61.1_1
+North Tyneside,Lower tier local authority,,England,North Tyneside,North Tyneside,GBR.1.62.1_1
+North Warwickshire,Lower tier local authority,,England,Warwickshire,North Warwickshire,GBR.1.108.1_1
+North West Leicestershire,Lower tier local authority,,England,Leicestershire,North West Leicestershire,GBR.1.51.6_1
+Northampton,Lower tier local authority,,England,Northamptonshire,Northampton,GBR.1.64.5_1
+Northumberland,Lower tier local authority,,England,Northumberland,Northumberland,GBR.1.65.1_1
+Norwich,Lower tier local authority,,England,Norfolk,Norwich,GBR.1.59.5_1
+Nottingham,Lower tier local authority,,England,Nottingham,Nottingham,GBR.1.66.1_1
+Nuneaton and Bedworth,Lower tier local authority,,England,Warwickshire,Nuneaton and Bedworth,GBR.1.108.2_1
+Oadby and Wigston,Lower tier local authority,,England,Leicestershire,Oadby and Wigston,GBR.1.51.7_1
+Oldham,Lower tier local authority,,England,Oldham,Oldham,GBR.1.68.1_1
+Oxford,Lower tier local authority,,England,Oxfordshire,Oxford,GBR.1.69.2_1
+Pendle,Lower tier local authority,,England,Lancashire,Pendle,GBR.1.48.6_1
+Peterborough,Lower tier local authority,,England,Peterborough,Peterborough,GBR.1.70.1_1
+Plymouth,Lower tier local authority,,England,Plymouth,Plymouth,GBR.1.71.1_1
+Portsmouth,Lower tier local authority,,England,Portsmouth,Portsmouth,GBR.1.73.1_1
+Preston,Lower tier local authority,,England,Lancashire,Preston,GBR.1.48.7_1
+Reading,Lower tier local authority,,England,Reading,Reading,GBR.1.74.1_1
+Redbridge,Lower tier local authority,,England,Greater London,Redbridge,GBR.1.36.26_1
+Redcar and Cleveland,Lower tier local authority,,England,Redcar and Cleveland,Redcar and Cleveland,GBR.1.75.1_1
+Redditch,Lower tier local authority,,England,Worcestershire,Redditch,GBR.1.117.3_1
+Reigate and Banstead,Lower tier local authority,,England,Surrey,Reigate and Banstead,GBR.1.98.5_1
+Ribble Valley,Lower tier local authority,,England,Lancashire,Ribble Valley,GBR.1.48.8_1
+Richmond upon Thames,Lower tier local authority,,England,Greater London,Richmond upon Thames,GBR.1.36.27_1
+Richmondshire,Lower tier local authority,,England,North Yorkshire,Richmondshire,GBR.1.63.4_1
+Rochdale,Lower tier local authority,,England,Rochdale,Rochdale,GBR.1.76.1_1
+Rochford,Lower tier local authority,,England,Essex,Rochford,GBR.1.33.10_1
+Rossendale,Lower tier local authority,,England,Lancashire,Rossendale,GBR.1.48.9_1
+Rother,Lower tier local authority,,England,East Sussex,Rother,GBR.1.32.4_1
+Rotherham,Lower tier local authority,,England,Rotherham,Rotherham,GBR.1.77.1_1
+Rugby,Lower tier local authority,,England,Warwickshire,Rugby,GBR.1.108.3_1
+Runnymede,Lower tier local authority,,England,Surrey,Runnymede,GBR.1.98.6_1
+Rushcliffe,Lower tier local authority,,England,Nottinghamshire,Rushcliffe,GBR.1.67.7_1
+Rushmoor,Lower tier local authority,,England,Hampshire,Rushmoor,GBR.1.38.9_1
+Rutland,Lower tier local authority,,England,Rutland,Rutland,GBR.1.78.1_1
+Ryedale,Lower tier local authority,,England,North Yorkshire,Ryedale,GBR.1.63.5_1
+Salford,Lower tier local authority,,England,Salford,Salford,GBR.1.80.1_1
+Sandwell,Lower tier local authority,,England,Sandwell,Sandwell,GBR.1.81.1_1
+Scarborough,Lower tier local authority,,England,North Yorkshire,Scarborough,GBR.1.63.6_1
+Sedgemoor,Lower tier local authority,,England,Somerset,Sedgemoor,GBR.1.87.2_1
+Sefton,Lower tier local authority,,England,Sefton,Sefton,GBR.1.82.2_1
+Selby,Lower tier local authority,,England,North Yorkshire,Selby,GBR.1.63.7_1
+Sevenoaks,Lower tier local authority,,England,Kent,Sevenoaks,GBR.1.44.7_1
+Sheffield,Lower tier local authority,,England,Sheffield,Sheffield,GBR.1.83.1_1
+Shropshire,Lower tier local authority,,England,Shropshire,Shropshire,GBR.1.84.1_1
+Slough,Lower tier local authority,,England,Slough,Slough,GBR.1.85.1_1
+Solihull,Lower tier local authority,,England,Solihull,Solihull,GBR.1.86.1_1
+Somerset West and Taunton,Lower tier local authority,,England,Somerset,Somerset West and Taunton,GBR.1.87.4_1:GBR.1.87.5_1
+South Bucks,Lower tier local authority,,England,Buckinghamshire,South Bucks,GBR.1.13.3_1
+South Cambridgeshire,Lower tier local authority,,England,Cambridgeshire,South Cambridgeshire,GBR.1.16.6_1
+South Derbyshire,Lower tier local authority,,England,Derbyshire,South Derbyshire,GBR.1.25.8_1
+South Gloucestershire,Lower tier local authority,,England,South Gloucestershire,South Gloucestershire,GBR.1.88.1_1
+South Hams,Lower tier local authority,,England,Devon,South Hams,GBR.1.26.5_1
+South Holland,Lower tier local authority,,England,Lincolnshire,South Holland,GBR.1.52.6_1
+South Kesteven,Lower tier local authority,,England,Lincolnshire,South Kesteven,GBR.1.52.7_1
+South Lakeland,Lower tier local authority,,England,Cumbria,South Lakeland,GBR.1.22.6_1
+South Norfolk,Lower tier local authority,,England,Norfolk,South Norfolk,GBR.1.59.6_1
+South Northamptonshire,Lower tier local authority,,England,Northamptonshire,South Northamptonshire,GBR.1.64.6_1
+South Oxfordshire,Lower tier local authority,,England,Oxfordshire,South Oxfordshire,GBR.1.69.3_1
+South Ribble,Lower tier local authority,,England,Lancashire,South Ribble,GBR.1.48.10_1
+South Somerset,Lower tier local authority,,England,Somerset,South Somerset,GBR.1.87.3_1
+South Staffordshire,Lower tier local authority,,England,Staffordshire,South Staffordshire,GBR.1.92.5_1
+South Tyneside,Lower tier local authority,,England,South Tyneside,South Tyneside,GBR.1.89.1_1
+Southampton,Lower tier local authority,,England,Southampton,Southampton,GBR.1.90.1_1
+Southend-on-Sea,Lower tier local authority,,England,Southend-on-Sea,Southend-on-Sea,GBR.1.91.1_1
+Southwark,Lower tier local authority,,England,Greater London,Southwark,GBR.1.36.28_1
+Spelthorne,Lower tier local authority,,England,Surrey,Spelthorne,GBR.1.98.7_1
+St Albans,Lower tier local authority,,England,Hertfordshire,Saint Albans,GBR.1.41.6_1
+St. Helens,Lower tier local authority,,England,Saint Helens,Saint Helens,GBR.1.79.1_1
+Stafford,Lower tier local authority,,England,Staffordshire,Stafford,GBR.1.92.6_1
+Staffordshire Moorlands,Lower tier local authority,,England,Staffordshire,Staffordshire Moorlands,GBR.1.92.7_1
+Stevenage,Lower tier local authority,,England,Hertfordshire,Stevenage,GBR.1.41.7_1
+Stockport,Lower tier local authority,,England,Stockport,Stockport,GBR.1.93.1_1
+Stockton-on-Tees,Lower tier local authority,,England,Stockton-on-Tees,Stockton-on-Tees,GBR.1.94.1_1
+Stoke-on-Trent,Lower tier local authority,,England,Stoke-on-Trent,Stoke-on-Trent,GBR.1.95.1_1
+Stratford-on-Avon,Lower tier local authority,,England,Warwickshire,Stratford-on-Avon,GBR.1.108.4_1
+Stroud,Lower tier local authority,,England,Gloucestershire,Stroud,GBR.1.35.5_1
+Sunderland,Lower tier local authority,,England,Sunderland,Sunderland,GBR.1.97.1_1
+Surrey Heath,Lower tier local authority,,England,Surrey,Surrey Heath,GBR.1.98.8_1
+Sutton,Lower tier local authority,,England,Greater London,Sutton,GBR.1.36.29_1
+Swale,Lower tier local authority,,England,Kent,Swale,GBR.1.44.9_1
+Swindon,Lower tier local authority,,England,Swindon,Swindon,GBR.1.99.1_1
+Tameside,Lower tier local authority,,England,Tameside,Tameside,GBR.1.100.1_1
+Tamworth,Lower tier local authority,,England,Staffordshire,Tamworth,GBR.1.92.8_1
+Tandridge,Lower tier local authority,,England,Surrey,Tandridge,GBR.1.98.9_1
+Teignbridge,Lower tier local authority,,England,Devon,Teignbridge,GBR.1.26.6_1
+Telford and Wrekin,Lower tier local authority,,England,Telford and Wrekin,Telford and Wrekin,GBR.1.101.1_1
+Tendring,Lower tier local authority,,England,Essex,Tendring,GBR.1.33.11_1
+Test Valley,Lower tier local authority,,England,Hampshire,Test Valley,GBR.1.38.10_1
+Tewkesbury,Lower tier local authority,,England,Gloucestershire,Tewkesbury,GBR.1.35.6_1
+Thanet,Lower tier local authority,,England,Kent,Thanet,GBR.1.44.10_1
+Three Rivers,Lower tier local authority,,England,Hertfordshire,Three Rivers,GBR.1.41.8_1
+Thurrock,Lower tier local authority,,England,Thurrock,Thurrock,GBR.1.102.1_1
+Tonbridge and Malling,Lower tier local authority,,England,Kent,Tonbridge and Malling,GBR.1.44.11_1
+Torbay,Lower tier local authority,,England,Torbay,Torbay,GBR.1.103.1_1
+Torridge,Lower tier local authority,,England,Devon,Torridge,GBR.1.26.7_1
+Tower Hamlets,Lower tier local authority,,England,Greater London,Tower Hamlets,GBR.1.36.30_1
+Trafford,Lower tier local authority,,England,Trafford,Trafford,GBR.1.104.1_1
+Tunbridge Wells,Lower tier local authority,,England,Kent,Tunbridge Wells,GBR.1.44.12_1
+Uttlesford,Lower tier local authority,,England,Essex,Uttlesford,GBR.1.33.12_1
+Vale of White Horse,Lower tier local authority,,England,Oxfordshire,Vale of White Horse,GBR.1.69.4_1
+Wakefield,Lower tier local authority,,England,Wakefield,Wakefield,GBR.1.105.1_1
+Walsall,Lower tier local authority,,England,Walsall,Walsall,GBR.1.106.1_1
+Waltham Forest,Lower tier local authority,,England,Greater London,Waltham Forest,GBR.1.36.31_1
+Wandsworth,Lower tier local authority,,England,Greater London,Wandsworth,GBR.1.36.32_1
+Warrington,Lower tier local authority,,England,Warrington,Warrington,GBR.1.107.1_1
+Warwick,Lower tier local authority,,England,Warwickshire,Warwick,GBR.1.108.5_1
+Watford,Lower tier local authority,,England,Hertfordshire,Watford,GBR.1.41.9_1
+Waverley,Lower tier local authority,,England,Surrey,Waverley,GBR.1.98.10_1
+Wealden,Lower tier local authority,,England,East Sussex,Wealden,GBR.1.32.5_1
+Wellingborough,Lower tier local authority,,England,Northamptonshire,Wellingborough,GBR.1.64.7_1
+Welwyn Hatfield,Lower tier local authority,,England,Hertfordshire,Welwyn Hatfield,GBR.1.41.10_1
+West Berkshire,Lower tier local authority,,England,West Berkshire,West Berkshire,GBR.1.109.1_1
+West Devon,Lower tier local authority,,England,Devon,West Devon,GBR.1.26.8_1
+West Lancashire,Lower tier local authority,,England,Lancashire,West Lancashire,GBR.1.48.11_1
+West Lindsey,Lower tier local authority,,England,Lincolnshire,West Lindsey,GBR.1.52.8_1
+West Oxfordshire,Lower tier local authority,,England,Oxfordshire,West Oxfordshire,GBR.1.69.5_1
+West Suffolk,Lower tier local authority,,England,Suffolk,West Suffolk,GBR.1.96.2_1:GBR.1.96.5_1
+Westminster,Lower tier local authority,,England,Greater London,Westminster,GBR.1.36.33_1
+Wigan,Lower tier local authority,,England,Wigan,Wigan,GBR.1.111.1_1
+Wiltshire,Lower tier local authority,,England,Wiltshire,Wiltshire,GBR.1.112.1_1
+Winchester,Lower tier local authority,,England,Hampshire,Winchester,GBR.1.38.11_1
+Windsor and Maidenhead,Lower tier local authority,,England,Windsor and Maidenhead,Windsor and Maidenhead,GBR.1.113.1_1
+Wirral,Lower tier local authority,,England,Wirral,Wirral,GBR.1.114.1_1
+Woking,Lower tier local authority,,England,Surrey,Woking,GBR.1.98.11_1
+Wokingham,Lower tier local authority,,England,Wokingham,Wokingham,GBR.1.115.1_1
+Wolverhampton,Lower tier local authority,,England,Wolverhampton,Wolverhampton,GBR.1.116.1_1
+Worcester,Lower tier local authority,,England,Worcestershire,Worcester,GBR.1.117.4_1
+Worthing,Lower tier local authority,,England,West Sussex,Worthing,GBR.1.110.7_1
+Wychavon,Lower tier local authority,,England,Worcestershire,Wychavon,GBR.1.117.5_1
+Wycombe,Lower tier local authority,,England,Buckinghamshire,Wycombe,GBR.1.13.4_1
+Wyre,Lower tier local authority,,England,Lancashire,Wyre,GBR.1.48.12_1
+Wyre Forest,Lower tier local authority,,England,Worcestershire,Wyre Forest,GBR.1.117.6_1
+York,Lower tier local authority,,England,York,York,GBR.1.118.1_1

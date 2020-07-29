@@ -35,20 +35,59 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         r = requests.get(url)
         return pd.read_csv(StringIO(r.text))
 
+    def fetch_deaths(self):
+        # a csv file to be downloaded
+        url = 'https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv'
+        r = requests.get(url)
+        return pd.read_csv(StringIO(r.text))
+
     def run(self):
+        data = self.fetch_deaths()
+        for index, record in data.iterrows():
+            region = record['Area name']
+            if region in ['Scotland', 'Northern Ireland', 'Wales']:
+                continue
+            region_type = record['Area type']
+            date = str(record['Reporting date'])
+            deaths = record['Cumulative deaths']
+
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=region,
+                input_adm_area_2=region_type,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date,
+                'country': 'United Kingdom',
+                'countrycode': 'GBR',
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': adm_area_3,
+                'gid': gid,
+                'dead': deaths,
+            }
+
+            self.upsert_data(**upsert_obj)
+
+
         data = self.fetch()
 
         for index, record in data.iterrows():
-            if record[2] != 'Lower tier local authority':
+            region_type = record[2]
+            if region_type == 'Region':
                 continue
 
             date = str(record[3])
             lau = record[0]
             confirmed = int(record[7])
 
+
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=lau,
-                input_adm_area_2=None,
+                input_adm_area_2=region_type,
                 input_adm_area_3=None,
                 return_original_if_failure=True
             )
