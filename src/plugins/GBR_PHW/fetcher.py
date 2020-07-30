@@ -43,10 +43,10 @@ class WalesFetcher(BaseEpidemiologyFetcher):
     def tests(self, data):
         for index, record in data.iterrows():
 
-            date = record[1]
-            lau = record[0]
-            confirmed = int(record[3])
-            tested = int(record[6])
+            date = record['Specimen date']
+            lau = record['Local Authority']
+            confirmed = int(record['Cumulative cases'])
+            tested = int(record['Cumulative testing episodes'])
 
             # skipping cases marked as outside Wales
             if lau == 'Outside Wales':
@@ -97,6 +97,27 @@ class WalesFetcher(BaseEpidemiologyFetcher):
 
             self.upsert_data(**level3_upsert_obj)
 
+        # National data is obtained as the sum of individual authorities, Unknonw, and Outside Wales
+        grouped = data.groupby(['Specimen date'], as_index=False)
+        nationaldf = grouped[['Cumulative cases', 'Cumulative testing episodes']].sum()
+        for index, record in nationaldf.iterrows():
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': record['Specimen date'].strftime('%Y-%m-%d'),
+                'country': 'United Kingdom',
+                'countrycode': 'GBR',
+                'adm_area_1': 'Wales',
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': ['GBR.4_1'],
+                'confirmed': record['Cumulative cases'],
+                'tested': record['Cumulative testing episodes']
+            }
+
+            self.upsert_data(**upsert_obj)
+
+
     def deaths(self, data, date):
         for index, record in data.iterrows():
 
@@ -104,7 +125,7 @@ class WalesFetcher(BaseEpidemiologyFetcher):
             dead = int(record[1])
 
             if lhb == 'Resident outside Wales':
-                break
+                continue
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=lhb,
