@@ -93,7 +93,7 @@ def parseChartData(chart_element, debug_file):
     if not legendEndFound:
         for idx, val in enumerate(textTagList):
             if idx >= idx_list[-1]:
-                if float(textTagList[idx + 1]) < float(val):
+                if float(textTagList[idx + 1].replace('.','').replace(',','.')) < float(val.replace('.','').replace(',','.')):
                     idx_list.append(idx + 1)
                     break
 
@@ -105,7 +105,7 @@ def parseChartData(chart_element, debug_file):
     values = res[2]
 
     # Turn the values into numbers
-    values = [int(value.replace(',', '').replace('.', '')) for value in values]
+    values = [int(value.replace('.', '')) for value in values]
 
     # Replace the x-axis labels with a list of dates corresponding to values
 
