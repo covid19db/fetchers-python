@@ -179,7 +179,21 @@ sql_create_weather_table = """
         cloudfrac_mean_std float,
         UNIQUE (gid, date),
         PRIMARY KEY (gid, date)
-    )"""
+    ) WITHOUT ROWID"""
+
+sql_create_diagnostics_table = """
+    CREATE TABLE IF NOT EXISTS diagnostics (
+        table_name text NOT NULL,
+        source text NOT NULL,
+        validation_success text,
+        error text,
+        last_run_start date, 
+        last_run_stop date, 
+        first_timestamp date, 
+        last_timestamp date,
+        UNIQUE (table_name, source),
+        PRIMARY KEY (table_name, source)
+    ) WITHOUT ROWID"""
 
 
 def update_type(val):
@@ -210,6 +224,7 @@ class SqliteHelper(AbstractAdapter):
         self.execute(sql_create_government_response_table)
         self.execute(sql_create_mobility_table)
         self.execute(sql_create_weather_table)
+        self.execute(sql_create_diagnostics_table)
 
     def cursor(self):
         self.cur = self.conn.cursor()
@@ -264,8 +279,32 @@ class SqliteHelper(AbstractAdapter):
         self.upsert_table_data(table_name, **kwargs)
 
     def upsert_diagnostics(self, **kwargs):
-        # TODO: Implement get division
-        raise NotImplementedError("To be implemented")
+        sql_query = """INSERT OR REPLACE INTO diagnostics ({insert_keys}) VALUES ({insert_data})""".format(
+            insert_keys=",".join([key for key in kwargs.keys()]),
+            insert_data=",".join('?' * len(kwargs)),
+        )
+        self.execute(sql_query, [update_type(val) for val in kwargs.values()])
+        logger.debug("Updating diagnostics table with data: {}".format(list(kwargs.values())))
+
+    def get_earliest_timestamp(self, table_name: str, source: str = None):
+        sql_str = """SELECT min(date) as date FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+
+        sql_query = sql_str.format(table_name=table_name)
+
+        result = self.execute(sql_query, (source,))
+        return result[0]['date'] if len(result) > 0 else None
+
+    def get_latest_timestamp(self, table_name: str, source: str = None):
+        sql_str = """SELECT max(date) as date FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+
+        sql_query = sql_str.format(table_name=table_name)
+
+        result = self.execute(sql_query, (source,))
+        return result[0]['date'] if len(result) > 0 else None
 
     def close_connection(self):
         if self.conn:

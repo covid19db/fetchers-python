@@ -88,6 +88,11 @@ colnames = {
         'cloudfrac_max_avg', 'cloudfrac_max_std',
         'cloudfrac_min_avg', 'cloudfrac_min_std', 'cloudfrac_mean_avg',
         'cloudfrac_mean_std'
+    ],
+    "diagnostics": [
+        "table_name", "source", "validation_success",
+        "error", "last_run_start", "last_run_stop",
+        "first_timestamp", "last_timestamp"
     ]
 }
 
