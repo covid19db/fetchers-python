@@ -41,6 +41,8 @@ def validate_row(row: str) -> bool:
 def to_number(item: str) -> int:
     # Remove coma from numbers and convert to int
     if isinstance(item, str):
+        if re.search(r'^\d–\d$', item):
+            item = item.split('–')[0]
         item = item.replace(',', '')
     return int(item or 0)
 
