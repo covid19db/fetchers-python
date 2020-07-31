@@ -247,7 +247,8 @@ class SqliteHelper(AbstractAdapter):
         data['adm_area_1'] = data.get('adm_area_1')
         data['adm_area_2'] = data.get('adm_area_2')
         data['adm_area_3'] = data.get('adm_area_3')
-        data['gid'] = ",".join(data.get('gid'))
+        if data.get('gid'):
+            data['gid'] = ",".join(data.get('gid'))
         return {k: ('' if 'adm' in k and v is None else v) for k, v in data.items()}
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
