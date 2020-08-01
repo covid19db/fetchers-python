@@ -12,9 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Pulling directly from Nigeria Centre for Disease Control, https://covid19.ncdc.gov.ng/
+
 import logging
 import requests
 from datetime import date
+from bs4 import BeautifulSoup
 
 __all__ = ('NigeriaCDC',)
 
@@ -28,15 +31,57 @@ class NigeriaCDC(BaseEpidemiologyFetcher):
     SOURCE = 'NGA_CDC'
 
     def fetch(self):
-        url = 'https://services5.arcgis.com/Y2O5QPjedp8vHACU/arcgis/rest/services/NgeriaCovid19/FeatureServer/0/query?f=json&where=ConfCases%20%3E%3D%200&returnGeometry=false&returnSpatialRel=false&outFields=*'
+        url = 'https://services5.arcgis.com/Y2O5QPjedp8vHACU/arcgis/rest/services/NgeriaCovid19/FeatureServer/0/query' \
+              '?f=json&where=ConfCases%20%3E%3D%200&returnGeometry=false&returnSpatialRel=false&outFields=*'
         data = requests.get(url).json()
         return data["features"]
 
-    def run(self):
-        logger.info("Processing number of cases in Nigeria by province")
+    def fetch_national(self):
+        def get_value(tag):
+            try:
+                result = tag.find_next_sibling("h2").text
+                result = result.replace('\n', '').replace(',', '')
+                return int(result)
+            except:
+                return None
 
-        data = self.fetch()
+        url = 'https://covid19.ncdc.gov.ng/'
+        website_content = requests.get(url, verify=False)
+        soup = BeautifulSoup(website_content.text, 'lxml')
+        cardTitles = soup.find_all('h6')
+
+        titles = [card.text for card in cardTitles]
+        values = [get_value(card) for card in cardTitles]
+        data = dict(zip(titles, values))
+        return data
+
+    def run(self):
+
         date_ = date.today().strftime('%Y-%m-%d')
+
+        logger.info("Processing number of cases in Nigeria nationally")
+        data = self.fetch_national()
+
+        upsert_obj = {
+            # Pulling directly from Nigeria Centre for Disease Control, https://covid19.ncdc.gov.ng/
+            'source': self.SOURCE,
+            'date': date_,
+            'country': 'Nigeria',
+            'countrycode': 'NGA',
+            'adm_area_1': None,
+            'adm_area_2': None,
+            'adm_area_3': None,
+            'tested': data['Samples Tested'],
+            'confirmed': data['Confirmed Cases'],
+            'dead': data['Death'],
+            'recovered': data['Discharged Cases'],
+            'gid': ['NGA']
+        }
+
+        self.upsert_data(**upsert_obj)
+
+        logger.info("Processing number of cases in Nigeria by province")
+        data = self.fetch()
 
         for record in data:
             details = record.get('attributes')
@@ -52,9 +97,7 @@ class NigeriaCDC(BaseEpidemiologyFetcher):
                 return_original_if_failure=True
             )
 
-            # we need to build an object containing the data we want to add or update
             upsert_obj = {
-                # Pulling directly from Nigeria Centre for Disease Control, https://covid19.ncdc.gov.ng/
                 'source': self.SOURCE,
                 'date': date_,
                 'country': 'Nigeria',
