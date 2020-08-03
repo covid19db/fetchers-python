@@ -69,7 +69,6 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
             df = df.append({'lau': lau, 'confirmedcases': confirmedcases}, ignore_index=True)
         return df
 
-
     def fetch_local_authority_date_and_data(self):
 
         date = self.fetch_local_authority_date()
@@ -89,7 +88,6 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         data = self.fetch_national()
 
         for index, record in data.iterrows():
-
             date = record['date']
             confirmedcases = int(record['positive']) if pd.notna(record['positive']) else None
             deaths = int(record['deaths']) if pd.notna(record['deaths']) else None
@@ -139,6 +137,15 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
 
                 self.upsert_data(**upsert_obj)
 
+                # repeat this at level 3 for mapping consistence
+
+                upsert_obj['adm_area_3'] = adm_area_2
+                self.upsert_data(**upsert_obj)
+
+        '''
+        TURNED OFF PENDING ALTERNATIVE DATA SOURCE
+        NO DATA AT THIS LOCATION ANY MORE
+
         logger.debug('Fetching local authority information')
         date, data = self.fetch_local_authority_date_and_data()
 
@@ -167,3 +174,4 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
             }
 
             self.upsert_data(**upsert_obj)
+            '''

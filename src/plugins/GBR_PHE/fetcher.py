@@ -42,6 +42,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         return pd.read_csv(StringIO(r.text))
 
     def run(self):
+        
         data = self.fetch_deaths()
         for index, record in data.iterrows():
             region = record['Area name']
@@ -105,3 +106,22 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
             }
 
             self.upsert_data(**upsert_obj)
+
+        url = 'https://c19downloads.azureedge.net/downloads/json/coronavirus-cases_latest.json'
+        data = requests.get(url).json()
+        date = data.get('metadata').get('lastUpdatedAt')[0:10]
+        cases = data.get('dailyRecords').get('totalLabConfirmedCases')
+
+        upsert_obj = {
+            'source': self.SOURCE,
+            'date': date,
+            'country': 'United Kingdom',
+            'countrycode': 'GBR',
+            'adm_area_1': None,
+            'adm_area_2': None,
+            'adm_area_3': None,
+            'confirmed': cases,
+            'gid': ['GBR']
+        }
+
+        self.upsert_data(**upsert_obj)
