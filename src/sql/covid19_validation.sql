@@ -15,11 +15,9 @@ CREATE OR REPLACE FUNCTION covid19_schema.covid19_validation(
     
 AS $BODY$
      
---AS $BODY$
 DECLARE 
 valid_flag integer := 0;
 BEGIN
---RETURN(
   with A as (
     select hashtext(textin(record_out(staging_epidemiology ))) as h, count(*) as c
       from staging_epidemiology 
@@ -48,13 +46,11 @@ select count(*) into valid_flag
 					hospitalised_icu = epidemiology.hospitalised_icu;
 					
 					
-       -- RETURNING *;
 	 ELSE
 
 	 END IF;
  return valid_flag;
  
--- );
 END
 $BODY$;
 
