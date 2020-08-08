@@ -30,7 +30,8 @@ class AbstractAdapter(ABC):
     def check_if_gid_exists(kwargs: List) -> bool:
         if not kwargs.get('gid'):
             logger.warning(
-                f'GID is missing for: {kwargs.get("countrycode")}, {kwargs.get("adm_area_1")}, '
+                f'GID is missing for: {kwargs.get("date")}, {kwargs.get("source")}, '
+                f'{kwargs.get("countrycode")}, {kwargs.get("adm_area_1")}, '
                 f'{kwargs.get("adm_area_2")}, {kwargs.get("adm_area_3")}, please correct your data')
 
     @staticmethod
