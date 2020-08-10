@@ -42,7 +42,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         return pd.read_csv(StringIO(r.text))
 
     def run(self):
-        
+
         data = self.fetch_deaths()
         for index, record in data.iterrows():
             region = record['Area name']
@@ -73,18 +73,16 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
 
             self.upsert_data(**upsert_obj)
 
-
         data = self.fetch()
 
         for index, record in data.iterrows():
-            region_type = record[2]
-            if region_type == 'Region':
+            region_type = record['Area type']
+            if region_type in ['region', 'nation']:
                 continue
 
-            date = str(record[3])
-            lau = record[0]
-            confirmed = int(record[7])
-
+            date = str(record['Specimen date'])
+            lau = record['Area name']
+            confirmed = int(record['Cumulative lab-confirmed cases'])
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=lau,
