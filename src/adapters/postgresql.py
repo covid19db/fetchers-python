@@ -217,7 +217,7 @@ class PostgresqlHelper(AbstractAdapter):
 
     def upsert_diagnostics(self, **kwargs):
         data_keys = ["validation_success", "error", "last_run_start", "last_run_stop", "first_timestamp",
-                     "last_timestamp"]
+                     "last_timestamp", "details"]
         sql_query = sql.SQL("""INSERT INTO diagnostics ({insert_keys}) VALUES ({insert_data})
                                         ON CONFLICT
                                             (table_name, source)
