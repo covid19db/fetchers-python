@@ -65,6 +65,9 @@ class AbstractFetcher(ABC):
     def get_latest_timestamp(self):
         return None
 
+    def get_details(self):
+        return None
+
     @abstractmethod
     def run(self):
         raise NotImplementedError()

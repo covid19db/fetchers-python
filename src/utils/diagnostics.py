@@ -22,7 +22,8 @@ class Diagnostics:
             "last_run_start": datetime.fromtimestamp(start_time),
             "last_run_stop": datetime.fromtimestamp(end_time),
             "first_timestamp": self.fetcher_instance.get_earliest_timestamp(),
-            "last_timestamp": self.fetcher_instance.get_latest_timestamp()
+            "last_timestamp": self.fetcher_instance.get_latest_timestamp(),
+            "details": self.fetcher_instance.get_details()
         }
         data_adapter = self.fetcher_instance.data_adapter
         data_adapter.upsert_diagnostics(**data)

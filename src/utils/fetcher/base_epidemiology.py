@@ -34,6 +34,9 @@ class BaseEpidemiologyFetcher(AbstractFetcher):
     def get_latest_timestamp(self):
         return self.data_adapter.get_latest_timestamp(self.TYPE.value, self.SOURCE)
 
+    def get_details(self):
+        return self.data_adapter.get_details(self.TYPE.value, self.SOURCE)
+
     @abstractmethod
     def run(self):
         raise NotImplementedError()

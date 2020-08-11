@@ -13,6 +13,8 @@
 # limitations under the License.
 
 import time
+import json
+import datetime
 import logging
 from typing import Tuple, List
 import psycopg2.extras
@@ -26,6 +28,11 @@ MAX_ATTEMPT_FAIL = 10
 __all__ = ('PostgresqlHelper',)
 
 logger = logging.getLogger(__name__)
+
+
+def default(o):
+    if isinstance(o, (datetime.date, datetime.datetime)):
+        return o.isoformat()
 
 
 class PostgresqlHelper(AbstractAdapter):
@@ -246,6 +253,22 @@ class PostgresqlHelper(AbstractAdapter):
 
         result = self.execute(sql_query, (source,))
         return result[0]['date'] if len(result) > 0 else None
+
+    def get_details(self, table_name: str, source: str = None):
+        sql_str = """SELECT country, min(date) as min_date, max(date) as max_date  
+                     FROM {table_name}"""
+        if source:
+            sql_str = sql_str + """ WHERE source = %s"""
+        sql_str = sql_str + " GROUP BY country"
+
+        sql_query = sql.SQL(sql_str).format(table_name=sql.Identifier(table_name))
+
+        result = self.execute(sql_query, (source,))
+        result_list = []
+        columns = ['country', 'min_date', 'max_date']
+        for row in result:
+            result_list.append(dict(zip(columns, row)))
+        return json.dumps(result_list, default=default)
 
     def close_connection(self):
         if self.conn:
