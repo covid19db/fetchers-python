@@ -13,9 +13,7 @@
 # limitations under the License.
 
 import logging
-import pandas as pd
-from io import StringIO
-import requests
+from uk_covid19 import Cov19API
 
 __all__ = ('EnglandFetcher',)
 
@@ -25,33 +23,88 @@ logger = logging.getLogger(__name__)
 
 
 class EnglandFetcher(BaseEpidemiologyFetcher):
-    ''' a fetcher to collect data for English lower tier local authorities'''
+    ''' a fetcher to collect data from Public Health England'''
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHE'  # Public Health England
+    START_DATE = 'date>2020-02-28'
 
-    def fetch(self):
-        # a csv file to be downloaded
-        url = 'https://coronavirus.data.gov.uk/downloads/csv/coronavirus-cases_latest.csv'
-        r = requests.get(url)
-        return pd.read_csv(StringIO(r.text))
+    def fetch_uk(self):
+        uk = ['areaType=overview', self.START_DATE]
 
-    def fetch_deaths(self):
-        # a csv file to be downloaded
-        url = 'https://coronavirus.data.gov.uk/downloads/csv/coronavirus-deaths_latest.csv'
-        r = requests.get(url)
-        return pd.read_csv(StringIO(r.text))
+        cases_and_deaths = {
+            "date": "date",
+            "areaName": "areaName",
+            "areaType": "areaType",
+            "cases": "cumCasesByPublishDate",
+            "tests": "cumTestsByPublishDate",
+            "deaths": "cumDeaths28DaysByDeathDate",
+            "cumAdmissions": "cumAdmissions"
+        }
 
-    def run(self):
+        api = Cov19API(filters=uk, structure=cases_and_deaths)
+        data = api.get_json()
+        return data
 
-        data = self.fetch_deaths()
-        for index, record in data.iterrows():
-            region = record['Area name']
-            if region in ['Scotland', 'Northern Ireland', 'Wales']:
+    def fetch_nation(self):
+        nation = ['areaType=nation', 'areaName=England', self.START_DATE]
+
+        cases_and_deaths = {
+            "date": "date",
+            "areaName": "areaName",
+            "areaType": "areaType",
+            "cases": "cumCasesByPublishDate",
+            "tests": "cumTestsByPublishDate",
+            "deaths": "cumDeaths28DaysByDeathDate",
+            "cumAdmissions": "cumAdmissions"
+        }
+
+        api = Cov19API(filters=nation, structure=cases_and_deaths)
+        data = api.get_json()
+        return data
+
+    def fetch_utla(self):
+        utla = ['areaType=utla', self.START_DATE]
+
+        cases = {
+            "date": "date",
+            "areaName": "areaName",
+            "areaType": "areaType",
+            "areaCode": "areaCode",
+            "cases": "cumCasesBySpecimenDate",
+            "tests": "cumTestsByPublishDate",
+            "cumAdmissions": "cumAdmissions"
+        }
+
+        api = Cov19API(filters=utla, structure=cases)
+        data = api.get_json()
+        return data
+
+    def fetch_ltla(self):
+        ltla = ['areaType=ltla', self.START_DATE]
+
+        cases = {
+            "date": "date",
+            "areaName": "areaName",
+            "areaType": "areaType",
+            "areaCode": "areaCode",
+            "cases": "cumCasesBySpecimenDate",
+            "tests": "cumTestsByPublishDate",
+            "cumAdmissions": "cumAdmissions"
+        }
+
+        api = Cov19API(filters=ltla, structure=cases)
+        data = api.get_json()
+        return data
+
+    def upsert_uk_data(self, data):
+        for record in data:
+
+            # only use English local authorities
+            region_type = record.get('areaType')
+            if region_type in ['utla', 'ltla'] and record.get('areaCode')[0] != 'E':
                 continue
-            region_type = record['Area type']
-            date = str(record['Reporting date'])
-            deaths = record['Cumulative deaths']
 
+            region = record.get('areaName')
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=region,
                 input_adm_area_2=region_type,
@@ -61,65 +114,25 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
 
             upsert_obj = {
                 'source': self.SOURCE,
-                'date': date,
+                'date': str(record.get('date')),
                 'country': 'United Kingdom',
                 'countrycode': 'GBR',
                 'adm_area_1': adm_area_1,
                 'adm_area_2': adm_area_2,
                 'adm_area_3': adm_area_3,
                 'gid': gid,
-                'dead': deaths,
+                'dead': record.get('deaths'),
+                'confirmed': record.get('cases'),
+                'tested': record.get('tests'),
+                'hospitalised': record.get('cumAdmissions')
             }
 
             self.upsert_data(**upsert_obj)
 
-        data = self.fetch()
 
-        for index, record in data.iterrows():
-            region_type = record['Area type']
-            if region_type in ['region', 'nation']:
-                continue
+    def run(self):
 
-            date = str(record['Specimen date'])
-            lau = record['Area name']
-            confirmed = int(record['Cumulative lab-confirmed cases'])
-
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1=lau,
-                input_adm_area_2=region_type,
-                input_adm_area_3=None,
-                return_original_if_failure=True
-            )
-
-            upsert_obj = {
-                'source': self.SOURCE,
-                'date': date,
-                'country': 'United Kingdom',
-                'countrycode': 'GBR',
-                'adm_area_1': adm_area_1,
-                'adm_area_2': adm_area_2,
-                'adm_area_3': adm_area_3,
-                'gid': gid,
-                'confirmed': confirmed,
-            }
-
-            self.upsert_data(**upsert_obj)
-
-        url = 'https://c19downloads.azureedge.net/downloads/json/coronavirus-cases_latest.json'
-        data = requests.get(url).json()
-        date = data.get('metadata').get('lastUpdatedAt')[0:10]
-        cases = data.get('dailyRecords').get('totalLabConfirmedCases')
-
-        upsert_obj = {
-            'source': self.SOURCE,
-            'date': date,
-            'country': 'United Kingdom',
-            'countrycode': 'GBR',
-            'adm_area_1': None,
-            'adm_area_2': None,
-            'adm_area_3': None,
-            'confirmed': cases,
-            'gid': ['GBR']
-        }
-
-        self.upsert_data(**upsert_obj)
+        methods = [self.fetch_uk, self.fetch_nation, self.fetch_utla, self.fetch_ltla]
+        for method in methods:
+            data = method()['data']
+            self.upsert_uk_data(data)
