@@ -37,9 +37,17 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
     SOURCE = 'GBR_PHS'
 
     def fetch_health_board(self):
-        url = 'https://raw.githubusercontent.com/DataScienceScotland/COVID-19-Management-Information/master/COVID19' \
-              '%20-%20Daily%20Management%20Information%20-%20Scottish%20Health%20Boards%20-%20Cumulative%20cases.csv'
-        return pd.read_csv(url, parse_dates=[0], na_values='*')
+        datetimeobj = datetime.today()
+        attempts = 4
+        while attempts > 0:
+            try:
+                day = datetimeobj.strftime('Y%m%d')
+                url = f'https://www.opendata.nhs.scot/dataset/b318bddf-a4dc-4262-971f-0ba329e09b87/resource/2dd8534b-0a6f-4744-9253-9565d62f96c2/download/trend_hb_{day}.csv'
+                data = pd.read_csv(url)
+                return data
+            except:
+                datetimeobj = datetimeobj - timedelta(days=1)
+                attempts = attempts - 1
 
     def fetch_national(self):
         url = 'https://raw.githubusercontent.com/DataScienceScotland/COVID-19-Management-Information/master/COVID19' \
@@ -50,38 +58,18 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         testing_df = pd.read_csv(url, header=0, parse_dates=[0], names=['date', 'positive', 'total'], usecols=[0, 2, 3])
         return testing_df.merge(deaths_df, how='outer', on='date')
 
-    def fetch_local_authority_date(self):
-        url = 'https://services5.arcgis.com/fCRrQtNvX2pM5zRG/ArcGIS/rest/services/Scottish_Covid_Cases_and_Deaths' \
-              '/FeatureServer/1?f=pjson'
-        timestamp = requests.get(url).json().get('editingInfo').get('lastEditDate')
-        timestamp = timestamp // 1000
-        date = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
-        return date
-
-    def fetch_local_authority_data(self):
-        url = 'https://services5.arcgis.com/fCRrQtNvX2pM5zRG/arcgis/rest/services/Scottish_Covid_Cases_and_Deaths' \
-              '/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=json'
-        data = requests.get(url).json().get('features')
-        df = pd.DataFrame(columns=['lau', 'confirmedcases'])
-        for element in data:
-            lau = element.get('attributes').get('Name')
-            confirmedcases = element.get('attributes').get('TotalCases')
-            df = df.append({'lau': lau, 'confirmedcases': confirmedcases}, ignore_index=True)
-        return df
-
-    def fetch_local_authority_date_and_data(self):
-
-        date = self.fetch_local_authority_date()
-        data = self.fetch_local_authority_data()
-
-        # check date again to make sure the data didn't update after the date-check
-        if date != datetime.today().strftime('%Y-%m-%d'):
-            date_1 = self.fetch_local_authority_date()
-            if date != date_1:
-                date = date_1
-                data = self.fetch_local_authority_data()
-
-        return date, data
+    def fetch_local_authority(self):
+        datetimeobj = datetime.today()
+        attempts = 4
+        while attempts > 0:
+            try:
+                day = datetimeobj.strftime('Y%m%d')
+                url = f'https://www.opendata.nhs.scot/dataset/b318bddf-a4dc-4262-971f-0ba329e09b87/resource/427f9a25-db22-4014-a3bc-893b68243055/download/trend_ca_{day}.csv'
+                data = pd.read_csv(url)
+                return data
+            except:
+                datetimeobj = datetimeobj - timedelta(days=1)
+                attempts = attempts - 1
 
     def run(self):
         logger.debug('Fetching country-level information')
@@ -112,53 +100,15 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         data = self.fetch_health_board()
 
         for index, record in data.iterrows():
-            # date in first column, each health board in its own column
-            date = record[0]
-            for area in record.index[1:]:
-                totalcases = int(record[area]) if pd.notna(record[area]) else None
-
-                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                    input_adm_area_1='Scotland',
-                    input_adm_area_2=area,
-                    input_adm_area_3=None,
-                    return_original_if_failure=True
-                )
-
-                upsert_obj = {
-                    'source': self.SOURCE,
-                    'date': date,
-                    'country': 'United Kingdom',
-                    'countrycode': 'GBR',
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': adm_area_2,
-                    'confirmed': totalcases,
-                    'gid': gid
-                }
-
-                self.upsert_data(**upsert_obj)
-
-                # repeat this at level 3 for mapping consistence
-
-                upsert_obj['adm_area_3'] = adm_area_2
-                self.upsert_data(**upsert_obj)
-
-        '''
-        TURNED OFF PENDING ALTERNATIVE DATA SOURCE
-        NO DATA AT THIS LOCATION ANY MORE
-
-        logger.debug('Fetching local authority information')
-        date, data = self.fetch_local_authority_date_and_data()
-
-        for index, record in data.iterrows():
-            # date in first column, each health board in its own column
-
-            area = record['lau']
-            totalcases = int(record['confirmedcases']) if pd.notna(record['confirmedcases']) else None
+            date = datetime.strptime(str(record['Date']), '%Y%m%d').strftime('%Y-%m-%d')
+            input_adm_area_2 = record['HBName']
+            confirmed = record['CumulativePositive']
+            deaths = record['CumulativeDeaths']
+            tested = confirmed + record['CumulativeNegative']
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1='Scotland',
-                input_adm_area_2=area,
-                input_adm_area_3=None,
+                input_adm_area_2=input_adm_area_2,
                 return_original_if_failure=True
             )
 
@@ -169,9 +119,47 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
                 'countrycode': 'GBR',
                 'adm_area_1': adm_area_1,
                 'adm_area_2': adm_area_2,
-                'confirmed': totalcases,
+                'tested': tested,
+                'confirmed': confirmed,
+                'dead': deaths,
                 'gid': gid
             }
 
             self.upsert_data(**upsert_obj)
-            '''
+
+        logger.debug('Fetching local authority information')
+        data = self.fetch_local_authority()
+
+        for index, record in data.iterrows():
+            date = datetime.strptime(str(record['Date']),'%Y%m%d').strftime('%Y-%m-%d')
+            input_adm_area_2 = record['CAName']
+            confirmed = record['CumulativePositive']
+            deaths = record['CumulativeDeaths']
+            tested = confirmed + record['CumulativeNegative']
+
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1='Scotland',
+                input_adm_area_2=input_adm_area_2,
+                return_original_if_failure=True
+            )
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date,
+                'country': 'United Kingdom',
+                'countrycode': 'GBR',
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'tested': tested,
+                'confirmed': confirmed,
+                'dead': deaths,
+                'gid': gid
+            }
+
+            self.upsert_data(**upsert_obj)
+
+            # upsert this at level three as well for mapping
+            upsert_obj['adm_area_3'] = adm_area_2
+            upsert_obj['gid'] = [upsert_obj['gid'][0].split('_')[0] + '.1_1']
+            self.upsert_data(**upsert_obj)
+
