@@ -134,14 +134,7 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
             # do the upsert again for level 3
 
             if adm_area_2 != 'Unknown':
-                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                    input_adm_area_1='Northern Ireland',
-                    input_adm_area_2=lgd,
-                    input_adm_area_3=lgd,
-                    return_original_if_failure=True,
-                    suppress_exception=True
-                )
-                upsert_obj['adm_area_3'] = adm_area_3
+                upsert_obj['adm_area_3'] = adm_area_2
                 upsert_obj['gid'] = gid
                 self.upsert_data(**upsert_obj)
 
