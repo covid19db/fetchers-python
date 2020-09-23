@@ -40,6 +40,7 @@ class Config:
         self.load_env_variable("SLIDING_WINDOW_DAYS", fun=lambda x: int(x) if x else None)
         self.load_env_variable("RUN_ONLY_PLUGINS")
         self.load_env_variable("LOGLEVEL", "DEBUG")
+        self.load_env_variable("DIAGNOSTICS_URL")
         self.load_env_variable("SYS_EMAIL")
         self.load_env_variable("SYS_EMAIL_PASS")
         self.load_env_variable("SYS_EMAIL_SMTP")

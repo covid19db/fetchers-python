@@ -124,9 +124,12 @@ class Plugins:
 
     @timeit
     def run_plugins_job(self, data_adapter: AbstractAdapter):
+        Diagnostics.send_post_request(data={"type": "jobs_start", "ts": time.time()})
         for plugin in self.available_plugins:
             if self.should_run_plugin(plugin.__name__):
                 self.run_single_plugin(data_adapter, plugin)
+
+        Diagnostics.send_post_request(data={"type": "jobs_finish", "ts": time.time()})
 
     @timeit
     def run_single_plugin(self, data_adapter: AbstractAdapter, plugin: AbstractFetcher):

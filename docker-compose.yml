@@ -19,5 +19,6 @@ services:
       SYS_EMAIL: ${SYS_EMAIL}
       SYS_EMAIL_PASS: ${SYS_EMAIL_PASS}
       SYS_EMAIL_SMTP: ${SYS_EMAIL_SMTP}
+      DIAGNOSTICS_URL: ${DIAGNOSTICS_URL}
     volumes:
       - ./data:/src/data

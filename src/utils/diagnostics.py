@@ -1,3 +1,4 @@
+import requests
 from datetime import datetime
 from utils.fetcher.abstract_fetcher import AbstractFetcher
 from utils.config import config
@@ -27,3 +28,15 @@ class Diagnostics:
         }
         data_adapter = self.fetcher_instance.data_adapter
         data_adapter.upsert_diagnostics(**data)
+
+        self.send_post_request(data)
+
+    @staticmethod
+    def send_post_request(data):
+        if not config.DIAGNOSTICS_URL:
+            return
+
+        try:
+            r = requests.post(url=config.DIAGNOSTICS_URL, data=data)
+        except Exception as ex:
+            pass
