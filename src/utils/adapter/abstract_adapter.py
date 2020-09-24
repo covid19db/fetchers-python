@@ -25,14 +25,7 @@ logger = logging.getLogger(__name__)
 
 
 class AbstractAdapter(ABC):
-
-    @staticmethod
-    def check_if_gid_exists(kwargs: List) -> bool:
-        if not kwargs.get('gid'):
-            logger.warning(
-                f'GID is missing for: {kwargs.get("date")}, {kwargs.get("source")}, '
-                f'{kwargs.get("countrycode")}, {kwargs.get("adm_area_1")}, '
-                f'{kwargs.get("adm_area_2")}, {kwargs.get("adm_area_3")}, please correct your data')
+    MISSING_GIDS = set()
 
     @staticmethod
     def date_in_window(args: Dict) -> bool:
@@ -73,6 +66,17 @@ class AbstractAdapter(ABC):
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None):
         raise NotImplementedError()
+
+    def check_if_gid_exists(self, kwargs: List) -> bool:
+        if not kwargs.get('gid'):
+            missing = kwargs.get("source"), kwargs.get("countrycode"), kwargs.get("adm_area_1"), kwargs.get("adm_area_2"), kwargs.get("adm_area_3")
+            if missing not in self.MISSING_GIDS:
+                self.MISSING_GIDS.add(missing)
+
+    def publish_missing_gids(self):
+        if self.MISSING_GIDS:
+            for gid in self.MISSING_GIDS:
+                logger.warning(f'GID is missing for: {gid}, please correct your data')
 
     def upsert_data(self, fetcher_type: FetcherType, **kwargs):
         if not self.date_in_window(kwargs):

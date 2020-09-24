@@ -142,6 +142,7 @@ class Plugins:
                 data_adapter.truncate_staging()
             plugin_instance = plugin(data_adapter)
             plugin_instance.run()
+            data_adapter.publish_missing_gids()
             data_adapter.flush()
             validation_success = self.validate_consistency(plugin,
                                                            plugin_instance,
