@@ -69,40 +69,22 @@ def parseChartData(chart_element, debug_file):
     title = gtag.text
 
     # The body data
-    gtag = gtag.nextSibling
-    textTags = gtag.findAll("text")
-    textTagList = [tag.text for tag in textTags]
+    body = gtag.nextSibling
+    clipper = body.find("g")
+    circles = clipper.nextSibling
+    axisMarks = circles.nextSibling
 
+    # Starts with x-axis labels. These are dates
+    axisText = axisMarks.findAll("text")
+    textTagList = [tag.text for tag in axisText]
     with open(debug_file, "a+") as outF:
         print(textTagList, file = outF)
+    dates = [tag for tag in textTagList if isDate(tag)]
 
-    # Starts with x-axis labels. These are dates - we can isolate the final date
-    # Then y-axis labels are numbers - Large numbers will end in K
-    # Smaller numbers can be found by failure of monotonicity
-    # Then come the actual values
-
-    idx_list = []
-    size = len(textTagList)
-    legendEndFound = False
-    for idx, val in enumerate(textTagList):
-        if isDate(val) and not isDate(textTagList[idx + 1]):
-            idx_list.append(idx + 1)
-        if val[-1] == 'K' and textTagList[idx + 1][-1] != 'K':
-            idx_list.append(idx + 1)
-            legendEndFound = True
-    if not legendEndFound:
-        for idx, val in enumerate(textTagList):
-            if idx >= idx_list[-1]:
-                if float(textTagList[idx + 1].replace('.','').replace(',','.')) < float(val.replace('.','').replace(',','.')):
-                    idx_list.append(idx + 1)
-                    break
-
-    # Then split the list up at these header values
-    res = [textTagList[i: j] for i, j in
-           zip([0] + idx_list, idx_list +
-               ([size] if idx_list[-1] != size else []))]
-    dates = res[0]
-    values = res[2]
+    # Next come values
+    values = axisMarks.nextSibling
+    with open(debug_file, "a+") as outF:
+        print(values, file = outF)
 
     # Turn the values into numbers
     values = [int(value.replace('.', '')) for value in values]
