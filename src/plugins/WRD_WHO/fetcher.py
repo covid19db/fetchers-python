@@ -37,6 +37,7 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
 
     def run(self):
         data = self.fetch()
+        missing_country_codes = set()
 
         for index, record in data.iterrows():
 
@@ -50,7 +51,7 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
                 country_a2_code=country_a2_code)
 
             if pd.isna(countrycode):
-                logger.warning(f'Unable to process: {record}')
+                missing_country_codes.add(country_origin)
                 continue
 
             upsert_obj = {
@@ -67,3 +68,6 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
             }
 
             self.upsert_data(**upsert_obj)
+
+        for country in missing_country_codes:
+            logger.warning(f'Unable to find country code for {country}')
