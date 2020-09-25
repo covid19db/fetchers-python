@@ -82,7 +82,9 @@ def parseChartData(chart_element, debug_file):
     dates = [tag for tag in textTagList if isDate(tag)]
 
     # Next come values
-    values = axisMarks.nextSibling
+    valuesTag = axisMarks.nextSibling
+    valuesText = valuesTag.findAll("text")
+    values = [tag.text for tag in valuesText]
     with open(debug_file, "a+") as outF:
         print(values, file = outF)
 

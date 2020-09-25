@@ -122,7 +122,7 @@ class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
         return input_pd
 
     def run(self):
-        with open(self.DEBUG_LOG, "r+") as log_file:
+        with open(self.DEBUG_LOG, "a+") as log_file:
             log_file.truncate(0)
         self.wd_config()
         provinces = self.load_provinces_to_fetch()
