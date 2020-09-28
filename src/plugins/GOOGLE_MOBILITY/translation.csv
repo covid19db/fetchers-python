@@ -201,7 +201,7 @@ GBR,%,Angus Council,,Scotland,Angus,,GBR.3.3_1
 GBR,%,Ards and North Down,,Northern Ireland,North Down and Ards,,GBR.2.11_1
 GBR,%,Argyll and Bute Council,,Scotland,Argyll and Bute,,GBR.3.4_1
 GBR,%,"Armagh City, Banbridge and Craigavon",,Northern Ireland,"Armagh, Banbridge and Craigavon",,GBR.2.2_1
-GBR,%,Bedford,,England,Bedfordshire,Bedford,GBR.1.3.1_1
+GBR,%,Bedford,,England,Bedfordshire,GBR.1.3_1
 GBR,%,Borough of Halton,,England,Halton,,GBR.1.37_1
 GBR,%,Bridgend County Borough,,Wales,Bridgend,,GBR.4.3_1
 GBR,%,Caerphilly County Borough,,Wales,Caerphilly,,GBR.4.4_1
@@ -234,7 +234,9 @@ GBR,%,West Midlands,,%,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1
 GBR,%,West Yorkshire,,%,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
 GBR,%,Wrexham Principal Area,,Wales,Wrexham,,GBR.4.22_1
 GBR,%,Bristol City,,England,Bristol,,GBR.1.12_1
-
+GBR,%,Dorset,,England,Dorset,,GBR.1.8_1:GBR.1.28_1:GBR.1.72_1
+GBR,%,Manchester,,England,Greater Manchester,,GBR.1.7_1:GBR.1.14_1:GBR.1.54_1:GBR.1.68_1:GBR.1.76_1:GBR.1.80_1:GBR.1.93_1:GBR.1.100_1:GBR.1.104_1:GBR.1.111_1
+GBR,%,Shropshire,,England,Shropshire,,GBR.1.84_1:GBR.1.101_1
 # HRV
 HRV,Bjelovar-Bilogora,,,Bjelovar-Bilogora,,,HRV.1_1
 HRV,Brod-Posavina,,,Brod-Posavina,,,HRV.2_1

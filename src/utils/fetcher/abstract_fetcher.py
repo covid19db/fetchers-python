@@ -42,20 +42,20 @@ class AbstractFetcher(ABC):
 
     def get_region(self, countrycode: str, input_adm_area_1: str = None, input_adm_area_2: str = None,
                    input_adm_area_3: str = None, suppress_exception: bool = False):
-        try:
-            # Check if input data can be matched directly into administrative division table
-            country, adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
-        except Exception as ex:
-            adm_area_1, adm_area_2, adm_area_3, gid = None, None, None, None
+        # Check first if input data can be matched to translate.csv
+        success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+            countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3,
+            return_original_if_failure=False,
+            suppress_exception=True
+        )
 
-        if not gid:
-            # Check translate.csv for translation
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3,
-                return_original_if_failure=False,
-                suppress_exception=suppress_exception
-            )
+        if not success:
+            try:
+                # Check if input data can be matched directly into administrative division table
+                country, adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(
+                    countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3)
+            except Exception as ex:
+                adm_area_1, adm_area_2, adm_area_3, gid = input_adm_area_1, input_adm_area_2, input_adm_area_3, None
 
         return adm_area_1, adm_area_2, adm_area_3, gid
 
