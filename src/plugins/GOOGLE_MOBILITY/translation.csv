@@ -217,7 +217,7 @@ GBR,%,Glasgow City,,Scotland,Glasgow,,GBR.3.16_1
 GBR,%,Greater Manchester,,England,Manchester,,GBR.1.54_1
 GBR,%,Highland Council,,Scotland,Highland,,GBR.3.17_1
 GBR,%,Isle of Anglesey,,Wales,Anglesey,,GBR.4.1_1
-GBR,%,Merseyside,,%,Merseyside,,GBR.1.47_1:GBR.1.79_1:GBR.1.82_1:GBR.1.114_1
+GBR,%,Merseyside,,England,Merseyside,,GBR.1.47_1:GBR.1.79_1:GBR.1.82_1:GBR.1.114_1
 GBR,%,Merthyr Tydfil County Borough,,Wales,Merthyr Tydfil,,GBR.4.12_1
 GBR,%,Na h-Eileanan an Iar,,Scotland,Eilean Siar,,GBR.3.13_1
 GBR,%,Neath Port Talbot Principle Area,,Wales,Neath Port Talbot,,GBR.4.14_1
@@ -226,12 +226,12 @@ GBR,%,North East Lincolnshire,,England,Lincolnshire,North East Lincolnshire,GBR.
 GBR,%,Orkney,,Scotland,Orkney Islands,,GBR.3.23_1
 GBR,%,Perth and Kinross,,Scotland,Perthshire and Kinross,,GBR.3.24_1
 GBR,%,South Ayrshire Council,,Scotland,South Ayrshire,,GBR.3.28_1
-GBR,%,South Yorkshire,,%,South Yorkshire,,GBR.1.1_1:GBR.1.27_1:GBR.1.77_1:GBR.1.83_1
+GBR,%,South Yorkshire,,England,South Yorkshire,,GBR.1.1_1:GBR.1.27_1:GBR.1.77_1:GBR.1.83_1
 GBR,%,Torfaen Principal Area,,Wales,Torfaen,,GBR.4.20_1
-GBR,%,Tyne and Wear,,%,Tyne and Wear,,GBR.1.34_1:GBR.1.58_1:GBR.1.62_1:GBR.1.89_1:GBR.1.97_1
+GBR,%,Tyne and Wear,,England,Tyne and Wear,,GBR.1.34_1:GBR.1.58_1:GBR.1.62_1:GBR.1.89_1:GBR.1.97_1
 GBR,%,West Dunbartonshire Council,,Scotland,West Dunbartonshire,,GBR.3.31_1
-GBR,%,West Midlands,,%,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1:GBR.1.86_1:GBR.1.106_1:GBR.1.116_1
-GBR,%,West Yorkshire,,%,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
+GBR,%,West Midlands,,England,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1:GBR.1.86_1:GBR.1.106_1:GBR.1.116_1
+GBR,%,West Yorkshire,,England,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
 GBR,%,Wrexham Principal Area,,Wales,Wrexham,,GBR.4.22_1
 GBR,%,Bristol City,,England,Bristol,,GBR.1.12_1
 GBR,%,Dorset,,England,Dorset,,GBR.1.8_1:GBR.1.28_1:GBR.1.72_1
