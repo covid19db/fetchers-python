@@ -26,10 +26,10 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data from Public Health England'''
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHE'  # Public Health England
-    START_DATE = 'date>2020-02-28'
+    START_DATE = '2020-02-28'
 
     def fetch_uk(self):
-        uk = ['areaType=overview', self.START_DATE]
+        uk = ['areaType=overview', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
         cases_and_deaths = {
             "date": "date",
@@ -46,7 +46,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         return data
 
     def fetch_nation(self):
-        nation = ['areaType=nation', 'areaName=England', self.START_DATE]
+        nation = ['areaType=nation', 'areaName=England', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
         cases_and_deaths = {
             "date": "date",
@@ -63,7 +63,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         return data
 
     def fetch_utla(self):
-        utla = ['areaType=utla', self.START_DATE]
+        utla = ['areaType=utla', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
         cases = {
             "date": "date",
@@ -80,7 +80,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         return data
 
     def fetch_ltla(self):
-        ltla = ['areaType=ltla', self.START_DATE]
+        ltla = ['areaType=ltla', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
         cases = {
             "date": "date",
@@ -128,7 +128,6 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
             }
 
             self.upsert_data(**upsert_obj)
-
 
     def run(self):
 

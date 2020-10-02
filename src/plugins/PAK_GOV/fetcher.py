@@ -48,6 +48,9 @@ class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.wd = webdriver.Chrome(chrome_options=chrome_options)
+        self.wd.set_page_load_timeout(300)
+        self.wd.set_script_timeout(60)
+        self.wd.implicitly_wait(5)
 
     def fetch(self, url):
         self.wd.get(url)
@@ -133,6 +136,7 @@ class PAK_GOV_Fetcher(BaseEpidemiologyFetcher):
                 total_failure = False
             except:
                 logging.warning(f'Fetcher failed for {record["province"]}, may work next time', exc_info=True)
+                break
         self.wd.quit()
         if total_failure:
-            raise Exception('No provinces could be fetched for Pakistan')
+            logging.warning('No provinces could be fetched for Pakistan')
