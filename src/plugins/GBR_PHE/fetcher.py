@@ -65,34 +65,36 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
     def fetch_utla(self):
         utla = ['areaType=utla', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
-        cases = {
+        cases_and_deaths = {
             "date": "date",
             "areaName": "areaName",
             "areaType": "areaType",
             "areaCode": "areaCode",
             "cases": "cumCasesBySpecimenDate",
             "tests": "cumTestsByPublishDate",
-            "cumAdmissions": "cumAdmissions"
+            "cumAdmissions": "cumAdmissions",
+            "deaths": "cumDeaths28DaysByDeathDate"
         }
 
-        api = Cov19API(filters=utla, structure=cases)
+        api = Cov19API(filters=utla, structure=cases_and_deaths)
         data = api.get_json()
         return data
 
     def fetch_ltla(self):
         ltla = ['areaType=ltla', 'date>' + self.get_first_date_to_fetch(self.START_DATE)]
 
-        cases = {
+        cases_and_deaths = {
             "date": "date",
             "areaName": "areaName",
             "areaType": "areaType",
             "areaCode": "areaCode",
             "cases": "cumCasesBySpecimenDate",
             "tests": "cumTestsByPublishDate",
-            "cumAdmissions": "cumAdmissions"
+            "cumAdmissions": "cumAdmissions",
+            "deaths": "cumDeaths28DaysByDeathDate"
         }
 
-        api = Cov19API(filters=ltla, structure=cases)
+        api = Cov19API(filters=ltla, structure=cases_and_deaths)
         data = api.get_json()
         return data
 
