@@ -29,7 +29,7 @@ class IndonesiaFetcher(BaseEpidemiologyFetcher):
     SOURCE = 'IDN_GTPPC'
 
     def fetch(self, url):
-        data = requests.get(url).json()
+        data = requests.get(url, timeout=60).json()
         df = pd.DataFrame(data["list_perkembangan"])
         return df
 
@@ -37,7 +37,7 @@ class IndonesiaFetcher(BaseEpidemiologyFetcher):
         logger.info("Processing total number of cases in Indonesia")
 
         url = 'https://data.covid19.go.id/public/api/update.json'
-        data = requests.get(url).json()
+        data = requests.get(url, timeout=60).json()
 
         # Extract relevant portion of json file
         df = pd.DataFrame(data["update"]["harian"])
@@ -84,7 +84,7 @@ class IndonesiaFetcher(BaseEpidemiologyFetcher):
                 continue
 
             url = 'https://data.covid19.go.id/public/api/prov_detail_' + province + '.json'
-            data = self.fetch(url)
+            data = self.fetch(url, timeout=60)
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=province,

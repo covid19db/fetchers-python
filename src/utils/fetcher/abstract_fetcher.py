@@ -14,6 +14,7 @@
 
 import os
 import sys
+from datetime import datetime, timedelta
 from abc import ABC, abstractmethod
 
 __all__ = ('AbstractFetcher')
@@ -34,6 +35,13 @@ class AbstractFetcher(ABC):
         self.country_codes_translator = CountryCodesTranslator()
         self.sliding_window_days = config.SLIDING_WINDOW_DAYS
         self.data_adapter = data_adapter
+
+    def get_first_date_to_fetch(self, initial_date: str) -> str:
+        if self.sliding_window_days:
+            date_from = (datetime.now() - timedelta(days=self.sliding_window_days)).strftime('%Y-%m-%d')
+        else:
+            date_from = initial_date
+        return date_from
 
     def load_adm_translator(self) -> AdmTranslator:
         translation_csv_fname = getattr(self.__class__, 'TRANSLATION_CSV', "translation.csv")
