@@ -45,7 +45,7 @@ class PolandRogalskiFetcher(BaseEpidemiologyFetcher):
                 if column_index < 3 or col_name in ['Kod', 'Nazwa']:  # Skip first 3 columns
                     continue
 
-                if not col_name or not col_data:
+                if not col_name or not col_data or not col_data.replace(' ',''):
                     continue
 
                 upsert_obj = {
@@ -71,7 +71,6 @@ class PolandRogalskiFetcher(BaseEpidemiologyFetcher):
     def run(self):
         # https://docs.google.com/spreadsheets/u/0/d/1Tv6jKMUYdK6ws6SxxAsHVxZbglZfisC8x_HZ1jacmBM
         SPREAD_SHEET_ID = '1Tv6jKMUYdK6ws6SxxAsHVxZbglZfisC8x_HZ1jacmBM'
-
         google_sheet = GoogleSpreadsheet(logger, config.GOOGLE_API_KEY)
         region_mapping = RegionMapping(self.data_adapter.conn)
 

@@ -20,5 +20,6 @@ services:
       SYS_EMAIL_PASS: ${SYS_EMAIL_PASS}
       SYS_EMAIL_SMTP: ${SYS_EMAIL_SMTP}
       DIAGNOSTICS_URL: ${DIAGNOSTICS_URL}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
     volumes:
       - ./data:/src/data

@@ -13,4 +13,5 @@ tika==1.24
 uk_covid19==1.2.0
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.12.0
-
+httplib2
+google-spreadsheet==0.0.6
