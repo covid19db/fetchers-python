@@ -13,10 +13,7 @@
 # limitations under the License.
 
 import logging
-import pandas as pd
 from uk_covid19 import Cov19API
-from datetime import datetime
-import requests
 
 __all__ = ('EnglandFetcher',)
 
@@ -101,11 +98,6 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
         data = api.get_json()
         return data
 
-    def fetch_msoa(self):
-        url = 'https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.json'
-        data = requests.get(url).json()
-        return data["data"]
-
     def upsert_uk_data(self, data):
         for record in data:
 
@@ -139,51 +131,9 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
 
             self.upsert_data(**upsert_obj)
 
-    def week_parse(self, week_number):
-        ''' take a week number and return Monday in form 2020-MM-DD'''
-        # datetime does not follow ISO week number definitions, need offset
-        week_number = week_number - 1
-        d = '2020-' + str(week_number) + '-0'
-        r = datetime.strptime(d, "%Y-%W-%w").strftime('%Y-%m-%d')
-        return r
-
-    def upsert_msoa_data(self):
-        json_object = self.fetch_msoa()
-
-        for record in json_object:
-            adm_area_2 = record.get('lad19_nm')
-            adm_area_3 = record.get('msoa11_hclnm')
-            gid = record.get('msoa11_cd')
-            case_data = record.get('msoa_data')
-            for week in case_data:
-                week_number = week.get('week')
-                confirmed = week.get('value')
-                date = self.week_parse(week_number)
-                if confirmed == -99:
-                    confirmed = None
-
-                # we need to build an object containing the data we want to add or update
-                upsert_obj = {
-                    'source': self.SOURCE,
-                    'date': date,
-                    'country': 'United Kingdom',
-                    'countrycode': 'GBR',
-                    'adm_area_1': 'England',
-                    'adm_area_2': adm_area_2,
-                    'adm_area_3': adm_area_3,
-                    'confirmed': confirmed,
-                    'gid': [gid]
-                }
-
-                self.upsert_data(**upsert_obj)
-
-
-
     def run(self):
 
-        '''methods = [self.fetch_uk, self.fetch_nation, self.fetch_utla, self.fetch_ltla]
+        methods = [self.fetch_uk, self.fetch_nation, self.fetch_utla, self.fetch_ltla]
         for method in methods:
             data = method()['data']
             self.upsert_uk_data(data)
-        '''
-        self.upsert_msoa_data()
