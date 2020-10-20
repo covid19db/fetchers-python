@@ -15,6 +15,9 @@
 import logging
 from datetime import datetime
 import requests
+import os
+import sys
+import csv
 
 __all__ = ('EnglandMSOAFetcher',)
 
@@ -32,9 +35,6 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
     SOURCE = 'GBR_PHE'  # Public Health England
     START_DATE = '2020-02-28'
 
-    def upsert_data(self, **kwargs):
-        self.data_adapter.upsert_data(self.TYPE, **kwargs)
-
     def fetch_msoa(self):
         url = 'https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.json'
         data = requests.get(url).json()
@@ -48,15 +48,36 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
         r = datetime.strptime(d, "%Y-%W-%w").strftime('%Y-%m-%d')
         return r
 
+    def fetch_population(self):
+        # fetch population data from a csv file
+        # the data in the csv file originates from https://www.ons.gov.uk/peoplepopulationandcommunity/
+        # populationandmigration/populationestimates/datasets/
+        # middlesuperoutputareamidyearpopulationestimatesnationalstatistics
+        input_csv_fname = 'population.csv'
+        path = os.path.dirname(sys.modules[self.__class__.__module__].__file__)
+        csv_fname = os.path.join(path, input_csv_fname)
+        if not os.path.exists(csv_fname):
+            return None
+        with open(csv_fname) as f:
+            d = dict(filter(None, csv.reader(f)))
+        return d
+
     def upsert_msoa_data(self):
         json_object = self.fetch_msoa()
+        population_data = self.fetch_population()
 
         for record in json_object:
-            adm_area_2 = record.get('utla19_nm')
-            adm_area_3 = record.get('lad19_nm')
             msoa = record.get('msoa11_hclnm')
             msoa_code = record.get('msoa11_cd')
             case_data = record.get('msoa_data')
+            if msoa == 'unallocated':
+                adm_area_2 = 'unallocated'
+                adm_area_3 = 'unallocated'
+                population = None
+            else:
+                adm_area_2 = record.get('utla19_nm')
+                adm_area_3 = record.get('lad19_nm')
+                population = int(population_data.get(msoa_code,0))
             for week in case_data:
                 week_number = week.get('week')
                 confirmed = week.get('value')
@@ -75,7 +96,8 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
                     'adm_area_3': adm_area_3,
                     'msoa': msoa,
                     'msoa_code': msoa_code,
-                    'confirmed': confirmed
+                    'confirmed': confirmed,
+                    'population': population
                 }
 
                 self.upsert_data(**upsert_obj)
