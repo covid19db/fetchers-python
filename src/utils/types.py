@@ -6,3 +6,4 @@ class FetcherType(Enum):
     GOVERNMENT_RESPONSE = 'government_response'
     MOBILITY = 'mobility'
     WEATHER = 'weather'
+    EPIDEMIOLOGY_MSOA = 'epidemiology_england_msoa'

@@ -86,6 +86,8 @@ class AbstractAdapter(ABC):
 
         if fetcher_type == FetcherType.EPIDEMIOLOGY:
             return self.upsert_epidemiology_data(table_name, **kwargs)
+        elif fetcher_type == FetcherType.EPIDEMIOLOGY_MSOA:
+            return self.upsert_epidemiology_data(table_name, **kwargs)
         elif fetcher_type == FetcherType.MOBILITY:
             return self.upsert_mobility_data(table_name, **kwargs)
         elif fetcher_type == FetcherType.GOVERNMENT_RESPONSE:
