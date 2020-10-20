@@ -68,7 +68,7 @@ class AbstractAdapter(ABC):
         raise NotImplementedError()
 
     def check_if_gid_exists(self, kwargs: List) -> bool:
-        if not kwargs.get('gid'):
+        if not kwargs.get('gid') and not kwargs.get('msoa'):
             missing = kwargs.get("source"), kwargs.get("countrycode"), kwargs.get("adm_area_1"), kwargs.get("adm_area_2"), kwargs.get("adm_area_3")
             if missing not in self.MISSING_GIDS:
                 self.MISSING_GIDS.add(missing)

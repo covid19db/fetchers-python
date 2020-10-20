@@ -121,7 +121,10 @@ class CSVFileHelper(AbstractAdapter):
             (self.temp_df.adm_area_1 == data.get('adm_area_1')) & \
             (self.temp_df.adm_area_2 == data.get('adm_area_2')) & \
             (self.temp_df.adm_area_3 == data.get('adm_area_3'))
-            ].index.tolist()
+            ]
+        if data_type == 'epidemiology_england_msoa':
+            row = row[(self.temp_df.msoa == data.get('msoa'))]
+        row = row.index.tolist()
 
         if row:
             series = self.temp_df.iloc[row[0]]
