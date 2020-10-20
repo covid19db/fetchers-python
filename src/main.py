@@ -32,10 +32,11 @@ def main():
 
     # run once
     plugins.run_plugins_job(data_adapter=data_adapter)
-    # run every day at 2am and 2pm
+    # run 4 times a day
     schedule.every().day.at("02:00").do(plugins.run_plugins_job, data_adapter=data_adapter)
+    schedule.every().day.at("06:00").do(plugins.run_plugins_job, data_adapter=data_adapter)
     schedule.every().day.at("14:00").do(plugins.run_plugins_job, data_adapter=data_adapter)
-
+    schedule.every().day.at("18:00").do(plugins.run_plugins_job, data_adapter=data_adapter)
     logger.debug('Run schedule job every day at 02:00 and 14:00')
     while True:
         schedule.run_pending()
