@@ -60,6 +60,11 @@ colnames = {
         'adm_area_2', 'adm_area_3', 'gid', 'tested', 'confirmed',
         'recovered', 'dead', 'hospitalised', 'hospitalised_icu', 'quarantined'
     ],
+    'epidemiology_england_msoa': [
+        'source', 'date', 'country', 'countrycode', 'adm_area_1',
+        'adm_area_2', 'adm_area_3', 'msoa', 'msoa_code', 'confirmed',
+        'dead', 'population'
+    ],
     'mobility': [
         'source', 'date', 'country', 'countrycode', 'adm_area_1',
         'adm_area_2', 'adm_area_3', 'gid', 'transit_stations', 'residential',
