@@ -181,9 +181,10 @@ class PostgresqlHelper(AbstractAdapter):
         ]
         self.upsert_table_data(table_name, government_response_data_fields, **kwargs)
 
-    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', **kwargs):
-        data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
-                     'recovered']
+    def upsert_epidemiology_data(self, table_name: str = 'epidemiology', data_keys: list = None, **kwargs):
+        if not data_keys:
+            data_keys = ['gid', 'tested', 'confirmed', 'quarantined', 'hospitalised', 'hospitalised_icu', 'dead',
+                         'recovered']
         self.upsert_table_data(table_name, data_keys, **kwargs)
 
     def upsert_mobility_data(self, table_name: str = 'mobility', **kwargs):

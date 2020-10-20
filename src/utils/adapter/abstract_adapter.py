@@ -69,7 +69,8 @@ class AbstractAdapter(ABC):
 
     def check_if_gid_exists(self, kwargs: List) -> bool:
         if not kwargs.get('gid') and not kwargs.get('msoa'):
-            missing = kwargs.get("source"), kwargs.get("countrycode"), kwargs.get("adm_area_1"), kwargs.get("adm_area_2"), kwargs.get("adm_area_3")
+            missing = kwargs.get("source"), kwargs.get("countrycode"), kwargs.get("adm_area_1"), kwargs.get(
+                "adm_area_2"), kwargs.get("adm_area_3")
             if missing not in self.MISSING_GIDS:
                 self.MISSING_GIDS.add(missing)
 
@@ -87,7 +88,8 @@ class AbstractAdapter(ABC):
         if fetcher_type == FetcherType.EPIDEMIOLOGY:
             return self.upsert_epidemiology_data(table_name, **kwargs)
         elif fetcher_type == FetcherType.EPIDEMIOLOGY_MSOA:
-            return self.upsert_epidemiology_data(table_name, **kwargs)
+            data_keys = ['msoa', 'msoa_code', 'confirmed', 'dead', 'population']
+            return self.upsert_epidemiology_data(table_name, data_keys, **kwargs)
         elif fetcher_type == FetcherType.MOBILITY:
             return self.upsert_mobility_data(table_name, **kwargs)
         elif fetcher_type == FetcherType.GOVERNMENT_RESPONSE:

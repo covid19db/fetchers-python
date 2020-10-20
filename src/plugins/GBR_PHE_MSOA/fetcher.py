@@ -77,7 +77,7 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
             else:
                 adm_area_2 = record.get('utla19_nm')
                 adm_area_3 = record.get('lad19_nm')
-                population = int(population_data.get(msoa_code,0))
+                population = int(population_data.get(msoa_code, 0))
             for week in case_data:
                 week_number = week.get('week')
                 confirmed = week.get('value')
@@ -101,8 +101,6 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
                 }
 
                 self.upsert_data(**upsert_obj)
-
-
 
     def run(self):
 
