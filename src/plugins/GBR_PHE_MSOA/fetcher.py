@@ -69,6 +69,7 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
         for record in json_object:
             msoa = record.get('msoa11_hclnm')
             msoa_code = record.get('msoa11_cd')
+            confirmed = 0
             case_data = record.get('msoa_data')
             if msoa == 'unallocated':
                 adm_area_2 = 'unallocated'
@@ -78,12 +79,13 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
                 adm_area_2 = record.get('utla19_nm')
                 adm_area_3 = record.get('lad19_nm')
                 population = int(population_data.get(msoa_code, 0))
+
             for week in case_data:
                 week_number = week.get('week')
-                confirmed = week.get('value')
+                new_cases = week.get('value')
                 date = self.week_parse(week_number)
-                if confirmed == -99:
-                    confirmed = None
+                new_cases = 0 if new_cases == -99 else new_cases
+                confirmed = confirmed + new_cases
 
                 # we need to build an object containing the data we want to add or update
                 upsert_obj = {
@@ -96,7 +98,7 @@ class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
                     'adm_area_3': adm_area_3,
                     'msoa': msoa,
                     'msoa_code': msoa_code,
-                    'confirmed': confirmed,
+                    'confirmed': None if confirmed == 0 else confirmed,
                     'population': population
                 }
 
