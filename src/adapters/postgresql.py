@@ -129,10 +129,15 @@ class PostgresqlHelper(AbstractAdapter):
 
     def upsert_table_data(self, table_name: str, data_keys: List, **kwargs):
         self.check_if_gid_exists(kwargs)
+        target = ["date", "country", "countrycode", "COALESCE(adm_area_1, '')", "COALESCE(adm_area_2, '')",
+                  "COALESCE(adm_area_3, '')", "source"]
+
+        if 'msoa' in data_keys:
+            target.append('msoa')
+
         sql_query = sql.SQL("""INSERT INTO {table_name} ({insert_keys}) VALUES ({insert_data})
                                 ON CONFLICT
-                                    (date, country, countrycode, COALESCE(adm_area_1, ''), COALESCE(adm_area_2, ''),
-                                     COALESCE(adm_area_3, ''), source)
+                                    (""" + ",".join(target) + """)
                                 DO
                                     UPDATE SET {update_data}
                                 RETURNING *""").format(
