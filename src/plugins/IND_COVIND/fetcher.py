@@ -36,19 +36,19 @@ class IndiaCOVINDFetcher(BaseEpidemiologyFetcher):
     def fetch_cases(self):
         url = 'https://api.covid19india.org/csv/latest/case_time_series.csv'
         return pd.read_csv(url,
-                           index_col=0,
-                           usecols=[0, 2, 4, 6],
-                           parse_dates=[0],
-                           date_parser=lambda d: pd.to_datetime(d + '2020', format='%d %B %Y'))
+                           index_col='Date_YMD',
+                           usecols=['Date_YMD', 'Total Confirmed', 'Total Recovered', 'Total Deceased'],
+                           parse_dates=['Date_YMD'],
+                           date_parser=lambda d: pd.to_datetime(d, format='%Y-%m-%d'))
 
     def fetch_tested(self):
         url = 'https://api.covid19india.org/csv/latest/tested_numbers_icmr_data.csv'
 
         # Return the last update on each day
         return pd.read_csv(url,
-                           index_col=0,
-                           usecols=[0, 2],
-                           parse_dates=[0],
+                           index_col='Update Time Stamp',
+                           usecols=['Update Time Stamp', 'Total Samples Tested'],
+                           parse_dates=['Update Time Stamp'],
                            date_parser=lambda d: pd.to_datetime(d[:10], format='%d/%m/%Y')) \
             .dropna() \
             .groupby(level=0) \
@@ -59,13 +59,13 @@ class IndiaCOVINDFetcher(BaseEpidemiologyFetcher):
 
         # Return cumulative sums for each state
         return pd.read_csv(url,
-                           index_col=[0, 1],
-                           usecols=[c for c in range(40) if c != 2],
-                           parse_dates=[0],
-                           date_parser=lambda d: pd.to_datetime(d, format='%d-%b-%y')) \
+                           index_col=['Date_YMD', 'Status'],
+                           usecols=[c for c in range(1, 41) if c != 3],
+                           parse_dates=['Date_YMD'],
+                           date_parser=lambda d: pd.to_datetime(d, format='%Y-%m-%d')) \
             .rename(columns=iso_3166_2_in) \
             .unstack(level=1) \
-            .apply(pd.Series.cumsum) \
+            .cumsum() \
             .stack(level=0)
 
     def fetch_state_tested(self):
@@ -73,9 +73,9 @@ class IndiaCOVINDFetcher(BaseEpidemiologyFetcher):
 
         # Return the last update on each day for each state
         return pd.read_csv(url,
-                           index_col=[0, 1],
-                           usecols=[0, 1, 2],
-                           parse_dates=[0],
+                           index_col=['Updated On', 'State'],
+                           usecols=['Updated On', 'State', 'Total Tested'],
+                           parse_dates=['Updated On'],
                            date_parser=lambda d: pd.to_datetime(d, format='%d/%m/%Y')) \
             .dropna() \
             .groupby(level=[0, 1]) \
