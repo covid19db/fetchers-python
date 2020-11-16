@@ -195,48 +195,6 @@ FIN,Southern Savonia,,,Southern Savonia,,,FIN.1.4_1
 FIN,Southwest Finland,,,Southwest Finland,,,FIN.5.3_1
 FIN,Tavastia Proper,,,Tavastia Proper,,,FIN.5.9_1
 FIN,Uusimaa,,,Uusimaa,,,FIN.4.1_1:FIN.4.5_1
-# GBR
-GBR,%,Aberdeen City,,Scotland,Aberdeen,,GBR.3.1_1
-GBR,%,Angus Council,,Scotland,Angus,,GBR.3.3_1
-GBR,%,Ards and North Down,,Northern Ireland,North Down and Ards,,GBR.2.11_1
-GBR,%,Argyll and Bute Council,,Scotland,Argyll and Bute,,GBR.3.4_1
-GBR,%,"Armagh City, Banbridge and Craigavon",,Northern Ireland,"Armagh, Banbridge and Craigavon",,GBR.2.2_1
-GBR,%,Bedford,,England,Bedfordshire,GBR.1.3_1
-GBR,%,Borough of Halton,,England,Halton,,GBR.1.37_1
-GBR,%,Bridgend County Borough,,Wales,Bridgend,,GBR.4.3_1
-GBR,%,Caerphilly County Borough,,Wales,Caerphilly,,GBR.4.4_1
-GBR,%,City of Bristol,,England,Bristol,,GBR.1.12_1
-GBR,%,Conwy Principal Area,,Wales,Conwy,,GBR.4.8_1
-GBR,%,County Durham,,England,Durham,,GBR.1.30_1
-GBR,%,Dundee City Council,,Scotland,Dundee,,GBR.3.7_1
-GBR,%,East Ayrshire Council,,Scotland,East Ayrshire,,GBR.3.8_1
-GBR,%,East Dunbartonshire Council,,Scotland,East Dunbartonshire,,GBR.3.9_1
-GBR,%,East Lothian Council,,Scotland,East Lothian,,GBR.3.10_1
-GBR,%,East Renfrewshire Council,,Scotland,East Renfrewshire,,GBR.3.11_1
-GBR,%,Glasgow City,,Scotland,Glasgow,,GBR.3.16_1
-GBR,%,Greater Manchester,,England,Manchester,,GBR.1.54_1
-GBR,%,Highland Council,,Scotland,Highland,,GBR.3.17_1
-GBR,%,Isle of Anglesey,,Wales,Anglesey,,GBR.4.1_1
-GBR,%,Merseyside,,England,Merseyside,,GBR.1.47_1:GBR.1.79_1:GBR.1.82_1:GBR.1.114_1
-GBR,%,Merthyr Tydfil County Borough,,Wales,Merthyr Tydfil,,GBR.4.12_1
-GBR,%,Na h-Eileanan an Iar,,Scotland,Eilean Siar,,GBR.3.13_1
-GBR,%,Neath Port Talbot Principle Area,,Wales,Neath Port Talbot,,GBR.4.14_1
-GBR,%,North Ayrshire Council,,Scotland,North Ayrshire,,GBR.3.21_1
-GBR,%,North East Lincolnshire,,England,Lincolnshire,North East Lincolnshire,GBR.1.52.4_1
-GBR,%,Orkney,,Scotland,Orkney Islands,,GBR.3.23_1
-GBR,%,Perth and Kinross,,Scotland,Perthshire and Kinross,,GBR.3.24_1
-GBR,%,South Ayrshire Council,,Scotland,South Ayrshire,,GBR.3.28_1
-GBR,%,South Yorkshire,,England,South Yorkshire,,GBR.1.1_1:GBR.1.27_1:GBR.1.77_1:GBR.1.83_1
-GBR,%,Torfaen Principal Area,,Wales,Torfaen,,GBR.4.20_1
-GBR,%,Tyne and Wear,,England,Tyne and Wear,,GBR.1.34_1:GBR.1.58_1:GBR.1.62_1:GBR.1.89_1:GBR.1.97_1
-GBR,%,West Dunbartonshire Council,,Scotland,West Dunbartonshire,,GBR.3.31_1
-GBR,%,West Midlands,,England,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1:GBR.1.86_1:GBR.1.106_1:GBR.1.116_1
-GBR,%,West Yorkshire,,England,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
-GBR,%,Wrexham Principal Area,,Wales,Wrexham,,GBR.4.22_1
-GBR,%,Bristol City,,England,Bristol,,GBR.1.12_1
-GBR,%,Dorset,,England,Dorset,,GBR.1.8_1:GBR.1.28_1:GBR.1.72_1
-GBR,%,Manchester,,England,Greater Manchester,,GBR.1.7_1:GBR.1.14_1:GBR.1.54_1:GBR.1.68_1:GBR.1.76_1:GBR.1.80_1:GBR.1.93_1:GBR.1.100_1:GBR.1.104_1:GBR.1.111_1
-GBR,%,Shropshire,,England,Shropshire,,GBR.1.84_1:GBR.1.101_1
 # HRV
 HRV,Bjelovar-Bilogora,,,Bjelovar-Bilogora,,,HRV.1_1
 HRV,Brod-Posavina,,,Brod-Posavina,,,HRV.2_1
@@ -503,7 +461,7 @@ CMR,Northwest,,,Nord-Ouest,,,CMR.6_1
 CMR,South,,,Sud,,,CMR.10_1
 CMR,Southwest,,,Sud-Ouest,,,CMR.9_1
 CMR,West,,,Ouest,,,CMR.8_1
-
+# DOM
 DOM,Baoruco,,,Bahoruco,,,DOM.2_1
 DOM,El Seibo,,,El Seybo,,,DOM.7_1
 DOM,Hermanas Mirabal,,,Salcedo,,,DOM.22_1
@@ -697,3 +655,47 @@ VNM,Tien Giang,,,Tiền Giang,,,VNM.58_1
 VNM,Tra Vinh,,,Trà Vinh,,,VNM.59_1
 VNM,Vinh Long,,,Vĩnh Long,,,VNM.61_1
 VNM,Vinh Phuc,,,Vĩnh Phúc,,,VNM.62_1
+# GBR
+GBR,%,Aberdeen City,,Scotland,Aberdeen,,GBR.3.1_1
+GBR,%,Angus Council,,Scotland,Angus,,GBR.3.3_1
+GBR,%,Ards and North Down,,Northern Ireland,North Down and Ards,,GBR.2.11_1
+GBR,%,Argyll and Bute Council,,Scotland,Argyll and Bute,,GBR.3.4_1
+GBR,%,"Armagh City, Banbridge and Craigavon",,Northern Ireland,"Armagh, Banbridge and Craigavon",,GBR.2.2_1
+GBR,%,Bedford,,England,Bedfordshire,,GBR.1.3_1
+GBR,%,Borough of Halton,,England,Halton,,GBR.1.37_1
+GBR,%,Bridgend County Borough,,Wales,Bridgend,,GBR.4.3_1
+GBR,%,Caerphilly County Borough,,Wales,Caerphilly,,GBR.4.4_1
+GBR,%,Conwy Principal Area,,Wales,Conwy,,GBR.4.8_1
+GBR,%,County Durham,,England,Durham,,GBR.1.30_1
+GBR,%,Dundee City Council,,Scotland,Dundee,,GBR.3.7_1
+GBR,%,East Ayrshire Council,,Scotland,East Ayrshire,,GBR.3.8_1
+GBR,%,East Dunbartonshire Council,,Scotland,East Dunbartonshire,,GBR.3.9_1
+GBR,%,East Lothian Council,,Scotland,East Lothian,,GBR.3.10_1
+GBR,%,East Renfrewshire Council,,Scotland,East Renfrewshire,,GBR.3.11_1
+GBR,%,Glasgow City,,Scotland,Glasgow,,GBR.3.16_1
+GBR,%,Greater Manchester,,England,Greater Manchester,,GBR.1.7_1:GBR.1.14_1:GBR.1.54_1:GBR.1.68_1:GBR.1.76_1:GBR.1.80_1:GBR.1.93_1:GBR.1.100_1:GBR.1.104_1:GBR.1.111_1
+GBR,%,Highland Council,,Scotland,Highland,,GBR.3.17_1
+GBR,%,Isle of Anglesey,,Wales,Anglesey,,GBR.4.1_1
+GBR,%,Merseyside,,England,Merseyside,,GBR.1.47_1:GBR.1.79_1:GBR.1.82_1:GBR.1.114_1
+GBR,%,Merthyr Tydfil County Borough,,Wales,Merthyr Tydfil,,GBR.4.12_1
+GBR,%,Na h-Eileanan an Iar,,Scotland,Eilean Siar,,GBR.3.13_1
+GBR,%,Neath Port Talbot Principle Area,,Wales,Neath Port Talbot,,GBR.4.14_1
+GBR,%,North Ayrshire Council,,Scotland,North Ayrshire,,GBR.3.21_1
+GBR,%,North East Lincolnshire,,England,Lincolnshire,North East Lincolnshire,GBR.1.52.4_1
+GBR,%,Orkney,,Scotland,Orkney Islands,,GBR.3.23_1
+GBR,%,Perth and Kinross,,Scotland,Perthshire and Kinross,,GBR.3.24_1
+GBR,%,South Ayrshire Council,,Scotland,South Ayrshire,,GBR.3.28_1
+GBR,%,South Yorkshire,,England,South Yorkshire,,GBR.1.1_1:GBR.1.27_1:GBR.1.77_1:GBR.1.83_1
+GBR,%,Torfaen Principal Area,,Wales,Torfaen,,GBR.4.20_1
+GBR,%,Tyne and Wear,,England,Tyne and Wear,,GBR.1.34_1:GBR.1.58_1:GBR.1.62_1:GBR.1.89_1:GBR.1.97_1
+GBR,%,West Dunbartonshire Council,,Scotland,West Dunbartonshire,,GBR.3.31_1
+GBR,%,West Midlands,,England,West Midlands,,GBR.1.4_1:GBR.1.21_1:GBR.1.29_1:GBR.1.81_1:GBR.1.86_1:GBR.1.106_1:GBR.1.116_1
+GBR,%,West Yorkshire,,England,West Yorkshire,,GBR.1.10_1:GBR.1.15_1:GBR.1.46_1:GBR.1.49_1:GBR.1.105_1
+GBR,%,Wrexham Principal Area,,Wales,Wrexham,,GBR.4.22_1
+GBR,%,Bristol City,,England,Bristol,,GBR.1.12_1
+GBR,%,Dorset,,England,Dorset,,GBR.1.8_1:GBR.1.28_1:GBR.1.72_1
+GBR,%,Greater Manchester,,England,Greater Manchester,,GBR.1.7_1:GBR.1.14_1:GBR.1.54_1:GBR.1.68_1:GBR.1.76_1:GBR.1.80_1:GBR.1.93_1:GBR.1.100_1:GBR.1.104_1:GBR.1.111_1
+GBR,%,Shropshire,,England,Shropshire,,GBR.1.84_1:GBR.1.101_1
+GBR,%,Cornwall,,England,Cornwall,,GBR.1.20_1:GBR.1.43_1
+GBR,%,North Lincolnshire,,England,North Lincolnshire,,GBR.1.60_1
+GBR,%,Lincolnshire,,England,Lincolnshire,,GBR.1.52.1_1:GBR.1.52.2_1:GBR.1.52.3_1:GBR.1.52.5_1:GBR.1.52.6_1:GBR.1.52.7_1:GBR.1.52.8_1
