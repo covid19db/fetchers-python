@@ -35,7 +35,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
             "date": "date",
             "areaName": "areaName",
             "areaType": "areaType",
-            "cases": "cumCasesByPublishDate",
+            "cases": "cumCasesBySpecimenDate",
             "tests": "cumTestsByPublishDate",
             "deaths": "cumDeaths28DaysByDeathDate",
             "cumAdmissions": "cumAdmissions"
@@ -52,7 +52,7 @@ class EnglandFetcher(BaseEpidemiologyFetcher):
             "date": "date",
             "areaName": "areaName",
             "areaType": "areaType",
-            "cases": "cumCasesByPublishDate",
+            "cases": "cumCasesBySpecimenDate",
             "tests": "cumTestsByPublishDate",
             "deaths": "cumDeaths28DaysByDeathDate",
             "cumAdmissions": "cumAdmissions"
