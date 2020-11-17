@@ -59,8 +59,10 @@ class GoogleMobilityFetcher(BaseMobilityFetcher):
                     input_adm_area_2 = remove_words(input_adm_area_2, words=['County', 'Parish']) \
                         .replace('St.', 'Saint').strip()
             elif countrycode == 'GBR' and input_adm_area_1:
-                # Use adm_area_2 for Great Britain
-                input_adm_area_3 = input_adm_area_2
+                # Use sub_region_1 as adm_area_2 for Great Britain
+                # Skip sub_region_2
+                if input_adm_area_2:
+                    continue
                 input_adm_area_2 = input_adm_area_1
                 input_adm_area_1 = '%'
             elif countrycode == 'JAM' and input_adm_area_1:
@@ -70,10 +72,6 @@ class GoogleMobilityFetcher(BaseMobilityFetcher):
                 input_adm_area_1 = remove_words(
                     input_adm_area_1,
                     words=['Province', 'District', 'County', 'Region', 'Governorate', 'State of', 'Department'])
-
-            # Do not process record if too granular
-            if input_adm_area_3:
-                continue
 
             key = (countrycode, input_adm_area_1, input_adm_area_2, '')
 
