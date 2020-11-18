@@ -79,7 +79,7 @@ class SpainMSFetcher(BaseEpidemiologyFetcher):
                     # Actualización 234 (22.10.2020) created a separate table for deaths
                     tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 3. Situa', 'Tabla 4. Casos'])
                 else:
-                    # Actualización 235+ (22.10.2020 to present) moved Table 4 to Table 5
+                    # Actualización 235+ (23.10.2020 to present) moved Table 4 to Table 5
                     tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 3. Situa', 'Tabla 5. Casos'])
 
                 if 'Acrobat Distiller' in parsed['metadata']['producer']:  # fragile
