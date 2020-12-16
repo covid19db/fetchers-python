@@ -50,7 +50,6 @@ powiat_mapping = [
 
 city_mapping = [
     ('Łódź', 'Łódź'),
-    # (' st. Warszawa', 'Warszawa'),
     ('Gdynia', 'Gdynia'),
     ('Sopot', 'Sopot'),
     ('Bytom', 'Bytom'),
@@ -79,7 +78,8 @@ class RegionMapping:
         column = 'adm_area_1'
         voivodeship = True
         fuzzy = True
-        if region_name[0].islower():
+        if region_name and region_name[0].islower():
+            # Powiat
             column = 'adm_area_2'
             voivodeship = False
 
@@ -92,10 +92,10 @@ class RegionMapping:
                 region_name = region_name.capitalize()
                 region_name = re.sub('ki$', '', region_name)
 
-        elif region_name[0].isupper():
+        elif region_name and region_name[0].isupper():
+            # City
             column = 'adm_area_2'
             voivodeship = False
-            # City
             for t in city_mapping:
                 if region_name == t[0] and ((len(t) > 2 and adm_area_1.lower() == t[2].lower()) or len(t) == 2):
                     region_name = t[1]
@@ -104,7 +104,10 @@ class RegionMapping:
             else:
                 region_name = region_name + ' (City)'
         else:
-            raise Exception(f'Buuuu')
+            # Voivodeship
+            voivodeship = True
+            region_name = adm_area_1
+            # raise Exception(f'Buuuu')
 
 
         def get_ratio(row):
