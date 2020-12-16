@@ -14,14 +14,14 @@
 
 import logging
 from pandas import DataFrame
-import numpy as np
+from datetime import timedelta
 
 from utils.config import config
 from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 __all__ = ('PolandGovFetcher',)
 
-from .utils import get_daily_report, get_regional_report_urls, get_recent_regional_report_url
+from .utils import get_daily_report, get_regional_report_urls, get_recent_regional_report_url, cumulative
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +29,14 @@ logger = logging.getLogger(__name__)
 class PolandGovFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'POL_GOV'
+
+    def cumulative(self, gid: str, date):
+        previous_day_date = (date - timedelta(days=1)).strftime('%Y-%m-%d')
+        prv_day = self.get_data(source='POL_COVID', gid=gid, date=previous_day_date)
+        if not prv_day:
+            print(f"Unable to find data for: {date}, {gid}")
+            return False, 0, 0
+        return True, prv_day['confirmed'], prv_day['dead']
 
     def update_cases(self, date: str, df: DataFrame, data_type: str):
         for index, row in df.iterrows():
@@ -55,12 +63,26 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
             }
 
             if data_type == 'confirmed':
-                confirmed = row['Liczba'] if not np.isnan(row['Liczba']) else None
-                upsert_obj['confirmed'] = confirmed
+                upsert_obj['confirmed'] = row['Liczba']
             elif data_type == 'deaths':
-                dead = row['Wszystkie przypadki śmiertelne'] if not np.isnan(
-                    row['Wszystkie przypadki śmiertelne']) else None
-                upsert_obj['dead'] = dead
+                upsert_obj['dead'] = row['Wszystkie przypadki śmiertelne']
+            else:
+                raise Exception('Data type not supported!')
+
+            self.upsert_data(**upsert_obj)
+
+            # Ignore deaths
+            if data_type == 'deaths':
+                continue
+
+            # Cumulative data, stored in POL_COVID
+            success, previous_day_confirmed, previous_day_dead = self.cumulative(gid, date)
+
+            upsert_obj['source'] = 'POL_COVID'
+            if data_type == 'confirmed':
+                upsert_obj['confirmed'] = cumulative(row['Liczba'], previous_day_confirmed)
+            elif data_type == 'deaths':
+                upsert_obj['dead'] = cumulative(row['Wszystkie przypadki śmiertelne'], previous_day_dead)
             else:
                 raise Exception('Data type not supported!')
 

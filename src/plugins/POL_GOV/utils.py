@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from io import StringIO
 import pandas as pd
+import numpy as np
 import datetime
 import re
 
@@ -28,7 +29,7 @@ def get_daily_report(url):
         raise NotImplemented('Unknown date format')
 
     date = datetime.date(int(year) if int(year) > 2000 else int(year) + 2000, int(month), int(day))
-    df_data = pd.read_csv(StringIO(req.text), sep=';', decimal=",")
+    df_data = pd.read_csv(StringIO(req.text), sep=';', decimal=",").replace({np.nan: None})
     if 'Liczba przypadków' in df_data.columns:
         df_data.rename({'Liczba przypadków': 'Liczba'}, axis=1, inplace=True)
     if 'Zgony' in df_data.columns:
@@ -51,3 +52,15 @@ def get_recent_regional_report_url(base_url):
     for div in divs:
         if div['href']:
             return div['href']
+
+
+def cumulative(current_cases, previous_day_cases):
+    if previous_day_cases is not None:
+        cum = previous_day_cases
+    else:
+        cum = 0
+
+    if current_cases is not None:
+        cum = cum + current_cases
+
+    return cum
