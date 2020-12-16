@@ -28,6 +28,9 @@ class BaseEpidemiologyFetcher(AbstractFetcher):
     def upsert_data(self, **kwargs):
         self.data_adapter.upsert_data(self.TYPE, **kwargs)
 
+    def get_data(self, **kwargs):
+        return self.data_adapter.get_data(self.TYPE.value, **kwargs)
+
     def get_earliest_timestamp(self):
         return self.data_adapter.get_earliest_timestamp(self.TYPE.value, self.SOURCE)
 

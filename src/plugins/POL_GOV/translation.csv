@@ -1,0 +1,398 @@
+countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid
+POL,Cały kraj,,,,,,POL
+POL,dolnośląskie,,,Dolnośląskie,,,POL.1_1
+POL,kujawsko-pomorskie,,,Kujawsko-Pomorskie,,,POL.2_1
+POL,lubelskie,,,Lubelskie,,,POL.4_1
+POL,lubuskie,,,Lubuskie,,,POL.5_1
+POL,łódzkie,,,Łódzkie,,,POL.3_1
+POL,małopolskie,,,Małopolskie,,,POL.6_1
+POL,mazowieckie,,,Mazowieckie,,,POL.7_1
+POL,opolskie,,,Opolskie,,,POL.8_1
+POL,podkarpackie,,,Podkarpackie,,,POL.9_1
+POL,podlaskie,,,Podlaskie,,,POL.10_1
+POL,pomorskie,,,Pomorskie,,,POL.11_1
+POL,śląskie,,,Śląskie,,,POL.12_1
+POL,świętokrzyskie,,,Świętokrzyskie,,,POL.13_1
+POL,warmińsko-mazurskie,,,Warmińsko-Mazurskie,,,POL.14_1
+POL,wielkopolskie,,,Wielkopolskie,,,POL.15_1
+POL,zachodniopomorskie,,,Zachodniopomorskie,,,POL.16_1
+POL,dolnośląskie,bolesławiecki,,Dolnośląskie,Bolesławiec,,POL.1.1_1
+POL,dolnośląskie,dzierżoniowski,,Dolnośląskie,Dzierżoniów,,POL.1.2_1
+POL,dolnośląskie,głogowski,,Dolnośląskie,Głogów,,POL.1.3_1
+POL,dolnośląskie,górowski,,Dolnośląskie,Góra,,POL.1.4_1
+POL,dolnośląskie,jaworski,,Dolnośląskie,Jawor,,POL.1.5_1
+POL,dolnośląskie,jeleniogórski,,Dolnośląskie,Jelenia Góra,,POL.1.7_1
+POL,dolnośląskie,kamiennogórski,,Dolnośląskie,Kamienna Góra,,POL.1.8_1
+POL,dolnośląskie,kłodzki,,Dolnośląskie,Kłodzko,,POL.1.9_1
+POL,dolnośląskie,legnicki,,Dolnośląskie,Legnica,,POL.1.11_1
+POL,dolnośląskie,lubański,,Dolnośląskie,Lubań,,POL.1.12_1
+POL,dolnośląskie,lubiński,,Dolnośląskie,Lubiń,,POL.1.13_1
+POL,dolnośląskie,lwówecki,,Dolnośląskie,Lwówek Śląski,,POL.1.14_1
+POL,dolnośląskie,milicki,,Dolnośląskie,Milicz,,POL.1.15_1
+POL,dolnośląskie,oleśnicki,,Dolnośląskie,Oleśnica,,POL.1.17_1
+POL,dolnośląskie,oławski,,Dolnośląskie,Oława,,POL.1.16_1
+POL,dolnośląskie,polkowicki,,Dolnośląskie,Polkowice,,POL.1.18_1
+POL,dolnośląskie,strzeliński,,Dolnośląskie,Strzelin,,POL.1.20_1
+POL,dolnośląskie,średzki,,Dolnośląskie,Środa Śląska,,POL.1.19_1
+POL,dolnośląskie,świdnicki,,Dolnośląskie,Świdnica,,POL.1.21_1
+POL,dolnośląskie,trzebnicki,,Dolnośląskie,Trzebnica,,POL.1.22_1
+POL,dolnośląskie,wałbrzyski,,Dolnośląskie,Wałbrzych,,POL.1.23_1
+POL,dolnośląskie,wołowski,,Dolnośląskie,Wołów,,POL.1.24_1
+POL,dolnośląskie,wrocławski,,Dolnośląskie,Wrocław,,POL.1.26_1
+POL,dolnośląskie,ząbkowicki,,Dolnośląskie,Ząbkowice Śląskie,,POL.1.27_1
+POL,dolnośląskie,zgorzelecki,,Dolnośląskie,Zgorzelec,,POL.1.28_1
+POL,dolnośląskie,złotoryjski,,Dolnośląskie,Złotoryja,,POL.1.29_1
+POL,dolnośląskie,Jelenia Góra,,Dolnośląskie,Jelenia Góra (City),,POL.1.6_1
+POL,dolnośląskie,Legnica,,Dolnośląskie,Legnica (City),,POL.1.10_1
+POL,dolnośląskie,Wrocław,,Dolnośląskie,Wrocław (City),,POL.1.25_1
+POL,dolnośląskie,Wałbrzych,,Dolnośląskie,Wałbrzych (City),,POL.1.23_1b
+POL,kujawsko-pomorskie,aleksandrowski,,Kujawsko-Pomorskie,Aleksandrów,,POL.2.1_1
+POL,kujawsko-pomorskie,brodnicki,,Kujawsko-Pomorskie,Brodnica,,POL.2.2_1
+POL,kujawsko-pomorskie,bydgoski,,Kujawsko-Pomorskie,Bydgoszcz,,POL.2.4_1
+POL,kujawsko-pomorskie,chełmiński,,Kujawsko-Pomorskie,Chełmno,,POL.2.5_1
+POL,kujawsko-pomorskie,golubsko-dobrzyński,,Kujawsko-Pomorskie,Golub-Dobrzyń,,POL.2.6_1
+POL,kujawsko-pomorskie,grudziądzki,,Kujawsko-Pomorskie,Grudziądz,,POL.2.8_1
+POL,kujawsko-pomorskie,inowrocławski,,Kujawsko-Pomorskie,Inowrocław,,POL.2.9_1
+POL,kujawsko-pomorskie,lipnowski,,Kujawsko-Pomorskie,Lipno,,POL.2.10_1
+POL,kujawsko-pomorskie,mogileński,,Kujawsko-Pomorskie,Mogilno,,POL.2.11_1
+POL,kujawsko-pomorskie,nakielski,,Kujawsko-Pomorskie,Nakło,,POL.2.12_1
+POL,kujawsko-pomorskie,radziejowski,,Kujawsko-Pomorskie,Radziejów,,POL.2.13_1
+POL,kujawsko-pomorskie,rypiński,,Kujawsko-Pomorskie,Rypin,,POL.2.14_1
+POL,kujawsko-pomorskie,sępoleński,,Kujawsko-Pomorskie,Sępólno,,POL.2.15_1
+POL,kujawsko-pomorskie,świecki,,Kujawsko-Pomorskie,Świecie,,POL.2.16_1
+POL,kujawsko-pomorskie,toruński,,Kujawsko-Pomorskie,Toruń,,POL.2.18_1
+POL,kujawsko-pomorskie,tucholski,,Kujawsko-Pomorskie,Tuchola,,POL.2.19_1
+POL,kujawsko-pomorskie,wąbrzeski,,Kujawsko-Pomorskie,Wąbrzeźno,,POL.2.20_1
+POL,kujawsko-pomorskie,włocławski,,Kujawsko-Pomorskie,Włocławek,,POL.2.22_1
+POL,kujawsko-pomorskie,żniński,,Kujawsko-Pomorskie,Żnin,,POL.2.23_1
+POL,kujawsko-pomorskie,Bydgoszcz,,Kujawsko-Pomorskie,Bydgoszcz (City),,POL.2.3_1
+POL,kujawsko-pomorskie,Grudziądz,,Kujawsko-Pomorskie,Grudziądz (City),,POL.2.7_1
+POL,kujawsko-pomorskie,Toruń,,Kujawsko-Pomorskie,Toruń (City),,POL.2.17_1
+POL,kujawsko-pomorskie,Włocławek,,Kujawsko-Pomorskie,Włocławek (City),,POL.2.21_1
+POL,lubelskie,bialski,,Lubelskie,Biała Podlaska,,POL.4.2_1
+POL,lubelskie,biłgorajski,,Lubelskie,Biłgoraj,,POL.4.3_1
+POL,lubelskie,chełmski,,Lubelskie,Chełm,,POL.4.5_1
+POL,lubelskie,hrubieszowski,,Lubelskie,Hrubieszów,,POL.4.6_1
+POL,lubelskie,janowski,,Lubelskie,Janów Lubelski,,POL.4.7_1
+POL,lubelskie,krasnostawski,,Lubelskie,Krasnystaw,,POL.4.9_1
+POL,lubelskie,kraśnicki,,Lubelskie,Kraśnik,,POL.4.8_1
+POL,lubelskie,lubartowski,,Lubelskie,Lubartów,,POL.4.11_1
+POL,lubelskie,lubelski,,Lubelskie,Lublin,,POL.4.13_1
+POL,lubelskie,łęczyński,,Lubelskie,Łęczna,,POL.4.10_1
+POL,lubelskie,łukowski,,Lubelskie,Łuków,,POL.4.14_1
+POL,lubelskie,opolski,,Lubelskie,Opole Lubelskie,,POL.4.15_1
+POL,lubelskie,parczewski,,Lubelskie,Parczew,,POL.4.16_1
+POL,lubelskie,puławski,,Lubelskie,Puławy,,POL.4.17_1
+POL,lubelskie,radzyński,,Lubelskie,Radzyń Podlaski,,POL.4.18_1
+POL,lubelskie,rycki,,Lubelskie,Ryki,,POL.4.19_1
+POL,lubelskie,świdnicki,,Lubelskie,Świdnik,,POL.4.20_1
+POL,lubelskie,tomaszowski,,Lubelskie,Tomaszów Lubelski,,POL.4.21_1
+POL,lubelskie,włodawski,,Lubelskie,Włodawa,,POL.4.22_1
+POL,lubelskie,zamojski,,Lubelskie,Zamość,,POL.4.24_1
+POL,lubelskie,Biała Podlaska,,Lubelskie,Biała Podlaska (City),,POL.4.1_1
+POL,lubelskie,Chełm,,Lubelskie,Chełm (City),,POL.4.4_1
+POL,lubelskie,Lublin,,Lubelskie,Lublin (City),,POL.4.12_1
+POL,lubelskie,Zamość,,Lubelskie,Zamość (City),,POL.4.23_1
+POL,lubuskie,gorzowski,,Lubuskie,Gorzów,,POL.5.2_1
+POL,lubuskie,krośnieński,,Lubuskie,Krosno Odrzańskie,,POL.5.3_1
+POL,lubuskie,międzyrzecki,,Lubuskie,Międzyrzecz,,POL.5.4_1
+POL,lubuskie,nowosolski,,Lubuskie,Nowa Sól,,POL.5.5_1
+POL,lubuskie,słubicki,,Lubuskie,Słubice,,POL.5.6_1
+POL,lubuskie,strzelecko-drezdenecki,,Lubuskie,Strzelce-Drezdenko,,POL.5.7_1
+POL,lubuskie,sulęciński,,Lubuskie,Sulęcin,,POL.5.8_1
+POL,lubuskie,świebodziński,,Lubuskie,Świebodzin,,POL.5.9_1
+POL,lubuskie,zielonogórski,,Lubuskie,Zielona Góra,,POL.5.14_1
+POL,lubuskie,żagański,,Lubuskie,Żagań,,POL.5.11_1
+POL,lubuskie,żarski,,Lubuskie,Żary,,POL.5.12_1
+POL,lubuskie,wschowski,,Lubuskie,Wschowa,,POL.5.10_1
+POL,lubuskie,Gorzów Wielkopolski,,Lubuskie,Gorzów Wielkopolski,,POL.5.1_1
+POL,lubuskie,Zielona Góra,,Lubuskie,Zielona Góra  (City),,POL.5.13_1
+POL,łódzkie,bełchatowski,,Łódzkie,Bełchatów,,POL.3.1_1
+POL,łódzkie,kutnowski,,Łódzkie,Kutno,,POL.3.3_1
+POL,łódzkie,łaski,,Łódzkie,Łask,,POL.3.4_1
+POL,łódzkie,łęczycki,,Łódzkie,Łęczyca,,POL.3.5_1
+POL,łódzkie,łowicki,,Łódzkie,Łowicz,,POL.3.8_1
+POL,łódzkie,łódzki wschodni,,Łódzkie,Łódzki Wschodni,,POL.3.6_1
+POL,łódzkie,opoczyński,,Łódzkie,Opoczno,,POL.3.9_1
+POL,łódzkie,pabianicki,,Łódzkie,Pabianice,,POL.3.10_1
+POL,łódzkie,pajęczański,,Łódzkie,Pajęczno,,POL.3.11_1
+POL,łódzkie,piotrkowski,,Łódzkie,Piotrków,,POL.3.13_1
+POL,łódzkie,poddębicki,,Łódzkie,Poddębice,,POL.3.14_1
+POL,łódzkie,radomszczański,,Łódzkie,Radomsko,,POL.3.15_1
+POL,łódzkie,rawski,,Łódzkie,Rawa,,POL.3.16_1
+POL,łódzkie,sieradzki,,Łódzkie,Sieradz,,POL.3.17_1
+POL,łódzkie,skierniewicki,,Łódzkie,Skierniewice,,POL.3.19_1
+POL,łódzkie,tomaszowski,,Łódzkie,Tomaszów Mazowiecki,,POL.3.20_1
+POL,łódzkie,wieluński,,Łódzkie,Wieluń,,POL.3.21_1
+POL,łódzkie,wieruszowski,,Łódzkie,Wieruszów,,POL.3.22_1
+POL,łódzkie,zduńskowolski,,Łódzkie,Zduńska Wola,,POL.3.23_1
+POL,łódzkie,zgierski,,Łódzkie,Zgierz,,POL.3.24_1
+POL,łódzkie,brzeziński,,Łódzkie,Brzeziny,,POL.3.2_1
+POL,łódzkie,Łódź,,Łódzkie,Łódź,,POL.3.7_1
+POL,łódzkie,Piotrków Trybunalski,,Łódzkie,Piotrków Trybunalski,,POL.3.12_1
+POL,łódzkie,Skierniewice,,Łódzkie,Skierniewice (City),,POL.3.18_1
+POL,małopolskie,bocheński,,Małopolskie,Bochnia,,POL.6.1_1
+POL,małopolskie,brzeski,,Małopolskie,Brzesko,,POL.6.2_1
+POL,małopolskie,chrzanowski,,Małopolskie,Chrzanów,,POL.6.3_1
+POL,małopolskie,dąbrowski,,Małopolskie,Dąbrowa,,POL.6.4_1
+POL,małopolskie,gorlicki,,Małopolskie,Gorlice,,POL.6.5_1
+POL,małopolskie,krakowski,,Małopolskie,Kraków,,POL.6.7_1
+POL,małopolskie,limanowski,,Małopolskie,Limanowa,,POL.6.8_1
+POL,małopolskie,miechowski,,Małopolskie,Miechów,,POL.6.9_1
+POL,małopolskie,myślenicki,,Małopolskie,Myślenice,,POL.6.10_1
+POL,małopolskie,nowosądecki,,Małopolskie,Nowy Sącz,,POL.6.12_1
+POL,małopolskie,nowotarski,,Małopolskie,Nowy Targ,,POL.6.13_1
+POL,małopolskie,olkuski,,Małopolskie,Olkusz,,POL.6.14_1
+POL,małopolskie,oświęcimski,,Małopolskie,Oświęcim,,POL.6.15_1
+POL,małopolskie,proszowicki,,Małopolskie,Proszowice,,POL.6.16_1
+POL,małopolskie,suski,,Małopolskie,Sucha,,POL.6.17_1
+POL,małopolskie,tarnowski,,Małopolskie,Tarnów,,POL.6.19_1
+POL,małopolskie,tatrzański,,Małopolskie,Tatra,,POL.6.20_1
+POL,małopolskie,wadowicki,,Małopolskie,Wadowice,,POL.6.21_1
+POL,małopolskie,wielicki,,Małopolskie,Wieliczka,,POL.6.22_1
+POL,małopolskie,Kraków,,Małopolskie,Kraków (City),,POL.6.6_1
+POL,małopolskie,Nowy Sącz,,Małopolskie,Nowy Sącz (City),,POL.6.11_1
+POL,małopolskie,Tarnów,,Małopolskie,Tarnów (City),,POL.6.18_1
+POL,mazowieckie,białobrzeski,,Mazowieckie,Białobrzegi,,POL.7.1_1
+POL,mazowieckie,ciechanowski,,Mazowieckie,Ciechanów,,POL.7.2_1
+POL,mazowieckie,garwoliński,,Mazowieckie,Garwolin,,POL.7.3_1
+POL,mazowieckie,gostyniński,,Mazowieckie,Gostynin,,POL.7.4_1
+POL,mazowieckie,grodziski,,Mazowieckie,Grodzisk Mazowiecki,,POL.7.5_1
+POL,mazowieckie,grójecki,,Mazowieckie,Grójec,,POL.7.6_1
+POL,mazowieckie,kozienicki,,Mazowieckie,Kozienice,,POL.7.7_1
+POL,mazowieckie,legionowski,,Mazowieckie,Legionowo,,POL.7.8_1
+POL,mazowieckie,lipski,,Mazowieckie,Lipsko,,POL.7.9_1
+POL,mazowieckie,łosicki,,Mazowieckie,Łosice,,POL.7.10_1
+POL,mazowieckie,makowski,,Mazowieckie,Maków,,POL.7.11_1
+POL,mazowieckie,miński,,Mazowieckie,Mińsk,,POL.7.12_1
+POL,mazowieckie,mławski,,Mazowieckie,Mława,,POL.7.13_1
+POL,mazowieckie,nowodworski,,Mazowieckie,Nowy Dwór Mazowiecki,,POL.7.14_1
+POL,mazowieckie,ostrołęcki,,Mazowieckie,Ostrołęka,,POL.7.16_1
+POL,mazowieckie,ostrowski,,Mazowieckie,Ostrów Mazowiecka,,POL.7.17_1
+POL,mazowieckie,otwocki,,Mazowieckie,Otwock,,POL.7.18_1
+POL,mazowieckie,piaseczyński,,Mazowieckie,Piaseczno,,POL.7.19_1
+POL,mazowieckie,płocki,,Mazowieckie,Płock,,POL.7.21_1
+POL,mazowieckie,płoński,,Mazowieckie,Płońsk,,POL.7.22_1
+POL,mazowieckie,pruszkowski,,Mazowieckie,Pruszków,,POL.7.23_1
+POL,mazowieckie,przasnyski,,Mazowieckie,Przasnysz,,POL.7.24_1
+POL,mazowieckie,przysuski,,Mazowieckie,Przysucha,,POL.7.25_1
+POL,mazowieckie,pułtuski,,Mazowieckie,Pułtusk,,POL.7.26_1
+POL,mazowieckie,radomski,,Mazowieckie,Radom,,POL.7.28_1
+POL,mazowieckie,siedlecki,,Mazowieckie,Siedlce,,POL.7.30_1
+POL,mazowieckie,sierpecki,,Mazowieckie,Sierpc,,POL.7.31_1
+POL,mazowieckie,sochaczewski,,Mazowieckie,Sochaczew,,POL.7.32_1
+POL,mazowieckie,sokołowski,,Mazowieckie,Sokołów,,POL.7.33_1
+POL,mazowieckie,szydłowiecki,,Mazowieckie,Szydłowiec,,POL.7.34_1
+POL,mazowieckie,warszawski zachodni,,Mazowieckie,Warszaw Zachodni,,POL.7.35_1
+POL,mazowieckie,węgrowski,,Mazowieckie,Węgrów,,POL.7.37_1
+POL,mazowieckie,wołomiński,,Mazowieckie,Wołomin,,POL.7.38_1
+POL,mazowieckie,wyszkowski,,Mazowieckie,Wyszków,,POL.7.39_1
+POL,mazowieckie,zwoleński,,Mazowieckie,Zwoleń,,POL.7.41_1
+POL,mazowieckie,żuromiński,,Mazowieckie,Żuromin,,POL.7.40_1
+POL,mazowieckie,żyrardowski,,Mazowieckie,Żyrardów,,POL.7.42_1
+POL,mazowieckie,Ostrołęka,,Mazowieckie,Ostrołęka (City),,POL.7.15_1
+POL,mazowieckie,Płock,,Mazowieckie,Płock (City),,POL.7.20_1
+POL,mazowieckie,Radom,,Mazowieckie,Radom (City),,POL.7.27_1
+POL,mazowieckie,Siedlce,,Mazowieckie,Siedlce (City),,POL.7.29_1
+POL,mazowieckie,Warszawa,,Mazowieckie,Warszawa,,POL.7.36_1
+POL,opolskie,brzeski,,Opolskie,Brzeg,,POL.8.1_1
+POL,opolskie,głubczycki,,Opolskie,Głubczyce,,POL.8.2_1
+POL,opolskie,kędzierzyńsko-kozielski,,Opolskie,Kędzierzyn-Koźle,,POL.8.3_1
+POL,opolskie,kluczborski,,Opolskie,Kluczbork,,POL.8.4_1
+POL,opolskie,krapkowicki,,Opolskie,Krapkowice,,POL.8.5_1
+POL,opolskie,namysłowski,,Opolskie,Namysłów,,POL.8.6_1
+POL,opolskie,nyski,,Opolskie,Nysa,,POL.8.7_1
+POL,opolskie,oleski,,Opolskie,Olesno,,POL.8.8_1
+POL,opolskie,opolski,,Opolskie,Opole,,POL.8.10_1
+POL,opolskie,prudnicki,,Opolskie,Prudnik,,POL.8.11_1
+POL,opolskie,strzelecki,,Opolskie,Strzelce,,POL.8.12_1
+POL,opolskie,Opole,,Opolskie,Opole (City),,POL.8.9_1
+POL,podkarpackie,bieszczadzki,,Podkarpackie,Bieszczady,,POL.9.1_1
+POL,podkarpackie,brzozowski,,Podkarpackie,Brzozów,,POL.9.2_1
+POL,podkarpackie,dębicki,,Podkarpackie,Dębica,,POL.9.3_1
+POL,podkarpackie,jarosławski,,Podkarpackie,Jarosław,,POL.9.4_1
+POL,podkarpackie,jasielski,,Podkarpackie,Jasło,,POL.9.5_1
+POL,podkarpackie,kolbuszowski,,Podkarpackie,Kolbuszowa,,POL.9.6_1
+POL,podkarpackie,krośnieński,,Podkarpackie,Krosno,,POL.9.8_1
+POL,podkarpackie,leżajski,,Podkarpackie,Leżajsk,,POL.9.11_1
+POL,podkarpackie,lubaczowski,,Podkarpackie,Lubaczów,,POL.9.12_1
+POL,podkarpackie,łańcucki,,Podkarpackie,Łańcut,,POL.9.9_1
+POL,podkarpackie,mielecki,,Podkarpackie,Mielec,,POL.9.13_1
+POL,podkarpackie,niżański,,Podkarpackie,Nisko,,POL.9.14_1
+POL,podkarpackie,przemyski,,Podkarpackie,Przemyśl,,POL.9.16_1
+POL,podkarpackie,przeworski,,Podkarpackie,Przeworsk,,POL.9.17_1
+POL,podkarpackie,ropczycko-sędziszowski,,Podkarpackie,Ropczyce-Sędziszów,,POL.9.18_1
+POL,podkarpackie,rzeszowski,,Podkarpackie,Rzeszów,,POL.9.20_1
+POL,podkarpackie,sanocki,,Podkarpackie,Sanok,,POL.9.21_1
+POL,podkarpackie,stalowowolski,,Podkarpackie,Stalowa Wola,,POL.9.22_1
+POL,podkarpackie,strzyżowski,,Podkarpackie,Strzyżów,,POL.9.23_1
+POL,podkarpackie,tarnobrzeski,,Podkarpackie,Tarnobrzeg,,POL.9.25_1
+POL,podkarpackie,leski,,Podkarpackie,Lesko,,POL.9.10_1
+POL,podkarpackie,Krosno,,Podkarpackie,Krosno (City),,POL.9.7_1
+POL,podkarpackie,Przemyśl,,Podkarpackie,Przemyśl (City),,POL.9.15_1
+POL,podkarpackie,Rzeszów,,Podkarpackie,Rzeszów (City),,POL.9.19_1
+POL,podkarpackie,Tarnobrzeg,,Podkarpackie,Tarnobrzeg (City),,POL.9.24_1
+POL,podlaskie,augustowski,,Podlaskie,Augustów,,POL.10.1_1
+POL,podlaskie,białostocki,,Podlaskie,Białystok,,POL.10.3_1
+POL,podlaskie,bielski,,Podlaskie,Bielsk,,POL.10.4_1
+POL,podlaskie,grajewski,,Podlaskie,Grajewo,,POL.10.5_1
+POL,podlaskie,hajnowski,,Podlaskie,Hajnówka,,POL.10.6_1
+POL,podlaskie,kolneński,,Podlaskie,Kolno,,POL.10.7_1
+POL,podlaskie,łomżyński,,Podlaskie,Łomża,,POL.10.9_1
+POL,podlaskie,moniecki,,Podlaskie,Mońki,,POL.10.10_1
+POL,podlaskie,sejneński,,Podlaskie,Sejny,,POL.10.11_1
+POL,podlaskie,siemiatycki,,Podlaskie,Siemiatycze,,POL.10.12_1
+POL,podlaskie,sokólski,,Podlaskie,Sokółka,,POL.10.13_1
+POL,podlaskie,suwalski,,Podlaskie,Suwałki,,POL.10.15_1
+POL,podlaskie,wysokomazowiecki,,Podlaskie,Wysokie Mazowieckie,,POL.10.16_1
+POL,podlaskie,zambrowski,,Podlaskie,Zambrów,,POL.10.17_1
+POL,podlaskie,Białystok,,Podlaskie,Białystok (City),,POL.10.2_1
+POL,podlaskie,Łomża,,Podlaskie,Łomża (City),,POL.10.8_1
+POL,podlaskie,Suwałki,,Podlaskie,Suwałki (City),,POL.10.14_1
+POL,pomorskie,bytowski,,Pomorskie,Bytów,,POL.11.1_1
+POL,pomorskie,chojnicki,,Pomorskie,Chojnice,,POL.11.2_1
+POL,pomorskie,człuchowski,,Pomorskie,Człuchów,,POL.11.3_1
+POL,pomorskie,gdański,,Pomorskie,Gdańsk,,POL.11.5_1
+POL,pomorskie,kartuski,,Pomorskie,Kartuzy,,POL.11.7_1
+POL,pomorskie,kościerski,,Pomorskie,Kościerzyna,,POL.11.8_1
+POL,pomorskie,kwidzyński,,Pomorskie,Kwidzyn,,POL.11.9_1
+POL,pomorskie,lęborski,,Pomorskie,Lębork,,POL.11.10_1
+POL,pomorskie,malborski,,Pomorskie,Malbork,,POL.11.11_1
+POL,pomorskie,nowodworski,,Pomorskie,Nowy Dwór Gdański,,POL.11.12_1
+POL,pomorskie,pucki,,Pomorskie,Puck,,POL.11.13_1
+POL,pomorskie,słupski,,Pomorskie,Słupsk,,POL.11.15_1
+POL,pomorskie,starogardzki,,Pomorskie,Starogard,,POL.11.17_1
+POL,pomorskie,tczewski,,Pomorskie,Tczew,,POL.11.19_1
+POL,pomorskie,wejherowski,,Pomorskie,Wejherowo,,POL.11.20_1
+POL,pomorskie,sztumski,,Pomorskie,Sztum,,POL.11.18_1
+POL,pomorskie,Gdańsk,,Pomorskie,Gdańsk (City),,POL.11.4_1
+POL,pomorskie,Gdynia,,Pomorskie,Gdynia,,POL.11.6_1
+POL,pomorskie,Słupsk,,Pomorskie,Słupsk (City),,POL.11.14_1
+POL,pomorskie,Sopot,,Pomorskie,Sopot,,POL.11.16_1
+POL,śląskie,będziński,,Śląskie,Będzin,,POL.12.1_1
+POL,śląskie,bielski,,Śląskie,Bielsko,,POL.12.3_1
+POL,śląskie,cieszyński,,Śląskie,Cieszyn,,POL.12.7_1
+POL,śląskie,częstochowski,,Śląskie,Częstochowa,,POL.12.9_1
+POL,śląskie,gliwicki,,Śląskie,Gliwice,,POL.12.12_1
+POL,śląskie,kłobucki,,Śląskie,Kłobuck,,POL.12.16_1
+POL,śląskie,lubliniecki,,Śląskie,Lubliniec,,POL.12.17_1
+POL,śląskie,mikołowski,,Śląskie,Mikołów,,POL.12.18_1
+POL,śląskie,myszkowski,,Śląskie,Myszków,,POL.12.20_1
+POL,śląskie,pszczyński,,Śląskie,Pszczyna,,POL.12.22_1
+POL,śląskie,raciborski,,Śląskie,Racibórz,,POL.12.23_1
+POL,śląskie,rybnicki,,Śląskie,Rybnik,,POL.12.26_1
+POL,śląskie,tarnogórski,,Śląskie,Tarnowskie Góry,,POL.12.30_1
+POL,śląskie,bieruńsko-lędziński,,Śląskie,Bieruń-Lędziny,,POL.12.4_1
+POL,śląskie,wodzisławski,,Śląskie,Wodzisław,,POL.12.32_1
+POL,śląskie,zawierciański,,Śląskie,Zawiercie,,POL.12.34_1
+POL,śląskie,żywiecki,,Śląskie,Żywiec,,POL.12.36_1
+POL,śląskie,Bielsko-Biała,,Śląskie,Bielsko-Biała,,POL.12.2_1
+POL,śląskie,Bytom,,Śląskie,Bytom,,POL.12.5_1
+POL,śląskie,Chorzów,,Śląskie,Chorzów,,POL.12.6_1
+POL,śląskie,Częstochowa,,Śląskie,Częstochowa (CIty),,POL.12.8_1
+POL,śląskie,Dąbrowa Górnicza,,Śląskie,Dąbrowa Górnicza,,POL.12.10_1
+POL,śląskie,Gliwice,,Śląskie,Gliwice (City),,POL.12.11_1
+POL,śląskie,Jastrzębie-Zdrój,,Śląskie,Jastrzębie-Zdrój,,POL.12.13_1
+POL,śląskie,Jaworzno,,Śląskie,Jaworzno,,POL.12.14_1
+POL,śląskie,Katowice,,Śląskie,Katowice,,POL.12.15_1
+POL,śląskie,Mysłowice,,Śląskie,Mysłowice,,POL.12.19_1
+POL,śląskie,Piekary Śląskie,,Śląskie,Piekary Śląskie,,POL.12.21_1
+POL,śląskie,Ruda Śląska,,Śląskie,Ruda Śląska,,POL.12.24_1
+POL,śląskie,Rybnik,,Śląskie,Rybnik (City),,POL.12.25_1
+POL,śląskie,Siemianowice Śląskie,,Śląskie,Siemianowice Śląskie,,POL.12.27_1
+POL,śląskie,Sosnowiec,,Śląskie,Sosnowiec,,POL.12.28_1
+POL,śląskie,Świętochłowice,,Śląskie,Świętochłowice,,POL.12.29_1
+POL,śląskie,Tychy,,Śląskie,Tychy,,POL.12.31_1
+POL,śląskie,Zabrze,,Śląskie,Zabrze,,POL.12.33_1
+POL,śląskie,Żory,,Śląskie,Żory,,POL.12.35_1
+POL,świętokrzyskie,buski,,Świętokrzyskie,Busko,,POL.13.1_1
+POL,świętokrzyskie,jędrzejowski,,Świętokrzyskie,Jędrzejów,,POL.13.2_1
+POL,świętokrzyskie,kazimierski,,Świętokrzyskie,Kazimierza,,POL.13.3_1
+POL,świętokrzyskie,kielecki,,Świętokrzyskie,Kielce,,POL.13.5_1
+POL,świętokrzyskie,konecki,,Świętokrzyskie,Końskie,,POL.13.6_1
+POL,świętokrzyskie,opatowski,,Świętokrzyskie,Opatów,,POL.13.7_1
+POL,świętokrzyskie,ostrowiecki,,Świętokrzyskie,Ostrowiec,,POL.13.8_1
+POL,świętokrzyskie,pińczowski,,Świętokrzyskie,Pińczów,,POL.13.9_1
+POL,świętokrzyskie,sandomierski,,Świętokrzyskie,Sandomierz,,POL.13.10_1
+POL,świętokrzyskie,skarżyski,,Świętokrzyskie,Skarżysko,,POL.13.11_1
+POL,świętokrzyskie,starachowicki,,Świętokrzyskie,Starachowice,,POL.13.12_1
+POL,świętokrzyskie,staszowski,,Świętokrzyskie,Staszów,,POL.13.13_1
+POL,świętokrzyskie,włoszczowski,,Świętokrzyskie,Włoszczowa,,POL.13.14_1
+POL,świętokrzyskie,Kielce,,Świętokrzyskie,Kielce (City),,POL.13.4_1
+POL,warmińsko-mazurskie,bartoszycki,,Warmińsko-Mazurskie,Bartoszyce,,POL.14.1_1
+POL,warmińsko-mazurskie,braniewski,,Warmińsko-Mazurskie,Braniewo,,POL.14.2_1
+POL,warmińsko-mazurskie,działdowski,,Warmińsko-Mazurskie,Działdowo,,POL.14.3_1
+POL,warmińsko-mazurskie,elbląski,,Warmińsko-Mazurskie,Elbląg,,POL.14.5_1
+POL,warmińsko-mazurskie,ełcki,,Warmińsko-Mazurskie,Ełk,,POL.14.6_1
+POL,warmińsko-mazurskie,giżycki,,Warmińsko-Mazurskie,Giżycko,,POL.14.7_1
+POL,warmińsko-mazurskie,iławski,,Warmińsko-Mazurskie,Iława,,POL.14.9_1
+POL,warmińsko-mazurskie,kętrzyński,,Warmińsko-Mazurskie,Kętrzyn,,POL.14.10_1
+POL,warmińsko-mazurskie,lidzbarski,,Warmińsko-Mazurskie,Lidzbark,,POL.14.11_1
+POL,warmińsko-mazurskie,mrągowski,,Warmińsko-Mazurskie,Mrągowo,,POL.14.12_1
+POL,warmińsko-mazurskie,nidzicki,,Warmińsko-Mazurskie,Nidzica,,POL.14.13_1
+POL,warmińsko-mazurskie,nowomiejski,,Warmińsko-Mazurskie,Nowe Miasto,,POL.14.14_1
+POL,warmińsko-mazurskie,olecki,,Warmińsko-Mazurskie,Olecko,,POL.14.15_1
+POL,warmińsko-mazurskie,olsztyński,,Warmińsko-Mazurskie,Olsztyn,,POL.14.17_1
+POL,warmińsko-mazurskie,ostródzki,,Warmińsko-Mazurskie,Ostróda,,POL.14.18_1
+POL,warmińsko-mazurskie,piski,,Warmińsko-Mazurskie,Pisz,,POL.14.19_1
+POL,warmińsko-mazurskie,szczycieński,,Warmińsko-Mazurskie,Szczytno,,POL.14.20_1
+POL,warmińsko-mazurskie,gołdapski,,Warmińsko-Mazurskie,Gołdap,,POL.14.8_1
+POL,warmińsko-mazurskie,węgorzewski,,Warmińsko-Mazurskie,Węgorzewo,,POL.14.21_1
+POL,warmińsko-mazurskie,Elbląg,,Warmińsko-Mazurskie,Elbląg (City),,POL.14.4_1
+POL,warmińsko-mazurskie,Olsztyn,,Warmińsko-Mazurskie,Olsztyn (City),,POL.14.16_1
+POL,wielkopolskie,chodzieski,,Wielkopolskie,Chodzież,,POL.15.1_1
+POL,wielkopolskie,czarnkowsko-trzcianecki,,Wielkopolskie,Czarnków-Trzcianka,,POL.15.2_1
+POL,wielkopolskie,gnieźnieński,,Wielkopolskie,Gniezno,,POL.15.3_1
+POL,wielkopolskie,gostyński,,Wielkopolskie,Gostyń,,POL.15.4_1
+POL,wielkopolskie,grodziski,,Wielkopolskie,Grodzisk Wielkopolski,,POL.15.5_1
+POL,wielkopolskie,jarociński,,Wielkopolskie,Jarocin,,POL.15.6_1
+POL,wielkopolskie,kaliski,,Wielkopolskie,Kalisz,,POL.15.8_1
+POL,wielkopolskie,kępiński,,Wielkopolskie,Kępno,,POL.15.9_1
+POL,wielkopolskie,kolski,,Wielkopolskie,Koło,,POL.15.10_1
+POL,wielkopolskie,koniński,,Wielkopolskie,Konin,,POL.15.12_1
+POL,wielkopolskie,kościański,,Wielkopolskie,Kościan,,POL.15.13_1
+POL,wielkopolskie,krotoszyński,,Wielkopolskie,Krotoszyn,,POL.15.14_1
+POL,wielkopolskie,leszczyński,,Wielkopolskie,Leszno,,POL.15.16_1
+POL,wielkopolskie,międzychodzki,,Wielkopolskie,Międzychód,,POL.15.17_1
+POL,wielkopolskie,nowotomyski,,Wielkopolskie,Nowy Tomyśl,,POL.15.18_1
+POL,wielkopolskie,obornicki,,Wielkopolskie,Oborniki,,POL.15.19_1
+POL,wielkopolskie,ostrowski,,Wielkopolskie,Ostrów Wielkopolski,,POL.15.20_1
+POL,wielkopolskie,ostrzeszowski,,Wielkopolskie,Ostrzeszów,,POL.15.21_1
+POL,wielkopolskie,pilski,,Wielkopolskie,Piła,,POL.15.22_1
+POL,wielkopolskie,pleszewski,,Wielkopolskie,Pleszew,,POL.15.23_1
+POL,wielkopolskie,poznański,,Wielkopolskie,Poznań,,POL.15.25_1
+POL,wielkopolskie,rawicki,,Wielkopolskie,Rawicz,,POL.15.26_1
+POL,wielkopolskie,słupecki,,Wielkopolskie,Słupca,,POL.15.27_1
+POL,wielkopolskie,szamotulski,,Wielkopolskie,Szamotuły,,POL.15.30_1
+POL,wielkopolskie,średzki,,Wielkopolskie,Środa Wielkopolska,,POL.15.29_1
+POL,wielkopolskie,śremski,,Wielkopolskie,Śrem,,POL.15.28_1
+POL,wielkopolskie,turecki,,Wielkopolskie,Turek,,POL.15.31_1
+POL,wielkopolskie,wągrowiecki,,Wielkopolskie,Wągrowiec,,POL.15.32_1
+POL,wielkopolskie,wolsztyński,,Wielkopolskie,Wolsztyn,,POL.15.33_1
+POL,wielkopolskie,wrzesiński,,Wielkopolskie,Września,,POL.15.34_1
+POL,wielkopolskie,złotowski,,Wielkopolskie,Złotów,,POL.15.35_1
+POL,wielkopolskie,Kalisz,,Wielkopolskie,Kalisz (City),,POL.15.7_1
+POL,wielkopolskie,Konin,,Wielkopolskie,Konin (City),,POL.15.11_1
+POL,wielkopolskie,Leszno,,Wielkopolskie,Leszno (City),,POL.15.15_1
+POL,wielkopolskie,Poznań,,Wielkopolskie,Poznań (City),,POL.15.24_1
+POL,zachodniopomorskie,białogardzki,,Zachodniopomorskie,Białogard,,POL.16.1_1
+POL,zachodniopomorskie,choszczeński,,Zachodniopomorskie,Choszczno,,POL.16.2_1
+POL,zachodniopomorskie,drawski,,Zachodniopomorskie,Drawsko,,POL.16.3_1
+POL,zachodniopomorskie,goleniowski,,Zachodniopomorskie,Goleniów,,POL.16.4_1
+POL,zachodniopomorskie,gryficki,,Zachodniopomorskie,Gryfice,,POL.16.5_1
+POL,zachodniopomorskie,gryfiński,,Zachodniopomorskie,Gryfino,,POL.16.6_1
+POL,zachodniopomorskie,kamieński,,Zachodniopomorskie,Kamień,,POL.16.7_1
+POL,zachodniopomorskie,kołobrzeski,,Zachodniopomorskie,Kołobrzeg,,POL.16.8_1
+POL,zachodniopomorskie,koszaliński,,Zachodniopomorskie,Koszalin,,POL.16.10_1
+POL,zachodniopomorskie,myśliborski,,Zachodniopomorskie,Myślibórz,,POL.16.12_1
+POL,zachodniopomorskie,policki,,Zachodniopomorskie,Police,,POL.16.13_1
+POL,zachodniopomorskie,pyrzycki,,Zachodniopomorskie,Pyrzyce,,POL.16.14_1
+POL,zachodniopomorskie,sławieński,,Zachodniopomorskie,Sławno,,POL.16.15_1
+POL,zachodniopomorskie,stargardzki,,Zachodniopomorskie,Stargard,,POL.16.16_1
+POL,zachodniopomorskie,szczecinecki,,Zachodniopomorskie,Szczecinek,,POL.16.19_1
+POL,zachodniopomorskie,świdwiński,,Zachodniopomorskie,Świdwin,,POL.16.17_1
+POL,zachodniopomorskie,wałecki,,Zachodniopomorskie,Wałcz,,POL.16.21_1
+POL,zachodniopomorskie,łobeski,,Zachodniopomorskie,Łobez,,POL.16.11_1
+POL,zachodniopomorskie,Koszalin,,Zachodniopomorskie,Koszalin (City),,POL.16.9_1
+POL,zachodniopomorskie,Szczecin,,Zachodniopomorskie,Szczecin,,POL.16.20_1
+POL,zachodniopomorskie,Świnoujście,,Zachodniopomorskie,Świnoujście,,POL.16.18_1
