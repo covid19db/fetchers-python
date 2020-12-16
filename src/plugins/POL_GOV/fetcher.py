@@ -14,10 +14,9 @@
 
 import logging
 from pandas import DataFrame
+import numpy as np
 
 from utils.config import config
-from datetime import timedelta
-from .mapping import RegionMapping
 from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 __all__ = ('PolandGovFetcher',)
@@ -31,41 +30,18 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'POL_GOV'
 
-    def update_cases(self, date: str, df: DataFrame, data_type: str, region_mapping: RegionMapping):
-        duplicate_gids = []
-        non_existing_gids = []
-        translation = []
+    def update_cases(self, date: str, df: DataFrame, data_type: str):
         for index, row in df.iterrows():
-            # if not row['Powiat/Miasto']:
-            #     continue
-            #
-            # adm_area_1, adm_area_2, adm_area_3, gid = region_mapping.find_nearest_translation(
-            #     region_name=row['Powiat/Miasto'], adm_area_1=row['Województwo'])
-
+            region = row['Powiat/Miasto'] if 'Powiat/Miasto' in row.index else None
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1=row['Województwo'] if 'Województwo' in row.index else '',
-                input_adm_area_2=row['Powiat/Miasto'] if 'Powiat/Miasto' in row.index else None,
+                input_adm_area_1=row['Województwo'],
+                input_adm_area_2=region,
                 input_adm_area_3=None,
-                return_original_if_failure=True
+                return_original_if_failure=False
             )
 
-            # adm_area_1, adm_area_2, adm_area_3, gid = region_mapping.find_nearest_translation(
-            #     region_name='', adm_area_1=row['Województwo'])
             print(
-                f"{date} - {row['Województwo']}, '' -> {adm_area_1}, {adm_area_2}, {adm_area_3}, {gid}")
-
-            translation.append({
-                'region_name': row.get('Powiat/Miasto', ''),
-                'area_name': row['Województwo'],
-                'adm_area_1': adm_area_1,
-                'adm_area_2': adm_area_2,
-                'adm_area_3': adm_area_3,
-                'gid': gid[0]
-            })
-
-            if gid[0] in duplicate_gids:
-                print('GID ALREADY EXISTS!!!')
-                duplicate_gids.append(gid[0])
+                f"{date} - {row['Województwo']}, {region} -> {adm_area_1}, {adm_area_2}, {adm_area_3}, {gid}")
 
             upsert_obj = {
                 'source': self.SOURCE,
@@ -78,45 +54,19 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
                 'gid': gid
             }
 
-            # prv_day = self.get_data(source='POL_ROG', gid=gid, date=(date - timedelta(days=1)).strftime('%Y-%m-%d'))
-            # if not prv_day:
-            #     print(f"Unable to found data for: {adm_area_1}, {adm_area_2}, {adm_area_3}, {gid}")
-            #     non_existing_gids.append(gid)
-            #     continue
-            #
-            # if data_type == 'confirmed':
-            #     cumulative_confirmed = prv_day['confirmed'] + row[df.columns[2]]
-            #     upsert_obj['confirmed'] = row[df.columns[2]]
-            # elif data_type == 'deaths':
-            #     cumulative_dead = prv_day['dead'] + row[df.columns[2]]
-            #     upsert_obj['dead'] = row[df.columns[2]]
-            # else:
-            #     raise Exception('Data type not supported!')
-            #
-            continue
+            if data_type == 'confirmed':
+                confirmed = row['Liczba'] if not np.isnan(row['Liczba']) else None
+                upsert_obj['confirmed'] = confirmed
+            elif data_type == 'deaths':
+                dead = row['Wszystkie przypadki śmiertelne'] if not np.isnan(
+                    row['Wszystkie przypadki śmiertelne']) else None
+                upsert_obj['dead'] = dead
+            else:
+                raise Exception('Data type not supported!')
 
             self.upsert_data(**upsert_obj)
-        print(f'Non existing gids: {non_existing_gids}')
-        print(f'Duplicates: {duplicate_gids}')
-
-        import csv
-
-        with open('translation_woj.csv', 'w') as csv_file:
-            writer = csv.writer(csv_file)
-            writer.writerow([
-                                "countrycode, input_adm_area_1, input_adm_area_2, input_adm_area_3, adm_area_1, adm_area_2, adm_area_3, gid"])
-            for value in translation:
-                writer.writerow([
-                    'POL', value['area_name'], value['region_name'], '',
-                    value['adm_area_1'], value['adm_area_2'], value['adm_area_3'],
-                    value['gid']]
-                )
-
-        print('---')
 
     def run(self):
-        region_mapping = RegionMapping(self.data_adapter.conn)
-
         # Wojewodztwa
         report_urls = get_regional_report_urls("https://www.gov.pl/web/koronawirus/pliki-archiwalne-wojewodztwa")
         report_urls.append(
@@ -126,8 +76,11 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
 
             self.update_cases(date,
                               df_data[['Województwo', 'Liczba']],
-                              'confirmed',
-                              region_mapping)
+                              'confirmed')
+
+            self.update_cases(date,
+                              df_data[['Województwo', 'Wszystkie przypadki śmiertelne']],
+                              'deaths')
 
         # Powiaty
         report_urls = get_regional_report_urls("https://www.gov.pl/web/koronawirus/pliki-archiwalne-powiaty")
@@ -136,12 +89,10 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
         for url in report_urls:
             df_data, date = get_daily_report(url)
 
-            # self.update_cases(date,
-            #                   df_data[['Województwo', 'Powiat/Miasto', 'Liczba']],
-            #                   'confirmed',
-            #                   region_mapping)
-            #
-            # self.update_cases(date,
-            #                   df_data[['Województwo', 'Powiat/Miasto', 'Wszystkie przypadki śmiertelne']],
-            #                   'deaths',
-            #                   region_mapping)
+            self.update_cases(date,
+                              df_data[['Województwo', 'Powiat/Miasto', 'Liczba']],
+                              'confirmed')
+
+            self.update_cases(date,
+                              df_data[['Województwo', 'Powiat/Miasto', 'Wszystkie przypadki śmiertelne']],
+                              'deaths')

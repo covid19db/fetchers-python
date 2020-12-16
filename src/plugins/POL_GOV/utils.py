@@ -6,7 +6,8 @@ import pandas as pd
 import datetime
 import re
 
-file_name_regexp_1 = re.compile(r".+filename.+'(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})(?P<hour>\d{2})(?P<min>\d{2})(?P<sec>\d{2}).+csv")
+file_name_regexp_1 = re.compile(
+    r".+filename.+'(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})(?P<hour>\d{2})(?P<min>\d{2})(?P<sec>\d{2}).+csv")
 file_name_regexp_2 = re.compile(r".+filename.+(?P<day>\d{2})(?P<month>\d{2})(?P<year>\d{4})_.+csv")
 file_name_regexp_3 = re.compile(r".+filename.+(?P<day>\d{2})_(?P<month>\d{2})_(?P<year>\d{2,4}).+csv")
 
@@ -28,8 +29,10 @@ def get_daily_report(url):
 
     date = datetime.date(int(year) if int(year) > 2000 else int(year) + 2000, int(month), int(day))
     df_data = pd.read_csv(StringIO(req.text), sep=';', decimal=",")
-    print(date)
-
+    if 'Liczba przypadków' in df_data.columns:
+        df_data.rename({'Liczba przypadków': 'Liczba'}, axis=1, inplace=True)
+    if 'Zgony' in df_data.columns:
+        df_data.rename({'Zgony': 'Wszystkie przypadki śmiertelne'}, axis=1, inplace=True)
     return df_data, date
 
 
