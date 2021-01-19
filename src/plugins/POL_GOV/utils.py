@@ -30,10 +30,19 @@ def get_daily_report(url):
 
     date = datetime.date(int(year) if int(year) > 2000 else int(year) + 2000, int(month), int(day))
     df_data = pd.read_csv(StringIO(req.text), sep=';', decimal=",").replace({np.nan: None})
+    if 'wojewodztwo' in df_data.columns:
+        df_data.rename({'wojewodztwo': 'Województwo'}, axis=1, inplace=True)
+    if 'powiat_miasto' in df_data.columns:
+        df_data.rename({'powiat_miasto': 'Powiat/Miasto'}, axis=1, inplace=True)
+    if 'liczba_przypadkow' in df_data.columns:
+        df_data.rename({'liczba_przypadkow': 'Liczba'}, axis=1, inplace=True)
+    if 'zgony' in df_data.columns:
+        df_data.rename({'zgony': 'Wszystkie przypadki śmiertelne'}, axis=1, inplace=True)
     if 'Liczba przypadków' in df_data.columns:
         df_data.rename({'Liczba przypadków': 'Liczba'}, axis=1, inplace=True)
     if 'Zgony' in df_data.columns:
         df_data.rename({'Zgony': 'Wszystkie przypadki śmiertelne'}, axis=1, inplace=True)
+
     return df_data, date
 
 
