@@ -74,13 +74,13 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
         globaldf.sort_values(['Date_reported'], inplace=True)
 
         for index, record in globaldf.iterrows():
-            date = record['Date_reported']
-            total_confirmed = record['Cumulative_cases']
-            total_deaths = record['Cumulative_deaths']
+            date = str(record['Date_reported'])
+            total_confirmed = int(record['Cumulative_cases'])
+            total_deaths = int(record['Cumulative_deaths'])
 
             upsert_obj = {
                 'source': self.SOURCE,
-                'date': date.strftime('%Y-%m-%d'),
+                'date': date,
                 'country': 'World',
                 'countrycode': 'WRD',
                 'adm_area_1': None,
