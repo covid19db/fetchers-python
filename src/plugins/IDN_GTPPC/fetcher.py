@@ -84,7 +84,7 @@ class IndonesiaFetcher(BaseEpidemiologyFetcher):
                 continue
 
             url = 'https://data.covid19.go.id/public/api/prov_detail_' + province + '.json'
-            data = self.fetch(url, timeout=60)
+            data = self.fetch(url)
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1=province,
