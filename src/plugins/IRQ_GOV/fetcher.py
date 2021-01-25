@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 class IraqFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data for Iraq'''
     LOAD_PLUGIN = True
-    SOURCE = 'IRQ_GOV'  # United Arab Emirates Government 
+    SOURCE = 'IRQ_GOV'   
     
     def wd_config(self):
         # configue a webdriver for selenium
@@ -57,20 +57,20 @@ class IraqFetcher(BaseEpidemiologyFetcher):
         time.sleep(10)
         
         #Get last updated date
-        last_updated = self.wd.find_element_by_xpath(".//span[contains(text(), 'Second Update')]").text
+        last_updated = self.wd.find_element_by_xpath(".//span[contains(text(), 'Updated on')]").text
         last_updated = last_updated.split(',')
-        last_updated =last_updated[0]
+        last_updated = last_updated[0]
         last_updated = last_updated.strip()
-        last_updated=last_updated.replace('Second Update with Individual Information at ','')
-        date = datetime.strptime(last_updated, '%d %B %Y').strftime('%Y-%m-%d')
+        last_updated = last_updated.replace('Updated on ','')
+        date = datetime.strptime(last_updated, '%d %b %Y').strftime('%Y-%m-%d')
         
         #get the pages menu        
-        menu_btn = self.wd.find_element_by_xpath(".//*[@id='pbiAppPlaceHolder']/ui-view/div/div[2]/logo-bar/div/div/div/logo-bar-navigation/span/a[2]")
+        menu_btn = self.wd.find_element_by_xpath(".//*[@id='embedWrapperID']/div[2]/logo-bar/div/div/div/logo-bar-navigation/span/a[3]")
         menu_btn.click() 
         time.sleep(5)   
         
         # go to the third page
-        page_btn = self.wd.find_element_by_xpath(".//*[@id='flyoutElement']/div[1]/div/div/ul/li[3]")
+        page_btn = self.wd.find_element_by_xpath(".//*[@id='embedWrapperID']/div[2]/logo-bar/div/div/div/logo-bar-navigation/span/a[3]")
         page_btn.click()
         time.sleep(5)    
            
@@ -97,14 +97,14 @@ class IraqFetcher(BaseEpidemiologyFetcher):
         # set city column is the index
         df.set_index('city', inplace =True)
         # select the two rows for Baghdad
-        baghdad = df.loc[['BAGHDAD-KARKH','BAGHDAD-RESAFA and MIDICAL CITY'],:]
+        baghdad = df.loc[['BAGHDAD-KARKH','BAGHDAD-RESAFA'],:]
         baghdad[['confirmed','recovered', 'dead']] = baghdad[['confirmed','recovered', 'dead']].apply(pd.to_numeric)
         
         #add the new cumulative Bagdad sum to the DF
         df = df.append(baghdad.sum().rename('BAGHDAD'))
         
         #remove the two Baghdad rows from the original dataframe
-        df = df.drop(['BAGHDAD-KARKH', 'BAGHDAD-RESAFA and MIDICAL CITY'])
+        df = df.drop(['BAGHDAD-KARKH', 'BAGHDAD-RESAFA'])
         
         # reove the city column as index
         df.reset_index(inplace=True)
