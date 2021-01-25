@@ -32,8 +32,7 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
     def fetch(self):
         # a csv file to be downloaded
         url = 'https://covid19.who.int/WHO-COVID-19-global-data.csv'
-        r = requests.get(url)
-        return pd.read_csv(StringIO(r.text))
+        return pd.read_csv(url)
 
     def run(self):
         data = self.fetch()
@@ -67,6 +66,30 @@ class WorldWHOFetcher(BaseEpidemiologyFetcher):
                 'dead': dead,
             }
 
+            self.upsert_data(**upsert_obj)
+
+        # global figure
+        grouped = data.groupby(['Date_reported'], as_index=False)
+        globaldf = grouped[['Cumulative_cases', 'Cumulative_deaths']].sum()
+        globaldf.sort_values(['Date_reported'], inplace=True)
+
+        for index, record in globaldf.iterrows():
+            date = record['Date_reported']
+            total_confirmed = record['Cumulative_cases']
+            total_deaths = record['Cumulative_deaths']
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': date.strftime('%Y-%m-%d'),
+                'country': 'World',
+                'countrycode': 'WRD',
+                'adm_area_1': None,
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': None,
+                'confirmed': total_confirmed,
+                'dead': total_deaths
+            }
             self.upsert_data(**upsert_obj)
 
         for country in missing_country_codes:
