@@ -38,7 +38,10 @@ class NigeriaSO(BaseEpidemiologyFetcher):
         data = self.fetch()
 
         date_ = date.today().strftime('%Y-%m-%d')
-        tested = int(data["totalSamplesTested"])
+        try:
+            tested = int(data["totalSamplesTested"])
+        except:
+            tested = int(data["totalSamplesTested"].replace(',', ''))
         confirmed = int(data["totalConfirmedCases"])
         recovered = int(data["discharged"])
         dead = int(data["death"])
