@@ -240,6 +240,12 @@ class PostgresqlHelper(AbstractAdapter):
         self.execute(sql_query, kwargs)
         logger.debug("Updating diagnostics table with data: {}".format(list(kwargs.values())))
 
+    def get_data(self, table_name: str, source: str, date: str, gid: str):
+        sql_str = """SELECT * FROM {table_name} WHERE source = %s AND date = %s AND gid = %s"""
+        sql_query = sql.SQL(sql_str).format(table_name=sql.Identifier(table_name))
+        result = self.execute(sql_query, (source, date, gid))
+        return result[0] if len(result) == 1 else None
+
     def get_earliest_timestamp(self, table_name: str, source: str = None):
         sql_str = """SELECT min(date) as date FROM {table_name}"""
         if source:

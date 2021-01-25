@@ -99,6 +99,9 @@ class AbstractAdapter(ABC):
         else:
             raise NotImplementedError()
 
+    def get_data(self, table_name: str, source: str, date: str, gid: str):
+        raise NotImplementedError()
+
     def get_latest_timestamp(self, table_name: str, source: str = None):
         raise NotImplementedError()
 

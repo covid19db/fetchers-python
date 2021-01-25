@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 
 class PolandWikiFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'POL_WIKI'
 
     def update_total_cases(self, data: DataFrame):

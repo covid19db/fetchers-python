@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 
 class PolandRogalskiFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'POL_ROG'
 
     def update_cases(self, df: DataFrame, data_type: str, region_mapping: RegionMapping):

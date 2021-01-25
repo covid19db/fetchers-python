@@ -37,7 +37,7 @@ continents_codes = {
 
 class WorldECDCFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
-    SOURCE = 'WRD_ECDC'
+    SOURCE = 'WRD_ECDC_WEEKLY'
 
     def map_country_code(self, country_code):
         if country_code == 'CNG1925':
@@ -58,7 +58,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
         data = self.fetch()
         data.sort_values(['countryterritoryCode', 'dateRep'], inplace=True)
 
-        # Data contains new cases and deaths for each day. Get cumulative data by sorting by country
+        # Data contains new cases and deaths for each week. Get cumulative data by sorting by country
         # code and date, then iterating and adding to cumulative data for the same country
         country_total_confirmed_cases = dict()
         country_total_deaths = dict()
@@ -76,8 +76,8 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 continue
 
             country, adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(country_code)
-            confirmed = int(record['cases'])
-            dead = int(record['deaths'])
+            confirmed = int(record['cases_weekly'])
+            dead = int(record['deaths_weekly'])
 
             total_confirmed = country_total_confirmed_cases.get(country_code, 0)
             total_confirmed = total_confirmed + confirmed
@@ -106,18 +106,18 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
 
         # now group by continent
         grouped = data.groupby(['dateRep', 'continentExp'], as_index=False)
-        continentaldf = grouped[['cases', 'deaths']].sum()
+        continentaldf = grouped[['cases_weekly', 'deaths_weekly']].sum()
         continentaldf.sort_values(['continentExp', 'dateRep'], inplace=True)
 
-        # Data contains new cases and deaths for each day. Get cumulative data by sorting by continent
+        # Data contains new cases and deaths for each week. Get cumulative data by sorting by continent
         # and date, then iterating and adding to cumulative data for the same continent
         # just use same dictionaries as for countries
 
         for index, record in continentaldf.iterrows():
             date = record['dateRep']
             continent = 'Other continent' if record['continentExp'] == 'Other' else record['continentExp']
-            confirmed = record['cases']
-            dead = record['deaths']
+            confirmed = record['cases_weekly']
+            dead = record['deaths_weekly']
 
             total_confirmed = country_total_confirmed_cases.get(continent, 0)
             total_confirmed = total_confirmed + confirmed
@@ -147,15 +147,15 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
         # same method but just sort by the date
 
         grouped = continentaldf.groupby(['dateRep'], as_index=False)
-        globaldf = grouped[['cases', 'deaths']].sum()
+        globaldf = grouped[['cases_weekly', 'deaths_weekly']].sum()
         globaldf.sort_values(['dateRep'], inplace=True)
 
         # This
 
         for index, record in globaldf.iterrows():
             date = record['dateRep']
-            confirmed = record['cases']
-            dead = record['deaths']
+            confirmed = record['cases_weekly']
+            dead = record['deaths_weekly']
 
             total_confirmed = country_total_confirmed_cases.get('world', 0)
             total_confirmed = total_confirmed + confirmed
