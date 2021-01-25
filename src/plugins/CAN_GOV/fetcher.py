@@ -39,20 +39,20 @@ class CanadaFetcher(BaseEpidemiologyFetcher):
         for index, record in data.iterrows():
             olddate = str(record[3])  # date is in dd-mm-yyyy format
             province = record[1]
-            confirmed = int(record[4])
+            confirmed = int(record[5])
 
-            if not math.isnan(record[6]):
-                dead = int(record[6])
+            if not math.isnan(record[7]):
+                dead = int(record[7])
             else:
                 dead = None
 
-            if not math.isnan(record[8]):
-                tested = int(record[8])
+            if not math.isnan(record[9]):
+                tested = int(record[9])
             else:
                 tested = None
 
-            if not math.isnan(record[9]):
-                recovered = int(record[9])
+            if not math.isnan(record[10]):
+                recovered = int(record[10])
             else:
                 recovered = None
 
