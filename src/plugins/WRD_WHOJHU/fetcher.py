@@ -32,8 +32,6 @@ class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'WRD_WHOJHU'
 
-
-
     def fetch(self, category):
         logger.debug(f'Going to fetch world {category}')
         data = pd.read_csv(f'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/'
@@ -47,8 +45,13 @@ class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
             province = record[0] if pd.notna(record[0]) else None
             country = record[1].replace('*', '')  # also remove accidental *
             # special cases:
-            if province in ('Diamond Princess', 'Grand Princess', 'Recovered') or country in (
-                    'Diamond Princess', 'MS Zaandam'):
+            if province in (
+                    'Diamond Princess',
+                    'Grand Princess',
+                    'Recovered',
+                    'Repatriated Travellers') or country in (
+                    'Diamond Princess',
+                    'MS Zaandam'):
                 continue
             countrycode = iso_alpha_3[country]
             # replace with GADM standard
