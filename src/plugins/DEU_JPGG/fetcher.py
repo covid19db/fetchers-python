@@ -18,9 +18,12 @@
 # https://gehrcke.de/2020/03/covid-19-sars-cov-2-resources/
 # github: https://github.com/jgehrcke/covid-19-germany-gae
 #
+# Note that Gehrcke has disabled the HTTP API in Feb 2021 so we now fetch
+# directly from his GitHub.
+#
 
 import logging
-import requests
+import pandas as pd
 
 __all__ = ('GermanyJPGGFetcher',)
 
@@ -33,61 +36,50 @@ class GermanyJPGGFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'DEU_JPGG'
 
-    def fetch(self, state):
-        logger.debug(f'Fetching cases for Germany region {state}')
-        data = requests.get(f'https://covid19-germany.appspot.com/timeseries/{state}/cases').json()
-
-        for record in data['data']:
-            date = next(iter(record))
-
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                country_code='DEU',
-                input_adm_area_1=state,
-                input_adm_area_2=None,
-                input_adm_area_3=None,
-                return_original_if_failure=True
-            )
-
-            upsert_obj = {
-                'source': self.SOURCE,
-                'date': date[:10],
-                'country': 'Germany',
-                'countrycode': 'DEU',
-                'adm_area_1': adm_area_1,
-                'adm_area_2': adm_area_2,
-                'adm_area_3': adm_area_3,
-                'confirmed': int(record[date]),
-                'gid': gid
-            }
-            self.upsert_data(**upsert_obj)
-
-        logger.debug(f'Fetching deaths for Germany region {state}')
-        data = requests.get(f'https://covid19-germany.appspot.com/timeseries/{state}/deaths').json()
-
-        for record in data['data']:
-            date = next(iter(record))
-
-            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                country_code='DEU',
-                input_adm_area_1=state,
-                input_adm_area_2=None,
-                input_adm_area_3=None,
-                return_original_if_failure=True
-            )
-
-            upsert_obj = {
-                'source': self.SOURCE,
-                'date': date[:10],
-                'country': 'Germany',
-                'countrycode': 'DEU',
-                'adm_area_1': adm_area_1,
-                'adm_area_2': adm_area_2,
-                'adm_area_3': adm_area_3,
-                'dead': int(record[date]),
-                'gid': gid
-            }
-            self.upsert_data(**upsert_obj)
+    def fetch(self, metric):
+        return pd.read_csv(f'https://raw.githubusercontent.com/jgehrcke/covid-19-germany-gae/'
+                           f'master/{metric}-rki-by-state.csv', index_col='time_iso8601')
 
     def run(self):
+        logger.debug('Fetching cases for Germany')
+        cases_data = self.fetch('cases')
+
+        logger.debug('Fetching deaths for Germany')
+        deaths_data = self.fetch('deaths')
+
         for state in self.adm_translator.translation_pd['input_adm_area_1']:
-            self.fetch(state)
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                country_code='DEU',
+                input_adm_area_1=state,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
+
+            for index, value in cases_data[state].items():
+                upsert_obj = {
+                    'source': self.SOURCE,
+                    'date': index[:10],
+                    'country': 'Germany',
+                    'countrycode': 'DEU',
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': adm_area_2,
+                    'adm_area_3': adm_area_3,
+                    'confirmed': int(value),
+                    'gid': gid
+                }
+                self.upsert_data(**upsert_obj)
+
+            for index, value in deaths_data[state].items():
+                upsert_obj = {
+                    'source': self.SOURCE,
+                    'date': index[:10],
+                    'country': 'Germany',
+                    'countrycode': 'DEU',
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': adm_area_2,
+                    'adm_area_3': adm_area_3,
+                    'dead': int(value),
+                    'gid': gid
+                }
+                self.upsert_data(**upsert_obj)
