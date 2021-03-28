@@ -42,7 +42,7 @@ class FranceSPFFetcher(BaseEpidemiologyFetcher):
         data = data[data['sexe'] == 0]
 
         for index, record in data.iterrows():
-            # dep;sexe;jour;hosp;rea;rad;dc
+            # dep;sexe;jour;hosp;rea;HospConv;SSR_USLD;autres;rad;dc
             if pd.notna(record[0]):
                 dep = 'Département ' + record[0]
                 jour = record[2]
@@ -50,8 +50,8 @@ class FranceSPFFetcher(BaseEpidemiologyFetcher):
                     jour = datetime.strptime(jour, '%d/%m/%Y').strftime('%Y-%m-%d')
                 hosp = int(record[3])
                 rea = int(record[4])
-                rad = int(record[5])
-                dc = int(record[6])
+                rad = int(record[8])
+                dc = int(record[9])
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     country_code='FRA',
@@ -82,13 +82,13 @@ class FranceSPFFetcher(BaseEpidemiologyFetcher):
         data = data[data['cl_age90'] == 0]
 
         for index, record in data.iterrows():
-            # reg;cl_age90;jour;hosp;rea;rad;dc
+            # reg;cl_age90;jour;hosp;rea;HospConv;SSR_USLD;autres;rad;dc
             reg = 'Région ' + record[0]
             jour = record[2]
             hosp = int(record[3])
             rea = int(record[4])
-            rad = int(record[5])
-            dc = int(record[6])
+            rad = int(record[8])
+            dc = int(record[9])
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 country_code='FRA',
