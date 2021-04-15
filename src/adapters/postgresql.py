@@ -82,7 +82,7 @@ class PostgresqlHelper(AbstractAdapter):
             self.conn.commit()
         except (psycopg2.DatabaseError, psycopg2.OperationalError) as error:
             if attempt > 0:
-                logger.error(f"Got error: {error}, retrying")
+                logger.error(f"Got error: {error}, query: {query}, data {data}, retrying")
                 time.sleep(1)
                 self.reset_connection()
                 self.execute(query, data, attempt - 1)
