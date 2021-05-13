@@ -1,0 +1,53 @@
+countrycode,input_adm_area_1,input_adm_area_2,input_adm_area_3,adm_area_1,adm_area_2,adm_area_3,gid
+ESP,ES-AL,,,Andalucía,Almería,,ESP.1.1_1
+ESP,ES-CA,,,Andalucía,Cádiz,,ESP.1.2_1
+ESP,ES-CO,,,Andalucía,Córdoba,,ESP.1.3_1
+ESP,ES-GR,,,Andalucía,Granada,,ESP.1.4_1
+ESP,ES-H,,,Andalucía,Huelva,,ESP.1.5_1
+ESP,ES-J,,,Andalucía,Jaén,,ESP.1.6_1
+ESP,ES-MA,,,Andalucía,Málaga,,ESP.1.7_1
+ESP,ES-SE,,,Andalucía,Sevilla,,ESP.1.8_1
+ESP,ES-HU,,,Aragón,Huesca,,ESP.2.1_1
+ESP,ES-TE,,,Aragón,Teruel,,ESP.2.2_1
+ESP,ES-Z,,,Aragón,Zaragoza,,ESP.2.3_1
+ESP,ES-S,,,Cantabria,Cantabria,,ESP.3.1_1
+ESP,ES-AB,,,Castilla-La Mancha,Albacete,,ESP.4.1_1
+ESP,ES-CR,,,Castilla-La Mancha,Ciudad Real,,ESP.4.2_1
+ESP,ES-CU,,,Castilla-La Mancha,Cuenca,,ESP.4.3_1
+ESP,ES-GU,,,Castilla-La Mancha,Guadalajara,,ESP.4.4_1
+ESP,ES-TO,,,Castilla-La Mancha,Toledo,,ESP.4.5_1
+ESP,ES-AV,,,Castilla y León,Ávila,,ESP.5.1_1
+ESP,ES-BU,,,Castilla y León,Burgos,,ESP.5.2_1
+ESP,ES-LE,,,Castilla y León,León,,ESP.5.3_1
+ESP,ES-P,,,Castilla y León,Palencia,,ESP.5.4_1
+ESP,ES-SA,,,Castilla y León,Salamanca,,ESP.5.5_1
+ESP,ES-SG,,,Castilla y León,Segovia,,ESP.5.6_1
+ESP,ES-SO,,,Castilla y León,Soria,,ESP.5.7_1
+ESP,ES-VA,,,Castilla y León,Valladolid,,ESP.5.8_1
+ESP,ES-ZA,,,Castilla y León,Zamora,,ESP.5.9_1
+ESP,ES-B,,,Cataluña,Barcelona,,ESP.6.1_1
+ESP,ES-GI,,,Cataluña,Girona,,ESP.6.2_1
+ESP,ES-L,,,Cataluña,Lleida,,ESP.6.3_1
+ESP,ES-T,,,Cataluña,Tarragona,,ESP.6.4_1
+ESP,ES-CE,,,Ceuta y Melilla,Ceuta,,ESP.7.1_1
+ESP,ES-ML,,,Ceuta y Melilla,Melilla,,ESP.7.2_1
+ESP,ES-M,,,Comunidad de Madrid,Madrid,,ESP.8.1_1
+ESP,ES-NA,,,Comunidad Foral de Navarra,Navarra,,ESP.9.1_1
+ESP,ES-A,,,Comunidad Valenciana,Alicante,,ESP.10.1_1
+ESP,ES-CS,,,Comunidad Valenciana,Castellón,,ESP.10.2_1
+ESP,ES-V,,,Comunidad Valenciana,Valencia,,ESP.10.3_1
+ESP,ES-BA,,,Extremadura,Badajoz,,ESP.11.1_1
+ESP,ES-CC,,,Extremadura,Cáceres,,ESP.11.2_1
+ESP,ES-C,,,Galicia,A Coruña,,ESP.12.1_1
+ESP,ES-LU,,,Galicia,Lugo,,ESP.12.2_1
+ESP,ES-OR,,,Galicia,Ourense,,ESP.12.3_1
+ESP,ES-PO,,,Galicia,Pontevedra,,ESP.12.4_1
+ESP,ES-PM,,,Islas Baleares,Baleares,,ESP.13.1_1
+ESP,ES-GC,,,Islas Canarias,Las Palmas,,ESP.14.1_1
+ESP,ES-TF,,,Islas Canarias,Santa Cruz de Tenerife,,ESP.14.2_1
+ESP,ES-LO,,,La Rioja,La Rioja,,ESP.15.1_1
+ESP,ES-VI,,,País Vasco,Álava,,ESP.16.1_1
+ESP,ES-SS,,,País Vasco,Guipúzcoa,,ESP.16.2_1
+ESP,ES-BI,,,País Vasco,Vizcaya,,ESP.16.3_1
+ESP,ES-O,,,Principado de Asturias,Asturias,,ESP.17.1_1
+ESP,ES-MU,,,Región de Murcia,Murcia,,ESP.18.1_1

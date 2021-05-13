@@ -28,6 +28,7 @@ Oxford COVID-19 Database: multimodal data repository for understanding the globa
 | CHE_OPGOV | Switzerland | [Swiss Cantons and the Principality of Liechtenstein](https://github.com/openZH/covid_19) | CC 4.0 |
 | CHN_ICL | Mainland China | [MRC Centre for Global Infectious Disease Analysis](https://github.com/mrc-ide/covid19_mainland_China_report) | CC BY NC ND 4.0 |
 | DEU_JPGG | Germany | [Jan-Philip Gehrcke](https://github.com/jgehrcke/covid-19-germany-gae) | MIT |
+| ESP_ISCIII | Spain | [Instituto de Salud Carlos III](https://cnecovid.isciii.es/covid19/) |  |
 | ESP_MS | Spain | [Ministerio de Sanidad, Consumo y Bienestar Social](https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm) | "Desnaturalización" prohibited, citation required |
 | ESP_MSVP | Spain | [Ministerio de Sanidad, Consumo y Bienestar Social](https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv) | Apache License 2.0 |
 | EU_ZH | Austria | [Covid19-eu-zh](https://github.com/covid19-eu-zh/covid19-eu-data/blob/master/dataset/covid-19-at.csv) | MIT |
