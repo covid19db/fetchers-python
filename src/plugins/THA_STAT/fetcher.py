@@ -19,7 +19,6 @@
 
 import logging
 import requests
-import pandas as pd
 from datetime import datetime
 
 __all__ = ('ThailandSTATFetcher',)
@@ -34,11 +33,11 @@ class ThailandSTATFetcher(BaseEpidemiologyFetcher):
     SOURCE = 'THA_STAT'
 
     def fetch(self, category):
-        return requests.get(f'https://covid19.th-stat.com/api/open/{category}').json()
+        return requests.get(f'https://covid19.th-stat.com/json/covid19v2/get{category}.json').json()
 
     def run(self):
         logger.debug('Fetching country-level information')
-        data = self.fetch('timeline')
+        data = self.fetch('Timeline')
 
         for record in data['Data']:
             upsert_obj = {
@@ -55,32 +54,30 @@ class ThailandSTATFetcher(BaseEpidemiologyFetcher):
             self.upsert_data(**upsert_obj)
 
         logger.debug('Fetching regional information')
-        data = self.fetch('cases')
+        data = self.fetch('SumCases')
+        lastdata = data['LastData'][:10]
 
-        # Get cumulative counts from the cross table of dates and provinces
-        df = pd.DataFrame(data['Data'], columns=['ConfirmDate', 'ProvinceEn'])
-        crosstabsum = pd.crosstab(df.ConfirmDate.apply(lambda d: d[:10]), df.ProvinceEn) \
-            .sort_index() \
-            .cumsum()
+        for record in data['Province']:
+            provinceen = record['ProvinceEn']
+            if provinceen == 'Unknown':
+                continue
 
-        for confirmdate, row in crosstabsum.iterrows():
-            for provinceen, confirmed in row.items():
-                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                    input_adm_area_1=provinceen,
-                    input_adm_area_2=None,
-                    input_adm_area_3=None,
-                    return_original_if_failure=True
-                )
+            success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                input_adm_area_1=provinceen,
+                input_adm_area_2=None,
+                input_adm_area_3=None,
+                return_original_if_failure=True
+            )
 
-                upsert_obj = {
-                    'source': self.SOURCE,
-                    'date': confirmdate,
-                    'country': 'Thailand',
-                    'countrycode': 'THA',
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': adm_area_2,
-                    'adm_area_3': adm_area_3,
-                    'gid': gid,
-                    'confirmed': int(confirmed)
-                }
-                self.upsert_data(**upsert_obj)
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': lastdata,
+                'country': 'Thailand',
+                'countrycode': 'THA',
+                'adm_area_1': adm_area_1,
+                'adm_area_2': adm_area_2,
+                'adm_area_3': adm_area_3,
+                'gid': gid,
+                'confirmed': int(record['Count'])
+            }
+            self.upsert_data(**upsert_obj)
