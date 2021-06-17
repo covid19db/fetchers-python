@@ -73,36 +73,41 @@ class SpainMSFetcher(BaseEpidemiologyFetcher):
                                    columns=['ccaa', 'hospitalised', 'hospitalised_icu', 'dead'])
                 data = df1.merge(df2, on='ccaa')
             else:
-                # From Actualización 234 (22.10.2020) onwards, hospitalised_icu became
-                # non-cumulative so we skipped it to avoid double counting
+                # From Actualización 234 (22.10.2020) onwards, hospitalised and hospitalised_icu
+                # became non-cumulative so we skipped them
                 if actualizacion == 234:
                     # Actualización 234 (22.10.2020) created a separate table for deaths
-                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 3. Situa', 'Tabla 4. Casos'])
+                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 4. Casos'])
+                elif actualizacion == 266:
+                    # Actualización 266 (07.12.2020) had no hospitalisation data
+                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 3. Casos'])
+                elif actualizacion >= 235 and actualizacion <= 359:
+                    # Actualización 235 to 359 (23.10.2020 to 22.04.2021) moved Table 4 to Table 5
+                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 5. Casos'])
                 else:
-                    # Actualización 235+ (23.10.2020 to present) moved Table 4 to Table 5
-                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 3. Situa', 'Tabla 5. Casos'])
+                    # Actualización 360+ (23.04.2021 to present) moved Table 5 back to Table 4
+                    tabs = get_ccaa_tables(content, ['Tabla 1. Casos', 'Tabla 4. Casos'])
 
                 if 'Acrobat Distiller' in parsed['metadata']['producer']:  # fragile
                     tabs[0] = [[col for col in row if col != ''] for row in tabs[0]]
                     tabs[1] = [[col for col in row if col != ''] for row in tabs[1]]
-                    tabs[2] = [[col for col in row if col != ''] for row in tabs[2]]
 
                 df1 = pd.DataFrame([row[0:2] for row in tabs[0]], columns=['ccaa', 'confirmed'])
-                df2 = pd.DataFrame([row[0:2] for row in tabs[1]], columns=['ccaa', 'hospitalised'])
-                df3 = pd.DataFrame([row[0:2] for row in tabs[2]], columns=['ccaa', 'dead'])
-                data = df1.merge(df2, on='ccaa').merge(df3, on='ccaa')
+                df2 = pd.DataFrame([row[0:2] for row in tabs[1]], columns=['ccaa', 'dead'])
+                data = df1.merge(df2, on='ccaa')
 
             for index, record in data.iterrows():
                 # ccaa,confirmed,hospitalised,hospitalised_icu,dead
                 ccaa = record[0]
                 confirmed = int(record[1]) if pd.notna(record[1]) else None
-                hospitalised = int(record[2]) if pd.notna(record[2]) else None
                 if actualizacion < 234:
+                    hospitalised = int(record[2]) if pd.notna(record[2]) else None
                     hospitalised_icu = int(record[3]) if pd.notna(record[3]) else None
                     dead = int(record[4]) if pd.notna(record[4]) else None
                 else:
+                    hospitalised = None
                     hospitalised_icu = None
-                    dead = int(record[3]) if pd.notna(record[3]) else None
+                    dead = int(record[2]) if pd.notna(record[2]) else None
 
                 success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                     country_code='ESP',

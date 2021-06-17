@@ -45,12 +45,13 @@ class UnitedStatesNYTFetcher(BaseEpidemiologyFetcher):
             county = record[1]
             state = record[2]
             cases = int(record[4])
-            deaths = int(record[5])
+            deaths = int(record[5]) if pd.notna(record[5]) else None
 
             # Skip "Unknown" counties and a few cities
-            if county in ('Unknown', 'Baltimore', 'Kansas City', 'St. Louis city'):
+            if county in ('Unknown', 'Wrangell City and Borough', 'Baltimore',
+                          'Joplin', 'Kansas City', 'St. Louis city'):
                 continue
-            if state == 'Virginia' and county in ('Richmond', 'Franklin city'):
+            if state == 'Virginia' and county in ('Franklin city', 'Richmond'):
                 continue
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(

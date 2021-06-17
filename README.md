@@ -28,6 +28,7 @@ Oxford COVID-19 Database: multimodal data repository for understanding the globa
 | CHE_OPGOV | Switzerland | [Swiss Cantons and the Principality of Liechtenstein](https://github.com/openZH/covid_19) | CC 4.0 |
 | CHN_ICL | Mainland China | [MRC Centre for Global Infectious Disease Analysis](https://github.com/mrc-ide/covid19_mainland_China_report) | CC BY NC ND 4.0 |
 | DEU_JPGG | Germany | [Jan-Philip Gehrcke](https://github.com/jgehrcke/covid-19-germany-gae) | MIT |
+| ESP_ISCIII | Spain | [Instituto de Salud Carlos III](https://cnecovid.isciii.es/covid19/) |  |
 | ESP_MS | Spain | [Ministerio de Sanidad, Consumo y Bienestar Social](https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm) | "Desnaturalización" prohibited, citation required |
 | ESP_MSVP | Spain | [Ministerio de Sanidad, Consumo y Bienestar Social](https://raw.githubusercontent.com/victorvicpal/COVID19_es/master/data/final_data/dataCOVID19_es.csv) | Apache License 2.0 |
 | EU_ZH | Austria | [Covid19-eu-zh](https://github.com/covid19-eu-zh/covid19-eu-data/blob/master/dataset/covid-19-at.csv) | MIT |
@@ -64,6 +65,7 @@ Oxford COVID-19 Database: multimodal data repository for understanding the globa
 | LAT_DSRP | Peru | [Data Science Research Peru](https://github.com/DataScienceResearchPeru/covid-19_latinoamerica) | CC BY-NC-SA 4.0 |
 | MYS_MHYS | Malaysia | [Young Shung](https://github.com/ynshung/covid-19-malaysia) | Public Domain Dedication and License v1.0 |
 | NGA_CDC | Nigeria | [Nigeria Centre for Disease Control](https://covid19.ncdc.gov.ng/) |  |
+| NGA_HERA | Nigeria | [Humanitarian Emergency Response Africa](https://data.humdata.org/dataset/nigeria_covid19_subnational) | CC BY |
 | NGA_SO | Nigeria | [Nigeria Centre for Disease Control](https://covidnigeria.herokuapp.com/) | No licensing information. |
 | NLD_CW | Netherlands | [Jonathan de Bruin](https://github.com/J535D165/CoronaWatchNL/tree/master/data) | CC0 |
 | PAK_GOV | Pakistan | [National Information Technology Board, Government of Pakistan](https://datastudio.google.com/u/0/reporting/1PLVi5amcc_R5Gh928gTE8-8r8-fLXJQF/page/kyNJB) |  |

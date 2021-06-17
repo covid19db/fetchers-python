@@ -13,15 +13,17 @@
 # limitations under the License.
 
 import logging
+import os
+from selenium import webdriver
 from pandas import DataFrame
 from datetime import timedelta
 
-from utils.config import config
+from utils.adapter.abstract_adapter import AbstractAdapter
 from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 
 __all__ = ('PolandGovFetcher',)
 
-from .utils import get_daily_report, get_regional_report_urls, get_recent_regional_report_url, cumulative
+from .utils import get_reports_url, cumulative, download_reports, load_daily_report
 
 logger = logging.getLogger(__name__)
 
@@ -29,6 +31,18 @@ logger = logging.getLogger(__name__)
 class PolandGovFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'POL_GOV'
+    TEMP_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'temp')
+
+    def __init__(self, data_adapter: AbstractAdapter):
+        super().__init__(data_adapter)
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        self.wd = webdriver.Chrome(chrome_options=chrome_options)
+        self.wd.set_page_load_timeout(300)
+        self.wd.set_script_timeout(60)
+        self.wd.implicitly_wait(5)
 
     def cumulative(self, gid: str, date):
         previous_day_date = (date - timedelta(days=1)).strftime('%Y-%m-%d')
@@ -40,16 +54,16 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
 
     def update_cases(self, date: str, df: DataFrame, data_type: str):
         for index, row in df.iterrows():
-            region = row['Powiat/Miasto'] if 'Powiat/Miasto' in row.index else None
+            region = row['powiat_miasto'] if 'powiat_miasto' in row.index else None
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
-                input_adm_area_1=row['Województwo'],
+                input_adm_area_1=row['wojewodztwo'],
                 input_adm_area_2=region,
                 input_adm_area_3=None,
                 return_original_if_failure=False
             )
 
             print(
-                f"{date} - {row['Województwo']}, {region} -> {adm_area_1}, {adm_area_2}, {adm_area_3}, {gid}")
+                f"{date} - {row['wojewodztwo']}, {region} -> {adm_area_1}, {adm_area_2}, {adm_area_3}, {gid}")
 
             upsert_obj = {
                 'source': self.SOURCE,
@@ -63,9 +77,9 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
             }
 
             if data_type == 'confirmed':
-                upsert_obj['confirmed'] = row['Liczba']
+                upsert_obj['confirmed'] = float(row['liczba_przypadkow'])
             elif data_type == 'deaths':
-                upsert_obj['dead'] = row['Wszystkie przypadki śmiertelne']
+                upsert_obj['dead'] = float(row['zgony'])
             else:
                 raise Exception('Data type not supported!')
 
@@ -80,41 +94,50 @@ class PolandGovFetcher(BaseEpidemiologyFetcher):
 
             upsert_obj['source'] = 'POL_COVID'
             if data_type == 'confirmed':
-                upsert_obj['confirmed'] = cumulative(row['Liczba'], previous_day_confirmed)
+                upsert_obj['confirmed'] = cumulative(row['liczba_przypadkow'], previous_day_confirmed)
             elif data_type == 'deaths':
-                upsert_obj['dead'] = cumulative(row['Wszystkie przypadki śmiertelne'], previous_day_dead)
+                upsert_obj['dead'] = cumulative(row['zgony'], previous_day_dead)
             else:
                 raise Exception('Data type not supported!')
 
             self.upsert_data(**upsert_obj)
 
     def run(self):
+        base_url = "https://wojewodztwa-rcb-gis.hub.arcgis.com/pages/dane-do-pobrania"
+        voivodeship_zip_url, regions_zip_url = get_reports_url(self.wd, base_url)
+
         # Wojewodztwa
-        report_urls = get_regional_report_urls("https://www.gov.pl/web/koronawirus/pliki-archiwalne-wojewodztwa")
-        report_urls.append(
-            get_recent_regional_report_url("https://www.gov.pl/web/koronawirus/wykaz-zarazen-koronawirusem-sars-cov-2"))
-        for url in report_urls:
-            df_data, date = get_daily_report(url)
+        voivodeship_temp_path = os.path.join(self.TEMP_PATH, "voivodeship")
+        download_reports(voivodeship_zip_url, voivodeship_temp_path)
 
-            self.update_cases(date,
-                              df_data[['Województwo', 'Liczba']],
-                              'confirmed')
+        file_list = sorted(os.listdir(voivodeship_temp_path))
+        for file_name in file_list:
+            if file_name.endswith('csv'):
+                df_data, date = load_daily_report(voivodeship_temp_path, file_name)
 
-            self.update_cases(date,
-                              df_data[['Województwo', 'Wszystkie przypadki śmiertelne']],
-                              'deaths')
+                self.update_cases(date,
+                                  df_data[['wojewodztwo', 'liczba_przypadkow']],
+                                  'confirmed')
+
+                self.update_cases(date,
+                                  df_data[['wojewodztwo', 'zgony']],
+                                  'deaths')
 
         # Powiaty
-        report_urls = get_regional_report_urls("https://www.gov.pl/web/koronawirus/pliki-archiwalne-powiaty")
-        report_urls.append(get_recent_regional_report_url(
-            "https://www.gov.pl/web/koronawirus/mapa-zarazen-koronawirusem-sars-cov-2-powiaty"))
-        for url in report_urls:
-            df_data, date = get_daily_report(url)
+        regions_temp_path = os.path.join(self.TEMP_PATH, "regions")
+        download_reports(regions_zip_url, regions_temp_path)
 
-            self.update_cases(date,
-                              df_data[['Województwo', 'Powiat/Miasto', 'Liczba']],
-                              'confirmed')
+        file_list = sorted(os.listdir(regions_temp_path))
+        for file_name in file_list:
+            if file_name.endswith('csv'):
+                df_data, date = load_daily_report(regions_temp_path, file_name)
 
-            self.update_cases(date,
-                              df_data[['Województwo', 'Powiat/Miasto', 'Wszystkie przypadki śmiertelne']],
-                              'deaths')
+                self.update_cases(date,
+                                  df_data[['wojewodztwo', 'powiat_miasto', 'liczba_przypadkow']],
+                                  'confirmed')
+
+                self.update_cases(date,
+                                  df_data[['wojewodztwo', 'powiat_miasto', 'zgony']],
+                                  'deaths')
+
+        os.system(f"rm -rf {self.TEMP_PATH}")

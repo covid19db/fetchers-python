@@ -1,75 +1,60 @@
-import requests
 from bs4 import BeautifulSoup
 
-from io import StringIO
 import pandas as pd
-import numpy as np
 import datetime
-import re
-
-file_name_regexp_1 = re.compile(
-    r".+filename.+'(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})(?P<hour>\d{2})(?P<min>\d{2})(?P<sec>\d{2}).+csv")
-file_name_regexp_2 = re.compile(r".+filename.+(?P<day>\d{2})(?P<month>\d{2})(?P<year>\d{4})_.+csv")
-file_name_regexp_3 = re.compile(r".+filename.+(?P<day>\d{2})_(?P<month>\d{2})_(?P<year>\d{2,4}).+csv")
-
-
-def get_daily_report(url):
-    req = requests.get(url)
-    req.encoding = 'cp1250'
-    content_disposition = req.headers['content-disposition']
-
-    regex_list = [file_name_regexp_1, file_name_regexp_2, file_name_regexp_3]
-    for regex in regex_list:
-        s = regex.match(content_disposition)
-        if s:
-            day, month = int(s['day']), int(s['month'])
-            year = int(s['year']) if int(s['year']) > 2000 else int(s['year']) + 2000
-            break
-    else:
-        raise NotImplemented('Unknown date format')
-
-    date = datetime.date(int(year) if int(year) > 2000 else int(year) + 2000, int(month), int(day))
-    df_data = pd.read_csv(StringIO(req.text), sep=';', decimal=",").replace({np.nan: None})
-    if 'wojewodztwo' in df_data.columns:
-        df_data.rename({'wojewodztwo': 'Województwo'}, axis=1, inplace=True)
-    if 'powiat_miasto' in df_data.columns:
-        df_data.rename({'powiat_miasto': 'Powiat/Miasto'}, axis=1, inplace=True)
-    if 'liczba_przypadkow' in df_data.columns:
-        df_data.rename({'liczba_przypadkow': 'Liczba'}, axis=1, inplace=True)
-    if 'zgony' in df_data.columns:
-        df_data.rename({'zgony': 'Wszystkie przypadki śmiertelne'}, axis=1, inplace=True)
-    if 'Liczba przypadków' in df_data.columns:
-        df_data.rename({'Liczba przypadków': 'Liczba'}, axis=1, inplace=True)
-    if 'Zgony' in df_data.columns:
-        df_data.rename({'Zgony': 'Wszystkie przypadki śmiertelne'}, axis=1, inplace=True)
-
-    return df_data, date
+import requests
+import zipfile
+import io
+import os
+import time
 
 
-def get_regional_report_urls(base_url):
-    page = requests.get(base_url)
-    soup = BeautifulSoup(page.content, 'html.parser')
-    divs = soup.findAll("a", {"class": "file-download"})
-    return [f"https://www.gov.pl{div['href']}" for div in reversed(divs)]
+def get_reports_url(wd, base_url):
+    wd.get(base_url)
+    # the site loads slowly, so wait until all content is present
+    time.sleep(10)
 
+    soup = BeautifulSoup(wd.page_source, "lxml")
+    divs = soup.findAll("a")
 
-def get_recent_regional_report_url(base_url):
-    page = requests.get(base_url)
-
-    soup = BeautifulSoup(page.content, 'html.parser')
-    divs = soup.findAll("a", {"class": "file-download"})
     for div in divs:
-        if div['href']:
-            return div['href']
+        if div.text == "Pobierz archiwalne dane dla województw":
+            voivodeship_zip_url = div['href']
+        if div.text == "Pobierz archiwalne dane dla powiatów":
+            regions_zip_url = div['href']
+
+    return voivodeship_zip_url, regions_zip_url
+
+
+def download_reports(zip_url, temp_path):
+    os.system(f"rm -rf {temp_path}/*")
+    r = requests.get(zip_url)
+    z = zipfile.ZipFile(io.BytesIO(r.content))
+    z.extractall(temp_path)
+
+
+def load_daily_report(path, file_name):
+    date = datetime.date(int(file_name[:4]), int(file_name[4:6]), int(file_name[6:8]))
+    data_file_path = f"{path}/{file_name}"
+
+    encoding = 'cp1250'
+    with open(data_file_path, 'rb') as f:
+        f.readline()
+        line = f.readline()
+        if b'Ca\xc5\x82y kraj' in line:
+            encoding = 'utf-8'
+
+    df_data = pd.read_csv(data_file_path, sep=';', decimal=",", encoding=encoding).fillna(0)
+    return df_data, date
 
 
 def cumulative(current_cases, previous_day_cases):
     if previous_day_cases is not None:
-        cum = previous_day_cases
+        cum = float(previous_day_cases)
     else:
         cum = 0
 
     if current_cases is not None:
-        cum = cum + current_cases
+        cum = cum + float(current_cases)
 
     return cum
