@@ -29,16 +29,16 @@ class WalesFetcher(BaseEpidemiologyFetcher):
 
     def fetch(self):
         # an excel file to be downloaded
-        url = 'http://www2.nphs.wales.nhs.uk:8080/CommunitySurveillanceDocs.nsf/3dc04669c9e1eaa880257062003b246b/77fdb9a33544aee88025855100300cab/$FILE/Rapid%20COVID-19%20surveillance%20data.xlsx'
+        url = 'http://www2.nphs.wales.nhs.uk:8080/CommunitySurveillanceDocs.nsf/3dc04669c9e1eaa880257062003b246b/c84f742604ce56f0802586b600374b49/$FILE/Rapid%20COVID-19%20surveillance%20data.xlsx'
         testing_data = pd.read_excel(url, sheet_name='Tests by specimen date', parse_dates=[1])
         deaths_data = pd.read_excel(url, sheet_name='Deaths by LHB')
 
         # collect the date of the last update for deaths from another sheet, as Deaths by LHB does not have a date in it
-        national_deaths = pd.read_excel(url, sheet_name='Deaths by date', parse_dates=[0], nrows=1)
-        effective_date = national_deaths.at[0, 'Date of death']
+        national_deaths_data = pd.read_excel(url, sheet_name='Deaths by date', parse_dates=[0])
+        effective_date = national_deaths_data.at[0, 'Date of death']
         effective_date = effective_date.strftime('%Y-%m-%d')
 
-        return testing_data, deaths_data, effective_date
+        return testing_data, deaths_data, national_deaths_data, effective_date
 
     def tests(self, data):
         for index, record in data.iterrows():
@@ -148,7 +148,26 @@ class WalesFetcher(BaseEpidemiologyFetcher):
 
             self.upsert_data(**upsert_obj)
 
+    def national_deaths(self, data):
+
+        for index, record in data.iterrows():
+
+            upsert_obj = {
+                'source': self.SOURCE,
+                'date': record['Date of death'].strftime('%Y-%m-%d'),
+                'country': 'United Kingdom',
+                'countrycode': 'GBR',
+                'adm_area_1': 'Wales',
+                'adm_area_2': None,
+                'adm_area_3': None,
+                'gid': ['GBR.4_1'],
+                'dead': record['Cumulative deaths']
+            }
+
+            self.upsert_data(**upsert_obj)
+
     def run(self):
-        testing_data, deaths_data, effective_date = self.fetch()
+        testing_data, deaths_data, national_deaths_data, effective_date = self.fetch()
         self.tests(testing_data)
         self.deaths(deaths_data, effective_date)
+        self.national_deaths(national_deaths_data)
