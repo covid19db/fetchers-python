@@ -49,9 +49,11 @@ class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
                     'Diamond Princess',
                     'Grand Princess',
                     'Recovered',
-                    'Repatriated Travellers') or country in (
+                    'Repatriated Travellers',
+                    'Unknown') or country in (
                     'Diamond Princess',
-                    'MS Zaandam'):
+                    'MS Zaandam',
+                    'Summer Olympics 2020'):
                 continue
             countrycode = iso_alpha_3[country]
             # replace with GADM standard
