@@ -21,7 +21,7 @@ import logging
 import pandas as pd
 import json
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 __all__ = ('ScotlandFetcher',)
 
@@ -39,7 +39,7 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         attempts = 4
         while attempts > 0:
             try:
-                day = datetimeobj.strftime('Y%m%d')
+                day = datetimeobj.strftime('%Y%m%d')
                 url = f'https://www.opendata.nhs.scot/dataset/b318bddf-a4dc-4262-971f-0ba329e09b87/resource/2dd8534b' \
                       f'-0a6f-4744-9253-9565d62f96c2/download/trend_hb_{day}.csv'
                 data = pd.read_csv(url)
@@ -53,7 +53,7 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         attempts = 4
         while attempts > 0:
             try:
-                day = datetimeobj.strftime('Y%m%d')
+                day = datetimeobj.strftime('%Y%m%d')
                 url = f'https://www.opendata.nhs.scot/dataset/b318bddf-a4dc-4262-971f-0ba329e09b87/resource/427f9a25' \
                       f'-db22-4014-a3bc-893b68243055/download/trend_ca_{day}.csv'
                 data = pd.read_csv(url)
