@@ -15,7 +15,7 @@
 from datetime import datetime
 import logging
 import pandas as pd
-import numpy as np
+import math
 
 __all__ = ('ZAF_DSFSIFetcher',)
 
@@ -39,210 +39,102 @@ class ZAF_DSFSIFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'ZAF_DSFSI'
 
-    def country_fetch(self):
-
-        """
-                        This url mainly provide cumulative data of tested, dead,
-                                 and hospitalised cases on the country-level.
-        """
-
-        url = 'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_testing.csv'
-        logger.debug('Fetching Soutch Africa contry-level test, death and hospitalised cases from ZAF_DSFSI')
-        return pd.read_csv(url)
-
-    def province_confirmed_fetch(self):
-
-        """
-                        This url mainly provide cumulative data of confirmed cases on the province-level.
-        """
-
-        url = 'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv'
-        logger.debug('Fetching Soutch Africa province-level confirmed cases from ZAF_DSFSI')
-        return pd.read_csv(url)
-
-    def province_dead_fetch(self):
-
-        """
-                        This url mainly provide individual cases of death data on the province-level.
-        """
-
-        url = 'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_deaths.csv'
-        logger.debug('Fetching Soutch Africa province-level death cases from ZAF_DSFSI')
-        return pd.read_csv(url)
+    @staticmethod
+    def int_parser(x):
+        return int(x) if not math.isnan(x) else None
 
     def run(self):
 
-        """
-                This run functions handling two things:
-                1. created country-level cumulative information collection from country_fetch and province_confirmed_fetch;
-                2. created province-level cumulative confirmed&dead collection from province_confirmed_fetch and province_dead_fetch;
-        
-        """
+        # The source refers to the provinces as follows:
+        province_columns = ['EC', 'FS', 'GP', 'KZN', 'LP', 'MP', 'NC', 'NW', 'WC', 'total']
 
-        country_data = self.country_fetch()
-        province_confirmed_data = self.province_confirmed_fetch()
-        province_dead_data = self.province_dead_fetch()
+        # Collect countrywide testing data
+        countrywide_df = pd.read_csv(
+            'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_timeline_testing.csv')
+        # Collect various provincial data
+        confirmed_df = pd.read_csv(
+            'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_confirmed.csv')
+        recovered_df = pd.read_csv(
+            'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_recoveries.csv')
+        dead_df = pd.read_csv(
+            'https://raw.githubusercontent.com/dsfsi/covid19za/master/data/covid19za_provincial_cumulative_timeline_deaths.csv')
+        logger.debug('Fetching South African data from ZAF_DSFSI')
 
-        for index, record in country_data.iterrows():
+        # For each province, create a DataFrame with relevant parts of the three data sets
+        province_columns = ['EC', 'FS', 'GP', 'KZN', 'LP', 'MP', 'NC', 'NW', 'WC', 'total']
 
-            ### Translating data format from DD-MM-YYYY to YYYY-MM-DD
-            date_ddmmyyyy = record[0]
-            date = datetime.strptime(date_ddmmyyyy, '%d-%m-%Y').strftime('%Y-%m-%d')
+        data = dict()
+        for province in province_columns:
+            confirmed = confirmed_df[['date', province]].rename(columns={province: 'confirmed'})
+            recovered = recovered_df[['date', province]].rename(columns={province: 'recovered'})
+            dead = dead_df[['date', province]].rename(columns={province: 'dead'})
+            df = confirmed.merge(recovered, on='date').merge(dead, on='date')
+            # convert the date format
+            df['date'] = df['date'].apply(lambda x: datetime.strptime(x, '%d-%m-%Y').strftime('%Y-%m-%d'))
+            data[province] = df
 
-            ### Fetch confirmed case from another csv province_confirmed_data
-            #  find the date is included in province_confirmed_data or not:
-            #  if yes, fetch the confirmed num upon that date from province_confirmed_data csv;
-            #  otherwise, confirmed num is nan
-            if date_ddmmyyyy in list(province_confirmed_data['date']):
+        # For the national data, we can add more information from countrywide_df
+        testing_df = countrywide_df[['date', 'cumulative_tests', 'hospitalisation', 'critical_icu']]
+        testing_df['date'] = testing_df['date'].apply(lambda x: datetime.strptime(x, '%d-%m-%Y').strftime('%Y-%m-%d'))
+        data['total'] = data['total'].merge(testing_df, on='date')
 
-                temp = province_confirmed_data[province_confirmed_data['date'] == date_ddmmyyyy]
+        # upload all the provincial data
+        for province in province_columns:
+            # skip national data for later
+            if province == 'total':
+                continue
+            for index, record in data[province].iterrows():
+                confirmed = self.int_parser(record['confirmed'])
+                recovered = self.int_parser(record['recovered'])
+                dead = self.int_parser(record['dead'])
 
-                for index1, record1 in temp.iterrows():
-                    confirmed = record1[-2]
-            else:
-                confirmed = None
-            try:
-                confirmed = int(confirmed)
-            except:
-                confirmed = None
-            ### Fetch tested, recovered, hopistalised, icu, ventilated and dead nums                    
-            cumulative_tests = record[2]
-            try:
-                cumulative_tests = int(cumulative_tests)
-            except:
-                cumulative_tests = None
+                success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
+                    input_adm_area_1=province,
+                    input_adm_area_2=None,
+                    input_adm_area_3=None,
+                    return_original_if_failure=True
+                )
 
-            recovered = record[3]
-            try:
-                recovered = int(recovered)
-            except:
-                recovered = None
+                upsert_obj = {
+                    'source': self.SOURCE,
+                    'date': record['date'],
+                    'country': "South Africa",
+                    'countrycode': 'ZAF',
+                    'gid': gid,
+                    'adm_area_1': adm_area_1,
+                    'adm_area_2': None,
+                    'adm_area_3': None,
+                    'confirmed': confirmed,
+                    'dead': dead,
+                    'recovered': recovered
+                }
 
-            hospitalisation = record[4]
-            try:
-                hospitalisation = int(hospitalisation)
-            except:
-                hospitalisation = None
+                self.upsert_data(**upsert_obj)
 
-            critical_icu = record[5]
-            try:
-                critical_icu = int(critical_icu)
-            except:
-                critical_icu = None
+        # upload all the national data
+        for index, record in data['total'].iterrows():
+            confirmed = self.int_parser(record['confirmed'])
+            recovered = self.int_parser(record['recovered'])
+            dead = self.int_parser(record['dead'])
+            tested = self.int_parser(record['cumulative_tests'])
+            hospitalised = self.int_parser(record['hospitalisation'])
+            hospitalised_icu = self.int_parser(record['critical_icu'])
 
-            dead = record[7]
-            try:
-                dead = int(dead)
-            except:
-                dead = None
-
-            # we need to build an object containing the data we want to add or update
             upsert_obj = {
-                # source
                 'source': self.SOURCE,
-                # date
-                'date': date,
-                # country
+                'date': record['date'],
                 'country': "South Africa",
-                # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                # an exception is ships, which has "---" as country code
                 'countrycode': 'ZAF',
-                # adm_area_1, when available, is a wide-area administrative region
-                # In this case, adm_area_1, adm_area_2 (subadministrative region) and 
-                #  adm_area_3 (subsubadministrative region) are not available.
                 'gid': ['ZAF'],
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
-                # tested number by each date, cumulative
-                'tested': cumulative_tests,
-                # confirmed is the number of confirmed cases of infection, this is cumulative                    
                 'confirmed': confirmed,
-                # dead is the number of people who have died because of covid19, this is cumulative
                 'dead': dead,
-                # recovered is the number of people who have healed, this is cumulative
                 'recovered': recovered,
-                # hospitalised is the number of people who have been admitted to hospital, this is cumulative                
-                'hospitalised': hospitalisation,
-                # ICU is the number of people who have been admitted to ICU, this is cumulative                                
-                'hospitalised_icu': critical_icu,
-                # ventilation is the number of people who have been treated using ventilator equipment, this is cumulative
-                # 'hospitalised_ventilation': ventilation
-
+                'tested': tested,
+                'hospitalised': hospitalised,
+                'hospitalised_icu': hospitalised_icu
             }
 
             self.upsert_data(**upsert_obj)
-
-        ### Get the 10 province names    
-        province_lists = list(province_confirmed_data.columns)[2:12]
-
-        trans_dict = {'EC': 'Eastern Cape',
-                      'FS': 'Free State',
-                      'GP': 'Gauteng',
-                      'KZN': 'KwaZulu-Natal',
-                      'LP': 'Limpopo',
-                      'MP': 'Mpumalanga',
-                      'NC': 'Northern Cape',
-                      'NW': 'North West',
-                      'WC': 'Western Cape',
-                      'UNKNOWN': 'UNKNOWN'}
-
-        ### Basically using province_confirmed_data csv
-        for index_province, record_province in province_confirmed_data.iterrows():
-
-            ### Translating date format from DD-MM-YYYY to YYYY-MM-DD
-            date_ddmmyyyy = record_province[0]
-            date = datetime.strptime(date_ddmmyyyy, '%d-%m-%Y').strftime('%Y-%m-%d')
-
-            ### Get date numeric format for later use (to get dead number from csv province_dead_fetch)
-            date_yyyymmdd = int(record_province[1])
-
-            ### For each date, fetch confirmed and dead numbers from 10 provinces one by one 
-            for k in range(len(province_lists)):
-                # current province
-                province = trans_dict[province_lists[k]]
-
-                # Get confirmed number from current csv (province_confirmed_data) for current province
-                confirmed = record_province[k + 2]
-                try:
-                    confirmed = int(confirmed)
-                except:
-                    confirmed = None
-
-                # To get cumulative dead number in current province at some date, by counting the individual cases in
-                # the same province up to the date ('YYYYMMDD' numeric format) from csv province_dead_data
-
-                dead = len(np.where(np.array(
-                    list(province_dead_data[province_dead_data['province'] == province]['YYYYMMDD'])) <= date_yyyymmdd)[
-                               0])
-
-                if province != 'UNKNOWN':
-                    adm_area_1, adm_area_2, adm_area_3, gid = self.get_region('ZAF', province)
-
-                    if not gid:
-                        raise Exception(f'Unable to obtain GID for: {province}')
-                else:
-                    adm_area_1, adm_area_2, adm_area_3, gid = province, None, None, None
-
-                upsert_obj_province = {
-                    # source is mandatory and is a code that identifies the  source
-                    'source': self.SOURCE,
-                    # date is also mandatory, the format must be YYYY-MM-DD
-                    'date': date,
-                    'country': "South Africa",
-                    # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                    'countrycode': 'ZAF',
-                    # adm_area_1, when available, is a wide-area administrative region
-                    # adm_area_2 (subadministrative region) and adm_area_3 (subsubadministrative region) , are not available.
-                    'adm_area_1': adm_area_1,
-                    'adm_area_2': None,
-                    'adm_area_3': None,
-                    'gid': gid,
-                    # confirmed is the number of confirmed cases of infection, this is cumulative
-                    'confirmed': confirmed,
-                    # dead is the number of people who have died because of covid19, this is cumulative
-                    'dead': int(dead)
-
-                }
-
-                self.upsert_data(**upsert_obj_province)
