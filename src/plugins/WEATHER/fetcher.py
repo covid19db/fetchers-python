@@ -40,7 +40,7 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
             dfs.append(df)
 
         df_final = reduce(lambda left,right: pd.merge(
-            left,right,on=['source', 'date', 'gid',
+            left, right, on=['source', 'date', 'gid',
                            'country', 'countrycode',
                            'adm_area_1','adm_area_2',
                            'adm_area_3',
@@ -74,7 +74,7 @@ class METDailyWeatherFetcher(BaseWeatherFetcher):
                 upsert_obj = {
                     'source': row['source'],
                     'date': row['date'],
-                    'gid': row['gid'],
+                    'gid': [row['gid']],
                     'country': row['country'],
                     'countrycode': row['countrycode'],
                     'adm_area_1': row['adm_area_1'],
