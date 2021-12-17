@@ -14,6 +14,7 @@
 
 import logging
 import pandas as pd
+from requests import get
 
 __all__ = ('WalesFetcher',)
 
@@ -27,14 +28,22 @@ class WalesFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'GBR_PHW'  # Public Health Wales
 
+    def download_PHW_file(self):
+        url = 'https://www2.nphs.wales.nhs.uk/CommunitySurveillanceDocs.nsf/3dc04669c9e1eaa880257062003b246b/fb749601d64ee622802586a0003ef937/$FILE/Rapid%20COVID-19%20surveillance%20data.xlsx'
+        response = get(url)
+        if response.status_code != 200:
+            raise Exception(f'GBR_PWH: Public Health Wales data could not be downloaded from {url}')
+        return response.content
+
     def fetch(self):
         # an excel file to be downloaded
-        url = 'http://www2.nphs.wales.nhs.uk:8080/CommunitySurveillanceDocs.nsf/3dc04669c9e1eaa880257062003b246b/c84f742604ce56f0802586b600374b49/$FILE/Rapid%20COVID-19%20surveillance%20data.xlsx'
-        testing_data = pd.read_excel(url, sheet_name='Tests by specimen date', parse_dates=[1])
-        deaths_data = pd.read_excel(url, sheet_name='Deaths by LHB')
+        excel_sheet = self.download_PHW_file()
+
+        testing_data = pd.read_excel(excel_sheet, sheet_name='Tests by specimen date', parse_dates=[1])
+        deaths_data = pd.read_excel(excel_sheet, sheet_name='Deaths by LHB')
 
         # collect the date of the last update for deaths from another sheet, as Deaths by LHB does not have a date in it
-        national_deaths_data = pd.read_excel(url, sheet_name='Deaths by date', parse_dates=[0])
+        national_deaths_data = pd.read_excel(excel_sheet, sheet_name='Deaths by date', parse_dates=[0])
         effective_date = national_deaths_data.at[0, 'Date of death']
         effective_date = effective_date.strftime('%Y-%m-%d')
 
