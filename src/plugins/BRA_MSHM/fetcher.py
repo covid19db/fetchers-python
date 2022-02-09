@@ -80,44 +80,33 @@ class BRA_MSHMFetcher(BaseEpidemiologyFetcher):
         country_dead_array = np.array(province_dead_data.iloc[0, 2:])
 
         for j in range(len(time_list)):
-            ### Translating data format from DD/MM to YYYY-MM-DD
+            ### Translating data format from DD/MM/YYYY to YYYY-MM-DD
             date_ddmm = time_list[j]
-            date = datetime.strptime(date_ddmm + "/2020", '%d/%m/%Y').strftime('%Y-%m-%d')
+            date = datetime.strptime(date_ddmm, '%d/%m/%Y').strftime('%Y-%m-%d')
             confirmed = country_confirmed_array[j]
             dead = country_dead_array[j]
 
             upsert_obj = {
-                # source is mandatory and is a code that identifies the  source
                 'source': self.SOURCE,
-                # date is also mandatory, the format must be YYYY-MM-DD
                 'date': date,
-                # country is mandatory and should be in English
-                # the exception is "Ships"
                 'country': "Brazil",
-                # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                # an exception is ships, which has "---" as country code
                 'countrycode': 'BRA',
-                # adm_area_1, when available, is a wide-area administrative region, like a
-                # Canadian province in this case. There are also subareas adm_area_2 and
-                # adm_area_3
                 'gid': ['BRA'],
                 'adm_area_1': None,
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'confirmed': int(confirmed),
-                # dead is the number of people who have died because of covid19, this is cumulative
                 'dead': int(dead)
-
-            }
+           }
 
             self.upsert_data(**upsert_obj)
 
         ### For province-level
         for k in range(len(time_list)):
 
-            ### Translating data format from DD/MM to YYYY-MM-DD
+            ### Translating data format from DD/MM/YYYY to YYYY-MM-DD
             date_ddmm = time_list[k]
-            date = datetime.strptime(date_ddmm + "/2020", '%d/%m/%Y').strftime('%Y-%m-%d')
+            date = datetime.strptime(date_ddmm, '%d/%m/%Y').strftime('%Y-%m-%d')
 
             ### Get confirmed and dead list for current date
             current_confirm_list = np.array(province_confirmed_data[date_ddmm])
@@ -128,11 +117,9 @@ class BRA_MSHMFetcher(BaseEpidemiologyFetcher):
 
                 province = province_list[i]
 
+                # Skipping these as they are not provinces
                 if province in ['Norte', 'Nordeste', 'Sudeste', 'Sul', 'Centro-Oeste']:
                     continue
-
-                if province == 'Espirito Santo':
-                    province = 'Espírito Santo'
 
                 confirmed = current_confirm_list[1 + i]
                 dead = current_dead_list[1 + i]
@@ -140,27 +127,16 @@ class BRA_MSHMFetcher(BaseEpidemiologyFetcher):
                 adm_area_1, adm_area_2, adm_area_3, gid = self.get_region('BRA', province)
 
                 upsert_obj = {
-                    # source is mandatory and is a code that identifies the  source
                     'source': self.SOURCE,
-                    # date is also mandatory, the format must be YYYY-MM-DD
                     'date': date,
-                    # country is mandatory and should be in English
-                    # the exception is "Ships"
                     'country': "Brazil",
-                    # countrycode is mandatory and it's the ISO Alpha-3 code of the country
-                    # an exception is ships, which has "---" as country code
                     'countrycode': 'BRA',
-                    # adm_area_1, when available, is a wide-area administrative region, like a
-                    # Canadian province in this case. There are also subareas adm_area_2 and
-                    # adm_area_3
                     'adm_area_1': adm_area_1,
                     'adm_area_2': None,
                     'adm_area_3': None,
                     'gid': gid,
                     'confirmed': int(confirmed),
-                    # dead is the number of people who have died because of covid19, this is cumulative
                     'dead': int(dead)
-
                 }
 
                 self.upsert_data(**upsert_obj)
