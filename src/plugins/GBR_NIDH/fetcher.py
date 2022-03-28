@@ -33,12 +33,13 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         # read the excel file located at url
 
         testing_data = pd.read_excel(url, sheet_name='Tests', parse_dates=[0],
-                                     names=['Date', 'LGD', 'Tests', 'Individuals', 'Positives'])
-        testing_data['LGD'].fillna('Unknown', inplace=True)
+                                     names=['Sample_Date', 'LGD2014NAME', 'First Infections', 'Re-Infections',
+                                            'Total Cases', 'Total Tests'])
+        testing_data['LGD2014NAME'].fillna('Unknown', inplace=True)
         testing_data.replace('Missing Postcode', 'Unknown', inplace=True)
 
         deaths_data = pd.read_excel(url, sheet_name='Deaths', parse_dates=[0],
-                                    names=['Date', 'LGD', 'Setting', 'Gender', 'Age Band', 'Number of Deaths'])
+                                    names=['Date of Death', 'LGD', 'Setting', 'Gender', 'Age Band', 'Number of Deaths'])
         deaths_data['LGD'].fillna('Unknown', inplace=True)
         deaths_data.replace('Missing Postcode', 'Unknown', inplace=True)
 
@@ -74,6 +75,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
                         except:
                             datetimeobj = datetimeobj - timedelta(days=1)
                             attempts = attempts - 1
+        logger.warning('Failed to download data')
+        raise Exception
 
     def run(self):
 
@@ -81,12 +84,14 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
         testing_data, deaths_data = self.fetch()
 
         # now group the deaths data to remove detailed info and collapse different 'Unknowns'
-        grouped = deaths_data.groupby(['Date', 'LGD'], as_index=False)
+        grouped = deaths_data.groupby(['Date of Death', 'LGD'], as_index=False)
         deaths_data = grouped[['Number of Deaths']].sum()
+        deaths_data.rename(columns={'Date of Death': 'Date'}, inplace=True)
 
         # now group the testing data to collapse different 'Unknowns'
-        grouped = testing_data.groupby(['Date', 'LGD'], as_index=False)
-        testing_data = grouped[['Individuals', 'Positives']].sum()
+        grouped = testing_data.groupby(['Sample_Date', 'LGD2014NAME'], as_index=False)
+        testing_data = grouped[['Total Tests', 'Total Cases']].sum()
+        testing_data.rename(columns={'Sample_Date': 'Date', 'LGD2014NAME': 'LGD'}, inplace=True)
 
         # combine the two dataframes
         df = pd.merge(deaths_data, testing_data, how='outer', left_on=['Date', 'LGD'], right_on=['Date', 'LGD'])
@@ -103,8 +108,8 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
             date = record['Date']
             lgd = record['LGD']
-            confirmed = record['Cum_Positives']
-            tested = record['Cum_Individuals']
+            confirmed = record['Cum_Total Cases']
+            tested = record['Cum_Total Tests']
             deaths = record['Cum_Number of Deaths']
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
@@ -140,13 +145,13 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
 
         # now collect info for all Northern Ireland
         grouped = df.groupby(['Date'], as_index=False)
-        df = grouped[['Cum_Positives', 'Cum_Individuals', 'Cum_Number of Deaths']].sum()
+        df = grouped[['Cum_Total Cases', 'Cum_Total Tests', 'Cum_Number of Deaths']].sum()
 
         # upsert the data
         for index, record in df.iterrows():
             date = record['Date']
-            confirmed = record['Cum_Positives']
-            tested = record['Cum_Individuals']
+            confirmed = record['Cum_Total Cases']
+            tested = record['Cum_Total Tests']
             deaths = record['Cum_Number of Deaths']
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
