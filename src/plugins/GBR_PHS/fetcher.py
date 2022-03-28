@@ -72,7 +72,7 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
             input_adm_area_2 = record['HBName'] if record['HBName'] != 'Scotland' else None
             confirmed = record['CumulativePositive']
             deaths = record['CumulativeDeaths']
-            tested = confirmed + record['CumulativeNegative']
+            tested = record['TotalTests']
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1='Scotland',
@@ -103,7 +103,7 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
             input_adm_area_2 = record['CAName']
             confirmed = record['CumulativePositive']
             deaths = record['CumulativeDeaths']
-            tested = confirmed + record['CumulativeNegative']
+            tested = record['TotalTests']
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1='Scotland',
