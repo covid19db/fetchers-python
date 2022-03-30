@@ -19,9 +19,8 @@
 
 import logging
 import pandas as pd
-import json
-import requests
 from datetime import datetime, timedelta
+from utils.helper import int_or_none
 
 __all__ = ('ScotlandFetcher',)
 
@@ -70,9 +69,9 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         for index, record in data.iterrows():
             date = datetime.strptime(str(record['Date']), '%Y%m%d').strftime('%Y-%m-%d')
             input_adm_area_2 = record['HBName'] if record['HBName'] != 'Scotland' else None
-            confirmed = record['CumulativePositive']
-            deaths = record['CumulativeDeaths']
-            tested = record['TotalTests']
+            confirmed = int_or_none(record['CumulativePositive'])
+            deaths = int_or_none(record['CumulativeDeaths'])
+            tested = int_or_none(record['TotalTests'])
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1='Scotland',
@@ -101,9 +100,9 @@ class ScotlandFetcher(BaseEpidemiologyFetcher):
         for index, record in data.iterrows():
             date = datetime.strptime(str(record['Date']), '%Y%m%d').strftime('%Y-%m-%d')
             input_adm_area_2 = record['CAName']
-            confirmed = record['CumulativePositive']
-            deaths = record['CumulativeDeaths']
-            tested = record['TotalTests']
+            confirmed = int_or_none(record['CumulativePositive'])
+            deaths = int_or_none(record['CumulativeDeaths'])
+            tested = int_or_none(record['TotalTests'])
 
             success, adm_area_1, adm_area_2, adm_area_3, gid = self.adm_translator.tr(
                 input_adm_area_1='Scotland',
