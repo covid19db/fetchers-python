@@ -13,9 +13,13 @@
 # limitations under the License.
 
 from typing import List
+import math
 
 
 def remove_words(data: str, words: List) -> str:
     for w in words:
         data = data.replace(w, '')
     return data.strip()
+
+def int_or_none(value):
+    return None if math.isnan(value) else int(value)
