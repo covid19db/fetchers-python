@@ -45,6 +45,10 @@ def load_daily_report(path, file_name):
             encoding = 'utf-8'
 
     df_data = pd.read_csv(data_file_path, sep=';', decimal=",", encoding=encoding).fillna(0)
+
+    if 'liczba_wszystkich_zakazen' in df_data.columns:
+        df_data.rename(columns={'liczba_wszystkich_zakazen': 'liczba_przypadkow'}, inplace=True)
+
     return df_data, date
 
 
