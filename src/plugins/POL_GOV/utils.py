@@ -48,6 +48,8 @@ def load_daily_report(path, file_name):
 
     if 'liczba_wszystkich_zakazen' in df_data.columns:
         df_data.rename(columns={'liczba_wszystkich_zakazen': 'liczba_przypadkow'}, inplace=True)
+    if 'powiat' in df_data.columns:
+        df_data.rename(columns={'powiat': 'powiat_miasto'}, inplace=True)
 
     return df_data, date
 
