@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 
 class TUR_MHOE(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'TUR_MHOE'
 
     def country_fetch(self):
