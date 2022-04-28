@@ -28,6 +28,7 @@ iso_alpha_3 = {
     'Andorra': 'AND',
     'Angola': 'AGO',
     'Antigua and Barbuda': 'ATG',
+    'Antarctica': 'ATA',
     'Argentina': 'ARG',
     'Armenia': 'ARM',
     'Australia': 'AUS',
