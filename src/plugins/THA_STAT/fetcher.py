@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 
 class ThailandSTATFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'THA_STAT'
 
     def fetch(self, category):
