@@ -22,4 +22,7 @@ def remove_words(data: str, words: List) -> str:
     return data.strip()
 
 def int_or_none(value):
-    return None if math.isnan(value) else int(value)
+    if math.isnan(value):
+        return None
+    result = int(value)
+    return None if result < 0 else result
