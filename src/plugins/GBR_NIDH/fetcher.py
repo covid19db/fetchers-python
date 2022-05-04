@@ -14,6 +14,7 @@
 
 import logging
 import pandas as pd
+from urllib.error import HTTPError
 
 from datetime import datetime, date, timedelta
 
@@ -48,34 +49,37 @@ class NorthernIrelandFetcher(BaseEpidemiologyFetcher):
     def fetch(self):
 
         # Check the last four days and attempt to read a file with matching name
-        # The name is, sadly, not always the same. Check four variants for each date.
+        # The name is not always the same. Check five variant filenames for each date.
         datetimeobj = datetime.today()
         attempts = 4
         while attempts > 0:
+            day = datetimeobj.strftime('%d%m%y')
+            # each possible filename inside a try-except
             try:
-                day = datetimeobj.strftime('%d%m%y')
-                url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-{day}.xlsx'
-                testing_data, deaths_data = self.excelreader(url)
-                return testing_data, deaths_data
-            except:
+                url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-{day}_0.xlsx'
+                return self.excelreader(url)
+            except HTTPError:
                 try:
-                    url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-{day}.XLSX'
-                    testing_data, deaths_data = self.excelreader(url)
-                    return testing_data, deaths_data
-                except:
+                    url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-{day}.xlsx'
+                    return self.excelreader(url)
+                except HTTPError:
                     try:
-                        url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/dd-{day}.XLSX'
-                        testing_data, deaths_data = self.excelreader(url)
-                        return testing_data, deaths_data
-                    except:
+                        url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/doh-dd-{day}.XLSX'
+                        return self.excelreader(url)
+                    except HTTPError:
                         try:
-                            url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/dd-{day}.xlsx'
-                            testing_data, deaths_data = self.excelreader(url)
-                            return testing_data, deaths_data
-                        except:
-                            datetimeobj = datetimeobj - timedelta(days=1)
-                            attempts = attempts - 1
-        logger.warning('Failed to download data')
+                            url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/dd-{day}.XLSX'
+                            return self.excelreader(url)
+                        except HTTPError:
+                            try:
+                                url = f'https://www.health-ni.gov.uk/sites/default/files/publications/health/dd-{day}.xlsx'
+                                return self.excelreader(url)
+                            except HTTPError:
+                                # no filename has succeeded, check previous day and increment number of attempts
+                                datetimeobj = datetimeobj - timedelta(days=1)
+                                attempts = attempts - 1
+        # if there is still no success report error
+        logger.warning('Could not locate spreadsheet for GBR_NIDH. Check https://www.health-ni.gov.uk/articles/covid-19-daily-dashboard-updates to see if the filename has changed.')
         raise Exception
 
     def run(self):
