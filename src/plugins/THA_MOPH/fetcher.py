@@ -28,7 +28,7 @@ from utils.fetcher.base_epidemiology import BaseEpidemiologyFetcher
 logger = logging.getLogger(__name__)
 
 
-class ThailandSTATFetcher(BaseEpidemiologyFetcher):
+class ThailandMOPHFetcher(BaseEpidemiologyFetcher):
     LOAD_PLUGIN = True
     SOURCE = 'THA_MOPH'
 
@@ -66,7 +66,8 @@ class ThailandSTATFetcher(BaseEpidemiologyFetcher):
                     input_adm_area_1=province,
                     input_adm_area_2=None,
                     input_adm_area_3=None,
-                    return_original_if_failure=True
+                    return_original_if_failure=True,
+                    suppress_exception=True
                 )
 
                 upsert_obj = {
