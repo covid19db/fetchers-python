@@ -16,6 +16,8 @@ import logging
 import pandas as pd
 import math
 from datetime import datetime
+import io
+import requests
 
 __all__ = ('CanadaFetcher',)
 
@@ -31,7 +33,9 @@ class CanadaFetcher(BaseEpidemiologyFetcher):
     def fetch(self):
         # a csv file to be downloaded
         url = 'https://health-infobase.canada.ca/src/data/covidLive/covid19.csv'
-        return pd.read_csv(url)
+        s = requests.get(url, verify=False).content
+        df = pd.read_csv(io.StringIO(s.decode('utf-8')))
+        return df
 
     def run(self):
         data = self.fetch()
