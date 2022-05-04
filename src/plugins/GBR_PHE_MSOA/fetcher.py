@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 class EnglandMSOAFetcher(BaseEpidemiologyFetcher):
     ''' a fetcher to collect data from Public Health England'''
     TYPE = FetcherType.EPIDEMIOLOGY_MSOA
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
 
     SOURCE = 'GBR_PHE'  # Public Health England
     START_DATE = '2020-02-28'
