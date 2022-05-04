@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 
 class SWE_GMFFetcher(BaseEpidemiologyFetcher):
-    LOAD_PLUGIN = True
+    LOAD_PLUGIN = False
     SOURCE = 'SWE_GM'
 
     def province_confirmed_fetch(self):
