@@ -15,6 +15,7 @@
 from datetime import datetime
 import logging
 import pandas as pd
+import numpy as np
 
 __all__ = ('WorldECDCFetcher',)
 
@@ -49,43 +50,31 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
         return country_code
 
     def fetch(self):
-        url = 'https://opendata.ecdc.europa.eu/covid19/casedistribution/csv'
+        url = 'https://opendata.ecdc.europa.eu/covid19/nationalcasedeath/csv/data.csv'
         logger.debug('Fetching world confirmed cases, deaths data from ECDC')
-        dateparse = lambda x: datetime.strptime(x, '%d/%m/%Y')
-        return pd.read_csv(url, parse_dates=['dateRep'], date_parser=dateparse)
+        # All data logged as the Thursday of that week as per
+        # https://www.ecdc.europa.eu/en/covid-19/data-collection
+        dateparse = lambda x: datetime.strptime(x + '-4', '%Y-%W-%w')
+        return pd.read_csv(url, parse_dates=['year_week'], date_parser=dateparse)
 
     def run(self):
-        data = self.fetch()
-        data.sort_values(['countryterritoryCode', 'dateRep'], inplace=True)
-
-        # Data contains new cases and deaths for each week. Get cumulative data by sorting by country
-        # code and date, then iterating and adding to cumulative data for the same country
-        country_total_confirmed_cases = dict()
-        country_total_deaths = dict()
+        rawdata = self.fetch()
+        data = pd.pivot_table(rawdata, values='cumulative_count', index=['country_code', 'continent', 'year_week'],
+                              columns=['indicator'], aggfunc=np.sum).reset_index()
 
         for index, record in data.iterrows():
-            # CSV file has format: dateRep,day,month,year,cases,deaths,geoId,continentExp,countryterritoryCode,
-            # popData2018,countriesAndTerritories
 
             # Date formatted correctly during read_csv
-            date = record[0]
+            date = record['year_week']
 
             # country = record['countriesAndTerritories']
-            country_code = self.map_country_code(record['countryterritoryCode'])
+            country_code = record['country_code']
             if pd.isna(country_code):
                 continue
 
             country, adm_area_1, adm_area_2, adm_area_3, gid = self.data_adapter.get_adm_division(country_code)
-            confirmed = int(record['cases_weekly'])
-            dead = int(record['deaths_weekly'])
-
-            total_confirmed = country_total_confirmed_cases.get(country_code, 0)
-            total_confirmed = total_confirmed + confirmed
-            country_total_confirmed_cases[country_code] = total_confirmed
-
-            total_deaths = country_total_deaths.get(country_code, 0)
-            total_deaths = total_deaths + dead
-            country_total_deaths[country_code] = total_deaths
+            confirmed = int(record['cases'])
+            dead = int(record['deaths'])
 
             if gid is None:
                 logger.error(f'No GID for : {country_code}')
@@ -99,33 +88,20 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'gid': [country_code],
-                'confirmed': total_confirmed,
-                'dead': total_deaths
+                'confirmed': confirmed,
+                'dead': dead
             }
             self.upsert_data(**upsert_obj)
 
         # now group by continent
-        grouped = data.groupby(['dateRep', 'continentExp'], as_index=False)
-        continentaldf = grouped[['cases_weekly', 'deaths_weekly']].sum()
-        continentaldf.sort_values(['continentExp', 'dateRep'], inplace=True)
-
-        # Data contains new cases and deaths for each week. Get cumulative data by sorting by continent
-        # and date, then iterating and adding to cumulative data for the same continent
-        # just use same dictionaries as for countries
+        grouped = data.groupby(['year_week', 'continent'], as_index=False)
+        continentaldf = grouped[['cumulative_count']].sum()
 
         for index, record in continentaldf.iterrows():
-            date = record['dateRep']
-            continent = 'Other continent' if record['continentExp'] == 'Other' else record['continentExp']
-            confirmed = record['cases_weekly']
-            dead = record['deaths_weekly']
-
-            total_confirmed = country_total_confirmed_cases.get(continent, 0)
-            total_confirmed = total_confirmed + confirmed
-            country_total_confirmed_cases[continent] = total_confirmed
-
-            total_deaths = country_total_deaths.get(continent, 0)
-            total_deaths = total_deaths + dead
-            country_total_deaths[continent] = total_deaths
+            date = record['date']
+            continent = 'Other continent' if record['continent'] == 'Other' else record['continent']
+            confirmed = int(record['cases'])
+            dead = int(record['deaths'])
 
             continent_code = continents_codes.get(continent)
 
@@ -138,32 +114,21 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'gid': None,
-                'confirmed': total_confirmed,
-                'dead': total_deaths
+                'confirmed': confirmed,
+                'dead': dead
             }
             self.upsert_data(**upsert_obj)
 
         # finally a global figure
         # same method but just sort by the date
 
-        grouped = continentaldf.groupby(['dateRep'], as_index=False)
-        globaldf = grouped[['cases_weekly', 'deaths_weekly']].sum()
-        globaldf.sort_values(['dateRep'], inplace=True)
-
-        # This
+        grouped = continentaldf.groupby(['year_week'], as_index=False)
+        globaldf = grouped[['cumulative_count']].sum()
 
         for index, record in globaldf.iterrows():
-            date = record['dateRep']
-            confirmed = record['cases_weekly']
-            dead = record['deaths_weekly']
-
-            total_confirmed = country_total_confirmed_cases.get('world', 0)
-            total_confirmed = total_confirmed + confirmed
-            country_total_confirmed_cases['world'] = total_confirmed
-
-            total_deaths = country_total_deaths.get('world', 0)
-            total_deaths = total_deaths + dead
-            country_total_deaths['world'] = total_deaths
+            date = record['year_week']
+            confirmed = int(record['cases'])
+            dead = int(record['deaths'])
 
             upsert_obj = {
                 'source': self.SOURCE,
@@ -174,7 +139,7 @@ class WorldECDCFetcher(BaseEpidemiologyFetcher):
                 'adm_area_2': None,
                 'adm_area_3': None,
                 'gid': None,
-                'confirmed': total_confirmed,
-                'dead': total_deaths
+                'confirmed': confirmed,
+                'dead': dead
             }
             self.upsert_data(**upsert_obj)
