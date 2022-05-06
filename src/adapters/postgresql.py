@@ -48,6 +48,8 @@ class PostgresqlHelper(AbstractAdapter):
         self.open_connection()
         self.cursor()
 
+        self.postgresql_reader = None
+
     def reset_connection(self):
         self.close_connection()
         self.open_connection()
@@ -109,6 +111,14 @@ class PostgresqlHelper(AbstractAdapter):
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
+        if self.database_name=='covid19_play':
+            if not self.postgresql_reader:
+                self.postgresql_reader = PostgresqlHelper(user='covid19', password='covid19', host='covid19db.org',
+                                                      port='5432', database_name='covid19')
+            execute = self.postgresql_reader.execute
+        else:
+            execute = self.execute
+
         sql_query = sql.SQL("""
             SELECT country, adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
             WHERE countrycode = %s
@@ -119,7 +129,7 @@ class PostgresqlHelper(AbstractAdapter):
                 AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
 
-        results = self.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
+        results = execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
         if not results:
             raise Exception(f'Unable to find adm division for: {countrycode}, {adm_area_1}, {adm_area_2}, {adm_area_3}')
         if len(results) > 1:

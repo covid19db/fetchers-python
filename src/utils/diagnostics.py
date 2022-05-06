@@ -12,7 +12,7 @@ class Diagnostics:
         self.fetcher_instance = fetcher_instance
 
     def update_diagnostics_info(self, validation: bool, error: bool, start_time, end_time):
-        if config.CSV:
+        if config.CSV or config.DB_NAME == 'covid19_play':
             return
 
         data = {
