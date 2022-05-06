@@ -110,7 +110,7 @@ class CSVFileHelper(AbstractAdapter):
         self.csv_path = csv_path
         self.csv_file_name = None
         self.temp_df = None
-        self.postgresql_helper = PostgresqlHelper(user='covid19', password='covid19', host='covid19db.org', port='5432', database_name='covid19')
+        self.postgresql_reader = None
         self.adm_division_cache = dict()
 
     def upsert_temp_df(self, csv_file_name: str, data_type: str, data: dict):
@@ -150,6 +150,10 @@ class CSVFileHelper(AbstractAdapter):
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
                          adm_area_3: str = None) -> Tuple:
 
+        if not self.postgresql_reader:
+            self.postgresql_reader = PostgresqlHelper(user='covid19', password='covid19', host='covid19db.org',
+                                                      port='5432', database_name='covid19')
+
         key = (countrycode, adm_area_1, adm_area_2, adm_area_3)
         if key in self.adm_division_cache:
             result = self.adm_division_cache.get(key)
@@ -165,7 +169,7 @@ class CSVFileHelper(AbstractAdapter):
                 AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g')
                     ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
 
-        results = self.postgresql_helper.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
+        results = self.postgresql_reader.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
         if not results:
             raise Exception(
                 f'Unable to find adm division for: {countrycode}, {adm_area_1}, {adm_area_2}, {adm_area_3}')
