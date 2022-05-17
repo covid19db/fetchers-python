@@ -53,7 +53,8 @@ class WorldWHOJHUFetcher(BaseEpidemiologyFetcher):
                     'Unknown') or country in (
                     'Diamond Princess',
                     'MS Zaandam',
-                    'Summer Olympics 2020'):
+                    'Summer Olympics 2020',
+                    'Winter Olympics 2022'):
                 continue
             countrycode = iso_alpha_3[country]
             # replace with GADM standard
