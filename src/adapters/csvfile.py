@@ -14,12 +14,15 @@
 
 import os
 import logging
+from typing import Tuple, List
 import pandas as pd
 from datetime import date
+from psycopg2 import sql
 
 __all__ = ('CSVFileHelper',)
 
 from utils.adapter.abstract_adapter import AbstractAdapter
+from adapters.postgresql import PostgresqlHelper
 
 logger = logging.getLogger(__name__)
 
@@ -107,6 +110,8 @@ class CSVFileHelper(AbstractAdapter):
         self.csv_path = csv_path
         self.csv_file_name = None
         self.temp_df = None
+        self.postgresql_reader = None
+        self.adm_division_cache = dict()
 
     def upsert_temp_df(self, csv_file_name: str, data_type: str, data: dict):
         if self.csv_file_name != csv_file_name:
@@ -143,9 +148,37 @@ class CSVFileHelper(AbstractAdapter):
         return data
 
     def get_adm_division(self, countrycode: str, adm_area_1: str = None, adm_area_2: str = None,
-                         adm_area_3: str = None):
-        # TODO: Implement get adm division
-        raise NotImplementedError("To be implemented")
+                         adm_area_3: str = None) -> Tuple:
+
+        if not self.postgresql_reader:
+            self.postgresql_reader = PostgresqlHelper(user='covid19', password='covid19', host='covid19db.org',
+                                                      port='5432', database_name='covid19')
+
+        key = (countrycode, adm_area_1, adm_area_2, adm_area_3)
+        if key in self.adm_division_cache:
+            result = self.adm_division_cache.get(key)
+            result['country'], result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
+
+        sql_query = sql.SQL("""
+            SELECT country, adm_area_1, adm_area_2, adm_area_3, gid from administrative_division
+            WHERE countrycode = %s
+                AND regexp_replace(COALESCE(adm_area_1, ''), '[^\w%%]+','','g')
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_2, ''), '[^\w%%]+','','g')
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g')
+                AND regexp_replace(COALESCE(adm_area_3, ''), '[^\w%%]+','','g')
+                    ILIKE regexp_replace(%s, '[^\w%%]+','','g') """)
+
+        results = self.postgresql_reader.execute(sql_query, (countrycode, adm_area_1 or '', adm_area_2 or '', adm_area_3 or ''))
+        if not results:
+            raise Exception(
+                f'Unable to find adm division for: {countrycode}, {adm_area_1}, {adm_area_2}, {adm_area_3}')
+        if len(results) > 1:
+            raise Exception(f'Ambiguous result: {results}')
+        result = results[0]
+
+        self.adm_division_cache[key] = result
+        return result['country'], result['adm_area_1'], result['adm_area_2'], result['adm_area_3'], [result['gid']]
 
     def upsert_table_data(self, table_name: str, **kwargs):
         self.check_if_gid_exists(kwargs)
